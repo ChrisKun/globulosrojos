@@ -1,0 +1,277 @@
+Sevilla, Getafe, 1, 17, 3, 0, 4, 1, 1, 4, 3, 0, 0, 4, 1
+Athletic, Osasuna, 11, 10, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0
+Deportivo, Almería, 19, 2, 0, 3, 0, 3, 3, 0, -3, 0, 0, 0, 3
+Racing, Barcelona, 13, 12, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0
+Mallorca, Levante, 4, 18, 3, 0, 3, 0, 0, 3, 3, 0, 0, 3, 0
+R. Madrid, At. Madrid, 5, 15, 3, 0, 2, 1, 1, 2, 3, 0, 0, 2, 1
+Espanyol, Valladolid, 16, 7, 0, 3, 0, 1, 1, 0, -3, 0, 0, 0, 1
+Recreativo, Betis, 9, 8, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1
+Valencia, Villarreal, 20, 3, 0, 3, 0, 3, 3, 0, -3, 0, 0, 0, 3
+Murcia, Zaragoza, 6, 14, 3, 0, 2, 1, 1, 2, 3, 0, 0, 2, 1
+Zaragoza, Racing, 14, 13, 0, 1, 1, 0, 2, 0, -1, 0, 0, 1, 1
+Betis, Espanyol, 8, 16, 1, 0, 1, 0, 1, 1, 1, 0, 0, 2, 2
+Villarreal, R. Madrid, 3, 5, 3, 3, 3, 2, 0, 1, 0, 0, 0, 0, 5
+Getafe, Recreativo, 17, 9, 0, 1, 1, 1, 4, 1, -1, 0, 0, 1, 1
+Barcelona, Athletic, 12, 11, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 1
+Levante, Murcia, 18, 6, 0, 3, 0, 2, 3, 1, -3, 0, 0, 0, 0
+At. Madrid, Mallorca, 15, 4, 0, 3, 1, 3, 2, 0, -3, 0, 0, 1, 1
+Osasuna, Sevilla, 10, 1, 1, 3, 0, 4, 0, 1, -2, 0, 0, 1, 1
+Valladolid, Deportivo, 7, 19, 3, 0, 1, 0, 0, 3, 3, 0, 0, 2, 2
+Almería, Valencia, 2, 20, 3, 0, 3, 0, 0, 3, 3, 0, 0, 1, 2
+Sevilla, Recreativo, 1, 9, 3, 1, 4, 1, 1, 1, 2, 0, 0, 4, 1
+Athletic, Zaragoza, 11, 14, 1, 0, 0, 1, 0, 2, 1, 0, 0, 1, 1
+Deportivo, Betis, 19, 8, 0, 1, 0, 1, 3, 1, -1, 0, 0, 1, 0
+Racing, Levante, 13, 18, 1, 0, 0, 0, 0, 3, 1, 0, 0, 1, 0
+Mallorca, Villarreal, 4, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 1
+R. Madrid, Almería, 5, 2, 3, 3, 2, 3, 1, 0, 0, 0, 0, 3, 1
+Espanyol, Getafe, 16, 17, 0, 0, 0, 1, 1, 4, 0, 0, 0, 1, 0
+Osasuna, Barcelona, 10, 12, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0
+Valencia, Valladolid, 20, 7, 0, 3, 0, 1, 3, 0, -3, 0, 0, 2, 1
+Murcia, At. Madrid, 6, 15, 3, 0, 2, 1, 1, 2, 3, 0, 0, 1, 1
+Zaragoza, Osasuna, 14, 10, 0, 1, 1, 0, 2, 0, -1, 0, 0, 2, 1
+Betis, Valencia, 8, 20, 1, 0, 1, 0, 1, 3, 1, 0, 0, 1, 2
+Villarreal, Murcia, 3, 6, 3, 3, 3, 2, 0, 1, 0, 0, 0, 2, 0
+Getafe, Deportivo, 17, 19, 0, 0, 1, 0, 4, 3, 0, 0, 0, 0, 0
+Barcelona, Sevilla, 12, 1, 1, 3, 0, 4, 0, 1, -2, 0, 0, 2, 1
+At. Madrid, Racing, 15, 13, 0, 1, 1, 0, 2, 0, -1, 0, 0, 4, 0
+Levante, Athletic, 18, 11, 0, 1, 0, 0, 3, 0, -1, 0, 0, 1, 2
+Recreativo, Espanyol, 9, 16, 1, 0, 1, 0, 1, 1, 1, 0, 0, 2, 1
+Valladolid, R. Madrid, 7, 5, 3, 3, 1, 2, 0, 1, 0, 0, 0, 1, 1
+Almería, Mallorca, 2, 4, 3, 3, 3, 3, 0, 0, 0, 0, 0, 1, 1
+Sevilla, Espanyol, 1, 16, 3, 0, 4, 0, 1, 1, 3, 0, 0, 2, 3
+Athletic, At. Madrid, 11, 15, 1, 0, 0, 1, 0, 2, 1, 0, 0, 0, 2
+Deportivo, Recreativo, 19, 9, 0, 1, 0, 1, 3, 1, -1, 0, 0, 0, 2
+Racing, Villarreal, 13, 3, 1, 3, 0, 3, 0, 0, -2, 0, 0, 0, 2
+Barcelona, Zaragoza, 12, 14, 1, 0, 0, 1, 0, 2, 1, 0, 0, 4, 1
+Mallorca, Valladolid, 4, 7, 3, 3, 3, 1, 0, 0, 0, 0, 0, 4, 2
+R. Madrid, Betis, 5, 8, 3, 1, 2, 1, 1, 1, 2, 0, 0, 2, 0
+Osasuna, Levante, 10, 18, 1, 0, 0, 0, 0, 3, 1, 0, 0, 4, 1
+Valencia, Getafe, 20, 17, 0, 0, 0, 1, 3, 4, 0, 0, 0, 2, 1
+Murcia, Almería, 6, 2, 3, 3, 2, 3, 1, 0, 0, 0, 0, 0, 1
+Zaragoza, Sevilla, 14, 1, 0, 3, 1, 4, 2, 1, -3, 0, 0, 2, 0
+Betis, Mallorca, 8, 4, 1, 3, 1, 3, 1, 0, -2, 0, 0, 3, 0
+Villarreal, Athletic, 3, 11, 3, 1, 3, 0, 0, 0, 2, 0, 0, 1, 0
+Getafe, R. Madrid, 17, 5, 0, 3, 1, 2, 4, 1, -3, 0, 0, 0, 1
+Levante, Barcelona, 18, 12, 0, 1, 0, 0, 3, 0, -1, 0, 0, 1, 4
+At. Madrid, Osasuna, 15, 10, 0, 1, 1, 0, 2, 0, -1, 0, 0, 2, 0
+Espanyol, Deportivo, 16, 19, 0, 0, 0, 0, 1, 3, 0, 0, 0, 1, 0
+Recreativo, Valencia, 9, 20, 1, 0, 1, 0, 1, 3, 1, 0, 0, 0, 1
+Valladolid, Murcia, 7, 6, 3, 3, 1, 2, 0, 1, 0, 0, 0, 1, 4
+Almería, Racing, 2, 13, 3, 1, 3, 0, 0, 0, 2, 0, 0, 0, 1
+Sevilla, Deportivo, 1, 19, 3, 0, 4, 0, 1, 3, 3, 0, 0, 0, 1
+Athletic, Almería, 11, 2, 1, 3, 0, 3, 0, 0, -2, 0, 0, 1, 1
+Zaragoza, Levante, 14, 18, 0, 0, 1, 0, 2, 3, 0, 0, 0, 3, 0
+Racing, Valladolid, 13, 7, 1, 3, 0, 1, 0, 0, -2, 0, 0, 2, 0
+Barcelona, At. Madrid, 12, 15, 1, 0, 0, 1, 0, 2, 1, 0, 0, 3, 0
+Mallorca, Getafe, 4, 17, 3, 0, 3, 1, 0, 4, 3, 0, 0, 4, 2
+R. Madrid, Recreativo, 5, 9, 3, 1, 2, 1, 1, 1, 2, 0, 0, 2, 0
+Osasuna, Villarreal, 10, 3, 1, 3, 0, 3, 0, 0, -2, 0, 0, 3, 2
+Valencia, Espanyol, 20, 16, 0, 0, 0, 0, 3, 1, 0, 0, 0, 1, 2
+Murcia, Betis, 6, 8, 3, 1, 2, 1, 1, 1, 2, 0, 0, 0, 0
+Betis, Racing, 8, 13, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1
+Deportivo, Valencia, 19, 20, 0, 0, 0, 0, 3, 3, 0, 0, 0, 2, 4
+Villarreal, Barcelona, 3, 12, 3, 1, 3, 0, 0, 0, 2, 0, 0, 3, 1
+Getafe, Murcia, 17, 6, 0, 3, 1, 2, 4, 1, -3, 0, 0, 2, 0
+Espanyol, R. Madrid, 16, 5, 0, 3, 0, 2, 1, 1, -3, 0, 0, 2, 1
+Levante, Sevilla, 18, 1, 0, 3, 0, 4, 3, 1, -3, 0, 0, 0, 2
+At. Madrid, Zaragoza, 15, 14, 0, 0, 1, 1, 2, 2, 0, 0, 0, 4, 0
+Recreativo, Mallorca, 9, 4, 1, 3, 1, 3, 1, 0, -2, 0, 0, 0, 2
+Valladolid, Athletic, 7, 11, 3, 1, 1, 0, 0, 0, 2, 0, 0, 1, 2
+Almería, Osasuna, 2, 10, 3, 1, 3, 0, 0, 0, 2, 0, 0, 2, 0
+Sevilla, Valencia, 1, 20, 3, 0, 4, 0, 1, 3, 3, 0, 0, 3, 0
+Athletic, Betis, 11, 8, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0
+Zaragoza, Villarreal, 14, 3, 0, 3, 1, 3, 2, 0, -3, 0, 0, 4, 1
+Racing, Getafe, 13, 17, 1, 0, 0, 1, 0, 4, 1, 0, 0, 2, 0
+Mallorca, Espanyol, 4, 16, 3, 0, 3, 0, 0, 1, 3, 0, 0, 2, 2
+Barcelona, Almería, 12, 2, 1, 3, 0, 3, 0, 0, -2, 0, 0, 2, 0
+Levante, At. Madrid, 18, 15, 0, 0, 0, 1, 3, 2, 0, 0, 0, 0, 1
+R. Madrid, Deportivo, 5, 19, 3, 0, 2, 0, 1, 3, 3, 0, 0, 3, 1
+Osasuna, Valladolid, 10, 7, 1, 3, 0, 1, 0, 0, -2, 0, 0, 2, 2
+Murcia, Recreativo, 6, 9, 3, 1, 2, 1, 1, 1, 2, 0, 0, 1, 0
+Betis, Osasuna, 8, 10, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 3
+Deportivo, Mallorca, 19, 4, 0, 3, 0, 3, 3, 0, -3, 0, 0, 1, 1
+Villarreal, Levante, 3, 18, 3, 0, 3, 0, 0, 3, 3, 0, 0, 3, 0
+Getafe, Athletic, 17, 11, 0, 1, 1, 0, 4, 0, -1, 0, 0, 2, 0
+At. Madrid, Sevilla, 15, 1, 0, 3, 1, 4, 2, 1, -3, 0, 0, 4, 3
+Espanyol, Murcia, 16, 6, 0, 3, 0, 2, 1, 1, -3, 0, 0, 0, 0
+Recreativo, Racing, 9, 13, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0
+Valencia, R. Madrid, 20, 5, 0, 3, 0, 2, 3, 1, -3, 0, 0, 1, 5
+Valladolid, Barcelona, 7, 12, 3, 1, 1, 0, 0, 0, 2, 0, 0, 1, 1
+Almería, Zaragoza, 2, 14, 3, 0, 3, 1, 0, 2, 3, 0, 0, 0, 1
+Sevilla, R. Madrid, 1, 5, 3, 3, 4, 2, 1, 1, 0, 0, 0, 2, 0
+Athletic, Recreativo, 11, 9, 1, 1, 0, 1, 0, 1, 0, 0, 0, 2, 0
+Zaragoza, Valladolid, 14, 7, 0, 3, 1, 1, 2, 0, -3, 0, 0, 2, 3
+Racing, Espanyol, 13, 16, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1
+Mallorca, Valencia, 4, 20, 3, 0, 3, 0, 0, 3, 3, 0, 0, 0, 2
+Barcelona, Betis, 12, 8, 1, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0
+At. Madrid, Villarreal, 15, 3, 0, 3, 1, 3, 2, 0, -3, 0, 0, 3, 4
+Levante, Almería, 18, 2, 0, 3, 0, 3, 3, 0, -3, 0, 0, 3, 0
+Osasuna, Getafe, 10, 17, 1, 0, 0, 1, 0, 4, 1, 0, 0, 0, 2
+Murcia, Deportivo, 6, 19, 3, 0, 2, 0, 1, 3, 3, 0, 0, 0, 2
+Betis, Zaragoza, 8, 14, 1, 0, 1, 1, 1, 2, 1, 0, 0, 2, 1
+Deportivo, Racing, 19, 13, 0, 1, 0, 0, 3, 0, -1, 0, 0, 0, 1
+Villarreal, Sevilla, 3, 1, 3, 3, 3, 4, 0, 1, 0, 0, 0, 3, 2
+Getafe, Barcelona, 17, 12, 0, 1, 1, 0, 4, 0, -1, 0, 0, 2, 0
+Espanyol, Athletic, 16, 11, 0, 1, 0, 0, 1, 0, -1, 0, 0, 2, 1
+R. Madrid, Mallorca, 5, 4, 3, 3, 2, 3, 1, 0, 0, 0, 0, 4, 3
+Recreativo, Osasuna, 9, 10, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0
+Valencia, Murcia, 20, 6, 0, 3, 0, 2, 3, 1, -3, 0, 0, 3, 0
+Valladolid, Levante, 7, 18, 3, 0, 1, 0, 0, 3, 3, 0, 0, 1, 0
+Almería, At. Madrid, 2, 15, 3, 0, 3, 1, 0, 2, 3, 0, 0, 0, 0
+Sevilla, Mallorca, 1, 4, 3, 3, 4, 3, 1, 0, 0, 0, 0, 1, 2
+Athletic, Deportivo, 11, 19, 1, 0, 0, 0, 0, 3, 1, 0, 0, 2, 2
+Zaragoza, Getafe, 14, 17, 0, 0, 1, 1, 2, 4, 0, 0, 0, 1, 1
+Villarreal, Almería, 3, 2, 3, 3, 3, 3, 0, 0, 0, 0, 0, 1, 1
+Racing, Valencia, 13, 20, 1, 0, 0, 0, 0, 3, 1, 0, 0, 1, 0
+Barcelona, Recreativo, 12, 9, 1, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0
+At. Madrid, Valladolid, 15, 7, 0, 3, 1, 1, 2, 0, -3, 0, 0, 4, 3
+Levante, Betis, 18, 8, 0, 1, 0, 1, 3, 1, -1, 0, 0, 4, 3
+Osasuna, Espanyol, 10, 16, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 2
+Murcia, R. Madrid, 6, 5, 3, 3, 2, 2, 1, 1, 0, 0, 0, 1, 1
+Betis, At. Madrid, 8, 15, 1, 0, 1, 1, 1, 2, 1, 0, 0, 0, 2
+Deportivo, Osasuna, 19, 10, 0, 1, 0, 0, 3, 0, -1, 0, 0, 1, 2
+Getafe, Levante, 17, 18, 0, 0, 1, 0, 4, 3, 0, 0, 0, 2, 1
+Mallorca, Murcia, 4, 6, 3, 3, 3, 2, 0, 1, 0, 0, 0, 1, 1
+Espanyol, Barcelona, 16, 12, 0, 1, 0, 0, 1, 0, -1, 0, 0, 1, 1
+R. Madrid, Racing, 5, 13, 3, 1, 2, 0, 1, 0, 2, 0, 0, 3, 1
+Recreativo, Zaragoza, 9, 14, 1, 0, 1, 1, 1, 2, 1, 0, 0, 2, 1
+Valencia, Athletic, 20, 11, 0, 1, 0, 0, 3, 0, -1, 0, 0, 0, 3
+Valladolid, Villarreal, 7, 3, 3, 3, 1, 3, 0, 0, 0, 0, 0, 2, 0
+Almería, Sevilla, 2, 1, 3, 3, 3, 4, 0, 1, 0, 0, 0, 1, 0
+Sevilla, Murcia, 1, 6, 3, 3, 4, 2, 1, 1, 0, 0, 0, 3, 1
+Athletic, R. Madrid, 11, 5, 1, 3, 0, 2, 0, 1, -2, 0, 0, 0, 1
+Zaragoza, Espanyol, 14, 16, 0, 0, 1, 0, 2, 1, 0, 0, 0, 3, 3
+Villarreal, Betis, 3, 8, 3, 1, 3, 1, 0, 1, 2, 0, 0, 0, 1
+Racing, Mallorca, 13, 4, 1, 3, 0, 3, 0, 0, -2, 0, 0, 3, 1
+Barcelona, Deportivo, 12, 19, 1, 0, 0, 0, 0, 3, 1, 0, 0, 2, 1
+At. Madrid, Getafe, 15, 17, 0, 0, 1, 1, 2, 4, 0, 0, 0, 1, 0
+Levante, Recreativo, 18, 9, 0, 1, 0, 1, 3, 1, -1, 0, 0, 0, 2
+Osasuna, Valencia, 10, 20, 1, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0
+Almería, Valladolid, 2, 7, 3, 3, 3, 1, 0, 0, 0, 0, 0, 1, 0
+Betis, Almería, 8, 2, 1, 3, 1, 3, 1, 0, -2, 0, 0, 3, 1
+Deportivo, Zaragoza, 19, 14, 0, 0, 0, 1, 3, 2, 0, 0, 0, 1, 1
+Getafe, Villarreal, 17, 3, 0, 3, 1, 3, 4, 0, -3, 0, 0, 1, 3
+Mallorca, Athletic, 4, 11, 3, 1, 3, 0, 0, 0, 2, 0, 0, 0, 0
+Espanyol, Levante, 16, 18, 0, 0, 0, 0, 1, 3, 0, 0, 0, 1, 0
+R. Madrid, Osasuna, 5, 10, 3, 1, 2, 0, 1, 0, 2, 0, 0, 2, 0
+Recreativo, At. Madrid, 9, 15, 1, 0, 1, 1, 1, 2, 1, 0, 0, 0, 0
+Valencia, Barcelona, 20, 12, 0, 1, 0, 0, 3, 0, -1, 0, 0, 0, 3
+Valladolid, Sevilla, 7, 1, 3, 3, 1, 4, 0, 1, 0, 0, 0, 0, 0
+Murcia, Racing, 6, 13, 3, 1, 2, 0, 1, 0, 2, 0, 0, 2, 1
+Sevilla, Racing, 1, 13, 3, 1, 4, 0, 1, 0, 2, 0, 0, 4, 1
+Zaragoza, Valencia, 14, 20, 0, 0, 1, 0, 2, 3, 0, 0, 0, 2, 2
+Athletic, Murcia, 11, 6, 1, 3, 0, 2, 0, 1, -2, 0, 0, 1, 1
+Villarreal, Recreativo, 3, 9, 3, 1, 3, 1, 0, 1, 2, 0, 0, 1, 1
+Barcelona, R. Madrid, 12, 5, 1, 3, 0, 2, 0, 1, -2, 0, 0, 0, 1
+At. Madrid, Espanyol, 15, 16, 0, 0, 1, 0, 2, 1, 0, 0, 0, 1, 2
+Levante, Deportivo, 18, 19, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 1
+Osasuna, Mallorca, 10, 4, 1, 3, 0, 3, 0, 0, -2, 0, 0, 3, 1
+Valladolid, Betis, 7, 8, 3, 1, 1, 1, 0, 1, 2, 0, 0, 0, 0
+Almería, Getafe, 2, 17, 3, 0, 3, 1, 0, 4, 3, 0, 0, 0, 2
+Sevilla, Betis, 1, 8, 3, 1, 4, 1, 1, 1, 2, 0, 0, 3, 0
+Deportivo, At. Madrid, 19, 15, 0, 0, 0, 1, 3, 2, 0, 0, 0, 0, 3
+Getafe, Valladolid, 17, 7, 0, 3, 1, 1, 4, 0, -3, 0, 0, 0, 3
+Racing, Athletic, 13, 11, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0
+Mallorca, Barcelona, 4, 12, 3, 1, 3, 0, 0, 0, 2, 0, 0, 0, 2
+Espanyol, Villarreal, 16, 3, 0, 3, 0, 3, 1, 0, -3, 0, 0, 3, 0
+R. Madrid, Zaragoza, 5, 14, 3, 0, 2, 1, 1, 2, 3, 0, 0, 2, 0
+Recreativo, Almería, 9, 2, 1, 3, 1, 3, 1, 0, -2, 0, 0, 1, 1
+Valencia, Levante, 20, 18, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0
+Murcia, Osasuna, 6, 10, 3, 1, 2, 0, 1, 0, 2, 0, 0, 2, 0
+Athletic, Sevilla, 11, 1, 1, 3, 0, 4, 0, 1, -2, 0, 0, 2, 0
+Zaragoza, Mallorca, 14, 4, 0, 3, 1, 3, 2, 0, -3, 0, 0, 2, 2
+Betis, Getafe, 8, 17, 1, 0, 1, 1, 1, 4, 1, 0, 0, 3, 2
+Villarreal, Deportivo, 3, 19, 3, 0, 3, 0, 0, 3, 3, 0, 0, 4, 3
+Barcelona, Murcia, 12, 6, 1, 3, 0, 2, 0, 1, -2, 0, 0, 4, 0
+At. Madrid, Valencia, 15, 20, 0, 0, 1, 0, 2, 3, 0, 0, 0, 1, 0
+Levante, R. Madrid, 18, 5, 0, 3, 0, 2, 3, 1, -3, 0, 0, 0, 2
+Osasuna, Racing, 10, 13, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2
+Valladolid, Recreativo, 7, 9, 3, 1, 1, 1, 0, 1, 2, 0, 0, 3, 1
+Almería, Espanyol, 2, 16, 3, 0, 3, 0, 0, 1, 3, 0, 0, 1, 0
+Zaragoza, Murcia, 14, 6, 0, 3, 1, 2, 2, 1, -3, 0, 0, 3, 1
+Betis, Recreativo, 8, 9, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1
+Villarreal, Valencia, 3, 20, 3, 0, 3, 0, 0, 3, 3, 0, 0, 3, 0
+Getafe, Sevilla, 17, 1, 0, 3, 1, 4, 4, 1, -3, 0, 0, 3, 2
+Barcelona, Racing, 12, 13, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0
+At. Madrid, R. Madrid, 15, 5, 0, 3, 1, 2, 2, 1, -3, 0, 0, 0, 2
+Levante, Mallorca, 18, 4, 0, 3, 0, 3, 3, 0, -3, 0, 0, 2, 2
+Osasuna, Athletic, 10, 11, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0
+Valladolid, Espanyol, 7, 16, 3, 0, 1, 0, 0, 1, 3, 0, 0, 2, 1
+Almería, Deportivo, 2, 19, 3, 0, 3, 0, 0, 3, 3, 0, 0, 1, 0
+Sevilla, Osasuna, 1, 10, 3, 1, 4, 0, 1, 0, 2, 0, 0, 2, 1
+Athletic, Barcelona, 11, 12, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1
+Deportivo, Valladolid, 19, 7, 0, 3, 0, 1, 3, 0, -3, 0, 0, 3, 1
+Racing, Zaragoza, 13, 14, 1, 0, 0, 1, 0, 2, 1, 0, 0, 2, 2
+Mallorca, At. Madrid, 4, 15, 3, 0, 3, 1, 0, 2, 3, 0, 0, 1, 0
+Espanyol, Betis, 16, 8, 0, 1, 0, 1, 1, 1, -1, 0, 0, 1, 2
+R. Madrid, Villarreal, 5, 3, 3, 3, 2, 3, 1, 0, 0, 0, 0, 3, 2
+Recreativo, Getafe, 9, 17, 1, 0, 1, 1, 1, 4, 1, 0, 0, 1, 3
+Valencia, Almería, 20, 2, 0, 3, 0, 3, 3, 0, -3, 0, 0, 0, 1
+Murcia, Levante, 6, 18, 3, 0, 2, 0, 1, 3, 3, 0, 0, 2, 3
+Zaragoza, Athletic, 14, 11, 0, 1, 1, 0, 2, 0, -1, 0, 0, 1, 0
+Betis, Deportivo, 8, 19, 1, 0, 1, 0, 1, 3, 1, 0, 0, 0, 1
+Villarreal, Mallorca, 3, 4, 3, 3, 3, 3, 0, 0, 0, 0, 0, 1, 1
+Getafe, Espanyol, 17, 16, 0, 0, 1, 0, 4, 1, 0, 0, 0, 0, 1
+Barcelona, Osasuna, 12, 10, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0
+At. Madrid, Murcia, 15, 6, 0, 3, 1, 2, 2, 1, -3, 0, 0, 1, 1
+Levante, Racing, 18, 13, 0, 1, 0, 0, 3, 0, -1, 0, 0, 1, 1
+Recreativo, Sevilla, 9, 1, 1, 3, 1, 4, 1, 1, -2, 0, 0, 1, 2
+Valladolid, Valencia, 7, 20, 3, 0, 1, 0, 0, 3, 3, 0, 0, 0, 2
+Almería, R. Madrid, 2, 5, 3, 3, 3, 2, 0, 1, 0, 0, 0, 2, 0
+Sevilla, Barcelona, 1, 12, 3, 1, 4, 0, 1, 0, 2, 0, 0, 1, 1
+Athletic, Levante, 11, 18, 1, 0, 0, 0, 0, 3, 1, 0, 0, 1, 0
+Deportivo, Getafe, 19, 17, 0, 0, 0, 1, 3, 4, 0, 0, 0, 1, 1
+Racing, At. Madrid, 13, 15, 1, 0, 0, 1, 0, 2, 1, 0, 0, 0, 2
+Mallorca, Almería, 4, 2, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0
+Espanyol, Recreativo, 16, 9, 0, 1, 0, 1, 1, 1, -1, 0, 0, 1, 2
+R. Madrid, Valladolid, 5, 7, 3, 3, 2, 1, 1, 0, 0, 0, 0, 7, 0
+Osasuna, Zaragoza, 10, 14, 1, 0, 0, 1, 0, 2, 1, 0, 0, 1, 0
+Valencia, Betis, 20, 8, 0, 1, 0, 1, 3, 1, -1, 0, 0, 3, 1
+Murcia, Villarreal, 6, 3, 3, 3, 2, 3, 1, 0, 0, 0, 0, 0, 1
+Zaragoza, Barcelona, 14, 12, 0, 1, 1, 0, 2, 0, -1, 0, 0, 1, 2
+Betis, R. Madrid, 8, 5, 1, 3, 1, 2, 1, 1, -2, 0, 0, 2, 1
+Villarreal, Racing, 3, 13, 3, 1, 3, 0, 0, 0, 2, 0, 0, 0, 0
+Getafe, Valencia, 17, 20, 0, 0, 1, 0, 4, 3, 0, 0, 0, 0, 0
+Espanyol, Sevilla, 16, 1, 0, 3, 0, 4, 1, 1, -3, 0, 0, 2, 4
+At. Madrid, Athletic, 15, 11, 0, 1, 1, 0, 2, 0, -1, 0, 0, 1, 2
+Levante, Osasuna, 18, 10, 0, 1, 0, 0, 3, 0, -1, 0, 0, 2, 1
+Recreativo, Deportivo, 9, 19, 1, 0, 1, 0, 1, 3, 1, 0, 0, 3, 2
+Valladolid, Mallorca, 7, 4, 3, 3, 1, 3, 0, 0, 0, 0, 0, 1, 1
+Almería, Murcia, 2, 6, 3, 3, 3, 2, 0, 1, 0, 0, 0, 1, 0
+Sevilla, Zaragoza, 1, 14, 3, 0, 4, 1, 1, 2, 3, 0, 0, 5, 0
+Athletic, Villarreal, 11, 3, 1, 3, 0, 3, 0, 0, -2, 0, 0, 1, 2
+Deportivo, Espanyol, 19, 16, 0, 0, 0, 0, 3, 1, 0, 0, 0, 2, 0
+Racing, Almería, 13, 2, 1, 3, 0, 3, 0, 0, -2, 0, 0, 1, 0
+Barcelona, Levante, 12, 18, 1, 0, 0, 0, 0, 3, 1, 0, 0, 5, 1
+Mallorca, Betis, 4, 8, 3, 1, 3, 1, 0, 1, 2, 0, 0, 1, 1
+R. Madrid, Getafe, 5, 17, 3, 0, 2, 1, 1, 4, 3, 0, 0, 0, 1
+Osasuna, At. Madrid, 10, 15, 1, 0, 0, 1, 0, 2, 1, 0, 0, 3, 1
+Valencia, Recreativo, 20, 9, 0, 1, 0, 1, 3, 1, -1, 0, 0, 1, 1
+Murcia, Valladolid, 6, 7, 3, 3, 2, 1, 1, 0, 0, 0, 0, 0, 1
+Betis, Murcia, 8, 6, 1, 3, 1, 2, 1, 1, -2, 0, 0, 4, 0
+Deportivo, Sevilla, 19, 1, 0, 3, 0, 4, 3, 1, -3, 0, 0, 2, 1
+Villarreal, Osasuna, 3, 10, 3, 1, 3, 0, 0, 0, 2, 0, 0, 0, 0
+Getafe, Mallorca, 17, 4, 0, 3, 1, 3, 4, 0, -3, 0, 0, 3, 3
+At. Madrid, Barcelona, 15, 12, 0, 1, 1, 0, 2, 0, -1, 0, 0, 4, 2
+Espanyol, Valencia, 16, 20, 0, 0, 0, 0, 1, 3, 0, 0, 0, 2, 0
+Levante, Zaragoza, 18, 14, 0, 0, 0, 1, 3, 2, 0, 0, 0, 2, 1
+Recreativo, R. Madrid, 9, 5, 1, 3, 1, 2, 1, 1, -2, 0, 0, 2, 3
+Valladolid, Racing, 7, 13, 3, 1, 1, 0, 0, 0, 2, 0, 0, 0, 1
+Almería, Athletic, 2, 11, 3, 1, 3, 0, 0, 0, 2, 0, 0, 1, 1
+Sevilla, Levante, 1, 18, 3, 0, 4, 0, 1, 3, 3, 0, 0, 2, 1
+Zaragoza, At. Madrid, 14, 15, 0, 0, 1, 1, 2, 2, 0, 0, 0, 2, 1
+Athletic, Valladolid, 11, 7, 1, 3, 0, 1, 0, 0, -2, 0, 0, 2, 0
+Racing, Betis, 13, 8, 1, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0
+Barcelona, Villarreal, 12, 3, 1, 3, 0, 3, 0, 0, -2, 0, 0, 1, 2
+Mallorca, Recreativo, 4, 9, 3, 1, 3, 1, 0, 1, 2, 0, 0, 7, 1
+R. Madrid, Espanyol, 5, 16, 3, 0, 2, 0, 1, 1, 3, 0, 0, 2, 1
+Osasuna, Almería, 10, 2, 1, 3, 0, 3, 0, 0, -2, 0, 0, 2, 1
+Valencia, Deportivo, 20, 19, 0, 0, 0, 0, 3, 3, 0, 0, 0, 2, 2
+Murcia, Getafe, 6, 17, 3, 0, 2, 1, 1, 4, 3, 0, 0, 0, 3
+Betis, Athletic, 8, 11, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 2
+Deportivo, R. Madrid, 19, 5, 0, 3, 0, 2, 3, 1, -3, 0, 0, 1, 0
+Villarreal, Zaragoza, 3, 14, 3, 0, 3, 1, 0, 2, 3, 0, 0, 2, 0
+Getafe, Racing, 17, 13, 0, 1, 1, 0, 4, 0, -1, 0, 0, 2, 1
+At. Madrid, Levante, 15, 18, 0, 0, 1, 0, 2, 3, 0, 0, 0, 3, 0
+Espanyol, Mallorca, 16, 4, 0, 3, 0, 3, 1, 0, -3, 0, 0, 2, 1
+Recr
