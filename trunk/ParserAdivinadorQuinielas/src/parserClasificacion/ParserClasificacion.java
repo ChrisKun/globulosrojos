@@ -2,7 +2,6 @@ package parserClasificacion;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -87,12 +86,7 @@ public class ParserClasificacion {
 		fr.close();
 	}
 
-	public void writeInfo(String path) throws IOException {
-		FileWriter file = new FileWriter(path,true);
-        PrintWriter writer = new PrintWriter(file);
-    	
-        escribirPrimeraClasificacion(writer);
-        
+	public void writeInfo(PrintWriter writer){    	        
     	for (Posicion posicion : jornada.getPosiciones()) {
     		writer.print(posicion.getEquipo() + ", ");
     		writer.print(posicion.getPuntos() + ", ");
@@ -102,8 +96,6 @@ public class ParserClasificacion {
     		writer.print(posicion.getPartidosGanadosFuera());
     		writer.println();
     	} 
-        
-        file.close();
 	}
 	
 	public void escribirPrimeraClasificacion(PrintWriter writer) {
@@ -117,12 +109,8 @@ public class ParserClasificacion {
 		writer.println("----------------------------------");
 	}
 
-	public void writeSeparator(String path) throws IOException {
-		FileWriter file = new FileWriter(path,true);
-        PrintWriter writer = new PrintWriter(file);
+	public void writeSeparator(PrintWriter writer) {
         writer.println("----------------------------------");
-        file.close();
-		
 	}
 	
 	/**
@@ -154,15 +142,7 @@ public class ParserClasificacion {
 		}
 	}
 	
-	public void resetFile(String path) throws IOException {
-		try{
-			FileWriter file = new FileWriter(path);
-	        PrintWriter writer = new PrintWriter(file);
-	        writer.print("");
-	        file.close();
-		}catch (FileNotFoundException e) {
-			System.out.println("No file found to reset");
-		}
-		
+	public void resetFile(PrintWriter writer) {
+		writer.print("");
 	}
 }

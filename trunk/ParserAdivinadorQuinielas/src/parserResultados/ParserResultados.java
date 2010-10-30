@@ -3,40 +3,52 @@ package parserResultados;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class ParserResText {
+import parserClasificacion.WebUtils;
+
+public class ParserResultados {
+	private final String HTML_CODE_PATH = "Ficheros/codigoHTML";
 	
 	private BufferedReader reader = null;
-	
 	private Temporada temporada;
 	
-	public ParserResText() {
-	}
-	
-	public void readInfo(String path) throws IOException {
-		
+	public void parse(String page) throws NumberFormatException, IOException {
+
 		temporada = new Temporada();
 		
-		// Abrimos el fichero para lectura
-		File file = new File(path);
-		FileReader fr = new FileReader(file);
-		reader = new BufferedReader(fr);
+		// Se crea un objeto URL para pasarselo al WebUtils
+		URL url = null;
+		try{
+			url = new URL(page);
+		} catch (MalformedURLException e)
+		{
+			e.printStackTrace();
+		}
 		
+		// Se descarga el codigo HTML de la pagina especificada
+		WebUtils.downloadURL(url, this.HTML_CODE_PATH);
+		
+		// Abrimos el fichero para lectura
+		File file = new File(this.HTML_CODE_PATH);
+		FileReader fr = null;
+		fr = new FileReader(file);
+		reader = new BufferedReader(fr);
+
 		String linea;
 		int numPartido = 0;
 		Partido p = null;
 		Jornada j = null;
-		System.out.println("Leyendo de "+ path);
 		while ((linea = reader.readLine()) != null) {
 			if (linea.indexOf("<tr class=\"FondoFilaCalendario\"") != -1) {
 				p = new Partido();
 				reader.readLine();
-				p.setEquipoLocal(reader.readLine().trim());
+				p.setEquipoLocal(arreglarTildes(reader.readLine().trim()));
 				reader.readLine();
 				reader.readLine();
 				reader.readLine();
@@ -51,13 +63,14 @@ public class ParserResText {
 				reader.readLine();
 				reader.readLine();
 				reader.readLine();
-				p.setEquipoVisitante(reader.readLine().trim());
+				p.setEquipoVisitante(arreglarTildes(reader.readLine().trim()));
 				
 				if (numPartido == 0) j = new Jornada();
 				j.add(p);
 				
 				numPartido++;
 				if (numPartido == 10) {
+					System.out.print('-');
 					temporada.add(j);
 					numPartido = 0;
 				}
@@ -66,14 +79,10 @@ public class ParserResText {
 		
 		fr.close();
 	}
-	
-	public void writeInfo(String path) throws IOException {
-		FileWriter file = new FileWriter(path);
-        PrintWriter writer = new PrintWriter(file);
+
+	public void writeInfo(PrintWriter writer){    	        
 
         Iterator<Jornada> itTemporada = temporada.iterator();
-        
-        System.out.println("Escribiendo a "+ path);
         
         while (itTemporada.hasNext()) {
         	Jornada jornada = itTemporada.next();
@@ -90,7 +99,22 @@ public class ParserResText {
         	}
         	writer.println("----------------------------");
         }
-        writer.close();
-        file.close();
+	}
+	
+	
+	/**
+	 * Sustituye las tildes de la cadena por los caracteres con tilde. Ejemplo: sustituye &aacute por á
+	 */
+	public String arreglarTildes(String s)
+	{
+		return s.replace("&aacute;", "á").
+				replace("&eacute;", "é").
+				replace("&iacute;", "í").
+				replace("&oacute;", "ó").
+				replace("&uacute;", "ú");
+	}
+	
+	public void resetFile(PrintWriter writer) {
+		writer.print("");
 	}
 }

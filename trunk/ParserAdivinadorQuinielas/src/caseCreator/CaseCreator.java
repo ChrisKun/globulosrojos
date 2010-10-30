@@ -46,6 +46,7 @@ public class CaseCreator {
 		// Se escribe toda la informacion en un unico fichero
 		writeInfo(temporadasClasificaciones, temporadasResultados);
 
+		System.out.println("Fichero de casos creado");
 	}
 
 	/**
