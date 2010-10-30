@@ -1,7 +1,6 @@
 package parserClasificacion;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Clasificacion {
 
