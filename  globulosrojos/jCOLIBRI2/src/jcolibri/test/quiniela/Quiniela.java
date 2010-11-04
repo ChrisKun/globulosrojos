@@ -166,6 +166,16 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		//Solamente mostramos el resultado
 		DisplayCasesTableMethod.displayCasesInTableBasic(casos);
 		
+		//votacion basica
+		MajorityVotingMethod prueba = new MajorityVotingMethod();
+		Prediction pre;
+		pre = prueba.getPredictedClass(eval);
+		System.out.println("Votacion Basica "+pre.Classification.toString()+" __ "+pre.confidence);
+		//votacion ponderada
+		SimilarityWeightedVotingMethod prueba2 = new SimilarityWeightedVotingMethod();
+		pre = prueba2.getPredictedClass(eval);
+		System.out.println("Votacion ponderada "+pre.Classification.toString()+" __ "+pre.confidence);
+		
 		
 	}
 

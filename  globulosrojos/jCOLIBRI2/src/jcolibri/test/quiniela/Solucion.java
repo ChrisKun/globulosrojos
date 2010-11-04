@@ -30,7 +30,7 @@ public class Solucion implements ClassificationSolution, CaseComponent
 
 	@Override
 	public Object getClassification() {
-		return null;
+		return res;
 	}
 
 //	public String getCaseId() {
