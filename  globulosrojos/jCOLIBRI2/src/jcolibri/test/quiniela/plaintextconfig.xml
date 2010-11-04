@@ -1,0 +1,20 @@
+<TextFileConfiguration>
+	<FilePath>jcolibri/test/quiniela/casos.txt</FilePath>
+	<Delimiters>,</Delimiters>
+	<DescriptionClassName>jcolibri.test.quiniela.Casos</DescriptionClassName>
+	<DescriptionMappings>
+		<Map>equipoLocal</Map>
+		<Map>equipoVisitante</Map>
+		<Map>diferenciaPuntos</Map>
+		<Map>posicionEquipoLocal</Map>
+		<Map>posicionEquipoVisitante</Map>
+		<Map>golesAFavor</Map>
+		<Map>golesEnContra</Map>
+		<Map>porcentajeGanagadosLocal</Map>
+		<Map>porcentajeGanagadosVisitante</Map>		
+	</DescriptionMappings>
+	<SolutionClassName>jcolibri.test.quiniela.Solucion</SolutionClassName>
+	<SolutionMappings>
+		<Map>res</Map>
+	</SolutionMappings>
+</TextFileConfiguration>

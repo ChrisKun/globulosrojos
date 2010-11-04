@@ -1,0 +1,15 @@
+#Columns are: equipoLocal, equipoVis, diferenciaPuntos, posicionLocal, PosicionVisita, GF, GC, porcentajeGanadosLocal, porcGanadosVisitante
+
+Case 1,Madrid,Barza,5,1,2,5,5,6,7,uno
+Case 2,Barza,Madrid,5,2,1,5,5,6,7,1
+Case 3,Madrid,Barza,6,5,5,5,5,6,7,1
+Case 4,Barza,Madrid,1,5,5,5,5,6,7,1
+Case 5,Madrid,Barza,0,5,5,5,5,6,7,1
+Case 6,Barza,Madrid,2,5,5,5,5,6,7,1
+Case 7,Real,Barza,5,5,5,5,5,6,7,2
+Case 8,Madrid,Real,3,4,5,2,3,1,6,2
+
+
+
+
+
