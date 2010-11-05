@@ -5,13 +5,19 @@
 	<DescriptionMappings>
 		<Map>equipoLocal</Map>
 		<Map>equipoVisitante</Map>
+		<Map>puntosEquipoLocal</Map>
+		<Map>puntosEquipoVisitante</Map>
 		<Map>diferenciaPuntos</Map>
 		<Map>posicionEquipoLocal</Map>
 		<Map>posicionEquipoVisitante</Map>
-		<Map>golesAFavor</Map>
-		<Map>golesEnContra</Map>
+		<Map>golesAFavorEquipoLocal</Map>
+		<Map>golesEnContraEquipoLocal</Map>
+		<Map>golesAFavorEquipoVisitante</Map>
+		<Map>golesEnContraEquipoVisitante</Map>
 		<Map>porcentajeGanagadosLocal</Map>
-		<Map>porcentajeGanagadosVisitante</Map>		
+		<Map>porcentajeGanagadosVisitante</Map>	
+		<Map>resultadoLocal</Map>
+		<Map>resultadoVisitante</Map>		
 	</DescriptionMappings>
 	<SolutionClassName>jcolibri.test.quiniela.Solucion</SolutionClassName>
 	<SolutionMappings>

@@ -9,19 +9,86 @@ public class Casos implements CaseComponent
 	String caseId;
 	String equipoLocal;
 	String equipoVisitante;
-	//el resultado estara en la solucion no?
-	//String resultado;  
+	Integer puntosEquipoLocal;
+	Integer puntosEquipoVisitante;
 	Integer diferenciaPuntos;
 	Integer posicionEquipoLocal;
 	Integer posicionEquipoVisitante;
-	Integer golesAFavor;
-	Integer golesEnContra;
+	Integer golesAFavorEquipoLocal;
+	Integer golesEnContraEquipoLocal;
+	Integer golesAFavorEquipoVisitante;
+	Integer golesEnContraEquipoVisitante;
 	// partidos_ganados/partidos_jugados del jugador 1 en casa
 	Integer porcentajeGanagadosLocal;	
 	// partidos_ganados/partidos_jugados del jugador 2 como visitante
 	Integer porcentajeGanagadosVisitante;
+	Integer resultadoLocal;
+	Integer resultadoVisitante;
 	
-	
+	public Integer getPuntosEquipoLocal() {
+		return puntosEquipoLocal;
+	}
+
+	public void setPuntosEquipoLocal(Integer puntosEquipoLocal) {
+		this.puntosEquipoLocal = puntosEquipoLocal;
+	}
+
+	public Integer getPuntosEquipoVisitante() {
+		return puntosEquipoVisitante;
+	}
+
+	public void setPuntosEquipoVisitante(Integer puntosEquipoVisitante) {
+		this.puntosEquipoVisitante = puntosEquipoVisitante;
+	}
+
+	public Integer getGolesAFavorEquipoLocal() {
+		return golesAFavorEquipoLocal;
+	}
+
+	public void setGolesAFavorEquipoLocal(Integer golesAFavorEquipoLocal) {
+		this.golesAFavorEquipoLocal = golesAFavorEquipoLocal;
+	}
+
+	public Integer getGolesEnContraEquipoLocal() {
+		return golesEnContraEquipoLocal;
+	}
+
+	public void setGolesEnContraEquipoLocal(Integer golesEnContraEquipoLocal) {
+		this.golesEnContraEquipoLocal = golesEnContraEquipoLocal;
+	}
+
+	public Integer getGolesAFavorEquipoVisitante() {
+		return golesAFavorEquipoVisitante;
+	}
+
+	public void setGolesAFavorEquipoVisitante(Integer golesAFavorEquipoVisitante) {
+		this.golesAFavorEquipoVisitante = golesAFavorEquipoVisitante;
+	}
+
+	public Integer getGolesEnContraEquipoVisitante() {
+		return golesEnContraEquipoVisitante;
+	}
+
+	public void setGolesEnContraEquipoVisitante(Integer golesEnContraEquipoVisitante) {
+		this.golesEnContraEquipoVisitante = golesEnContraEquipoVisitante;
+	}
+
+	public Integer getResultadoLocal() {
+		return resultadoLocal;
+	}
+
+	public void setResultadoLocal(Integer resultadoLocal) {
+		this.resultadoLocal = resultadoLocal;
+	}
+
+	public Integer getResultadoVisitante() {
+		return resultadoVisitante;
+	}
+
+	public void setResultadoVisitante(Integer resultadoVisitante) {
+		this.resultadoVisitante = resultadoVisitante;
+	}
+
 	public Attribute getIdAttribute()
 	{
 		return new Attribute ("caseId", Casos.class);
@@ -29,7 +96,11 @@ public class Casos implements CaseComponent
 	
 	public String toString()
 	{
-		return caseId+", "+equipoLocal+", "+equipoVisitante+", "+diferenciaPuntos+", "+posicionEquipoLocal+", "+posicionEquipoVisitante+", "+golesAFavor+", "+golesEnContra+", "+porcentajeGanagadosLocal+", "+porcentajeGanagadosVisitante;
+		return caseId+", "+equipoLocal+", "+equipoVisitante+", "+puntosEquipoLocal+", "+puntosEquipoVisitante+", "+
+		diferenciaPuntos+", "+posicionEquipoLocal+", "+posicionEquipoVisitante+", "+golesAFavorEquipoLocal+", "+
+		golesEnContraEquipoLocal+", "+golesAFavorEquipoVisitante+", "+
+		golesEnContraEquipoVisitante+", "+porcentajeGanagadosLocal+", "+
+		porcentajeGanagadosVisitante+", "+resultadoLocal+", "+resultadoVisitante;
 	}
 
 	public String getEquipoLocal() {
@@ -47,14 +118,6 @@ public class Casos implements CaseComponent
 	public void setEquipoVisitante(String equipoVisitante) {
 		this.equipoVisitante = equipoVisitante;
 	}
-
-//	public String getResultado() {
-//		return resultado;
-//	}
-//
-//	public void setResultado(String resultado) {
-//		this.resultado = resultado;
-//	}
 
 	public Integer getDiferenciaPuntos() {
 		return diferenciaPuntos;
@@ -78,22 +141,6 @@ public class Casos implements CaseComponent
 
 	public void setPosicionEquipoVisitante(Integer posicionEquipoVisitante) {
 		this.posicionEquipoVisitante = posicionEquipoVisitante;
-	}
-
-	public Integer getGolesAFavor() {
-		return golesAFavor;
-	}
-
-	public void setGolesAFavor(Integer golesAFavor) {
-		this.golesAFavor = golesAFavor;
-	}
-
-	public Integer getGolesEnContra() {
-		return golesEnContra;
-	}
-
-	public void setGolesEnContra(Integer golesEnContra) {
-		this.golesEnContra = golesEnContra;
 	}
 
 	public Integer getPorcentajeGanagadosLocal() {
