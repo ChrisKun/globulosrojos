@@ -6,6 +6,8 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import org.apache.commons.logging.Log;
+
 import jcolibri.casebase.LinealCaseBase;
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CBRCase;
@@ -14,6 +16,7 @@ import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.connector.DataBaseConnector;
 import jcolibri.connector.PlainTextConnector;
+import jcolibri.evaluation.Evaluator;
 import jcolibri.exception.AttributeAccessException;
 import jcolibri.exception.ExecutionException;
 import jcolibri.extensions.recommendation.casesDisplay.DisplayCasesTableMethod;
@@ -26,7 +29,6 @@ import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Equal;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
 import jcolibri.method.retrieve.selection.SelectCases;
-import jcolibri.test.test6.Test6;
 
 public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication 
 {
@@ -34,6 +36,8 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 	Connector _connector;
 	//CaseBase object
 	CBRCaseBase _caseBase;
+	
+	private Log log;
 	
 	public static void main(String[] args)
 	{
@@ -50,6 +54,10 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 				ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
 				test.cycle(query);
 			}while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
+			
+			//El grafico de 1s y 0s
+			System.out.println(Evaluator.getEvaluationReport());
+			jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Test8 - Evaluation", false);
 			
 			
 		} catch (ExecutionException e) {
@@ -72,6 +80,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		{
 			throw new ExecutionException(e);
 		}
+		log = org.apache.commons.logging.LogFactory.getLog(this.getClass());
 		
 	}
 
@@ -139,9 +148,14 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		simConfig.addMapping(resultadoVisitante,new Interval(100));
 		simConfig.setWeight(resultadoVisitante, 0.7);
 		
+		log.info("Query: "+ query.getDescription());
+		
 		//Ejecutamos la recuperacion por vecino mas proximo
 		
 		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
+		
+	    //// Now we add the similarity of the most similar case to the serie "Similarity".
+		Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
 		
 		// imprimimos los k mejores casos
 		
@@ -161,16 +175,22 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		//Solamente mostramos el resultado
 		DisplayCasesTableMethod.displayCasesInTableBasic(casos);
 		
+		
+		
 		//votacion basica
 		MajorityVotingMethod prueba = new MajorityVotingMethod();
 		Prediction pre;
 		pre = prueba.getPredictedClass(eval);
 		System.out.println("Votacion Basica "+pre.Classification.toString()+" __ "+pre.confidence);
+		
+		
 		//votacion ponderada
 		SimilarityWeightedVotingMethod prueba2 = new SimilarityWeightedVotingMethod();
 		pre = prueba2.getPredictedClass(eval);
 		System.out.println("Votacion ponderada "+pre.Classification.toString()+" __ "+pre.confidence);
 		
+		System.out.println(Evaluator.getEvaluationReport());
+		//jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
 		
 	}
 
