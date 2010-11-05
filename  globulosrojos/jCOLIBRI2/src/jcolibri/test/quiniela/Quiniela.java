@@ -36,37 +36,6 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 	
 	public static void main(String[] args)
 	{
-//		//Llanzar el SGBD
-//		//jcolibri.test.database.HSQLDBserver.init();
-//		
-//		//crear el objeto que implementa la aplicacion CBR
-//		Quiniela quinielaApp = new Quiniela();
-//		try
-//		{
-//			//configuracion
-//			quinielaApp.configure();
-//			// preciclo
-//			quinielaApp.preCycle();
-//			
-//			//crear objeto que almacena la consulta
-//			CBRQuery query = new CBRQuery();
-//			query.setDescription(new Casos());
-//			
-//			//Mientras que el usuario quiera (Se muestra ventana de continuar)
-//			do
-//			{
-//				//Obtener los valores de la consulta
-//				//ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
-//				//Ejecutar el ciclo
-//				quinielaApp.cycle(query);
-//			} while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
-//		} catch (Exception e)
-//		{
-//			org.apache.commons.logging.LogFactory.getLog(Quiniela.class).error(e);
-//		}
-//		
-//		//Apagar el SGDB
-//		//jcolibri.test.database.HSQLDBserver.shutDown();
 		Quiniela test = new Quiniela();
 		try {
 			test.configure();
@@ -108,41 +77,39 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 	@Override
 	public void cycle(CBRQuery query) throws ExecutionException {
 		
-//		//Modom test6
-//		//Obtain only the first case
-//		CBRCase newcase = _caseBase.getCases().iterator().next();
-//		//Modify its id attribute and store it back
-//		Attribute id = newcase.getDescription().getIdAttribute();
-//		try {
-//			Date d = new Date();
-//			id.setValue(newcase.getDescription(), ("case "+d.toString()).replaceAll(" ", "_"));
-//		} catch (AttributeAccessException e) {
-//			org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
-//		}
-//		
-//		ArrayList<CBRCase> casestoLearnt = new ArrayList<CBRCase>();
-//		casestoLearnt.add(newcase);
-//		_caseBase.learnCases(casestoLearnt);
-		
 		//Para configurar el KNN se utiliza un objeto NNCONfig
 		NNConfig simConfig = new NNConfig();
 		simConfig.setDescriptionSimFunction(new Average());
 		
-		//Fijamos las funciones de similitud locales
-		simConfig.addMapping(new Attribute("equipoLocal",Casos.class),new Equal());
-		simConfig.addMapping(new Attribute("equipoVisitante",Casos.class),new Equal());
-		//simConfig.addMapping(new Attribute("resultado",Casos.class),new Equal());
-		simConfig.addMapping(new Attribute("diferenciaPuntos",Casos.class),new Equal());
-		simConfig.addMapping(new Attribute("posicionEquipoLocal",Casos.class),new Interval(20));
-		simConfig.addMapping(new Attribute("posicionEquipoVisitante",Casos.class),new Interval(20));
-		simConfig.addMapping(new Attribute("golesAFavor",Casos.class),new Equal());
-		simConfig.addMapping(new Attribute("golesEnContra",Casos.class),new Equal());
-		simConfig.addMapping(new Attribute("porcentajeGanagadosLocal",Casos.class),new Interval(100));
-		simConfig.addMapping(new Attribute("porcentajeGanagadosVisitante",Casos.class),new Interval(100));
+		Attribute equipoLocal = new Attribute("equipoLocal",Casos.class);
+		Attribute equipoVisitante = new Attribute("equipoVisitante",Casos.class);
+		Attribute diferenciaPuntos = new Attribute("diferenciaPuntos",Casos.class);
+		Attribute posicionEquipoLocal = new Attribute("posicionEquipoLocal",Casos.class);
+		Attribute posicionEquipoVisitante = new Attribute("posicionEquipoVisitante",Casos.class);
+		Attribute golesAFavor = new Attribute("golesAFavor",Casos.class);
+		Attribute golesEnContra = new Attribute("golesEnContra",Casos.class);
+		Attribute porcentajeGanagadosLocal = new Attribute("porcentajeGanagadosLocal",Casos.class);
+		Attribute porcentajeGanagadosVisitante = new Attribute("porcentajeGanagadosVisitante",Casos.class);
 		
-		//Es posiblie modificar el peso de cada atributo en la media ponderada
-		//Por defecto el peso es 1
-		//simConfig.setWeight(new Attribute("Search", TravelDescription.class), 0.5);
+		//Fijamos las funciones de similitud locales
+		simConfig.addMapping(equipoLocal,new Equal());
+		simConfig.setWeight(equipoLocal, 1.0);
+		simConfig.addMapping(equipoVisitante,new Equal());
+		simConfig.setWeight(equipoVisitante, 1.0);
+		simConfig.addMapping(diferenciaPuntos,new Equal());
+		simConfig.setWeight(diferenciaPuntos, 0.6);
+		simConfig.addMapping(posicionEquipoLocal,new Interval(20));
+		simConfig.setWeight(posicionEquipoLocal, 0.2);
+		simConfig.addMapping(posicionEquipoVisitante,new Interval(20));
+		simConfig.setWeight(posicionEquipoVisitante, 0.2);
+		simConfig.addMapping(golesAFavor,new Equal());
+		simConfig.setWeight(golesAFavor, 0.3);
+		simConfig.addMapping(golesEnContra,new Equal());
+		simConfig.setWeight(golesEnContra, 0.3);
+		simConfig.addMapping(porcentajeGanagadosLocal,new Interval(100));
+		simConfig.setWeight(porcentajeGanagadosLocal, 0.7);
+		simConfig.addMapping(porcentajeGanagadosVisitante,new Interval(100));
+		simConfig.setWeight(porcentajeGanagadosVisitante, 0.7);
 		
 		//Ejecutamos la recuperacion por vecino mas proximo
 		
