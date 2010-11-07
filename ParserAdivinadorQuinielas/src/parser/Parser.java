@@ -64,7 +64,6 @@ public class Parser {
 			
 			System.out.println("Resultados parseados");
 			
-			//TODO Temporada actual
 			System.out.print("Extrayendo la información de la temporada " + TEMPORADA_ACTUAL + " [Clasificaciones]: |");
 			
 			FileWriter file = new FileWriter("Ficheros/ClasificacionesTemp" + TEMPORADA_ACTUAL, false);
