@@ -164,18 +164,21 @@ public class CaseCreator {
 						Posicion posicionVisitante = clasiJornada
 								.getPosicionByName(convertirNombresEquipos(partido
 										.getEquipoVisitante()));
-						
+						//FALTA CASE ID
 						writer.print(partido.getEquipoLocal() + ", ");
 						writer.print(partido.getEquipoVisitante() + ", ");
-						writer.print(posicionLocal.getPosicion() + ", ");
-						writer.print(posicionVisitante.getPosicion() + ", ");
 						writer.print(posicionLocal.getPuntos() + ", ");
 						writer.print(posicionVisitante.getPuntos() + ", ");
-						writer.print(posicionLocal.getGolesFavor() + ", ");
-						writer.print(posicionVisitante.getGolesFavor() + ", ");
-						writer.print(posicionLocal.getGolesContra() + ", ");
-						writer.print(posicionVisitante.getGolesContra() + ", ");
 						writer.print(posicionLocal.getPuntos()- posicionVisitante.getPuntos() + ", ");
+						
+						writer.print(posicionLocal.getPosicion() + ", ");
+						writer.print(posicionVisitante.getPosicion() + ", ");
+						
+						writer.print(posicionLocal.getGolesFavor() + ", ");
+						writer.print(posicionLocal.getGolesContra() + ", ");
+						writer.print(posicionVisitante.getGolesFavor() + ", ");
+						writer.print(posicionVisitante.getGolesContra() + ", ");
+						//Creo que hay que ponerlo en modo porcentaje
 						if(posicionLocal.getPartidosJugadosCasa() != 0)
 							writer.print(posicionLocal.getPartidosGanadosCasa() / posicionLocal.getPartidosJugadosCasa() + ", ");
 						else
