@@ -26,7 +26,7 @@ public class CaseCreator {
 	public void juntarInfo() {
 		ArrayList<ArrayList<Clasificacion>> temporadasClasificaciones = new ArrayList<ArrayList<Clasificacion>>();
 		// Se leen las clasificaciones de las tres temporadas
-		for (int temporada = 107; temporada < 110; temporada++) {
+		for (int temporada = 107; temporada < 111; temporada++) {
 			temporadasClasificaciones.add(this
 					.leerClasificacion("Ficheros/ClasificacionesTemp"
 							+ temporada));
@@ -35,14 +35,12 @@ public class CaseCreator {
 
 		// Se leen los resultados de las tres temporadas
 		ArrayList<Temporada> temporadasResultados = new ArrayList<Temporada>();
+		for (int temporada = 107; temporada < 111; temporada++)
 		temporadasResultados
-				.add(leerResultados("Ficheros/ResultadosTemporada0708(F).txt"));
-		temporadasResultados
-				.add(leerResultados("Ficheros/ResultadosTemporada0809(F).txt"));
-		temporadasResultados
-				.add(leerResultados("Ficheros/ResultadosTemporada0910(F).txt"));
+				.add(leerResultados("Ficheros/ResultadosTemp" + temporada));
 		System.out.println("Resultados leidos");
 		System.out.println("Creando fichero de casos...");
+		
 		// Se escribe toda la informacion en un unico fichero
 		writeInfo(temporadasClasificaciones, temporadasResultados);
 
@@ -153,40 +151,46 @@ public class CaseCreator {
 			// Por cada jornada
 			for (int i = 0; i < clasificacion.size(); i++) {
 				Clasificacion clasiJornada = clasificacion.get(i);
-				Jornada jornada = temporada.get(i);
-				Collection<Partido> partidosJornada = jornada.values();
-				Iterator<Partido> itPartido = partidosJornada.iterator();
-				while (itPartido.hasNext()) {
-					Partido partido = itPartido.next();
-					Posicion posicionLocal = clasiJornada
-							.getPosicionByName(convertirNombresEquipos(partido
-									.getEquipoLocal()));
-					Posicion posicionVisitante = clasiJornada
-							.getPosicionByName(convertirNombresEquipos(partido
-									.getEquipoVisitante()));
-
-					writer.print(partido.getEquipoLocal() + ", ");
-					writer.print(partido.getEquipoVisitante() + ", ");
-					writer.print(posicionLocal.getPosicion() + ", ");
-					writer.print(posicionVisitante.getPosicion() + ", ");
-					writer.print(posicionLocal.getPuntos() + ", ");
-					writer.print(posicionVisitante.getPuntos() + ", ");
-					writer.print(posicionLocal.getGolesFavor() + ", ");
-					writer.print(posicionVisitante.getGolesFavor() + ", ");
-					writer.print(posicionLocal.getGolesContra() + ", ");
-					writer.print(posicionVisitante.getGolesContra() + ", ");
-					writer.print(posicionLocal.getPuntos()- posicionVisitante.getPuntos() + ", ");
-					if(posicionLocal.getPartidosJugadosCasa() != 0)
-						writer.print(posicionLocal.getPartidosGanadosCasa() / posicionLocal.getPartidosJugadosCasa() + ", ");
-					else
-						writer.print("0, ");
-					if (posicionLocal.getPartidosJugadosFuera() != 0)
-						writer.print(posicionLocal.getPartidosGanadosFuera() / posicionLocal.getPartidosJugadosFuera() + ", ");
-					else
-						writer.print("0, ");
-					writer.print(partido.getGolesLocal() + ", ");
-					writer.print(partido.getGolesVisitante());
-					writer.println();
+				
+				try{//Para capturar la excepcion en la ultima vuelta (la de la temporada actual)
+					Jornada jornada = temporada.get(i);
+					Collection<Partido> partidosJornada = jornada.values();
+					Iterator<Partido> itPartido = partidosJornada.iterator();
+					while (itPartido.hasNext()) {
+						Partido partido = itPartido.next();
+						Posicion posicionLocal = clasiJornada
+								.getPosicionByName(convertirNombresEquipos(partido
+										.getEquipoLocal()));
+						Posicion posicionVisitante = clasiJornada
+								.getPosicionByName(convertirNombresEquipos(partido
+										.getEquipoVisitante()));
+						
+						writer.print(partido.getEquipoLocal() + ", ");
+						writer.print(partido.getEquipoVisitante() + ", ");
+						writer.print(posicionLocal.getPosicion() + ", ");
+						writer.print(posicionVisitante.getPosicion() + ", ");
+						writer.print(posicionLocal.getPuntos() + ", ");
+						writer.print(posicionVisitante.getPuntos() + ", ");
+						writer.print(posicionLocal.getGolesFavor() + ", ");
+						writer.print(posicionVisitante.getGolesFavor() + ", ");
+						writer.print(posicionLocal.getGolesContra() + ", ");
+						writer.print(posicionVisitante.getGolesContra() + ", ");
+						writer.print(posicionLocal.getPuntos()- posicionVisitante.getPuntos() + ", ");
+						if(posicionLocal.getPartidosJugadosCasa() != 0)
+							writer.print(posicionLocal.getPartidosGanadosCasa() / posicionLocal.getPartidosJugadosCasa() + ", ");
+						else
+							writer.print("0, ");
+						if (posicionLocal.getPartidosJugadosFuera() != 0)
+							writer.print(posicionLocal.getPartidosGanadosFuera() / posicionLocal.getPartidosJugadosFuera() + ", ");
+						else
+							writer.print("0, ");
+						writer.print(partido.getGolesLocal() + ", ");
+						writer.print(partido.getGolesVisitante());
+						writer.println();
+					}
+				}catch(IndexOutOfBoundsException e)
+				{
+					System.out.println("Parseada temporada actual");
 				}
 			}
 		}
@@ -250,8 +254,10 @@ public class CaseCreator {
 			return "Xerez C.D.";
 		if (nombre.equals("Tenerife"))
 			return "C.D. Tenerife";
-		if (nombre.equals("Real Sociedad"))
+		if (nombre.equals("R. Sociedad"))
 			return "Real Sociedad";
+		if (nombre.equals("Hércules"))
+			return "Hércules C.F.";
 		return null;
 	}
 }

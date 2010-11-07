@@ -125,7 +125,7 @@ public class ParserClasificacion {
 			}
 			else if(posicion.getEquipo().contains("&eacute;"))
 			{
-				posicion.setEquipo(posicion.getEquipo().replace("&aacute;", "é"));
+				posicion.setEquipo(posicion.getEquipo().replace("&eacute;", "é"));
 			}
 			else if(posicion.getEquipo().contains("&iacute;"))
 			{

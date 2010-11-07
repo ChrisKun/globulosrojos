@@ -18,7 +18,7 @@ public class ParserResultados {
 	private BufferedReader reader = null;
 	private Temporada temporada;
 	
-	public void parse(String page) throws NumberFormatException, IOException {
+	public void parse(String page) throws IOException {
 
 		temporada = new Temporada();
 		
@@ -44,37 +44,42 @@ public class ParserResultados {
 		int numPartido = 0;
 		Partido p = null;
 		Jornada j = null;
-		while ((linea = reader.readLine()) != null) {
-			if (linea.indexOf("<tr class=\"FondoFilaCalendario\"") != -1) {
-				p = new Partido();
-				reader.readLine();
-				p.setEquipoLocal(arreglarTildes(reader.readLine().trim()));
-				reader.readLine();
-				reader.readLine();
-				reader.readLine();
-				reader.readLine();
-				reader.readLine();
-				p.setGolesLocal(Integer.parseInt(reader.readLine().trim()));
-				reader.readLine();
-				reader.readLine();
-				p.setGolesVisitante(Integer.parseInt(reader.readLine().trim()));
-				reader.readLine();
-				reader.readLine();
-				reader.readLine();
-				reader.readLine();
-				reader.readLine();
-				p.setEquipoVisitante(arreglarTildes(reader.readLine().trim()));
-				
-				if (numPartido == 0) j = new Jornada();
-				j.add(p);
-				
-				numPartido++;
-				if (numPartido == 10) {
-					System.out.print('-');
-					temporada.add(j);
-					numPartido = 0;
+		try{
+			while ((linea = reader.readLine()) != null) {
+				if (linea.indexOf("<tr class=\"FondoFilaCalendario\"") != -1) {
+					p = new Partido();
+					reader.readLine();
+					p.setEquipoLocal(arreglarTildes(reader.readLine().trim()));
+					reader.readLine();
+					reader.readLine();
+					reader.readLine();
+					reader.readLine();
+					reader.readLine();
+					p.setGolesLocal(Integer.parseInt(reader.readLine().trim()));
+					reader.readLine();
+					reader.readLine();
+					p.setGolesVisitante(Integer.parseInt(reader.readLine().trim()));
+					reader.readLine();
+					reader.readLine();
+					reader.readLine();
+					reader.readLine();
+					reader.readLine();
+					p.setEquipoVisitante(arreglarTildes(reader.readLine().trim()));
+					
+					if (numPartido == 0) j = new Jornada();
+					j.add(p);
+					
+					numPartido++;
+					if (numPartido == 10) {
+						System.out.print('-');
+						temporada.add(j);
+						numPartido = 0;
+					}
 				}
 			}
+		}catch (NumberFormatException e)
+		{
+			e.printStackTrace();
 		}
 		
 		fr.close();
@@ -103,15 +108,15 @@ public class ParserResultados {
 	
 	
 	/**
-	 * Sustituye las tildes de la cadena por los caracteres con tilde. Ejemplo: sustituye &aacute por á
+	 * Sustituye las tildes de la cadena por los caracteres con tilde. Ejemplo: sustituye &aacute por ï¿½
 	 */
 	public String arreglarTildes(String s)
 	{
-		return s.replace("&aacute;", "á").
-				replace("&eacute;", "é").
-				replace("&iacute;", "í").
-				replace("&oacute;", "ó").
-				replace("&uacute;", "ú");
+		return s.replace("&aacute;", "Ã¡").
+				replace("&eacute;", "Ã©").
+				replace("&iacute;", "Ã­").
+				replace("&oacute;", "Ã³").
+				replace("&uacute;", "Ãº");
 	}
 	
 	public void resetFile(PrintWriter writer) {
