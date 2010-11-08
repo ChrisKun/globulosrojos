@@ -134,8 +134,11 @@ public class CaseCreator {
 
 	private void writeInfo(ArrayList<ArrayList<Clasificacion>> clasificaciones,
 			ArrayList<Temporada> resultados) {
+		
 		FileWriter file = null;
 		PrintWriter writer = null;
+		int caseID = 1;
+		
 		try {
 			file = new FileWriter("Casos/casos.txt");
 			writer = new PrintWriter(file);
@@ -164,7 +167,7 @@ public class CaseCreator {
 						Posicion posicionVisitante = clasiJornada
 								.getPosicionByName(convertirNombresEquipos(partido
 										.getEquipoVisitante()));
-						//FALTA CASE ID
+						writer.print(caseID + ", ");
 						writer.print(partido.getEquipoLocal() + ", ");
 						writer.print(partido.getEquipoVisitante() + ", ");
 						writer.print(posicionLocal.getPuntos() + ", ");
@@ -189,6 +192,7 @@ public class CaseCreator {
 							writer.print("0, ");
 						writer.print(partido.getGolesLocal() + ", ");
 						writer.print(partido.getGolesVisitante());
+						caseID++;
 						writer.println();
 					}
 				}catch(IndexOutOfBoundsException e)
