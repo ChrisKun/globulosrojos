@@ -92,7 +92,9 @@ public class ParserClasificacion {
     		writer.print(posicion.getPuntos() + ", ");
     		writer.print(posicion.getGolesFavor() + ", ");
     		writer.print(posicion.getGolesContra() + ", ");
+    		writer.print(posicion.getPartidosJugadosCasa() + ", ");
     		writer.print(posicion.getPartidosGanadosCasa() + ", ");
+    		writer.print(posicion.getPartidosJugadosFuera() + ", ");
     		writer.print(posicion.getPartidosGanadosFuera());
     		writer.println();
     	} 
@@ -104,7 +106,7 @@ public class ParserClasificacion {
 		
 		for(Posicion pos : clasificacion)
 		{
-			writer.println(pos.getEquipo() + " , 0, 0, 0, 0, 0");
+			writer.println(pos.getEquipo() + " , 0, 0, 0, 0, 0, 0, 0");
 		}
 		writer.println("----------------------------------");
 	}

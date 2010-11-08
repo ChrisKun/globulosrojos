@@ -79,7 +79,8 @@ public class ParserResultados {
 			}
 		}catch (NumberFormatException e)
 		{
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("Se ha llegado al final de los resultados de la temporada actual");
 		}
 		
 		fr.close();
