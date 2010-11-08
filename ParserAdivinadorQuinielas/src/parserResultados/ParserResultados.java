@@ -13,7 +13,7 @@ import java.util.Iterator;
 import parserClasificacion.WebUtils;
 
 public class ParserResultados {
-	private final String HTML_CODE_PATH = "Ficheros/codigoHTML";
+	private final String HTML_CODE_PATH = "Ficheros\\codigoHTML";
 	
 	private BufferedReader reader = null;
 	private Temporada temporada;
@@ -80,7 +80,7 @@ public class ParserResultados {
 		}catch (NumberFormatException e)
 		{
 			//e.printStackTrace();
-			System.out.println("Se ha llegado al final de los resultados de la temporada actual");
+			//System.out.println("Se ha llegado al final de los resultados de la temporada actual");
 		}
 		
 		fr.close();

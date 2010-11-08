@@ -12,25 +12,27 @@ import java.util.ArrayList;
 
 public class ParserClasificacion {
 
-	private final String HTML_CODE_PATH = "Ficheros/codigoHTML";
-	
+	private final String HTML_CODE_PATH = "Ficheros\\codigoHTML";
+
 	private BufferedReader reader = null;
 	private Clasificacion jornada;
-	
-	public void parse(String page) throws NumberFormatException, IOException {
+
+	public boolean parse(String page) throws NumberFormatException, IOException {
 
 		// Se crea un objeto URL para pasarselo al WebUtils
 		URL url = null;
-		try{
+		try {
 			url = new URL(page);
-		} catch (MalformedURLException e)
-		{
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		
+
+		// Booleano que indica si la operación ha tenido éxito
+		boolean exito = false;
+
 		// Se descarga el codigo HTML de la pagina especificada
 		String webPageCode = WebUtils.downloadURL(url);
-		
+
 		FileWriter fileWriter = new FileWriter(this.HTML_CODE_PATH);
 		fileWriter.write(webPageCode);
 		// Abrimos el fichero para lectura
@@ -42,8 +44,10 @@ public class ParserClasificacion {
 		String linea;
 		Posicion p = new Posicion();
 		jornada = new Clasificacion();
-		while ((linea = reader.readLine()) != null) {
-			if (linea.indexOf("<td class=\"FondoGridPlantilla\" align=\"left\"") != -1) {
+		try {
+			while ((linea = reader.readLine()) != null) {
+				if (linea.indexOf("<td class=\"FondoGridPlantilla\" align=\"left\"") != -1) {
+					exito = true;
 					p = new Posicion();
 					p.setEquipo(reader.readLine().trim());
 					reader.readLine();
@@ -81,29 +85,35 @@ public class ParserClasificacion {
 					reader.readLine();
 					p.setPartidosGanadosFuera(Integer.parseInt(reader.readLine().trim()));
 					jornada.add(p);
+				}
 			}
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			exito = false;
 		}
 		fr.close();
+
+		return exito;
 	}
 
 	public void writeInfo(PrintWriter writer){    	        
-    	for (Posicion posicion : jornada.getPosiciones()) {
-    		writer.print(posicion.getEquipo() + ", ");
-    		writer.print(posicion.getPuntos() + ", ");
-    		writer.print(posicion.getGolesFavor() + ", ");
-    		writer.print(posicion.getGolesContra() + ", ");
-    		writer.print(posicion.getPartidosJugadosCasa() + ", ");
-    		writer.print(posicion.getPartidosGanadosCasa() + ", ");
-    		writer.print(posicion.getPartidosJugadosFuera() + ", ");
-    		writer.print(posicion.getPartidosGanadosFuera());
-    		writer.println();
-    	} 
+		for (Posicion posicion : jornada.getPosiciones()) {
+			writer.print(posicion.getEquipo() + ", ");
+			writer.print(posicion.getPuntos() + ", ");
+			writer.print(posicion.getGolesFavor() + ", ");
+			writer.print(posicion.getGolesContra() + ", ");
+			writer.print(posicion.getPartidosJugadosCasa() + ", ");
+			writer.print(posicion.getPartidosGanadosCasa() + ", ");
+			writer.print(posicion.getPartidosJugadosFuera() + ", ");
+			writer.print(posicion.getPartidosGanadosFuera());
+			writer.println();
+		} 
 	}
-	
+
 	public void escribirPrimeraClasificacion(PrintWriter writer) {
-		
+
 		ArrayList<Posicion> clasificacion = jornada.getPosiciones();
-		
+
 		for(Posicion pos : clasificacion)
 		{
 			writer.println(pos.getEquipo() + " , 0, 0, 0, 0, 0, 0, 0");
@@ -112,9 +122,9 @@ public class ParserClasificacion {
 	}
 
 	public void writeSeparator(PrintWriter writer) {
-        writer.println("----------------------------------");
+		writer.println("----------------------------------");
 	}
-	
+
 	/**
 	 * Sustituye las tildes de HTML por los caracteres con tilde. Ejemplo: sustituye &aacute por Ã¡
 	 */
@@ -143,7 +153,7 @@ public class ParserClasificacion {
 			}
 		}
 	}
-	
+
 	public void resetFile(PrintWriter writer) {
 		writer.print("");
 	}
