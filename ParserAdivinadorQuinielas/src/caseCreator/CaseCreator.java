@@ -68,10 +68,10 @@ public class CaseCreator {
 					posicion.setPosicion(counter + 1);
 					posicion.setEquipo(infoPosicion[0]);
 					posicion.setPuntos(Integer.parseInt(infoPosicion[1]));
-					posicion.setPartidosGanadosCasa(Integer
-							.parseInt(infoPosicion[4]));
-					posicion.setPartidosGanadosFuera(Integer
-							.parseInt(infoPosicion[5]));
+					posicion.setPartidosJugadosCasa(Integer.parseInt(infoPosicion[4]));
+					posicion.setPartidosGanadosCasa(Integer.parseInt(infoPosicion[5]));
+					posicion.setPartidosJugadosFuera(Integer.parseInt(infoPosicion[6]));
+					posicion.setPartidosGanadosFuera(Integer.parseInt(infoPosicion[7]));
 					posicion.setGolesFavor(Integer.parseInt(infoPosicion[2]));
 					posicion.setGolesContra(Integer.parseInt(infoPosicion[3]));
 					jornada.add(posicion);
@@ -94,7 +94,7 @@ public class CaseCreator {
 	}
 
 	/**
-	 * Lee la clasificacion de la siguiente jornada
+	 * Lee los resultados de la siguiente jornada
 	 * 
 	 * @param path
 	 */
@@ -167,6 +167,7 @@ public class CaseCreator {
 						Posicion posicionVisitante = clasiJornada
 								.getPosicionByName(convertirNombresEquipos(partido
 										.getEquipoVisitante()));
+						
 						writer.print(caseID + ", ");
 						writer.print(partido.getEquipoLocal() + ", ");
 						writer.print(partido.getEquipoVisitante() + ", ");
@@ -181,7 +182,7 @@ public class CaseCreator {
 						writer.print(posicionLocal.getGolesContra() + ", ");
 						writer.print(posicionVisitante.getGolesFavor() + ", ");
 						writer.print(posicionVisitante.getGolesContra() + ", ");
-						//Creo que hay que ponerlo en modo porcentaje
+						//No lo coje bien
 						if(posicionLocal.getPartidosJugadosCasa() != 0)
 							writer.print(posicionLocal.getPartidosGanadosCasa() / posicionLocal.getPartidosJugadosCasa() + ", ");
 						else
