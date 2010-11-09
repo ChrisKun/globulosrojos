@@ -12,7 +12,8 @@ import java.util.ArrayList;
 
 public class ParserClasificacion {
 
-	private final String HTML_CODE_PATH = "Ficheros\\codigoHTML";
+	String separator = System.getProperty("file.separator");
+	private final String HTML_CODE_PATH = "Ficheros"+ separator +"codigoHTML";
 
 	private BufferedReader reader = null;
 	private Clasificacion jornada;
@@ -27,7 +28,7 @@ public class ParserClasificacion {
 			e.printStackTrace();
 		}
 
-		// Booleano que indica si la operación ha tenido éxito
+		// Booleano que indica si la operaciï¿½n ha tenido ï¿½xito
 		boolean exito = false;
 
 		// Se descarga el codigo HTML de la pagina especificada
