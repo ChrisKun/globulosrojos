@@ -24,11 +24,14 @@ public class CaseCreator {
 	 * sistema basado en casos
 	 */
 	public void juntarInfo() {
+		
+		String separator = System.getProperty("file.separator");
+		
 		ArrayList<ArrayList<Clasificacion>> temporadasClasificaciones = new ArrayList<ArrayList<Clasificacion>>();
 		// Se leen las clasificaciones de las tres temporadas
 		for (int temporada = 107; temporada < 111; temporada++) {
 			temporadasClasificaciones.add(this
-					.leerClasificacion("Ficheros/ClasificacionesTemp"
+					.leerClasificacion("Ficheros"+ separator +"ClasificacionesTemp"
 							+ temporada));
 		}
 		System.out.println("Clasificaciones leidas");
@@ -37,7 +40,7 @@ public class CaseCreator {
 		ArrayList<Temporada> temporadasResultados = new ArrayList<Temporada>();
 		for (int temporada = 107; temporada < 111; temporada++)
 		temporadasResultados
-				.add(leerResultados("Ficheros/ResultadosTemp" + temporada));
+				.add(leerResultados("Ficheros"+ separator +"ResultadosTemp" + temporada));
 		System.out.println("Resultados leidos");
 		System.out.println("Creando fichero de casos...");
 		

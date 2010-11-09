@@ -14,13 +14,18 @@ public class Parser {
 	public static void main(String[] args) {
 		ParserClasificacion parserC = new ParserClasificacion();
 		ParserResultados p = new ParserResultados();
+		//Se cogue el separador dependiendo del sistema en el que estemos
+		//Si es Windows '\' y si es Linux '/'
+		//TODO En Linux funciona, falta probar en windows
+		String separator = System.getProperty("file.separator");
+		
 		try {
 
 			// Se parsean los datos de las clasificaciones
 			for (int temporada = 107; temporada < 111; temporada++) {
 				System.out.print("Extrayendo la información de la temporada " + temporada + " [Clasificaciones]: |");
 
-				FileWriter file = new FileWriter("Ficheros\\ClasificacionesTemp" + temporada, false);
+				FileWriter file = new FileWriter("Ficheros"+ separator +"ClasificacionesTemp" + temporada, false);
 				PrintWriter writer = new PrintWriter(file);
 
 				parserC.resetFile(writer);
@@ -30,7 +35,7 @@ public class Parser {
 				parserC.escribirPrimeraClasificacion(writer);
 
 				int jornada = 1;
-				// Mientras haya �xito parseando las clasificaciones almacenamos y guardamos en el fichero.
+				// Mientras haya exito parseando las clasificaciones almacenamos y guardamos en el fichero.
 				while (parserC.parse("http://www.lfp.es/?tabid=154&Controltype=detcla&g=1&t=" + temporada + "&j=" + jornada) && jornada < 38) {
 					System.out.print("-");
 					parserC.arreglarTildes();
@@ -50,7 +55,7 @@ public class Parser {
 			for (int temporada = 107; temporada < 111; temporada++) {
 				System.out.print("Extrayendo la información de la temporada " + temporada + " [Resultados]: |");
 
-				FileWriter file = new FileWriter("Ficheros\\ResultadosTemp" + temporada, false);
+				FileWriter file = new FileWriter("Ficheros"+ separator +"ResultadosTemp" + temporada, false);
 				PrintWriter writer = new PrintWriter(file);	
 
 				p.parse("http://www.lfp.es/?tabid=154&Controltype=cal&g=1&t=" + temporada);
