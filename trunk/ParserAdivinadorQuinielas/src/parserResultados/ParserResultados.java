@@ -13,7 +13,10 @@ import java.util.Iterator;
 import parserClasificacion.WebUtils;
 
 public class ParserResultados {
-	private final String HTML_CODE_PATH = "Ficheros\\codigoHTML";
+	
+	String separator = System.getProperty("file.separator");
+	
+	private final String HTML_CODE_PATH = "Ficheros"+ separator +"codigoHTML";
 	
 	private BufferedReader reader = null;
 	private Temporada temporada;
