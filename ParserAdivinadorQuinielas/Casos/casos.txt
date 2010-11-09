@@ -15,9 +15,9 @@
 15, Barcelona, Athletic, 1, 1, 0, 12, 11, 0, 0, 0, 0, 0, 0, 3, 1
 16, Levante, Murcia, 0, 3, -3, 18, 6, 0, 3, 2, 1, 0, 0, 0, 0
 17, At. Madrid, Mallorca, 0, 3, -3, 15, 4, 1, 2, 3, 0, 0, 0, 1, 1
-18, Almería, Valencia, 3, 0, 3, 2, 20, 3, 0, 0, 3, 0, 1, 1, 2
-19, Osasuna, Sevilla, 1, 3, -2, 10, 1, 0, 0, 4, 1, 0, 0, 1, 1
-20, Valladolid, Deportivo, 3, 0, 3, 7, 19, 1, 0, 0, 3, 0, 1, 2, 2
+18, Osasuna, Sevilla, 1, 3, -2, 10, 1, 0, 0, 4, 1, 0, 0, 1, 1
+19, Valladolid, Deportivo, 3, 0, 3, 7, 19, 1, 0, 0, 3, 0, 1, 2, 2
+20, Almería, Valencia, 3, 0, 3, 2, 20, 3, 0, 0, 3, 0, 1, 1, 2
 21, Sevilla, Recreativo, 3, 1, 2, 1, 9, 4, 1, 1, 1, 1, 0, 4, 1
 22, Athletic, Zaragoza, 1, 0, 1, 11, 14, 0, 0, 1, 2, 0, 0, 1, 1
 23, Deportivo, Betis, 0, 1, -1, 19, 8, 0, 3, 1, 1, 0, 0, 1, 0
@@ -35,9 +35,9 @@
 35, Barcelona, Sevilla, 1, 3, -2, 12, 1, 0, 0, 4, 1, 0, 0, 2, 1
 36, At. Madrid, Racing, 0, 1, -1, 15, 13, 1, 2, 0, 0, 0, 0, 4, 0
 37, Levante, Athletic, 0, 1, -1, 18, 11, 0, 3, 0, 0, 0, 0, 1, 2
-38, Almería, Mallorca, 3, 3, 0, 2, 4, 3, 0, 3, 0, 0, 1, 1, 1
-39, Recreativo, Espanyol, 1, 0, 1, 9, 16, 1, 1, 0, 1, 0, 0, 2, 1
-40, Valladolid, R. Madrid, 3, 3, 0, 7, 5, 1, 0, 2, 1, 0, 1, 1, 1
+38, Recreativo, Espanyol, 1, 0, 1, 9, 16, 1, 1, 0, 1, 0, 0, 2, 1
+39, Valladolid, R. Madrid, 3, 3, 0, 7, 5, 1, 0, 2, 1, 0, 1, 1, 1
+40, Almería, Mallorca, 3, 3, 0, 2, 4, 3, 0, 3, 0, 0, 1, 1, 1
 41, Sevilla, Espanyol, 3, 0, 3, 1, 16, 4, 1, 0, 1, 1, 0, 2, 3
 42, Athletic, At. Madrid, 1, 0, 1, 11, 15, 0, 0, 1, 2, 0, 0, 0, 2
 43, Deportivo, Recreativo, 0, 1, -1, 19, 9, 0, 3, 1, 1, 0, 0, 0, 2
@@ -55,9 +55,9 @@
 55, Levante, Barcelona, 0, 1, -1, 18, 12, 0, 3, 0, 0, 0, 0, 1, 4
 56, At. Madrid, Osasuna, 0, 1, -1, 15, 10, 1, 2, 0, 0, 0, 0, 2, 0
 57, Espanyol, Deportivo, 0, 0, 0, 16, 19, 0, 1, 0, 3, 0, 0, 1, 0
-58, Almería, Racing, 3, 1, 2, 2, 13, 3, 0, 0, 0, 0, 1, 0, 1
-59, Recreativo, Valencia, 1, 0, 1, 9, 20, 1, 1, 0, 3, 0, 0, 0, 1
-60, Valladolid, Murcia, 3, 3, 0, 7, 6, 1, 0, 2, 1, 0, 1, 1, 4
+58, Recreativo, Valencia, 1, 0, 1, 9, 20, 1, 1, 0, 3, 0, 0, 0, 1
+59, Valladolid, Murcia, 3, 3, 0, 7, 6, 1, 0, 2, 1, 0, 1, 1, 4
+60, Almería, Racing, 3, 1, 2, 2, 13, 3, 0, 0, 0, 0, 1, 0, 1
 61, Sevilla, Deportivo, 3, 0, 3, 1, 19, 4, 1, 0, 3, 1, 0, 0, 1
 62, Athletic, Almería, 1, 3, -2, 11, 2, 0, 0, 3, 0, 0, 0, 1, 1
 63, Zaragoza, Levante, 0, 0, 0, 14, 18, 1, 2, 0, 3, 0, 0, 3, 0
@@ -75,9 +75,9 @@
 75, Espanyol, R. Madrid, 0, 3, -3, 16, 5, 0, 1, 2, 1, 0, 0, 2, 1
 76, Levante, Sevilla, 0, 3, -3, 18, 1, 0, 3, 4, 1, 0, 0, 0, 2
 77, At. Madrid, Zaragoza, 0, 0, 0, 15, 14, 1, 2, 1, 2, 0, 0, 4, 0
-78, Almería, Osasuna, 3, 1, 2, 2, 10, 3, 0, 0, 0, 0, 1, 2, 0
-79, Recreativo, Mallorca, 1, 3, -2, 9, 4, 1, 1, 3, 0, 0, 0, 0, 2
-80, Valladolid, Athletic, 3, 1, 2, 7, 11, 1, 0, 0, 0, 0, 1, 1, 2
+78, Recreativo, Mallorca, 1, 3, -2, 9, 4, 1, 1, 3, 0, 0, 0, 0, 2
+79, Valladolid, Athletic, 3, 1, 2, 7, 11, 1, 0, 0, 0, 0, 1, 1, 2
+80, Almería, Osasuna, 3, 1, 2, 2, 10, 3, 0, 0, 0, 0, 1, 2, 0
 81, Sevilla, Valencia, 3, 0, 3, 1, 20, 4, 1, 0, 3, 1, 0, 3, 0
 82, Athletic, Betis, 1, 1, 0, 11, 8, 0, 0, 1, 1, 0, 0, 0, 0
 83, Zaragoza, Villarreal, 0, 3, -3, 14, 3, 1, 2, 3, 0, 0, 0, 4, 1
@@ -93,11 +93,11 @@
 93, Villarreal, Levante, 3, 0, 3, 3, 18, 3, 0, 0, 3, 0, 1, 3, 0
 94, Getafe, Athletic, 0, 1, -1, 17, 11, 1, 4, 0, 0, 0, 0, 2, 0
 95, At. Madrid, Sevilla, 0, 3, -3, 15, 1, 1, 2, 4, 1, 0, 0, 4, 3
-96, Almería, Zaragoza, 3, 0, 3, 2, 14, 3, 0, 1, 2, 0, 1, 0, 1
-97, Espanyol, Murcia, 0, 3, -3, 16, 6, 0, 1, 2, 1, 0, 0, 0, 0
-98, Recreativo, Racing, 1, 1, 0, 9, 13, 1, 1, 0, 0, 0, 0, 0, 0
-99, Valencia, R. Madrid, 0, 3, -3, 20, 5, 0, 3, 2, 1, 0, 0, 1, 5
-100, Valladolid, Barcelona, 3, 1, 2, 7, 12, 1, 0, 0, 0, 0, 1, 1, 1
+96, Espanyol, Murcia, 0, 3, -3, 16, 6, 0, 1, 2, 1, 0, 0, 0, 0
+97, Recreativo, Racing, 1, 1, 0, 9, 13, 1, 1, 0, 0, 0, 0, 0, 0
+98, Valencia, R. Madrid, 0, 3, -3, 20, 5, 0, 3, 2, 1, 0, 0, 1, 5
+99, Valladolid, Barcelona, 3, 1, 2, 7, 12, 1, 0, 0, 0, 0, 1, 1, 1
+100, Almería, Zaragoza, 3, 0, 3, 2, 14, 3, 0, 1, 2, 0, 1, 0, 1
 101, Sevilla, R. Madrid, 3, 3, 0, 1, 5, 4, 1, 2, 1, 1, 0, 2, 0
 102, Athletic, Recreativo, 1, 1, 0, 11, 9, 0, 0, 1, 1, 0, 0, 2, 0
 103, Zaragoza, Valladolid, 0, 3, -3, 14, 7, 1, 2, 1, 0, 0, 0, 2, 3
@@ -114,10 +114,10 @@
 114, Getafe, Barcelona, 0, 1, -1, 17, 12, 1, 4, 0, 0, 0, 0, 2, 0
 115, Espanyol, Athletic, 0, 1, -1, 16, 11, 0, 1, 0, 0, 0, 0, 2, 1
 116, R. Madrid, Mallorca, 3, 3, 0, 5, 4, 2, 1, 3, 0, 1, 0, 4, 3
-117, Almería, At. Madrid, 3, 0, 3, 2, 15, 3, 0, 1, 2, 0, 1, 0, 0
-118, Recreativo, Osasuna, 1, 1, 0, 9, 10, 1, 1, 0, 0, 0, 0, 1, 0
-119, Valencia, Murcia, 0, 3, -3, 20, 6, 0, 3, 2, 1, 0, 0, 3, 0
-120, Valladolid, Levante, 3, 0, 3, 7, 18, 1, 0, 0, 3, 0, 1, 1, 0
+117, Recreativo, Osasuna, 1, 1, 0, 9, 10, 1, 1, 0, 0, 0, 0, 1, 0
+118, Valencia, Murcia, 0, 3, -3, 20, 6, 0, 3, 2, 1, 0, 0, 3, 0
+119, Valladolid, Levante, 3, 0, 3, 7, 18, 1, 0, 0, 3, 0, 1, 1, 0
+120, Almería, At. Madrid, 3, 0, 3, 2, 15, 3, 0, 1, 2, 0, 1, 0, 0
 121, Sevilla, Mallorca, 3, 3, 0, 1, 4, 4, 1, 3, 0, 1, 0, 1, 2
 122, Athletic, Deportivo, 1, 0, 1, 11, 19, 0, 0, 0, 3, 0, 0, 2, 2
 123, Zaragoza, Getafe, 0, 0, 0, 14, 17, 1, 2, 1, 4, 0, 0, 1, 1
@@ -134,10 +134,10 @@
 134, Mallorca, Murcia, 3, 3, 0, 4, 6, 3, 0, 2, 1, 1, 0, 1, 1
 135, Espanyol, Barcelona, 0, 1, -1, 16, 12, 0, 1, 0, 0, 0, 0, 1, 1
 136, R. Madrid, Racing, 3, 1, 2, 5, 13, 2, 1, 0, 0, 1, 0, 3, 1
-137, Almería, Sevilla, 3, 3, 0, 2, 1, 3, 0, 4, 1, 0, 1, 1, 0
-138, Recreativo, Zaragoza, 1, 0, 1, 9, 14, 1, 1, 1, 2, 0, 0, 2, 1
-139, Valencia, Athletic, 0, 1, -1, 20, 11, 0, 3, 0, 0, 0, 0, 0, 3
-140, Valladolid, Villarreal, 3, 3, 0, 7, 3, 1, 0, 3, 0, 0, 1, 2, 0
+137, Recreativo, Zaragoza, 1, 0, 1, 9, 14, 1, 1, 1, 2, 0, 0, 2, 1
+138, Valencia, Athletic, 0, 1, -1, 20, 11, 0, 3, 0, 0, 0, 0, 0, 3
+139, Valladolid, Villarreal, 3, 3, 0, 7, 3, 1, 0, 3, 0, 0, 1, 2, 0
+140, Almería, Sevilla, 3, 3, 0, 2, 1, 3, 0, 4, 1, 0, 1, 1, 0
 141, Sevilla, Murcia, 3, 3, 0, 1, 6, 4, 1, 2, 1, 1, 0, 3, 1
 142, Athletic, R. Madrid, 1, 3, -2, 11, 5, 0, 0, 2, 1, 0, 0, 0, 1
 143, Zaragoza, Espanyol, 0, 0, 0, 14, 16, 1, 2, 0, 1, 0, 0, 3, 3
@@ -146,8 +146,8 @@
 146, Barcelona, Deportivo, 1, 0, 1, 12, 19, 0, 0, 0, 3, 0, 0, 2, 1
 147, At. Madrid, Getafe, 0, 0, 0, 15, 17, 1, 2, 1, 4, 0, 0, 1, 0
 148, Levante, Recreativo, 0, 1, -1, 18, 9, 0, 3, 1, 1, 0, 0, 0, 2
-149, Almería, Valladolid, 3, 3, 0, 2, 7, 3, 0, 1, 0, 0, 1, 1, 0
-150, Osasuna, Valencia, 1, 0, 1, 10, 20, 0, 0, 0, 3, 0, 0, 0, 0
+149, Osasuna, Valencia, 1, 0, 1, 10, 20, 0, 0, 0, 3, 0, 0, 0, 0
+150, Almería, Valladolid, 3, 3, 0, 2, 7, 3, 0, 1, 0, 0, 1, 1, 0
 151, Betis, Almería, 1, 3, -2, 8, 2, 1, 1, 3, 0, 0, 0, 3, 1
 152, Deportivo, Zaragoza, 0, 0, 0, 19, 14, 0, 3, 1, 2, 0, 0, 1, 1
 153, Getafe, Villarreal, 0, 3, -3, 17, 3, 1, 4, 3, 0, 0, 0, 1, 3
@@ -163,11 +163,11 @@
 163, Athletic, Murcia, 1, 3, -2, 11, 6, 0, 0, 2, 1, 0, 0, 1, 1
 164, Villarreal, Recreativo, 3, 1, 2, 3, 9, 3, 0, 1, 1, 0, 1, 1, 1
 165, Barcelona, R. Madrid, 1, 3, -2, 12, 5, 0, 0, 2, 1, 0, 0, 0, 1
-166, Almería, Getafe, 3, 0, 3, 2, 17, 3, 0, 1, 4, 0, 1, 0, 2
-167, At. Madrid, Espanyol, 0, 0, 0, 15, 16, 1, 2, 0, 1, 0, 0, 1, 2
-168, Levante, Deportivo, 0, 0, 0, 18, 19, 0, 3, 0, 3, 0, 0, 0, 1
-169, Osasuna, Mallorca, 1, 3, -2, 10, 4, 0, 0, 3, 0, 0, 0, 3, 1
-170, Valladolid, Betis, 3, 1, 2, 7, 8, 1, 0, 1, 1, 0, 1, 0, 0
+166, At. Madrid, Espanyol, 0, 0, 0, 15, 16, 1, 2, 0, 1, 0, 0, 1, 2
+167, Levante, Deportivo, 0, 0, 0, 18, 19, 0, 3, 0, 3, 0, 0, 0, 1
+168, Osasuna, Mallorca, 1, 3, -2, 10, 4, 0, 0, 3, 0, 0, 0, 3, 1
+169, Valladolid, Betis, 3, 1, 2, 7, 8, 1, 0, 1, 1, 0, 1, 0, 0
+170, Almería, Getafe, 3, 0, 3, 2, 17, 3, 0, 1, 4, 0, 1, 0, 2
 171, Sevilla, Betis, 3, 1, 2, 1, 8, 4, 1, 1, 1, 1, 0, 3, 0
 172, Deportivo, At. Madrid, 0, 0, 0, 19, 15, 0, 3, 1, 2, 0, 0, 0, 3
 173, Getafe, Valladolid, 0, 3, -3, 17, 7, 1, 4, 1, 0, 0, 0, 0, 3
@@ -185,9 +185,9 @@
 185, Barcelona, Murcia, 1, 3, -2, 12, 6, 0, 0, 2, 1, 0, 0, 4, 0
 186, At. Madrid, Valencia, 0, 0, 0, 15, 20, 1, 2, 0, 3, 0, 0, 1, 0
 187, Levante, R. Madrid, 0, 3, -3, 18, 5, 0, 3, 2, 1, 0, 0, 0, 2
-188, Almería, Espanyol, 3, 0, 3, 2, 16, 3, 0, 0, 1, 0, 1, 1, 0
-189, Osasuna, Racing, 1, 1, 0, 10, 13, 0, 0, 0, 0, 0, 0, 0, 2
-190, Valladolid, Recreativo, 3, 1, 2, 7, 9, 1, 0, 1, 1, 0, 1, 3, 1
+188, Osasuna, Racing, 1, 1, 0, 10, 13, 0, 0, 0, 0, 0, 0, 0, 2
+189, Valladolid, Recreativo, 3, 1, 2, 7, 9, 1, 0, 1, 1, 0, 1, 3, 1
+190, Almería, Espanyol, 3, 0, 3, 2, 16, 3, 0, 0, 1, 0, 1, 1, 0
 191, Zaragoza, Murcia, 0, 3, -3, 14, 6, 1, 2, 2, 1, 0, 0, 3, 1
 192, Betis, Recreativo, 1, 1, 0, 8, 9, 1, 1, 1, 1, 0, 0, 1, 1
 193, Villarreal, Valencia, 3, 0, 3, 3, 20, 3, 0, 0, 3, 0, 1, 3, 0
@@ -195,9 +195,9 @@
 195, Barcelona, Racing, 1, 1, 0, 12, 13, 0, 0, 0, 0, 0, 0, 1, 0
 196, At. Madrid, R. Madrid, 0, 3, -3, 15, 5, 1, 2, 2, 1, 0, 0, 0, 2
 197, Levante, Mallorca, 0, 3, -3, 18, 4, 0, 3, 3, 0, 0, 0, 2, 2
-198, Almería, Deportivo, 3, 0, 3, 2, 19, 3, 0, 0, 3, 0, 1, 1, 0
-199, Osasuna, Athletic, 1, 1, 0, 10, 11, 0, 0, 0, 0, 0, 0, 2, 0
-200, Valladolid, Espanyol, 3, 0, 3, 7, 16, 1, 0, 0, 1, 0, 1, 2, 1
+198, Osasuna, Athletic, 1, 1, 0, 10, 11, 0, 0, 0, 0, 0, 0, 2, 0
+199, Valladolid, Espanyol, 3, 0, 3, 7, 16, 1, 0, 0, 1, 0, 1, 2, 1
+200, Almería, Deportivo, 3, 0, 3, 2, 19, 3, 0, 0, 3, 0, 1, 1, 0
 201, Sevilla, Osasuna, 3, 1, 2, 1, 10, 4, 1, 0, 0, 1, 0, 2, 1
 202, Athletic, Barcelona, 1, 1, 0, 11, 12, 0, 0, 0, 0, 0, 0, 1, 1
 203, Deportivo, Valladolid, 0, 3, -3, 19, 7, 0, 3, 1, 0, 0, 0, 3, 1
@@ -213,11 +213,11 @@
 213, Villarreal, Mallorca, 3, 3, 0, 3, 4, 3, 0, 3, 0, 0, 1, 1, 1
 214, Getafe, Espanyol, 0, 0, 0, 17, 16, 1, 4, 0, 1, 0, 0, 0, 1
 215, Barcelona, Osasuna, 1, 1, 0, 12, 10, 0, 0, 0, 0, 0, 0, 1, 0
-216, Almería, R. Madrid, 3, 3, 0, 2, 5, 3, 0, 2, 1, 0, 1, 2, 0
-217, At. Madrid, Murcia, 0, 3, -3, 15, 6, 1, 2, 2, 1, 0, 0, 1, 1
-218, Levante, Racing, 0, 1, -1, 18, 13, 0, 3, 0, 0, 0, 0, 1, 1
-219, Recreativo, Sevilla, 1, 3, -2, 9, 1, 1, 1, 4, 1, 0, 0, 1, 2
-220, Valladolid, Valencia, 3, 0, 3, 7, 20, 1, 0, 0, 3, 0, 1, 0, 2
+216, At. Madrid, Murcia, 0, 3, -3, 15, 6, 1, 2, 2, 1, 0, 0, 1, 1
+217, Levante, Racing, 0, 1, -1, 18, 13, 0, 3, 0, 0, 0, 0, 1, 1
+218, Recreativo, Sevilla, 1, 3, -2, 9, 1, 1, 1, 4, 1, 0, 0, 1, 2
+219, Valladolid, Valencia, 3, 0, 3, 7, 20, 1, 0, 0, 3, 0, 1, 0, 2
+220, Almería, R. Madrid, 3, 3, 0, 2, 5, 3, 0, 2, 1, 0, 1, 2, 0
 221, Sevilla, Barcelona, 3, 1, 2, 1, 12, 4, 1, 0, 0, 1, 0, 1, 1
 222, Athletic, Levante, 1, 0, 1, 11, 18, 0, 0, 0, 3, 0, 0, 1, 0
 223, Deportivo, Getafe, 0, 0, 0, 19, 17, 0, 3, 1, 4, 0, 0, 1, 1
@@ -235,9 +235,9 @@
 235, Espanyol, Sevilla, 0, 3, -3, 16, 1, 0, 1, 4, 1, 0, 0, 2, 4
 236, At. Madrid, Athletic, 0, 1, -1, 15, 11, 1, 2, 0, 0, 0, 0, 1, 2
 237, Levante, Osasuna, 0, 1, -1, 18, 10, 0, 3, 0, 0, 0, 0, 2, 1
-238, Almería, Murcia, 3, 3, 0, 2, 6, 3, 0, 2, 1, 0, 1, 1, 0
-239, Recreativo, Deportivo, 1, 0, 1, 9, 19, 1, 1, 0, 3, 0, 0, 3, 2
-240, Valladolid, Mallorca, 3, 3, 0, 7, 4, 1, 0, 3, 0, 0, 1, 1, 1
+238, Recreativo, Deportivo, 1, 0, 1, 9, 19, 1, 1, 0, 3, 0, 0, 3, 2
+239, Valladolid, Mallorca, 3, 3, 0, 7, 4, 1, 0, 3, 0, 0, 1, 1, 1
+240, Almería, Murcia, 3, 3, 0, 2, 6, 3, 0, 2, 1, 0, 1, 1, 0
 241, Sevilla, Zaragoza, 3, 0, 3, 1, 14, 4, 1, 1, 2, 1, 0, 5, 0
 242, Athletic, Villarreal, 1, 3, -2, 11, 3, 0, 0, 3, 0, 0, 0, 1, 2
 243, Deportivo, Espanyol, 0, 0, 0, 19, 16, 0, 3, 0, 1, 0, 0, 2, 0
@@ -255,9 +255,9 @@
 255, At. Madrid, Barcelona, 0, 1, -1, 15, 12, 1, 2, 0, 0, 0, 0, 4, 2
 256, Espanyol, Valencia, 0, 0, 0, 16, 20, 0, 1, 0, 3, 0, 0, 2, 0
 257, Levante, Zaragoza, 0, 0, 0, 18, 14, 0, 3, 1, 2, 0, 0, 2, 1
-258, Almería, Athletic, 3, 1, 2, 2, 11, 3, 0, 0, 0, 0, 1, 1, 1
-259, Recreativo, R. Madrid, 1, 3, -2, 9, 5, 1, 1, 2, 1, 0, 0, 2, 3
-260, Valladolid, Racing, 3, 1, 2, 7, 13, 1, 0, 0, 0, 0, 1, 0, 1
+258, Recreativo, R. Madrid, 1, 3, -2, 9, 5, 1, 1, 2, 1, 0, 0, 2, 3
+259, Valladolid, Racing, 3, 1, 2, 7, 13, 1, 0, 0, 0, 0, 1, 0, 1
+260, Almería, Athletic, 3, 1, 2, 2, 11, 3, 0, 0, 0, 0, 1, 1, 1
 261, Sevilla, Levante, 3, 0, 3, 1, 18, 4, 1, 0, 3, 1, 0, 2, 1
 262, Zaragoza, At. Madrid, 0, 0, 0, 14, 15, 1, 2, 1, 2, 0, 0, 2, 1
 263, Athletic, Valladolid, 1, 3, -2, 11, 7, 0, 0, 1, 0, 0, 0, 2, 0
@@ -274,10 +274,10 @@
 274, Getafe, Racing, 0, 1, -1, 17, 13, 1, 4, 0, 0, 0, 0, 2, 1
 275, At. Madrid, Levante, 0, 0, 0, 15, 18, 1, 2, 0, 3, 0, 0, 3, 0
 276, Espanyol, Mallorca, 0, 3, -3, 16, 4, 0, 1, 3, 0, 0, 0, 2, 1
-277, Almería, Barcelona, 3, 1, 2, 2, 12, 3, 0, 0, 0, 0, 1, 2, 2
-278, Recreativo, Murcia, 1, 3, -2, 9, 6, 1, 1, 2, 1, 0, 0, 4, 2
-279, Valencia, Sevilla, 0, 3, -3, 20, 1, 0, 3, 4, 1, 0, 0, 1, 2
-280, Valladolid, Osasuna, 3, 1, 2, 7, 10, 1, 0, 0, 0, 0, 1, 0, 0
+277, Recreativo, Murcia, 1, 3, -2, 9, 6, 1, 1, 2, 1, 0, 0, 4, 2
+278, Valencia, Sevilla, 0, 3, -3, 20, 1, 0, 3, 4, 1, 0, 0, 1, 2
+279, Valladolid, Osasuna, 3, 1, 2, 7, 10, 1, 0, 0, 0, 0, 1, 0, 0
+280, Almería, Barcelona, 3, 1, 2, 2, 12, 3, 0, 0, 0, 0, 1, 2, 2
 281, Sevilla, At. Madrid, 3, 0, 3, 1, 15, 4, 1, 1, 2, 1, 0, 1, 2
 282, Athletic, Getafe, 1, 0, 1, 11, 17, 0, 0, 1, 4, 0, 0, 1, 0
 283, Zaragoza, Almería, 0, 3, -3, 14, 2, 1, 2, 3, 0, 0, 0, 1, 1
@@ -294,10 +294,10 @@
 294, Getafe, Osasuna, 0, 1, -1, 17, 10, 1, 4, 0, 0, 0, 0, 0, 2
 295, Espanyol, Racing, 0, 1, -1, 16, 13, 0, 1, 0, 0, 0, 0, 0, 3
 296, R. Madrid, Sevilla, 3, 3, 0, 5, 1, 2, 1, 4, 1, 1, 0, 3, 1
-297, Almería, Levante, 3, 0, 3, 2, 18, 3, 0, 0, 3, 0, 1, 2, 1
-298, Recreativo, Athletic, 1, 1, 0, 9, 11, 1, 1, 0, 0, 0, 0, 1, 1
-299, Valencia, Mallorca, 0, 3, -3, 20, 4, 0, 3, 3, 0, 0, 0, 0, 3
-300, Valladolid, Zaragoza, 3, 0, 3, 7, 14, 1, 0, 1, 2, 0, 1, 2, 1
+297, Recreativo, Athletic, 1, 1, 0, 9, 11, 1, 1, 0, 0, 0, 0, 1, 1
+298, Valencia, Mallorca, 0, 3, -3, 20, 4, 0, 3, 3, 0, 0, 0, 0, 3
+299, Valladolid, Zaragoza, 3, 0, 3, 7, 14, 1, 0, 1, 2, 0, 1, 2, 1
+300, Almería, Levante, 3, 0, 3, 2, 18, 3, 0, 0, 3, 0, 1, 2, 1
 301, Sevilla, Villarreal, 3, 3, 0, 1, 3, 4, 1, 3, 0, 1, 0, 2, 0
 302, Athletic, Espanyol, 1, 0, 1, 11, 16, 0, 0, 0, 1, 0, 0, 1, 0
 303, Zaragoza, Betis, 0, 1, -1, 14, 8, 1, 2, 1, 1, 0, 0, 0, 3
@@ -314,10 +314,10 @@
 314, Mallorca, Sevilla, 3, 3, 0, 4, 1, 3, 0, 4, 1, 1, 0, 2, 3
 315, Espanyol, Osasuna, 0, 1, -1, 16, 10, 0, 1, 0, 0, 0, 0, 0, 1
 316, R. Madrid, Murcia, 3, 3, 0, 5, 6, 2, 1, 2, 1, 1, 0, 1, 0
-317, Almería, Villarreal, 3, 3, 0, 2, 3, 3, 0, 3, 0, 0, 1, 1, 0
-318, Recreativo, Barcelona, 1, 1, 0, 9, 12, 1, 1, 0, 0, 0, 0, 2, 2
-319, Valencia, Racing, 0, 1, -1, 20, 13, 0, 3, 0, 0, 0, 0, 1, 2
-320, Valladolid, At. Madrid, 3, 0, 3, 7, 15, 1, 0, 1, 2, 0, 1, 1, 1
+317, Recreativo, Barcelona, 1, 1, 0, 9, 12, 1, 1, 0, 0, 0, 0, 2, 2
+318, Valencia, Racing, 0, 1, -1, 20, 13, 0, 3, 0, 0, 0, 0, 1, 2
+319, Valladolid, At. Madrid, 3, 0, 3, 7, 15, 1, 0, 1, 2, 0, 1, 1, 1
+320, Almería, Villarreal, 3, 3, 0, 2, 3, 3, 0, 3, 0, 0, 1, 1, 0
 321, Sevilla, Almería, 3, 3, 0, 1, 2, 4, 1, 3, 0, 1, 0, 1, 4
 322, Zaragoza, Recreativo, 0, 1, -1, 14, 9, 1, 2, 1, 1, 0, 0, 3, 0
 323, Athletic, Valencia, 1, 0, 1, 11, 20, 0, 0, 0, 3, 0, 0, 5, 1
@@ -346,8 +346,8 @@
 346, Barcelona, Valencia, 1, 0, 1, 12, 20, 0, 0, 0, 3, 0, 0, 6, 0
 347, At. Madrid, Recreativo, 0, 1, -1, 15, 9, 1, 2, 1, 1, 0, 0, 3, 0
 348, Levante, Espanyol, 0, 0, 0, 18, 16, 0, 3, 0, 1, 0, 0, 1, 1
-349, Almería, Betis, 3, 1, 2, 2, 8, 3, 0, 1, 1, 0, 1, 1, 1
-350, Osasuna, R. Madrid, 1, 3, -2, 10, 5, 0, 0, 2, 1, 0, 0, 1, 2
+349, Osasuna, R. Madrid, 1, 3, -2, 10, 5, 0, 0, 2, 1, 0, 0, 1, 2
+350, Almería, Betis, 3, 1, 2, 2, 8, 3, 0, 1, 1, 0, 1, 1, 1
 351, Betis, Valladolid, 1, 3, -2, 8, 7, 1, 1, 1, 0, 0, 0, 1, 1
 352, Deportivo, Levante, 0, 0, 0, 19, 18, 0, 3, 0, 3, 0, 0, 1, 0
 353, Getafe, Almería, 0, 3, -3, 17, 2, 1, 4, 3, 0, 0, 0, 4, 2
@@ -365,9 +365,9 @@
 365, Barcelona, Mallorca, 1, 3, -2, 12, 4, 0, 0, 3, 0, 0, 0, 2, 3
 366, At. Madrid, Deportivo, 0, 0, 0, 15, 19, 1, 2, 0, 3, 0, 0, 1, 0
 367, Levante, Valencia, 0, 0, 0, 18, 20, 0, 3, 0, 3, 0, 0, 1, 5
-368, Almería, Recreativo, 3, 1, 2, 2, 9, 3, 0, 1, 1, 0, 1, 0, 2
-369, Osasuna, Murcia, 1, 3, -2, 10, 6, 0, 0, 2, 1, 0, 0, 2, 1
-370, Valladolid, Getafe, 3, 0, 3, 7, 17, 1, 0, 1, 4, 0, 1, 0, 0
+368, Osasuna, Murcia, 1, 3, -2, 10, 6, 0, 0, 2, 1, 0, 0, 2, 1
+369, Valladolid, Getafe, 3, 0, 3, 7, 17, 1, 0, 1, 4, 0, 1, 0, 0
+370, Almería, Recreativo, 3, 1, 2, 2, 9, 3, 0, 1, 1, 0, 1, 0, 2
 371, Sevilla, Athletic, 3, 1, 2, 1, 11, 4, 1, 0, 0, 1, 0, 4, 1
 372, Deportivo, Villarreal, 0, 3, -3, 19, 3, 0, 3, 3, 0, 0, 0, 0, 2
 373, Getafe, Betis, 0, 1, -1, 17, 8, 1, 4, 1, 1, 0, 0, 1, 1
@@ -395,9 +395,9 @@
 395, Barcelona, Racing, 0, 1, -1, 17, 11, 0, 1, 1, 1, 0, 0, 1, 1
 396, Mallorca, Osasuna, 0, 1, -1, 19, 10, 0, 3, 1, 1, 0, 0, 1, 1
 397, R. Madrid, Numancia, 0, 3, -3, 13, 8, 1, 2, 1, 0, 0, 0, 4, 3
-398, Almería, Valencia, 3, 3, 0, 3, 2, 3, 1, 3, 0, 0, 1, 2, 2
-399, Recreativo, Espanyol, 3, 3, 0, 7, 6, 1, 0, 1, 0, 0, 1, 0, 1
-400, Valladolid, At. Madrid, 0, 3, -3, 15, 1, 0, 1, 4, 0, 0, 0, 2, 1
+398, Recreativo, Espanyol, 3, 3, 0, 7, 6, 1, 0, 1, 0, 0, 1, 0, 1
+399, Valladolid, At. Madrid, 0, 3, -3, 15, 1, 0, 1, 4, 0, 0, 0, 2, 1
+400, Almería, Valencia, 3, 3, 0, 3, 2, 3, 1, 3, 0, 0, 1, 2, 2
 401, Athletic, Valladolid, 0, 0, 0, 18, 15, 1, 3, 0, 1, 0, 0, 2, 0
 402, Betis, Sevilla, 0, 1, -1, 16, 12, 0, 1, 1, 1, 0, 0, 0, 0
 403, Deportivo, Mallorca, 3, 0, 3, 5, 19, 2, 1, 0, 3, 1, 0, 0, 0
@@ -406,8 +406,8 @@
 406, Numancia, Villarreal, 3, 1, 2, 8, 9, 1, 0, 1, 1, 1, 0, 1, 2
 407, At. Madrid, Recreativo, 3, 3, 0, 1, 7, 4, 0, 1, 0, 1, 0, 4, 0
 408, Espanyol, Getafe, 3, 3, 0, 6, 4, 1, 0, 2, 1, 1, 0, 1, 1
-409, Almería, Málaga, 3, 0, 3, 3, 20, 3, 1, 0, 4, 0, 1, 1, 0
-410, Valencia, Osasuna, 3, 1, 2, 2, 10, 3, 0, 1, 1, 1, 0, 1, 0
+409, Valencia, Osasuna, 3, 1, 2, 2, 10, 3, 0, 1, 1, 1, 0, 1, 0
+410, Almería, Málaga, 3, 0, 3, 3, 20, 3, 1, 0, 4, 0, 1, 1, 0
 411, Sevilla, Espanyol, 1, 3, -2, 12, 6, 1, 1, 1, 0, 0, 0, 2, 0
 412, Villarreal, Racing, 1, 1, 0, 9, 11, 1, 1, 1, 1, 0, 0, 2, 0
 413, Málaga, Valencia, 0, 3, -3, 20, 2, 0, 4, 3, 0, 0, 0, 0, 2
@@ -426,8 +426,8 @@
 426, Numancia, Osasuna, 3, 1, 2, 8, 10, 1, 0, 1, 1, 1, 0, 0, 0
 427, Espanyol, Barcelona, 3, 0, 3, 6, 17, 1, 0, 0, 1, 1, 0, 1, 2
 428, At. Madrid, Sevilla, 3, 1, 2, 1, 12, 4, 0, 1, 1, 1, 0, 0, 1
-429, Almería, Recreativo, 3, 3, 0, 3, 7, 3, 1, 1, 0, 0, 1, 1, 0
-430, Valencia, Deportivo, 3, 3, 0, 2, 5, 3, 0, 2, 1, 1, 0, 4, 2
+429, Valencia, Deportivo, 3, 3, 0, 2, 5, 3, 0, 2, 1, 1, 0, 4, 2
+430, Almería, Recreativo, 3, 3, 0, 3, 7, 3, 1, 1, 0, 0, 1, 1, 0
 431, Sevilla, Athletic, 1, 0, 1, 12, 18, 1, 1, 1, 3, 0, 0, 4, 0
 432, Deportivo, Numancia, 3, 3, 0, 5, 8, 2, 1, 1, 0, 1, 0, 1, 0
 433, Villarreal, Betis, 1, 0, 1, 9, 16, 1, 1, 0, 1, 0, 0, 2, 1
@@ -445,9 +445,9 @@
 445, Racing, Deportivo, 1, 3, -2, 11, 5, 1, 1, 2, 1, 0, 0, 0, 0
 446, At. Madrid, R. Madrid, 3, 0, 3, 1, 13, 4, 0, 1, 2, 1, 0, 1, 2
 447, Espanyol, Villarreal, 3, 1, 2, 6, 9, 1, 0, 1, 1, 1, 0, 0, 0
-448, Almería, Sevilla, 3, 1, 2, 3, 12, 3, 1, 1, 1, 0, 1, 0, 1
-449, Valencia, Numancia, 3, 3, 0, 2, 8, 3, 0, 1, 0, 1, 0, 4, 0
-450, Valladolid, Recreativo, 0, 3, -3, 15, 7, 0, 1, 1, 0, 0, 0, 1, 1
+448, Valencia, Numancia, 3, 3, 0, 2, 8, 3, 0, 1, 0, 1, 0, 4, 0
+449, Valladolid, Recreativo, 0, 3, -3, 15, 7, 0, 1, 1, 0, 0, 0, 1, 1
+450, Almería, Sevilla, 3, 1, 2, 3, 12, 3, 1, 1, 1, 0, 1, 0, 1
 451, Sevilla, Málaga, 1, 0, 1, 12, 20, 1, 1, 0, 4, 0, 0, 0, 1
 452, Deportivo, Sporting, 3, 0, 3, 5, 14, 2, 1, 1, 2, 1, 0, 0, 3
 453, Villarreal, At. Madrid, 1, 3, -2, 9, 1, 1, 1, 4, 0, 0, 0, 4, 4
@@ -464,10 +464,10 @@
 464, Málaga, Barcelona, 0, 0, 0, 20, 17, 0, 4, 0, 1, 0, 0, 1, 4
 465, At. Madrid, Mallorca, 3, 0, 3, 1, 19, 4, 0, 0, 3, 1, 0, 2, 0
 466, Espanyol, Osasuna, 3, 1, 2, 6, 10, 1, 0, 1, 1, 1, 0, 1, 0
-467, Almería, R. Madrid, 3, 0, 3, 3, 13, 3, 1, 1, 2, 0, 1, 1, 1
-468, Recreativo, Getafe, 3, 3, 0, 7, 4, 1, 0, 2, 1, 0, 1, 1, 1
-469, Valencia, Racing, 3, 1, 2, 2, 11, 3, 0, 1, 1, 1, 0, 2, 4
-470, Valladolid, Sevilla, 0, 1, -1, 15, 12, 0, 1, 1, 1, 0, 0, 3, 2
+467, Recreativo, Getafe, 3, 3, 0, 7, 4, 1, 0, 2, 1, 0, 1, 1, 1
+468, Valencia, Racing, 3, 1, 2, 2, 11, 3, 0, 1, 1, 1, 0, 2, 4
+469, Valladolid, Sevilla, 0, 1, -1, 15, 12, 0, 1, 1, 1, 0, 0, 3, 2
+470, Almería, R. Madrid, 3, 0, 3, 3, 13, 3, 1, 1, 2, 0, 1, 1, 1
 471, Sevilla, Recreativo, 1, 3, -2, 12, 7, 1, 1, 1, 0, 0, 0, 1, 0
 472, Deportivo, Espanyol, 3, 3, 0, 5, 6, 2, 1, 1, 0, 1, 0, 1, 0
 473, Villarreal, Almería, 1, 3, -2, 9, 3, 1, 1, 3, 1, 0, 0, 2, 1
@@ -484,10 +484,10 @@
 484, Getafe, Sevilla, 3, 1, 2, 4, 12, 2, 1, 1, 1, 0, 1, 0, 2
 485, At. Madrid, Deportivo, 3, 3, 0, 1, 5, 4, 0, 2, 1, 1, 0, 4, 1
 486, Espanyol, Numancia, 3, 3, 0, 6, 8, 1, 0, 1, 0, 1, 0, 3, 4
-487, Almería, Mallorca, 3, 0, 3, 3, 19, 3, 1, 0, 3, 0, 1, 2, 1
-488, Recreativo, Barcelona, 3, 0, 3, 7, 17, 1, 0, 0, 1, 0, 1, 0, 2
-489, Valencia, Sporting, 3, 0, 3, 2, 14, 3, 0, 1, 2, 1, 0, 2, 3
-490, Valladolid, R. Madrid, 0, 0, 0, 15, 13, 0, 1, 1, 2, 0, 0, 1, 0
+487, Recreativo, Barcelona, 3, 0, 3, 7, 17, 1, 0, 0, 1, 0, 1, 0, 2
+488, Valencia, Sporting, 3, 0, 3, 2, 14, 3, 0, 1, 2, 1, 0, 2, 3
+489, Valladolid, R. Madrid, 0, 0, 0, 15, 13, 0, 1, 1, 2, 0, 0, 1, 0
+490, Almería, Mallorca, 3, 0, 3, 3, 19, 3, 1, 0, 3, 0, 1, 2, 1
 491, Sevilla, Valencia, 1, 3, -2, 12, 2, 1, 1, 3, 0, 0, 0, 0, 0
 492, Deportivo, Athletic, 3, 0, 3, 5, 18, 2, 1, 1, 3, 1, 0, 3, 1
 493, Sporting, Betis, 0, 0, 0, 14, 16, 1, 2, 0, 1, 0, 0, 1, 2
@@ -504,10 +504,10 @@
 504, Getafe, R. Madrid, 3, 0, 3, 4, 13, 2, 1, 1, 2, 0, 1, 3, 1
 505, At. Madrid, Racing, 3, 1, 2, 1, 11, 4, 0, 1, 1, 1, 0, 4, 1
 506, Espanyol, Sporting, 3, 0, 3, 6, 14, 1, 0, 1, 2, 1, 0, 0, 1
-507, Almería, Deportivo, 3, 3, 0, 3, 5, 3, 1, 2, 1, 0, 1, 0, 1
-508, Recreativo, Villarreal, 3, 1, 2, 7, 9, 1, 0, 1, 1, 0, 1, 1, 2
-509, Valencia, Betis, 3, 0, 3, 2, 16, 3, 0, 0, 1, 1, 0, 3, 2
-510, Valladolid, Mallorca, 0, 0, 0, 15, 19, 0, 1, 0, 3, 0, 0, 3, 0
+507, Recreativo, Villarreal, 3, 1, 2, 7, 9, 1, 0, 1, 1, 0, 1, 1, 2
+508, Valencia, Betis, 3, 0, 3, 2, 16, 3, 0, 0, 1, 1, 0, 3, 2
+509, Valladolid, Mallorca, 0, 0, 0, 15, 19, 0, 1, 0, 3, 0, 0, 3, 0
+510, Almería, Deportivo, 3, 3, 0, 3, 5, 3, 1, 2, 1, 0, 1, 0, 1
 511, Betis, Espanyol, 0, 3, -3, 16, 6, 0, 1, 1, 0, 0, 0, 1, 1
 512, Deportivo, Málaga, 3, 0, 3, 5, 20, 2, 1, 0, 4, 1, 0, 2, 0
 513, Sporting, At. Madrid, 0, 3, -3, 14, 1, 1, 2, 4, 0, 0, 0, 2, 5
@@ -524,10 +524,10 @@
 524, Getafe, Mallorca, 3, 0, 3, 4, 19, 2, 1, 0, 3, 0, 1, 4, 1
 525, Barcelona, R. Madrid, 0, 0, 0, 17, 13, 0, 1, 1, 2, 0, 0, 2, 0
 526, At. Madrid, Betis, 3, 0, 3, 1, 16, 4, 0, 0, 1, 1, 0, 2, 0
-527, Almería, Racing, 3, 1, 2, 3, 11, 3, 1, 1, 1, 0, 1, 1, 1
-528, Recreativo, Osasuna, 3, 1, 2, 7, 10, 1, 0, 1, 1, 0, 1, 1, 0
-529, Valencia, Espanyol, 3, 3, 0, 2, 6, 3, 0, 1, 0, 1, 0, 2, 1
-530, Valladolid, Deportivo, 0, 3, -3, 15, 5, 0, 1, 2, 1, 0, 0, 3, 0
+527, Recreativo, Osasuna, 3, 1, 2, 7, 10, 1, 0, 1, 1, 0, 1, 1, 0
+528, Valencia, Espanyol, 3, 3, 0, 2, 6, 3, 0, 1, 0, 1, 0, 2, 1
+529, Valladolid, Deportivo, 0, 3, -3, 15, 5, 0, 1, 2, 1, 0, 0, 3, 0
+530, Almería, Racing, 3, 1, 2, 3, 11, 3, 1, 1, 1, 0, 1, 1, 1
 531, Betis, Athletic, 0, 0, 0, 16, 18, 0, 1, 1, 3, 0, 0, 0, 1
 532, Deportivo, Recreativo, 3, 3, 0, 5, 7, 2, 1, 1, 0, 1, 0, 4, 1
 533, Sporting, Almería, 0, 3, -3, 14, 3, 1, 2, 3, 1, 0, 0, 1, 0
@@ -544,10 +544,10 @@
 544, Getafe, Deportivo, 3, 3, 0, 4, 5, 2, 1, 2, 1, 0, 1, 1, 2
 545, Barcelona, Mallorca, 0, 0, 0, 17, 19, 0, 1, 0, 3, 0, 0, 3, 1
 546, R. Madrid, Villarreal, 0, 1, -1, 13, 9, 1, 2, 1, 1, 0, 0, 1, 0
-547, Almería, Betis, 3, 0, 3, 3, 16, 3, 1, 0, 1, 0, 1, 1, 0
-548, Recreativo, Numancia, 3, 3, 0, 7, 8, 1, 0, 1, 0, 0, 1, 3, 1
-549, Valencia, At. Madrid, 3, 3, 0, 2, 1, 3, 0, 4, 0, 1, 0, 3, 1
-550, Valladolid, Racing, 0, 1, -1, 15, 11, 0, 1, 1, 1, 0, 0, 0, 1
+547, Recreativo, Numancia, 3, 3, 0, 7, 8, 1, 0, 1, 0, 0, 1, 3, 1
+548, Valencia, At. Madrid, 3, 3, 0, 2, 1, 3, 0, 4, 0, 1, 0, 3, 1
+549, Valladolid, Racing, 0, 1, -1, 15, 11, 0, 1, 1, 1, 0, 0, 0, 1
+550, Almería, Betis, 3, 0, 3, 3, 16, 3, 1, 0, 1, 0, 1, 1, 0
 551, Betis, Málaga, 0, 0, 0, 16, 20, 0, 1, 0, 4, 0, 0, 1, 2
 552, Deportivo, Sevilla, 3, 1, 2, 5, 12, 2, 1, 1, 1, 1, 0, 1, 3
 553, Sporting, Valladolid, 0, 0, 0, 14, 15, 1, 2, 0, 1, 0, 0, 2, 1
@@ -565,9 +565,9 @@
 565, Getafe, Racing, 3, 1, 2, 4, 11, 2, 1, 1, 1, 0, 1, 0, 1
 566, Barcelona, Deportivo, 0, 3, -3, 17, 5, 0, 1, 2, 1, 0, 0, 5, 0
 567, R. Madrid, Osasuna, 0, 1, -1, 13, 10, 1, 2, 1, 1, 0, 0, 3, 1
-568, Almería, At. Madrid, 3, 3, 0, 3, 1, 3, 1, 4, 0, 0, 1, 1, 1
-569, Recreativo, Sporting, 3, 0, 3, 7, 14, 1, 0, 1, 2, 0, 1, 2, 0
-570, Valladolid, Betis, 0, 0, 0, 15, 16, 0, 1, 0, 1, 0, 0, 1, 3
+568, Recreativo, Sporting, 3, 0, 3, 7, 14, 1, 0, 1, 2, 0, 1, 2, 0
+569, Valladolid, Betis, 0, 0, 0, 15, 16, 0, 1, 0, 1, 0, 0, 1, 3
+570, Almería, At. Madrid, 3, 3, 0, 3, 1, 3, 1, 4, 0, 0, 1, 1, 1
 571, Sevilla, Racing, 1, 1, 0, 12, 11, 1, 1, 1, 1, 0, 0, 0, 2
 572, Villarreal, Osasuna, 1, 1, 0, 9, 10, 1, 1, 1, 1, 0, 0, 1, 1
 573, Málaga, At. Madrid, 0, 3, -3, 20, 1, 0, 4, 4, 0, 0, 0, 1, 1
@@ -575,9 +575,9 @@
 575, Barcelona, Numancia, 0, 3, -3, 17, 8, 0, 1, 1, 0, 0, 0, 4, 1
 576, Mallorca, Valencia, 0, 3, -3, 19, 2, 0, 3, 3, 0, 0, 0, 3, 1
 577, R. Madrid, Deportivo, 0, 3, -3, 13, 5, 1, 2, 2, 1, 0, 0, 1, 0
-578, Almería, Athletic, 3, 0, 3, 3, 18, 3, 1, 1, 3, 0, 1, 2, 1
-579, Recreativo, Betis, 3, 0, 3, 7, 16, 1, 0, 0, 1, 0, 1, 1, 0
-580, Valladolid, Espanyol, 0, 3, -3, 15, 6, 0, 1, 1, 0, 0, 0, 1, 1
+578, Recreativo, Betis, 3, 0, 3, 7, 16, 1, 0, 0, 1, 0, 1, 1, 0
+579, Valladolid, Espanyol, 0, 3, -3, 15, 6, 0, 1, 1, 0, 0, 0, 1, 1
+580, Almería, Athletic, 3, 0, 3, 3, 18, 3, 1, 1, 3, 0, 1, 2, 1
 581, Athletic, Málaga, 0, 0, 0, 18, 20, 1, 3, 0, 4, 0, 0, 3, 2
 582, Betis, Getafe, 0, 3, -3, 16, 4, 0, 1, 2, 1, 0, 0, 2, 2
 583, Deportivo, Villarreal, 3, 1, 2, 5, 9, 2, 1, 1, 1, 1, 0, 3, 0
@@ -606,8 +606,8 @@
 606, Numancia, Mallorca, 3, 0, 3, 8, 19, 1, 0, 0, 3, 1, 0, 0, 1
 607, At. Madrid, Getafe, 3, 3, 0, 1, 4, 4, 0, 2, 1, 1, 0, 1, 1
 608, Espanyol, Sevilla, 3, 1, 2, 6, 12, 1, 0, 1, 1, 1, 0, 0, 2
-609, Almería, Valladolid, 3, 0, 3, 3, 15, 3, 1, 0, 1, 0, 1, 3, 2
-610, Valencia, Málaga, 3, 0, 3, 2, 20, 3, 0, 0, 4, 1, 0, 1, 1
+609, Valencia, Málaga, 3, 0, 3, 2, 20, 3, 0, 0, 4, 1, 0, 1, 1
+610, Almería, Valladolid, 3, 0, 3, 3, 15, 3, 1, 0, 1, 0, 1, 3, 2
 611, Sevilla, At. Madrid, 1, 3, -2, 12, 1, 1, 1, 4, 0, 0, 0, 1, 0
 612, Deportivo, Valencia, 3, 3, 0, 5, 2, 2, 1, 3, 0, 1, 0, 1, 1
 613, Villarreal, Sporting, 1, 0, 1, 9, 14, 1, 1, 1, 2, 0, 0, 2, 1
@@ -626,8 +626,8 @@
 626, Numancia, Deportivo, 3, 3, 0, 8, 5, 1, 0, 2, 1, 1, 0, 0, 1
 627, Espanyol, R. Madrid, 3, 0, 3, 6, 13, 1, 0, 1, 2, 1, 0, 0, 2
 628, At. Madrid, Barcelona, 3, 0, 3, 1, 17, 4, 0, 0, 1, 1, 0, 4, 3
-629, Almería, Getafe, 3, 3, 0, 3, 4, 3, 1, 2, 1, 0, 1, 2, 1
-630, Valencia, Valladolid, 3, 0, 3, 2, 15, 3, 0, 0, 1, 1, 0, 1, 2
+629, Valencia, Valladolid, 3, 0, 3, 2, 15, 3, 0, 0, 1, 1, 0, 1, 2
+630, Almería, Getafe, 3, 3, 0, 3, 4, 3, 1, 2, 1, 0, 1, 2, 1
 631, Sevilla, Almería, 1, 3, -2, 12, 3, 1, 1, 3, 1, 0, 0, 2, 1
 632, Deportivo, Racing, 3, 1, 2, 5, 11, 2, 1, 1, 1, 1, 0, 5, 3
 633, Villarreal, Espanyol, 1, 3, -2, 9, 6, 1, 1, 1, 0, 0, 0, 1, 0
@@ -645,9 +645,9 @@
 645, Racing, Numancia, 1, 3, -2, 11, 8, 1, 1, 1, 0, 0, 0, 5, 0
 646, At. Madrid, Villarreal, 3, 1, 2, 1, 9, 4, 0, 1, 1, 1, 0, 3, 2
 647, Espanyol, Mallorca, 3, 0, 3, 6, 19, 1, 0, 0, 3, 1, 0, 3, 3
-648, Almería, Barcelona, 3, 0, 3, 3, 17, 3, 1, 0, 1, 0, 1, 0, 2
-649, Valencia, Recreativo, 3, 3, 0, 2, 7, 3, 0, 1, 0, 1, 0, 1, 1
-650, Valladolid, Getafe, 0, 3, -3, 15, 4, 0, 1, 2, 1, 0, 0, 1, 0
+648, Valencia, Recreativo, 3, 3, 0, 2, 7, 3, 0, 1, 0, 1, 0, 1, 1
+649, Valladolid, Getafe, 0, 3, -3, 15, 4, 0, 1, 2, 1, 0, 0, 1, 0
+650, Almería, Barcelona, 3, 0, 3, 3, 17, 3, 1, 0, 1, 0, 1, 0, 2
 651, Sevilla, Valladolid, 1, 0, 1, 12, 15, 1, 1, 0, 1, 0, 0, 4, 1
 652, Deportivo, Betis, 3, 0, 3, 5, 16, 2, 1, 0, 1, 1, 0, 1, 1
 653, Villarreal, Athletic, 1, 0, 1, 9, 18, 1, 1, 1, 3, 0, 0, 2, 0
@@ -662,12 +662,12 @@
 662, Betis, Numancia, 0, 3, -3, 16, 8, 0, 1, 1, 0, 0, 0, 3, 3
 663, Sporting, Racing, 0, 1, -1, 14, 11, 1, 2, 1, 1, 0, 0, 0, 2
 664, Málaga, R. Madrid, 0, 0, 0, 20, 13, 0, 4, 1, 2, 0, 0, 0, 1
-665, Almería, Villarreal, 3, 1, 2, 3, 9, 3, 1, 1, 1, 0, 1, 3, 0
-666, At. Madrid, Osasuna, 3, 1, 2, 1, 10, 4, 0, 1, 1, 1, 0, 2, 4
-667, Espanyol, Deportivo, 3, 3, 0, 6, 5, 1, 0, 2, 1, 1, 0, 3, 1
-668, Recreativo, Sevilla, 3, 1, 2, 7, 12, 1, 0, 1, 1, 0, 1, 0, 1
-669, Valladolid, Barcelona, 0, 0, 0, 15, 17, 0, 1, 0, 1, 0, 0, 0, 1
-670, Valencia, Getafe, 3, 3, 0, 2, 4, 3, 0, 2, 1, 1, 0, 4, 1
+665, At. Madrid, Osasuna, 3, 1, 2, 1, 10, 4, 0, 1, 1, 1, 0, 2, 4
+666, Espanyol, Deportivo, 3, 3, 0, 6, 5, 1, 0, 2, 1, 1, 0, 3, 1
+667, Recreativo, Sevilla, 3, 1, 2, 7, 12, 1, 0, 1, 1, 0, 1, 0, 1
+668, Valladolid, Barcelona, 0, 0, 0, 15, 17, 0, 1, 0, 1, 0, 0, 0, 1
+669, Valencia, Getafe, 3, 3, 0, 2, 4, 3, 0, 2, 1, 1, 0, 4, 1
+670, Almería, Villarreal, 3, 1, 2, 3, 9, 3, 1, 1, 1, 0, 1, 3, 0
 671, Sevilla, Getafe, 1, 3, -2, 12, 4, 1, 1, 2, 1, 0, 0, 0, 1
 672, Deportivo, At. Madrid, 3, 3, 0, 5, 1, 2, 1, 4, 0, 1, 0, 1, 2
 673, Sporting, Valencia, 0, 3, -3, 14, 2, 1, 2, 3, 0, 0, 0, 2, 3
@@ -684,10 +684,10 @@
 684, Getafe, Barcelona, 3, 0, 3, 4, 17, 2, 1, 0, 1, 0, 1, 0, 1
 685, At. Madrid, Numancia, 3, 3, 0, 1, 8, 4, 0, 1, 0, 1, 0, 3, 0
 686, Espanyol, Racing, 3, 1, 2, 6, 11, 1, 0, 1, 1, 1, 0, 1, 0
-687, Almería, Osasuna, 3, 1, 2, 3, 10, 3, 1, 1, 1, 0, 1, 2, 1
-688, Recreativo, R. Madrid, 3, 0, 3, 7, 13, 1, 0, 1, 2, 0, 1, 0, 1
-689, Valencia, Sevilla, 3, 1, 2, 2, 12, 3, 0, 1, 1, 1, 0, 3, 1
-690, Valladolid, Villarreal, 0, 1, -1, 15, 9, 0, 1, 1, 1, 0, 0, 0, 0
+687, Recreativo, R. Madrid, 3, 0, 3, 7, 13, 1, 0, 1, 2, 0, 1, 0, 1
+688, Valencia, Sevilla, 3, 1, 2, 2, 12, 3, 0, 1, 1, 1, 0, 3, 1
+689, Valladolid, Villarreal, 0, 1, -1, 15, 9, 0, 1, 1, 1, 0, 0, 0, 0
+690, Almería, Osasuna, 3, 1, 2, 3, 10, 3, 1, 1, 1, 0, 1, 2, 1
 691, Betis, Valencia, 0, 3, -3, 16, 2, 0, 1, 3, 0, 0, 0, 1, 2
 692, Deportivo, Almería, 3, 3, 0, 5, 3, 2, 1, 3, 1, 1, 0, 2, 0
 693, Sporting, Espanyol, 0, 3, -3, 14, 6, 1, 2, 1, 0, 0, 0, 0, 3
@@ -702,12 +702,12 @@
 702, Athletic, Racing, 0, 1, -1, 18, 11, 1, 3, 1, 1, 0, 0, 2, 1
 703, Málaga, Deportivo, 0, 3, -3, 20, 5, 0, 4, 2, 1, 0, 0, 1, 1
 704, Getafe, Villarreal, 3, 1, 2, 4, 9, 2, 1, 1, 1, 0, 1, 1, 2
-705, Almería, Numancia, 3, 3, 0, 3, 8, 3, 1, 1, 0, 0, 1, 2, 1
-706, At. Madrid, Sporting, 3, 0, 3, 1, 14, 4, 0, 1, 2, 1, 0, 3, 1
-707, Espanyol, Betis, 3, 0, 3, 6, 16, 1, 0, 0, 1, 1, 0, 2, 0
-708, Recreativo, Mallorca, 3, 0, 3, 7, 19, 1, 0, 0, 3, 0, 1, 2, 4
-709, Valencia, Barcelona, 3, 0, 3, 2, 17, 3, 0, 0, 1, 1, 0, 2, 2
-710, Valladolid, Osasuna, 0, 1, -1, 15, 10, 0, 1, 1, 1, 0, 0, 0, 0
+705, At. Madrid, Sporting, 3, 0, 3, 1, 14, 4, 0, 1, 2, 1, 0, 3, 1
+706, Espanyol, Betis, 3, 0, 3, 6, 16, 1, 0, 0, 1, 1, 0, 2, 0
+707, Recreativo, Mallorca, 3, 0, 3, 7, 19, 1, 0, 0, 3, 0, 1, 2, 4
+708, Valencia, Barcelona, 3, 0, 3, 2, 17, 3, 0, 0, 1, 1, 0, 2, 2
+709, Valladolid, Osasuna, 0, 1, -1, 15, 10, 0, 1, 1, 1, 0, 0, 0, 0
+710, Almería, Numancia, 3, 3, 0, 3, 8, 3, 1, 1, 0, 0, 1, 2, 1
 711, Betis, At. Madrid, 0, 3, -3, 16, 1, 0, 1, 4, 0, 0, 0, 0, 2
 712, Deportivo, Valladolid, 3, 0, 3, 5, 15, 2, 1, 0, 1, 1, 0, 1, 0
 713, Sporting, Athletic, 0, 0, 0, 14, 18, 1, 2, 1, 3, 0, 0, 1, 1
@@ -724,10 +724,10 @@
 724, Getafe, Osasuna, 3, 1, 2, 4, 10, 2, 1, 1, 1, 0, 1, 3, 0
 725, Barcelona, Villarreal, 0, 1, -1, 17, 9, 0, 1, 1, 1, 0, 0, 3, 3
 726, At. Madrid, Espanyol, 3, 3, 0, 1, 6, 4, 0, 1, 0, 1, 0, 3, 2
-727, Almería, Sporting, 3, 0, 3, 3, 14, 3, 1, 1, 2, 0, 1, 3, 1
-728, Recreativo, Deportivo, 3, 3, 0, 7, 5, 1, 0, 2, 1, 0, 1, 1, 2
-729, Valencia, R. Madrid, 3, 0, 3, 2, 13, 3, 0, 1, 2, 1, 0, 3, 0
-730, Valladolid, Numancia, 0, 3, -3, 15, 8, 0, 1, 1, 0, 0, 0, 0, 0
+727, Recreativo, Deportivo, 3, 3, 0, 7, 5, 1, 0, 2, 1, 0, 1, 1, 2
+728, Valencia, R. Madrid, 3, 0, 3, 2, 13, 3, 0, 1, 2, 1, 0, 3, 0
+729, Valladolid, Numancia, 0, 3, -3, 15, 8, 0, 1, 1, 0, 0, 0, 0, 0
+730, Almería, Sporting, 3, 0, 3, 3, 14, 3, 1, 1, 2, 0, 1, 3, 1
 731, Betis, Almería, 0, 3, -3, 16, 3, 0, 1, 3, 1, 0, 0, 2, 0
 732, Deportivo, Getafe, 3, 3, 0, 5, 4, 2, 1, 2, 1, 1, 0, 1, 1
 733, Sporting, Málaga, 0, 0, 0, 14, 20, 1, 2, 0, 4, 0, 0, 2, 1
@@ -744,10 +744,10 @@
 744, Villarreal, Valencia, 1, 3, -2, 9, 2, 1, 1, 3, 0, 0, 0, 3, 1
 745, Getafe, Numancia, 3, 3, 0, 4, 8, 2, 1, 1, 0, 0, 1, 1, 0
 746, Barcelona, Osasuna, 0, 1, -1, 17, 10, 0, 1, 1, 1, 0, 0, 0, 1
-747, Almería, Espanyol, 3, 3, 0, 3, 6, 3, 1, 1, 0, 0, 1, 0, 3
-748, R. Madrid, Mallorca, 0, 0, 0, 13, 19, 1, 2, 0, 3, 0, 0, 1, 3
-749, Recreativo, Racing, 3, 1, 2, 7, 11, 1, 0, 1, 1, 0, 1, 0, 1
-750, Valladolid, Sporting, 0, 0, 0, 15, 14, 0, 1, 1, 2, 0, 0, 1, 2
+747, R. Madrid, Mallorca, 0, 0, 0, 13, 19, 1, 2, 0, 3, 0, 0, 1, 3
+748, Recreativo, Racing, 3, 1, 2, 7, 11, 1, 0, 1, 1, 0, 1, 0, 1
+749, Valladolid, Sporting, 0, 0, 0, 15, 14, 0, 1, 1, 2, 0, 0, 1, 2
+750, Almería, Espanyol, 3, 3, 0, 3, 6, 3, 1, 1, 0, 0, 1, 0, 3
 751, Betis, Valladolid, 0, 0, 0, 16, 15, 0, 1, 0, 1, 0, 0, 1, 1
 752, Deportivo, Barcelona, 3, 0, 3, 5, 17, 2, 1, 0, 1, 1, 0, 1, 1
 753, Sporting, Recreativo, 0, 3, -3, 14, 7, 1, 2, 1, 0, 0, 0, 2, 1
@@ -765,9 +765,9 @@
 765, Barcelona, Sporting, 3, 0, 3, 2, 19, 3, 0, 0, 3, 1, 0, 3, 0
 766, Mallorca, Xerez, 3, 0, 3, 4, 16, 2, 0, 0, 2, 1, 0, 2, 0
 767, R. Madrid, Deportivo, 3, 0, 3, 6, 13, 3, 2, 2, 3, 1, 0, 3, 2
-768, Almería, Valladolid, 1, 1, 0, 11, 12, 0, 0, 0, 0, 0, 0, 0, 0
-769, Osasuna, Villarreal, 1, 1, 0, 9, 10, 1, 1, 1, 1, 0, 0, 1, 1
-770, Valencia, Sevilla, 3, 0, 3, 5, 17, 2, 0, 0, 2, 1, 0, 2, 0
+768, Osasuna, Villarreal, 1, 1, 0, 9, 10, 1, 1, 1, 1, 0, 0, 1, 1
+769, Valencia, Sevilla, 3, 0, 3, 5, 17, 2, 0, 0, 2, 1, 0, 2, 0
+770, Almería, Valladolid, 1, 1, 0, 11, 12, 0, 0, 0, 0, 0, 0, 0, 0
 771, Sevilla, Zaragoza, 0, 3, -3, 17, 7, 0, 2, 1, 0, 0, 0, 4, 1
 772, Deportivo, Málaga, 0, 3, -3, 13, 3, 2, 3, 3, 0, 0, 0, 1, 0
 773, Sporting, Almería, 0, 1, -1, 19, 11, 0, 3, 0, 0, 0, 0, 1, 0
@@ -785,9 +785,9 @@
 785, Mallorca, Tenerife, 3, 0, 3, 4, 15, 2, 0, 0, 1, 1, 0, 4, 0
 786, Barcelona, At. Madrid, 3, 0, 3, 2, 20, 3, 0, 0, 3, 1, 0, 5, 2
 787, R. Madrid, Xerez, 3, 0, 3, 6, 16, 3, 2, 0, 2, 1, 0, 5, 0
-788, Almería, Getafe, 1, 3, -2, 11, 1, 0, 0, 4, 1, 0, 0, 1, 0
-789, Osasuna, Sevilla, 1, 0, 1, 9, 17, 1, 1, 0, 2, 0, 0, 0, 2
-790, Valencia, Sporting, 3, 0, 3, 5, 19, 2, 0, 0, 3, 1, 0, 2, 2
+788, Osasuna, Sevilla, 1, 0, 1, 9, 17, 1, 1, 0, 2, 0, 0, 0, 2
+789, Valencia, Sporting, 3, 0, 3, 5, 19, 2, 0, 0, 3, 1, 0, 2, 2
+790, Almería, Getafe, 1, 3, -2, 11, 1, 0, 0, 4, 1, 0, 0, 1, 0
 791, Sevilla, Mallorca, 0, 3, -3, 17, 4, 0, 2, 2, 0, 0, 0, 2, 0
 792, Sporting, Zaragoza, 0, 3, -3, 19, 7, 0, 3, 1, 0, 0, 0, 1, 1
 793, Villarreal, R. Madrid, 1, 3, -2, 10, 6, 1, 1, 3, 2, 0, 0, 0, 2
@@ -805,9 +805,9 @@
 805, Mallorca, Valladolid, 3, 1, 2, 4, 12, 2, 0, 0, 0, 1, 0, 3, 0
 806, Espanyol, Xerez, 0, 0, 0, 14, 16, 0, 1, 0, 2, 0, 0, 0, 0
 807, R. Madrid, Tenerife, 3, 0, 3, 6, 15, 3, 2, 0, 1, 1, 0, 3, 0
-808, Almería, Racing, 1, 0, 1, 11, 18, 0, 0, 1, 4, 0, 0, 2, 2
-809, Osasuna, Sporting, 1, 0, 1, 9, 19, 1, 1, 0, 3, 0, 0, 1, 0
-810, Valencia, At. Madrid, 3, 0, 3, 5, 20, 2, 0, 0, 3, 1, 0, 2, 2
+808, Osasuna, Sporting, 1, 0, 1, 9, 19, 1, 1, 0, 3, 0, 0, 1, 0
+809, Valencia, At. Madrid, 3, 0, 3, 5, 20, 2, 0, 0, 3, 1, 0, 2, 2
+810, Almería, Racing, 1, 0, 1, 11, 18, 0, 0, 1, 4, 0, 0, 2, 2
 811, Sevilla, R. Madrid, 0, 3, -3, 17, 6, 0, 2, 3, 2, 0, 0, 2, 1
 812, Sporting, Mallorca, 0, 3, -3, 19, 4, 0, 3, 2, 0, 0, 0, 4, 1
 813, Villarreal, Espanyol, 1, 0, 1, 10, 14, 1, 1, 0, 1, 0, 0, 0, 0
@@ -835,9 +835,9 @@
 835, Racing, Osasuna, 0, 1, -1, 18, 9, 1, 4, 1, 1, 0, 0, 1, 1
 836, Barcelona, Zaragoza, 3, 3, 0, 2, 7, 3, 0, 1, 0, 1, 0, 6, 1
 837, At. Madrid, Mallorca, 0, 3, -3, 20, 4, 0, 3, 2, 0, 0, 0, 1, 1
-838, Almería, Valencia, 1, 3, -2, 11, 5, 0, 0, 2, 0, 0, 0, 0, 3
-839, Valladolid, Deportivo, 1, 0, 1, 12, 13, 0, 0, 2, 3, 0, 0, 4, 0
-840, Tenerife, Xerez, 0, 0, 0, 15, 16, 0, 1, 0, 2, 0, 0, 1, 0
+838, Valladolid, Deportivo, 1, 0, 1, 12, 13, 0, 0, 2, 3, 0, 0, 4, 0
+839, Tenerife, Xerez, 0, 0, 0, 15, 16, 0, 1, 0, 2, 0, 0, 1, 0
+840, Almería, Valencia, 1, 3, -2, 11, 5, 0, 0, 2, 0, 0, 0, 0, 3
 841, Zaragoza, Almería, 3, 1, 2, 7, 11, 1, 0, 0, 0, 1, 0, 2, 1
 842, Athletic, At. Madrid, 3, 0, 3, 8, 20, 1, 0, 0, 3, 1, 0, 1, 0
 843, Deportivo, Sporting, 0, 0, 0, 13, 19, 2, 3, 0, 3, 0, 0, 1, 1
@@ -853,11 +853,11 @@
 853, Getafe, Deportivo, 3, 0, 3, 1, 13, 4, 1, 2, 3, 0, 1, 0, 2
 854, Racing, Athletic, 0, 3, -3, 18, 8, 1, 4, 1, 0, 0, 0, 0, 2
 855, Barcelona, Mallorca, 3, 3, 0, 2, 4, 3, 0, 2, 0, 1, 0, 4, 2
-856, Almería, Osasuna, 1, 1, 0, 11, 9, 0, 0, 1, 1, 0, 0, 2, 0
-857, At. Madrid, R. Madrid, 0, 3, -3, 20, 6, 0, 3, 3, 2, 0, 0, 2, 3
-858, Valencia, Zaragoza, 3, 3, 0, 5, 7, 2, 0, 1, 0, 1, 0, 3, 1
-859, Tenerife, Málaga, 0, 3, -3, 15, 3, 0, 1, 3, 0, 0, 0, 2, 2
-860, Valladolid, Xerez, 1, 0, 1, 12, 16, 0, 0, 0, 2, 0, 0, 0, 0
+856, At. Madrid, R. Madrid, 0, 3, -3, 20, 6, 0, 3, 3, 2, 0, 0, 2, 3
+857, Valencia, Zaragoza, 3, 3, 0, 5, 7, 2, 0, 1, 0, 1, 0, 3, 1
+858, Tenerife, Málaga, 0, 3, -3, 15, 3, 0, 1, 3, 0, 0, 0, 2, 2
+859, Valladolid, Xerez, 1, 0, 1, 12, 16, 0, 0, 0, 2, 0, 0, 0, 0
+860, Almería, Osasuna, 1, 1, 0, 11, 9, 0, 0, 1, 1, 0, 0, 2, 0
 861, Athletic, Barcelona, 3, 3, 0, 8, 2, 1, 0, 3, 0, 1, 0, 1, 1
 862, Deportivo, At. Madrid, 0, 0, 0, 13, 20, 2, 3, 0, 3, 0, 0, 2, 1
 863, Villarreal, Valladolid, 1, 1, 0, 10, 12, 1, 1, 0, 0, 0, 0, 3, 1
@@ -875,9 +875,9 @@
 875, Racing, Deportivo, 0, 0, 0, 18, 13, 1, 4, 2, 3, 0, 0, 0, 1
 876, Barcelona, R. Madrid, 3, 3, 0, 2, 6, 3, 0, 3, 2, 1, 0, 1, 0
 877, At. Madrid, Espanyol, 0, 0, 0, 20, 14, 0, 3, 0, 1, 0, 0, 4, 0
-878, Almería, Athletic, 1, 3, -2, 11, 8, 0, 0, 1, 0, 0, 0, 1, 4
-879, Valladolid, Tenerife, 1, 0, 1, 12, 15, 0, 0, 0, 1, 0, 0, 3, 3
-880, Valencia, Mallorca, 3, 3, 0, 5, 4, 2, 0, 2, 0, 1, 0, 1, 1
+878, Valladolid, Tenerife, 1, 0, 1, 12, 15, 0, 0, 0, 1, 0, 0, 3, 3
+879, Valencia, Mallorca, 3, 3, 0, 5, 4, 2, 0, 2, 0, 1, 0, 1, 1
+880, Almería, Athletic, 1, 3, -2, 11, 8, 0, 0, 1, 0, 0, 0, 1, 4
 881, Sevilla, Valladolid, 0, 1, -1, 17, 12, 0, 2, 0, 0, 0, 0, 1, 1
 882, Athletic, Valencia, 3, 3, 0, 8, 5, 1, 0, 2, 0, 1, 0, 1, 2
 883, Deportivo, Barcelona, 0, 3, -3, 13, 2, 2, 3, 3, 0, 0, 0, 1, 3
@@ -894,10 +894,10 @@
 894, Racing, Xerez, 0, 0, 0, 18, 16, 1, 4, 0, 2, 0, 0, 3, 2
 895, Barcelona, Espanyol, 3, 0, 3, 2, 14, 3, 0, 0, 1, 1, 0, 1, 0
 896, At. Madrid, Villarreal, 0, 1, -1, 20, 10, 0, 3, 1, 1, 0, 0, 1, 2
-897, Almería, Deportivo, 1, 0, 1, 11, 13, 0, 0, 2, 3, 0, 0, 1, 1
-898, Osasuna, Mallorca, 1, 3, -2, 9, 4, 1, 1, 2, 0, 0, 0, 0, 1
-899, Valladolid, Málaga, 1, 3, -2, 12, 3, 0, 0, 3, 0, 0, 0, 1, 1
-900, Valencia, R. Madrid, 3, 3, 0, 5, 6, 2, 0, 3, 2, 1, 0, 2, 3
+897, Osasuna, Mallorca, 1, 3, -2, 9, 4, 1, 1, 2, 0, 0, 0, 0, 1
+898, Valladolid, Málaga, 1, 3, -2, 12, 3, 0, 0, 3, 0, 0, 0, 1, 1
+899, Valencia, R. Madrid, 3, 3, 0, 5, 6, 2, 0, 3, 2, 1, 0, 2, 3
+900, Almería, Deportivo, 1, 0, 1, 11, 13, 0, 0, 2, 3, 0, 0, 1, 1
 901, Sevilla, Getafe, 0, 3, -3, 17, 1, 0, 2, 4, 1, 0, 0, 1, 2
 902, Athletic, Osasuna, 3, 1, 2, 8, 9, 1, 0, 1, 1, 1, 0, 2, 0
 903, Deportivo, Valencia, 0, 3, -3, 13, 5, 2, 3, 2, 0, 0, 0, 0, 0
@@ -915,9 +915,9 @@
 915, Barcelona, Villarreal, 3, 1, 2, 2, 10, 3, 0, 1, 1, 1, 0, 1, 1
 916, Mallorca, Athletic, 3, 3, 0, 4, 8, 2, 0, 1, 0, 1, 0, 2, 0
 917, At. Madrid, Sevilla, 0, 0, 0, 20, 17, 0, 3, 0, 2, 0, 0, 2, 1
-918, Almería, Xerez, 1, 0, 1, 11, 16, 0, 0, 0, 2, 0, 0, 1, 0
-919, Osasuna, R. Madrid, 1, 3, -2, 9, 6, 1, 1, 3, 2, 0, 0, 0, 0
-920, Valencia, Espanyol, 3, 0, 3, 5, 14, 2, 0, 0, 1, 1, 0, 1, 0
+918, Osasuna, R. Madrid, 1, 3, -2, 9, 6, 1, 1, 3, 2, 0, 0, 0, 0
+919, Valencia, Espanyol, 3, 0, 3, 5, 14, 2, 0, 0, 1, 1, 0, 1, 0
+920, Almería, Xerez, 1, 0, 1, 11, 16, 0, 0, 0, 2, 0, 0, 1, 0
 921, Sevilla, Racing, 0, 0, 0, 17, 18, 0, 2, 1, 4, 0, 0, 1, 2
 922, Deportivo, Osasuna, 0, 1, -1, 13, 9, 2, 3, 1, 1, 0, 0, 1, 0
 923, Sporting, Getafe, 0, 3, -3, 19, 1, 0, 3, 4, 1, 0, 0, 1, 0
@@ -935,9 +935,9 @@
 935, Barcelona, Sevilla, 3, 0, 3, 2, 17, 3, 0, 0, 2, 1, 0, 4, 0
 936, Mallorca, Deportivo, 3, 0, 3, 4, 13, 2, 0, 2, 3, 1, 0, 2, 0
 937, At. Madrid, Sporting, 0, 0, 0, 20, 19, 0, 3, 0, 3, 0, 0, 3, 2
-938, Almería, Tenerife, 1, 0, 1, 11, 15, 0, 0, 0, 1, 0, 0, 1, 1
-939, Osasuna, Espanyol, 1, 0, 1, 9, 14, 1, 1, 0, 1, 0, 0, 2, 0
-940, Valencia, Villarreal, 3, 1, 2, 5, 10, 2, 0, 1, 1, 1, 0, 4, 1
+938, Osasuna, Espanyol, 1, 0, 1, 9, 14, 1, 1, 0, 1, 0, 0, 2, 0
+939, Valencia, Villarreal, 3, 1, 2, 5, 10, 2, 0, 1, 1, 1, 0, 4, 1
+940, Almería, Tenerife, 1, 0, 1, 11, 15, 0, 0, 0, 1, 0, 0, 1, 1
 941, Sevilla, Almería, 0, 1, -1, 17, 11, 0, 2, 0, 0, 0, 0, 1, 0
 942, Deportivo, Athletic, 0, 3, -3, 13, 8, 2, 3, 1, 0, 0, 0, 3, 1
 943, Sporting, Racing, 0, 0, 0, 19, 18, 0, 3, 1, 4, 0, 0, 0, 1
@@ -965,9 +965,9 @@
 965, Mallorca, Villarreal, 3, 1, 2, 4, 10, 2, 0, 1, 1, 1, 0, 1, 0
 966, Barcelona, Getafe, 3, 3, 0, 2, 1, 3, 0, 4, 1, 1, 0, 2, 1
 967, R. Madrid, Espanyol, 3, 0, 3, 6, 14, 3, 2, 0, 1, 1, 0, 3, 0
-968, Almería, Sporting, 1, 0, 1, 11, 19, 0, 0, 0, 3, 0, 0, 3, 1
-969, Osasuna, Tenerife, 1, 0, 1, 9, 15, 1, 1, 0, 1, 0, 0, 1, 0
-970, Valencia, Valladolid, 3, 1, 2, 5, 12, 2, 0, 0, 0, 1, 0, 2, 0
+968, Osasuna, Tenerife, 1, 0, 1, 9, 15, 1, 1, 0, 1, 0, 0, 1, 0
+969, Valencia, Valladolid, 3, 1, 2, 5, 12, 2, 0, 0, 0, 1, 0, 2, 0
+970, Almería, Sporting, 1, 0, 1, 11, 19, 0, 0, 0, 3, 0, 0, 3, 1
 971, Sevilla, Osasuna, 0, 1, -1, 17, 9, 0, 2, 1, 1, 0, 0, 1, 0
 972, Sporting, Valencia, 0, 3, -3, 19, 5, 0, 3, 2, 0, 0, 0, 1, 1
 973, Villarreal, Athletic, 1, 3, -2, 10, 8, 1, 1, 1, 0, 0, 0, 2, 1
@@ -985,9 +985,9 @@
 985, Mallorca, Sevilla, 3, 0, 3, 4, 17, 2, 0, 0, 2, 1, 0, 1, 3
 986, Barcelona, Racing, 3, 0, 3, 2, 18, 3, 0, 1, 4, 1, 0, 4, 0
 987, R. Madrid, Villarreal, 3, 1, 2, 6, 10, 3, 2, 1, 1, 1, 0, 6, 2
-988, Almería, At. Madrid, 1, 0, 1, 11, 20, 0, 0, 0, 3, 0, 0, 1, 0
-989, Osasuna, Valladolid, 1, 1, 0, 9, 12, 1, 1, 0, 0, 0, 0, 1, 1
-990, Valencia, Getafe, 3, 3, 0, 5, 1, 2, 0, 4, 1, 1, 0, 2, 1
+988, Osasuna, Valladolid, 1, 1, 0, 9, 12, 1, 1, 0, 0, 0, 0, 1, 1
+989, Valencia, Getafe, 3, 3, 0, 5, 1, 2, 0, 4, 1, 1, 0, 2, 1
+990, Almería, At. Madrid, 1, 0, 1, 11, 20, 0, 0, 0, 3, 0, 0, 1, 0
 991, Sevilla, Athletic, 0, 3, -3, 17, 8, 0, 2, 1, 0, 0, 0, 0, 0
 992, Sporting, Osasuna, 0, 1, -1, 19, 9, 0, 3, 1, 1, 0, 0, 3, 2
 993, Villarreal, Deportivo, 1, 0, 1, 10, 13, 1, 1, 2, 3, 0, 0, 1, 0
@@ -1005,9 +1005,9 @@
 1005, Mallorca, Sporting, 3, 0, 3, 4, 19, 2, 0, 0, 3, 1, 0, 3, 0
 1006, Espanyol, Villarreal, 0, 1, -1, 14, 10, 0, 1, 1, 1, 0, 0, 0, 0
 1007, R. Madrid, Sevilla, 3, 0, 3, 6, 17, 3, 2, 0, 2, 1, 0, 3, 2
-1008, Almería, Barcelona, 1, 3, -2, 11, 2, 0, 0, 3, 0, 0, 0, 2, 2
-1009, Osasuna, Getafe, 1, 3, -2, 9, 1, 1, 1, 4, 1, 0, 0, 0, 0
-1010, Valencia, Racing, 3, 0, 3, 5, 18, 2, 0, 1, 4, 1, 0, 0, 0
+1008, Osasuna, Getafe, 1, 3, -2, 9, 1, 1, 1, 4, 1, 0, 0, 0, 0
+1009, Valencia, Racing, 3, 0, 3, 5, 18, 2, 0, 1, 4, 1, 0, 0, 0
+1010, Almería, Barcelona, 1, 3, -2, 11, 2, 0, 0, 3, 0, 0, 0, 2, 2
 1011, Sevilla, Deportivo, 0, 0, 0, 17, 13, 0, 2, 2, 3, 0, 0, 1, 1
 1012, Sporting, Athletic, 0, 3, -3, 19, 8, 0, 3, 1, 0, 0, 0, 0, 0
 1013, Villarreal, Xerez, 1, 0, 1, 10, 16, 1, 1, 0, 2, 0, 0, 2, 0
@@ -1015,9 +1015,9 @@
 1015, Racing, Zaragoza, 0, 3, -3, 18, 7, 1, 4, 1, 0, 0, 0, 0, 0
 1016, Barcelona, Valencia, 3, 3, 0, 2, 5, 3, 0, 2, 0, 1, 0, 3, 0
 1017, At. Madrid, Osasuna, 0, 1, -1, 20, 9, 0, 3, 1, 1, 0, 0, 1, 0
-1018, Almería, Málaga, 1, 3, -2, 11, 3, 0, 0, 3, 0, 0, 0, 1, 0
-1019, Tenerife, Espanyol, 0, 0, 0, 15, 14, 0, 1, 0, 1, 0, 0, 4, 1
-1020, Valladolid, R. Madrid, 1, 3, -2, 12, 6, 0, 0, 3, 2, 0, 0, 1, 4
+1018, Tenerife, Espanyol, 0, 0, 0, 15, 14, 0, 1, 0, 1, 0, 0, 4, 1
+1019, Valladolid, R. Madrid, 1, 3, -2, 12, 6, 0, 0, 3, 2, 0, 0, 1, 4
+1020, Almería, Málaga, 1, 3, -2, 11, 3, 0, 0, 3, 0, 0, 0, 1, 0
 1021, Athletic, Getafe, 3, 3, 0, 8, 1, 1, 0, 4, 1, 1, 0, 2, 2
 1022, Zaragoza, Barcelona, 3, 3, 0, 7, 2, 1, 0, 3, 0, 1, 0, 2, 4
 1023, Deportivo, Valladolid, 0, 1, -1, 13, 12, 2, 3, 0, 0, 0, 0, 0, 2
@@ -1033,11 +1033,11 @@
 1033, Getafe, R. Madrid, 3, 3, 0, 1, 6, 4, 1, 3, 2, 0, 1, 2, 4
 1034, Racing, Mallorca, 0, 3, -3, 18, 4, 1, 4, 2, 0, 0, 0, 0, 0
 1035, Barcelona, Osasuna, 3, 1, 2, 2, 9, 3, 0, 1, 1, 1, 0, 2, 0
-1036, Almería, Zaragoza, 1, 3, -2, 11, 7, 0, 0, 1, 0, 0, 0, 1, 0
-1037, At. Madrid, Athletic, 0, 3, -3, 20, 8, 0, 3, 1, 0, 0, 0, 2, 0
-1038, Valencia, Málaga, 3, 3, 0, 5, 3, 2, 0, 3, 0, 1, 0, 1, 0
-1039, Tenerife, Villarreal, 0, 1, -1, 15, 10, 0, 1, 1, 1, 0, 0, 2, 2
-1040, Valladolid, Espanyol, 1, 0, 1, 12, 14, 0, 0, 0, 1, 0, 0, 0, 0
+1036, At. Madrid, Athletic, 0, 3, -3, 20, 8, 0, 3, 1, 0, 0, 0, 2, 0
+1037, Valencia, Málaga, 3, 3, 0, 5, 3, 2, 0, 3, 0, 1, 0, 1, 0
+1038, Tenerife, Villarreal, 0, 1, -1, 15, 10, 0, 1, 1, 1, 0, 0, 2, 2
+1039, Valladolid, Espanyol, 1, 0, 1, 12, 14, 0, 0, 0, 1, 0, 0, 0, 0
+1040, Almería, Zaragoza, 1, 3, -2, 11, 7, 0, 0, 1, 0, 0, 0, 1, 0
 1041, Zaragoza, Valencia, 3, 3, 0, 7, 5, 1, 0, 2, 0, 1, 0, 3, 0
 1042, Athletic, Racing, 3, 0, 3, 8, 18, 1, 0, 1, 4, 1, 0, 4, 3
 1043, Deportivo, Getafe, 0, 3, -3, 13, 1, 2, 3, 4, 1, 0, 0, 1, 3
@@ -1055,9 +1055,9 @@
 1055, Racing, R. Madrid, 0, 3, -3, 18, 6, 1, 4, 3, 2, 0, 0, 0, 2
 1056, Barcelona, Athletic, 3, 3, 0, 2, 8, 3, 0, 1, 0, 1, 0, 4, 1
 1057, At. Madrid, Deportivo, 0, 0, 0, 20, 13, 0, 3, 2, 3, 0, 0, 3, 0
-1058, Almería, Mallorca, 1, 3, -2, 11, 4, 0, 0, 2, 0, 0, 0, 1, 1
-1059, Valladolid, Villarreal, 1, 1, 0, 12, 10, 0, 0, 1, 1, 0, 0, 0, 2
-1060, Valencia, Osasuna, 3, 1, 2, 5, 9, 2, 0, 1, 1, 1, 0, 3, 0
+1058, Valladolid, Villarreal, 1, 1, 0, 12, 10, 0, 0, 1, 1, 0, 0, 0, 2
+1059, Valencia, Osasuna, 3, 1, 2, 5, 9, 2, 0, 1, 1, 1, 0, 3, 0
+1060, Almería, Mallorca, 1, 3, -2, 11, 4, 0, 0, 2, 0, 0, 0, 1, 1
 1061, Athletic, Almería, 3, 1, 2, 8, 11, 1, 0, 0, 0, 1, 0, 4, 1
 1062, Deportivo, Racing, 0, 0, 0, 13, 18, 2, 3, 1, 4, 0, 0, 1, 1
 1063, Málaga, Sevilla, 3, 0, 3, 3, 17, 3, 0, 0, 2, 1, 0, 1, 2
@@ -1074,10 +1074,10 @@
 1074, Racing, Espanyol, 0, 0, 0, 18, 14, 1, 4, 0, 1, 0, 0, 3, 1
 1075, Barcelona, Deportivo, 3, 0, 3, 2, 13, 3, 0, 2, 3, 1, 0, 3, 0
 1076, At. Madrid, Xerez, 0, 0, 0, 20, 16, 0, 3, 0, 2, 0, 0, 1, 2
-1077, Almería, R. Madrid, 1, 3, -2, 11, 6, 0, 0, 3, 2, 0, 0, 1, 2
-1078, Osasuna, Málaga, 1, 3, -2, 9, 3, 1, 1, 3, 0, 0, 0, 2, 2
-1079, Valladolid, Sevilla, 1, 0, 1, 12, 17, 0, 0, 0, 2, 0, 0, 2, 1
-1080, Valencia, Athletic, 3, 3, 0, 5, 8, 2, 0, 1, 0, 1, 0, 2, 0
+1077, Osasuna, Málaga, 1, 3, -2, 9, 3, 1, 1, 3, 0, 0, 0, 2, 2
+1078, Valladolid, Sevilla, 1, 0, 1, 12, 17, 0, 0, 0, 2, 0, 0, 2, 1
+1079, Valencia, Athletic, 3, 3, 0, 5, 8, 2, 0, 1, 0, 1, 0, 2, 0
+1080, Almería, R. Madrid, 1, 3, -2, 11, 6, 0, 0, 3, 2, 0, 0, 1, 2
 1081, Sevilla, Sporting, 0, 0, 0, 17, 19, 0, 2, 0, 3, 0, 0, 3, 0
 1082, Athletic, Zaragoza, 3, 3, 0, 8, 7, 1, 0, 1, 0, 1, 0, 0, 0
 1083, Deportivo, Almería, 0, 1, -1, 13, 11, 2, 3, 0, 0, 0, 0, 0, 0
@@ -1095,9 +1095,9 @@
 1095, Barcelona, Xerez, 3, 0, 3, 2, 16, 3, 0, 0, 2, 1, 0, 3, 1
 1096, Mallorca, Málaga, 3, 3, 0, 4, 3, 2, 0, 3, 0, 1, 0, 1, 1
 1097, At. Madrid, Tenerife, 0, 0, 0, 20, 15, 0, 3, 0, 1, 0, 0, 3, 1
-1098, Almería, Espanyol, 1, 0, 1, 11, 14, 0, 0, 0, 1, 0, 0, 0, 1
-1099, Osasuna, Athletic, 1, 3, -2, 9, 8, 1, 1, 1, 0, 0, 0, 0, 0
-1100, Valencia, Deportivo, 3, 0, 3, 5, 13, 2, 0, 2, 3, 1, 0, 1, 0
+1098, Osasuna, Athletic, 1, 3, -2, 9, 8, 1, 1, 1, 0, 0, 0, 0, 0
+1099, Valencia, Deportivo, 3, 0, 3, 5, 13, 2, 0, 2, 3, 1, 0, 1, 0
+1100, Almería, Espanyol, 1, 0, 1, 11, 14, 0, 0, 0, 1, 0, 0, 0, 1
 1101, Sevilla, At. Madrid, 0, 0, 0, 17, 20, 0, 2, 0, 3, 0, 0, 3, 1
 1102, Athletic, Mallorca, 3, 3, 0, 8, 4, 1, 0, 2, 0, 1, 0, 1, 3
 1103, Deportivo, Zaragoza, 0, 3, -3, 13, 7, 2, 3, 1, 0, 0, 0, 0, 1
@@ -1115,9 +1115,9 @@
 1115, Barcelona, Tenerife, 3, 0, 3, 2, 15, 3, 0, 0, 1, 1, 0, 4, 1
 1116, Mallorca, R. Madrid, 3, 3, 0, 4, 6, 2, 0, 3, 2, 1, 0, 1, 4
 1117, At. Madrid, Valladolid, 0, 1, -1, 20, 12, 0, 3, 0, 0, 0, 0, 3, 1
-1118, Almería, Villarreal, 1, 1, 0, 11, 10, 0, 0, 1, 1, 0, 0, 4, 2
-1119, Osasuna, Deportivo, 1, 0, 1, 9, 13, 1, 1, 2, 3, 0, 0, 3, 1
-1120, Valencia, Xerez, 3, 0, 3, 5, 16, 2, 0, 0, 2, 1, 0, 3, 1
+1118, Osasuna, Deportivo, 1, 0, 1, 9, 13, 1, 1, 2, 3, 0, 0, 3, 1
+1119, Valencia, Xerez, 3, 0, 3, 5, 16, 2, 0, 0, 2, 1, 0, 3, 1
+1120, Almería, Villarreal, 1, 1, 0, 11, 10, 0, 0, 1, 1, 0, 0, 4, 2
 1121, Sevilla, Barcelona, 0, 3, -3, 17, 2, 0, 2, 3, 0, 0, 0, 2, 3
 1122, Deportivo, Mallorca, 0, 3, -3, 13, 4, 2, 3, 2, 0, 0, 0, 1, 0
 1123, Sporting, At. Madrid, 0, 0, 0, 19, 20, 0, 3, 0, 3, 0, 0, 1, 1
@@ -1135,19 +1135,19 @@
 1135, Barcelona, Valladolid, 3, 1, 2, 2, 12, 3, 0, 0, 0, 1, 0, 4, 0
 1136, Mallorca, Espanyol, 3, 0, 3, 4, 14, 2, 0, 0, 1, 1, 0, 2, 0
 1137, At. Madrid, Getafe, 0, 3, -3, 20, 1, 0, 3, 4, 1, 0, 0, 0, 3
-1138, Almería, Sevilla, 1, 0, 1, 11, 17, 0, 0, 0, 2, 0, 0, 2, 3
-1139, Osasuna, Xerez, 1, 0, 1, 9, 16, 1, 1, 0, 2, 0, 0, 1, 1
-1140, Valencia, Tenerife, 3, 0, 3, 5, 15, 2, 0, 0, 1, 1, 0, 1, 0
-1141, Deportivo, Zaragoza, 1, 1, 0, 13, 9, 0, 0, 0, 0, 0, 0, 0, 0
-1142, R. Sociedad, Villarreal, 3, 0, 3, 6, 15, 1, 0, 0, 1, 1, 0, 1, 0
-1143, Málaga, Valencia, 0, 3, -3, 17, 4, 1, 3, 3, 1, 0, 0, 1, 3
-1144, Racing, Barcelona, 0, 3, -3, 19, 3, 0, 3, 3, 0, 0, 0, 0, 3
-1145, Mallorca, R. Madrid, 1, 1, 0, 11, 8, 0, 0, 0, 0, 0, 0, 0, 0
-1146, Levante, Sevilla, 0, 3, -3, 18, 2, 1, 4, 4, 1, 0, 0, 1, 4
-1147, Espanyol, Getafe, 3, 0, 3, 5, 16, 3, 1, 1, 3, 1, 0, 3, 1
-1148, At. Madrid, Sporting, 3, 0, 3, 1, 20, 4, 0, 0, 4, 1, 0, 4, 0
-1149, Osasuna, Almería, 1, 1, 0, 12, 10, 0, 0, 0, 0, 0, 0, 0, 0
-1150, Hércules, Athletic, 0, 3, -3, 14, 7, 0, 1, 1, 0, 0, 0, 0, 1
+1138, Osasuna, Xerez, 1, 0, 1, 9, 16, 1, 1, 0, 2, 0, 0, 1, 1
+1139, Valencia, Tenerife, 3, 0, 3, 5, 15, 2, 0, 0, 1, 1, 0, 1, 0
+1140, Almería, Sevilla, 1, 0, 1, 11, 17, 0, 0, 0, 2, 0, 0, 2, 3
+1141, Hércules, Athletic, 0, 3, -3, 14, 7, 0, 1, 1, 0, 0, 0, 0, 1
+1142, Deportivo, Zaragoza, 1, 1, 0, 13, 9, 0, 0, 0, 0, 0, 0, 0, 0
+1143, R. Sociedad, Villarreal, 3, 0, 3, 6, 15, 1, 0, 0, 1, 1, 0, 1, 0
+1144, Málaga, Valencia, 0, 3, -3, 17, 4, 1, 3, 3, 1, 0, 0, 1, 3
+1145, Racing, Barcelona, 0, 3, -3, 19, 3, 0, 3, 3, 0, 0, 0, 0, 3
+1146, Mallorca, R. Madrid, 1, 1, 0, 11, 8, 0, 0, 0, 0, 0, 0, 0, 0
+1147, Levante, Sevilla, 0, 3, -3, 18, 2, 1, 4, 4, 1, 0, 0, 1, 4
+1148, Espanyol, Getafe, 3, 0, 3, 5, 16, 3, 1, 1, 3, 1, 0, 3, 1
+1149, At. Madrid, Sporting, 3, 0, 3, 1, 20, 4, 0, 0, 4, 1, 0, 4, 0
+1150, Osasuna, Almería, 1, 1, 0, 12, 10, 0, 0, 0, 0, 0, 0, 0, 0
 1151, Sevilla, Deportivo, 3, 1, 2, 2, 13, 4, 1, 0, 0, 0, 1, 0, 0
 1152, Athletic, At. Madrid, 3, 3, 0, 7, 1, 1, 0, 4, 0, 0, 1, 1, 2
 1153, Zaragoza, Málaga, 1, 0, 1, 9, 17, 0, 0, 1, 3, 0, 0, 3, 5
@@ -1155,76 +1155,86 @@
 1155, Villarreal, Espanyol, 0, 3, -3, 15, 5, 0, 1, 3, 1, 0, 0, 4, 0
 1156, Getafe, Levante, 0, 0, 0, 16, 18, 1, 3, 1, 4, 0, 0, 4, 1
 1157, Barcelona, Hércules, 3, 0, 3, 3, 14, 3, 0, 0, 1, 0, 1, 0, 2
-1158, Almería, R. Sociedad, 1, 3, -2, 10, 6, 0, 0, 1, 0, 0, 0, 2, 2
-1159, R. Madrid, Osasuna, 1, 1, 0, 8, 12, 0, 0, 0, 0, 0, 0, 1, 0
-1160, Valencia, Racing, 3, 0, 3, 4, 19, 3, 1, 0, 3, 0, 1, 1, 0
-1161, Deportivo, Getafe, 1, 0, 1, 13, 16, 0, 0, 1, 3, 0, 0, 2, 2
-1162, R. Sociedad, R. Madrid, 3, 1, 2, 6, 8, 1, 0, 0, 0, 1, 0, 1, 2
-1163, Sporting, Athletic, 0, 3, -3, 20, 7, 0, 4, 1, 0, 0, 0, 2, 2
-1164, Málaga, Sevilla, 0, 3, -3, 17, 2, 1, 3, 4, 1, 0, 0, 1, 2
-1165, Racing, Zaragoza, 0, 1, -1, 19, 9, 0, 3, 0, 0, 0, 0, 2, 0
-1166, Mallorca, Osasuna, 1, 1, 0, 11, 12, 0, 0, 0, 0, 0, 0, 2, 0
-1167, At. Madrid, Barcelona, 3, 3, 0, 1, 3, 4, 0, 3, 0, 1, 0, 1, 2
-1168, Levante, Villarreal, 0, 0, 0, 18, 15, 1, 4, 0, 1, 0, 0, 1, 2
-1169, Espanyol, Almería, 3, 1, 2, 5, 10, 3, 1, 0, 0, 1, 0, 1, 0
-1170, Hércules, Valencia, 0, 3, -3, 14, 4, 0, 1, 3, 1, 0, 0, 1, 2
+1158, R. Madrid, Osasuna, 1, 1, 0, 8, 12, 0, 0, 0, 0, 0, 0, 1, 0
+1159, Valencia, Racing, 3, 0, 3, 4, 19, 3, 1, 0, 3, 0, 1, 1, 0
+1160, Almería, R. Sociedad, 1, 3, -2, 10, 6, 0, 0, 1, 0, 0, 0, 2, 2
+1161, Hércules, Valencia, 0, 3, -3, 14, 4, 0, 1, 3, 1, 0, 0, 1, 2
+1162, Deportivo, Getafe, 1, 0, 1, 13, 16, 0, 0, 1, 3, 0, 0, 2, 2
+1163, R. Sociedad, R. Madrid, 3, 1, 2, 6, 8, 1, 0, 0, 0, 1, 0, 1, 2
+1164, Sporting, Athletic, 0, 3, -3, 20, 7, 0, 4, 1, 0, 0, 0, 2, 2
+1165, Málaga, Sevilla, 0, 3, -3, 17, 2, 1, 3, 4, 1, 0, 0, 1, 2
+1166, Racing, Zaragoza, 0, 1, -1, 19, 9, 0, 3, 0, 0, 0, 0, 2, 0
+1167, Mallorca, Osasuna, 1, 1, 0, 11, 12, 0, 0, 0, 0, 0, 0, 2, 0
+1168, At. Madrid, Barcelona, 3, 3, 0, 1, 3, 4, 0, 3, 0, 1, 0, 1, 2
+1169, Levante, Villarreal, 0, 0, 0, 18, 15, 1, 4, 0, 1, 0, 0, 1, 2
+1170, Espanyol, Almería, 3, 1, 2, 5, 10, 3, 1, 0, 0, 1, 0, 1, 0
 1171, Sevilla, Racing, 3, 0, 3, 2, 19, 4, 1, 0, 3, 0, 1, 1, 1
 1172, Athletic, Mallorca, 3, 1, 2, 7, 11, 1, 0, 0, 0, 0, 1, 3, 0
 1173, Zaragoza, Hércules, 1, 0, 1, 9, 14, 0, 0, 0, 1, 0, 0, 0, 0
 1174, Villarreal, Deportivo, 0, 1, -1, 15, 13, 0, 1, 0, 0, 0, 0, 1, 0
 1175, Getafe, Málaga, 0, 0, 0, 16, 17, 1, 3, 1, 3, 0, 0, 0, 2
 1176, Barcelona, Sporting, 3, 0, 3, 3, 20, 3, 0, 0, 4, 0, 1, 1, 0
-1177, Almería, Levante, 1, 0, 1, 10, 18, 0, 0, 1, 4, 0, 0, 0, 1
-1178, R. Madrid, Espanyol, 1, 3, -2, 8, 5, 0, 0, 3, 1, 0, 0, 3, 0
-1179, Osasuna, R. Sociedad, 1, 3, -2, 12, 6, 0, 0, 1, 0, 0, 0, 3, 1
-1180, Valencia, At. Madrid, 3, 3, 0, 4, 1, 3, 1, 4, 0, 0, 1, 1, 1
-1181, Athletic, Barcelona, 3, 3, 0, 7, 3, 1, 0, 3, 0, 0, 1, 1, 3
-1182, Deportivo, Almería, 1, 1, 0, 13, 10, 0, 0, 0, 0, 0, 0, 0, 2
-1183, Sporting, Valencia, 0, 3, -3, 20, 4, 0, 4, 3, 1, 0, 0, 0, 2
-1184, Málaga, Villarreal, 0, 0, 0, 17, 15, 1, 3, 0, 1, 0, 0, 2, 3
-1185, Racing, Getafe, 0, 0, 0, 19, 16, 0, 3, 1, 3, 0, 0, 0, 1
-1186, Mallorca, R. Sociedad, 1, 3, -2, 11, 6, 0, 0, 1, 0, 0, 0, 2, 0
-1187, At. Madrid, Zaragoza, 3, 1, 2, 1, 9, 4, 0, 0, 0, 1, 0, 1, 0
-1188, Levante, R. Madrid, 0, 1, -1, 18, 8, 1, 4, 0, 0, 0, 0, 0, 0
-1189, Espanyol, Osasuna, 3, 1, 2, 5, 12, 3, 1, 0, 0, 1, 0, 1, 0
-1190, Hércules, Sevilla, 0, 3, -3, 14, 2, 0, 1, 4, 1, 0, 0, 2, 0
+1177, R. Madrid, Espanyol, 1, 3, -2, 8, 5, 0, 0, 3, 1, 0, 0, 3, 0
+1178, Osasuna, R. Sociedad, 1, 3, -2, 12, 6, 0, 0, 1, 0, 0, 0, 3, 1
+1179, Valencia, At. Madrid, 3, 3, 0, 4, 1, 3, 1, 4, 0, 0, 1, 1, 1
+1180, Almería, Levante, 1, 0, 1, 10, 18, 0, 0, 1, 4, 0, 0, 0, 1
+1181, Hércules, Sevilla, 0, 3, -3, 14, 2, 0, 1, 4, 1, 0, 0, 2, 0
+1182, Athletic, Barcelona, 3, 3, 0, 7, 3, 1, 0, 3, 0, 0, 1, 1, 3
+1183, Deportivo, Almería, 1, 1, 0, 13, 10, 0, 0, 0, 0, 0, 0, 0, 2
+1184, Sporting, Valencia, 0, 3, -3, 20, 4, 0, 4, 3, 1, 0, 0, 0, 2
+1185, Málaga, Villarreal, 0, 0, 0, 17, 15, 1, 3, 0, 1, 0, 0, 2, 3
+1186, Racing, Getafe, 0, 0, 0, 19, 16, 0, 3, 1, 3, 0, 0, 0, 1
+1187, Mallorca, R. Sociedad, 1, 3, -2, 11, 6, 0, 0, 1, 0, 0, 0, 2, 0
+1188, At. Madrid, Zaragoza, 3, 1, 2, 1, 9, 4, 0, 0, 0, 1, 0, 1, 0
+1189, Levante, R. Madrid, 0, 1, -1, 18, 8, 1, 4, 0, 0, 0, 0, 0, 0
+1190, Espanyol, Osasuna, 3, 1, 2, 5, 12, 3, 1, 0, 0, 1, 0, 1, 0
 1191, Sevilla, At. Madrid, 3, 3, 0, 2, 1, 4, 1, 4, 0, 0, 1, 3, 1
 1192, Zaragoza, Sporting, 1, 0, 1, 9, 20, 0, 0, 0, 4, 0, 0, 2, 2
 1193, R. Sociedad, Espanyol, 3, 3, 0, 6, 5, 1, 0, 3, 1, 1, 0, 1, 0
 1194, Villarreal, Racing, 0, 0, 0, 15, 19, 0, 1, 0, 3, 0, 0, 2, 0
 1195, Getafe, Hércules, 0, 0, 0, 16, 14, 1, 3, 0, 1, 0, 0, 3, 0
 1196, Barcelona, Mallorca, 3, 1, 2, 3, 11, 3, 0, 0, 0, 0, 1, 1, 1
-1197, Almería, Málaga, 1, 0, 1, 10, 17, 0, 0, 1, 3, 0, 0, 1, 1
-1198, R. Madrid, Deportivo, 1, 1, 0, 8, 13, 0, 0, 0, 0, 0, 0, 6, 1
-1199, Osasuna, Levante, 1, 0, 1, 12, 18, 0, 0, 1, 4, 0, 0, 1, 1
-1200, Valencia, Athletic, 3, 3, 0, 4, 7, 3, 1, 1, 0, 0, 1, 2, 1
-1201, Athletic, Zaragoza, 3, 1, 2, 7, 9, 1, 0, 0, 0, 0, 1, 2, 1
-1202, Deportivo, Osasuna, 1, 1, 0, 13, 12, 0, 0, 0, 0, 0, 0, 0, 0
-1203, Sporting, Sevilla, 0, 3, -3, 20, 2, 0, 4, 4, 1, 0, 0, 2, 0
-1204, Málaga, R. Madrid, 0, 1, -1, 17, 8, 1, 3, 0, 0, 0, 0, 1, 4
-1205, Racing, Almería, 0, 1, -1, 19, 10, 0, 3, 0, 0, 0, 0, 1, 0
-1206, Barcelona, Valencia, 3, 3, 0, 3, 4, 3, 0, 3, 1, 0, 1, 2, 1
-1207, Mallorca, Espanyol, 1, 3, -2, 11, 5, 0, 0, 3, 1, 0, 0, 0, 1
-1208, At. Madrid, Getafe, 3, 0, 3, 1, 16, 4, 0, 1, 3, 1, 0, 2, 0
-1209, Levante, R. Sociedad, 0, 3, -3, 18, 6, 1, 4, 1, 0, 0, 0, 2, 1
-1210, Hércules, Villarreal, 0, 0, 0, 14, 15, 0, 1, 0, 1, 0, 0, 2, 2
+1197, R. Madrid, Deportivo, 1, 1, 0, 8, 13, 0, 0, 0, 0, 0, 0, 6, 1
+1198, Osasuna, Levante, 1, 0, 1, 12, 18, 0, 0, 1, 4, 0, 0, 1, 1
+1199, Valencia, Athletic, 3, 3, 0, 4, 7, 3, 1, 1, 0, 0, 1, 2, 1
+1200, Almería, Málaga, 1, 0, 1, 10, 17, 0, 0, 1, 3, 0, 0, 1, 1
+1201, Hércules, Villarreal, 0, 0, 0, 14, 15, 0, 1, 0, 1, 0, 0, 2, 2
+1202, Athletic, Zaragoza, 3, 1, 2, 7, 9, 1, 0, 0, 0, 0, 1, 2, 1
+1203, Deportivo, Osasuna, 1, 1, 0, 13, 12, 0, 0, 0, 0, 0, 0, 0, 0
+1204, Sporting, Sevilla, 0, 3, -3, 20, 2, 0, 4, 4, 1, 0, 0, 2, 0
+1205, Málaga, R. Madrid, 0, 1, -1, 17, 8, 1, 3, 0, 0, 0, 0, 1, 4
+1206, Racing, Almería, 0, 1, -1, 19, 10, 0, 3, 0, 0, 0, 0, 1, 0
+1207, Barcelona, Valencia, 3, 3, 0, 3, 4, 3, 0, 3, 1, 0, 1, 2, 1
+1208, Mallorca, Espanyol, 1, 3, -2, 11, 5, 0, 0, 3, 1, 0, 0, 0, 1
+1209, At. Madrid, Getafe, 3, 0, 3, 1, 16, 4, 0, 1, 3, 1, 0, 2, 0
+1210, Levante, R. Sociedad, 0, 3, -3, 18, 6, 1, 4, 1, 0, 0, 0, 2, 1
 1211, Sevilla, Athletic, 3, 3, 0, 2, 7, 4, 1, 1, 0, 0, 1, 4, 3
 1212, Zaragoza, Barcelona, 1, 3, -2, 9, 3, 0, 0, 3, 0, 0, 0, 0, 2
 1213, R. Sociedad, Deportivo, 3, 1, 2, 6, 13, 1, 0, 0, 0, 1, 0, 3, 0
 1214, Villarreal, At. Madrid, 0, 3, -3, 15, 1, 0, 1, 4, 0, 0, 0, 2, 0
 1215, Getafe, Sporting, 0, 0, 0, 16, 20, 1, 3, 0, 4, 0, 0, 3, 0
-1216, Almería, Hércules, 1, 0, 1, 10, 14, 0, 0, 0, 1, 0, 0, 1, 1
-1217, R. Madrid, Racing, 1, 0, 1, 8, 19, 0, 0, 0, 3, 0, 0, 6, 1
-1218, Espanyol, Levante, 3, 0, 3, 5, 18, 3, 1, 1, 4, 1, 0, 2, 1
-1219, Osasuna, Málaga, 1, 0, 1, 12, 17, 0, 0, 1, 3, 0, 0, 3, 0
-1220, Valencia, Mallorca, 3, 1, 2, 4, 11, 3, 1, 0, 0, 0, 1, 1, 2
-1221, Athletic, Getafe, 3, 0, 3, 7, 16, 1, 0, 1, 3, 0, 1, 3, 0
-1222, Deportivo, Espanyol, 1, 3, -2, 13, 5, 0, 0, 3, 1, 0, 0, 3, 0
-1223, Sporting, Villarreal, 0, 0, 0, 20, 15, 0, 4, 0, 1, 0, 0, 1, 1
-1224, Málaga, R. Sociedad, 0, 3, -3, 17, 6, 1, 3, 1, 0, 0, 0, 1, 2
-1225, Racing, Osasuna, 0, 1, -1, 19, 12, 0, 3, 0, 0, 0, 0, 4, 1
-1226, Barcelona, Sevilla, 3, 3, 0, 3, 2, 3, 0, 4, 1, 0, 1, 5, 0
-1227, Mallorca, Levante, 1, 0, 1, 11, 18, 0, 0, 1, 4, 0, 0, 2, 1
-1228, At. Madrid, Almería, 3, 1, 2, 1, 10, 4, 0, 0, 0, 1, 0, 1, 1
-1229, Hércules, R. Madrid, 0, 1, -1, 14, 8, 0, 1, 0, 0, 0, 0, 1, 3
+1216, R. Madrid, Racing, 1, 0, 1, 8, 19, 0, 0, 0, 3, 0, 0, 6, 1
+1217, Espanyol, Levante, 3, 0, 3, 5, 18, 3, 1, 1, 4, 1, 0, 2, 1
+1218, Osasuna, Málaga, 1, 0, 1, 12, 17, 0, 0, 1, 3, 0, 0, 3, 0
+1219, Valencia, Mallorca, 3, 1, 2, 4, 11, 3, 1, 0, 0, 0, 1, 1, 2
+1220, Almería, Hércules, 1, 0, 1, 10, 14, 0, 0, 0, 1, 0, 0, 1, 1
+1221, Hércules, R. Madrid, 0, 1, -1, 14, 8, 0, 1, 0, 0, 0, 0, 1, 3
+1222, Athletic, Getafe, 3, 0, 3, 7, 16, 1, 0, 1, 3, 0, 1, 3, 0
+1223, Deportivo, Espanyol, 1, 3, -2, 13, 5, 0, 0, 3, 1, 0, 0, 3, 0
+1224, Sporting, Villarreal, 0, 0, 0, 20, 15, 0, 4, 0, 1, 0, 0, 1, 1
+1225, Málaga, R. Sociedad, 0, 3, -3, 17, 6, 1, 3, 1, 0, 0, 0, 1, 2
+1226, Racing, Osasuna, 0, 1, -1, 19, 12, 0, 3, 0, 0, 0, 0, 4, 1
+1227, Barcelona, Sevilla, 3, 3, 0, 3, 2, 3, 0, 4, 1, 0, 1, 5, 0
+1228, Mallorca, Levante, 1, 0, 1, 11, 18, 0, 0, 1, 4, 0, 0, 2, 1
+1229, At. Madrid, Almería, 3, 1, 2, 1, 10, 4, 0, 0, 0, 1, 0, 1, 1
 1230, Valencia, Zaragoza, 3, 1, 2, 4, 9, 3, 1, 0, 0, 0, 1, 1, 1
+1231, Sevilla, Valencia, 3, 3, 0, 2, 4, 4, 1, 3, 1, 0, 1, 2, 0
+1232, Zaragoza, Mallorca, 1, 1, 0, 9, 11, 0, 0, 0, 0, 0, 0, 3, 2
+1233, R. Sociedad, Racing, 3, 0, 3, 6, 19, 1, 0, 0, 3, 1, 0, 1, 0
+1234, Villarreal, Athletic, 0, 3, -3, 15, 7, 0, 1, 1, 0, 0, 0, 4, 1
+1235, Getafe, Barcelona, 0, 3, -3, 16, 3, 1, 3, 3, 0, 0, 0, 1, 3
+1236, R. Madrid, At. Madrid, 1, 3, -2, 8, 1, 0, 0, 4, 0, 0, 0, 2, 0
+1237, Espanyol, Málaga, 3, 0, 3, 5, 17, 3, 1, 1, 3, 1, 0, 1, 0
+1238, Levante, Deportivo, 0, 1, -1, 18, 13, 1, 4, 0, 0, 0, 0, 1, 2
+1239, Osasuna, Hércules, 1, 0, 1, 12, 14, 0, 0, 0, 1, 0, 0, 3, 0
+1240, Almería, Sporting, 1, 0, 1, 10, 20, 0, 0, 0, 4, 0, 0, 1, 1
