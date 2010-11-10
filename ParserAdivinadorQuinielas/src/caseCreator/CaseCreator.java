@@ -172,31 +172,31 @@ public class CaseCreator {
 								.getPosicionByName(convertirNombresEquipos(partido
 										.getEquipoVisitante()).trim());
 						
-						writer.print(caseID + ", ");
-						writer.print(partido.getEquipoLocal() + ", ");
-						writer.print(partido.getEquipoVisitante() + ", ");
-						writer.print(posicionLocal.getPuntos() + ", ");
-						writer.print(posicionVisitante.getPuntos() + ", ");
-						writer.print(posicionLocal.getPuntos()- posicionVisitante.getPuntos() + ", ");
+						writer.print("Case " + caseID + ",");
+						writer.print(partido.getEquipoLocal() + ",");
+						writer.print(partido.getEquipoVisitante() + ",");
+						writer.print(posicionLocal.getPuntos() + ",");
+						writer.print(posicionVisitante.getPuntos() + ",");
+						writer.print(posicionLocal.getPuntos()- posicionVisitante.getPuntos() + ",");
 						
-						writer.print(posicionLocal.getPosicion() + ", ");
-						writer.print(posicionVisitante.getPosicion() + ", ");
+						writer.print(posicionLocal.getPosicion() + ",");
+						writer.print(posicionVisitante.getPosicion() + ",");
 						
-						writer.print(posicionLocal.getGolesFavor() + ", ");
-						writer.print(posicionLocal.getGolesContra() + ", ");
-						writer.print(posicionVisitante.getGolesFavor() + ", ");
-						writer.print(posicionVisitante.getGolesContra() + ", ");
+						writer.print(posicionLocal.getGolesFavor() + ",");
+						writer.print(posicionLocal.getGolesContra() + ",");
+						writer.print(posicionVisitante.getGolesFavor() + ",");
+						writer.print(posicionVisitante.getGolesContra() + ",");
 						//No lo coje bien
 						if(posicionLocal.getPartidosJugadosCasa() != 0)
-							writer.print((posicionLocal.getPartidosGanadosCasa() / (float)posicionLocal.getPartidosJugadosCasa()) + ", ");
+							writer.print((posicionLocal.getPartidosGanadosCasa() / (float)posicionLocal.getPartidosJugadosCasa()) + ",");
 						else
 							writer.print("0, ");
 						if (posicionLocal.getPartidosJugadosFuera() != 0)
-							writer.print(posicionLocal.getPartidosGanadosFuera() / (float)posicionLocal.getPartidosJugadosFuera() + ", ");
+							writer.print(posicionLocal.getPartidosGanadosFuera() / (float)posicionLocal.getPartidosJugadosFuera() + ",");
 						else
 							writer.print("0, ");
-						writer.print(partido.getGolesLocal() + ", ");
-						writer.print(partido.getGolesVisitante() + ", ");
+						writer.print(partido.getGolesLocal() + ",");
+						writer.print(partido.getGolesVisitante() + ",");
 						if (partido.getGolesLocal() > partido.getGolesVisitante())
 							writer.print("1");
 						else if (partido.getGolesLocal() < partido.getGolesVisitante())
