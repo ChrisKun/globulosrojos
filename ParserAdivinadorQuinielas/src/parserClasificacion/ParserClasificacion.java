@@ -99,7 +99,7 @@ public class ParserClasificacion {
 
 	public void writeInfo(PrintWriter writer){    	        
 		for (Posicion posicion : jornada.getPosiciones()) {
-			writer.print(posicion.getEquipo() + ", ");
+			writer.print(posicion.getEquipo().trim() + ", ");
 			writer.print(posicion.getPuntos() + ", ");
 			writer.print(posicion.getGolesFavor() + ", ");
 			writer.print(posicion.getGolesContra() + ", ");

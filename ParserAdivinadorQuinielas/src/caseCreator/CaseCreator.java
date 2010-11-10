@@ -69,7 +69,7 @@ public class CaseCreator {
 					String[] infoPosicion = linea.split(", ");
 					Posicion posicion = new Posicion();
 					posicion.setPosicion(counter + 1);
-					posicion.setEquipo(infoPosicion[0]);
+					posicion.setEquipo(infoPosicion[0].trim());
 					posicion.setPuntos(Integer.parseInt(infoPosicion[1]));
 					posicion.setPartidosJugadosCasa(Integer.parseInt(infoPosicion[4]));
 					posicion.setPartidosGanadosCasa(Integer.parseInt(infoPosicion[5]));
@@ -82,6 +82,7 @@ public class CaseCreator {
 					linea = reader.readLine();
 				} else {
 					listaJornadas.add(jornada);
+					jornada = new Clasificacion();
 					counter = 0;
 					linea = reader.readLine();
 				}
@@ -166,10 +167,10 @@ public class CaseCreator {
 						Partido partido = itPartido.next();
 						Posicion posicionLocal = clasiJornada
 								.getPosicionByName(convertirNombresEquipos(partido
-										.getEquipoLocal()));
+										.getEquipoLocal()).trim());
 						Posicion posicionVisitante = clasiJornada
 								.getPosicionByName(convertirNombresEquipos(partido
-										.getEquipoVisitante()));
+										.getEquipoVisitante()).trim());
 						
 						writer.print(caseID + ", ");
 						writer.print(partido.getEquipoLocal() + ", ");
@@ -187,15 +188,21 @@ public class CaseCreator {
 						writer.print(posicionVisitante.getGolesContra() + ", ");
 						//No lo coje bien
 						if(posicionLocal.getPartidosJugadosCasa() != 0)
-							writer.print(posicionLocal.getPartidosGanadosCasa() / posicionLocal.getPartidosJugadosCasa() + ", ");
+							writer.print((posicionLocal.getPartidosGanadosCasa() / (float)posicionLocal.getPartidosJugadosCasa()) + ", ");
 						else
 							writer.print("0, ");
 						if (posicionLocal.getPartidosJugadosFuera() != 0)
-							writer.print(posicionLocal.getPartidosGanadosFuera() / posicionLocal.getPartidosJugadosFuera() + ", ");
+							writer.print(posicionLocal.getPartidosGanadosFuera() / (float)posicionLocal.getPartidosJugadosFuera() + ", ");
 						else
 							writer.print("0, ");
 						writer.print(partido.getGolesLocal() + ", ");
-						writer.print(partido.getGolesVisitante());
+						writer.print(partido.getGolesVisitante() + ", ");
+						if (partido.getGolesLocal() > partido.getGolesVisitante())
+							writer.print("1");
+						else if (partido.getGolesLocal() < partido.getGolesVisitante())
+							writer.print("2");
+						else writer.print("X");
+						
 						caseID++;
 						writer.println();
 					}
