@@ -14,11 +14,11 @@ Betis, 2, 2, Espanyol
 Villarreal, 0, 5, R. Madrid
 Getafe, 1, 1, Recreativo
 Barcelona, 3, 1, Athletic
-Almería, 1, 2, Valencia
 At. Madrid, 1, 1, Mallorca
 Levante, 0, 0, Murcia
 Osasuna, 1, 1, Sevilla
 Valladolid, 2, 2, Deportivo
+Almería, 1, 2, Valencia
 ----------------------------
 Sevilla, 4, 1, Recreativo
 Athletic, 1, 1, Zaragoza
@@ -36,11 +36,11 @@ Betis, 1, 2, Valencia
 Villarreal, 2, 0, Murcia
 Getafe, 0, 0, Deportivo
 Barcelona, 2, 1, Sevilla
-Almería, 1, 1, Mallorca
 Levante, 1, 2, Athletic
 At. Madrid, 4, 0, Racing
 Recreativo, 2, 1, Espanyol
 Valladolid, 1, 1, R. Madrid
+Almería, 1, 1, Mallorca
 ----------------------------
 Sevilla, 2, 3, Espanyol
 Athletic, 0, 2, At. Madrid
@@ -57,12 +57,12 @@ Zaragoza, 2, 0, Sevilla
 Betis, 3, 0, Mallorca
 Villarreal, 1, 0, Athletic
 Getafe, 0, 1, R. Madrid
-Almería, 0, 1, Racing
 Espanyol, 1, 0, Deportivo
 At. Madrid, 2, 0, Osasuna
 Levante, 1, 4, Barcelona
 Recreativo, 0, 1, Valencia
 Valladolid, 1, 4, Murcia
+Almería, 0, 1, Racing
 ----------------------------
 Sevilla, 0, 1, Deportivo
 Zaragoza, 3, 0, Levante
@@ -79,12 +79,12 @@ Betis, 1, 1, Racing
 Deportivo, 2, 4, Valencia
 Villarreal, 3, 1, Barcelona
 Getafe, 2, 0, Murcia
-Almería, 2, 0, Osasuna
 At. Madrid, 4, 0, Zaragoza
 Levante, 0, 2, Sevilla
 Espanyol, 2, 1, R. Madrid
 Recreativo, 0, 2, Mallorca
 Valladolid, 1, 2, Athletic
+Almería, 2, 0, Osasuna
 ----------------------------
 Sevilla, 3, 0, Valencia
 Zaragoza, 4, 1, Villarreal
@@ -102,11 +102,11 @@ Deportivo, 1, 1, Mallorca
 Villarreal, 3, 0, Levante
 Getafe, 2, 0, Athletic
 Espanyol, 0, 0, Murcia
-Almería, 0, 1, Zaragoza
 At. Madrid, 4, 3, Sevilla
 Recreativo, 0, 0, Racing
 Valladolid, 1, 1, Barcelona
 Valencia, 1, 5, R. Madrid
+Almería, 0, 1, Zaragoza
 ----------------------------
 Sevilla, 2, 0, R. Madrid
 Zaragoza, 2, 3, Valladolid
@@ -123,12 +123,12 @@ Betis, 2, 1, Zaragoza
 Deportivo, 0, 1, Racing
 Villarreal, 3, 2, Sevilla
 Getafe, 2, 0, Barcelona
-Almería, 0, 0, At. Madrid
 R. Madrid, 4, 3, Mallorca
 Espanyol, 2, 1, Athletic
 Recreativo, 1, 0, Osasuna
 Valladolid, 1, 0, Levante
 Valencia, 3, 0, Murcia
+Almería, 0, 0, At. Madrid
 ----------------------------
 Sevilla, 1, 2, Mallorca
 Zaragoza, 1, 1, Getafe
@@ -145,12 +145,12 @@ Betis, 0, 2, At. Madrid
 Deportivo, 1, 2, Osasuna
 Getafe, 2, 1, Levante
 Mallorca, 1, 1, Murcia
-Almería, 1, 0, Sevilla
 R. Madrid, 3, 1, Racing
 Espanyol, 1, 1, Barcelona
 Recreativo, 2, 1, Zaragoza
 Valladolid, 2, 0, Villarreal
 Valencia, 0, 3, Athletic
+Almería, 1, 0, Sevilla
 ----------------------------
 Sevilla, 3, 1, Murcia
 Zaragoza, 3, 3, Espanyol
@@ -158,10 +158,10 @@ Athletic, 0, 1, R. Madrid
 Villarreal, 0, 1, Betis
 Racing, 3, 1, Mallorca
 Barcelona, 2, 1, Deportivo
-Almería, 1, 0, Valladolid
 Levante, 0, 2, Recreativo
 At. Madrid, 1, 0, Getafe
 Osasuna, 0, 0, Valencia
+Almería, 1, 0, Valladolid
 ----------------------------
 Betis, 3, 1, Almería
 Deportivo, 1, 1, Zaragoza
@@ -181,9 +181,9 @@ Villarreal, 1, 1, Recreativo
 Barcelona, 0, 1, R. Madrid
 Levante, 0, 1, Deportivo
 At. Madrid, 1, 2, Espanyol
-Almería, 0, 2, Getafe
 Osasuna, 3, 1, Mallorca
 Valladolid, 0, 0, Betis
+Almería, 0, 2, Getafe
 ----------------------------
 Sevilla, 3, 0, Betis
 Deportivo, 0, 3, At. Madrid
@@ -201,22 +201,22 @@ Athletic, 2, 0, Sevilla
 Betis, 3, 2, Getafe
 Villarreal, 4, 3, Deportivo
 Barcelona, 4, 0, Murcia
-Almería, 1, 0, Espanyol
 Levante, 0, 2, R. Madrid
 At. Madrid, 1, 0, Valencia
 Osasuna, 0, 2, Racing
 Valladolid, 3, 1, Recreativo
+Almería, 1, 0, Espanyol
 ----------------------------
 Zaragoza, 3, 1, Murcia
 Betis, 1, 1, Recreativo
 Villarreal, 3, 0, Valencia
 Getafe, 3, 2, Sevilla
 Barcelona, 1, 0, Racing
-Almería, 1, 0, Deportivo
 Levante, 2, 2, Mallorca
 At. Madrid, 0, 2, R. Madrid
 Osasuna, 2, 0, Athletic
 Valladolid, 2, 1, Espanyol
+Almería, 1, 0, Deportivo
 ----------------------------
 Sevilla, 2, 1, Osasuna
 Athletic, 1, 1, Barcelona
@@ -236,9 +236,9 @@ Getafe, 0, 1, Espanyol
 Barcelona, 1, 0, Osasuna
 Levante, 1, 1, Racing
 At. Madrid, 1, 1, Murcia
-Almería, 2, 0, R. Madrid
 Recreativo, 1, 2, Sevilla
 Valladolid, 0, 2, Valencia
+Almería, 2, 0, R. Madrid
 ----------------------------
 Sevilla, 1, 1, Barcelona
 Athletic, 1, 0, Levante
@@ -255,12 +255,12 @@ Zaragoza, 1, 2, Barcelona
 Betis, 2, 1, R. Madrid
 Villarreal, 0, 0, Racing
 Getafe, 0, 0, Valencia
-Almería, 1, 0, Murcia
 Levante, 2, 1, Osasuna
 At. Madrid, 1, 2, Athletic
 Espanyol, 2, 4, Sevilla
 Recreativo, 3, 2, Deportivo
 Valladolid, 1, 1, Mallorca
+Almería, 1, 0, Murcia
 ----------------------------
 Sevilla, 5, 0, Zaragoza
 Athletic, 1, 2, Villarreal
@@ -277,12 +277,12 @@ Betis, 4, 0, Murcia
 Deportivo, 2, 1, Sevilla
 Villarreal, 0, 0, Osasuna
 Getafe, 3, 3, Mallorca
-Almería, 1, 1, Athletic
 Levante, 2, 1, Zaragoza
 Espanyol, 2, 0, Valencia
 At. Madrid, 4, 2, Barcelona
 Recreativo, 2, 3, R. Madrid
 Valladolid, 0, 1, Racing
+Almería, 1, 1, Athletic
 ----------------------------
 Sevilla, 2, 1, Levante
 Athletic, 2, 0, Valladolid
@@ -299,12 +299,12 @@ Betis, 1, 2, Athletic
 Deportivo, 1, 0, R. Madrid
 Villarreal, 2, 0, Zaragoza
 Getafe, 2, 1, Racing
-Almería, 2, 2, Barcelona
 Espanyol, 2, 1, Mallorca
 At. Madrid, 3, 0, Levante
 Recreativo, 4, 2, Murcia
 Valladolid, 0, 0, Osasuna
 Valencia, 1, 2, Sevilla
+Almería, 2, 2, Barcelona
 ----------------------------
 Sevilla, 1, 2, At. Madrid
 Zaragoza, 1, 1, Almería
@@ -321,12 +321,12 @@ Betis, 3, 2, Barcelona
 Deportivo, 3, 1, Murcia
 Villarreal, 3, 0, At. Madrid
 Getafe, 0, 2, Osasuna
-Almería, 2, 1, Levante
 R. Madrid, 3, 1, Sevilla
 Espanyol, 0, 3, Racing
 Recreativo, 1, 1, Athletic
 Valladolid, 2, 1, Zaragoza
 Valencia, 0, 3, Mallorca
+Almería, 2, 1, Levante
 ----------------------------
 Sevilla, 2, 0, Villarreal
 Zaragoza, 0, 3, Betis
@@ -343,12 +343,12 @@ Betis, 0, 1, Levante
 Deportivo, 3, 0, Athletic
 Getafe, 0, 0, Zaragoza
 Mallorca, 2, 3, Sevilla
-Almería, 1, 0, Villarreal
 R. Madrid, 1, 0, Murcia
 Espanyol, 0, 1, Osasuna
 Recreativo, 2, 2, Barcelona
 Valladolid, 1, 1, At. Madrid
 Valencia, 1, 2, Racing
+Almería, 1, 0, Villarreal
 ----------------------------
 Sevilla, 1, 4, Almería
 Athletic, 5, 1, Valencia
@@ -378,10 +378,10 @@ Zaragoza, 1, 0, Deportivo
 Villarreal, 2, 0, Getafe
 Racing, 3, 2, Murcia
 Barcelona, 6, 0, Valencia
-Almería, 1, 1, Betis
 Levante, 1, 1, Espanyol
 At. Madrid, 3, 0, Recreativo
 Osasuna, 1, 2, R. Madrid
+Almería, 1, 1, Betis
 ----------------------------
 Betis, 1, 1, Valladolid
 Deportivo, 1, 0, Levante
@@ -399,11 +399,11 @@ Athletic, 0, 0, Racing
 Betis, 0, 2, Sevilla
 Villarreal, 2, 0, Espanyol
 Barcelona, 2, 3, Mallorca
-Almería, 0, 2, Recreativo
 Levante, 1, 5, Valencia
 At. Madrid, 1, 0, Deportivo
 Osasuna, 2, 1, Murcia
 Valladolid, 0, 0, Getafe
+Almería, 0, 2, Recreativo
 ----------------------------
 Sevilla, 4, 1, Athletic
 Deportivo, 0, 2, Villarreal
