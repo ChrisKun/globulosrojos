@@ -13,9 +13,9 @@ public class Parser {
 
 	public static void main(String[] args) {
 
-		parsearClasificaciones();
+		//parsearClasificaciones();
 
-		parsearResultados();
+		//parsearResultados();
 
 		// Se crea el fichero de los casos juntando los parses de
 		// clasificaciones y resultados
