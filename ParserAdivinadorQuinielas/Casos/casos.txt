@@ -1,23 +1,23 @@
-Case 1,Sevilla,Getafe,0,0,0,1,17,0,0,0,0,0, 0, 4,1,1
-Case 2,Athletic,Osasuna,0,0,0,11,10,0,0,0,0,0, 0, 0,0,X
-Case 3,Deportivo,Almería,0,0,0,19,2,0,0,0,0,0, 0, 0,3,2
-Case 4,Racing,Barcelona,0,0,0,13,12,0,0,0,0,0, 0, 0,0,X
-Case 5,Mallorca,Levante,0,0,0,4,18,0,0,0,0,0, 0, 3,0,1
-Case 6,R. Madrid,At. Madrid,0,0,0,5,15,0,0,0,0,0, 0, 2,1,1
-Case 7,Espanyol,Valladolid,0,0,0,16,7,0,0,0,0,0, 0, 0,1,2
-Case 8,Recreativo,Betis,0,0,0,9,8,0,0,0,0,0, 0, 1,1,X
-Case 9,Valencia,Villarreal,0,0,0,20,3,0,0,0,0,0, 0, 0,3,2
-Case 10,Murcia,Zaragoza,0,0,0,6,14,0,0,0,0,0, 0, 2,1,1
-Case 11,Zaragoza,Racing,0,1,-1,14,13,1,2,0,0,0, 0.0,1,1,X
-Case 12,Betis,Espanyol,1,0,1,8,16,1,1,0,1,0, 0.0,2,2,X
-Case 13,Villarreal,R. Madrid,3,3,0,3,5,3,0,2,1,0, 1.0,0,5,2
-Case 14,Getafe,Recreativo,0,1,-1,17,9,1,4,1,1,0, 0.0,1,1,X
-Case 15,Barcelona,Athletic,1,1,0,12,11,0,0,0,0,0, 0.0,3,1,1
-Case 16,Levante,Murcia,0,3,-3,18,6,0,3,2,1,0, 0.0,0,0,X
-Case 17,At. Madrid,Mallorca,0,3,-3,15,4,1,2,3,0,0, 0.0,1,1,X
-Case 18,Osasuna,Sevilla,1,3,-2,10,1,0,0,4,1,0, 0.0,1,1,X
-Case 19,Valladolid,Deportivo,3,0,3,7,19,1,0,0,3,0, 1.0,2,2,X
-Case 20,Almería,Valencia,3,0,3,2,20,3,0,0,3,0, 1.0,1,2,2
+Case 1,Sevilla,Getafe,0,0,0,1,17,0,0,0,0,0,0,4,1,1
+Case 2,Athletic,Osasuna,0,0,0,11,10,0,0,0,0,0,0,0,0,X
+Case 3,Deportivo,Almería,0,0,0,19,2,0,0,0,0,0,0,0,3,2
+Case 4,Racing,Barcelona,0,0,0,13,12,0,0,0,0,0,0,0,0,X
+Case 5,Mallorca,Levante,0,0,0,4,18,0,0,0,0,0,0,3,0,1
+Case 6,R. Madrid,At. Madrid,0,0,0,5,15,0,0,0,0,0,0,2,1,1
+Case 7,Espanyol,Valladolid,0,0,0,16,7,0,0,0,0,0,0,0,1,2
+Case 8,Recreativo,Betis,0,0,0,9,8,0,0,0,0,0,0,1,1,X
+Case 9,Valencia,Villarreal,0,0,0,20,3,0,0,0,0,0,0,0,3,2
+Case 10,Murcia,Zaragoza,0,0,0,6,14,0,0,0,0,0,0,2,1,1
+Case 11,Zaragoza,Racing,0,1,-1,14,13,1,2,0,0,0,0.0,1,1,X
+Case 12,Betis,Espanyol,1,0,1,8,16,1,1,0,1,0,0.0,2,2,X
+Case 13,Villarreal,R. Madrid,3,3,0,3,5,3,0,2,1,0,1.0,0,5,2
+Case 14,Getafe,Recreativo,0,1,-1,17,9,1,4,1,1,0,0.0,1,1,X
+Case 15,Barcelona,Athletic,1,1,0,12,11,0,0,0,0,0,0.0,3,1,1
+Case 16,Levante,Murcia,0,3,-3,18,6,0,3,2,1,0,0.0,0,0,X
+Case 17,At. Madrid,Mallorca,0,3,-3,15,4,1,2,3,0,0,0.0,1,1,X
+Case 18,Osasuna,Sevilla,1,3,-2,10,1,0,0,4,1,0,0.0,1,1,X
+Case 19,Valladolid,Deportivo,3,0,3,7,19,1,0,0,3,0,1.0,2,2,X
+Case 20,Almería,Valencia,3,0,3,2,20,3,0,0,3,0,1.0,1,2,2
 Case 21,Sevilla,Recreativo,16,15,1,6,11,25,21,10,19,0.5714286,0.14285715,4,1,1
 Case 22,Athletic,Zaragoza,17,18,-1,17,14,15,16,21,22,0.14285715,0.42857143,1,1,X
 Case 23,Deportivo,Betis,13,11,2,18,10,13,21,13,22,0.14285715,0.2857143,1,0,1
@@ -378,26 +378,26 @@ Case 377,R. Madrid,Levante,82,26,56,1,20,79,34,31,70,0.8888889,0.5263158,5,2,1
 Case 378,Recreativo,Valladolid,43,44,-1,16,15,39,59,41,56,0.33333334,0.2631579,1,1,X
 Case 379,Valencia,At. Madrid,48,64,-16,12,4,45,61,65,44,0.33333334,0.42105263,3,1,1
 Case 380,Murcia,Barcelona,30,64,-34,19,3,33,60,71,40,0.33333334,0.05263158,3,5,2
-Case 381,Athletic,Almería,0,0,0,18,3,0,0,0,0,0, 0, 1,3,2
-Case 382,Betis,Recreativo,0,0,0,16,7,0,0,0,0,0, 0, 0,1,2
-Case 383,Deportivo,R. Madrid,0,0,0,5,13,0,0,0,0,0, 0, 2,1,1
-Case 384,Sporting,Getafe,0,0,0,14,4,0,0,0,0,0, 0, 1,2,2
-Case 385,Racing,Sevilla,0,0,0,11,12,0,0,0,0,0, 0, 1,1,X
-Case 386,Numancia,Barcelona,0,0,0,8,17,0,0,0,0,0, 0, 1,0,1
-Case 387,Espanyol,Valladolid,0,0,0,6,15,0,0,0,0,0, 0, 1,0,1
-Case 388,At. Madrid,Málaga,0,0,0,1,20,0,0,0,0,0, 0, 4,0,1
-Case 389,Osasuna,Villarreal,0,0,0,10,9,0,0,0,0,0, 0, 1,1,X
-Case 390,Valencia,Mallorca,0,0,0,2,19,0,0,0,0,0, 0, 3,0,1
-Case 391,Sevilla,Sporting,1,0,1,12,14,1,1,1,2,0, 0.0,4,3,1
-Case 392,Málaga,Athletic,0,0,0,20,18,0,4,1,3,0, 0.0,0,0,X
-Case 393,Villarreal,Deportivo,1,3,-2,9,5,1,1,2,1,0, 0.0,1,0,1
-Case 394,Getafe,Betis,3,0,3,4,16,2,1,0,1,0, 1.0,0,0,X
-Case 395,Barcelona,Racing,0,1,-1,17,11,0,1,1,1,0, 0.0,1,1,X
-Case 396,Mallorca,Osasuna,0,1,-1,19,10,0,3,1,1,0, 0.0,1,1,X
-Case 397,R. Madrid,Numancia,0,3,-3,13,8,1,2,1,0,0, 0.0,4,3,1
-Case 398,Recreativo,Espanyol,3,3,0,7,6,1,0,1,0,0, 1.0,0,1,2
-Case 399,Valladolid,At. Madrid,0,3,-3,15,1,0,1,4,0,0, 0.0,2,1,1
-Case 400,Almería,Valencia,3,3,0,3,2,3,1,3,0,0, 1.0,2,2,X
+Case 381,Athletic,Almería,0,0,0,18,3,0,0,0,0,0,0,1,3,2
+Case 382,Betis,Recreativo,0,0,0,16,7,0,0,0,0,0,0,0,1,2
+Case 383,Deportivo,R. Madrid,0,0,0,5,13,0,0,0,0,0,0,2,1,1
+Case 384,Sporting,Getafe,0,0,0,14,4,0,0,0,0,0,0,1,2,2
+Case 385,Racing,Sevilla,0,0,0,11,12,0,0,0,0,0,0,1,1,X
+Case 386,Numancia,Barcelona,0,0,0,8,17,0,0,0,0,0,0,1,0,1
+Case 387,Espanyol,Valladolid,0,0,0,6,15,0,0,0,0,0,0,1,0,1
+Case 388,At. Madrid,Málaga,0,0,0,1,20,0,0,0,0,0,0,4,0,1
+Case 389,Osasuna,Villarreal,0,0,0,10,9,0,0,0,0,0,0,1,1,X
+Case 390,Valencia,Mallorca,0,0,0,2,19,0,0,0,0,0,0,3,0,1
+Case 391,Sevilla,Sporting,1,0,1,12,14,1,1,1,2,0,0.0,4,3,1
+Case 392,Málaga,Athletic,0,0,0,20,18,0,4,1,3,0,0.0,0,0,X
+Case 393,Villarreal,Deportivo,1,3,-2,9,5,1,1,2,1,0,0.0,1,0,1
+Case 394,Getafe,Betis,3,0,3,4,16,2,1,0,1,0,1.0,0,0,X
+Case 395,Barcelona,Racing,0,1,-1,17,11,0,1,1,1,0,0.0,1,1,X
+Case 396,Mallorca,Osasuna,0,1,-1,19,10,0,3,1,1,0,0.0,1,1,X
+Case 397,R. Madrid,Numancia,0,3,-3,13,8,1,2,1,0,0,0.0,4,3,1
+Case 398,Recreativo,Espanyol,3,3,0,7,6,1,0,1,0,0,1.0,0,1,2
+Case 399,Valladolid,At. Madrid,0,3,-3,15,1,0,1,4,0,0,0.0,2,1,1
+Case 400,Almería,Valencia,3,3,0,3,2,3,1,3,0,0,1.0,2,2,X
 Case 401,Athletic,Valladolid,1,3,-2,17,11,1,3,2,2,0.0,0.0,2,0,1
 Case 402,Betis,Sevilla,1,4,-3,16,4,0,1,5,4,0.0,0.0,0,0,X
 Case 403,Deportivo,Mallorca,3,1,2,10,18,2,2,1,4,1.0,0.0,0,0,X
@@ -758,26 +758,26 @@ Case 757,At. Madrid,Almería,64,46,18,4,10,77,57,45,58,0.6666667,0.36842105,3,0,
 Case 758,Espanyol,Málaga,44,55,-11,12,8,43,49,55,56,0.3888889,0.21052632,3,0,1
 Case 759,Osasuna,R. Madrid,40,78,-38,18,2,39,46,82,50,0.3888889,0.10526316,2,1,1
 Case 760,Valencia,Athletic,59,44,15,6,13,66,54,47,60,0.6111111,0.31578946,2,0,1
-Case 761,Zaragoza,Tenerife,0,0,0,7,15,0,0,0,0,0, 0, 1,0,1
-Case 762,Athletic,Espanyol,0,0,0,8,14,0,0,0,0,0, 0, 1,0,1
-Case 763,Málaga,At. Madrid,0,0,0,3,20,0,0,0,0,0, 0, 3,0,1
-Case 764,Racing,Getafe,0,0,0,18,1,0,0,0,0,0, 0, 1,4,2
-Case 765,Barcelona,Sporting,0,0,0,2,19,0,0,0,0,0, 0, 3,0,1
-Case 766,Mallorca,Xerez,0,0,0,4,16,0,0,0,0,0, 0, 2,0,1
-Case 767,R. Madrid,Deportivo,0,0,0,6,13,0,0,0,0,0, 0, 3,2,1
-Case 768,Osasuna,Villarreal,0,0,0,9,10,0,0,0,0,0, 0, 1,1,X
-Case 769,Valencia,Sevilla,0,0,0,5,17,0,0,0,0,0, 0, 2,0,1
-Case 770,Almería,Valladolid,0,0,0,11,12,0,0,0,0,0, 0, 0,0,X
-Case 771,Sevilla,Zaragoza,0,3,-3,17,7,0,2,1,0,0, 0.0,4,1,1
-Case 772,Deportivo,Málaga,0,3,-3,13,3,2,3,3,0,0, 0.0,1,0,1
-Case 773,Sporting,Almería,0,1,-1,19,11,0,3,0,0,0, 0.0,1,0,1
-Case 774,Villarreal,Mallorca,1,3,-2,10,4,1,1,2,0,0, 0.0,1,1,X
-Case 775,Xerez,Athletic,0,3,-3,16,8,0,2,1,0,0, 0.0,0,1,2
-Case 776,Getafe,Barcelona,3,3,0,1,2,4,1,3,0,0, 1.0,0,2,2
-Case 777,Espanyol,R. Madrid,0,3,-3,14,6,0,1,3,2,0, 0.0,0,3,2
-Case 778,At. Madrid,Racing,0,0,0,20,18,0,3,1,4,0, 0.0,1,1,X
-Case 779,Tenerife,Osasuna,0,1,-1,15,9,0,1,1,1,0, 0.0,2,1,1
-Case 780,Valladolid,Valencia,1,3,-2,12,5,0,0,2,0,0, 0.0,2,4,2
+Case 761,Zaragoza,Tenerife,0,0,0,7,15,0,0,0,0,0,0,1,0,1
+Case 762,Athletic,Espanyol,0,0,0,8,14,0,0,0,0,0,0,1,0,1
+Case 763,Málaga,At. Madrid,0,0,0,3,20,0,0,0,0,0,0,3,0,1
+Case 764,Racing,Getafe,0,0,0,18,1,0,0,0,0,0,0,1,4,2
+Case 765,Barcelona,Sporting,0,0,0,2,19,0,0,0,0,0,0,3,0,1
+Case 766,Mallorca,Xerez,0,0,0,4,16,0,0,0,0,0,0,2,0,1
+Case 767,R. Madrid,Deportivo,0,0,0,6,13,0,0,0,0,0,0,3,2,1
+Case 768,Osasuna,Villarreal,0,0,0,9,10,0,0,0,0,0,0,1,1,X
+Case 769,Valencia,Sevilla,0,0,0,5,17,0,0,0,0,0,0,2,0,1
+Case 770,Almería,Valladolid,0,0,0,11,12,0,0,0,0,0,0,0,0,X
+Case 771,Sevilla,Zaragoza,0,3,-3,17,7,0,2,1,0,0,0.0,4,1,1
+Case 772,Deportivo,Málaga,0,3,-3,13,3,2,3,3,0,0,0.0,1,0,1
+Case 773,Sporting,Almería,0,1,-1,19,11,0,3,0,0,0,0.0,1,0,1
+Case 774,Villarreal,Mallorca,1,3,-2,10,4,1,1,2,0,0,0.0,1,1,X
+Case 775,Xerez,Athletic,0,3,-3,16,8,0,2,1,0,0,0.0,0,1,2
+Case 776,Getafe,Barcelona,3,3,0,1,2,4,1,3,0,0,1.0,0,2,2
+Case 777,Espanyol,R. Madrid,0,3,-3,14,6,0,1,3,2,0,0.0,0,3,2
+Case 778,At. Madrid,Racing,0,0,0,20,18,0,3,1,4,0,0.0,1,1,X
+Case 779,Tenerife,Osasuna,0,1,-1,15,9,0,1,1,1,0,0.0,2,1,1
+Case 780,Valladolid,Valencia,1,3,-2,12,5,0,0,2,0,0,0.0,2,4,2
 Case 781,Athletic,Villarreal,6,2,4,4,13,2,0,2,2,1.0,1.0,3,2,1
 Case 782,Zaragoza,Valladolid,3,1,2,11,16,2,4,2,4,1.0,0.0,1,2,2
 Case 783,Deportivo,Espanyol,3,0,3,9,20,3,3,0,4,1.0,0.0,2,3,2
@@ -1138,26 +1138,26 @@ Case 1137,At. Madrid,Getafe,47,55,-8,9,6,57,58,55,48,0.6111111,0.10526316,0,3,2
 Case 1138,Osasuna,Xerez,42,33,9,13,20,36,45,37,65,0.3888889,0.21052632,1,1,X
 Case 1139,Valencia,Tenerife,68,36,32,3,19,58,40,40,73,0.6666667,0.42105263,1,0,1
 Case 1140,Almería,Sevilla,42,60,-18,12,4,41,52,62,47,0.44444445,0.10526316,2,3,2
-Case 1141,Hércules,Athletic,0,0,0,14,7,0,0,0,0,0, 0, 0,1,2
-Case 1142,Deportivo,Zaragoza,0,0,0,13,9,0,0,0,0,0, 0, 0,0,X
-Case 1143,R. Sociedad,Villarreal,0,0,0,6,15,0,0,0,0,0, 0, 1,0,1
-Case 1144,Málaga,Valencia,0,0,0,17,4,0,0,0,0,0, 0, 1,3,2
-Case 1145,Racing,Barcelona,0,0,0,19,3,0,0,0,0,0, 0, 0,3,2
-Case 1146,Mallorca,R. Madrid,0,0,0,11,8,0,0,0,0,0, 0, 0,0,X
-Case 1147,Levante,Sevilla,0,0,0,18,2,0,0,0,0,0, 0, 1,4,2
-Case 1148,Espanyol,Getafe,0,0,0,5,16,0,0,0,0,0, 0, 3,1,1
-Case 1149,At. Madrid,Sporting,0,0,0,1,20,0,0,0,0,0, 0, 4,0,1
-Case 1150,Osasuna,Almería,0,0,0,12,10,0,0,0,0,0, 0, 0,0,X
-Case 1151,Sevilla,Deportivo,3,1,2,2,13,4,1,0,0,0, 1.0,0,0,X
-Case 1152,Athletic,At. Madrid,3,3,0,7,1,1,0,4,0,0, 1.0,1,2,2
-Case 1153,Zaragoza,Málaga,1,0,1,9,17,0,0,1,3,0, 0.0,3,5,2
-Case 1154,Sporting,Mallorca,0,1,-1,20,11,0,4,0,0,0, 0.0,2,0,1
-Case 1155,Villarreal,Espanyol,0,3,-3,15,5,0,1,3,1,0, 0.0,4,0,1
-Case 1156,Getafe,Levante,0,0,0,16,18,1,3,1,4,0, 0.0,4,1,1
-Case 1157,Barcelona,Hércules,3,0,3,3,14,3,0,0,1,0, 1.0,0,2,2
-Case 1158,R. Madrid,Osasuna,1,1,0,8,12,0,0,0,0,0, 0.0,1,0,1
-Case 1159,Valencia,Racing,3,0,3,4,19,3,1,0,3,0, 1.0,1,0,1
-Case 1160,Almería,R. Sociedad,1,3,-2,10,6,0,0,1,0,0, 0.0,2,2,X
+Case 1141,Hércules,Athletic,0,0,0,14,7,0,0,0,0,0,0,0,1,2
+Case 1142,Deportivo,Zaragoza,0,0,0,13,9,0,0,0,0,0,0,0,0,X
+Case 1143,R. Sociedad,Villarreal,0,0,0,6,15,0,0,0,0,0,0,1,0,1
+Case 1144,Málaga,Valencia,0,0,0,17,4,0,0,0,0,0,0,1,3,2
+Case 1145,Racing,Barcelona,0,0,0,19,3,0,0,0,0,0,0,0,3,2
+Case 1146,Mallorca,R. Madrid,0,0,0,11,8,0,0,0,0,0,0,0,0,X
+Case 1147,Levante,Sevilla,0,0,0,18,2,0,0,0,0,0,0,1,4,2
+Case 1148,Espanyol,Getafe,0,0,0,5,16,0,0,0,0,0,0,3,1,1
+Case 1149,At. Madrid,Sporting,0,0,0,1,20,0,0,0,0,0,0,4,0,1
+Case 1150,Osasuna,Almería,0,0,0,12,10,0,0,0,0,0,0,0,0,X
+Case 1151,Sevilla,Deportivo,3,1,2,2,13,4,1,0,0,0,1.0,0,0,X
+Case 1152,Athletic,At. Madrid,3,3,0,7,1,1,0,4,0,0,1.0,1,2,2
+Case 1153,Zaragoza,Málaga,1,0,1,9,17,0,0,1,3,0,0.0,3,5,2
+Case 1154,Sporting,Mallorca,0,1,-1,20,11,0,4,0,0,0,0.0,2,0,1
+Case 1155,Villarreal,Espanyol,0,3,-3,15,5,0,1,3,1,0,0.0,4,0,1
+Case 1156,Getafe,Levante,0,0,0,16,18,1,3,1,4,0,0.0,4,1,1
+Case 1157,Barcelona,Hércules,3,0,3,3,14,3,0,0,1,0,1.0,0,2,2
+Case 1158,R. Madrid,Osasuna,1,1,0,8,12,0,0,0,0,0,0.0,1,0,1
+Case 1159,Valencia,Racing,3,0,3,4,19,3,1,0,3,0,1.0,1,0,1
+Case 1160,Almería,R. Sociedad,1,3,-2,10,6,0,0,1,0,0,0.0,2,2,X
 Case 1161,Hércules,Valencia,3,6,-3,9,2,2,1,4,1,0.0,1.0,1,2,2
 Case 1162,Deportivo,Getafe,2,3,-1,15,7,0,0,5,4,0.0,0.0,2,2,X
 Case 1163,R. Sociedad,R. Madrid,4,4,0,4,5,3,2,1,0,1.0,0.0,1,2,2
