@@ -186,7 +186,6 @@ public class CaseCreator {
 						writer.print(posicionLocal.getGolesContra() + ",");
 						writer.print(posicionVisitante.getGolesFavor() + ",");
 						writer.print(posicionVisitante.getGolesContra() + ",");
-						//No lo coje bien
 						if(posicionLocal.getPartidosJugadosCasa() != 0)
 							writer.print((posicionLocal.getPartidosGanadosCasa() / (float)posicionLocal.getPartidosJugadosCasa()) + ",");
 						else
