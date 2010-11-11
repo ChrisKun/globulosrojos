@@ -190,11 +190,11 @@ public class CaseCreator {
 						if(posicionLocal.getPartidosJugadosCasa() != 0)
 							writer.print((posicionLocal.getPartidosGanadosCasa() / (float)posicionLocal.getPartidosJugadosCasa()) + ",");
 						else
-							writer.print("0,");
+							writer.print("0.0,");
 						if (posicionLocal.getPartidosJugadosFuera() != 0)
 							writer.print(posicionLocal.getPartidosGanadosFuera() / (float)posicionLocal.getPartidosJugadosFuera() + ",");
 						else
-							writer.print("0,");
+							writer.print("0.0,");
 						writer.print(partido.getGolesLocal() + ",");
 						writer.print(partido.getGolesVisitante() + ",");
 						if (partido.getGolesLocal() > partido.getGolesVisitante())
