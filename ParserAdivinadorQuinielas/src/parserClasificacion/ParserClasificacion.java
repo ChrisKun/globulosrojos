@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import utils.WebUtils;
 
 public class ParserClasificacion {
 
@@ -126,33 +127,12 @@ public class ParserClasificacion {
 		writer.println("----------------------------------");
 	}
 
-	/**
-	 * Sustituye las tildes de HTML por los caracteres con tilde. Ejemplo: sustituye &aacute por á
-	 */
-	public void arreglarTildes()
-	{
-		for (Posicion posicion : jornada.getPosiciones()) {
-			if(posicion.getEquipo().contains("&aacute;"))
-			{
-				posicion.setEquipo(posicion.getEquipo().replace("&aacute;", "á"));
-			}
-			else if(posicion.getEquipo().contains("&eacute;"))
-			{
-				posicion.setEquipo(posicion.getEquipo().replace("&eacute;", "é"));
-			}
-			else if(posicion.getEquipo().contains("&iacute;"))
-			{
-				posicion.setEquipo(posicion.getEquipo().replace("&iacute;", "í"));
-			}
-			else if(posicion.getEquipo().contains("&oacute;"))
-			{
-				posicion.setEquipo(posicion.getEquipo().replace("&oacute;", "ó"));
-			}
-			else if(posicion.getEquipo().contains("&uacute;"))
-			{
-				posicion.setEquipo(posicion.getEquipo().replace("&uacute;", "ú"));
-			}
-		}
+	public Clasificacion getJornada() {
+		return jornada;
+	}
+
+	public void setJornada(Clasificacion jornada) {
+		this.jornada = jornada;
 	}
 
 	public void resetFile(PrintWriter writer) {

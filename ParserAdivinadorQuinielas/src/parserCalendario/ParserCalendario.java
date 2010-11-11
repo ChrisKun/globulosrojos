@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import parserClasificacion.WebUtils;
+import utils.CorrectorTildes;
+import utils.WebUtils;
 import parserResultados.Jornada;
 import parserResultados.Partido;
 
@@ -60,42 +61,14 @@ public class ParserCalendario {
 			}
 			for(Partido p: jornada.values())
 			{
-				p.setEquipoLocal(arreglarTildes(p.getEquipoLocal()));
-				p.setEquipoVisitante(arreglarTildes(p.getEquipoVisitante()));
+				p.setEquipoLocal(CorrectorTildes.arreglarTildes(p.getEquipoLocal()));
+				p.setEquipoVisitante(CorrectorTildes.arreglarTildes(p.getEquipoVisitante()));
 			}
 			return jornada;
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;
 		}
-	}
-	
-	/**
-	 * Sustituye las tildes de HTML por los caracteres con tilde. Ejemplo: sustituye &aacute por á
-	 */
-	public String arreglarTildes(String nombre)
-	{
-		if(nombre.contains("&aacute;"))
-		{
-			return nombre = nombre.replace("&aacute;", "á");
-		}
-		else if(nombre.contains("&eacute;"))
-		{
-			return nombre = nombre.replace("&eacute;", "é");
-		}
-		else if(nombre.contains("&iacute;"))
-		{
-			return nombre = nombre.replace("&iacute;", "í");
-		}
-		else if(nombre.contains("&oacute;"))
-		{
-			return nombre = nombre.replace("&oacute;", "ó");
-		}
-		else if(nombre.contains("&uacute;"))
-		{
-			return nombre = nombre.replace("&uacute;", "ú");
-		}
-		return nombre;
 	}
 	
 	public static void main(String[] args)

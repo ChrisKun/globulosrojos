@@ -10,7 +10,8 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
 
-import parserClasificacion.WebUtils;
+import utils.CorrectorTildes;
+import utils.WebUtils;
 
 public class ParserResultados {
 	
@@ -52,7 +53,7 @@ public class ParserResultados {
 				if (linea.indexOf("<tr class=\"FondoFilaCalendario\"") != -1) {
 					p = new Partido();
 					reader.readLine();
-					p.setEquipoLocal(arreglarTildes(reader.readLine().trim()));
+					p.setEquipoLocal(CorrectorTildes.arreglarTildes(reader.readLine().trim()));
 					reader.readLine();
 					reader.readLine();
 					reader.readLine();
@@ -67,7 +68,7 @@ public class ParserResultados {
 					reader.readLine();
 					reader.readLine();
 					reader.readLine();
-					p.setEquipoVisitante(arreglarTildes(reader.readLine().trim()));
+					p.setEquipoVisitante(CorrectorTildes.arreglarTildes(reader.readLine().trim()));
 					
 					if (numPartido == 0) j = new Jornada();
 					j.add(p);
@@ -108,19 +109,6 @@ public class ParserResultados {
         	}
         	writer.println("----------------------------");
         }
-	}
-	
-	
-	/**
-	 * Sustituye las tildes de la cadena por los caracteres con tilde. Ejemplo: sustituye &aacute por �
-	 */
-	public String arreglarTildes(String s)
-	{
-		return s.replace("&aacute;", "á").
-				replace("&eacute;", "é").
-				replace("&iacute;", "í").
-				replace("&oacute;", "ó").
-				replace("&uacute;", "ú");
 	}
 	
 	public void resetFile(PrintWriter writer) {
