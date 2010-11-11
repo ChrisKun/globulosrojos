@@ -17,6 +17,9 @@ import jcolibri.cbrcore.Connector;
 import jcolibri.connector.DataBaseConnector;
 import jcolibri.connector.PlainTextConnector;
 import jcolibri.evaluation.Evaluator;
+import jcolibri.evaluation.evaluators.HoldOutEvaluator;
+import jcolibri.evaluation.evaluators.LeaveOneOutEvaluator;
+import jcolibri.evaluation.evaluators.SameSplitEvaluator;
 import jcolibri.exception.AttributeAccessException;
 import jcolibri.exception.ExecutionException;
 import jcolibri.extensions.recommendation.casesDisplay.DisplayCasesTableMethod;
@@ -29,6 +32,7 @@ import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Equal;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
 import jcolibri.method.retrieve.selection.SelectCases;
+import jcolibri.test.test8.EvaluableApp;
 
 public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication 
 {
@@ -46,18 +50,26 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			test.configure();
 			test.preCycle();
 			
-			//aqui metemos la GUI
-			CBRQuery query = new CBRQuery();
-			query.setDescription(new Casos());
-			do
-			{
-				ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
-				test.cycle(query);
-			}while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
+			 //aqui metemos la GUI
+            CBRQuery query = new CBRQuery();
+            query.setDescription(new Casos());
+            do
+            {
+                    ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
+                    test.cycle(query);
+            }while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
 			
-			//El grafico de 1s y 0s
-			System.out.println(Evaluator.getEvaluationReport());
-			jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Test8 - Evaluation", false);
+			
+			
+			
+			
+			//Estos se elegiran segun el comboBox
+			
+			//test.HoldOutEvaluation();
+			//test.LeaveOneOutEvaluation();
+			//test.SameSplitEvaluation();
+		
+			
 			
 			
 		} catch (ExecutionException e) {
@@ -139,9 +151,9 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		simConfig.setWeight(golesAFavorEquipoVisitante, 0.3);
 		simConfig.addMapping(golesEnContraEquipoVisitante,new Equal());
 		simConfig.setWeight(golesEnContraEquipoVisitante, 0.3);
-		simConfig.addMapping(porcentajeGanagadosLocal,new Interval(100));
+		simConfig.addMapping(porcentajeGanagadosLocal,new Interval(100.0));
 		simConfig.setWeight(porcentajeGanagadosLocal, 0.7);
-		simConfig.addMapping(porcentajeGanagadosVisitante,new Interval(100));
+		simConfig.addMapping(porcentajeGanagadosVisitante,new Interval(100.0));
 		simConfig.setWeight(porcentajeGanagadosVisitante, 0.7);
 		simConfig.addMapping(resultadoLocal,new Interval(100));
 		simConfig.setWeight(resultadoLocal, 0.7);
@@ -154,11 +166,11 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
 		
+		//esto es para las evaluaciones
 	    //// Now we add the similarity of the most similar case to the serie "Similarity".
-		Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
+		//Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
 		
-		// imprimimos los k mejores casos
-		
+		//imprimimos los k mejores casos
 		eval = SelectCases.selectTopKRR(eval, 5);
 		
 		//Imprimimos el resultado del k-NN y obtenemos la lista de casos recuperados
@@ -174,13 +186,13 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		//Solamente mostramos el resultado
 		DisplayCasesTableMethod.displayCasesInTableBasic(casos);
-		
+	
 		
 		
 		//votacion basica
 		MajorityVotingMethod prueba = new MajorityVotingMethod();
 		Prediction pre;
-		pre = prueba.getPredictedClass(eval);
+	    pre = prueba.getPredictedClass(eval);
 		System.out.println("Votacion Basica "+pre.Classification.toString()+" __ "+pre.confidence);
 		
 		
@@ -188,10 +200,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		SimilarityWeightedVotingMethod prueba2 = new SimilarityWeightedVotingMethod();
 		pre = prueba2.getPredictedClass(eval);
 		System.out.println("Votacion ponderada "+pre.Classification.toString()+" __ "+pre.confidence);
-		
-		System.out.println(Evaluator.getEvaluationReport());
-		//jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
-		
+				
 	}
 
 	@Override
@@ -209,6 +218,55 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		for(CBRCase c: cases)
 				System.out.println(c);
 		return _caseBase;
+	}
+	
+	public void HoldOutEvaluation()
+	{
+		//SwingProgressBar shows the progress
+    	jcolibri.util.ProgressController.clear();
+    	jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), HoldOutEvaluator.class);
+	
+    	// Example of the Hold-Out evaluation
+		
+		HoldOutEvaluator eval = new HoldOutEvaluator();
+		eval.init(new Quiniela());
+		eval.HoldOut(5, 1);
+		
+		System.out.println(Evaluator.getEvaluationReport());
+		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+	}
+	
+	public void LeaveOneOutEvaluation()
+	{
+		//SwingProgressBar shows the progress
+    	jcolibri.util.ProgressController.clear();
+    	jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), LeaveOneOutEvaluator.class);
+	
+    	//Example of the Leave-One-Out evaluation
+		
+		LeaveOneOutEvaluator eval = new LeaveOneOutEvaluator();
+		eval.init(new Quiniela());
+		eval.LeaveOneOut();
+		
+		System.out.println(Evaluator.getEvaluationReport());
+		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+	}
+	
+	public void SameSplitEvaluation()
+	{
+		//SwingProgressBar shows the progress
+    	jcolibri.util.ProgressController.clear();
+    	jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), SameSplitEvaluator.class);
+	
+    	// Example of the Same-Split evaluation
+		
+		SameSplitEvaluator eval = new SameSplitEvaluator();
+		eval.init(new Quiniela());
+		eval.generateSplit(5, "split1.txt");
+		eval.HoldOutfromFile("split1.txt");
+		
+		System.out.println(Evaluator.getEvaluationReport());
+		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
 	}
 	
 }
