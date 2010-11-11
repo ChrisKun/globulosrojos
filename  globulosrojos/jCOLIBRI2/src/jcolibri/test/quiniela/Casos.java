@@ -19,9 +19,9 @@ public class Casos implements CaseComponent
 	Integer golesAFavorEquipoVisitante;
 	Integer golesEnContraEquipoVisitante;
 	// partidos_ganados/partidos_jugados del jugador 1 en casa
-	Integer porcentajeGanagadosLocal;	
+	Double porcentajeGanagadosLocal;	
 	// partidos_ganados/partidos_jugados del jugador 2 como visitante
-	Integer porcentajeGanagadosVisitante;
+	Double porcentajeGanagadosVisitante;
 	Integer resultadoLocal;
 	Integer resultadoVisitante;
 	
@@ -143,19 +143,19 @@ public class Casos implements CaseComponent
 		this.posicionEquipoVisitante = posicionEquipoVisitante;
 	}
 
-	public Integer getPorcentajeGanagadosLocal() {
+	public Double getPorcentajeGanagadosLocal() {
 		return porcentajeGanagadosLocal;
 	}
 
-	public void setPorcentajeGanagadosLocal(Integer porcentajeGanagadosLocal) {
+	public void setPorcentajeGanagadosLocal(Double porcentajeGanagadosLocal) {
 		this.porcentajeGanagadosLocal = porcentajeGanagadosLocal;
 	}
 
-	public Integer getPorcentajeGanagadosVisitante() {
+	public Double getPorcentajeGanagadosVisitante() {
 		return porcentajeGanagadosVisitante;
 	}
 
-	public void setPorcentajeGanagadosVisitante(Integer porcentajeGanagadosVisitante) {
+	public void setPorcentajeGanagadosVisitante(Double porcentajeGanagadosVisitante) {
 		this.porcentajeGanagadosVisitante = porcentajeGanagadosVisitante;
 	}
 
