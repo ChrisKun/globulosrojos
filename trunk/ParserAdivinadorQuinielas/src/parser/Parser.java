@@ -8,6 +8,7 @@ import caseCreator.CaseCreator;
 
 import parserClasificacion.ParserClasificacion;
 import parserResultados.ParserResultados;
+import utils.CorrectorTildes;
 
 public class Parser {
 
@@ -45,7 +46,7 @@ public class Parser {
 				parserC
 						.parse("http://www.lfp.es/?tabid=154&Controltype=detcla&g=1&t="
 								+ temporada + "&j=1");
-				parserC.arreglarTildes();
+				parserC.setJornada(CorrectorTildes.arreglarTildes(parserC.getJornada()));
 				parserC.escribirPrimeraClasificacion(writer);
 
 				int jornada = 1;
@@ -56,7 +57,7 @@ public class Parser {
 								+ temporada + "&j=" + jornada)
 						&& jornada < 38) {
 					System.out.print("-");
-					parserC.arreglarTildes();
+					parserC.setJornada(CorrectorTildes.arreglarTildes(parserC.getJornada()));
 					parserC.writeInfo(writer);
 					parserC.writeSeparator(writer);
 					jornada++;
