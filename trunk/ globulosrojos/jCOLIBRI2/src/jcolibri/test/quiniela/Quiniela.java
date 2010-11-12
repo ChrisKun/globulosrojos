@@ -8,6 +8,9 @@ import javax.swing.JOptionPane;
 
 import org.apache.commons.logging.Log;
 
+import antlr.collections.impl.Vector;
+
+import jcolibri.casebase.CachedLinealCaseBase;
 import jcolibri.casebase.LinealCaseBase;
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CBRCase;
@@ -51,13 +54,13 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			test.preCycle();
 			
 			 //aqui metemos la GUI
-            CBRQuery query = new CBRQuery();
-            query.setDescription(new Casos());
-            do
-            {
-                    ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
-                    test.cycle(query);
-            }while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
+//            CBRQuery query = new CBRQuery();
+//            query.setDescription(new Casos());
+//            do
+//            {
+//                    ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
+//                    test.cycle(query);
+//            }while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
 			
 			
 			
@@ -65,10 +68,26 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			
 			//Estos se elegiran segun el comboBox
 			
-			//test.HoldOutEvaluation();
+			test.HoldOutEvaluation();
 			//test.LeaveOneOutEvaluation();
 			//test.SameSplitEvaluation();
 		
+			java.util.Vector<Double> vec = Evaluator.getEvaluationReport().getSeries("Errores");
+			double avg = 0.0;
+			for (Double d: vec)
+				avg+=d;
+			avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+			Evaluator.getEvaluationReport().putOtherData("Media errores", Double.toString(avg));
+			
+			java.util.Vector<Double> vec2 = Evaluator.getEvaluationReport().getSeries("Confianza");
+			avg = 0.0;
+			for (Double d: vec2)
+				avg+=d;
+			avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+			Evaluator.getEvaluationReport().putOtherData("Media confianza", Double.toString(avg));
+			
+			System.out.println(Evaluator.getEvaluationReport());
+			jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Evaluacion Quinielas", false);
 			
 			
 			
@@ -87,7 +106,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			//Inicializar el conector con su archivo xml de configuracion
 			_connector.initFromXMLfile(jcolibri.util.FileIO.findFile("jcolibri/test/quiniela/plaintextconfig.xml"));
 			//La organizacion en la memoria será lineal
-			_caseBase = new LinealCaseBase();
+			_caseBase = new CachedLinealCaseBase();
 		} catch (Exception e)
 		{
 			throw new ExecutionException(e);
@@ -130,19 +149,19 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		//Fijamos las funciones de similitud locales
 		simConfig.addMapping(equipoLocal,new Equal());
-		simConfig.setWeight(equipoLocal, 1.0);
-		simConfig.addMapping(puntosEquipoLocal,new Equal());
-		simConfig.setWeight(puntosEquipoLocal, 0.4);
-		simConfig.addMapping(puntosEquipoVisitante,new Equal());
-		simConfig.setWeight(puntosEquipoVisitante, 0.4);
+		//simConfig.setWeight(equipoLocal, 1.0);
 		simConfig.addMapping(equipoVisitante,new Equal());
-		simConfig.setWeight(equipoVisitante, 1.0);
+		//simConfig.setWeight(equipoVisitante, 1.0);
+		simConfig.addMapping(puntosEquipoLocal,new Equal());
+		simConfig.setWeight(puntosEquipoLocal, 0.1);
+		simConfig.addMapping(puntosEquipoVisitante,new Equal());
+		simConfig.setWeight(puntosEquipoVisitante, 0.1);		
 		simConfig.addMapping(diferenciaPuntos,new Equal());
-		simConfig.setWeight(diferenciaPuntos, 0.7);
+		simConfig.setWeight(diferenciaPuntos, 0.1);
 		simConfig.addMapping(posicionEquipoLocal,new Interval(20));
-		simConfig.setWeight(posicionEquipoLocal, 0.3);
+		simConfig.setWeight(posicionEquipoLocal, 0.1);
 		simConfig.addMapping(posicionEquipoVisitante,new Interval(20));
-		simConfig.setWeight(posicionEquipoVisitante, 0.3);
+		simConfig.setWeight(posicionEquipoVisitante, 0.1);
 		simConfig.addMapping(golesAFavorEquipoLocal,new Equal());
 		simConfig.setWeight(golesAFavorEquipoLocal, 0.1);
 		simConfig.addMapping(golesEnContraEquipoLocal,new Equal());
@@ -152,13 +171,13 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		simConfig.addMapping(golesEnContraEquipoVisitante,new Equal());
 		simConfig.setWeight(golesEnContraEquipoVisitante, 0.1);
 		simConfig.addMapping(porcentajeGanagadosLocal,new Interval(1));
-		simConfig.setWeight(porcentajeGanagadosLocal, 0.4);
+		simConfig.setWeight(porcentajeGanagadosLocal, 0.1);
 		simConfig.addMapping(porcentajeGanagadosVisitante,new Interval(1));
-		simConfig.setWeight(porcentajeGanagadosVisitante, 0.4);
+		simConfig.setWeight(porcentajeGanagadosVisitante, 0.1);
 		simConfig.addMapping(resultadoLocal,new Interval(100));
-		simConfig.setWeight(resultadoLocal, 0.7);
+		simConfig.setWeight(resultadoLocal, 0.000001);
 		simConfig.addMapping(resultadoVisitante,new Interval(100));
-		simConfig.setWeight(resultadoVisitante, 0.7);
+		simConfig.setWeight(resultadoVisitante, 0.0000001);
 		
 		log.info("Query: "+ query.getDescription());
 		
@@ -166,26 +185,25 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
 		
-		//esto es para las evaluaciones
-	    //// Now we add the similarity of the most similar case to the serie "Similarity".
-		//Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
+
+		
 		
 		//imprimimos los k mejores casos
-		eval = SelectCases.selectTopKRR(eval, 5);
+//		eval = SelectCases.selectTopKRR(eval, 5);
 		
 		//Imprimimos el resultado del k-NN y obtenemos la lista de casos recuperados
 		
-		Collection<CBRCase> casos = new ArrayList<CBRCase>();
-		System.out.println("Casos Recuperados");
-		for(RetrievalResult nse: eval)
-		{
-			System.out.println(nse);
-			casos.add(nse.get_case());
-		}
-		//Aqui se incluiria el codigo para adaptar la solucion
+//		Collection<CBRCase> casos = new ArrayList<CBRCase>();
+//		System.out.println("Casos Recuperados");
+//		for(RetrievalResult nse: eval)
+//		{
+//			System.out.println(nse);
+//			casos.add(nse.get_case());
+//		}
+//		//Aqui se incluiria el codigo para adaptar la solucion
 		
 		//Solamente mostramos el resultado
-		DisplayCasesTableMethod.displayCasesInTableBasic(casos);
+		//DisplayCasesTableMethod.displayCasesInTableBasic(casos);
 	
 		
 		
@@ -201,6 +219,19 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		pre = prueba2.getPredictedClass(eval);
 		System.out.println("Votacion ponderada "+pre.Classification.toString()+" __ "+pre.confidence);
 				
+		//esto es para las evaluaciones
+		CBRCase caso = (CBRCase)query;
+		Solucion sol = (Solucion)caso.getSolution();
+		double prediccion;
+		if(sol.getRes().equals(pre.Classification.toString()))
+			prediccion = 1.0;
+		else 
+			prediccion = 0.0;
+		//System.out.println("sol.getRes()"+sol.getRes().toString()+" - "+pre.Classification.toString());
+		Evaluator.getEvaluationReport().addDataToSeries("Errores", prediccion);
+		Evaluator.getEvaluationReport().addDataToSeries("Confianza", pre.confidence);
+	    // Now we add the similarity of the most similar case to the serie "Similarity".
+		//Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
 	}
 
 	@Override
@@ -232,8 +263,9 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		eval.init(new Quiniela());
 		eval.HoldOut(5, 1);
 		
-		System.out.println(Evaluator.getEvaluationReport());
-		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+		
+//		System.out.println(Evaluator.getEvaluationReport());
+//		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
 	}
 	
 	public void LeaveOneOutEvaluation()
@@ -248,8 +280,8 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		eval.init(new Quiniela());
 		eval.LeaveOneOut();
 		
-		System.out.println(Evaluator.getEvaluationReport());
-		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+//		System.out.println(Evaluator.getEvaluationReport());
+//		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
 	}
 	
 	public void SameSplitEvaluation()
@@ -265,8 +297,8 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		eval.generateSplit(5, "split1.txt");
 		eval.HoldOutfromFile("split1.txt");
 		
-		System.out.println(Evaluator.getEvaluationReport());
-		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+//		System.out.println(Evaluator.getEvaluationReport());
+//		jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
 	}
 	
 }
