@@ -68,9 +68,9 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			
 			//Estos se elegiran segun el comboBox
 			
-			test.HoldOutEvaluation();
+			//test.HoldOutEvaluation();
 			//test.LeaveOneOutEvaluation();
-			//test.SameSplitEvaluation();
+			test.SameSplitEvaluation();
 		
 			java.util.Vector<Double> vec = Evaluator.getEvaluationReport().getSeries("Errores");
 			double avg = 0.0;
