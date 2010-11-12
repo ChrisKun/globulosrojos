@@ -149,35 +149,35 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		//Fijamos las funciones de similitud locales
 		simConfig.addMapping(equipoLocal,new Equal());
-		//simConfig.setWeight(equipoLocal, 1.0);
+		simConfig.setWeight(equipoLocal, 1.0);
 		simConfig.addMapping(equipoVisitante,new Equal());
-		//simConfig.setWeight(equipoVisitante, 1.0);
-		simConfig.addMapping(puntosEquipoLocal,new Equal());
-		simConfig.setWeight(puntosEquipoLocal, 0.1);
-		simConfig.addMapping(puntosEquipoVisitante,new Equal());
-		simConfig.setWeight(puntosEquipoVisitante, 0.1);		
-		simConfig.addMapping(diferenciaPuntos,new Equal());
-		simConfig.setWeight(diferenciaPuntos, 0.1);
+		simConfig.setWeight(equipoVisitante, 1.0);
+		simConfig.addMapping(puntosEquipoLocal,new Interval(100));
+		simConfig.setWeight(puntosEquipoLocal, 0.2);
+		simConfig.addMapping(puntosEquipoVisitante,new Interval(100));
+		simConfig.setWeight(puntosEquipoVisitante, 0.2);		
+		simConfig.addMapping(diferenciaPuntos,new Interval(80));
+		simConfig.setWeight(diferenciaPuntos, 0.3);
 		simConfig.addMapping(posicionEquipoLocal,new Interval(20));
 		simConfig.setWeight(posicionEquipoLocal, 0.1);
 		simConfig.addMapping(posicionEquipoVisitante,new Interval(20));
 		simConfig.setWeight(posicionEquipoVisitante, 0.1);
-		simConfig.addMapping(golesAFavorEquipoLocal,new Equal());
-		simConfig.setWeight(golesAFavorEquipoLocal, 0.1);
-		simConfig.addMapping(golesEnContraEquipoLocal,new Equal());
-		simConfig.setWeight(golesEnContraEquipoLocal, 0.1);
-		simConfig.addMapping(golesAFavorEquipoVisitante,new Equal());
-		simConfig.setWeight(golesAFavorEquipoVisitante, 0.1);
-		simConfig.addMapping(golesEnContraEquipoVisitante,new Equal());
-		simConfig.setWeight(golesEnContraEquipoVisitante, 0.1);
+		simConfig.addMapping(golesAFavorEquipoLocal,new Interval(60));
+		simConfig.setWeight(golesAFavorEquipoLocal, 0.01);
+		simConfig.addMapping(golesEnContraEquipoLocal,new Interval(60));
+		simConfig.setWeight(golesEnContraEquipoLocal, 0.01);
+		simConfig.addMapping(golesAFavorEquipoVisitante,new Interval(60));
+		simConfig.setWeight(golesAFavorEquipoVisitante, 0.01);
+		simConfig.addMapping(golesEnContraEquipoVisitante,new Interval(60));
+		simConfig.setWeight(golesEnContraEquipoVisitante, 0.01);
 		simConfig.addMapping(porcentajeGanagadosLocal,new Interval(1));
-		simConfig.setWeight(porcentajeGanagadosLocal, 0.1);
+		simConfig.setWeight(porcentajeGanagadosLocal, 0.3);
 		simConfig.addMapping(porcentajeGanagadosVisitante,new Interval(1));
-		simConfig.setWeight(porcentajeGanagadosVisitante, 0.1);
-		simConfig.addMapping(resultadoLocal,new Interval(100));
-		simConfig.setWeight(resultadoLocal, 0.000001);
-		simConfig.addMapping(resultadoVisitante,new Interval(100));
-		simConfig.setWeight(resultadoVisitante, 0.0000001);
+		simConfig.setWeight(porcentajeGanagadosVisitante, 0.3);
+		simConfig.addMapping(resultadoLocal,new Interval(10));
+		simConfig.setWeight(resultadoLocal, 0.001);
+		simConfig.addMapping(resultadoVisitante,new Interval(10));
+		simConfig.setWeight(resultadoVisitante, 0.001);
 		
 		log.info("Query: "+ query.getDescription());
 		
@@ -190,9 +190,9 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		//imprimimos los k mejores casos
 //		eval = SelectCases.selectTopKRR(eval, 5);
-		
-		//Imprimimos el resultado del k-NN y obtenemos la lista de casos recuperados
-		
+//		
+//		//Imprimimos el resultado del k-NN y obtenemos la lista de casos recuperados
+//		
 //		Collection<CBRCase> casos = new ArrayList<CBRCase>();
 //		System.out.println("Casos Recuperados");
 //		for(RetrievalResult nse: eval)
@@ -200,24 +200,24 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 //			System.out.println(nse);
 //			casos.add(nse.get_case());
 //		}
-//		//Aqui se incluiria el codigo para adaptar la solucion
+		//Aqui se incluiria el codigo para adaptar la solucion
 		
 		//Solamente mostramos el resultado
 		//DisplayCasesTableMethod.displayCasesInTableBasic(casos);
 	
-		
+		eval = SelectCases.selectTopKRR(eval, 1);
 		
 		//votacion basica
 		MajorityVotingMethod prueba = new MajorityVotingMethod();
 		Prediction pre;
 	    pre = prueba.getPredictedClass(eval);
-		System.out.println("Votacion Basica "+pre.Classification.toString()+" __ "+pre.confidence);
+		System.out.println("Votacion Basica "+pre.Classification.toString()+" __ "+pre.getConfidence());
 		
 		
 		//votacion ponderada
 		SimilarityWeightedVotingMethod prueba2 = new SimilarityWeightedVotingMethod();
 		pre = prueba2.getPredictedClass(eval);
-		System.out.println("Votacion ponderada "+pre.Classification.toString()+" __ "+pre.confidence);
+		System.out.println("Votacion ponderada "+pre.Classification.toString()+" __ "+pre.getConfidence());
 				
 		//esto es para las evaluaciones
 		CBRCase caso = (CBRCase)query;
@@ -229,7 +229,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			prediccion = 0.0;
 		//System.out.println("sol.getRes()"+sol.getRes().toString()+" - "+pre.Classification.toString());
 		Evaluator.getEvaluationReport().addDataToSeries("Errores", prediccion);
-		Evaluator.getEvaluationReport().addDataToSeries("Confianza", pre.confidence);
+		Evaluator.getEvaluationReport().addDataToSeries("Confianza", pre.getConfidence());
 	    // Now we add the similarity of the most similar case to the serie "Similarity".
 		//Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
 	}
