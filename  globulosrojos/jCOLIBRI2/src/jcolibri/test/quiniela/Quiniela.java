@@ -206,6 +206,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		//DisplayCasesTableMethod.displayCasesInTableBasic(casos);
 	
 		eval = SelectCases.selectTopKRR(eval, 1);
+		//System.out.println("//////////////////////////////////////////////////// " + eval.toString());
 		
 		//votacion basica
 		MajorityVotingMethod prueba = new MajorityVotingMethod();
