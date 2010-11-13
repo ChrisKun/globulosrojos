@@ -236,7 +236,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 
 	@Override
 	public void postCycle() throws ExecutionException {
-		this._caseBase.close();
+		//this._caseBase.close();
 		
 	}
 
