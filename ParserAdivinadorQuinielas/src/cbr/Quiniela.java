@@ -74,11 +74,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
                     ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
                     test.cycle(query);
             }while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
-			
-			
-			
-			
-			
+
 			//Estos se elegiran segun el comboBox
 			
 			//test.HoldOutEvaluation();
@@ -118,7 +114,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			_connector = new PlainTextConnector();
 			//Inicializar el conector con su archivo xml de configuracion
 			_connector.initFromXMLfile(jcolibri.util.FileIO.findFile("Ficheros/plaintextconfig.xml"));
-			//La organizacion en la memoria será lineal
+			//La organizacion en la memoria serï¿½ lineal
 			_caseBase = new CachedLinealCaseBase();
 		} catch (Exception e)
 		{
