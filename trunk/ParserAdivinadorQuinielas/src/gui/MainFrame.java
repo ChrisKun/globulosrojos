@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
@@ -22,9 +23,11 @@ import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
-import javax.swing.table.DefaultTableModel;
 
 import jcolibri.cbrcore.CBRQuery;
+import jcolibri.evaluation.Evaluator;
+import jcolibri.exception.ExecutionException;
+import jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod;
 import jcolibri.method.retrieve.RetrievalResult;
 
 import org.dyno.visual.swing.layouts.Bilateral;
@@ -36,6 +39,7 @@ import org.dyno.visual.swing.layouts.Trailing;
 import parser.Parser;
 import cbr.Casos;
 import cbr.Prediction;
+import cbr.Quiniela;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class MainFrame extends JFrame {
@@ -75,6 +79,8 @@ public class MainFrame extends JFrame {
 	private JLabel jLabel8;
 	private JLabel jLabel9;
 	private JLabel jLabel10;
+	private JMenuItem jMenuItem6;
+	private JMenu jMenu3;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public MainFrame() {
 		initComponents();
@@ -90,6 +96,29 @@ public class MainFrame extends JFrame {
 		add(getJProgressBar0(), new Constraints(new Leading(12, 820, 12, 12), new Leading(346, 12, 12)));
 		setJMenuBar(getJMenuBar0());
 		setSize(844, 394);
+	}
+
+	private JMenu getJMenu3() {
+		if (jMenu3 == null) {
+			jMenu3 = new JMenu();
+			jMenu3.setText("Editar");
+			jMenu3.add(getJMenuItem6());
+		}
+		return jMenu3;
+	}
+
+	private JMenuItem getJMenuItem6() {
+		if (jMenuItem6 == null) {
+			jMenuItem6 = new JMenuItem();
+			jMenuItem6.setText("Opciones CBR");
+			jMenuItem6.addMouseListener(new MouseAdapter() {
+	
+				public void mousePressed(MouseEvent event) {
+					jMenuItem6MouseMousePressed(event);
+				}
+			});
+		}
+		return jMenuItem6;
 	}
 
 	private JLabel getJLabel10() {
@@ -127,7 +156,7 @@ public class MainFrame extends JFrame {
 	private JLabel getJLabel6() {
 		if (jLabel6 == null) {
 			jLabel6 = new JLabel();
-			jLabel6.setText("Votaci髇:");
+			jLabel6.setText("Votaci贸n:");
 		}
 		return jLabel6;
 	}
@@ -191,7 +220,7 @@ public class MainFrame extends JFrame {
 	private JLabel getJLabel0() {
 		if (jLabel0 == null) {
 			jLabel0 = new JLabel();
-			jLabel0.setText("Predicci髇:");
+			jLabel0.setText("Predicci贸n:");
 		}
 		return jLabel0;
 	}
@@ -270,6 +299,12 @@ public class MainFrame extends JFrame {
 		if (jMenuItem5 == null) {
 			jMenuItem5 = new JMenuItem();
 			jMenuItem5.setText("Leave-one-out");
+			jMenuItem5.addMouseListener(new MouseAdapter() {
+	
+				public void mousePressed(MouseEvent event) {
+					jMenuItem5MouseMousePressed(event);
+				}
+			});
 		}
 		return jMenuItem5;
 	}
@@ -278,6 +313,12 @@ public class MainFrame extends JFrame {
 		if (jMenuItem4 == null) {
 			jMenuItem4 = new JMenuItem();
 			jMenuItem4.setText("Hold-out");
+			jMenuItem4.addMouseListener(new MouseAdapter() {
+	
+				public void mousePressed(MouseEvent event) {
+					jMenuItem4MouseMousePressed(event);
+				}
+			});
 		}
 		return jMenuItem4;
 	}
@@ -302,6 +343,7 @@ public class MainFrame extends JFrame {
 			jMenuBar0.add(getJMenu0());
 			jMenuBar0.add(getJMenu1());
 			jMenuBar0.add(getJMenu2());
+			jMenuBar0.add(getJMenu3());
 		}
 		return jMenuBar0;
 	}
@@ -309,7 +351,7 @@ public class MainFrame extends JFrame {
 	private JMenu getJMenu2() {
 		if (jMenu2 == null) {
 			jMenu2 = new JMenu();
-			jMenu2.setText("Evaluaci髇");
+			jMenu2.setText("Evaluaci贸n");
 			jMenu2.setOpaque(false);
 			jMenu2.add(getJMenuItem2());
 			jMenu2.add(getJMenuItem4());
@@ -322,6 +364,12 @@ public class MainFrame extends JFrame {
 		if (jMenuItem2 == null) {
 			jMenuItem2 = new JMenuItem();
 			jMenuItem2.setText("N-Fold");
+			jMenuItem2.addMouseListener(new MouseAdapter() {
+	
+				public void mousePressed(MouseEvent event) {
+					jMenuItem2MouseMousePressed(event);
+				}
+			});
 		}
 		return jMenuItem2;
 	}
@@ -341,6 +389,12 @@ public class MainFrame extends JFrame {
 		if (jMenuItem1 == null) {
 			jMenuItem1 = new JMenuItem();
 			jMenuItem1.setText("Crear Partido");
+			jMenuItem1.addMouseListener(new MouseAdapter() {
+	
+				public void mousePressed(MouseEvent event) {
+					jMenuItem1MouseMousePressed(event);
+				}
+			});
 		}
 		return jMenuItem1;
 	}
@@ -425,7 +479,7 @@ public class MainFrame extends JFrame {
 		this.predictionList = predictionList;
 		this.knnList = knnList;
 		
-		jComboBox0.removeAll();
+		jComboBox0.removeAllItems();
 		for (CBRQuery q : queryList) {
 			jComboBox0.addItem(((Casos)q.getDescription()).getEquipoLocal() + " - " + ((Casos)q.getDescription()).getEquipoVisitante());
 		}
@@ -434,21 +488,161 @@ public class MainFrame extends JFrame {
 	private void jComboBox0ActionActionPerformed(ActionEvent event) {
 		int index = ((JComboBox)event.getSource()).getSelectedIndex();
 		
-		// Tabla de query
-		Casos c = (Casos)queryList.get(index).getDescription();
-		
-		jTable1.setModel(new TablaQueryModel(c));
-		
-		// Datos de la predicci髇
-		Prediction p = predictionList.get(index);
-		jLabel4.setText(p.getClassification().toString());
-		jLabel8.setText(Double.toString(p.getConfidence()));
-		jLabel9.setText(Opciones.opcionVotacion.toString());
-		jLabel10.setText(Integer.toString(Opciones.opcionKNN));
-		
-		// Datos de los knn elegidos
-		Collection<RetrievalResult> k = knnList.get(index);
-		jTable0.setModel(new TablaKNNModel(k));
+		if (index >= 0) {
+			// Tabla de query
+			Casos c = (Casos)queryList.get(index).getDescription();
+			
+			jTable1.setModel(new TablaQueryModel(c));
+			
+			// Datos de la predicci贸n
+			Prediction p = predictionList.get(index);
+			jLabel4.setText(p.getClassification().toString());
+			jLabel8.setText(Double.toString(p.getConfidence()));
+			jLabel9.setText(Opciones.opcionVotacion.toString());
+			jLabel10.setText(Integer.toString(Opciones.opcionKNN));
+			
+			// Datos de los knn elegidos
+			Collection<RetrievalResult> k = knnList.get(index);
+			jTable0.setModel(new TablaKNNModel(k));
+		}
 	}
+
+	private void jMenuItem6MouseMousePressed(MouseEvent event) {
+		OptionsFrame of = new OptionsFrame();
+		
+		of.setVisible(true);
+	}
+
+	private void jMenuItem1MouseMousePressed(MouseEvent event) {
+		Quiniela quiniela = new Quiniela();
+		try {
+			quiniela.configure();
+			quiniela.preCycle();
+
+			queryList = new ArrayList<CBRQuery>();
+			predictionList = new ArrayList<Prediction>();
+			knnList = new ArrayList<Collection<RetrievalResult>>();
+			
+			CBRQuery query = new CBRQuery();
+	        query.setDescription(new Casos());
+	        do
+	        {
+	                ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);
+					quiniela.cycle(query);
+					
+					queryList.add(query);
+					predictionList.add(quiniela.getPrediction());
+					knnList.add(quiniela.getEval());
+	        }while (JOptionPane.showConfirmDialog(null, "Continuar?")==JOptionPane.OK_OPTION);
+	        
+	        showPredictions(queryList, predictionList, knnList);
+		} catch (ExecutionException e1) {}
+	}
+
+	private void jMenuItem2MouseMousePressed(MouseEvent event) {
+		Thread t = new Thread(new Runnable() {
+			public void run()
+			{
+				Quiniela test = new Quiniela();
+				
+				try {
+					test.configure();
+					test.preCycle();		
+				
+					test.SameSplitEvaluation();
+					
+					java.util.Vector<Double> vec = Evaluator.getEvaluationReport().getSeries("Errores");
+					double avg = 0.0;
+					for (Double d: vec)
+						avg+=d;
+					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					Evaluator.getEvaluationReport().putOtherData("Media errores", Double.toString(avg));
+						
+					java.util.Vector<Double> vec2 = Evaluator.getEvaluationReport().getSeries("Confianza");
+					avg = 0.0;
+					for (Double d: vec2)
+						avg+=d;
+					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					Evaluator.getEvaluationReport().putOtherData("Media confianza", Double.toString(avg));
+						
+					System.out.println(Evaluator.getEvaluationReport());
+					jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Evaluacion Quinielas", false);
+				} catch (ExecutionException e) {
+				}
+			}
+		});
+		t.start();
+	}
+
+	private void jMenuItem4MouseMousePressed(MouseEvent event) {
+		Thread t = new Thread(new Runnable() {
+			public void run()
+			{
+				Quiniela test = new Quiniela();
+				
+				try {
+					test.configure();
+					test.preCycle();		
+				
+					test.HoldOutEvaluation();
+					
+					java.util.Vector<Double> vec = Evaluator.getEvaluationReport().getSeries("Errores");
+					double avg = 0.0;
+					for (Double d: vec)
+						avg+=d;
+					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					Evaluator.getEvaluationReport().putOtherData("Media errores", Double.toString(avg));
+						
+					java.util.Vector<Double> vec2 = Evaluator.getEvaluationReport().getSeries("Confianza");
+					avg = 0.0;
+					for (Double d: vec2)
+						avg+=d;
+					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					Evaluator.getEvaluationReport().putOtherData("Media confianza", Double.toString(avg));
+						
+					System.out.println(Evaluator.getEvaluationReport());
+					jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Evaluacion Quinielas", false);
+				} catch (ExecutionException e) {
+				}
+			}
+		});
+		t.start();
+	}
+
+	private void jMenuItem5MouseMousePressed(MouseEvent event) {
+		Thread t = new Thread(new Runnable() {
+			public void run()
+			{
+				Quiniela test = new Quiniela();
+				
+				try {
+					test.configure();
+					test.preCycle();		
+				
+					test.LeaveOneOutEvaluation();
+					
+					java.util.Vector<Double> vec = Evaluator.getEvaluationReport().getSeries("Errores");
+					double avg = 0.0;
+					for (Double d: vec)
+						avg+=d;
+					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					Evaluator.getEvaluationReport().putOtherData("Media errores", Double.toString(avg));
+						
+					java.util.Vector<Double> vec2 = Evaluator.getEvaluationReport().getSeries("Confianza");
+					avg = 0.0;
+					for (Double d: vec2)
+						avg+=d;
+					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					Evaluator.getEvaluationReport().putOtherData("Media confianza", Double.toString(avg));
+						
+					System.out.println(Evaluator.getEvaluationReport());
+					jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Evaluacion Quinielas", false);
+				} catch (ExecutionException e) {
+				}
+			}
+		});
+		t.start();
+	}
+
 
 }

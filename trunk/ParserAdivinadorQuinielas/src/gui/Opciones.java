@@ -6,4 +6,5 @@ public class Opciones {
 	
 	public static votacion opcionVotacion = votacion.PONDERADA;
 	public static int opcionKNN = 3;
+	public static int ultimaJornada = 12;
 }

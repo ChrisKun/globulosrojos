@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -34,20 +33,12 @@ import cbr.Quiniela;
 
 import parserCalendario.ParserCalendario;
 import parserClasificacion.Clasificacion;
-import parserClasificacion.ParserClasificacion;
 import parserClasificacion.Posicion;
 import parserResultados.Jornada;
-import parserResultados.ParserResultados;
-import parserResultados.Partido;
 import utils.StringUtils;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class QueryPartidosFrame extends JFrame {
-	
-	private final String pageRes = "http://www.lfp.es/?tabid=154&Controltype=cal&g=1&t=";
-	private final String pageClas = "http://www.lfp.es/?tabid=154&Controltype=detcla&g=1&t=";
-	
-	private final static int ultimaJornada = 11;
 
 	private static final long serialVersionUID = 1L;
 	private JLabel jLabel0;
@@ -154,6 +145,11 @@ public class QueryPartidosFrame extends JFrame {
 		if (jButton1 == null) {
 			jButton1 = new JButton();
 			jButton1.setText("Cancelar");
+			jButton1.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent event) {
+					jButtonCancelarClicked(event);
+				}
+			});
 		}
 		return jButton1;
 	}
@@ -260,12 +256,12 @@ public class QueryPartidosFrame extends JFrame {
 		String separator = System.getProperty("file.separator");
 		
 		int nTemporada = convertirTemporada(jComboBox0.getSelectedItem().toString());
-		int nJornada = Integer.parseInt(jComboBox1.getSelectedItem().toString());
+		int nJornada = Integer.parseInt(jComboBox1.getSelectedItem().toString()) - 1;
 		
 		// Si la temporada seleccionada es la actual solo mostramos hasta la jornada actual.
 		if (nTemporada == 110 && event.getSource().equals(jComboBox0)) {
-			Object[] model = new Object[ultimaJornada];
-			for (int i=0; i < ultimaJornada; i++)
+			Object[] model = new Object[Opciones.ultimaJornada];
+			for (int i=0; i < Opciones.ultimaJornada; i++)
 				model[i] = i + 1;
 			jComboBox1.setModel(new DefaultComboBoxModel(model));
 		}
@@ -276,8 +272,8 @@ public class QueryPartidosFrame extends JFrame {
 			jornada = CaseCreator.leerResultados("Ficheros" + separator
 						+ "ResultadosTemp" + nTemporada).get(nJornada);
 		} catch (Exception e) {
-			// Si salta una excepción es porque estamos intentando acceder a la última jornada.
-			// La clasificación por lo tanto debería haberse leido correctamente.
+			// Si salta una excepciï¿½n es porque estamos intentando acceder a la ï¿½ltima jornada.
+			// La clasificaciï¿½n por lo tanto deberï¿½a haberse leido correctamente.
 			jornada = ParserCalendario.parseProximaJornada();
 		}
 		
@@ -301,6 +297,10 @@ public class QueryPartidosFrame extends JFrame {
 		jTable0.updateUI();
 	}
 
+	private void jButtonCancelarClicked(MouseEvent event) {
+		dispose();
+	}
+	
 	private void jButton0MouseMouseClicked(MouseEvent event) {
 		queryList = new ArrayList<CBRQuery>();
 		predictionList = new ArrayList<Prediction>();
@@ -318,9 +318,19 @@ public class QueryPartidosFrame extends JFrame {
 		try {
 			Quiniela quiniela = new Quiniela();
 			
+			jProgressBar0.setStringPainted(true);
+			jProgressBar0.setString("Precycle");
+			jProgressBar0.setMaximum(queryList.size() + 1);
+			jProgressBar0.setMinimum(0);
+			jProgressBar0.setValue(1);
+			
 			quiniela.configure();
 			quiniela.preCycle();
 			for (int i = 0; i < queryList.size(); i++) {
+				
+				jProgressBar0.setString("Cycle " + i + "/" + queryList.size());
+				jProgressBar0.setValue(jProgressBar0.getValue() + 1);
+				
 				quiniela.cycle(queryList.get(i));
 				predictionList.add(quiniela.getPrediction());
 				knnList.add(quiniela.getEval());
@@ -329,7 +339,7 @@ public class QueryPartidosFrame extends JFrame {
 		} catch (Exception e) {}
 		
 		mf.showPredictions(queryList, predictionList, knnList);
-		this.setVisible(false);
+		dispose();
 	}
 	
 	private CBRQuery createQuery(String local, String visitante) {

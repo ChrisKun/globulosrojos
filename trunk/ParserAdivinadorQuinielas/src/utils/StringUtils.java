@@ -12,11 +12,11 @@ public class StringUtils {
 	 */
 	public static String arreglarTildes(String s)
 	{
-		return s.replace("&aacute;", "á").
-				replace("&eacute;", "é").
-				replace("&iacute;", "í").
-				replace("&oacute;", "ó").
-				replace("&uacute;", "ú");
+		return s.replace("&aacute;", "Ã¡").
+				replace("&eacute;", "Ã©").
+				replace("&iacute;", "Ã­").
+				replace("&oacute;", "Ã³").
+				replace("&uacute;", "Ãº");
 	}
 	
 	/**
@@ -27,23 +27,23 @@ public class StringUtils {
 		for (Posicion posicion : jornada.getPosiciones()) {
 			if(posicion.getEquipo().contains("&aacute;"))
 			{
-				posicion.setEquipo(posicion.getEquipo().replace("&aacute;", "á"));
+				posicion.setEquipo(posicion.getEquipo().replace("&aacute;", "Ã¡"));
 			}
 			else if(posicion.getEquipo().contains("&eacute;"))
 			{
-				posicion.setEquipo(posicion.getEquipo().replace("&eacute;", "é"));
+				posicion.setEquipo(posicion.getEquipo().replace("&eacute;", "Ã©"));
 			}
 			else if(posicion.getEquipo().contains("&iacute;"))
 			{
-				posicion.setEquipo(posicion.getEquipo().replace("&iacute;", "í"));
+				posicion.setEquipo(posicion.getEquipo().replace("&iacute;", "Ã­"));
 			}
 			else if(posicion.getEquipo().contains("&oacute;"))
 			{
-				posicion.setEquipo(posicion.getEquipo().replace("&oacute;", "ó"));
+				posicion.setEquipo(posicion.getEquipo().replace("&oacute;", "Ã³"));
 			}
 			else if(posicion.getEquipo().contains("&uacute;"))
 			{
-				posicion.setEquipo(posicion.getEquipo().replace("&uacute;", "ú"));
+				posicion.setEquipo(posicion.getEquipo().replace("&uacute;", "Ãº"));
 			}
 		}
 		return jornada;
@@ -60,8 +60,8 @@ public class StringUtils {
 			return "C. At. Osasuna";
 		if (nombre.equals("Deportivo"))
 			return "R.C. Deportivo";
-		if (nombre.equals("Almería"))
-			return "U.D. Almería";
+		if (nombre.equals("AlmerÃ­a"))
+			return "U.D. AlmerÃ­a";
 		if (nombre.equals("Racing") || nombre.equals("R.Racing C."))
 			return "Real Racing Club";
 		if (nombre.equals("Barcelona"))
@@ -76,7 +76,7 @@ public class StringUtils {
 			return "Real Valladolid";
 		if (nombre.equals("R. Madrid") || nombre.equals("Real Madrid"))
 			return "Real Madrid C.F.";
-		if (nombre.equals("At. Madrid") || nombre.equals("Atlético Madrid"))
+		if (nombre.equals("At. Madrid") || nombre.equals("AtlÃ©tico Madrid"))
 			return "At. de Madrid";
 		if (nombre.equals("Recreativo"))
 			return "R.C.R. de Huelva";
@@ -93,17 +93,17 @@ public class StringUtils {
 		if (nombre.equals("Numancia"))
 			return "C.D. Numancia";
 		if (nombre.equals("Sporting") || nombre.equals("R. Sporting"))
-			return "Real S. de Gijón";
-		if (nombre.equals("Málaga"))
-			return "Málaga C.F.";
+			return "Real S. de GijÃ³n";
+		if (nombre.equals("MÃ¡laga"))
+			return "MÃ¡laga C.F.";
 		if (nombre.equals("Xerez"))
 			return "Xerez C.D.";
 		if (nombre.equals("Tenerife"))
 			return "C.D. Tenerife";
 		if (nombre.equals("R. Sociedad"))
 			return "Real Sociedad";
-		if (nombre.equals("Hércules"))
-			return "Hércules C.F.";
+		if (nombre.equals("HÃ©rcules"))
+			return "HÃ©rcules C.F.";
 		return nombre;
 	}
 }
