@@ -18,7 +18,7 @@ public class ParserClasificacion {
 
 	private BufferedReader reader = null;
 	private Clasificacion jornada;
-
+	
 	public boolean parse(String page) throws NumberFormatException, IOException {
 
 		// Se crea un objeto URL para pasarselo al WebUtils

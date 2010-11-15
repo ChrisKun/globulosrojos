@@ -1,52 +1,52 @@
-HÃ©rcules, 0, 1, Athletic
+Hércules, 0, 1, Athletic
 R. Sociedad, 1, 0, Villarreal
 Deportivo, 0, 0, Zaragoza
-MÃ¡laga, 1, 3, Valencia
+Málaga, 1, 3, Valencia
 Racing, 0, 3, Barcelona
 Mallorca, 0, 0, R. Madrid
 At. Madrid, 4, 0, Sporting
 Espanyol, 3, 1, Getafe
 Levante, 1, 4, Sevilla
-Osasuna, 0, 0, AlmerÃ­a
+Osasuna, 0, 0, Almería
 ----------------------------
 Sevilla, 0, 0, Deportivo
-Zaragoza, 3, 5, MÃ¡laga
+Zaragoza, 3, 5, Málaga
 Athletic, 1, 2, At. Madrid
 Sporting, 2, 0, Mallorca
 Villarreal, 4, 0, Espanyol
 Getafe, 4, 1, Levante
-Barcelona, 0, 2, HÃ©rcules
+Barcelona, 0, 2, Hércules
 R. Madrid, 1, 0, Osasuna
 Valencia, 1, 0, Racing
-AlmerÃ­a, 2, 2, R. Sociedad
+Almería, 2, 2, R. Sociedad
 ----------------------------
-HÃ©rcules, 1, 2, Valencia
+Hércules, 1, 2, Valencia
 R. Sociedad, 1, 2, R. Madrid
 Deportivo, 2, 2, Getafe
 Sporting, 2, 2, Athletic
-MÃ¡laga, 1, 2, Sevilla
+Málaga, 1, 2, Sevilla
 Racing, 2, 0, Zaragoza
 Mallorca, 2, 0, Osasuna
-Espanyol, 1, 0, AlmerÃ­a
+Espanyol, 1, 0, Almería
 Levante, 1, 2, Villarreal
 At. Madrid, 1, 2, Barcelona
 ----------------------------
 Sevilla, 1, 1, Racing
-Zaragoza, 0, 0, HÃ©rcules
+Zaragoza, 0, 0, Hércules
 Athletic, 3, 0, Mallorca
 Villarreal, 1, 0, Deportivo
-Getafe, 0, 2, MÃ¡laga
+Getafe, 0, 2, Málaga
 Barcelona, 1, 0, Sporting
 R. Madrid, 3, 0, Espanyol
 Osasuna, 3, 1, R. Sociedad
 Valencia, 1, 1, At. Madrid
-AlmerÃ­a, 0, 1, Levante
+Almería, 0, 1, Levante
 ----------------------------
-HÃ©rcules, 2, 0, Sevilla
+Hércules, 2, 0, Sevilla
 Athletic, 1, 3, Barcelona
-Deportivo, 0, 2, AlmerÃ­a
+Deportivo, 0, 2, Almería
 Sporting, 0, 2, Valencia
-MÃ¡laga, 2, 3, Villarreal
+Málaga, 2, 3, Villarreal
 Racing, 0, 1, Getafe
 Mallorca, 2, 0, R. Sociedad
 Espanyol, 1, 0, Osasuna
@@ -57,19 +57,19 @@ Sevilla, 3, 1, At. Madrid
 Zaragoza, 2, 2, Sporting
 R. Sociedad, 1, 0, Espanyol
 Villarreal, 2, 0, Racing
-Getafe, 3, 0, HÃ©rcules
+Getafe, 3, 0, Hércules
 Barcelona, 1, 1, Mallorca
 R. Madrid, 6, 1, Deportivo
 Osasuna, 1, 1, Levante
 Valencia, 2, 1, Athletic
-AlmerÃ­a, 1, 1, MÃ¡laga
+Almería, 1, 1, Málaga
 ----------------------------
-HÃ©rcules, 2, 2, Villarreal
+Hércules, 2, 2, Villarreal
 Athletic, 2, 1, Zaragoza
 Deportivo, 0, 0, Osasuna
 Sporting, 2, 0, Sevilla
-MÃ¡laga, 1, 4, R. Madrid
-Racing, 1, 0, AlmerÃ­a
+Málaga, 1, 4, R. Madrid
+Racing, 1, 0, Almería
 Mallorca, 0, 1, Espanyol
 Barcelona, 2, 1, Valencia
 Levante, 2, 1, R. Sociedad
@@ -82,19 +82,19 @@ Villarreal, 2, 0, At. Madrid
 Getafe, 3, 0, Sporting
 Espanyol, 2, 1, Levante
 R. Madrid, 6, 1, Racing
-Osasuna, 3, 0, MÃ¡laga
+Osasuna, 3, 0, Málaga
 Valencia, 1, 2, Mallorca
-AlmerÃ­a, 1, 1, HÃ©rcules
+Almería, 1, 1, Hércules
 ----------------------------
-HÃ©rcules, 1, 3, R. Madrid
+Hércules, 1, 3, R. Madrid
 Athletic, 3, 0, Getafe
 Deportivo, 3, 0, Espanyol
 Sporting, 1, 1, Villarreal
-MÃ¡laga, 1, 2, R. Sociedad
+Málaga, 1, 2, R. Sociedad
 Racing, 4, 1, Osasuna
 Mallorca, 2, 1, Levante
 Barcelona, 5, 0, Sevilla
-At. Madrid, 1, 1, AlmerÃ­a
+At. Madrid, 1, 1, Almería
 Valencia, 1, 1, Zaragoza
 ----------------------------
 Sevilla, 2, 0, Valencia
@@ -103,8 +103,8 @@ R. Sociedad, 1, 0, Racing
 Villarreal, 4, 1, Athletic
 Getafe, 1, 3, Barcelona
 Levante, 1, 2, Deportivo
-Espanyol, 1, 0, MÃ¡laga
+Espanyol, 1, 0, Málaga
 R. Madrid, 2, 0, At. Madrid
-Osasuna, 3, 0, HÃ©rcules
-AlmerÃ­a, 1, 1, Sporting
+Osasuna, 3, 0, Hércules
+Almería, 1, 1, Sporting
 ----------------------------

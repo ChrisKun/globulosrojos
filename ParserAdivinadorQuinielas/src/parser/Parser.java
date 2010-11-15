@@ -4,16 +4,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.swing.JProgressBar;
+
 import caseCreator.CaseCreator;
 
 import parserClasificacion.ParserClasificacion;
 import parserResultados.ParserResultados;
-import utils.CorrectorTildes;
+import utils.StringUtils;
 
 public class Parser {
 
 	public static void main(String[] args) {
-
 		parsearClasificaciones();
 
 		parsearResultados();
@@ -23,11 +24,29 @@ public class Parser {
 		CaseCreator creator = new CaseCreator();
 		creator.juntarInfo();
 	}
+	
+	public static void parse(JProgressBar pb) {
+
+		pb.setString("Recuperando clasificaciones");
+		pb.setValue(33);
+		parsearClasificaciones();
+
+		pb.setString("Recuperando resultados");
+		pb.setValue(66);
+		parsearResultados();
+
+		// Se crea el fichero de los casos juntando los parses de
+		// clasificaciones y resultados
+		pb.setString("Creando base de casos");
+		pb.setValue(80);
+		CaseCreator creator = new CaseCreator();
+		creator.juntarInfo();	
+		pb.setValue(100);
+	}
 
 	private static void parsearClasificaciones() {
-		// Se cogue el separador dependiendo del sistema en el que estemos
+		// Se coge el separador dependiendo del sistema en el que estemos
 		// Si es Windows '\' y si es Linux '/'
-		// TODO En Linux funciona, falta probar en windows
 		String separator = System.getProperty("file.separator");
 
 		try {
@@ -46,7 +65,7 @@ public class Parser {
 				parserC
 						.parse("http://www.lfp.es/?tabid=154&Controltype=detcla&g=1&t="
 								+ temporada + "&j=1");
-				parserC.setJornada(CorrectorTildes.arreglarTildes(parserC.getJornada()));
+				parserC.setJornada(StringUtils.arreglarTildes(parserC.getJornada()));
 				parserC.escribirPrimeraClasificacion(writer);
 
 				int jornada = 1;
@@ -57,7 +76,7 @@ public class Parser {
 								+ temporada + "&j=" + jornada)
 						&& jornada < 38) {
 					System.out.print("-");
-					parserC.setJornada(CorrectorTildes.arreglarTildes(parserC.getJornada()));
+					parserC.setJornada(StringUtils.arreglarTildes(parserC.getJornada()));
 					parserC.writeInfo(writer);
 					parserC.writeSeparator(writer);
 					jornada++;

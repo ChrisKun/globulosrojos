@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
 
-import utils.CorrectorTildes;
+import utils.StringUtils;
 import utils.WebUtils;
 
 public class ParserResultados {
@@ -22,6 +22,10 @@ public class ParserResultados {
 	private BufferedReader reader = null;
 	private Temporada temporada;
 	
+	public Temporada getTemporada() {
+		return temporada;
+	}
+
 	public void parse(String page) throws IOException {
 
 		temporada = new Temporada();
@@ -53,7 +57,7 @@ public class ParserResultados {
 				if (linea.indexOf("<tr class=\"FondoFilaCalendario\"") != -1) {
 					p = new Partido();
 					reader.readLine();
-					p.setEquipoLocal(CorrectorTildes.arreglarTildes(reader.readLine().trim()));
+					p.setEquipoLocal(StringUtils.arreglarTildes(reader.readLine().trim()));
 					reader.readLine();
 					reader.readLine();
 					reader.readLine();
@@ -68,7 +72,7 @@ public class ParserResultados {
 					reader.readLine();
 					reader.readLine();
 					reader.readLine();
-					p.setEquipoVisitante(CorrectorTildes.arreglarTildes(reader.readLine().trim()));
+					p.setEquipoVisitante(StringUtils.arreglarTildes(reader.readLine().trim()));
 					
 					if (numPartido == 0) j = new Jornada();
 					j.add(p);
