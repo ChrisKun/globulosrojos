@@ -15,6 +15,7 @@ import parserClasificacion.Clasificacion;
 import parserResultados.Jornada;
 import parserResultados.Partido;
 import parserResultados.Temporada;
+import utils.StringUtils;
 
 public class CaseCreator {
 
@@ -55,7 +56,7 @@ public class CaseCreator {
 	 * 
 	 * @param path
 	 */
-	private ArrayList<Clasificacion> leerClasificacion(String path) {
+	public static ArrayList<Clasificacion> leerClasificacion(String path) {
 		FileReader file;
 		ArrayList<Clasificacion> listaJornadas = new ArrayList<Clasificacion>();
 		try {
@@ -102,7 +103,7 @@ public class CaseCreator {
 	 * 
 	 * @param path
 	 */
-	private Temporada leerResultados(String path) {
+	public static Temporada leerResultados(String path) {
 		FileReader file;
 		Temporada temporada = new Temporada();
 		try {
@@ -166,10 +167,10 @@ public class CaseCreator {
 					while (itPartido.hasNext()) {
 						Partido partido = itPartido.next();
 						Posicion posicionLocal = clasiJornada
-								.getPosicionByName(convertirNombresEquipos(partido
+								.getPosicionByName(StringUtils.convertirNombresEquipos(partido
 										.getEquipoLocal()).trim());
 						Posicion posicionVisitante = clasiJornada
-								.getPosicionByName(convertirNombresEquipos(partido
+								.getPosicionByName(StringUtils.convertirNombresEquipos(partido
 										.getEquipoVisitante()).trim());
 						
 						writer.print("Case " + caseID + ",");
@@ -217,64 +218,5 @@ public class CaseCreator {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private String convertirNombresEquipos(String nombre) {
-
-		if (nombre.equals("Sevilla"))
-			return "Sevilla F.C.";
-		if (nombre.equals("Getafe"))
-			return "Getafe C.F.";
-		if (nombre.equals("Athletic"))
-			return "Athletic Club";
-		if (nombre.equals("Osasuna"))
-			return "C. At. Osasuna";
-		if (nombre.equals("Deportivo"))
-			return "R.C. Deportivo";
-		if (nombre.equals("Almería"))
-			return "U.D. Almería";
-		if (nombre.equals("Racing"))
-			return "Real Racing Club";
-		if (nombre.equals("Barcelona"))
-			return "F.C. Barcelona";
-		if (nombre.equals("Mallorca"))
-			return "R.C.D. Mallorca";
-		if (nombre.equals("Levante"))
-			return "Levante U.D.";
-		if (nombre.equals("Espanyol"))
-			return "R.C.D. Espanyol";
-		if (nombre.equals("Valladolid"))
-			return "Real Valladolid";
-		if (nombre.equals("R. Madrid"))
-			return "Real Madrid C.F.";
-		if (nombre.equals("At. Madrid"))
-			return "At. de Madrid";
-		if (nombre.equals("Recreativo"))
-			return "R.C.R. de Huelva";
-		if (nombre.equals("Betis"))
-			return "Real Betis B. S.";
-		if (nombre.equals("Valencia"))
-			return "Valencia C.F.";
-		if (nombre.equals("Villarreal"))
-			return "Villarreal C.F.";
-		if (nombre.equals("Murcia"))
-			return "Real Murcia C.F.";
-		if (nombre.equals("Zaragoza"))
-			return "Real Zaragoza CD";
-		if (nombre.equals("Numancia"))
-			return "C.D. Numancia";
-		if (nombre.equals("Sporting"))
-			return "Real S. de Gijón";
-		if (nombre.equals("Málaga"))
-			return "Málaga C.F.";
-		if (nombre.equals("Xerez"))
-			return "Xerez C.D.";
-		if (nombre.equals("Tenerife"))
-			return "C.D. Tenerife";
-		if (nombre.equals("R. Sociedad"))
-			return "Real Sociedad";
-		if (nombre.equals("Hércules"))
-			return "Hércules C.F.";
-		return null;
 	}
 }

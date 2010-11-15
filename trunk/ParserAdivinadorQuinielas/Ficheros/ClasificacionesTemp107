@@ -1,5 +1,5 @@
 Sevilla F.C. , 0, 0, 0, 0, 0, 0, 0
-U.D. AlmerÃ­a , 0, 0, 0, 0, 0, 0, 0
+U.D. Almería , 0, 0, 0, 0, 0, 0, 0
 Villarreal C.F. , 0, 0, 0, 0, 0, 0, 0
 R.C.D. Mallorca , 0, 0, 0, 0, 0, 0, 0
 Real Madrid C.F. , 0, 0, 0, 0, 0, 0, 0
@@ -20,7 +20,7 @@ R.C. Deportivo , 0, 0, 0, 0, 0, 0, 0
 Valencia C.F. , 0, 0, 0, 0, 0, 0, 0
 ----------------------------------
 Sevilla F.C., 3, 4, 1, 1, 1, 0, 0
-U.D. AlmerÃ­a, 3, 3, 0, 0, 0, 1, 1
+U.D. Almería, 3, 3, 0, 0, 0, 1, 1
 Villarreal C.F., 3, 3, 0, 0, 0, 1, 1
 R.C.D. Mallorca, 3, 3, 0, 1, 1, 0, 0
 Real Madrid C.F., 3, 2, 1, 1, 1, 0, 0
@@ -46,7 +46,7 @@ F.C. Barcelona, 28, 27, 11, 7, 7, 7, 1
 Real Valladolid, 16, 21, 26, 7, 2, 7, 2
 Real Murcia C.F., 15, 10, 15, 7, 2, 7, 1
 Sevilla F.C., 16, 25, 21, 7, 4, 7, 1
-U.D. AlmerÃ­a, 16, 12, 15, 7, 2, 7, 2
+U.D. Almería, 16, 12, 15, 7, 2, 7, 2
 Villarreal C.F., 28, 26, 21, 7, 5, 7, 4
 Valencia C.F., 24, 20, 23, 7, 3, 7, 5
 Real Betis B. S., 11, 13, 22, 7, 2, 7, 0
@@ -72,7 +72,7 @@ R.C.D. Mallorca, 4, 4, 2, 2, 1, 1, 0
 Real Valladolid, 4, 4, 4, 1, 0, 2, 1
 R.C.D. Espanyol, 4, 3, 3, 2, 1, 1, 0
 R.C. Deportivo, 4, 3, 5, 2, 1, 1, 0
-U.D. AlmerÃ­a, 3, 5, 5, 1, 0, 2, 1
+U.D. Almería, 3, 5, 5, 1, 0, 2, 1
 C. At. Osasuna, 2, 0, 0, 1, 0, 1, 0
 Real Betis B. S., 2, 3, 4, 1, 0, 2, 0
 Real Zaragoza CD, 2, 3, 4, 1, 0, 2, 0
@@ -96,7 +96,7 @@ Real Murcia C.F., 5, 3, 4, 2, 1, 2, 0
 R.C.R. de Huelva, 5, 5, 7, 2, 1, 2, 0
 R.C. Deportivo, 5, 3, 5, 2, 1, 2, 0
 Real Racing Club, 5, 2, 5, 2, 1, 2, 0
-U.D. AlmerÃ­a, 4, 6, 6, 2, 0, 2, 1
+U.D. Almería, 4, 6, 6, 2, 0, 2, 1
 R.C.D. Espanyol, 4, 4, 5, 2, 1, 2, 0
 C. At. Osasuna, 2, 1, 2, 1, 0, 2, 0
 Real Betis B. S., 2, 4, 6, 2, 0, 2, 0
@@ -110,7 +110,7 @@ F.C. Barcelona, 11, 9, 3, 3, 3, 2, 0
 At. de Madrid, 8, 9, 4, 2, 1, 3, 1
 R.C.D. Mallorca, 8, 9, 5, 3, 2, 2, 0
 R.C.R. de Huelva, 8, 7, 7, 2, 1, 3, 1
-U.D. AlmerÃ­a, 7, 7, 6, 2, 0, 3, 2
+U.D. Almería, 7, 7, 6, 2, 0, 3, 2
 R.C.D. Espanyol, 7, 7, 7, 2, 1, 3, 1
 Sevilla F.C., 6, 11, 7, 3, 2, 1, 0
 C. At. Osasuna, 5, 5, 3, 2, 1, 2, 0
@@ -135,7 +135,7 @@ Real Murcia C.F., 8, 7, 6, 3, 1, 3, 1
 Real Zaragoza CD, 8, 8, 9, 3, 2, 3, 0
 R.C.R. de Huelva, 8, 7, 8, 3, 1, 3, 1
 Real Racing Club, 8, 3, 7, 3, 1, 3, 1
-U.D. AlmerÃ­a, 7, 7, 7, 3, 0, 3, 2
+U.D. Almería, 7, 7, 7, 3, 0, 3, 2
 Sevilla F.C., 6, 11, 9, 3, 2, 2, 0
 C. At. Osasuna, 5, 5, 5, 2, 1, 3, 0
 Real Betis B. S., 5, 7, 8, 3, 1, 3, 0
@@ -156,7 +156,7 @@ Real Zaragoza CD, 11, 11, 9, 4, 3, 3, 0
 Real Racing Club, 11, 5, 7, 4, 2, 3, 1
 Real Murcia C.F., 9, 7, 6, 4, 1, 3, 1
 C. At. Osasuna, 8, 8, 7, 3, 2, 3, 0
-U.D. AlmerÃ­a, 8, 8, 8, 3, 0, 4, 2
+U.D. Almería, 8, 8, 8, 3, 0, 4, 2
 R.C.R. de Huelva, 8, 7, 10, 3, 1, 4, 1
 R.C. Deportivo, 8, 4, 8, 3, 1, 4, 1
 Sevilla F.C., 6, 11, 10, 4, 2, 2, 0
@@ -174,7 +174,7 @@ R.C.D. Espanyol, 16, 12, 9, 4, 3, 4, 2
 At. de Madrid, 14, 15, 7, 4, 3, 4, 1
 R.C.D. Mallorca, 14, 15, 10, 4, 3, 4, 1
 Real Racing Club, 12, 6, 8, 4, 2, 4, 1
-U.D. AlmerÃ­a, 11, 10, 8, 4, 1, 4, 2
+U.D. Almería, 11, 10, 8, 4, 1, 4, 2
 Real Zaragoza CD, 11, 11, 13, 4, 3, 4, 0
 Sevilla F.C., 9, 13, 10, 4, 2, 3, 1
 Real Murcia C.F., 9, 7, 8, 4, 1, 4, 1
@@ -198,7 +198,7 @@ Real Racing Club, 15, 8, 8, 5, 3, 4, 1
 Real Zaragoza CD, 14, 15, 14, 5, 4, 4, 0
 Sevilla F.C., 12, 16, 10, 5, 3, 3, 1
 Real Murcia C.F., 12, 8, 8, 5, 2, 4, 1
-U.D. AlmerÃ­a, 11, 10, 10, 4, 1, 5, 2
+U.D. Almería, 11, 10, 10, 4, 1, 5, 2
 Athletic Club, 10, 7, 10, 5, 0, 4, 2
 C. At. Osasuna, 9, 10, 11, 4, 2, 4, 0
 Real Betis B. S., 8, 8, 9, 4, 1, 5, 0
@@ -220,7 +220,7 @@ Real Racing Club, 16, 8, 8, 5, 3, 5, 1
 Real Murcia C.F., 13, 8, 8, 5, 2, 5, 1
 Sevilla F.C., 12, 19, 14, 5, 3, 4, 1
 C. At. Osasuna, 12, 13, 11, 4, 2, 5, 1
-U.D. AlmerÃ­a, 11, 10, 11, 5, 1, 5, 2
+U.D. Almería, 11, 10, 11, 5, 1, 5, 2
 Athletic Club, 10, 7, 12, 5, 0, 5, 2
 R.C.R. de Huelva, 9, 7, 13, 5, 1, 5, 1
 R.C. Deportivo, 9, 8, 16, 5, 1, 5, 1
@@ -244,7 +244,7 @@ Athletic Club, 13, 9, 12, 6, 1, 5, 2
 C. At. Osasuna, 12, 13, 13, 5, 2, 5, 1
 R.C. Deportivo, 12, 10, 16, 5, 1, 6, 2
 Getafe C.F., 11, 11, 15, 5, 2, 6, 1
-U.D. AlmerÃ­a, 11, 10, 14, 5, 1, 6, 2
+U.D. Almería, 11, 10, 14, 5, 1, 6, 2
 Real Valladolid, 10, 15, 22, 5, 0, 6, 2
 R.C.R. de Huelva, 9, 7, 15, 5, 1, 6, 1
 Real Betis B. S., 8, 8, 15, 5, 1, 6, 0
@@ -265,7 +265,7 @@ Athletic Club, 13, 10, 14, 6, 1, 6, 2
 Real Murcia C.F., 13, 8, 13, 6, 2, 6, 1
 Real Valladolid, 13, 16, 22, 6, 1, 6, 2
 C. At. Osasuna, 12, 13, 14, 5, 2, 6, 1
-U.D. AlmerÃ­a, 12, 10, 14, 6, 1, 6, 2
+U.D. Almería, 12, 10, 14, 6, 1, 6, 2
 R.C. Deportivo, 12, 10, 17, 6, 1, 6, 2
 R.C.R. de Huelva, 12, 8, 15, 6, 2, 6, 1
 Real Betis B. S., 11, 10, 16, 6, 2, 6, 0
@@ -284,7 +284,7 @@ Sevilla F.C., 15, 24, 19, 7, 4, 5, 1
 Getafe C.F., 15, 14, 16, 6, 3, 7, 1
 Athletic Club, 14, 12, 16, 7, 1, 6, 2
 Real Murcia C.F., 14, 9, 14, 7, 2, 6, 1
-U.D. AlmerÃ­a, 13, 11, 15, 6, 1, 7, 2
+U.D. Almería, 13, 11, 15, 6, 1, 7, 2
 Real Valladolid, 13, 19, 26, 6, 1, 7, 2
 R.C. Deportivo, 13, 12, 19, 6, 1, 7, 2
 C. At. Osasuna, 12, 14, 16, 6, 2, 6, 1
@@ -303,7 +303,7 @@ R.C.D. Mallorca, 20, 24, 21, 7, 3, 7, 2
 Real Zaragoza CD, 18, 21, 22, 7, 4, 7, 1
 Getafe C.F., 18, 16, 17, 7, 4, 7, 1
 Athletic Club, 17, 15, 16, 7, 1, 7, 3
-U.D. AlmerÃ­a, 16, 12, 15, 7, 2, 7, 2
+U.D. Almería, 16, 12, 15, 7, 2, 7, 2
 Real Valladolid, 16, 21, 26, 7, 2, 7, 2
 Sevilla F.C., 15, 24, 20, 7, 4, 6, 1
 C. At. Osasuna, 15, 16, 17, 6, 2, 7, 2
@@ -323,7 +323,7 @@ Valencia C.F., 25, 20, 23, 7, 3, 8, 5
 R.C.D. Mallorca, 20, 25, 24, 7, 3, 8, 2
 Sevilla F.C., 19, 28, 22, 8, 5, 7, 1
 Real Zaragoza CD, 19, 24, 25, 8, 4, 7, 1
-U.D. AlmerÃ­a, 19, 13, 15, 8, 3, 7, 2
+U.D. Almería, 19, 13, 15, 8, 3, 7, 2
 Getafe C.F., 18, 16, 18, 7, 4, 8, 1
 R.C.R. de Huelva, 18, 12, 19, 7, 3, 8, 2
 C. At. Osasuna, 17, 17, 18, 8, 2, 7, 2
@@ -344,7 +344,7 @@ Valencia C.F., 25, 20, 26, 8, 3, 8, 5
 R.C.D. Mallorca, 21, 25, 24, 8, 3, 8, 2
 Sevilla F.C., 20, 28, 22, 8, 5, 8, 1
 Real Zaragoza CD, 20, 25, 26, 8, 4, 8, 1
-U.D. AlmerÃ­a, 19, 14, 18, 8, 3, 8, 2
+U.D. Almería, 19, 14, 18, 8, 3, 8, 2
 R.C.R. de Huelva, 19, 12, 19, 8, 3, 8, 2
 Athletic Club, 18, 15, 17, 8, 1, 8, 3
 Getafe C.F., 18, 17, 21, 8, 4, 8, 1
@@ -369,7 +369,7 @@ Getafe C.F., 21, 19, 21, 8, 4, 9, 2
 C. At. Osasuna, 20, 20, 21, 9, 3, 8, 2
 R.C.R. de Huelva, 20, 13, 20, 8, 3, 9, 2
 Athletic Club, 19, 16, 18, 9, 1, 8, 3
-U.D. AlmerÃ­a, 19, 14, 20, 9, 3, 8, 2
+U.D. Almería, 19, 14, 20, 9, 3, 8, 2
 Real Murcia C.F., 19, 14, 20, 8, 3, 9, 1
 Real Valladolid, 18, 21, 27, 9, 2, 8, 2
 Real Betis B. S., 18, 17, 23, 8, 3, 9, 1
@@ -391,7 +391,7 @@ Real Valladolid, 21, 24, 27, 9, 2, 9, 3
 Getafe C.F., 21, 19, 24, 9, 4, 9, 2
 R.C.R. de Huelva, 21, 14, 21, 9, 3, 9, 2
 C. At. Osasuna, 20, 20, 23, 9, 3, 9, 2
-U.D. AlmerÃ­a, 20, 15, 21, 9, 3, 9, 2
+U.D. Almería, 20, 15, 21, 9, 3, 9, 2
 Athletic Club, 19, 16, 19, 9, 1, 9, 3
 Real Betis B. S., 18, 17, 26, 8, 3, 10, 1
 R.C. Deportivo, 17, 16, 27, 9, 1, 9, 3
@@ -406,7 +406,7 @@ Real Racing Club, 32, 20, 19, 9, 6, 10, 3
 Valencia C.F., 27, 22, 29, 9, 3, 10, 5
 Sevilla F.C., 26, 35, 25, 10, 7, 9, 1
 Real Valladolid, 24, 27, 28, 10, 3, 9, 3
-U.D. AlmerÃ­a, 23, 16, 21, 10, 4, 9, 2
+U.D. Almería, 23, 16, 21, 10, 4, 9, 2
 Athletic Club, 22, 18, 19, 10, 2, 9, 3
 Real Zaragoza CD, 22, 29, 32, 10, 4, 9, 1
 R.C.D. Mallorca, 22, 28, 31, 9, 3, 10, 2
@@ -427,7 +427,7 @@ Real Racing Club, 32, 20, 20, 9, 6, 11, 3
 Real Valladolid, 27, 29, 29, 11, 4, 9, 3
 Valencia C.F., 27, 22, 32, 9, 3, 11, 5
 Sevilla F.C., 26, 37, 28, 10, 7, 10, 1
-U.D. AlmerÃ­a, 26, 17, 21, 11, 5, 9, 2
+U.D. Almería, 26, 17, 21, 11, 5, 9, 2
 Real Zaragoza CD, 25, 32, 33, 11, 5, 9, 1
 Getafe C.F., 24, 24, 29, 10, 5, 10, 2
 R.C.D. Mallorca, 23, 30, 33, 9, 3, 11, 2
@@ -446,7 +446,7 @@ At. de Madrid, 37, 35, 22, 11, 7, 10, 4
 R.C.D. Espanyol, 36, 31, 24, 10, 6, 11, 4
 Real Racing Club, 33, 22, 22, 10, 6, 11, 3
 Sevilla F.C., 29, 39, 29, 11, 8, 10, 1
-U.D. AlmerÃ­a, 29, 18, 21, 11, 5, 10, 3
+U.D. Almería, 29, 18, 21, 11, 5, 10, 3
 Real Valladolid, 27, 30, 32, 11, 4, 10, 3
 Getafe C.F., 27, 27, 30, 10, 5, 11, 3
 Valencia C.F., 27, 22, 33, 10, 3, 11, 5
@@ -467,7 +467,7 @@ Villarreal C.F., 39, 40, 34, 12, 7, 10, 5
 At. de Madrid, 38, 36, 23, 12, 7, 10, 4
 Real Racing Club, 34, 23, 23, 10, 6, 12, 3
 Sevilla F.C., 32, 41, 30, 11, 8, 11, 2
-U.D. AlmerÃ­a, 32, 20, 21, 12, 6, 10, 3
+U.D. Almería, 32, 20, 21, 12, 6, 10, 3
 Valencia C.F., 30, 24, 33, 10, 3, 12, 6
 Real Zaragoza CD, 29, 35, 35, 12, 6, 10, 1
 R.C.D. Mallorca, 27, 32, 34, 10, 4, 12, 2
@@ -488,7 +488,7 @@ At. de Madrid, 41, 38, 23, 12, 7, 11, 5
 R.C.D. Espanyol, 39, 33, 26, 11, 6, 12, 5
 Real Racing Club, 34, 23, 25, 11, 6, 12, 3
 Sevilla F.C., 33, 42, 31, 12, 8, 11, 2
-U.D. AlmerÃ­a, 33, 20, 21, 12, 6, 11, 3
+U.D. Almería, 33, 20, 21, 12, 6, 11, 3
 Valencia C.F., 33, 27, 34, 11, 4, 12, 6
 Real Zaragoza CD, 29, 35, 36, 12, 6, 11, 1
 R.C.D. Mallorca, 28, 32, 34, 11, 4, 12, 2
@@ -508,7 +508,7 @@ Villarreal C.F., 43, 41, 34, 13, 7, 11, 6
 At. de Madrid, 41, 39, 25, 13, 7, 11, 5
 R.C.D. Espanyol, 39, 35, 30, 12, 6, 12, 5
 Sevilla F.C., 36, 46, 33, 12, 8, 12, 3
-U.D. AlmerÃ­a, 36, 21, 21, 13, 7, 11, 3
+U.D. Almería, 36, 21, 21, 13, 7, 11, 3
 Real Racing Club, 35, 23, 25, 11, 6, 13, 3
 Valencia C.F., 34, 27, 34, 11, 4, 13, 6
 Real Zaragoza CD, 29, 36, 38, 13, 6, 11, 1
@@ -530,7 +530,7 @@ At. de Madrid, 41, 40, 28, 13, 7, 12, 5
 Sevilla F.C., 39, 51, 33, 13, 9, 12, 3
 R.C.D. Espanyol, 39, 35, 32, 12, 6, 13, 5
 Real Racing Club, 38, 24, 25, 12, 7, 13, 3
-U.D. AlmerÃ­a, 36, 21, 22, 13, 7, 12, 3
+U.D. Almería, 36, 21, 22, 13, 7, 12, 3
 Valencia C.F., 35, 28, 35, 12, 4, 13, 6
 Getafe C.F., 32, 29, 32, 12, 5, 13, 4
 Real Valladolid, 31, 32, 42, 13, 4, 12, 4
@@ -551,7 +551,7 @@ At. de Madrid, 44, 44, 30, 14, 8, 12, 5
 R.C.D. Espanyol, 42, 37, 32, 13, 7, 13, 5
 Real Racing Club, 41, 25, 25, 12, 7, 14, 4
 Sevilla F.C., 39, 52, 35, 13, 9, 13, 3
-U.D. AlmerÃ­a, 37, 22, 23, 14, 7, 12, 3
+U.D. Almería, 37, 22, 23, 14, 7, 12, 3
 Valencia C.F., 35, 28, 37, 12, 4, 14, 6
 Getafe C.F., 33, 32, 35, 13, 5, 13, 4
 Real Betis B. S., 32, 31, 36, 13, 6, 13, 2
@@ -572,7 +572,7 @@ At. de Madrid, 44, 45, 32, 14, 8, 13, 5
 Real Racing Club, 44, 28, 25, 13, 8, 14, 4
 Sevilla F.C., 42, 54, 36, 14, 10, 13, 3
 R.C.D. Espanyol, 42, 38, 34, 13, 7, 14, 5
-U.D. AlmerÃ­a, 37, 23, 25, 14, 7, 13, 3
+U.D. Almería, 37, 23, 25, 14, 7, 13, 3
 Valencia C.F., 36, 30, 39, 13, 4, 14, 6
 Getafe C.F., 36, 35, 35, 13, 5, 14, 5
 R.C.D. Mallorca, 34, 44, 40, 13, 5, 14, 2
@@ -594,7 +594,7 @@ Sevilla F.C., 45, 56, 37, 14, 10, 14, 4
 R.C.D. Espanyol, 45, 40, 35, 14, 8, 14, 5
 Real Racing Club, 44, 29, 27, 13, 8, 15, 4
 Getafe C.F., 39, 37, 36, 14, 6, 14, 5
-U.D. AlmerÃ­a, 38, 25, 27, 15, 7, 13, 3
+U.D. Almería, 38, 25, 27, 15, 7, 13, 3
 Athletic Club, 36, 28, 28, 14, 4, 14, 5
 Valencia C.F., 36, 31, 41, 14, 4, 14, 6
 R.C.D. Mallorca, 34, 45, 42, 13, 5, 15, 2
@@ -616,7 +616,7 @@ Sevilla F.C., 45, 57, 39, 15, 10, 14, 4
 R.C.D. Espanyol, 45, 40, 39, 14, 8, 15, 5
 Athletic Club, 39, 29, 28, 15, 5, 14, 5
 Getafe C.F., 39, 37, 37, 14, 6, 15, 5
-U.D. AlmerÃ­a, 39, 26, 28, 15, 7, 14, 3
+U.D. Almería, 39, 26, 28, 15, 7, 14, 3
 Valencia C.F., 39, 34, 43, 14, 4, 15, 7
 R.C.D. Mallorca, 37, 46, 42, 14, 6, 15, 2
 Real Betis B. S., 35, 33, 41, 14, 6, 15, 3
@@ -635,7 +635,7 @@ At. de Madrid, 50, 50, 36, 15, 9, 15, 6
 Real Racing Club, 50, 34, 27, 14, 9, 16, 5
 Sevilla F.C., 45, 58, 42, 15, 10, 15, 4
 R.C.D. Espanyol, 45, 40, 42, 15, 8, 15, 5
-U.D. AlmerÃ­a, 42, 28, 29, 16, 8, 14, 3
+U.D. Almería, 42, 28, 29, 16, 8, 14, 3
 R.C.D. Mallorca, 40, 49, 42, 14, 6, 16, 3
 Athletic Club, 40, 30, 29, 15, 5, 15, 5
 Valencia C.F., 39, 34, 46, 15, 4, 15, 7
@@ -657,7 +657,7 @@ Real Racing Club, 50, 35, 30, 15, 9, 16, 5
 Sevilla F.C., 48, 60, 42, 16, 11, 15, 4
 R.C.D. Espanyol, 45, 40, 43, 15, 8, 16, 5
 Athletic Club, 43, 31, 29, 16, 6, 15, 5
-U.D. AlmerÃ­a, 42, 31, 35, 16, 8, 15, 3
+U.D. Almería, 42, 31, 35, 16, 8, 15, 3
 Real Betis B. S., 41, 39, 43, 15, 7, 16, 4
 R.C.D. Mallorca, 41, 50, 43, 15, 6, 16, 3
 Getafe C.F., 40, 37, 39, 15, 6, 16, 5
@@ -676,7 +676,7 @@ Villarreal C.F., 59, 52, 40, 16, 9, 16, 9
 At. de Madrid, 54, 57, 40, 16, 10, 16, 6
 Real Racing Club, 53, 37, 31, 15, 9, 17, 6
 Sevilla F.C., 51, 63, 44, 16, 11, 16, 5
-U.D. AlmerÃ­a, 45, 32, 35, 17, 9, 15, 3
+U.D. Almería, 45, 32, 35, 17, 9, 15, 3
 R.C.D. Espanyol, 45, 40, 44, 16, 8, 16, 5
 Athletic Club, 43, 31, 32, 16, 6, 16, 5
 R.C. Deportivo, 43, 42, 43, 16, 7, 16, 5
@@ -697,7 +697,7 @@ F.C. Barcelona, 61, 62, 31, 17, 13, 16, 4
 At. de Madrid, 54, 58, 43, 17, 10, 16, 6
 Real Racing Club, 53, 37, 33, 16, 9, 17, 6
 Sevilla F.C., 51, 64, 48, 17, 11, 16, 5
-U.D. AlmerÃ­a, 48, 36, 36, 17, 9, 16, 4
+U.D. Almería, 48, 36, 36, 17, 9, 16, 4
 R.C. Deportivo, 46, 43, 43, 16, 7, 17, 6
 Athletic Club, 46, 36, 33, 17, 7, 16, 5
 R.C.D. Espanyol, 46, 40, 44, 16, 8, 17, 5
@@ -719,7 +719,7 @@ At. de Madrid, 55, 59, 44, 17, 10, 17, 6
 Real Racing Club, 53, 38, 36, 16, 9, 18, 6
 Sevilla F.C., 52, 64, 48, 17, 11, 17, 5
 R.C. Deportivo, 49, 45, 43, 17, 8, 17, 6
-U.D. AlmerÃ­a, 48, 36, 37, 17, 9, 17, 4
+U.D. Almería, 48, 36, 37, 17, 9, 17, 4
 R.C.D. Espanyol, 47, 41, 45, 17, 8, 17, 5
 R.C.D. Mallorca, 47, 59, 48, 17, 7, 17, 4
 Athletic Club, 46, 36, 36, 17, 7, 17, 5
@@ -740,7 +740,7 @@ At. de Madrid, 58, 62, 44, 18, 11, 17, 6
 Real Racing Club, 56, 41, 38, 17, 10, 18, 6
 Sevilla F.C., 55, 66, 48, 18, 12, 17, 5
 R.C.D. Mallorca, 50, 61, 49, 17, 7, 18, 5
-U.D. AlmerÃ­a, 49, 37, 38, 18, 9, 17, 4
+U.D. Almería, 49, 37, 38, 18, 9, 17, 4
 R.C. Deportivo, 49, 45, 44, 17, 8, 18, 6
 R.C.D. Espanyol, 48, 42, 46, 17, 8, 18, 5
 Athletic Club, 46, 37, 38, 18, 7, 17, 5
@@ -763,7 +763,7 @@ Real Racing Club, 56, 41, 41, 18, 10, 18, 6
 R.C.D. Mallorca, 53, 63, 50, 18, 8, 18, 5
 R.C. Deportivo, 52, 46, 44, 18, 9, 18, 6
 Athletic Club, 49, 39, 39, 18, 7, 18, 6
-U.D. AlmerÃ­a, 49, 39, 42, 18, 9, 18, 4
+U.D. Almería, 49, 39, 42, 18, 9, 18, 4
 R.C.D. Espanyol, 48, 42, 48, 18, 8, 18, 5
 Real Betis B. S., 46, 44, 48, 18, 7, 18, 5
 Valencia C.F., 45, 40, 60, 18, 6, 18, 7
@@ -784,7 +784,7 @@ Real Racing Club, 57, 41, 41, 18, 10, 19, 6
 R.C.D. Mallorca, 56, 66, 52, 18, 8, 19, 6
 R.C. Deportivo, 52, 46, 45, 18, 9, 19, 6
 Athletic Club, 50, 39, 39, 19, 7, 18, 6
-U.D. AlmerÃ­a, 49, 39, 44, 19, 9, 18, 4
+U.D. Almería, 49, 39, 44, 19, 9, 18, 4
 R.C.D. Espanyol, 48, 42, 50, 18, 8, 19, 5
 Valencia C.F., 48, 45, 61, 18, 6, 19, 8
 Getafe C.F., 46, 43, 47, 18, 7, 19, 5
