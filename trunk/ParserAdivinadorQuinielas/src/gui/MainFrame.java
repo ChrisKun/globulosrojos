@@ -261,16 +261,7 @@ public class MainFrame extends JFrame {
 	private JTable getJTable0() {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
-			jTable0.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "Nº Caso", "Local", "Visitante", "P.L.", "P.V.", "Dif. puntos", "Pos. Local",
-					"Pos. Visitante", "G.F.L.", "G.C.L.", "G.F.V.", "G.C.V.", "G.L.", "G.V.", "Resultado", }) {
-				private static final long serialVersionUID = 1L;
-				Class<?>[] types = new Class<?>[] { String.class, String.class, Object.class, String.class, String.class, String.class, String.class, String.class,
-						String.class, String.class, String.class, String.class, String.class, String.class, Object.class, };
-	
-				public Class<?> getColumnClass(int columnIndex) {
-					return types[columnIndex];
-				}
-			});
+			jTable0.setModel(new TablaKNNModel(null));
 		}
 		return jTable0;
 	}
@@ -441,20 +432,23 @@ public class MainFrame extends JFrame {
 	}
 
 	private void jComboBox0ActionActionPerformed(ActionEvent event) {
+		int index = ((JComboBox)event.getSource()).getSelectedIndex();
+		
 		// Tabla de query
-		Casos c = (Casos)queryList.get(((JComboBox)event.getSource()).getSelectedIndex()).getDescription();
+		Casos c = (Casos)queryList.get(index).getDescription();
 		
 		jTable1.setModel(new TablaQueryModel(c));
 		
 		// Datos de la predicción
-		Prediction p = predictionList.get(((JComboBox)event.getSource()).getSelectedIndex());
+		Prediction p = predictionList.get(index);
 		jLabel4.setText(p.getClassification().toString());
 		jLabel8.setText(Double.toString(p.getConfidence()));
 		jLabel9.setText(Opciones.opcionVotacion.toString());
 		jLabel10.setText(Integer.toString(Opciones.opcionKNN));
 		
 		// Datos de los knn elegidos
-		
+		Collection<RetrievalResult> k = knnList.get(index);
+		jTable0.setModel(new TablaKNNModel(k));
 	}
 
 }
