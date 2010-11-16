@@ -41,6 +41,7 @@ public class Parser {
 		pb.setValue(80);
 		CaseCreator creator = new CaseCreator();
 		creator.juntarInfo();	
+		pb.setString("");
 		pb.setValue(100);
 	}
 

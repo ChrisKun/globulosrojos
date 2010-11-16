@@ -35,13 +35,19 @@ public class OptionsFrame extends JFrame {
 	private JButton jButton2;
 	private JLabel jLabel2;
 	private JComboBox jComboBox0;
+	
+	private MainFrame mf;
+	
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
-	public OptionsFrame() {
+	
+	public OptionsFrame(MainFrame mf) {
 		initComponents();
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setTitle("Opciones");
 		getContentPane().setPreferredSize(getSize());
 		pack();
-		setLocationRelativeTo(null);		
+		setLocationRelativeTo(null);
+		this.mf = mf;
 	}
 
 	private void initComponents() {
@@ -68,6 +74,7 @@ public class OptionsFrame extends JFrame {
 					"17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38" }));
 			jComboBox0.setDoubleBuffered(false);
 			jComboBox0.setBorder(null);
+			jComboBox0.setSelectedItem(Integer.toString(Opciones.ultimaJornada));
 			jComboBox0.addActionListener(new ActionListener() {
 	
 				public void actionPerformed(ActionEvent event) {
@@ -191,7 +198,7 @@ public class OptionsFrame extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				OptionsFrame frame = new OptionsFrame();
+				OptionsFrame frame = new OptionsFrame(null);
 				frame.setDefaultCloseOperation(OptionsFrame.EXIT_ON_CLOSE);
 				frame.setTitle("OptionsFrame");
 				frame.getContentPane().setPreferredSize(frame.getSize());
@@ -209,6 +216,7 @@ public class OptionsFrame extends JFrame {
 			else Opciones.opcionVotacion = Opciones.votacion.PONDERADA;
 		} catch (NumberFormatException e){}
 		
+		mf.enableFrame();
 		dispose();
 	}
 
@@ -221,6 +229,7 @@ public class OptionsFrame extends JFrame {
 	}
 
 	private void jButton2MouseMouseClicked(MouseEvent event) {
+		mf.enableFrame();
 		dispose();
 	}
 

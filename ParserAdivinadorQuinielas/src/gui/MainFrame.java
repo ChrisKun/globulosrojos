@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -341,9 +342,9 @@ public class MainFrame extends JFrame {
 		if (jMenuBar0 == null) {
 			jMenuBar0 = new JMenuBar();
 			jMenuBar0.add(getJMenu0());
+			jMenuBar0.add(getJMenu3());
 			jMenuBar0.add(getJMenu1());
 			jMenuBar0.add(getJMenu2());
-			jMenuBar0.add(getJMenu3());
 		}
 		return jMenuBar0;
 	}
@@ -457,10 +458,12 @@ public class MainFrame extends JFrame {
 	}
 
 	private void jMenuItem0MouseMousePressed(MouseEvent event) {
+		disableFrame();
 		Thread t = new Thread(new Runnable() {
 			public void run()
 			{
 				Parser.parse(jProgressBar0);
+				enableFrame();
 			}
 		});
 		t.start();
@@ -470,6 +473,7 @@ public class MainFrame extends JFrame {
 	private void jMenuItem3MouseMousePressed(MouseEvent event) {
 		QueryPartidosFrame qpf = new QueryPartidosFrame(this);
 		qpf.setVisible(true);
+		disableFrame();
 	}
 	
 	public void showPredictions(ArrayList<CBRQuery> queryList,
@@ -483,6 +487,28 @@ public class MainFrame extends JFrame {
 		for (CBRQuery q : queryList) {
 			jComboBox0.addItem(((Casos)q.getDescription()).getEquipoLocal() + " - " + ((Casos)q.getDescription()).getEquipoVisitante());
 		}
+	}
+	
+	private void disableFrame() {
+		Component[] menus = jMenuBar0.getComponents();
+		for (Component c : menus) {
+			c.setEnabled(false);
+		}
+	
+		jComboBox0.setEnabled(false);
+		jTable0.setEnabled(false);
+		jTable1.setEnabled(false);
+	}
+	
+	public void enableFrame() {
+		Component[] menus = jMenuBar0.getComponents();
+		for (Component c : menus) {
+			c.setEnabled(true);
+		}
+		
+		jComboBox0.setEnabled(true);
+		jTable0.setEnabled(true);
+		jTable1.setEnabled(true);	
 	}
 
 	private void jComboBox0ActionActionPerformed(ActionEvent event) {
@@ -508,7 +534,8 @@ public class MainFrame extends JFrame {
 	}
 
 	private void jMenuItem6MouseMousePressed(MouseEvent event) {
-		OptionsFrame of = new OptionsFrame();
+		disableFrame();
+		OptionsFrame of = new OptionsFrame(this);
 		
 		of.setVisible(true);
 	}
