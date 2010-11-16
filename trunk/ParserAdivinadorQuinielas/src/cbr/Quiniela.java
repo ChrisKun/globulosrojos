@@ -49,6 +49,17 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 	Prediction prediccion;
 	Collection<RetrievalResult> eval;
 	
+	private boolean isEvaluation = false;
+	
+	public Quiniela(boolean isEvaluation) {
+		super();
+		this.isEvaluation = isEvaluation;
+	}
+	
+	public Quiniela() {
+		super();
+	}
+
 	public Collection<RetrievalResult> getEval() {
 		return eval;
 	}
@@ -232,19 +243,20 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			System.out.println("Votacion ponderada "+prediccion.Classification.toString()+" __ "+prediccion.getConfidence());
 		}
 				
-		//esto es para las evaluaciones
-//		CBRCase caso = (CBRCase)query;
-//		Solucion sol = (Solucion)caso.getSolution();
-//		double prediccion;
-//		if(sol.getRes().equals(pre.Classification.toString()))
-//			prediccion = 1.0;
-//		else 
-//			prediccion = 0.0;
-		//System.out.println("sol.getRes()"+sol.getRes().toString()+" - "+pre.Classification.toString());
-//		Evaluator.getEvaluationReport().addDataToSeries("Errores", prediccion);
-//		Evaluator.getEvaluationReport().addDataToSeries("Confianza", pre.getConfidence());
-	    // Now we add the similarity of the most similar case to the serie "Similarity".
-		//Evaluator.getEvaluationReport().addDataToSeries("Similarity", new Double(eval.iterator().next().getEval()));
+		if(isEvaluation)
+		{
+			//esto es para las evaluaciones
+			CBRCase caso = (CBRCase)query;
+			Solucion sol = (Solucion)caso.getSolution();
+			double pre;
+			if(sol.getRes().equals(prediccion.Classification.toString()))
+				pre = 1.0;
+			else 
+				pre = 0.0;
+			System.out.println("sol.getRes()"+sol.getRes().toString()+" - "+prediccion.Classification.toString());
+			Evaluator.getEvaluationReport().addDataToSeries("Errores", pre);
+			Evaluator.getEvaluationReport().addDataToSeries("Confianza", prediccion.getConfidence());
+		}
 	}
 
 	@Override

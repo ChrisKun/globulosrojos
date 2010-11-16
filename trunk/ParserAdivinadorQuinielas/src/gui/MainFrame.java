@@ -543,7 +543,7 @@ public class MainFrame extends JFrame {
 		Thread t = new Thread(new Runnable() {
 			public void run()
 			{
-				Quiniela test = new Quiniela();
+				Quiniela test = new Quiniela(true);
 				
 				try {
 					test.configure();
@@ -578,7 +578,7 @@ public class MainFrame extends JFrame {
 		Thread t = new Thread(new Runnable() {
 			public void run()
 			{
-				Quiniela test = new Quiniela();
+				Quiniela test = new Quiniela(true);
 				
 				try {
 					test.configure();
@@ -613,7 +613,7 @@ public class MainFrame extends JFrame {
 		Thread t = new Thread(new Runnable() {
 			public void run()
 			{
-				Quiniela test = new Quiniela();
+				Quiniela test = new Quiniela(true);
 				
 				try {
 					test.configure();
