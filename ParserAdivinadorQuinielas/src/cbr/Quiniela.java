@@ -49,7 +49,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 	Prediction prediccion;
 	Collection<RetrievalResult> eval;
 	
-	private boolean isEvaluation = false;
+	private boolean isEvaluation;
 	
 	public Quiniela(boolean isEvaluation) {
 		super();
@@ -58,6 +58,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 	
 	public Quiniela() {
 		super();
+		isEvaluation = false;
 	}
 
 	public Collection<RetrievalResult> getEval() {
@@ -242,7 +243,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 			prediccion = prueba2.getPredictedClass(eval);
 			System.out.println("Votacion ponderada "+prediccion.Classification.toString()+" __ "+prediccion.getConfidence());
 		}
-				
+
 		if(isEvaluation)
 		{
 			//esto es para las evaluaciones
@@ -285,7 +286,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
     	// Example of the Hold-Out evaluation
 		
 		HoldOutEvaluator eval = new HoldOutEvaluator();
-		eval.init(new Quiniela());
+		eval.init(new Quiniela(true));
 		eval.HoldOut(5, 1);
 		
 		
@@ -302,7 +303,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
     	//Example of the Leave-One-Out evaluation
 		
 		LeaveOneOutEvaluator eval = new LeaveOneOutEvaluator();
-		eval.init(new Quiniela());
+		eval.init(new Quiniela(true));
 		eval.LeaveOneOut();
 		
 //		System.out.println(Evaluator.getEvaluationReport());
@@ -318,7 +319,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
     	// Example of the Same-Split evaluation
 		
 		SameSplitEvaluator eval = new SameSplitEvaluator();
-		eval.init(new Quiniela());
+		eval.init(new Quiniela(true));
 		eval.generateSplit(5, "split1.txt");
 		eval.HoldOutfromFile("split1.txt");
 		
