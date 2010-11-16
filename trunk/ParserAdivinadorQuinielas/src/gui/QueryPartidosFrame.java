@@ -83,6 +83,7 @@ public class QueryPartidosFrame extends JFrame {
 		initComponents();
 		setTitle("Query Partido(s)");
 		setLocationRelativeTo(null);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		estadoActual = estado.ESPERANDO;
 		queryList = null;
 		predictionList = null;
@@ -298,6 +299,7 @@ public class QueryPartidosFrame extends JFrame {
 	}
 
 	private void jButtonCancelarClicked(MouseEvent event) {
+		mf.enableFrame();
 		dispose();
 	}
 	
@@ -315,31 +317,49 @@ public class QueryPartidosFrame extends JFrame {
 												(String)tableModel.getValueAt(i, 2)));
 				}
 		
-		try {
-			Quiniela quiniela = new Quiniela();
-			
-			jProgressBar0.setStringPainted(true);
-			jProgressBar0.setString("Precycle");
-			jProgressBar0.setMaximum(queryList.size() + 1);
-			jProgressBar0.setMinimum(0);
-			jProgressBar0.setValue(1);
-			
-			quiniela.configure();
-			quiniela.preCycle();
-			for (int i = 0; i < queryList.size(); i++) {
+		Thread t = new Thread(new Runnable() {
+			public void run()
+			{
+				jProgressBar0.setStringPainted(true);
+				jProgressBar0.setString("Precycle");
+				jProgressBar0.setMaximum(queryList.size() + 1);
+				jProgressBar0.setMinimum(0);
+				jProgressBar0.setValue(1);
 				
-				jProgressBar0.setString("Cycle " + i + "/" + queryList.size());
-				jProgressBar0.setValue(jProgressBar0.getValue() + 1);
+				try {
+					Quiniela quiniela = new Quiniela();
+					
+					quiniela.configure();
+					quiniela.preCycle();
+					for (int i = 0; i < queryList.size(); i++) {
+						
+						jProgressBar0.setString("Cycle " + (i + 1) + "/" + queryList.size());
+						jProgressBar0.setValue(jProgressBar0.getValue() + 1);
+						
+						quiniela.cycle(queryList.get(i));
+						predictionList.add(quiniela.getPrediction());
+						knnList.add(quiniela.getEval());
+					}
+					
+				} catch (Exception e) {}
 				
-				quiniela.cycle(queryList.get(i));
-				predictionList.add(quiniela.getPrediction());
-				knnList.add(quiniela.getEval());
+				mf.showPredictions(queryList, predictionList, knnList);
+				mf.enableFrame();
+				dispose();
 			}
-			
-		} catch (Exception e) {}
+		});
 		
-		mf.showPredictions(queryList, predictionList, knnList);
-		dispose();
+		disableFrame();
+		t.start();
+	}
+	
+	private void disableFrame() {
+		jButton0.setEnabled(false);
+		jButton1.setEnabled(false);
+		jCheckBox0.setEnabled(false);
+		jComboBox0.setEnabled(false);
+		jComboBox1.setEnabled(false);
+		jTable0.setEnabled(false);
 	}
 	
 	private CBRQuery createQuery(String local, String visitante) {
