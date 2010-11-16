@@ -626,6 +626,7 @@ public class MainFrame extends JFrame {
 					for (Double d: vec)
 						avg+=d;
 					avg=avg/(double)Evaluator.getEvaluationReport().getNumberOfCycles();
+					avg = 1- avg;
 					Evaluator.getEvaluationReport().putOtherData("Media errores", Double.toString(avg));
 						
 					java.util.Vector<Double> vec2 = Evaluator.getEvaluationReport().getSeries("Confianza");
