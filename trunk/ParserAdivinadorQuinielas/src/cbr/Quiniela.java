@@ -286,7 +286,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
     	// Example of the Hold-Out evaluation
 		HoldOutEvaluator eval = new HoldOutEvaluator();
 		eval.init(new Quiniela(true));
-		eval.HoldOut(5, 1);
+		eval.HoldOut(15, 1);
 		
 		
 //		System.out.println(Evaluator.getEvaluationReport());
@@ -319,7 +319,7 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
 		
 		SameSplitEvaluator eval = new SameSplitEvaluator();
 		eval.init(new Quiniela(true));
-		eval.generateSplit(5, "split1.txt");
+		eval.generateSplit(10, "split1.txt");
 		eval.HoldOutfromFile("split1.txt");
 		
 //		System.out.println(Evaluator.getEvaluationReport());
