@@ -45,6 +45,9 @@ public class Parser {
 		pb.setValue(100);
 	}
 
+	/**
+	 * Lee de la web la información de las clasificaciones
+	 */
 	private static void parsearClasificaciones() {
 		// Se coge el separador dependiendo del sistema en el que estemos
 		// Si es Windows '\' y si es Linux '/'
@@ -94,6 +97,9 @@ public class Parser {
 		}
 	}
 
+	/**
+	 * Lee de la web la información de los resultados
+	 */
 	private static void parsearResultados() {
 		// Se cogue el separador dependiendo del sistema en el que estemos
 		// Si es Windows '\' y si es Linux '/'
