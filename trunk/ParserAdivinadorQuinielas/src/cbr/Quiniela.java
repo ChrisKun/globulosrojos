@@ -284,7 +284,6 @@ public class Quiniela implements jcolibri.cbraplications.StandardCBRApplication
     	jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), HoldOutEvaluator.class);
 	
     	// Example of the Hold-Out evaluation
-		
 		HoldOutEvaluator eval = new HoldOutEvaluator();
 		eval.init(new Quiniela(true));
 		eval.HoldOut(5, 1);

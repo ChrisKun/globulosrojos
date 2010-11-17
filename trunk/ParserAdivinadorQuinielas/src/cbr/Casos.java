@@ -18,9 +18,9 @@ public class Casos implements CaseComponent
 	Integer golesEnContraEquipoLocal;
 	Integer golesAFavorEquipoVisitante;
 	Integer golesEnContraEquipoVisitante;
-	// partidos_ganados/partidos_jugados del jugador 1 en casa
+	// partidos_ganados/partidos_jugados del equipo 1 en casa
 	Double porcentajeGanagadosLocal;	
-	// partidos_ganados/partidos_jugados del jugador 2 como visitante
+	// partidos_ganados/partidos_jugados del equipo 2 como visitante
 	Double porcentajeGanagadosVisitante;
 	Integer resultadoLocal;
 	Integer resultadoVisitante;
