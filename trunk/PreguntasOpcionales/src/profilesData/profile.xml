@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><CBRQuery Id="null"><CaseComponent Class="userProfile.User" IdAttribute="id" Name="Description"><id/><age>23</age><gender>Female</gender><occupation>administrator</occupation><zipCode>11111</zipCode></CaseComponent></CBRQuery>
