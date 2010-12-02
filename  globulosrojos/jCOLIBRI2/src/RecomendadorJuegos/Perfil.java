@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CaseComponent;
@@ -27,10 +28,19 @@ public class Perfil implements CaseComponent
 	Integer id;
     Integer age;
     Gender gender;
+    HashMap<Integer, Float> listaValoraciones = new HashMap<Integer, Float>();
     
+	public HashMap<Integer, Float> getListaValoraciones() {
+		return listaValoraciones;
+	}
+
+	public void setListaValoraciones(HashMap<Integer, Float> listaValoraciones) {
+		this.listaValoraciones = listaValoraciones;
+	}
+
 	Occupation occupation;
     
-	String fichero = "perfil.txt";
+	String fichero = "perfil.dat";
 	
 	public Attribute getIdAttribute() {
         return new Attribute("id", Perfil.class);
@@ -51,13 +61,19 @@ public class Perfil implements CaseComponent
 	}
 	public boolean Registrar(String nick)
 	{
+		RandomAccessFile file;
 		try {
-			FileWriter fileW = new FileWriter(fichero);
-			PrintWriter writer = new PrintWriter(fileW);
-			//writer.println();
-			writer.print(nick);
-			writer.close();
-			fileW.close();
+			file = new RandomAccessFile(fichero, "rw");
+//			while(file.readLine()!=null)
+//			{}
+			file.seek(file.length());
+			file.writeBytes("\n");
+			file.writeBytes(nick);
+//			writer.println();
+//			writer.print(nick);
+//			writer.close();
+//			fileW.close();
+			file.close();
 			return true;
 		} catch (IOException e) {
 			System.out.println("Error, no se pudo cargar el fichero: "+fichero);
