@@ -1,0 +1,62 @@
+-------------------
+Ratings file format
+-------------------
+
+<userId>;<gameId>;<rating>
+
+where:
+<userId>: bgg id of the user. User web page can be found at http://www.boardgamegeek.com/user/<userId>
+<gameId>: bgg id of the game. Game web page can be found at http://www.boardgamegeek.com/boardgame/<gameId>
+<rating>: rating value [0..10]
+
+
+----------------
+Game file format
+----------------
+
+gameDescription
+<GAME>
+gameDescription
+<GAME>
+...
+
+where gameDescription is:
+
+<url>
+<gameId>
+<gameCodeName>
+<gameName>
+<imageUrl>
+<artists>
+<designers>
+<publishers>
+<yearPublished>
+<numPlayers>
+<bestNumPlayers>
+<recNumPlayers>
+<playingTime>
+<age>
+<subdomains>
+<categories>
+<mechanics>
+
+where:
+
+<url>: Url of the game web page.
+<gameId>: bgg id of the game. Game web page can be found at http://www.boardgamegeek.com/boardgame/<gameId>
+<gameCodeName>: bgg code name of the game. Game web page is: http://www.boardgamegeek.com/boardgame/<gameId>/<gameCodeName>
+<gameName>: game name (includes whitespaces)
+<imageUrl>: game image url
+<artists>: list of artists
+<designers>: list of designers
+<publishers>: list of publishers
+<yearPublished>: publication year
+<numPlayers>: Official number of players
+<bestNumPlayers>: best number of players suggested by bgg users
+<recNumPlayers>: recommended number of players suggested by bgg users
+<playingTime>: playing time
+<age>: Recommended age
+<subdomains>: list of bgg subdomain classification. Complete list available in subdomains file
+<categories>: list of bgg categories. Complete list available in categories file
+<mechanics>: list of mechanics accordint to bgg. Complete list available in mechanics file
+
