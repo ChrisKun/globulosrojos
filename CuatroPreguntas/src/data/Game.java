@@ -235,7 +235,7 @@ public class Game implements CaseComponent{
 
 	@Override
 	public Attribute getIdAttribute() {
-		return new Attribute("id", this.getClass());
+		return new Attribute("gameId", this.getClass());
 	}
 
 }
