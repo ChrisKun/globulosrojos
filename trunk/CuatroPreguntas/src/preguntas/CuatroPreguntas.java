@@ -1,5 +1,8 @@
 package preguntas;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -45,8 +48,8 @@ public class CuatroPreguntas {
 		simConfig.addMapping(new Attribute("age", Game.class), new Equal());
 		//simConfig.addMapping(new Attribute("categories", Game.class), new Equal());
 		
-		hiddenAtts = new ArrayList<Attribute>();
-		hiddenAtts.add(new Attribute("id", Game.class));
+//		hiddenAtts = new ArrayList<Attribute>();
+//		hiddenAtts.add(new Attribute("gameId", Game.class));
     }
 	
 	public CBRCaseBase preCycle() throws ExecutionException
@@ -63,7 +66,7 @@ public class CuatroPreguntas {
 	public void cycle(CBRQuery query) throws ExecutionException
     {
 		// Obtain query
-		ObtainQueryWithFormMethod.obtainQueryWithInitialValues(query,hiddenAtts,null);
+		ObtainQueryWithFormMethod.obtainQueryWithInitialValues(query,null,null);
 		
 		// Execute KNN
 		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
@@ -89,7 +92,7 @@ public class CuatroPreguntas {
     }
 	
 	public static void main(String[] args)
-	{
+	{	
 		CuatroPreguntas recomendador = new CuatroPreguntas();
 		
 		try {
