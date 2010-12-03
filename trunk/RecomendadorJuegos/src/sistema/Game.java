@@ -28,6 +28,16 @@ public class Game implements CaseComponent{
 	ArrayList<String> categories;
 	ArrayList<String> mechanics;
 	
+	public Game()
+	{
+		artists = new ArrayList<String>();
+		designers = new ArrayList<String>();
+		publishers = new ArrayList<String>();
+		subdomains = new ArrayList<String>();
+		categories = new ArrayList<String>();
+		mechanics = new ArrayList<String>();
+	}
+	
 	public String getCodeName() {
 		return codeName;
 	}
