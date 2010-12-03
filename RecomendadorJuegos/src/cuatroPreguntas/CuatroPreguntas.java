@@ -12,9 +12,6 @@ import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.exception.ExecutionException;
-import jcolibri.extensions.recommendation.casesDisplay.DisplayCasesTableMethod;
-import jcolibri.extensions.recommendation.casesDisplay.UserChoice;
-import jcolibri.extensions.recommendation.conditionals.BuyOrQuit;
 import jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod;
 import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
@@ -60,7 +57,7 @@ public class CuatroPreguntas {
 		return _caseBase;
     }
 	
-	public void cycle(CBRQuery query) throws ExecutionException
+	public Collection<CBRCase> cycle(CBRQuery query) throws ExecutionException
     {
 		// Obtain query
 		ObtainQueryWithFormMethod.obtainQueryWithInitialValues(query,null,null);
@@ -71,15 +68,17 @@ public class CuatroPreguntas {
 		// Select cases
 		Collection<CBRCase> retrievedCases = SelectCases.selectTopK(eval, 5);
 		
-		// Display cases
-		UserChoice choice = DisplayCasesTableMethod.displayCasesInTableBasic(retrievedCases);//DisplayCasesMethod.displayCases(retrievedCases);
-	
-		// Buy or Quit
-		if(BuyOrQuit.buyOrQuit(choice))
-		    System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+//		// Display cases
+//		UserChoice choice = DisplayCasesTableMethod.displayCasesInTableBasic(retrievedCases);//DisplayCasesMethod.displayCases(retrievedCases);
+//	
+//		// Buy or Quit
+//		if(BuyOrQuit.buyOrQuit(choice))
+//		    System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+//		
+//		else
+//		    System.out.println("Finish - User Quits");
 		
-		else
-		    System.out.println("Finish - User Quits");
+		return retrievedCases;
 
     }
 	
@@ -88,7 +87,7 @@ public class CuatroPreguntas {
 		_connector.close();
     }
 	
-	public static void main(String[] args)
+	public Collection<CBRCase> execute()
 	{	
 		CuatroPreguntas recomendador = new CuatroPreguntas();
 		
@@ -101,15 +100,16 @@ public class CuatroPreguntas {
 			
 			Game juego = new Game();
 			
-			juego.setName("eii");
+			juego.setName("");
 			juego.setPlayingTime(100);
 			
 			query.setDescription(juego);
 			
-			recomendador.cycle(query);
+			return recomendador.cycle(query);
 		
 		} catch (ExecutionException e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
 
