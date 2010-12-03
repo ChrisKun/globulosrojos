@@ -33,8 +33,8 @@ public class MenuPrincipal extends JFrame {
 	private void initComponents() {
 		setLayout(new GroupLayout());
 		add(getBotonCuatroPreguntas(), new Constraints(new Leading(12, 12, 12), new Leading(12, 12, 12)));
-		add(getBotonRecomendarPerfil(), new Constraints(new Trailing(12, 12, 12), new Leading(43, 12, 12)));
 		add(getBotonRefinarPerfil(), new Constraints(new Trailing(12, 142, 162, 162), new Leading(12, 12, 12)));
+		add(getBotonRecomendarPerfil(), new Constraints(new Trailing(160, 162, 162), new Leading(12, 12, 12)));
 		setSize(590, 240);
 	}
 
@@ -117,7 +117,9 @@ public class MenuPrincipal extends JFrame {
 	private void botonCuatroPreguntasActionActionPerformed(ActionEvent event) {
 		CuatroPreguntas preguntas = new CuatroPreguntas();
 		Collection<CBRCase> resultado = preguntas.execute();
-		System.out.println("Hola");
+		//TODO Hacer lo que sea con el resultado
+		//No se si aqui o dentro del modulo en si pero hay que mostrar
+		//los resultados en una ventana de las de criticar
 	}
 
 	private void botonRefinarPerfilActionActionPerformed(ActionEvent event) {
