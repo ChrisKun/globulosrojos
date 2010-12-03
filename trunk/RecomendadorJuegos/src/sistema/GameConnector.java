@@ -35,7 +35,7 @@ public class GameConnector implements Connector {
 	public Collection<CBRCase> retrieveAllCases() {
 		ArrayList<CBRCase> cases = new ArrayList<CBRCase>();
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("src/gameFiles/games"));
+			BufferedReader reader = new BufferedReader(new FileReader("src/sistema/ficheros/games"));
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				Game game = new Game();
