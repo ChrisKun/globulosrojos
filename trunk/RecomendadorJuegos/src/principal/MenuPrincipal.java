@@ -1,20 +1,27 @@
 package principal;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Collection;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+import jcolibri.cbrcore.CBRCase;
+
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
-import org.dyno.visual.swing.layouts.Trailing;
+
+import cuatroPreguntas.CuatroPreguntas;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class MenuPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JButton botonPreguntasOpcionales;
+	private JButton botonCuatroPreguntas;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public MenuPrincipal() {
 		initComponents();
@@ -22,18 +29,30 @@ public class MenuPrincipal extends JFrame {
 
 	private void initComponents() {
 		setLayout(new GroupLayout());
-		add(getJButton0(), new Constraints(new Trailing(12, 12, 12), new Leading(12, 12, 12)));
-		add(getJButton0(), new Constraints(new Leading(12, 170, 170), new Leading(12, 12, 12)));
-		add(getJButton0(), new Constraints(new Trailing(12, 146, 12, 12), new Leading(47, 10, 10)));
-		setSize(697, 240);
+		add(getBotonCuatroPreguntas(), new Constraints(new Leading(12, 12, 12), new Leading(12, 12, 12)));
+		setSize(590, 240);
+	}
+
+	private JButton getBotonCuatroPreguntas() {
+		if (botonCuatroPreguntas == null) {
+			botonCuatroPreguntas = new JButton();
+			botonCuatroPreguntas.setText("Comprar Juego");
+			botonCuatroPreguntas.addActionListener(new ActionListener() {
+	
+				public void actionPerformed(ActionEvent event) {
+					botonCuatroPreguntasActionActionPerformed(event);
+				}
+			});
+		}
+		return botonCuatroPreguntas;
 	}
 
 	private JButton getJButton0() {
-		if (botonPreguntasOpcionales == null) {
-			botonPreguntasOpcionales = new JButton();
-			botonPreguntasOpcionales.setText("Recomiendame");
+		if (botonCuatroPreguntas == null) {
+			botonCuatroPreguntas = new JButton();
+			botonCuatroPreguntas.setText("jButton0");
 		}
-		return botonPreguntasOpcionales;
+		return botonCuatroPreguntas;
 	}
 
 	private static void installLnF() {
@@ -68,6 +87,12 @@ public class MenuPrincipal extends JFrame {
 				frame.setVisible(true);
 			}
 		});
+	}
+
+	private void botonCuatroPreguntasActionActionPerformed(ActionEvent event) {
+		CuatroPreguntas preguntas = new CuatroPreguntas();
+		Collection<CBRCase> resultado = preguntas.execute();
+		System.out.println("Hola");
 	}
 
 }
