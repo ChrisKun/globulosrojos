@@ -13,5 +13,5 @@ public class Games{
 		ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query,null,null);
 		CreateProfile.createProfile(query, "src/profilesData/profile.xml");
 	}
-
+	
 }

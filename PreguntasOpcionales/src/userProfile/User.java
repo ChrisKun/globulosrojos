@@ -19,6 +19,7 @@ public class User implements CaseComponent {
 	Gender gender;
 	Occupation occupation;
 	String zipCode;
+	//TODO decidir que datos necesitamos para el perfil de usuario
 
 	public String toString() {
 		return id + "," + age + "," + gender + "," + occupation + "," + zipCode;
