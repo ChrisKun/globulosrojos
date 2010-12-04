@@ -3,7 +3,7 @@ package evaluar;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import javax.swing.JComboBox;
+import javax.swing.JSlider;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
@@ -27,7 +27,7 @@ public class JuegosAdquiridosTableModel implements TableModel{
 	@Override
 	public Class<?> getColumnClass(int arg0) {
 		if (arg0 == NOMBRE) return String.class;
-		else return JComboBox.class;
+		else return JSlider.class;
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class JuegosAdquiridosTableModel implements TableModel{
 	@Override
 	public Object getValueAt(int arg0, int arg1) {
 		// TODO Auto-generated method stub
-		Iterator<Entry<String, Integer>> iterator = juegos.iterator();
+		Iterator<Entry<String, Float>> iterator = juegos.iterator();
 		for (int i=0; i < arg0 && iterator.hasNext(); i++)
 			iterator.next();
 		
@@ -73,10 +73,17 @@ public class JuegosAdquiridosTableModel implements TableModel{
 
 	@Override
 	public void setValueAt(Object arg0, int arg1, int arg2) {
-		// TODO Auto-generated method stub
 		String nombre = (String) getValueAt(arg1, 0);
+		float antiguaPuntuacion = juegos.get(nombre);
 		juegos.remove(nombre);
-		juegos.add(nombre, (Integer)arg0);		
+		float nuevoValor = antiguaPuntuacion;
+		try {
+			nuevoValor = Float.parseFloat((String)arg0);
+		}
+		catch (NumberFormatException e) {}
+		if (nuevoValor > 10) nuevoValor = 10;
+		if (nuevoValor < 0) nuevoValor = 0;
+		juegos.add(nombre, nuevoValor);		
 	}
 
 }

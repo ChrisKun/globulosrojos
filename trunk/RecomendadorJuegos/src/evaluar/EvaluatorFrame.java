@@ -1,10 +1,10 @@
 package evaluar;
 
 import javax.swing.DefaultCellEditor;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.table.TableColumn;
@@ -48,17 +48,11 @@ public class EvaluatorFrame extends JFrame {
 			jTable0 = new JTable();
 			// TODO : Cambiar el objeto pasado por lo que se vaya a usar para la lista de juegos adquiridos
 			JuegosAdquiridos ja = new JuegosAdquiridos();
-			ja.add("Nono", 2);
-			ja.add("Sisi", 5);
+			ja.add("Nono", (float)2.3);
+			ja.add("Sisi", (float)5.7);
 			jTable0.setModel(new JuegosAdquiridosTableModel(ja));
 			TableColumn tc = jTable0.getColumnModel().getColumn(1);
-			JComboBox comboBox = new JComboBox();
-	        comboBox.addItem(1);
-	        comboBox.addItem(2);
-	        comboBox.addItem(3);
-	        comboBox.addItem(4);
-	        comboBox.addItem(5);
-	        tc.setCellEditor(new DefaultCellEditor(comboBox));
+			tc.setCellEditor(new DefaultCellEditor(new JTextField()));
 	        
 		}
 		return jTable0;
@@ -97,5 +91,4 @@ public class EvaluatorFrame extends JFrame {
 			}
 		});
 	}
-
 }

@@ -6,21 +6,21 @@ import java.util.Map.Entry;
 
 public class JuegosAdquiridos {
 
-	private HashMap<String, Integer> juegos;
+	private HashMap<String, Float> juegos;
 	
 	public JuegosAdquiridos() {
-		juegos = new HashMap<String, Integer>();
+		juegos = new HashMap<String, Float>();
 	}
 	
 	public void add(String nombre) {
-		juegos.put(nombre, 0);
+		juegos.put(nombre, (float)0);
 	}
 	
-	public void add(String nombre, Integer puntuacion) {
+	public void add(String nombre, Float puntuacion) {
 		juegos.put(nombre, puntuacion);
 	}
 	
-	public Integer get(String nombre) {
+	public Float get(String nombre) {
 		return juegos.get(nombre);
 	}
 	
@@ -28,7 +28,7 @@ public class JuegosAdquiridos {
 		juegos.remove(nombre);
 	}
 	
-	public Iterator<Entry<String, Integer>> iterator (){
+	public Iterator<Entry<String, Float>> iterator (){
 		return juegos.entrySet().iterator();
 	}
 	
