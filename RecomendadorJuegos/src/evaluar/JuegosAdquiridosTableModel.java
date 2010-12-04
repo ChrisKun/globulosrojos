@@ -13,7 +13,7 @@ public class JuegosAdquiridosTableModel implements TableModel{
 
 	private static final int NOMBRE = 0;
 	private static final int PUNTUACION = 1;
-	private String[] campos = {"Nombre", "Puntuación"};
+	private String[] columnas = {"Nombre", "Puntuación"};
 	
 	private JuegosAdquiridos juegos;
 	
@@ -32,12 +32,12 @@ public class JuegosAdquiridosTableModel implements TableModel{
 
 	@Override
 	public int getColumnCount() {
-		return campos.length;
+		return columnas.length;
 	}
 
 	@Override
 	public String getColumnName(int arg0) {
-		return campos[arg0];
+		return columnas[arg0];
 	}
 
 	@Override
