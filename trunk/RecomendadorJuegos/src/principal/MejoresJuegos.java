@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 import sistema.Sistema;
 import utils.ColaPrioridad;
+import sistema.Game;
 
 import jcolibri.cbrcore.CBRCase;
 
@@ -54,6 +55,9 @@ public class MejoresJuegos {
 		ColaPrioridad<ComparablePair<Float, Integer>> colaMJ = new ColaPrioridad<ComparablePair<Float, Integer>>(n);
 		
 		Set<Entry<Integer, Pair<Integer, Float>>> tabla = tvm.entrySet();
+		/* Por cada entrada de la tabla de valoraciones media introducimos el par <Valoracion, gameID>
+		 * en la cola, ésta se encarga de mirar si es realmente necesario introducir el par o no. 
+		 */
 		for (Entry<Integer, Pair<Integer, Float>> entry : tabla) {
 			ComparablePair<Float, Integer> cp = new ComparablePair<Float, Integer>(entry.getValue().elem1, entry.getValue().elem0);
 			colaMJ.add(cp);
@@ -66,7 +70,7 @@ public class MejoresJuegos {
 		ArrayList<CBRCase> mejoresJuegos = new ArrayList<CBRCase>();
 		for (CBRCase c : Sistema.getCBjuegosInstance().getCases()) {
 			// Si el identificador coincide con alguno de los del array de mejores juegos lo metemos
-			//if (listaMJ.contains(c.getDescription().getId())) {}
+			if (listaMJ.contains(((Game)c.getDescription()).getgameId()))
 				mejoresJuegos.add(c);
 		}
 

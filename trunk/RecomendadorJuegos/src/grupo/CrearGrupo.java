@@ -1,65 +1,59 @@
-package evaluar;
+package grupo;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import javax.swing.table.TableColumn;
+import javax.swing.table.DefaultTableModel;
 
-import org.dyno.visual.swing.layouts.Bilateral;
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
 
-import sistema.JuegosAdquiridos;
-
 //VS4E -- DO NOT REMOVE THIS LINE!
-public class EvaluatorFrame extends JFrame {
+public class CrearGrupo extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private JLabel jLNombre;
+	private JTextField jTFNombre;
 	private JTable jTable0;
 	private JScrollPane jScrollPane0;
-	private JButton jButton0;
+	private JButton jBSalir;
+	private JButton jBCrear;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
-	public EvaluatorFrame() {
+	public CrearGrupo() {
 		initComponents();
 	}
 
 	private void initComponents() {
-		setTitle("Juegos adquiridos");
+		setTitle("Crear nuevo grupo");
 		setLayout(new GroupLayout());
-		add(getJScrollPane0(), new Constraints(new Bilateral(12, 12, 22), new Leading(12, 275, 10, 10)));
-		add(getjButton0(), new Constraints(new Bilateral(141, 141, 60), new Leading(299, 12, 12)));
-		setSize(342, 343);
+		add(getJLNombre(), new Constraints(new Leading(26, 10, 10), new Leading(22, 10, 10)));
+		add(getJTFNombre(), new Constraints(new Leading(171, 130, 10, 10), new Leading(20, 12, 12)));
+		add(getJScrollPane0(), new Constraints(new Leading(25, 276, 12, 12), new Leading(55, 150, 10, 10)));
+		add(getJBCrear(), new Constraints(new Leading(56, 94, 10, 10), new Leading(217, 12, 12)));
+		add(getJBSalir(), new Constraints(new Leading(168, 94, 12, 12), new Leading(217, 12, 12)));
+		setSize(320, 255);
 	}
 
-	private JButton getJButton0() {
-		if (jButton0 == null) {
-			jButton0 = new JButton();
-			jButton0.setText("Salir");
-			jButton0.addMouseListener(new MouseAdapter() {
-	
-				public void mouseClicked(MouseEvent event) {
-					jButton0MouseMouseClicked(event);
-				}
-			});
+	private JButton getJBCrear() {
+		if (jBCrear == null) {
+			jBCrear = new JButton();
+			jBCrear.setText("Crear");
 		}
-		return jButton0;
+		return jBCrear;
 	}
 
-	private JButton getjButton0() {
-		if (jButton0 == null) {
-			jButton0 = new JButton();
-			jButton0.setText("Salir");
+	private JButton getJBSalir() {
+		if (jBSalir == null) {
+			jBSalir = new JButton();
+			jBSalir.setText("Salir");
 		}
-		return jButton0;
+		return jBSalir;
 	}
 
 	private JScrollPane getJScrollPane0() {
@@ -73,16 +67,31 @@ public class EvaluatorFrame extends JFrame {
 	private JTable getJTable0() {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
-			// TODO : Cambiar el objeto pasado por lo que se vaya a usar para la lista de juegos adquiridos
-			JuegosAdquiridos ja = new JuegosAdquiridos();
-			ja.add("Nono", (float)2.3);
-			ja.add("Sisi", (float)5.7);
-			jTable0.setModel(new JuegosAdquiridosTableModel(ja));
-			TableColumn tc = jTable0.getColumnModel().getColumn(1);
-			tc.setCellEditor(new DefaultCellEditor(new JTextField()));
-	        
+			jTable0.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "Checked", "Nombre", }) {
+				private static final long serialVersionUID = 1L;
+				Class<?>[] types = new Class<?>[] { Object.class, Object.class, };
+	
+				public Class<?> getColumnClass(int columnIndex) {
+					return types[columnIndex];
+				}
+			});
 		}
 		return jTable0;
+	}
+
+	private JTextField getJTFNombre() {
+		if (jTFNombre == null) {
+			jTFNombre = new JTextField();
+		}
+		return jTFNombre;
+	}
+
+	private JLabel getJLNombre() {
+		if (jLNombre == null) {
+			jLNombre = new JLabel();
+			jLNombre.setText("Nombre del grupo:");
+		}
+		return jLNombre;
 	}
 
 	private static void installLnF() {
@@ -108,9 +117,9 @@ public class EvaluatorFrame extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				EvaluatorFrame frame = new EvaluatorFrame();
-				frame.setDefaultCloseOperation(EvaluatorFrame.EXIT_ON_CLOSE);
-				//frame.setTitle("EvaluatorFrame");
+				CrearGrupo frame = new CrearGrupo();
+				frame.setDefaultCloseOperation(CrearGrupo.EXIT_ON_CLOSE);
+				frame.setTitle("CrearGrupo");
 				frame.getContentPane().setPreferredSize(frame.getSize());
 				frame.pack();
 				frame.setLocationRelativeTo(null);
@@ -119,8 +128,4 @@ public class EvaluatorFrame extends JFrame {
 		});
 	}
 
-	private void jButton0MouseMouseClicked(MouseEvent event) {
-		// TODO Actualizar la información con las nuevas valoraciones
-		this.dispose();
-	}
 }
