@@ -2,21 +2,27 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collection;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import jcolibri.cbrcore.CBRCase;
-
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
 import org.dyno.visual.swing.layouts.Trailing;
 
+import preguntasOpcionales.RefinarPerfil;
+
+import sistema.Sistema;
+import sistema.GameConnector;
+
 import cuatroPreguntas.CuatroPreguntas;
+
+import jcolibri.cbrcore.CBRCaseBase;
+import jcolibri.cbrcore.Connector;
+import jcolibri.exception.InitializingException;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class MenuPrincipal extends JFrame {
@@ -92,13 +98,18 @@ public class MenuPrincipal extends JFrame {
 		}
 	}
 
-	/**
-	 * Main entry of the class.
-	 * Note: This class is only created so that you can easily preview the result at runtime.
-	 * It is not expected to be managed by the designer.
-	 * You can modify it as you like.
-	 */
 	public static void main(String[] args) {
+		
+		//Se crea al principio la base de casos y esta en memoria durante la ejecucion
+		CBRCaseBase _gameCaseBase = Sistema.getCBjuegosInstance();
+		Connector gameConnector = new GameConnector();
+		try{
+			_gameCaseBase.init(gameConnector);
+		}catch (InitializingException e)
+		{
+			e.printStackTrace();
+		}
+		
 		installLnF();
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -116,13 +127,12 @@ public class MenuPrincipal extends JFrame {
 
 	private void botonCuatroPreguntasActionActionPerformed(ActionEvent event) {
 		CuatroPreguntas preguntas = new CuatroPreguntas();
-		Collection<CBRCase> resultado = preguntas.execute();
-		//TODO Hacer lo que sea con el resultado
-		//No se si aqui o dentro del modulo en si pero hay que mostrar
-		//los resultados en una ventana de las de criticar
+		preguntas.execute();
 	}
 
 	private void botonRefinarPerfilActionActionPerformed(ActionEvent event) {
+		RefinarPerfil refinar = new RefinarPerfil();
+		refinar.execute();
 	}
 
 	private void botonRecomendarPerfilActionActionPerformed(ActionEvent event) {

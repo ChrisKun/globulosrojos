@@ -84,7 +84,6 @@ public class GameConnector implements Connector {
 				string = deleteSubStrings(string, "[", "]");
 				game.setMechanics(generateStringArrayList(string.split(", ")));
 				reader.readLine();
-				System.out.println(game.getName());
 
 				if (!reader.readLine().equals("<GAME>"))
 					throw new Exception("File format error");
