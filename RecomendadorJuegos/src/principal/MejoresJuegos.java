@@ -25,17 +25,17 @@ public class MejoresJuegos {
 	}
 	
 	public static void addValoracion(Integer gameId, Float valoracion) {
-		/* Construimos una tabla con la valoración media de cada juego
-		 * Key : Integer - El identificador del juego)
-		 * Value : Pair<Integer, Float> - Un par que indica el 	A) el número de usuarios que han valorado este juego
-		 * 														B) la valoración media
+		/* Construimos una tabla con la valoracion media de cada juego
+		 * Key : Integer - El identificador del juego
+		 * Value : Pair<Integer, Float> - Un par que indica el 	A) el numero de usuarios que han valorado este juego
+		 * 														B) la valoracion media
 		 */
 		
 		// Si el juego no existe en la tabla de valoraciones media (TVM) se introduce
 		if (!tvm.containsKey(gameId))
 			tvm.put(gameId, new Pair<Integer, Float>(1, valoracion));
 		else {
-			/* Recalculamos la valoración media para el juego dado
+			/* Recalculamos la valoracion media para el juego dado
 			 * newV = ((oldV * n) + v) / (n+1)
 			*/
 			Pair<Integer, Float> entry = tvm.get(gameId);
@@ -43,9 +43,9 @@ public class MejoresJuegos {
 							valoracion) / (entry.elem0 + 1); 
 			entry.elem0 = entry.elem0 + 1;
 			
-			// Borramos la entrada de la tabla de la antigua valoración media
+			// Borramos la entrada de la tabla de la antigua valoracion media
 			tvm.remove(gameId);
-			// Introducimos el nuevo par con la valoración actualizada
+			// Introducimos el nuevo par con la valoracion actualizada
 			tvm.put(gameId, entry);
 		}
 	}
@@ -56,7 +56,7 @@ public class MejoresJuegos {
 		
 		Set<Entry<Integer, Pair<Integer, Float>>> tabla = tvm.entrySet();
 		/* Por cada entrada de la tabla de valoraciones media introducimos el par <Valoracion, gameID>
-		 * en la cola, ésta se encarga de mirar si es realmente necesario introducir el par o no. 
+		 * en la cola, esta se encarga de mirar si es realmente necesario introducir el par o no. 
 		 */
 		for (Entry<Integer, Pair<Integer, Float>> entry : tabla) {
 			ComparablePair<Float, Integer> cp = new ComparablePair<Float, Integer>(entry.getValue().elem1, entry.getValue().elem0);
@@ -66,7 +66,7 @@ public class MejoresJuegos {
 		// Convertimos la cola de prioridad en un ArrayList de <Float, Integer>
 		ArrayList<ComparablePair<Float, Integer>> listaMJ = colaMJ.toArrayList();
 		
-		// Extraemos la información de los juegos dada la lista de los mejores
+		// Extraemos la informacion de los juegos dada la lista de los mejores
 		ArrayList<CBRCase> mejoresJuegos = new ArrayList<CBRCase>();
 		for (CBRCase c : Sistema.getCBjuegosInstance().getCases()) {
 			// Si el identificador coincide con alguno de los del array de mejores juegos lo metemos
