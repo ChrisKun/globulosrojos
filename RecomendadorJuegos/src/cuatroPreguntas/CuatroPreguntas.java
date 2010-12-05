@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import sistema.Game;
-import sistema.GameConnector;
-import jcolibri.casebase.LinealCaseBase;
+import sistema.Sistema;
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.cbrcore.CBRCaseBase;
@@ -15,7 +14,6 @@ import jcolibri.exception.ExecutionException;
 import jcolibri.extensions.recommendation.casesDisplay.DisplayCasesTableMethod;
 import jcolibri.extensions.recommendation.casesDisplay.UserChoice;
 import jcolibri.extensions.recommendation.conditionals.BuyOrQuit;
-import jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod;
 import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
@@ -25,17 +23,16 @@ import jcolibri.method.retrieve.selection.SelectCases;
 
 public class CuatroPreguntas {
 	
-	private Connector _connector;
-	private CBRCaseBase _caseBase;
 	private NNConfig simConfig;
 	Collection<Attribute> hiddenAtts;
+	CBRQuery query;
 	
 	public void configure() throws ExecutionException
     {
-		// Create a data base connector
-		_connector = new GameConnector();
-		// Create a Lineal case base for in-memory organization
-		_caseBase = new LinealCaseBase();
+//		// Create a data base connector
+//		_connector = new GameConnector();
+//		// Create a Lineal case base for in-memory organization
+//		_caseBase = new LinealCaseBase();
 		
 		simConfig = new NNConfig();
 		// Set the average() global similarity function for the description of the case
@@ -71,7 +68,7 @@ public class CuatroPreguntas {
 		hiddenAtts.add(new Attribute("designers", Game.class));
 		hiddenAtts.add(new Attribute("publishers", Game.class));
 		//hiddenAtts.add(new Attribute("yearPublished", Game.class));
-		hiddenAtts.add(new Attribute("minNumPlayers", Game.class));
+		//hiddenAtts.add(new Attribute("minNumPlayers", Game.class));
 		hiddenAtts.add(new Attribute("maxNumPlayers", Game.class));
 		hiddenAtts.add(new Attribute("minBestNumPlayers", Game.class));
 		hiddenAtts.add(new Attribute("maxBestNumPlayers", Game.class));
@@ -87,68 +84,63 @@ public class CuatroPreguntas {
 	public CBRCaseBase preCycle() throws ExecutionException
     {
 		// Load cases from connector into the case base
-		_caseBase.init(_connector);
+//		_caseBase.init(_connector);
 		// Print the cases
-		Collection<CBRCase> cases = _caseBase.getCases();
+		Collection<CBRCase> cases = Sistema.getCBjuegosInstance().getCases();
 		for(CBRCase c: cases)
 			System.out.println(c);
-		return _caseBase;
+		return Sistema.getCBjuegosInstance();
     }
 	
-	public Collection<CBRCase> cycle(CBRQuery query) throws ExecutionException
+	public void cycle(CBRQuery query) throws ExecutionException
     {
 		// Obtain query
-		ObtainQueryWithFormMethod.obtainQueryWithInitialValues(query,hiddenAtts,null);
+		//ObtainQueryWithFormMethod.obtainQueryWithInitialValues(query,hiddenAtts,null);
 		
 		// Execute KNN
-		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
+		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(Sistema.getCBjuegosInstance().getCases(), query, simConfig);
 		
 		// Select cases
 		Collection<CBRCase> retrievedCases = SelectCases.selectTopK(eval, 5);
 		
-		return retrievedCases;
-		
+		//TODO no se si hay que usar esta tabla o es otra
 		// Display cases
-//		UserChoice choice = DisplayCasesTableMethod.displayCasesInTableBasic(retrievedCases);//DisplayCasesMethod.displayCases(retrievedCases);
-//	
-//		// Buy or Quit
-//		if(BuyOrQuit.buyOrQuit(choice))
-//		    System.out.println("Finish - User Buys: "+choice.getSelectedCase());
-//		
-//		else
-//		    System.out.println("Finish - User Quits");
+		UserChoice choice = DisplayCasesTableMethod.displayCasesInTableEditQuery(retrievedCases);//DisplayCasesMethod.displayCases(retrievedCases);
+	
+		// Buy or Quit
+		if(BuyOrQuit.buyOrQuit(choice))
+		    System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+		
+		else
+		    System.out.println("Finish - User Quits");
 
     }
 	
 	public void postCycle() throws ExecutionException
     {
-		_connector.close();
+		//_connector.close();
     }
 	
-	public Collection<CBRCase> execute()
+	public void execute()
 	{	
-		CuatroPreguntas recomendador = new CuatroPreguntas();
 		
 		try {
 			
-			recomendador.configure();
-			recomendador.preCycle();
+			this.configure();
+			this.preCycle();
 			
-			CBRQuery query = new CBRQuery();
+			query = new CBRQuery();
 			
-			Game juego = new Game();
+			InterfazCuatroPreguntas interfaz = new InterfazCuatroPreguntas(this);
+			interfaz.setDefaultCloseOperation(interfaz.DISPOSE_ON_CLOSE);
+			interfaz.setTitle("Cuatro preguntas");
+			interfaz.getContentPane().setPreferredSize(interfaz.getSize());
+			interfaz.pack();
+			interfaz.setLocationRelativeTo(null);
+			interfaz.setVisible(true);
 			
-			juego.setAge(12);
-			juego.setPlayingTime(100);
-			
-			query.setDescription(juego);
-			
-			return recomendador.cycle(query);
-		
 		} catch (ExecutionException e) {
 			e.printStackTrace();
-			return null;
 		}
 	}
-
 }

@@ -33,7 +33,7 @@ public class Game implements CaseComponent{
 		artists = new ArrayList<String>();
 		designers = new ArrayList<String>();
 		publishers = new ArrayList<String>();
-		subdomains = new ArrayList<String>();
+		//subdomains = new ArrayList<String>();
 		categories = new ArrayList<String>();
 		mechanics = new ArrayList<String>();
 	}
