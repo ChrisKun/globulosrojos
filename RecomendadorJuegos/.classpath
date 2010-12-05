@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/CuatroPreguntas/lib/commons-logging-1.1.jar"/>
-	<classpathentry kind="lib" path="/CuatroPreguntas/lib/jcolibri2.jar"/>
 	<classpathentry kind="con" path="org.dyno.visual.swing.VS_LIBRARY/layoutext"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jcolibri2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
