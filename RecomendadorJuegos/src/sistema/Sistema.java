@@ -7,6 +7,7 @@ public class Sistema {
 
 	private static CBRCaseBase CBusuarios;
 	private static CBRCaseBase CBjuegos;
+	private static Perfil perfil;
 	
 	//private static Perfil usuarioActual;
 	
@@ -21,4 +22,7 @@ public class Sistema {
 			CBjuegos = new LinealCaseBase();
 		return CBjuegos;
 	} 
+	
+	public static Perfil getPerfil() {return perfil;}
+	public static void setPerfil(Perfil p) {perfil = p;}
 }
