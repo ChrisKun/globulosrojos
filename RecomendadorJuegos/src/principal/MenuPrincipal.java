@@ -2,13 +2,15 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,10 +24,14 @@ import org.dyno.visual.swing.layouts.Leading;
 import org.dyno.visual.swing.layouts.Trailing;
 
 import preguntasOpcionales.RefinarPerfil;
+import recomendadorPorPerfil.RecomendadorPorPerfil;
 import sistema.Game;
 import sistema.GameConnector;
-import sistema.ProfileConnector;
+import sistema.Perfil;
+import sistema.ProfileConnector2;
+import sistema.Sistema;
 import cuatroPreguntas.CuatroPreguntas;
+import evaluar.EvaluatorFrame;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class MenuPrincipal extends JFrame {
@@ -37,19 +43,21 @@ public class MenuPrincipal extends JFrame {
 	private JTable jTable0;
 	private JScrollPane jScrollPane0;
 	private JButton botonSeleccionar;
-	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
-	public MenuPrincipal() {
-		
+	private JButton botonEvaluarJuegos;
+	private static final String PREFERRED_LOOK_AND_FEEL = "jabotonEvaluarJuegosg.plaf.metal.MetalLookAndFeel";
+	public MenuPrincipal(String nick) {
 		//Se crean las bases de casos de usuarios y de juegos
 		CBRCaseBase gameCaseBase = sistema.Sistema.getCBjuegosInstance();
 		CBRCaseBase userCaseBase = sistema.Sistema.getCBusuariosInstance();
 		//Se crean los conectores para cargar las dos bases de casos
 		GameConnector gameConnector = new GameConnector();
+		ProfileConnector2 profileConnector = new ProfileConnector2();
 		//ProfileConnector profileConnector = new ProfileConnector();
 
 		//Se cargan las dos bases en memoria
 		try{
 			gameCaseBase.init(gameConnector);
+			userCaseBase.init(profileConnector);
 			//userCaseBase.init(profileConnector);
 		}catch (InitializingException e)
 		{
@@ -59,6 +67,15 @@ public class MenuPrincipal extends JFrame {
 		//MejoresJuegos.init();
 		
 		initComponents();
+		
+		// Cargamos el perfil del usuario logueado desde el CBR de usuarios
+		Collection<CBRCase> usuarios = Sistema.getCBusuariosInstance().getCases();
+		for (CBRCase cbrCase : usuarios) {
+			if (((Perfil)cbrCase.getDescription()).getNickName().equals(nick)) {
+				Sistema.setPerfil((Perfil)cbrCase.getDescription());
+				break;
+			}
+		}
 		
 		//presentarMejoresJuegos();
 	}
@@ -70,7 +87,22 @@ public class MenuPrincipal extends JFrame {
 		add(getBotonRecomendarPerfil(), new Constraints(new Trailing(160, 162, 162), new Leading(12, 12, 12)));
 		add(getJScrollPane0(), new Constraints(new Leading(186, 200, 10, 10), new Leading(70, 150, 10, 10)));
 		add(getBotonSeleccionar(), new Constraints(new Leading(407, 10, 10), new Leading(153, 10, 10)));
+		add(getJButton0(), new Constraints(new Trailing(12, 142, 220, 398), new Leading(50, 12, 12)));
 		setSize(590, 240);
+	}
+
+	private JButton getJButton0() {
+		if (botonEvaluarJuegos == null) {
+			botonEvaluarJuegos = new JButton();
+			botonEvaluarJuegos.setText("Evaluar juegos");
+			botonEvaluarJuegos.addActionListener(new ActionListener() {
+	
+				public void actionPerformed(ActionEvent event) {
+					botonEvaluarJuegosActionPerformed(event);
+				}
+			});
+		}
+		return botonEvaluarJuegos;
 	}
 
 	private JButton getBotonSeleccionar() {
@@ -98,7 +130,14 @@ public class MenuPrincipal extends JFrame {
 	private JTable getJTable0() {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
-			jTable0.setModel(new DefaultTableModel(new Object[][] { { "6", "Juego1", }, { "3521", "Juego2", }, }, new String[] { "ID", "Titulo", }) {
+			ArrayList<CBRCase> listaMJ = MejoresJuegos.getMejoresJuegos(10);
+			Object[][] tablaMJ = new Object[listaMJ.size()][2];
+			for (int i=0; i < listaMJ.size(); i++) {
+				Game juego = (Game)listaMJ.get(i).getDescription();
+				tablaMJ[i][0] = juego.getgameId();
+				tablaMJ[i][1] = juego.getName();
+			}
+			jTable0.setModel(new DefaultTableModel(tablaMJ, new String[] { "ID", "Titulo", }) {
 				private static final long serialVersionUID = 1L;
 				Class<?>[] types = new Class<?>[] { Object.class, Object.class, };
 	
@@ -175,11 +214,22 @@ public class MenuPrincipal extends JFrame {
 	}
 
 	private void botonRecomendarPerfilActionActionPerformed(ActionEvent event) {
+		RecomendadorPorPerfil rpp = new RecomendadorPorPerfil();
+		rpp.recomendar();
 	}
 	
 	private void botonSeleccionarActionPerformed(ActionEvent event){
 		Integer str = Integer.parseInt((String)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0));
 	}
+	
+	private void botonEvaluarJuegosActionPerformed(ActionEvent event) {
+		EvaluatorFrame ef = new EvaluatorFrame();
+		ef.setDefaultCloseOperation(EvaluatorFrame.DISPOSE_ON_CLOSE);
+		ef.getContentPane().setPreferredSize(ef.getSize());
+		ef.pack();
+		ef.setLocationRelativeTo(null);
+		ef.setVisible(true);
+	} 
 	
 	private void presentarMejoresJuegos()
 	{

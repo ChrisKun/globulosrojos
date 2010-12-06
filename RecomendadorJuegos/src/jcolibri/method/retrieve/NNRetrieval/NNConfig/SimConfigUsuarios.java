@@ -1,16 +1,16 @@
 package jcolibri.method.retrieve.NNRetrieval.NNConfig;
 
-import sistema.Perfil;
 import jcolibri.cbrcore.Attribute;
 import jcolibri.method.retrieve.NNRetrieval.similarity.local.AverageMap;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
 import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Equal;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
+import sistema.Perfil;
 
-public class simConfigUsuarios extends NNConfig{
+public class SimConfigUsuarios extends NNConfig{
 
-	public simConfigUsuarios() {
+	public SimConfigUsuarios() {
 		// Función de similitud global
 		this.setDescriptionSimFunction(new Average());
 		// Funciones de similitud locales
