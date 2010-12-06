@@ -159,8 +159,8 @@ public class InterfazLogIn extends JFrame {
 	private void jButton2ActionActionPerformed(ActionEvent event) {
 		ProfileConnector pc = new ProfileConnector();
 		Collection<CBRCase> casos = pc.retrieveAllCases();
-		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"ï¿½" +
-								"Â¿Estas seguro que quieres guardar los perfiles?") == 0)
+		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"Informacion" +
+								"¿Estas seguro que quieres guardar los perfiles?") == 0)
 		{
 			if(Perfil.UserCBRcasesToFile(casos))
 				JOptionPane.showMessageDialog(InterfazLogIn.this, "exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);

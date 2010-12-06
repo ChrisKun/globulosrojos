@@ -207,7 +207,6 @@ public class Perfil implements CaseComponent
 				usuario.Registrar(usuario.getNickName());
 				usuario.Loguear(usuario.getNickName());
 				ArrayList lista = new ArrayList();
-				lista.add(usuario.getNickName());
 				lista.add(usuario.getAge());
 				lista.add(usuario.getGender());
 				lista.add(usuario.getFormaDeSer());
