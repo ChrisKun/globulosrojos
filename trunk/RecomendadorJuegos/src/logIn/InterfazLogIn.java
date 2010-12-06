@@ -63,7 +63,7 @@ public class InterfazLogIn extends JFrame {
 	private JButton getJButton0() {
 		if (jButton0 == null) {
 			jButton0 = new JButton();
-			jButton0.setText("Iniciar Sesión");
+			jButton0.setText("Iniciar Sesion");
 			jButton0.addActionListener(new ActionListener() {
 	
 				public void actionPerformed(ActionEvent event) {
@@ -112,7 +112,7 @@ public class InterfazLogIn extends JFrame {
 	private void jButton0ActionActionPerformed(ActionEvent event) {
 		if(perfil.Loguear(jTextField0.getText()))
 		{
-			JOptionPane.showMessageDialog(InterfazLogIn.this, "Logueado con éxito", "Información",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(InterfazLogIn.this, "Logueado con exito", "Informacion",JOptionPane.INFORMATION_MESSAGE);
 			this.setVisible(false);
 			MenuPrincipal menu = new MenuPrincipal();
 			menu.getContentPane().setPreferredSize(menu.getSize());
@@ -129,7 +129,7 @@ public class InterfazLogIn extends JFrame {
 	private void jButton1ActionActionPerformed(ActionEvent event) {
 		if(perfil.Registrar(jTextField0.getText()))
 		{
-			JOptionPane.showMessageDialog(InterfazLogIn.this, "Registrado con éxito", "Información", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(InterfazLogIn.this, "Registrado con exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 		}
 		else
 			JOptionPane.showMessageDialog(InterfazLogIn.this, "Error al registrar el nick", "Error", JOptionPane.ERROR_MESSAGE);

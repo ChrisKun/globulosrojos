@@ -17,6 +17,11 @@ import javax.swing.UIManager;
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
+import org.dyno.visual.swing.layouts.Trailing;
+
+import sistema.Perfil;
+import sistema.Perfil.FormaDeSer;
+import sistema.Perfil.Gender;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class InterfazRefinarPerfil extends JFrame {
@@ -37,6 +42,10 @@ public class InterfazRefinarPerfil extends JFrame {
 	private ButtonGroup buttonGroup1;
 	private ButtonGroup buttonGroup2;
 	private JButton jButton1;
+	private JLabel jLabel5;
+	private JRadioButton jRadioButton4;
+	private JRadioButton jRadioButton5;
+	private ButtonGroup buttonGroup3;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public InterfazRefinarPerfil() {
 		initComponents();
@@ -55,11 +64,46 @@ public class InterfazRefinarPerfil extends JFrame {
 		add(getJComboBox0(), new Constraints(new Leading(204, 10, 10), new Leading(105, 12, 12)));
 		add(getJRadioButton2(), new Constraints(new Leading(204, 8, 8), new Leading(141, 10, 10)));
 		add(getJRadioButton3(), new Constraints(new Leading(286, 10, 10), new Leading(141, 8, 8)));
-		add(getJButton0(), new Constraints(new Leading(254, 10, 10), new Leading(172, 12, 12)));
-		add(getJButton1(), new Constraints(new Leading(117, 10, 10), new Leading(172, 12, 12)));
+		add(getJButton1(), new Constraints(new Leading(114, 10, 10), new Trailing(12, 174, 174)));
+		add(getJButton0(), new Constraints(new Leading(251, 10, 10), new Leading(201, 10, 10)));
+		add(getJLabel5(), new Constraints(new Leading(49, 12, 12), new Leading(174, 12, 12)));
+		add(getJRadioButton4(), new Constraints(new Leading(203, 8, 8), new Leading(166, 45, 45)));
+		add(getJRadioButton5(), new Constraints(new Leading(249, 10, 10), new Leading(166, 8, 8)));
 		initButtonGroup1();
 		initButtonGroup2();
+		initButtonGroup3();
 		setSize(460, 240);
+	}
+
+	private void initButtonGroup3() {
+		buttonGroup3 = new ButtonGroup();
+		buttonGroup3.add(getJRadioButton4());
+		buttonGroup3.add(getJRadioButton5());
+	}
+
+	private JRadioButton getJRadioButton5() {
+		if (jRadioButton5 == null) {
+			jRadioButton5 = new JRadioButton();
+			jRadioButton5.setText("No");
+		}
+		return jRadioButton5;
+	}
+
+	private JRadioButton getJRadioButton4() {
+		if (jRadioButton4 == null) {
+			jRadioButton4 = new JRadioButton();
+			jRadioButton4.setSelected(true);
+			jRadioButton4.setText("Si");
+		}
+		return jRadioButton4;
+	}
+
+	private JLabel getJLabel5() {
+		if (jLabel5 == null) {
+			jLabel5 = new JLabel();
+			jLabel5.setText("¿Tienes paciencia?");
+		}
+		return jLabel5;
 	}
 
 	private JButton getJButton1() {
@@ -122,7 +166,16 @@ public class InterfazRefinarPerfil extends JFrame {
 	private JComboBox getJComboBox0() {
 		if (jComboBox0 == null) {
 			jComboBox0 = new JComboBox();
-			jComboBox0.setModel(new DefaultComboBoxModel(new Object[] { "item0", "item1", "item2", "item3" }));
+			jComboBox0.setModel(new DefaultComboBoxModel(new Object[] { "escoge uno",
+																		Perfil.FormaDeSer.agresivo,
+																		Perfil.FormaDeSer.aventurero.name(),
+																		Perfil.FormaDeSer.calculador.name(),
+																		Perfil.FormaDeSer.clasico.name(),
+																		Perfil.FormaDeSer.cotilla.name(),
+																		Perfil.FormaDeSer.extrovetido.name(),
+																		Perfil.FormaDeSer.friki.name(),
+																		Perfil.FormaDeSer.solitario.name(),
+																		Perfil.FormaDeSer.trabajador.name()}));
 			jComboBox0.setDoubleBuffered(false);
 			jComboBox0.setBorder(null);
 		}
@@ -230,7 +283,18 @@ public class InterfazRefinarPerfil extends JFrame {
 	}
 
 	private void jButton0ActionActionPerformed(ActionEvent event) {
-		System.out.println("Perfil Refinado");
+		Perfil perfilRefinado = new Perfil();
+		perfilRefinado.setAge(Integer.parseInt(this.jTextField0.getText()));
+		
+		if(jRadioButton0.isSelected())
+			perfilRefinado.setGender(Gender.Male);
+		else if(jRadioButton1.isSelected())
+			perfilRefinado.setGender(Gender.Female);
+		String formaDeSer = (String)jComboBox0.getSelectedItem();
+		if(!formaDeSer.equals("escoge uno"))
+		{
+			perfilRefinado.setFormaDeSer((FormaDeSer)jComboBox0.getSelectedItem());
+		}
 		this.dispose();
 	}
 
