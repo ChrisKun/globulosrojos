@@ -15,6 +15,7 @@ import java.util.Random;
 import com.sun.org.apache.bcel.internal.generic.Select;
 
 import jcolibri.cbrcore.Attribute;
+import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.cbrcore.CaseComponent;
 
 
@@ -186,6 +187,20 @@ public class Perfil implements CaseComponent
 			return false;
 		} 
 	}
+	
+//	public void UserCBRcasesToFile(CBRCaseBase UserCases)
+//	{
+//		try {
+//			RandomAccessFile file = new RandomAccessFile(fichero, "wr");
+//			while(UserCases.)
+//			{
+//				
+//			}
+//		} catch (FileNotFoundException e) {
+//			System.out.println("Error al cargar el archivo");
+//		}
+//		
+//	}
 
     public String getNickName() {
 		return nickName;
