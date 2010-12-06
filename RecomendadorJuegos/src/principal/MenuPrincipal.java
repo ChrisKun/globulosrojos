@@ -2,6 +2,7 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.ExecutionException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,6 +38,16 @@ public class MenuPrincipal extends JFrame {
 	private JButton botonSeleccionar;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public MenuPrincipal() {
+		
+		CBRCaseBase gameCaseBase = sistema.Sistema.getCBjuegosInstance();
+		GameConnector gameConnector = new GameConnector();
+		try{
+			gameCaseBase.init(gameConnector);
+		}catch (InitializingException e)
+		{
+			e.printStackTrace();
+		}
+		
 		initComponents();
 	}
 
@@ -142,16 +153,6 @@ public class MenuPrincipal extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		
-		//Se crea al principio la base de casos y esta en memoria durante la ejecucion
-		CBRCaseBase _gameCaseBase = Sistema.getCBjuegosInstance();
-		Connector gameConnector = new GameConnector();
-		try{
-			_gameCaseBase.init(gameConnector);
-		}catch (InitializingException e)
-		{
-			e.printStackTrace();
-		}
 		
 		installLnF();
 		SwingUtilities.invokeLater(new Runnable() {
