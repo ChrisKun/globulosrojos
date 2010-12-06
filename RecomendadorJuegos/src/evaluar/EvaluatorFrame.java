@@ -2,6 +2,10 @@ package evaluar;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -13,12 +17,15 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.table.TableColumn;
 
+import jcolibri.cbrcore.CBRCase;
+
 import org.dyno.visual.swing.layouts.Bilateral;
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
 
-import sistema.JuegosAdquiridos;
+import sistema.Sistema;
+import sistema.Game;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class EvaluatorFrame extends JFrame {
@@ -74,10 +81,23 @@ public class EvaluatorFrame extends JFrame {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
 			// TODO : Cambiar el objeto pasado por lo que se vaya a usar para la lista de juegos adquiridos
-			JuegosAdquiridos ja = new JuegosAdquiridos();
-			ja.add("Nono", (float)2.3);
-			ja.add("Sisi", (float)5.7);
-			jTable0.setModel(new JuegosAdquiridosTableModel(ja));
+			/* Tenemos una lista de <GameID, Valoracion> que necesitamos cambiar a <Nombre, Valoracion>
+			 *  para que sea más cómodo para el usuario.
+			 */
+			HashMap<String, Float> juegosAdquiridosStr = new HashMap<String, Float>();
+			HashMap<Integer, Float> juegosAdquiridosID = Sistema.getPerfil().getListaValoraciones();
+			
+			Set<Entry<Integer, Float>> juegosID = Sistema.getPerfil().getListaValoraciones().entrySet();
+			for (Entry<Integer, Float> entry : juegosID) {
+				Collection<CBRCase> juegos = Sistema.getCBjuegosInstance().getCases();
+				for (CBRCase cbrCase : juegos) {
+					Game g = (Game)cbrCase.getDescription();
+					if (juegosAdquiridosID.containsKey(g.getGameId()))
+						juegosAdquiridosStr.put(g.getName(), juegosAdquiridosID.get(g.getGameId()));
+				}
+			}
+
+			jTable0.setModel(new JuegosAdquiridosTableModel(juegosAdquiridosStr));
 			TableColumn tc = jTable0.getColumnModel().getColumn(1);
 			tc.setCellEditor(new DefaultCellEditor(new JTextField()));
 	        
