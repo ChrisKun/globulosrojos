@@ -295,6 +295,18 @@ public class InterfazRefinarPerfil extends JFrame {
 		{
 			perfilRefinado.setFormaDeSer((FormaDeSer)jComboBox0.getSelectedItem());
 		}
+		if(jRadioButton2.isSelected())
+			perfilRefinado.setTieneBuenaMemoria(true);
+		else if(jRadioButton3.isSelected())
+			perfilRefinado.setTieneBuenaMemoria(false);
+		if(jRadioButton4.isSelected())
+			perfilRefinado.setTienePaciencia(true);
+		else if(jRadioButton5.isSelected())
+			perfilRefinado.setTienePaciencia(false);
+		
+		//TODO Enviar el perfil a guardar
+		//Actualizar casos en memoria + ficheros
+		
 		this.dispose();
 	}
 

@@ -9,12 +9,15 @@ import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Random;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
 
 import jcolibri.cbrcore.Attribute;
+import jcolibri.cbrcore.CBRCase;
 import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.cbrcore.CaseComponent;
 
@@ -188,19 +191,23 @@ public class Perfil implements CaseComponent
 		} 
 	}
 	
-//	public void UserCBRcasesToFile(CBRCaseBase UserCases)
-//	{
-//		try {
-//			RandomAccessFile file = new RandomAccessFile(fichero, "wr");
-//			while(UserCases.)
-//			{
-//				
-//			}
-//		} catch (FileNotFoundException e) {
-//			System.out.println("Error al cargar el archivo");
-//		}
-//		
-//	}
+	public void UserCBRcasesToFile(CBRCaseBase UserCases)
+	{
+		try {
+			RandomAccessFile file = new RandomAccessFile(fichero, "wr");
+			Collection<CBRCase> casos = Sistema.getCBusuariosInstance().getCases();
+			Iterator it = casos.iterator();
+			while(it.hasNext())
+			{
+				CBRCase caso = (CBRCase)it.next();
+				Perfil usuario = (Perfil)caso.getDescription();
+				//Ahora tienes en usuario la info del perfil. Haz lo que tengas que hacer
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("Error al cargar el archivo");
+		}
+		
+	}
 
     public String getNickName() {
 		return nickName;
