@@ -27,7 +27,8 @@ ponimg.setSize(300, 200);
 ponimg.setTitle("Prueba de imagenes"); 
 ponimg.setVisible(true); 
 ponimg.addWindowListener(new WindowAdapter() { 
-public void windowClosing(WindowEvent e) { 
+public void windowClosing(WindowEvent e)
+{ 
 System.exit(0); 
 } 
 }); 

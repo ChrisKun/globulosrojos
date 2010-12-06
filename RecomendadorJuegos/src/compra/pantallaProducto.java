@@ -13,8 +13,7 @@ public class pantallaProducto extends JFrame {
 	private static final String PREFERRED_LOOK_AND_FEEL = null;
 	Integer id;
 
-	public pantallaProducto(Integer id) {
-		this.id = id;
+	public pantallaProducto() {
 		initComponents();
 	}
 
@@ -46,7 +45,7 @@ public class pantallaProducto extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				pantallaProducto frame = new pantallaProducto(500);
+				pantallaProducto frame = new pantallaProducto();
 				frame.setDefaultCloseOperation(pantallaProducto.EXIT_ON_CLOSE);
 				frame.setTitle("pantallaProducto");
 				frame.getContentPane().setPreferredSize(frame.getSize());

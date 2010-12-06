@@ -16,6 +16,9 @@ import org.dyno.visual.swing.layouts.Leading;
 
 import principal.MenuPrincipal;
 import sistema.Perfil;
+import sistema.ProfileConnector;
+import sistema.Sistema;
+import sun.awt.color.ProfileActivator;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class InterfazLogIn extends JFrame {
@@ -25,6 +28,7 @@ public class InterfazLogIn extends JFrame {
 	private JButton jButton0;
 	private JButton jButton1;
 	private JTextField jTextField0;
+	private JButton jButton2;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public InterfazLogIn() {
 		initComponents();
@@ -32,10 +36,25 @@ public class InterfazLogIn extends JFrame {
 
 	private void initComponents() {
 		setLayout(new GroupLayout());
-		add(getJButton0(), new Constraints(new Leading(220, 10, 10), new Leading(49, 12, 12)));
-		add(getJButton1(), new Constraints(new Leading(220, 110, 12, 12), new Leading(90, 12, 12)));
 		add(getJTextField0(), new Constraints(new Leading(35, 153, 10, 10), new Leading(52, 12, 12)));
-		setSize(391, 173);
+		add(getJButton1(), new Constraints(new Leading(220, 158, 10, 10), new Leading(90, 12, 12)));
+		add(getJButton0(), new Constraints(new Leading(220, 158, 12, 12), new Leading(49, 12, 12)));
+		add(getJButton2(), new Constraints(new Leading(220, 158, 12, 12), new Leading(132, 10, 10)));
+		setSize(426, 195);
+	}
+
+	private JButton getJButton2() {
+		if (jButton2 == null) {
+			jButton2 = new JButton();
+			jButton2.setText("Guardar los Perfiles");
+			jButton2.addActionListener(new ActionListener() {
+	
+				public void actionPerformed(ActionEvent event) {
+					jButton2ActionActionPerformed(event);
+				}
+			});
+		}
+		return jButton2;
 	}
 
 	private JTextField getJTextField0() {
@@ -133,6 +152,18 @@ public class InterfazLogIn extends JFrame {
 		}
 		else
 			JOptionPane.showMessageDialog(InterfazLogIn.this, "Error al registrar el nick", "Error", JOptionPane.ERROR_MESSAGE);
+	}
+
+	private void jButton2ActionActionPerformed(ActionEvent event) {
+		ProfileConnector pc = new ProfileConnector();
+		pc.retrieveAllCases();
+		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"¿Estás seguro que quieres guardar los perfiles?") == 0)
+		{
+			if(Perfil.UserCBRcasesToFile(Sistema.getCBusuariosInstance()))
+				JOptionPane.showMessageDialog(InterfazLogIn.this, "exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			else
+				JOptionPane.showMessageDialog(InterfazLogIn.this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 }
