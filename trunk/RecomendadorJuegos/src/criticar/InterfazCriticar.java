@@ -1,5 +1,7 @@
 package criticar;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -18,6 +20,7 @@ import jcolibri.extensions.recommendation.navigationByProposing.queryElicitation
 import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.FilterBasedRetrieval.predicates.NotEqual;
 import jcolibri.method.retrieve.FilterBasedRetrieval.predicates.QueryLess;
+import jcolibri.method.retrieve.NNRetrieval.NNConfig.SimConfigJuegos;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import jcolibri.method.retrieve.selection.SelectCases;
 
@@ -29,7 +32,7 @@ public class InterfazCriticar {
 	public InterfazCriticar(Collection<CBRCase> selectedCases) {
 		this.selectedCases = selectedCases;
 		criticas = new ArrayList<CritiqueOption>();
-		criticas.add(new CritiqueOption("Más jugadores recomendados",new Attribute("numPlayers", Game.class),new QueryLess()));
+		criticas.add(new CritiqueOption("Más jugadores recomendados",new Attribute("minNumPlayers", Game.class),new QueryLess()));
 		criticas.add(new CritiqueOption("Más edad recomendada",new Attribute("age", Game.class),new QueryLess()));
 		criticas.add(new CritiqueOption("Otra mecánica de juego",new Attribute("mechanics", Game.class),new NotEqual()));
 	}
@@ -44,7 +47,7 @@ public class InterfazCriticar {
 				MoreLikeThis.moreLikeThis(query, choice.getSelectedCase());
 				// No tiene filtrado
 				// TODO Queda el simConfig (null)
-				Collection<RetrievalResult> retrievedCases = NNScoringMethod.evaluateSimilarity(Sistema.getCBjuegosInstance().getCases(), query, null);
+				Collection<RetrievalResult> retrievedCases = NNScoringMethod.evaluateSimilarity(Sistema.getCBjuegosInstance().getCases(), query, new SimConfigJuegos());
 				selectedCases = SelectCases.selectTopK(retrievedCases, 10);
 			}
 			else {

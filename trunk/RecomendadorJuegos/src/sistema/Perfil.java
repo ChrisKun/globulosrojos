@@ -43,7 +43,7 @@ public class Perfil implements CaseComponent
 	String fichero = "perfil.dat";
 	
     public String toString() {
-        return nickName + "," + id + "," + age + "," + gender+ "," + tieneBuenaMemoria+ "," + formaDeSer+ "," + tienePaciencia+ "," + listaValoraciones;
+        return nickName + "-" + id + "-" + age + "-" + gender+ "-" + tieneBuenaMemoria+ "-" + formaDeSer+ "-" + tienePaciencia+ "-" + listaValoraciones;
 	}
 	
 	public Boolean getTieneBuenaMemoria() {
@@ -122,7 +122,7 @@ public class Perfil implements CaseComponent
 			String linea = reader.readLine();
 			while(linea != null)
 			{
-				String[] infoNick = linea.split(",");
+				String[] infoNick = linea.split("-");
 				if(infoNick[0].equals(nick))
 					return true;
 				else
@@ -160,12 +160,12 @@ public class Perfil implements CaseComponent
 			while(linea != null)
 			//while(!linea.equals(""))
 			{
-				String[] infoNick = linea.split(",");
+				String[] infoNick = linea.split("-");
 				if(infoNick[0].equals(nickName))
 				{
 					while(datos.size()> i)
 					{
-						file.writeBytes(",");
+						file.writeBytes("-");
 						file.writeBytes(datos.get(i).toString());
 						i++;
 						//fileW = new FileWriter(fichero);

@@ -11,16 +11,18 @@ public class AverageList implements LocalSimilarityFunction {
         if ((o1 == null) || (o2 == null) || !(o1 instanceof List) || !(o2 instanceof List))
         	return 0;
         
-        Object[] list1 = ((List<?>)o1).toArray();
-        Object[] list2 = ((List<?>)o2).toArray();
+        List list1 = ((List<?>)o1);
+        List list2 = ((List<?>)o2);
         
-        double d  = 1.0 / list1.length;
+        double d  = 1.0 / list1.size();
         double sim = 0.0;
         
-        for (int i = 0; i < list1.length; i++)
-        	for (int j = 0; j < list2.length; j++)
-        		if (list1[i].equals(list2[j])) sim += d;
-        
+        for (Object obj0 : list1) {
+			for (Object obj1 : list2) {
+				if (obj0.equals(obj1)) sim += d;
+			}
+		}
+
         return sim;
     }
 

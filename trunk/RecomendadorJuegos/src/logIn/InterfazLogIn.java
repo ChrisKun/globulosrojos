@@ -135,7 +135,7 @@ public class InterfazLogIn extends JFrame {
 		{
 			JOptionPane.showMessageDialog(InterfazLogIn.this, "Logueado con exito", "Informacion",JOptionPane.INFORMATION_MESSAGE);
 			this.setVisible(false);
-			MenuPrincipal menu = new MenuPrincipal();
+			MenuPrincipal menu = new MenuPrincipal(jTextField0.getText());
 			menu.getContentPane().setPreferredSize(menu.getSize());
 			menu.pack();
 			menu.setLocationRelativeTo(null);
