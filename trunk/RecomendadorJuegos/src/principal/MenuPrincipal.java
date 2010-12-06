@@ -2,7 +2,6 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.ExecutionException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +12,6 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 import jcolibri.cbrcore.CBRCaseBase;
-import jcolibri.cbrcore.Connector;
 import jcolibri.exception.InitializingException;
 
 import org.dyno.visual.swing.layouts.Constraints;
@@ -22,8 +20,8 @@ import org.dyno.visual.swing.layouts.Leading;
 import org.dyno.visual.swing.layouts.Trailing;
 
 import preguntasOpcionales.RefinarPerfil;
+import sistema.Game;
 import sistema.GameConnector;
-import sistema.Sistema;
 import cuatroPreguntas.CuatroPreguntas;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
@@ -41,6 +39,7 @@ public class MenuPrincipal extends JFrame {
 		
 		CBRCaseBase gameCaseBase = sistema.Sistema.getCBjuegosInstance();
 		GameConnector gameConnector = new GameConnector();
+
 		try{
 			gameCaseBase.init(gameConnector);
 		}catch (InitializingException e)
