@@ -31,14 +31,14 @@ public class Perfil implements CaseComponent
     public enum FormaDeSer{
             agresivo, solitario, friki, cotilla, extrovetido, clasico, trabajador, calculador, aventurero //me los invento yo
             };
-	String nickName;
-	Integer id;
-    Integer age;
-    Gender gender;
-    HashMap<Integer, Float> listaValoraciones = new HashMap<Integer, Float>();
-    Boolean tieneBuenaMemoria;
-    FormaDeSer formaDeSer;
-    Boolean tienePaciencia;
+	private String nickName;
+	private Integer id;
+	private Integer age;
+	private Gender gender;
+	private HashMap<Integer, Float> listaValoraciones = new HashMap<Integer, Float>();
+	private Boolean tieneBuenaMemoria;
+	private FormaDeSer formaDeSer;
+	private Boolean tienePaciencia;
     
 	String fichero = "perfil.dat";
 	
@@ -190,11 +190,14 @@ public class Perfil implements CaseComponent
 			return false;
 		} 
 	}
-	
-	public void UserCBRcasesToFile(CBRCaseBase UserCases)
+	//FORMATO DEL FICHERO
+	/*
+	 * NICK, EDAD, SEXO, FORAM DE SER, TIENE MEMORIA, PACIENCIA, LISTA DE VALORACIONES, ID
+	 */
+	public static boolean UserCBRcasesToFile(CBRCaseBase UserCases)
 	{
 		try {
-			RandomAccessFile file = new RandomAccessFile(fichero, "wr");
+			RandomAccessFile file = new RandomAccessFile("perfil.dat", "rw");
 			Collection<CBRCase> casos = Sistema.getCBusuariosInstance().getCases();
 			Iterator it = casos.iterator();
 			while(it.hasNext())
@@ -202,9 +205,23 @@ public class Perfil implements CaseComponent
 				CBRCase caso = (CBRCase)it.next();
 				Perfil usuario = (Perfil)caso.getDescription();
 				//Ahora tienes en usuario la info del perfil. Haz lo que tengas que hacer
+				usuario.Registrar(usuario.getNickName());
+				usuario.Loguear(usuario.getNickName());
+				ArrayList lista = new ArrayList();
+				lista.add(usuario.getNickName());
+				lista.add(usuario.getAge());
+				lista.add(usuario.getGender());
+				lista.add(usuario.getFormaDeSer());
+				lista.add(usuario.getTieneBuenaMemoria());
+				lista.add(usuario.getTienePaciencia());
+				lista.add(usuario.getListaValoraciones());
+				lista.add(usuario.getId());
+				usuario.RegistrarDatosDelUsuario(lista);
 			}
+			return true;
 		} catch (FileNotFoundException e) {
 			System.out.println("Error al cargar el archivo");
+			return false;
 		}
 		
 	}
