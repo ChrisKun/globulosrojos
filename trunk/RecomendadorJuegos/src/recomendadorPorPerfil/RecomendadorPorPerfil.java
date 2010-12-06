@@ -6,6 +6,7 @@ import java.util.Collection;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.cbrcore.CBRQuery;
 import jcolibri.method.retrieve.RetrievalResult;
+import jcolibri.method.retrieve.NNRetrieval.NNConfig.simConfigUsuarios;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import jcolibri.method.retrieve.selection.SelectCases;
 import sistema.Game;
@@ -18,23 +19,20 @@ import criticar.InterfazCriticar;
 
 public class RecomendadorPorPerfil {
 
-	public RecomendadorPorPerfil() {
-		
-	}
+	public RecomendadorPorPerfil() {}
 	
 	public void recomendar() {
 		ArrayList<Integer> juegosRecomendadosID = new ArrayList<Integer>();
 		ArrayList<CBRCase> juegosRecomendados = new ArrayList<CBRCase>();
 		
 		Perfil perfil = Sistema.getPerfil();
-		
-		// TODO Queda el simConfig de usuarios (2 - null)
+
 		// Creamos la query con la información del usuario logueado
 		CBRQuery query = new CBRQuery();
 		query.setDescription(perfil);
 		
 		// Obtenemos los 5 usuarios más parecidos
-		Collection<RetrievalResult> usuariosParecidos = NNScoringMethod.evaluateSimilarity(Sistema.getCBusuariosInstance().getCases(), query, null);
+		Collection<RetrievalResult> usuariosParecidos = NNScoringMethod.evaluateSimilarity(Sistema.getCBusuariosInstance().getCases(), query, new simConfigUsuarios());
 		Collection<CBRCase> selectedCases = SelectCases.selectTopK(usuariosParecidos, 6);
 		
 		// Por cada lista de valoraciones de cada usuario obtenemos los 2 mejores juegos

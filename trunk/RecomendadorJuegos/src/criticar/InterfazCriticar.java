@@ -16,8 +16,6 @@ import jcolibri.extensions.recommendation.navigationByProposing.CritiqueOption;
 import jcolibri.extensions.recommendation.navigationByProposing.DisplayCasesTableWithCritiquesMethod;
 import jcolibri.extensions.recommendation.navigationByProposing.queryElicitation.MoreLikeThis;
 import jcolibri.method.retrieve.RetrievalResult;
-import jcolibri.method.retrieve.FilterBasedRetrieval.FilterBasedRetrievalMethod;
-import jcolibri.method.retrieve.FilterBasedRetrieval.FilterConfig;
 import jcolibri.method.retrieve.FilterBasedRetrieval.predicates.NotEqual;
 import jcolibri.method.retrieve.FilterBasedRetrieval.predicates.QueryLess;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
