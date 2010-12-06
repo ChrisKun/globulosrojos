@@ -2,6 +2,7 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +12,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
+import jcolibri.cbrcore.CBRCase;
 import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.exception.InitializingException;
 
@@ -22,6 +24,7 @@ import org.dyno.visual.swing.layouts.Trailing;
 import preguntasOpcionales.RefinarPerfil;
 import sistema.Game;
 import sistema.GameConnector;
+import sistema.ProfileConnector;
 import cuatroPreguntas.CuatroPreguntas;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
@@ -37,17 +40,27 @@ public class MenuPrincipal extends JFrame {
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public MenuPrincipal() {
 		
+		//Se crean las bases de casos de usuarios y de juegos
 		CBRCaseBase gameCaseBase = sistema.Sistema.getCBjuegosInstance();
+		CBRCaseBase userCaseBase = sistema.Sistema.getCBusuariosInstance();
+		//Se crean los conectores para cargar las dos bases de casos
 		GameConnector gameConnector = new GameConnector();
+		//ProfileConnector profileConnector = new ProfileConnector();
 
+		//Se cargan las dos bases en memoria
 		try{
 			gameCaseBase.init(gameConnector);
+			//userCaseBase.init(profileConnector);
 		}catch (InitializingException e)
 		{
 			e.printStackTrace();
 		}
+		//Se carga la tabla de los juegos mejor valorados
+		//MejoresJuegos.init();
 		
 		initComponents();
+		
+		//presentarMejoresJuegos();
 	}
 
 	private void initComponents() {
@@ -85,7 +98,7 @@ public class MenuPrincipal extends JFrame {
 	private JTable getJTable0() {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
-			jTable0.setModel(new DefaultTableModel(new Object[][] { { "ID1", "Juego1", }, { "ID2", "Juego2", }, }, new String[] { "ID", "Titulo", }) {
+			jTable0.setModel(new DefaultTableModel(new Object[][] { { "6", "Juego1", }, { "3521", "Juego2", }, }, new String[] { "ID", "Titulo", }) {
 				private static final long serialVersionUID = 1L;
 				Class<?>[] types = new Class<?>[] { Object.class, Object.class, };
 	
@@ -151,32 +164,6 @@ public class MenuPrincipal extends JFrame {
 		}
 	}
 
-	public static void main(String[] args) {
-		
-		installLnF();
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-
-				//Se cogen los mejores juegos para presentarselos al usuario
-//				ArrayList<CBRCase> mejoresJuegos = MejoresJuegos.getMejoresJuegos(6);
-				
-//				for(CBRCase caso: mejoresJuegos)
-//				{
-//					System.out.println(((Game)caso.getDescription()).getName());
-//				}
-				
-				MenuPrincipal frame = new MenuPrincipal();
-				frame.setDefaultCloseOperation(MenuPrincipal.EXIT_ON_CLOSE);
-				frame.setTitle("MenuPrincipal");
-				frame.getContentPane().setPreferredSize(frame.getSize());
-				frame.pack();
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-			}
-		});
-	}
-
 	private void botonCuatroPreguntasActionActionPerformed(ActionEvent event) {
 		CuatroPreguntas preguntas = new CuatroPreguntas();
 		preguntas.execute();
@@ -192,6 +179,17 @@ public class MenuPrincipal extends JFrame {
 	
 	private void botonSeleccionarActionPerformed(ActionEvent event){
 		Integer str = Integer.parseInt((String)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0));
+	}
+	
+	private void presentarMejoresJuegos()
+	{
+		ArrayList<CBRCase> mejoresJuegos = MejoresJuegos.getMejoresJuegos(6);
+		for(int i = 0; i < mejoresJuegos.size(); i++)
+		{
+			CBRCase caso = mejoresJuegos.get(i);
+			this.jTable0.getModel().setValueAt(((Game)caso.getDescription()).getIdAttribute(), i, 0);
+			this.jTable0.getModel().setValueAt(((Game)caso.getDescription()).getName(), i, 1);
+		}
 	}
 
 }
