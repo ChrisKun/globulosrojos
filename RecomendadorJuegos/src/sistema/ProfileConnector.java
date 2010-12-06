@@ -42,7 +42,7 @@ public class ProfileConnector implements Connector {
 		int i = 0;
 		try
 		{
-			while(ratingCases.size()>= i)
+			while(ratingCases.size()> i)
 			{
 				Perfil perfil = new Perfil();
 				perfil.setNickName(((Perfil)ratingCases.get(i)).getNickName());

@@ -20,7 +20,7 @@ public class RatingConnector {
 		ArrayList<Perfil> cases = new ArrayList<Perfil>();
 		try
 		{
-			BufferedReader reader = new BufferedReader(new FileReader("src/RecomendadorJuegos/ratings"));
+			BufferedReader reader = new BufferedReader(new FileReader("src/sistema/ficheros/ratings"));
 			String line = null;
 			Perfil perfil = new Perfil();
 			String nombre = "";
