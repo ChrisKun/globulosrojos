@@ -194,12 +194,11 @@ public class Perfil implements CaseComponent
 	/*
 	 * NICK, EDAD, SEXO, FORAM DE SER, TIENE MEMORIA, PACIENCIA, LISTA DE VALORACIONES, ID
 	 */
-	public static boolean UserCBRcasesToFile(CBRCaseBase UserCases)
+	public static boolean UserCBRcasesToFile(Collection<CBRCase> userCases)
 	{
 		try {
 			RandomAccessFile file = new RandomAccessFile("perfil.dat", "rw");
-			Collection<CBRCase> casos = Sistema.getCBusuariosInstance().getCases();
-			Iterator it = casos.iterator();
+			Iterator it = userCases.iterator();
 			while(it.hasNext())
 			{
 				CBRCase caso = (CBRCase)it.next();

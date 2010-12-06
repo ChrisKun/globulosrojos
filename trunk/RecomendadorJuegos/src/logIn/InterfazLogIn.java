@@ -2,6 +2,7 @@ package logIn;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collection;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,6 +10,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+
+import jcolibri.cbrcore.CBRCase;
 
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
@@ -18,7 +21,6 @@ import principal.MenuPrincipal;
 import sistema.Perfil;
 import sistema.ProfileConnector;
 import sistema.Sistema;
-import sun.awt.color.ProfileActivator;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class InterfazLogIn extends JFrame {
@@ -156,10 +158,11 @@ public class InterfazLogIn extends JFrame {
 
 	private void jButton2ActionActionPerformed(ActionEvent event) {
 		ProfileConnector pc = new ProfileConnector();
-		pc.retrieveAllCases();
-		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"¿Estás seguro que quieres guardar los perfiles?") == 0)
+		Collection<CBRCase> casos = pc.retrieveAllCases();
+		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"ï¿½" +
+								"Â¿Estas seguro que quieres guardar los perfiles?") == 0)
 		{
-			if(Perfil.UserCBRcasesToFile(Sistema.getCBusuariosInstance()))
+			if(Perfil.UserCBRcasesToFile(casos))
 				JOptionPane.showMessageDialog(InterfazLogIn.this, "exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			else
 				JOptionPane.showMessageDialog(InterfazLogIn.this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
