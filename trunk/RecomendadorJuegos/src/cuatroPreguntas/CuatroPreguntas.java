@@ -3,6 +3,8 @@ package cuatroPreguntas;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import compra.pantallaProducto;
+
 import sistema.Game;
 import sistema.Sistema;
 import jcolibri.cbrcore.Attribute;
@@ -99,9 +101,13 @@ public class CuatroPreguntas {
 	
 		// Buy or Quit
 		if(BuyOrQuit.buyOrQuit(choice))
-		    //TODO llamar a la pantalla de un solo juego
+		{
 			System.out.println("Finish - User Buys: "+choice.getSelectedCase());
-		
+			Game selectedGame = (Game)choice.getSelectedCase().getDescription();
+			System.out.println("Juego escogido: " + selectedGame.getName());
+			pantallaProducto producto = new pantallaProducto(selectedGame);
+			producto.setVisible(true);
+		}
 		else
 		    System.out.println("Finish - User Quits");
 
