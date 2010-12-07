@@ -2,8 +2,6 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -63,8 +61,12 @@ public class MenuPrincipal extends JFrame {
 		{
 			e.printStackTrace();
 		}
+		//Se establece el numero de usuarios registrados por si es necesario asignar un id nuevo
+		Sistema.setNumOfUsers(Sistema.getCBusuariosInstance().getCases().size());
+		System.out.println("Num of users: "+ Sistema.getNumOfusers());
+		
 		//Se carga la tabla de los juegos mejor valorados
-		//MejoresJuegos.init();
+		MejoresJuegos.init();
 		
 		initComponents();
 		
@@ -77,7 +79,7 @@ public class MenuPrincipal extends JFrame {
 			}
 		}
 		
-		//presentarMejoresJuegos();
+		presentarMejoresJuegos();
 	}
 
 	private void initComponents() {
@@ -219,7 +221,8 @@ public class MenuPrincipal extends JFrame {
 	}
 	
 	private void botonSeleccionarActionPerformed(ActionEvent event){
-		Integer str = Integer.parseInt((String)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0));
+		Integer str = (Integer)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0);
+		//LLamar a la pantalla del producto
 	}
 	
 	private void botonEvaluarJuegosActionPerformed(ActionEvent event) {
@@ -233,11 +236,11 @@ public class MenuPrincipal extends JFrame {
 	
 	private void presentarMejoresJuegos()
 	{
-		ArrayList<CBRCase> mejoresJuegos = MejoresJuegos.getMejoresJuegos(6);
+		ArrayList<CBRCase> mejoresJuegos = MejoresJuegos.getMejoresJuegos(2);
 		for(int i = 0; i < mejoresJuegos.size(); i++)
 		{
 			CBRCase caso = mejoresJuegos.get(i);
-			this.jTable0.getModel().setValueAt(((Game)caso.getDescription()).getIdAttribute(), i, 0);
+			this.jTable0.getModel().setValueAt(((Game)caso.getDescription()).getGameId(), i, 0);
 			this.jTable0.getModel().setValueAt(((Game)caso.getDescription()).getName(), i, 1);
 		}
 	}

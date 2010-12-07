@@ -2,6 +2,7 @@ package preguntasOpcionales;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
@@ -20,6 +21,7 @@ import org.dyno.visual.swing.layouts.Leading;
 import org.dyno.visual.swing.layouts.Trailing;
 
 import sistema.Perfil;
+import sistema.Sistema;
 import sistema.Perfil.FormaDeSer;
 import sistema.Perfil.Gender;
 
@@ -283,17 +285,17 @@ public class InterfazRefinarPerfil extends JFrame {
 	}
 
 	private void jButton0ActionActionPerformed(ActionEvent event) {
-		Perfil perfilRefinado = new Perfil();
-		perfilRefinado.setAge(Integer.parseInt(this.jTextField0.getText()));
+		Perfil perfilRefinado = Sistema.getPerfil();
+		int edad = Integer.parseInt(this.jTextField0.getText());
+		perfilRefinado.setAge(edad);
 		
 		if(jRadioButton0.isSelected())
 			perfilRefinado.setGender(Gender.Male);
 		else if(jRadioButton1.isSelected())
 			perfilRefinado.setGender(Gender.Female);
-		String formaDeSer = (String)jComboBox0.getSelectedItem();
-		if(!formaDeSer.equals("escoge uno"))
+		if(jComboBox0.getSelectedIndex() != 0)
 		{
-			perfilRefinado.setFormaDeSer((FormaDeSer)jComboBox0.getSelectedItem());
+			perfilRefinado.setFormaDeSer(leerCaracter((String)jComboBox0.getSelectedItem()));
 		}
 		if(jRadioButton2.isSelected())
 			perfilRefinado.setTieneBuenaMemoria(true);
@@ -304,14 +306,51 @@ public class InterfazRefinarPerfil extends JFrame {
 		else if(jRadioButton5.isSelected())
 			perfilRefinado.setTienePaciencia(false);
 		
-		//TODO Enviar el perfil a guardar
-		//Actualizar casos en memoria + ficheros
+		//Actualizar casos en ficheros
+		ArrayList listaDatos = new ArrayList();
+		listaDatos.add(perfilRefinado.getAge());
+		listaDatos.add(perfilRefinado.getGender());
+		listaDatos.add(perfilRefinado.getFormaDeSer());
+		listaDatos.add(perfilRefinado.getTieneBuenaMemoria());
+		listaDatos.add(perfilRefinado.getTienePaciencia());
+		listaDatos.add(perfilRefinado.getListaValoraciones());
+		Integer id = perfilRefinado.getId();
+		if(id == null)
+			listaDatos.add(Sistema.getNumOfusers());//Coge el id segun el numero de usuarios registrados
+		else
+			listaDatos.add(id);
+		perfilRefinado.RegistrarDatosDelUsuario(listaDatos);
+		
+		//TODO actualizar tb la memoria (aunque puede que ya este actualizada)
 		
 		this.dispose();
 	}
 
 	private void jButton1ActionActionPerformed(ActionEvent event) {
 		this.dispose();
+	}
+	
+	private FormaDeSer leerCaracter(String caracterLeido)
+	{
+		if(caracterLeido.equals("agresivo"))
+			return FormaDeSer.agresivo;
+		if(caracterLeido.equals("solitario"))
+			return FormaDeSer.solitario;
+		if(caracterLeido.equals("friki"))
+			return FormaDeSer.friki;
+		if(caracterLeido.equals("cotilla"))
+			return FormaDeSer.cotilla;
+		if(caracterLeido.equals("extrovertido"))
+			return FormaDeSer.extrovetido;
+		if(caracterLeido.equals("clasico"))
+			return FormaDeSer.clasico;
+		if(caracterLeido.equals("trabajador"))
+			return FormaDeSer.trabajador;
+		if(caracterLeido.equals("calculador"))
+			return FormaDeSer.calculador;
+		if(caracterLeido.equals("aventurero"))
+			return FormaDeSer.aventurero;
+		return null;
 	}
 
 }

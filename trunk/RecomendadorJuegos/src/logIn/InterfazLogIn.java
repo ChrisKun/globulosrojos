@@ -134,6 +134,7 @@ public class InterfazLogIn extends JFrame {
 		if(perfil.Loguear(jTextField0.getText()))
 		{
 			JOptionPane.showMessageDialog(InterfazLogIn.this, "Logueado con exito", "Informacion",JOptionPane.INFORMATION_MESSAGE);
+			Sistema.setPerfil(perfil);
 			this.setVisible(false);
 			MenuPrincipal menu = new MenuPrincipal(jTextField0.getText());
 			menu.getContentPane().setPreferredSize(menu.getSize());
@@ -157,10 +158,11 @@ public class InterfazLogIn extends JFrame {
 	}
 
 	private void jButton2ActionActionPerformed(ActionEvent event) {
+		Sistema.resetNumOfUsers();//Pone el contador de usuarios a cero
 		ProfileConnector pc = new ProfileConnector();
 		Collection<CBRCase> casos = pc.retrieveAllCases();
 		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"Informacion" +
-								"¿Estas seguro que quieres guardar los perfiles?") == 0)
+								"ï¿½Estas seguro que quieres guardar los perfiles?") == 0)
 		{
 			if(Perfil.UserCBRcasesToFile(casos))
 				JOptionPane.showMessageDialog(InterfazLogIn.this, "exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
