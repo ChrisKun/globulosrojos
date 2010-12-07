@@ -74,20 +74,21 @@ public class ProfileConnector2 implements Connector {
 				// Lista de valoraciones
 				HashMap<Integer, Float> listaValoraciones = new HashMap<Integer, Float>();
 				String [] valoraciones = splittedLine[6].replace("{", "").replace("}", "").split(", ");
-				for (String parValoracion : valoraciones) {
-					String [] parValoracionSplitted = parValoracion.split("=");
-					Integer gameID = Integer.parseInt(parValoracionSplitted[0]);
-					Float valoracion = Float.parseFloat(parValoracionSplitted[1]);
-					listaValoraciones.put(gameID, valoracion);	
-					// Registramos cada valoración para hacer la media en los mejores juegos
-					MejoresJuegos.addValoracion(gameID, valoracion);
-				}
+				if(!valoraciones[0].equals(""))
+					for (String parValoracion : valoraciones) {
+						String [] parValoracionSplitted = parValoracion.split("=");
+						Integer gameID = Integer.parseInt(parValoracionSplitted[0]);
+						Float valoracion = Float.parseFloat(parValoracionSplitted[1]);
+						listaValoraciones.put(gameID, valoracion);	
+						// Registramos cada valoraciï¿½n para hacer la media en los mejores juegos
+						MejoresJuegos.addValoracion(gameID, valoracion);
+					}
 				perfil.setListaValoraciones(listaValoraciones);
 				
 				// ID del usuario
 				perfil.setId(Integer.parseInt(splittedLine[7]));
 
-				// Añadimos el nuevo perfil al CBR
+				// Aï¿½adimos el nuevo perfil al CBR
 				CBRCase _case = new CBRCase();
 				_case.setDescription(perfil);
 				cases.add(_case);

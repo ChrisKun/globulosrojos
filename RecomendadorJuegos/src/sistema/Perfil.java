@@ -1,6 +1,8 @@
 package sistema;
 
 import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -108,12 +110,28 @@ public class Perfil implements CaseComponent
 //			writer.close();
 //			fileW.close();
 			file.close();
+			Sistema.sumUserToCounter();//Suma 1 al numero de usuarios registrados
+			actualizarNumUsersConfigFile();
 			return true;
 		} catch (IOException e) {
 			System.out.println("Error, no se pudo cargar el fichero: "+fichero);
 			return false;
 		} 
 	}
+	private void actualizarNumUsersConfigFile() {
+		
+		File file = new File("src/sistema/ficheros/numUsers");
+		try {
+			
+			FileWriter writer = new FileWriter(file);
+			writer.write(Sistema.getNumOfusers());
+			writer.close();
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public boolean isNickRegistered (String nick)
 	{
 		try {
@@ -139,7 +157,7 @@ public class Perfil implements CaseComponent
 		return false;
 	}
 	/**
-	 * Rregistra las 4 preguntas iniciales que se le hacen al usuario
+	 * Registra las preguntas opcionales que se le hacen al usuario
 	 * @param datos
 	 * @return
 	 */
@@ -192,7 +210,7 @@ public class Perfil implements CaseComponent
 	}
 	//FORMATO DEL FICHERO
 	/*
-	 * NICK, EDAD, SEXO, FORAM DE SER, TIENE MEMORIA, PACIENCIA, LISTA DE VALORACIONES, ID
+	 * NICK, EDAD, SEXO, FORMA DE SER, TIENE MEMORIA, PACIENCIA, LISTA DE VALORACIONES, ID
 	 */
 	public static boolean UserCBRcasesToFile(Collection<CBRCase> userCases)
 	{

@@ -8,6 +8,7 @@ public class Sistema {
 	private static CBRCaseBase CBusuarios;
 	private static CBRCaseBase CBjuegos;
 	private static Perfil perfil;
+	private static int numOfUsers = -1;//Para saber que esta sin inicializar
 	
 	//private static Perfil usuarioActual;
 	
@@ -25,4 +26,24 @@ public class Sistema {
 	
 	public static Perfil getPerfil() {return perfil;}
 	public static void setPerfil(Perfil p) {perfil = p;}
+	
+	public static int getNumOfusers()
+	{
+		return numOfUsers;
+	}
+	
+	public static void sumUserToCounter()
+	{
+		numOfUsers += 1;
+	}
+	
+	public static void setNumOfUsers(int num)
+	{
+		numOfUsers = num;
+	}
+	
+	public static void resetNumOfUsers()
+	{
+		numOfUsers = 0;
+	}
 }
