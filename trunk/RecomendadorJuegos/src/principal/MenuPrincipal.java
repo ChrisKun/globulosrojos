@@ -30,6 +30,7 @@ import sistema.ProfileConnector2;
 import sistema.Sistema;
 import cuatroPreguntas.CuatroPreguntas;
 import evaluar.EvaluatorFrame;
+import grupo.CrearGrupo;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class MenuPrincipal extends JFrame {
@@ -42,6 +43,7 @@ public class MenuPrincipal extends JFrame {
 	private JScrollPane jScrollPane0;
 	private JButton botonSeleccionar;
 	private JButton botonEvaluarJuegos;
+	private JButton botonCrearGrupo;
 	private static final String PREFERRED_LOOK_AND_FEEL = "jabotonEvaluarJuegosg.plaf.metal.MetalLookAndFeel";
 	public MenuPrincipal(String nick) {
 		//Se crean las bases de casos de usuarios y de juegos
@@ -87,6 +89,7 @@ public class MenuPrincipal extends JFrame {
 		add(getBotonCuatroPreguntas(), new Constraints(new Leading(12, 12, 12), new Leading(12, 12, 12)));
 		add(getBotonRefinarPerfil(), new Constraints(new Trailing(12, 142, 162, 162), new Leading(12, 12, 12)));
 		add(getBotonRecomendarPerfil(), new Constraints(new Trailing(160, 162, 162), new Leading(12, 12, 12)));
+		add(getBotonCrearGrupo(), new Constraints(new Trailing(12, 142, 260, 600), new Leading(90, 12, 12)));
 		add(getJScrollPane0(), new Constraints(new Leading(186, 200, 10, 10), new Leading(70, 150, 10, 10)));
 		add(getBotonSeleccionar(), new Constraints(new Leading(407, 10, 10), new Leading(153, 10, 10)));
 		add(getJButton0(), new Constraints(new Trailing(12, 142, 220, 398), new Leading(50, 12, 12)));
@@ -121,6 +124,20 @@ public class MenuPrincipal extends JFrame {
 		return botonSeleccionar;
 	}
 
+	
+	private JButton getBotonCrearGrupo() {
+		if (botonCrearGrupo == null) {
+			botonCrearGrupo = new JButton();
+			botonCrearGrupo.setText("Crear grupo");
+			botonCrearGrupo.addActionListener(new ActionListener() {
+	
+				public void actionPerformed(ActionEvent event) {
+					botonCrearGrupoActionPerformed(event);
+				}
+			});
+		}
+		return botonCrearGrupo;
+	}
 	private JScrollPane getJScrollPane0() {
 		if (jScrollPane0 == null) {
 			jScrollPane0 = new JScrollPane();
@@ -232,6 +249,15 @@ public class MenuPrincipal extends JFrame {
 		ef.pack();
 		ef.setLocationRelativeTo(null);
 		ef.setVisible(true);
+	} 
+	
+	private void botonCrearGrupoActionPerformed(ActionEvent event) {
+		CrearGrupo cg = new CrearGrupo();
+		cg.setDefaultCloseOperation(EvaluatorFrame.DISPOSE_ON_CLOSE);
+		cg.getContentPane().setPreferredSize(cg.getSize());
+		cg.pack();
+		cg.setLocationRelativeTo(null);
+		cg.setVisible(true);
 	} 
 	
 	private void presentarMejoresJuegos()

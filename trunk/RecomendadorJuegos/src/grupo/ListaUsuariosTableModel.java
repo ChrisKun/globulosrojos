@@ -8,6 +8,7 @@ import javax.swing.table.TableModel;
 
 import jcolibri.cbrcore.CBRCase;
 
+import sistema.Perfil;
 import sistema.Sistema;
 
 public class ListaUsuariosTableModel implements TableModel{
@@ -17,11 +18,24 @@ public class ListaUsuariosTableModel implements TableModel{
 	private String[] columnas = {"Checked", "Nombre"};
 	
 	private ArrayList<Boolean> seleccionados;
-	private CBRCase usuarios[];
+	private ArrayList<CBRCase> usuarios;
 	
 	public ListaUsuariosTableModel() {
 		seleccionados = new ArrayList<Boolean>();
-		usuarios = (CBRCase[])Sistema.getCBusuariosInstance().getCases().toArray();
+		usuarios = new ArrayList<CBRCase>();
+		Collection <CBRCase> c = Sistema.getCBusuariosInstance().getCases();
+		for (CBRCase cbrCase : c) {
+			seleccionados.add(false);
+			usuarios.add(cbrCase);
+		}
+	}
+	
+	public ArrayList<CBRCase> getUsuarios() {
+		return usuarios;
+	}
+	
+	public ArrayList<Boolean> getSeleccionados() {
+		return seleccionados;
 	}
 	
 	@Override
@@ -46,7 +60,7 @@ public class ListaUsuariosTableModel implements TableModel{
 
 	@Override
 	public int getRowCount() {
-		return usuarios.length;
+		return usuarios.size();
 	}
 
 	@Override
@@ -54,7 +68,7 @@ public class ListaUsuariosTableModel implements TableModel{
 		// TODO Queda transformar usuarios[rowIndex] al nick del usuario
 		if (columnIndex == SELECCION)
 			return seleccionados.get(rowIndex);
-		else return usuarios[rowIndex];
+		else return ((Perfil)usuarios.get(rowIndex).getDescription()).getNickName();
 	}
 
 	@Override

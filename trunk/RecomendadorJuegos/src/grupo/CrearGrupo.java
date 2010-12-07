@@ -1,5 +1,9 @@
 package grupo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,9 +14,15 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
+import jcolibri.cbrcore.CBRCase;
+
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
+
+import preguntasOpcionales.RefinarPerfil;
+import sistema.Perfil;
+import cuatroPreguntas.CuatroPreguntas;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class CrearGrupo extends JFrame {
@@ -44,6 +54,11 @@ public class CrearGrupo extends JFrame {
 		if (jBCrear == null) {
 			jBCrear = new JButton();
 			jBCrear.setText("Crear");
+			jBCrear.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					botonCrearActionPerformed(event);
+				}
+			});
 		}
 		return jBCrear;
 	}
@@ -52,6 +67,11 @@ public class CrearGrupo extends JFrame {
 		if (jBSalir == null) {
 			jBSalir = new JButton();
 			jBSalir.setText("Salir");
+			jBSalir.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					botonSalirActionPerformed(event);
+				}
+			});
 		}
 		return jBSalir;
 	}
@@ -67,14 +87,7 @@ public class CrearGrupo extends JFrame {
 	private JTable getJTable0() {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
-			jTable0.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "Checked", "Nombre", }) {
-				private static final long serialVersionUID = 1L;
-				Class<?>[] types = new Class<?>[] { Object.class, Object.class, };
-	
-				public Class<?> getColumnClass(int columnIndex) {
-					return types[columnIndex];
-				}
-			});
+			jTable0.setModel(new ListaUsuariosTableModel());
 		}
 		return jTable0;
 	}
@@ -104,6 +117,25 @@ public class CrearGrupo extends JFrame {
 			System.err.println("Cannot install " + PREFERRED_LOOK_AND_FEEL
 					+ " on this platform:" + e.getMessage());
 		}
+	}
+	
+	private void botonCrearActionPerformed(ActionEvent event) {
+		ArrayList<Boolean> seleccionados = ((ListaUsuariosTableModel)(this.jTable0.getModel())).getSeleccionados();
+		ArrayList<CBRCase> usuarios = ((ListaUsuariosTableModel)(this.jTable0.getModel())).getUsuarios();
+		ArrayList<Perfil> usuariosSeleccionados = new ArrayList<Perfil>();
+		for (int i = 0; i < usuarios.size(); i++) {
+			if (seleccionados.get(i)) {
+				usuariosSeleccionados.add((Perfil)usuarios.get(i).getDescription());
+				System.out.println((Perfil)usuarios.get(i).getDescription());
+			}
+		}
+		
+		Perfil perfilGrupo = new Perfil(jTFNombre.getText(), usuariosSeleccionados);
+		System.out.println(perfilGrupo);
+	}
+
+	private void botonSalirActionPerformed(ActionEvent event) {
+		this.dispose();
 	}
 
 	/**

@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
+import java.util.Map.Entry;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
 
@@ -43,6 +44,55 @@ public class Perfil implements CaseComponent
 	private Boolean tienePaciencia;
     
 	String fichero = "perfil.dat";
+	
+	public Perfil() {}
+	
+	// Método para crear el perfil de un grupo de usuarios
+	public Perfil(String nick, ArrayList<Perfil> listaUsuarios) {
+		this.nickName = nick;
+		//this.id = ?;
+		int age = 0;
+		int contMale = 0;
+		int contBuenaMemoria = 0;
+		int contPaciencia = 0;
+		int [] fds = new int[9]; int formaDeSer = 0;
+		for (int i = 0; i < fds.length; i++)
+			fds[i] = 0;
+		// < GameID - <NumValoraciones - ValoracionMedia>>
+		HashMap<Integer, Pair<Integer, Float>> tablaVal = new HashMap<Integer, Pair<Integer, Float>>();
+		for (Perfil perfil : listaUsuarios) {
+			age += perfil.age;
+			if (perfil.gender == Gender.Male) contMale++;
+			// Lista de valoraciones
+			for(Entry<Integer, Float> e : perfil.listaValoraciones.entrySet()) {
+				if (!tablaVal.containsKey(e.getKey()))
+					tablaVal.put(e.getKey(), new Pair<Integer, Float>(1, e.getValue()));
+				else {
+					Pair <Integer, Float> par = tablaVal.get(e.getKey());
+					par.elem1 = ((par.elem1 * par.elem0) +
+							e.getValue()) / (par.elem0 + 1); 
+					par.elem0 = par.elem0 + 1;
+					tablaVal.remove(e.getKey());
+					tablaVal.put(e.getKey(), par);
+				}
+			}
+			if (perfil.tieneBuenaMemoria) contBuenaMemoria++;
+			if (perfil.tienePaciencia) contPaciencia++;
+			fds[perfil.formaDeSer.ordinal()]++;
+			if (fds[perfil.formaDeSer.ordinal()] > fds[formaDeSer])
+				formaDeSer = perfil.formaDeSer.ordinal();
+		}
+		
+		this.age = age / listaUsuarios.size();
+		this.gender = (contMale > listaUsuarios.size() / 2) ? Gender.Male : Gender.Female;
+		this.listaValoraciones = new HashMap<Integer, Float>();
+		for (Entry<Integer, Pair<Integer, Float>> e : tablaVal.entrySet()) {
+			this.listaValoraciones.put(e.getKey(), e.getValue().elem1);
+		}
+		this.tieneBuenaMemoria = (contBuenaMemoria > listaUsuarios.size() / 2) ? true : false;
+		this.tienePaciencia = (contPaciencia > listaUsuarios.size() / 2) ? true : false;
+		this.formaDeSer = FormaDeSer.values()[formaDeSer];
+	}
 	
     public String toString() {
         return nickName + "-" + id + "-" + age + "-" + gender+ "-" + tieneBuenaMemoria+ "-" + formaDeSer+ "-" + tienePaciencia+ "-" + listaValoraciones;
@@ -319,4 +369,20 @@ public class Perfil implements CaseComponent
 		}
 	}
 	
+}
+
+class Pair<T1, T2> {
+	public T1 elem0;
+	public T2 elem1;
+	
+	public Pair() {}
+	
+	public Pair(T1 elem0, T2 elem1) {
+		this.elem0 = elem0;
+		this.elem1 = elem1;
+	}
+	
+	public String toString() {
+		return elem0.toString() + " - " + elem1.toString();
+	}
 }
