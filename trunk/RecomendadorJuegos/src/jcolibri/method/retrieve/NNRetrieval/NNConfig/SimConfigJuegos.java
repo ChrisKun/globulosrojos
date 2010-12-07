@@ -1,19 +1,16 @@
 package jcolibri.method.retrieve.NNRetrieval.NNConfig;
 
 import sistema.Game;
-import sistema.Perfil;
 import jcolibri.cbrcore.Attribute;
 import jcolibri.method.retrieve.NNRetrieval.similarity.local.AverageList;
-import jcolibri.method.retrieve.NNRetrieval.similarity.local.AverageMap;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
 import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
-import jcolibri.method.retrieve.NNretrieval.similarity.local.Equal;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
 
 public class SimConfigJuegos extends NNConfig{
 
 	public SimConfigJuegos() {
-		// Función de similitud global
+		// Funcion de similitud global
 		this.setDescriptionSimFunction(new Average());
 		// Funciones de similitud locales
 		this.addMapping(new Attribute("minNumPlayers", Game.class), new Interval(2.0));
