@@ -15,6 +15,7 @@ import jcolibri.extensions.recommendation.casesDisplay.DisplayCasesTableMethod;
 import jcolibri.extensions.recommendation.casesDisplay.UserChoice;
 import jcolibri.extensions.recommendation.conditionals.BuyOrQuit;
 import jcolibri.method.retrieve.RetrievalResult;
+import jcolibri.method.retrieve.NNRetrieval.NNConfig.SimConfigJuegos;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
@@ -28,35 +29,30 @@ public class CuatroPreguntas {
 	CBRQuery query;
 	
 	public void configure() throws ExecutionException
-    {
-//		// Create a data base connector
-//		_connector = new GameConnector();
-//		// Create a Lineal case base for in-memory organization
-//		_caseBase = new LinealCaseBase();
-		
-		simConfig = new NNConfig();
+    {	
+		simConfig = new SimConfigJuegos();
 		// Set the average() global similarity function for the description of the case
-		simConfig.setDescriptionSimFunction(new Average());
-		simConfig.addMapping(new Attribute("gameId", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("url", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("name", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("codeName", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("image", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("artists", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("designers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("publishers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("yearPublished", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("minNumPlayers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("maxNumPlayers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("minBestNumPlayers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("maxBestNumPlayers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("minRecNumPlayers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("maxRecNumPlayers", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("playingTime", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("age", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("subdomains", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("categories", Game.class), new Equal());
-		simConfig.addMapping(new Attribute("mechanics", Game.class), new Equal());
+//		simConfig.setDescriptionSimFunction(new Average());
+//		simConfig.addMapping(new Attribute("gameId", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("url", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("name", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("codeName", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("image", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("artists", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("designers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("publishers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("yearPublished", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("minNumPlayers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("maxNumPlayers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("minBestNumPlayers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("maxBestNumPlayers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("minRecNumPlayers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("maxRecNumPlayers", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("playingTime", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("age", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("subdomains", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("categories", Game.class), new Equal());
+//		simConfig.addMapping(new Attribute("mechanics", Game.class), new Equal());
 		
 		hiddenAtts = new ArrayList<Attribute>();
 		hiddenAtts.add(new Attribute("gameId", Game.class));
@@ -83,8 +79,6 @@ public class CuatroPreguntas {
 	
 	public CBRCaseBase preCycle() throws ExecutionException
     {
-		// Load cases from connector into the case base
-//		_caseBase.init(_connector);
 		// Print the cases
 		Collection<CBRCase> cases = Sistema.getCBjuegosInstance().getCases();
 		for(CBRCase c: cases)
@@ -94,22 +88,19 @@ public class CuatroPreguntas {
 	
 	public void cycle(CBRQuery query) throws ExecutionException
     {
-		// Obtain query
-		//ObtainQueryWithFormMethod.obtainQueryWithInitialValues(query,hiddenAtts,null);
-		
 		// Execute KNN
 		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(Sistema.getCBjuegosInstance().getCases(), query, simConfig);
 		
 		// Select cases
 		Collection<CBRCase> retrievedCases = SelectCases.selectTopK(eval, 5);
 		
-		//TODO no se si hay que usar esta tabla o es otra
 		// Display cases
-		UserChoice choice = DisplayCasesTableMethod.displayCasesInTableEditQuery(retrievedCases);//DisplayCasesMethod.displayCases(retrievedCases);
+		UserChoice choice = DisplayCasesTableMethod.displayCasesInTableBasic(retrievedCases);//DisplayCasesMethod.displayCases(retrievedCases);
 	
 		// Buy or Quit
 		if(BuyOrQuit.buyOrQuit(choice))
-		    System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+		    //TODO llamar a la pantalla de un solo juego
+			System.out.println("Finish - User Buys: "+choice.getSelectedCase());
 		
 		else
 		    System.out.println("Finish - User Quits");
@@ -118,7 +109,6 @@ public class CuatroPreguntas {
 	
 	public void postCycle() throws ExecutionException
     {
-		//_connector.close();
     }
 	
 	public void execute()
