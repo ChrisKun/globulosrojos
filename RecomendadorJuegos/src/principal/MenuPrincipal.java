@@ -21,6 +21,8 @@ import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
 import org.dyno.visual.swing.layouts.Trailing;
 
+import compra.pantallaProducto;
+
 import preguntasOpcionales.RefinarPerfil;
 import recomendadorPorPerfil.RecomendadorPorPerfil;
 import sistema.Game;
@@ -45,6 +47,8 @@ public class MenuPrincipal extends JFrame {
 	private JButton botonEvaluarJuegos;
 	private JButton botonCrearGrupo;
 	private static final String PREFERRED_LOOK_AND_FEEL = "jabotonEvaluarJuegosg.plaf.metal.MetalLookAndFeel";
+	private ArrayList<CBRCase> mejoresJuegos;
+	
 	public MenuPrincipal(String nick) {
 		//Se crean las bases de casos de usuarios y de juegos
 		CBRCaseBase gameCaseBase = sistema.Sistema.getCBjuegosInstance();
@@ -238,8 +242,16 @@ public class MenuPrincipal extends JFrame {
 	}
 	
 	private void botonSeleccionarActionPerformed(ActionEvent event){
-		Integer str = (Integer)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0);
-		//LLamar a la pantalla del producto
+		Integer number = (Integer)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0);
+		for(CBRCase caso: mejoresJuegos)
+		{
+			if(((Game)caso.getDescription()).getgameId() == number)
+			{
+				pantallaProducto pantProducto = new pantallaProducto((Game)caso.getDescription());
+				pantProducto.setVisible(true);
+				return;
+			}
+		}
 	}
 	
 	private void botonEvaluarJuegosActionPerformed(ActionEvent event) {
@@ -262,7 +274,7 @@ public class MenuPrincipal extends JFrame {
 	
 	private void presentarMejoresJuegos()
 	{
-		ArrayList<CBRCase> mejoresJuegos = MejoresJuegos.getMejoresJuegos(2);
+		mejoresJuegos = MejoresJuegos.getMejoresJuegos(6);
 		for(int i = 0; i < mejoresJuegos.size(); i++)
 		{
 			CBRCase caso = mejoresJuegos.get(i);

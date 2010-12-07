@@ -34,7 +34,7 @@ public class pantallaProducto extends JFrame {
 	private JLabel jLabel13;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	Game juego;
-
+	
 	public pantallaProducto(Game juego) {
 		this.juego = juego;
 		initComponents();
@@ -142,7 +142,7 @@ public class pantallaProducto extends JFrame {
 	private JLabel getJLabel6() {
 		if (jLabel6 == null) {
 			jLabel6 = new JLabel();
-			jLabel6.setText("Mejor número de jugadores:");
+			jLabel6.setText("Mejor nï¿½mero de jugadores:");
 		}
 		return jLabel6;
 	}
@@ -166,7 +166,7 @@ public class pantallaProducto extends JFrame {
 	private JLabel getJLabel3() {
 		if (jLabel3 == null) {
 			jLabel3 = new JLabel();
-			jLabel3.setText("Edad mínima:");
+			jLabel3.setText("Edad mï¿½nima:");
 		}
 		return jLabel3;
 	}
