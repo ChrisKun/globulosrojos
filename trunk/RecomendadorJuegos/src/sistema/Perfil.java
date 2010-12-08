@@ -200,7 +200,7 @@ public class Perfil implements CaseComponent
 			String linea = reader.readLine();
 			while(linea != null)
 			{
-				String[] infoNick = linea.split(",");
+				String[] infoNick = linea.split(";");
 				if(infoNick[0].equals(nick))
 					return true;
 				else
@@ -238,12 +238,12 @@ public class Perfil implements CaseComponent
 			while(linea != null)
 			//while(!linea.equals(""))
 			{
-				String[] infoNick = linea.split("-");
+				String[] infoNick = linea.split(";");
 				if(infoNick[0].equals(nickName))
 				{
 					while(datos.size()> i)
 					{
-						file.writeBytes("-");
+						file.writeBytes(";");
 						file.writeBytes(datos.get(i).toString());
 						i++;
 						//fileW = new FileWriter(fichero);
@@ -285,13 +285,13 @@ public class Perfil implements CaseComponent
 				Perfil usuario = (Perfil)caso.getDescription();
 				//Ahora tienes en usuario la info del perfil. Haz lo que tengas que hacer
 				finalFile = finalFile + usuario.getNickName()
-				+ "," + usuario.getAge()
-				 + "," + usuario.getGender()
-				  + "," + usuario.getFormaDeSer()
-				   + "," + usuario.getTieneBuenaMemoria()
-				    + "," + usuario.getTienePaciencia()
-				     + "," + usuario.getListaValoraciones()
-				      + "," + usuario.getId()
+				+ ";" + usuario.getAge()
+				 + ";" + usuario.getGender()
+				  + ";" + usuario.getFormaDeSer()
+				   + ";" + usuario.getTieneBuenaMemoria()
+				    + ";" + usuario.getTienePaciencia()
+				     + ";" + usuario.getListaValoraciones()
+				      + ";" + usuario.getId()
 				      + "\n";
 //				usuario.Registrar(usuario.getNickName());
 //				usuario.Loguear(usuario.getNickName());
