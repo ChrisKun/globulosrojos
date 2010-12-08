@@ -267,26 +267,38 @@ public class Perfil implements CaseComponent
 		try {
 			RandomAccessFile file = new RandomAccessFile("perfil.dat", "rw");
 			Iterator it = userCases.iterator();
+			String finalFile = "";
 			while(it.hasNext())
 			{
 				CBRCase caso = (CBRCase)it.next();
 				Perfil usuario = (Perfil)caso.getDescription();
 				//Ahora tienes en usuario la info del perfil. Haz lo que tengas que hacer
-				usuario.Registrar(usuario.getNickName());
-				usuario.Loguear(usuario.getNickName());
-				ArrayList lista = new ArrayList();
-				lista.add(usuario.getAge());
-				lista.add(usuario.getGender());
-				lista.add(usuario.getFormaDeSer());
-				lista.add(usuario.getTieneBuenaMemoria());
-				lista.add(usuario.getTienePaciencia());
-				lista.add(usuario.getListaValoraciones());
-				lista.add(usuario.getId());
-				usuario.RegistrarDatosDelUsuario(lista);
+				finalFile = finalFile + usuario.getNickName()
+				+ "," + usuario.getAge()
+				 + "," + usuario.getGender()
+				  + "," + usuario.getFormaDeSer()
+				   + "," + usuario.getTieneBuenaMemoria()
+				    + "," + usuario.getTienePaciencia()
+				     + "," + usuario.getListaValoraciones()
+				      + "," + usuario.getId()
+				      + "\n";
+//				usuario.Registrar(usuario.getNickName());
+//				usuario.Loguear(usuario.getNickName());
+//				ArrayList lista = new ArrayList();
+//				lista.add(usuario.getAge());
+//				lista.add(usuario.getGender());
+//				lista.add(usuario.getFormaDeSer());
+//				lista.add(usuario.getTieneBuenaMemoria());
+//				lista.add(usuario.getTienePaciencia());
+//				lista.add(usuario.getListaValoraciones());
+//				lista.add(usuario.getId());
+//				usuario.RegistrarDatosDelUsuario(lista);
 			}
+			file.writeBytes(finalFile);
 			return true;
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			System.out.println("Error al cargar el archivo");
+			System.out.print(e);
 			return false;
 		}
 		

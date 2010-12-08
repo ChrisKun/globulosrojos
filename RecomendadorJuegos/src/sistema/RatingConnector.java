@@ -41,9 +41,6 @@ public class RatingConnector {
 				{
 					f = Float.valueOf(infoRatings[2].trim()).floatValue();
 					i = Integer.parseInt(infoRatings[1].trim());
-					System.out.println("\n"+infoRatings[0]);
-					System.out.println(" - ");
-					System.out.println(infoRatings[1]);
 					lista.put(i, f);
 					
 					
@@ -56,9 +53,6 @@ public class RatingConnector {
 						}
 						f = Float.valueOf(infoRatings[2].trim()).floatValue();
 						i = Integer.parseInt(infoRatings[1].trim());
-						System.out.println("\n"+infoRatings[0]);
-						System.out.println(" - ");
-						System.out.println(infoRatings[1]);
 						lista.put(i, f);
 						infoRatings = line.split(";");
 					}
@@ -80,9 +74,6 @@ public class RatingConnector {
 				perfil.setNickName(nombre);
 				f = Float.valueOf(infoRatings[2].trim()).floatValue();
 				i = Integer.parseInt(infoRatings[1].trim());
-				System.out.println("\n"+infoRatings[0]);
-				System.out.println(" - ");
-				System.out.println(infoRatings[1]);
 				lista.put(i, f);
 				
 			}
