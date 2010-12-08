@@ -20,9 +20,11 @@ import criticar.InterfazCriticar;
 public class RecomendadorPorPerfil {
 
 	private Perfil perfil;
+	private boolean puedeComprar;
 	
 	public RecomendadorPorPerfil(Perfil perfil) {
 		this.perfil = perfil;
+		puedeComprar = perfil.equals(Sistema.getPerfil());
 	}
 	
 	public void recomendar() {
@@ -72,7 +74,7 @@ public class RecomendadorPorPerfil {
 				juegosRecomendados.add(c);
 		}
 		
-		InterfazCriticar ic = new InterfazCriticar(juegosRecomendados);
+		InterfazCriticar ic = new InterfazCriticar(juegosRecomendados, puedeComprar);
 		ic.show();
 	}
 }
