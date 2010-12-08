@@ -17,12 +17,15 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Map.Entry;
 
+import javax.swing.JOptionPane;
+
 import com.sun.org.apache.bcel.internal.generic.Select;
 
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.cbrcore.CaseComponent;
+import logIn.InterfazLogIn;
 
 
 
@@ -147,26 +150,33 @@ public class Perfil implements CaseComponent
 	}
 	public boolean Registrar(String nick)
 	{
-		RandomAccessFile file;
-		try {
-			file = new RandomAccessFile(fichero, "rw");
-//			while(file.readLine()!=null)
-//			{}
-			file.seek(file.length());
-			file.writeBytes("\n");
-			file.writeBytes(nick);
-//			writer.println();
-//			writer.print(nick);
-//			writer.close();
-//			fileW.close();
-			file.close();
-			Sistema.sumUserToCounter();//Suma 1 al numero de usuarios registrados
-			actualizarNumUsersConfigFile();
-			return true;
-		} catch (IOException e) {
-			System.out.println("Error, no se pudo cargar el fichero: "+fichero);
+		if(!isNickRegistered(nick))
+		{
+			RandomAccessFile file;
+			try {
+				file = new RandomAccessFile(fichero, "rw");
+	//			while(file.readLine()!=null)
+	//			{}
+				file.seek(file.length());
+				file.writeBytes("\n");
+				file.writeBytes(nick);
+	//			writer.println();
+	//			writer.print(nick);
+	//			writer.close();
+	//			fileW.close();
+				file.close();
+				Sistema.sumUserToCounter();//Suma 1 al numero de usuarios registrados
+				actualizarNumUsersConfigFile();
+				return true;
+			} catch (IOException e) {
+				System.out.println("Error, no se pudo cargar el fichero: "+fichero);
+				return false;
+			} 
+		}
+		else
+		{
 			return false;
-		} 
+		}
 	}
 	private void actualizarNumUsersConfigFile() {
 		
@@ -190,7 +200,7 @@ public class Perfil implements CaseComponent
 			String linea = reader.readLine();
 			while(linea != null)
 			{
-				String[] infoNick = linea.split("-");
+				String[] infoNick = linea.split(",");
 				if(infoNick[0].equals(nick))
 					return true;
 				else
@@ -295,6 +305,7 @@ public class Perfil implements CaseComponent
 //				lista.add(usuario.getId());
 //				usuario.RegistrarDatosDelUsuario(lista);
 			}
+			finalFile = finalFile.substring(0, finalFile.length()-1);
 			file.writeBytes(finalFile);
 			return true;
 		} catch (Exception e) {
