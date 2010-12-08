@@ -2,6 +2,8 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -15,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.exception.InitializingException;
+import logIn.InterfazLogIn;
 
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
@@ -90,6 +93,12 @@ public class MenuPrincipal extends JFrame {
 
 	private void initComponents() {
 		setLayout(new GroupLayout());
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing (WindowEvent e)
+			{
+				InterfazLogIn.frame.setVisible(true);
+			}
+		});
 		add(getBotonCuatroPreguntas(), new Constraints(new Leading(12, 12, 12), new Leading(12, 12, 12)));
 		add(getBotonRefinarPerfil(), new Constraints(new Trailing(12, 142, 162, 162), new Leading(12, 12, 12)));
 		add(getBotonRecomendarPerfil(), new Constraints(new Trailing(160, 162, 162), new Leading(12, 12, 12)));
