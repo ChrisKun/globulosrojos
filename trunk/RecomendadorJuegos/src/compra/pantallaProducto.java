@@ -50,8 +50,10 @@ public class pantallaProducto extends JFrame {
 	private JButton botonSeleccionar;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	private Game juego;
+	private boolean puedeComprar;
 	
 	public pantallaProducto(Game juego) {
+		this.puedeComprar = true;
 		this.juego = juego;
 		initComponents();
 //		paint2();
@@ -106,7 +108,8 @@ public class pantallaProducto extends JFrame {
 		add(getJScrollPane0(), new Constraints(new Leading(230, 200, 10, 10), new Leading(230, 100, 10, 10)));
 		add(getBotonSeleccionar(), new Constraints(new Leading(230, 12, 12), new Leading(340, 12, 12)));
 		
-		
+		if (!puedeComprar)
+			this.botonComprar.setEnabled(false);
 		/*
 		 * 8=  nombre, url, edadmin, tiempo jueg, jug rec, jug best
 		 * 0 = imagen
@@ -295,6 +298,8 @@ public class pantallaProducto extends JFrame {
 			if(((Game)caso.getDescription()).getgameId() == number)
 			{
 				pantallaProducto pantProducto = new pantallaProducto((Game)caso.getDescription());
+				if (!puedeComprar)
+					pantProducto.disableComprar();
 				pantProducto.setVisible(true);
 				this.dispose();
 				return;
@@ -312,6 +317,11 @@ public class pantallaProducto extends JFrame {
 			System.err.println("Cannot install " + PREFERRED_LOOK_AND_FEEL
 					+ " on this platform:" + e.getMessage());
 		}
+	}
+	
+	public void disableComprar() {
+		this.puedeComprar = false;
+		this.botonComprar.setEnabled(false);
 	}
 
 	/**
