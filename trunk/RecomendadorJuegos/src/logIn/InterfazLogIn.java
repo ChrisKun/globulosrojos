@@ -162,7 +162,7 @@ public class InterfazLogIn extends JFrame {
 		ProfileConnector pc = new ProfileConnector();
 		Collection<CBRCase> casos = pc.retrieveAllCases();
 		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"" +
-								"¿Estas seguro que quieres guardar los perfiles?") == 0)
+								"¿Estas seguro que quieres generar y guardar pefiles nuevos?") == 0)
 		{
 			if(Perfil.UserCBRcasesToFile(casos))
 				JOptionPane.showMessageDialog(InterfazLogIn.this, "exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
