@@ -266,6 +266,7 @@ public class Perfil implements CaseComponent
 	{
 		try {
 			RandomAccessFile file = new RandomAccessFile("perfil.dat", "rw");
+			file.seek(0);
 			Iterator it = userCases.iterator();
 			String finalFile = "";
 			while(it.hasNext())
