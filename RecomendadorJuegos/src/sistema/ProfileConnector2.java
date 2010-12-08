@@ -47,7 +47,7 @@ public class ProfileConnector2 implements Connector {
 			while ((line = reader.readLine()) != null) {
 				Perfil perfil = new Perfil();
 				
-				String [] splittedLine = line.split("-");
+				String [] splittedLine = line.split(";");
 				// Si el usuario no se ha cargado correctamente leemos otra linea
 				if (splittedLine.length < 8) continue;
 				// Nickname

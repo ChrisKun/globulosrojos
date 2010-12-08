@@ -9,13 +9,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
+
+import jcolibri.cbrcore.CBRCase;
 
 import sistema.*;
 
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
+
+import principal.MejoresJuegos;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class pantallaProducto extends JFrame {
@@ -36,9 +43,13 @@ public class pantallaProducto extends JFrame {
 	private JLabel jLabel11;
 	private JLabel jLabel12;
 	private JLabel jLabel13;
+	private JLabel jLabel14;
 	private JButton botonComprar;
+	private JTable jTable0;
+	private JScrollPane jScrollPane0;
+	private JButton botonSeleccionar;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
-	Game juego;
+	private Game juego;
 	
 	public pantallaProducto(Game juego) {
 		this.juego = juego;
@@ -90,7 +101,10 @@ public class pantallaProducto extends JFrame {
 		add(getJLabel11(), new Constraints(new Leading(230, 12, 12), new Leading(94, 12, 12)));
 		add(getJLabel12(), new Constraints(new Leading(230, 12, 12), new Leading(116, 12, 12)));
 		add(getJLabel13(), new Constraints(new Leading(230, 12, 12), new Leading(138, 12, 12)));
-		add(getBotonComprar(), new Constraints(new Leading(230, 12, 12), new Leading(160, 12, 12)));
+		add(getBotonComprar(), new Constraints(new Leading(230, 12, 12), new Leading(175, 12, 12)));
+		add(getJLabel14(), new Constraints(new Leading(230, 12, 12), new Leading(210, 12, 12)));
+		add(getJScrollPane0(), new Constraints(new Leading(230, 200, 10, 10), new Leading(230, 100, 10, 10)));
+		add(getBotonSeleccionar(), new Constraints(new Leading(230, 12, 12), new Leading(340, 12, 12)));
 		
 		
 		/*
@@ -98,6 +112,22 @@ public class pantallaProducto extends JFrame {
 		 * 0 = imagen
 		 */
 		setSize(600, 400);
+	}
+	
+	private JScrollPane getJScrollPane0() {
+		if (jScrollPane0 == null) {
+			jScrollPane0 = new JScrollPane();
+			jScrollPane0.setViewportView(getJTable0());
+		}
+		return jScrollPane0;
+	}
+
+	private JTable getJTable0() {
+		if (jTable0 == null) {
+			jTable0 = new JTable();
+			jTable0.setModel(new JuegosParecidosTableModel(juego));
+		}
+		return jTable0;
 	}
 
 	private JButton getBotonComprar() {
@@ -112,6 +142,28 @@ public class pantallaProducto extends JFrame {
 			});
 		}
 		return botonComprar;
+	}
+	
+	private JButton getBotonSeleccionar() {
+		if (botonSeleccionar == null) {
+			botonSeleccionar = new JButton();
+			botonSeleccionar.setText("Seleccionar juego");
+			botonSeleccionar.addActionListener(new ActionListener() {
+	
+				public void actionPerformed(ActionEvent event) {
+					botonSeleccionarJuegoActionPerformed(event);
+				}
+			});
+		}
+		return botonSeleccionar;
+	}
+	
+	private JLabel getJLabel14() {
+		if (jLabel14 == null) {
+			jLabel14 = new JLabel();
+			jLabel14.setText("A los usuarios que les gustó este juego también les gustó:");
+		}
+		return jLabel14;
 	}
 	
 	private JLabel getJLabel13() {
@@ -236,6 +288,20 @@ public class pantallaProducto extends JFrame {
 		this.dispose();
 	} 
 	
+	private void botonSeleccionarJuegoActionPerformed(ActionEvent event) {
+		Integer number = (Integer)jTable0.getModel().getValueAt(jTable0.getSelectedRow(), 0);
+		for(CBRCase caso : Sistema.getCBjuegosInstance().getCases())
+		{
+			if(((Game)caso.getDescription()).getgameId() == number)
+			{
+				pantallaProducto pantProducto = new pantallaProducto((Game)caso.getDescription());
+				pantProducto.setVisible(true);
+				this.dispose();
+				return;
+			}
+		}
+	} 
+
 	private static void installLnF() {
 		try {
 			String lnfClassname = PREFERRED_LOOK_AND_FEEL;

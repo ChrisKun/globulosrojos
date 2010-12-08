@@ -46,7 +46,6 @@ public class JuegosAdquiridosTableModel implements TableModel{
 
 	@Override
 	public Object getValueAt(int arg0, int arg1) {
-		// TODO Auto-generated method stub
 		Iterator<Entry<String, Float>> iterator = juegos.entrySet().iterator();
 		for (int i=0; i < arg0 && iterator.hasNext(); i++)
 			iterator.next();
