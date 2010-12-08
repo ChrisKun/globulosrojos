@@ -106,6 +106,10 @@ public class CuatroPreguntas {
 			Game selectedGame = (Game)choice.getSelectedCase().getDescription();
 			System.out.println("Juego escogido: " + selectedGame.getName());
 			pantallaProducto producto = new pantallaProducto(selectedGame);
+			producto.setTitle("Producto elegido");
+			producto.getContentPane().setPreferredSize(producto.getSize());
+			producto.setLocationRelativeTo(null);
+			producto.pack();
 			producto.setVisible(true);
 		}
 		else

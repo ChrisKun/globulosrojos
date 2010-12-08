@@ -31,6 +31,8 @@ public class InterfazLogIn extends JFrame {
 	private JButton jButton1;
 	private JTextField jTextField0;
 	private JButton jButton2;
+	public static InterfazLogIn frame;
+	public MenuPrincipal menu;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public InterfazLogIn() {
 		initComponents();
@@ -118,7 +120,7 @@ public class InterfazLogIn extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				InterfazLogIn frame = new InterfazLogIn();
+				frame = new InterfazLogIn();
 				frame.setDefaultCloseOperation(InterfazLogIn.EXIT_ON_CLOSE);
 				frame.setTitle("InterfazLogIn");
 				frame.getContentPane().setPreferredSize(frame.getSize());
@@ -136,7 +138,9 @@ public class InterfazLogIn extends JFrame {
 			JOptionPane.showMessageDialog(InterfazLogIn.this, "Logueado con exito", "Informacion",JOptionPane.INFORMATION_MESSAGE);
 			Sistema.setPerfil(perfil);
 			this.setVisible(false);
-			MenuPrincipal menu = new MenuPrincipal(jTextField0.getText());
+			menu = new MenuPrincipal(jTextField0.getText());
+			menu.setTitle("Menu Principal");
+			//menu.setDefaultCloseOperation(MenuPrincipal.DISPOSE_ON_CLOSE);
 			menu.getContentPane().setPreferredSize(menu.getSize());
 			menu.pack();
 			menu.setLocationRelativeTo(null);
