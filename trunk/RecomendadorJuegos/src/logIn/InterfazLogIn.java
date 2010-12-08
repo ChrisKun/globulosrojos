@@ -161,8 +161,8 @@ public class InterfazLogIn extends JFrame {
 		Sistema.resetNumOfUsers();//Pone el contador de usuarios a cero
 		ProfileConnector pc = new ProfileConnector();
 		Collection<CBRCase> casos = pc.retrieveAllCases();
-		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"Informacion" +
-								"ï¿½Estas seguro que quieres guardar los perfiles?") == 0)
+		if(JOptionPane.showConfirmDialog(InterfazLogIn.this,"" +
+								"¿Estas seguro que quieres guardar los perfiles?") == 0)
 		{
 			if(Perfil.UserCBRcasesToFile(casos))
 				JOptionPane.showMessageDialog(InterfazLogIn.this, "exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
