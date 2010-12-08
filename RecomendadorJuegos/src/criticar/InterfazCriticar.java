@@ -73,11 +73,11 @@ public class InterfazCriticar {
     public void sequence3(UserChoice choice, Collection<CBRCase> retrievedCases)  throws ExecutionException
     {
 		if(BuyOrQuit.buyOrQuit(choice)) {
-			if (puedeComprar) {
-				pantallaProducto pantProducto = new pantallaProducto((Game)choice.getSelectedCase().getDescription());
-				pantProducto.setVisible(true);
-				System.out.println("Finish - User Buys: "+choice.getSelectedCase());
-			}
+			pantallaProducto pantProducto = new pantallaProducto((Game)choice.getSelectedCase().getDescription());
+			if (!puedeComprar) 
+				pantProducto.disableComprar();
+			pantProducto.setVisible(true);
+			System.out.println("Finish - User Buys: "+choice.getSelectedCase());
 		}		
 		else
 		    System.out.println("Finish - User Quits");
