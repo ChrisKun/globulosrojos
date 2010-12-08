@@ -43,7 +43,7 @@ public class EvaluatorFrame extends JFrame {
 		setTitle("Juegos adquiridos");
 		setLayout(new GroupLayout());
 		add(getJScrollPane0(), new Constraints(new Bilateral(12, 12, 22), new Leading(12, 275, 10, 10)));
-		add(getjButton0(), new Constraints(new Bilateral(141, 141, 60), new Leading(299, 12, 12)));
+		add(getJButton0(), new Constraints(new Bilateral(141, 141, 60), new Leading(299, 12, 12)));
 		setSize(342, 343);
 	}
 
@@ -57,14 +57,6 @@ public class EvaluatorFrame extends JFrame {
 					jButton0MouseMouseClicked(event);
 				}
 			});
-		}
-		return jButton0;
-	}
-
-	private JButton getjButton0() {
-		if (jButton0 == null) {
-			jButton0 = new JButton();
-			jButton0.setText("Salir");
 		}
 		return jButton0;
 	}

@@ -6,13 +6,10 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import javax.swing.table.DefaultTableModel;
 
 import jcolibri.cbrcore.CBRCase;
 
@@ -20,10 +17,8 @@ import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
 
-import preguntasOpcionales.RefinarPerfil;
 import recomendadorPorPerfil.RecomendadorPorPerfil;
 import sistema.Perfil;
-import cuatroPreguntas.CuatroPreguntas;
 
 //VS4E -- DO NOT REMOVE THIS LINE!
 public class CrearGrupo extends JFrame {

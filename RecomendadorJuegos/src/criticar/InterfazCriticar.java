@@ -32,9 +32,11 @@ public class InterfazCriticar {
 
 	private Collection<CBRCase> selectedCases;
 	private Collection<CritiqueOption> criticas;
+	private boolean puedeComprar;
 	
-	public InterfazCriticar(Collection<CBRCase> selectedCases) {
+	public InterfazCriticar(Collection<CBRCase> selectedCases, boolean puedeComprar) {
 		this.selectedCases = selectedCases;
+		this.puedeComprar = puedeComprar;
 		criticas = new ArrayList<CritiqueOption>();
 		criticas.add(new CritiqueOption("Más jugadores recomendados",new Attribute("minNumPlayers", Game.class),new QueryLess()));
 		criticas.add(new CritiqueOption("Más edad recomendada",new Attribute("age", Game.class),new QueryLess()));
@@ -71,9 +73,11 @@ public class InterfazCriticar {
     public void sequence3(UserChoice choice, Collection<CBRCase> retrievedCases)  throws ExecutionException
     {
 		if(BuyOrQuit.buyOrQuit(choice)) {
-			pantallaProducto pantProducto = new pantallaProducto((Game)choice.getSelectedCase().getDescription());
-			pantProducto.setVisible(true);
-			System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+			if (puedeComprar) {
+				pantallaProducto pantProducto = new pantallaProducto((Game)choice.getSelectedCase().getDescription());
+				pantProducto.setVisible(true);
+				System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+			}
 		}		
 		else
 		    System.out.println("Finish - User Quits");

@@ -140,7 +140,9 @@ public class InterfazLogIn extends JFrame {
 			menu.getContentPane().setPreferredSize(menu.getSize());
 			menu.pack();
 			menu.setLocationRelativeTo(null);
+			menu.setDefaultCloseOperation(EXIT_ON_CLOSE);
 			menu.setVisible(true);
+			this.dispose();
 		}
 		else
 		{

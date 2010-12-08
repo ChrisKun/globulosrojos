@@ -4,13 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import sistema.*;
@@ -92,7 +90,7 @@ public class pantallaProducto extends JFrame {
 		add(getJLabel11(), new Constraints(new Leading(230, 12, 12), new Leading(94, 12, 12)));
 		add(getJLabel12(), new Constraints(new Leading(230, 12, 12), new Leading(116, 12, 12)));
 		add(getJLabel13(), new Constraints(new Leading(230, 12, 12), new Leading(138, 12, 12)));
-		add(getBotonComprar(), new Constraints(new Leading(190, 12, 12), new Leading(160, 12, 12)));
+		add(getBotonComprar(), new Constraints(new Leading(230, 12, 12), new Leading(160, 12, 12)));
 		
 		
 		/*
