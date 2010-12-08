@@ -1,5 +1,7 @@
 package compra;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -60,28 +62,38 @@ public class pantallaProducto extends JFrame {
 		getJLabel11().setText(juego.getPlayingTime().toString());
 		getJLabel12().setText(juego.getMaxRecNumPlayers().toString());
 		getJLabel13().setText(juego.getMaxBestNumPlayers().toString());
+		getJLabel9().addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e){
+			try{
+				
+				Runtime.getRuntime().exec(juego.getUrl());
+			}catch (Exception e1) {
+				// TODO: handle exception
+			}
+			}
+		});
 		setLayout(new GroupLayout());
-		add(getJLabel0(), new Constraints(new Leading(342, 10, 10), new Leading(43, 10, 10)));
-		add(getJLabel1(), new Constraints(new Leading(25, 10, 10), new Leading(28, 10, 10)));
+		add(getJLabel0(), new Constraints(new Leading(25, 12, 12), new Leading(180, 12, 12)));
+		add(getJLabel1(), new Constraints(new Leading(25, 12, 12), new Leading(28, 12, 12)));
 		add(getJLabel2(), new Constraints(new Leading(25, 12, 12), new Leading(50, 12, 12)));
 		add(getJLabel3(), new Constraints(new Leading(25, 12, 12), new Leading(72, 12, 12)));
 		add(getJLabel4(), new Constraints(new Leading(25, 12, 12), new Leading(94, 12, 12)));
 		add(getJLabel5(), new Constraints(new Leading(25, 12, 12), new Leading(116, 12, 12)));
 		add(getJLabel6(), new Constraints(new Leading(25, 12, 12), new Leading(138, 12, 12)));
 		add(getJLabel7(), new Constraints(new Leading(25, 12, 12), new Leading(160, 12, 12)));
-		add(getJLabel8(), new Constraints(new Leading(190, 12, 12), new Leading(28, 12, 12)));
-		add(getJLabel9(), new Constraints(new Leading(190, 12, 12), new Leading(50, 12, 12)));
-		add(getJLabel10(), new Constraints(new Leading(190, 12, 12), new Leading(72, 12, 12)));
-		add(getJLabel11(), new Constraints(new Leading(190, 12, 12), new Leading(94, 12, 12)));
-		add(getJLabel12(), new Constraints(new Leading(190, 12, 12), new Leading(116, 12, 12)));
-		add(getJLabel13(), new Constraints(new Leading(190, 12, 12), new Leading(138, 12, 12)));
+		add(getJLabel8(), new Constraints(new Leading(230, 12, 12), new Leading(28, 12, 12)));
+		add(getJLabel9(), new Constraints(new Leading(230, 12, 12), new Leading(50, 12, 12)));
+		add(getJLabel10(), new Constraints(new Leading(230, 12, 12), new Leading(72, 12, 12)));
+		add(getJLabel11(), new Constraints(new Leading(230, 12, 12), new Leading(94, 12, 12)));
+		add(getJLabel12(), new Constraints(new Leading(230, 12, 12), new Leading(116, 12, 12)));
+		add(getJLabel13(), new Constraints(new Leading(230, 12, 12), new Leading(138, 12, 12)));
 		
 		
 		/*
 		 * 8=  nombre, url, edadmin, tiempo jueg, jug rec, jug best
 		 * 0 = imagen
 		 */
-		setSize(452, 340);
+		setSize(600, 400);
 	}
 
 	private JLabel getJLabel13() {
@@ -142,7 +154,7 @@ public class pantallaProducto extends JFrame {
 	private JLabel getJLabel6() {
 		if (jLabel6 == null) {
 			jLabel6 = new JLabel();
-			jLabel6.setText("Mejor n�mero de jugadores:");
+			jLabel6.setText("Mejor numero de jugadores:");
 		}
 		return jLabel6;
 	}
@@ -166,7 +178,7 @@ public class pantallaProducto extends JFrame {
 	private JLabel getJLabel3() {
 		if (jLabel3 == null) {
 			jLabel3 = new JLabel();
-			jLabel3.setText("Edad m�nima:");
+			jLabel3.setText("Edad minima:");
 		}
 		return jLabel3;
 	}
