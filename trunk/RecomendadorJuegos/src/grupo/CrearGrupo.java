@@ -21,6 +21,7 @@ import org.dyno.visual.swing.layouts.GroupLayout;
 import org.dyno.visual.swing.layouts.Leading;
 
 import preguntasOpcionales.RefinarPerfil;
+import recomendadorPorPerfil.RecomendadorPorPerfil;
 import sistema.Perfil;
 import cuatroPreguntas.CuatroPreguntas;
 
@@ -28,8 +29,6 @@ import cuatroPreguntas.CuatroPreguntas;
 public class CrearGrupo extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JLabel jLNombre;
-	private JTextField jTFNombre;
 	private JTable jTable0;
 	private JScrollPane jScrollPane0;
 	private JButton jBSalir;
@@ -42,9 +41,7 @@ public class CrearGrupo extends JFrame {
 	private void initComponents() {
 		setTitle("Crear nuevo grupo");
 		setLayout(new GroupLayout());
-		add(getJLNombre(), new Constraints(new Leading(26, 10, 10), new Leading(22, 10, 10)));
-		add(getJTFNombre(), new Constraints(new Leading(171, 130, 10, 10), new Leading(20, 12, 12)));
-		add(getJScrollPane0(), new Constraints(new Leading(25, 276, 12, 12), new Leading(55, 150, 10, 10)));
+		add(getJScrollPane0(), new Constraints(new Leading(25, 276, 12, 12), new Leading(20, 180, 10, 10)));
 		add(getJBCrear(), new Constraints(new Leading(56, 94, 10, 10), new Leading(217, 12, 12)));
 		add(getJBSalir(), new Constraints(new Leading(168, 94, 12, 12), new Leading(217, 12, 12)));
 		setSize(320, 255);
@@ -53,7 +50,7 @@ public class CrearGrupo extends JFrame {
 	private JButton getJBCrear() {
 		if (jBCrear == null) {
 			jBCrear = new JButton();
-			jBCrear.setText("Crear");
+			jBCrear.setText("Recomendar");
 			jBCrear.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent event) {
 					botonCrearActionPerformed(event);
@@ -92,21 +89,6 @@ public class CrearGrupo extends JFrame {
 		return jTable0;
 	}
 
-	private JTextField getJTFNombre() {
-		if (jTFNombre == null) {
-			jTFNombre = new JTextField();
-		}
-		return jTFNombre;
-	}
-
-	private JLabel getJLNombre() {
-		if (jLNombre == null) {
-			jLNombre = new JLabel();
-			jLNombre.setText("Nombre del grupo:");
-		}
-		return jLNombre;
-	}
-
 	private static void installLnF() {
 		try {
 			String lnfClassname = PREFERRED_LOOK_AND_FEEL;
@@ -130,8 +112,11 @@ public class CrearGrupo extends JFrame {
 			}
 		}
 		
-		Perfil perfilGrupo = new Perfil(jTFNombre.getText(), usuariosSeleccionados);
+		Perfil perfilGrupo = new Perfil(usuariosSeleccionados);
 		System.out.println(perfilGrupo);
+		RecomendadorPorPerfil rpp = new RecomendadorPorPerfil(perfilGrupo);
+		rpp.recomendar();
+		this.dispose();
 	}
 
 	private void botonSalirActionPerformed(ActionEvent event) {

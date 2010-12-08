@@ -85,7 +85,7 @@ public class MenuPrincipal extends JFrame {
 			}
 		}
 		
-		presentarMejoresJuegos();
+		//presentarMejoresJuegos();
 	}
 
 	private void initComponents() {
@@ -153,10 +153,10 @@ public class MenuPrincipal extends JFrame {
 	private JTable getJTable0() {
 		if (jTable0 == null) {
 			jTable0 = new JTable();
-			ArrayList<CBRCase> listaMJ = MejoresJuegos.getMejoresJuegos(10);
-			Object[][] tablaMJ = new Object[listaMJ.size()][2];
-			for (int i=0; i < listaMJ.size(); i++) {
-				Game juego = (Game)listaMJ.get(i).getDescription();
+			mejoresJuegos = MejoresJuegos.getMejoresJuegos(10);
+			Object[][] tablaMJ = new Object[mejoresJuegos.size()][2];
+			for (int i=0; i < mejoresJuegos.size(); i++) {
+				Game juego = (Game)mejoresJuegos.get(i).getDescription();
 				tablaMJ[i][0] = juego.getgameId();
 				tablaMJ[i][1] = juego.getName();
 			}
@@ -237,7 +237,7 @@ public class MenuPrincipal extends JFrame {
 	}
 
 	private void botonRecomendarPerfilActionActionPerformed(ActionEvent event) {
-		RecomendadorPorPerfil rpp = new RecomendadorPorPerfil();
+		RecomendadorPorPerfil rpp = new RecomendadorPorPerfil(Sistema.getPerfil());
 		rpp.recomendar();
 	}
 	

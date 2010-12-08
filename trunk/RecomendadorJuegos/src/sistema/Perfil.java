@@ -48,8 +48,8 @@ public class Perfil implements CaseComponent
 	public Perfil() {}
 	
 	// Método para crear el perfil de un grupo de usuarios
-	public Perfil(String nick, ArrayList<Perfil> listaUsuarios) {
-		this.nickName = nick;
+	public Perfil(ArrayList<Perfil> listaUsuarios) {
+		this.nickName = "";
 		//this.id = ?;
 		int age = 0;
 		int contMale = 0;
