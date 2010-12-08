@@ -19,13 +19,15 @@ import criticar.InterfazCriticar;
 
 public class RecomendadorPorPerfil {
 
-	public RecomendadorPorPerfil() {}
+	private Perfil perfil;
+	
+	public RecomendadorPorPerfil(Perfil perfil) {
+		this.perfil = perfil;
+	}
 	
 	public void recomendar() {
 		ArrayList<Integer> juegosRecomendadosID = new ArrayList<Integer>();
 		ArrayList<CBRCase> juegosRecomendados = new ArrayList<CBRCase>();
-		
-		Perfil perfil = Sistema.getPerfil();
 
 		// Creamos la query con la información del usuario logueado
 		CBRQuery query = new CBRQuery();

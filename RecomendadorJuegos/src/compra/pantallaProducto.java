@@ -1,11 +1,15 @@
 package compra;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -34,6 +38,7 @@ public class pantallaProducto extends JFrame {
 	private JLabel jLabel11;
 	private JLabel jLabel12;
 	private JLabel jLabel13;
+	private JButton botonComprar;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	Game juego;
 	
@@ -87,6 +92,7 @@ public class pantallaProducto extends JFrame {
 		add(getJLabel11(), new Constraints(new Leading(230, 12, 12), new Leading(94, 12, 12)));
 		add(getJLabel12(), new Constraints(new Leading(230, 12, 12), new Leading(116, 12, 12)));
 		add(getJLabel13(), new Constraints(new Leading(230, 12, 12), new Leading(138, 12, 12)));
+		add(getBotonComprar(), new Constraints(new Leading(190, 12, 12), new Leading(160, 12, 12)));
 		
 		
 		/*
@@ -96,6 +102,20 @@ public class pantallaProducto extends JFrame {
 		setSize(600, 400);
 	}
 
+	private JButton getBotonComprar() {
+		if (botonComprar == null) {
+			botonComprar = new JButton();
+			botonComprar.setText("Comprar Juego");
+			botonComprar.addActionListener(new ActionListener() {
+	
+				public void actionPerformed(ActionEvent event) {
+					botonComprarActionPerformed(event);
+				}
+			});
+		}
+		return botonComprar;
+	}
+	
 	private JLabel getJLabel13() {
 		if (jLabel13 == null) {
 			jLabel13 = new JLabel();
@@ -207,6 +227,17 @@ public class pantallaProducto extends JFrame {
 		return jLabel0;
 	}
 
+	private void botonComprarActionPerformed(ActionEvent event) {
+		Perfil perfil = Sistema.getPerfil();
+		if (!perfil.getListaValoraciones().containsKey(juego.getgameId())) {
+			perfil.getListaValoraciones().put(juego.getgameId(), (float)-1.0);
+			JOptionPane.showMessageDialog(pantallaProducto.this, "Juego comprado con éxito", "Informacion",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else
+			JOptionPane.showMessageDialog(pantallaProducto.this, "El juego ya estaba comprado", "Informacion",JOptionPane.INFORMATION_MESSAGE);
+		this.dispose();
+	} 
+	
 	private static void installLnF() {
 		try {
 			String lnfClassname = PREFERRED_LOOK_AND_FEEL;

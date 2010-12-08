@@ -3,6 +3,8 @@ package criticar;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import compra.pantallaProducto;
+
 import sistema.Game;
 import sistema.Sistema;
 
@@ -68,9 +70,11 @@ public class InterfazCriticar {
     
     public void sequence3(UserChoice choice, Collection<CBRCase> retrievedCases)  throws ExecutionException
     {
-		if(BuyOrQuit.buyOrQuit(choice))
-		    System.out.println("Finish - User Buys: "+choice.getSelectedCase());
-		
+		if(BuyOrQuit.buyOrQuit(choice)) {
+			pantallaProducto pantProducto = new pantallaProducto((Game)choice.getSelectedCase().getDescription());
+			pantProducto.setVisible(true);
+			System.out.println("Finish - User Buys: "+choice.getSelectedCase());
+		}		
 		else
 		    System.out.println("Finish - User Quits");
     }
