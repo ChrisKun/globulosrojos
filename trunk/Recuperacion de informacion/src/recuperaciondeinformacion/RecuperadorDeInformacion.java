@@ -8,6 +8,7 @@ package recuperaciondeinformacion;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import jcolibri.casebase.LinealCaseBase;
 import jcolibri.cbraplications.StandardCBRApplication;
 import jcolibri.cbrcore.Attribute;
@@ -17,7 +18,6 @@ import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.datatypes.Text;
 import jcolibri.exception.ExecutionException;
-import jcolibri.extensions.textual.IE.opennlp.IETextOpenNLP;
 import jcolibri.extensions.textual.lucene.LuceneIndexSpanish;
 import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
@@ -26,7 +26,6 @@ import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.textual.LuceneTextSimilaritySpanish;
 import jcolibri.method.retrieve.selection.SelectCases;
 import jcolibri.test.main.SwingProgressBar;
-import recuperaciondeinformacion.test.Test;
 import recuperaciondeinformacion.utils.NewsConnector;
 import recuperaciondeinformacion.utils.representation.NewsDescription;
 
@@ -104,7 +103,16 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 
 	for(RetrievalResult rr: res)
 	    System.out.println(rr);
-
+	
+	
+	// MENU
+	/*ArrayList<NewsDescription> news = new ArrayList<NewsDescription>();
+	for(RetrievalResult rr: res)
+		news.add((NewsDescription)(rr.get_case().getDescription()));
+	ListaNoticias menu = new ListaNoticias(news);
+	menu.pack();
+	menu.setVisible(true);*/
+	
 	NewsDescription qrd = (NewsDescription)query.getDescription();
 	CBRCase mostSimilar = res.iterator().next().get_case();
 	NewsDescription rrd = (NewsDescription)mostSimilar.getDescription();
