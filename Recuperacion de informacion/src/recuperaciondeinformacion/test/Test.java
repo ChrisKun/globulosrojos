@@ -28,7 +28,7 @@ public class Test {
 
 
             System.out.println(Evaluator.getEvaluationReport());
-            jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Recuperador de información - Evaluation", false);
+            jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Recuperador de informacion - Evaluation", false);
     }
 
     public static void main(String[] args) {

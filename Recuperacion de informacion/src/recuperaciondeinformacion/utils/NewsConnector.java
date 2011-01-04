@@ -11,6 +11,7 @@ import jcolibri.cbrcore.Connector;
 import jcolibri.datatypes.Text;
 import jcolibri.exception.InitializingException;
 
+import org.apache.lucene.queryParser.QueryParser;
 import org.htmlparser.Node;
 import org.htmlparser.Parser;
 import org.htmlparser.filters.HasAttributeFilter;
@@ -150,9 +151,9 @@ public class NewsConnector implements Connector {
 			}
 			
 			NewsDescription desc = new NewsDescription();
-			desc.setId(htmlFile.getName());
-			desc.setText(new Text(text));
-			desc.setTitle(new Text(title));
+			desc.setId(QueryParser.escape(htmlFile.getName()));
+			desc.setText(new Text(QueryParser.escape(text)));
+			desc.setTitle(new Text(QueryParser.escape(title)));
 			
 			NewsSolution sol = new NewsSolution();
 			sol.setId(htmlFile.getName());
