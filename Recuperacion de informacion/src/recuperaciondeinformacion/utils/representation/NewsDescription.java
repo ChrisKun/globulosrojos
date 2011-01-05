@@ -1,14 +1,43 @@
 package recuperaciondeinformacion.utils.representation;
 
+import java.util.Collection;
+
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CaseComponent;
 import jcolibri.datatypes.Text;
+import jcolibri.extensions.textual.IE.representation.IEText;
 
 public class NewsDescription implements CaseComponent {
 
+	public Collection<String> getNombres() {
+		return nombres;
+	}
+
+
+
+	public void setNombres(Collection<String> nombres) {
+		this.nombres = nombres;
+	}
+
+
+
+	public Collection<String> getVerbos() {
+		return verbos;
+	}
+
+
+
+	public void setVerbos(Collection<String> verbos) {
+		this.verbos = verbos;
+	}
+
+
+
 	String id;
-	Text text;
+	IEText text;
 	Text title;
+	Collection<String> nombres;
+	Collection<String> verbos;
 	
 	
 	public String getId() {
@@ -29,7 +58,7 @@ public class NewsDescription implements CaseComponent {
 
 
 
-	public void setText(Text text) {
+	public void setText(IEText text) {
 		this.text = text;
 	}
 
