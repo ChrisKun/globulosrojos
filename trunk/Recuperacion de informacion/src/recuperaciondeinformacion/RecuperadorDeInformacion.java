@@ -5,6 +5,7 @@
 
 package recuperaciondeinformacion;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +19,13 @@ import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.datatypes.Text;
 import jcolibri.exception.ExecutionException;
+import jcolibri.extensions.textual.IE.common.StopWordsDetectorSpanish;
+import jcolibri.extensions.textual.IE.common.TextStemmerSpanish;
+import jcolibri.extensions.textual.IE.opennlp.IETextOpenNLP;
+import jcolibri.extensions.textual.IE.opennlp.OpennlpPOStaggerSpanish;
+import jcolibri.extensions.textual.IE.opennlp.OpennlpSplitterSpanish;
+import jcolibri.extensions.textual.IE.representation.IEText;
+import jcolibri.extensions.textual.IE.representation.Token;
 import jcolibri.extensions.textual.lucene.LuceneIndexSpanish;
 import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
@@ -39,6 +47,8 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     CBRCaseBase _caseBase;
 
     LuceneIndexSpanish luceneIndex;
+    
+    public static final boolean isIE = true;
 
     /*
      * (non-Javadoc)
@@ -72,6 +82,21 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 
 	//Here we create the Lucene index
 	luceneIndex = jcolibri.method.precycle.LuceneIndexCreatorSpanish.createLuceneIndex(_caseBase);
+	
+	// Si la variable isIE está a true entonces aplicamos IE (parte 2)
+	if (isIE) {
+		Collection<CBRCase> cases = _caseBase.getCases();
+		// Divide el texto en párrafos, frases y palabras 
+		OpennlpSplitterSpanish.split(cases); 
+		// Borra las palabras vacías 
+		StopWordsDetectorSpanish.detectStopWords(cases); 
+		// Extrae las raíces de cada palabra 
+		TextStemmerSpanish.stem(cases); 
+		// Realiza el etiquetado morfológico 
+		OpennlpPOStaggerSpanish.tag(cases); 
+		// Extraer los nombres y verbos almacenándolos en los atributos "nombres" y "verbos" 
+		extractMainTokens(cases);
+	}
 
 	return _caseBase;
     }
@@ -83,6 +108,21 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
      */
     public void cycle(CBRQuery query) throws ExecutionException
     {
+    	
+    // Si la variable isIE está a true entonces aplicamos IE (parte 2)
+    if (isIE) {
+		// Divide el texto en párrafos, frases y palabras 
+		OpennlpSplitterSpanish.split(query); 
+		// Borra las palabras vacías 
+		StopWordsDetectorSpanish.detectStopWords(query); 
+		// Extrae las raíces de cada palabra 
+		TextStemmerSpanish.stem(query); 
+		// Realiza el etiquetado morfológico 
+		OpennlpPOStaggerSpanish.tag(query); 
+		// Extraer los nombres y verbos almacenándolos en los atributos "nombres" y "verbos" 
+		extractMainTokens(query);
+    }
+	
 	Collection<CBRCase> cases = _caseBase.getCases();
 
 	NNConfig nnConfig = new NNConfig();
@@ -131,6 +171,41 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	_connector.close();
 
     }
+    
+	public void extractMainTokens(Collection<CBRCase> cases)
+	{
+		for(CBRCase c: cases)
+			extractMainTokens((NewsDescription)c.getDescription());
+	}
+	
+	public void extractMainTokens(CBRQuery query)
+	{
+			extractMainTokens((NewsDescription)query.getDescription());
+	}
+	
+	public void extractMainTokens(NewsDescription desc)
+	{
+		ArrayList<String> nombres = new ArrayList<String>();
+		ArrayList<String> verbos = new ArrayList<String>();
+		
+		getMainTokens((IEText)desc.getText(),nombres, verbos);
+		desc.setNombres(nombres);
+		desc.setVerbos(verbos);
+	}
+
+	void getMainTokens(IEText text, Collection<String> names, Collection<String> verbs)
+	{
+		for(Token t: text.getAllTokens())
+		{
+			if(t.getPostag().startsWith("N"))
+				if(t.getStem()!=null)
+					names.add(t.getStem());
+			if(t.getPostag().startsWith("V"))
+				if(t.getStem()!=null)
+					verbs.add(t.getStem());
+		}
+	}
+
 
 
     public static void main(String[] args)
@@ -151,7 +226,7 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
                             NewsDescription queryDescription = new NewsDescription();
                             //TODO Tener la posibilidad de mandarlo como texto, tÃ­tulo, los 2, lo que sea
                             //TODO Cambiar el Text a IETextOpenNLP para extraer informaciÃ³n semÃ¡ntica
-                            queryDescription.setText(new Text(queryString));
+                            queryDescription.setText(new IETextOpenNLP(queryString));
                             queryDescription.setTitle(new Text(queryString));
                             query.setDescription(queryDescription);
 

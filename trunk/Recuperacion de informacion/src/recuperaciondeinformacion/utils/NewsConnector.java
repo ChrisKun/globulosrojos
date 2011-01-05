@@ -10,6 +10,7 @@ import jcolibri.cbrcore.CaseBaseFilter;
 import jcolibri.cbrcore.Connector;
 import jcolibri.datatypes.Text;
 import jcolibri.exception.InitializingException;
+import jcolibri.extensions.textual.IE.opennlp.IETextOpenNLP;
 
 import org.apache.lucene.queryParser.QueryParser;
 import org.htmlparser.Node;
@@ -152,7 +153,7 @@ public class NewsConnector implements Connector {
 			
 			NewsDescription desc = new NewsDescription();
 			desc.setId(QueryParser.escape(htmlFile.getName()));
-			desc.setText(new Text(QueryParser.escape(text)));
+			desc.setText(new IETextOpenNLP(QueryParser.escape(text)));
 			desc.setTitle(new Text(QueryParser.escape(title)));
 			
 			NewsSolution sol = new NewsSolution();
