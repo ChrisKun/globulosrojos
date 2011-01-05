@@ -192,7 +192,7 @@ public class OpennlpPOStaggerSpanish
     private static POSTaggerME getPOSTagger()
     {
 	if(spanishPOStagger == null)
-		spanishPOStagger = new PosTagger("jcolibri/extensions/textual/IE/opennlp/data/SpanishPOS.bin.gz");
+		spanishPOStagger = new PosTagger("src/jcolibri/extensions/textual/IE/opennlp/data/SpanishPOS.bin.gz");
 	return spanishPOStagger;
     }
 }
