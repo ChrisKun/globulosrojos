@@ -9,7 +9,7 @@
 	<classpathentry kind="lib" path="lib/junit.jar"/>
 	<classpathentry kind="lib" path="lib/sax2.jar"/>
 	<classpathentry kind="lib" path="lib/thumbelina.jar"/>
-	<classpathentry kind="lib" path="lib/opennlp-tools-1.4.2.jar"/>
 	<classpathentry kind="lib" path="lib/maxent-2.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/opennlp-tools-1.4.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

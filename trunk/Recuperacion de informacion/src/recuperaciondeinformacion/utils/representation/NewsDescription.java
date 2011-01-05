@@ -52,7 +52,7 @@ public class NewsDescription implements CaseComponent {
 
 
 
-	public Text getText() {
+	public IEText getText() {
 		return text;
 	}
 
