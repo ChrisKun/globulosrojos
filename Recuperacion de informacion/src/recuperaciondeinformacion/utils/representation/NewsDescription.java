@@ -8,31 +8,7 @@ import jcolibri.datatypes.Text;
 import jcolibri.extensions.textual.IE.representation.IEText;
 
 public class NewsDescription implements CaseComponent {
-
-	public Collection<String> getNombres() {
-		return nombres;
-	}
-
-
-
-	public void setNombres(Collection<String> nombres) {
-		this.nombres = nombres;
-	}
-
-
-
-	public Collection<String> getVerbos() {
-		return verbos;
-	}
-
-
-
-	public void setVerbos(Collection<String> verbos) {
-		this.verbos = verbos;
-	}
-
-
-
+	
 	String id;
 	IEText text;
 	Text title;
@@ -72,6 +48,28 @@ public class NewsDescription implements CaseComponent {
 
 	public void setTitle(Text title) {
 		this.title = title;
+	}
+	
+	public Collection<String> getNombres() {
+		return nombres;
+	}
+
+
+
+	public void setNombres(Collection<String> nombres) {
+		this.nombres = nombres;
+	}
+
+
+
+	public Collection<String> getVerbos() {
+		return verbos;
+	}
+
+
+
+	public void setVerbos(Collection<String> verbos) {
+		this.verbos = verbos;
 	}
 
 
