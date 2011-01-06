@@ -137,7 +137,7 @@ public class OpennlpSplitterSpanish
     private static TokenizerME getTokeniser() throws Exception
     {
 	if(tokeniser == null)
-	    tokeniser = new Tokenizer("src/jcolibri/extensions/textual/IE/opennlp/data/SpanishTok.bin.gz");
+	    tokeniser = new Tokenizer("jcolibri/extensions/textual/IE/opennlp/data/SpanishTok.bin.gz");
 	return tokeniser;
     }
     
@@ -146,7 +146,7 @@ public class OpennlpSplitterSpanish
     {
 		if(spanishSentenceDetector == null)
 			try {
-				spanishSentenceDetector = new SentenceDetector("src/jcolibri/extensions/textual/IE/opennlp/data/SpanishSent.bin.gz");
+				spanishSentenceDetector = new SentenceDetector("jcolibri/extensions/textual/IE/opennlp/data/SpanishSent.bin.gz");
 			} catch (IOException e) {
 				
 			}
