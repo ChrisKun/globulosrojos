@@ -1,5 +1,6 @@
 package recuperaciondeinformacion.utils.representation;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import jcolibri.cbrcore.Attribute;
@@ -15,7 +16,20 @@ public class NewsDescription implements CaseComponent {
 	Collection<String> nombres;
 	Collection<String> verbos;
 	
+	// Características
+	ArrayList<String> Politicos = new ArrayList<String>();
 	
+	
+	public ArrayList<String> getPoliticos() {
+		return Politicos;
+	}
+
+	public void setPoliticos(ArrayList<String> politicos) {
+		Politicos = politicos;
+	}
+
+
+
 	public String getId() {
 		return id;
 	}
@@ -76,7 +90,8 @@ public class NewsDescription implements CaseComponent {
 
 	@Override
 	public String toString() {
-		return "NewsDescription [\n\tid=" + id + "\n\ttitle=" + title + "\n\ttext="	+ text + "\n]";
+		return "NewsDescription [\n\tid=" + id + "\n\ttitle=" + title + "\n\ttext="	+ text +
+								"\n\tnombres=" + nombres + "\n\tverbos=" + verbos + "\n\tpoliticos=" + Politicos + "]";
 	}
 
 

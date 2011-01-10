@@ -19,6 +19,8 @@ import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.datatypes.Text;
 import jcolibri.exception.ExecutionException;
+import jcolibri.extensions.textual.IE.common.BasicInformationExtractor;
+import jcolibri.extensions.textual.IE.common.FeaturesExtractor;
 import jcolibri.extensions.textual.IE.common.StopWordsDetectorSpanish;
 import jcolibri.extensions.textual.IE.common.TextStemmerSpanish;
 import jcolibri.extensions.textual.IE.opennlp.IETextOpenNLP;
@@ -31,6 +33,7 @@ import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
+import jcolibri.method.retrieve.NNretrieval.similarity.local.SimList;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.textual.LuceneTextSimilaritySpanish;
 import jcolibri.method.retrieve.selection.SelectCases;
 import jcolibri.test.main.SwingProgressBar;
@@ -96,6 +99,12 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		OpennlpPOStaggerSpanish.tag(cases); 
 		// Extraer los nombres y verbos almacenándolos en los atributos "nombres" y "verbos" 
 		extractMainTokens(cases);
+		// Cargar las características
+		FeaturesExtractor.loadRules("featuresRules.txt");
+		// Extraemos las características de los casos
+		FeaturesExtractor.extractFeatures(cases);
+		//Perform IE copying extracted features or phrases into other attributes of the case
+		BasicInformationExtractor.extractInformation(cases);
 	}
 
 	return _caseBase;
@@ -121,6 +130,10 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		OpennlpPOStaggerSpanish.tag(query); 
 		// Extraer los nombres y verbos almacenándolos en los atributos "nombres" y "verbos" 
 		extractMainTokens(query);
+		// Extraemos las características de la query
+		FeaturesExtractor.extractFeatures(query);
+		// Extraemos características del texto
+		BasicInformationExtractor.extractInformation(query);
     }
 	
 	Collection<CBRCase> cases = _caseBase.getCases();
@@ -134,6 +147,13 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
     textualAttribute = new Attribute("text", NewsDescription.class);
     nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+    textualAttribute = new Attribute("nombres", NewsDescription.class);
+    nnConfig.addMapping(textualAttribute, new SimList());
+    textualAttribute = new Attribute("verbos", NewsDescription.class);
+    nnConfig.addMapping(textualAttribute, new SimList());
+    textualAttribute = new Attribute("Politicos", NewsDescription.class);
+    nnConfig.addMapping(textualAttribute, new SimList());
+
 
 
 	System.out.println("RESULT: ");
