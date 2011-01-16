@@ -8,7 +8,7 @@
 #  inside the regular expression. The feature is indicated by counting the opening 
 #  parentheses from left to right. 
 #  In the expression ((A)(B(C))), for example, there are four such groups: 
-#    1    ((A)(B(C)))
+#    1ï¿½ï¿½ï¿½ï¿½((A)(B(C)))
 #    2    (A)
 #    3    (B(C))4(C)
 #    Group zero always stands for the entire expression
@@ -18,18 +18,18 @@
 # Characters
 # x                   The character x
 # \\                  The backslash character
-# \0n                 The character with octal value 0n (0 <= n <= 7)
-# \0nn                The character with octal value 0nn (0 <= n <= 7)
-# \0mnn               The character with octal value 0mnn (0 <= m <= 3, 0 <= n <= 7)
-# \xhh                The character with hexadecimal value 0xhh
-# \uhhhh              The character with hexadecimal value 0xhhhh
+# \0n                 The character with octal value 0n (0ï¿½<=ï¿½nï¿½<=ï¿½7)
+# \0nn                The character with octal value 0nn (0ï¿½<=ï¿½nï¿½<=ï¿½7)
+# \0mnn               The character with octal value 0mnn (0ï¿½<=ï¿½mï¿½<=ï¿½3, 0ï¿½<=ï¿½nï¿½<=ï¿½7)
+# \xhh                The character with hexadecimalï¿½valueï¿½0xhh
+# \uhhhh              The character with hexadecimalï¿½valueï¿½0xhhhh
 # \t                  The tab character ('\u0009')
 # \n                  The newline (line feed) character ('\u000A')
 # \r                  The carriage-return character ('\u000D')
 # \f                  The form-feed character ('\u000C')
 # \a                  The alert (bell) character ('\u0007')
 # \e                  The escape character ('\u001B')
-# \cx                 The control character corresponding to x 
+# \cx                 The control character corresponding to xï¿½
 #
 # Character classes
 # [abc]               a, b, or c (simple class)
@@ -38,7 +38,7 @@
 # [a-d[m-p]]          a through d, or m through p: [a-dm-p] (union)
 # [a-z&&[def]]        d, e, or f (intersection)
 # [a-z&&[^bc]]        a through z, except for b and c: [ad-z] (subtraction)
-# [a-z&&[^m-p]]       a through z, and not m through p: [a-lq-z](subtraction) 
+# [a-z&&[^m-p]]       a through z, and not m through p: [a-lq-z](subtraction)ï¿½
 #
 # Predefined character classes
 # .                   Any character (may or may not match line terminators)
@@ -46,7 +46,7 @@
 # \s                  A whitespace character: [ \t\n\x0B\f\r]
 # \S                  A non-whitespace character: [^\s]
 # \w                  A word character: [a-zA-Z_0-9]
-# \W                  A non-word character: [^\w] 
+# \W                  A non-word character: [^\w]ï¿½
 # 
 # POSIX character classes (US-ASCII only)
 # \p{Lower}           A lower-case alphabetic character: [a-z]
@@ -60,14 +60,14 @@
 # \p{Print}           A printable character: [\p{Graph}]
 # \p{Blank}           A space or a tab: [ \t]\p{Cntrl}A control character: [\x00-\x1F\x7F]
 # \p{XDigit}          A hexadecimal digit: [0-9a-fA-F]
-# \p{Space}           A whitespace character: [ \t\n\x0B\f\r] 
+# \p{Space}           A whitespace character: [ \t\n\x0B\f\r]ï¿½
 # 
 # Classes for Unicode blocks and categories
-# \p{InGreek}         A character in the Greek block (simple block)
+# \p{InGreek}         A character in the Greekï¿½block (simple block)
 # \p{Lu}              An uppercase letter (simple category)
 # \p{Sc}              A currency symbol
 # \P{InGreek}         Any character except one in the Greek block (negation)
-# [\p{L}&&[^\p{Lu}]]  Any letter except an uppercase letter (subtraction) 
+# [\p{L}&&[^\p{Lu}]]ï¿½ Any letter except an uppercase letter (subtraction)ï¿½
 #
 # Boundary matchers
 # ^                   The beginning of a line
@@ -76,8 +76,8 @@
 # \B                  A non-word boundary
 # \A                  The beginning of the input
 # \G                  The end of the previous match
-# \Z                  The end of the input but for the final terminator, if any
-# \z                  The end of the input 
+# \Z                  The end of the input but for the final terminator, ifï¿½any
+# \z                  The end of the inputï¿½
 #
 # Greedy quantifiers
 # X?                  X, once or not at all
@@ -85,7 +85,7 @@
 # X+                  X, one or more times
 # X{n}                X, exactly n times
 # X{n,}               X, at least n times
-# X{n,m}              X, at least n but not more than m times 
+# X{n,m}              X, at least n but not more than m timesï¿½
 #
 # Reluctant quantifiers
 # X??                 X, once or not at all
@@ -93,7 +93,7 @@
 # X+?                 X, one or more times
 # X{n}?               X, exactly n times
 # X{n,}?              X, at least n times
-# X{n,m}?             X, at least n but not more than m times 
+# X{n,m}?             X, at least n but not more than m timesï¿½
 #
 # Possessive quantifiers
 # X?+                 X, once or not at all
@@ -101,25 +101,25 @@
 # X++                 X, one or more times
 # X{n}+               X, exactly n times
 # X{n,}+              X, at least n times
-# X{n,m}+             X, at least n but not more than m times 
+# X{n,m}+             X, at least n but not more than m timesï¿½
 #
 # Logical operators
 # XY                  X followed by Y
 # X|Y                 Either X or Y
-# (X)                 X, as a capturing group 
+# (X)                 X, as a capturing groupï¿½
 #
 # Back references 
-# \n                  Whatever the nth capturing group matched 
+# \n                  Whatever the nth capturing group matchedï¿½
 #
 # Quotation
 # \                   Nothing, but quotes the following character
 # \Q                  Nothing, but quotes all characters until \E
-# \E                  Nothing, but ends quoting started by \Q 
+# \E                  Nothing, but ends quoting started by \Qï¿½
 #
 # Special constructs (non-capturing)
 # (?:X)               X, as a non-capturing group
-# (?idmsux-idmsux)    Nothing, but turns match flags on - off
-# (?idmsux-idmsux:X)  X, as a non-capturing group with the given flags on - off
+# (?idmsux-idmsux)ï¿½   Nothing, but turns match flags on - off
+# (?idmsux-idmsux:X)ï¿½ï¿½X, as a non-capturing group with the given flags on - off
 # (?=X)               X, via zero-width positive lookahead
 # (?!X)               X, via zero-width negative lookahead
 # (?<=X)              X, via zero-width positive lookbehind
@@ -129,71 +129,104 @@
 #
 ######################################################################################
 #
-# Políticos
+# Polï¿½ticos
 #
 ######################################################################################
-[Politicos]{0}Trinidad Jiménez( García-Herrera)?|(Cristina )?Garmendia( Mendizábal)?
-[Politicos]{0}(Ángeles González )?Sinde|(Carme )?Chacón( Piqueras)?
-[Politicos]{0}Elena Salgado( Méndez)?|Ángel Gabilondo( Pujol)?
-[Politicos]{0}José Blanco( López)?|Miguel Sebastián( Gascón)?
-[Politicos]{0}(Alfredo Pérez )?Rubalcaba|Francisco Caamaño( Domínguez)?
-[Politicos]{0}Rosa Aguilar( Rivero)?|Ramón Jáuregui( Atondo)?
-[Politicos]{0}Leire Pajín( Iraola)?|Valeriano Gómez( Sánchez)?
-[Politicos]{0}((Manuel )?Chaves( González)?)|((José Luis Rodríguez )?Zapatero)
-[Politicos]{0}(Pedro )?Zerolo|Eduardo Madina|Felipe González|José Bono
-[Politicos]{0}(Manuel )?Fraga( Iribarne)?|(José María )?Aznar( López)?
-[Politicos]{0}(Mariano )?Rajoy( Brey)?|(María Dolores de )?Cospedal
-[Politicos]{0}Javier Arenas|(Esteban González )?Pons
-[Politicos]{0}Cristóbal Montoro( Romero)?|(Federico )?Trillo
-[Politicos]{0}Ana Pastor|Rita Barberá|(Alberto Ruiz-)?Gallardón
-[Politicos]{0}(Esperanza )?Aguirre|Jaime Mayor Oreja|Soraya Sáenz de Santamaría
-[Politicos]{0}Alicia Sánchez-Camacho|(Francisco )?Camps|Antonio Basagoiti
-[Politicos]{0}Jaume Matas|Miguel Ángel Revilla|(José )?Montilla
-[Politicos]{0}(Josep-Lluís )?Carod-Rovira|Artur Mas
-[Politicos]{0}(Juan José )?Ibarretxe|Patxi López
+[Politicos]{0}Trinidad Jimï¿½nez( Garcï¿½a-Herrera)?|(Cristina )?Garmendia( Mendizï¿½bal)?
+[Politicos]{0}(ï¿½ngeles Gonzï¿½lez )?Sinde|(Carme )?Chacï¿½n( Piqueras)?
+[Politicos]{0}Elena Salgado( Mï¿½ndez)?|ï¿½ngel Gabilondo( Pujol)?
+[Politicos]{0}Josï¿½ Blanco( Lï¿½pez)?|Miguel Sebastiï¿½n( Gascï¿½n)?
+[Politicos]{0}(Alfredo Pï¿½rez )?Rubalcaba|Francisco Caamaï¿½o( Domï¿½nguez)?
+[Politicos]{0}Rosa Aguilar( Rivero)?|Ramï¿½n Jï¿½uregui( Atondo)?
+[Politicos]{0}Leire Pajï¿½n( Iraola)?|Valeriano Gï¿½mez( Sï¿½nchez)?
+[Politicos]{0}((Manuel )?Chaves( Gonzï¿½lez)?)|((Josï¿½ Luis Rodrï¿½guez )?Zapatero)
+[Politicos]{0}(Pedro )?Zerolo|Eduardo Madina|Felipe Gonzï¿½lez|Josï¿½ Bono
+[Politicos]{0}(Manuel )?Fraga( Iribarne)?|(Josï¿½ Marï¿½a )?Aznar( Lï¿½pez)?
+[Politicos]{0}(Mariano )?Rajoy( Brey)?|(MarÃ­a Dolores de )?Cospedal
+[Politicos]{0}Javier Arenas|(Esteban GonzÃ¡lez )?Pons
+[Politicos]{0}CristÃ³bal Montoro( Romero)?|(Federico )?Trillo
+[Politicos]{0}Ana Pastor|Rita BarberÃ¡|(Alberto Ruiz-)?GallardÃ³n
+[Politicos]{0}(Esperanza )?Aguirre|Jaime Mayor Oreja|Soraya SÃ¡enz de SantamarÃ­a
+[Politicos]{0}Alicia SÃ¡nchez-Camacho|(Francisco )?Camps|Antonio Basagoiti
+[Politicos]{0}Jaume Matas|Miguel Ãngel Revilla|(JosÃ© )?Montilla
+[Politicos]{0}(Josep-LluÃ­s )?Carod-Rovira|Artur Mas
+[Politicos]{0}(Juan JosÃ© )?Ibarretxe|Patxi LÃ³pez
 [Politicos]{0}(George ([(W.)(Walker)])? )?Bush|(Barack )?Obama
 [Politicos]{0}Condoleezza Rice|Hillary (Rodham )?Clinton
 [Politicos]{0}(Angela )?Merkel|(Silvio )?Berlusconi|(Nicolas )?Sarkozy
-[Politicos]{0}(David )?Cameron|Sarah Palin|Ségolène Royal
-[Politicos]{0}Joan Herrera|(Joan )?Laporta|(Joan )?Puigcercós
+[Politicos]{0}(David )?Cameron|Sarah Palin|SÃ©golÃ¨ne Royal
+[Politicos]{0}Joan Herrera|(Joan )?Laporta|(Joan )?PuigcercÃ³s
 [Politicos]{0}Albert Rivera
 ######################################################################################
 #
 # Real Madrid C.F.
 #
 ######################################################################################
+[JugadoresRealMadrid]{0}(Iker )?Casillas| (Jerzi )?Dudek| (Antonio )?AdÃ¡n
+[JugadoresRealMadrid]{0}Sergio Ramos| (RaÃºl )?Albiol| Pepe| (Alvaro )?Arbeloa
+[JugadoresRealMadrid]{0}Marcelo| (Ricardo )?Carvalho| (Ezequiel )?Garay
+[JugadoresRealMadrid]{0}(Mahamadou )?Diarra | (Sami )?Khedira| KakÃ¡
+[JugadoresRealMadrid]{0}(Cristiano )?Ronaldo| (Ãngel )?Di MarÃ­a| (Sergio )?Canales
+[JugadoresRealMadrid]{0}(Esteban )?Granero| (Xabi )?Alonso| (Mezut )?Ozil| (Gonzalo )?HiguaÃ­n
+[JugadoresRealMadrid]{0}Lass(ana )?(Diarra)?| (Fernando )?Gago
 ######################################################################################
 #
 # Barcelona
 #
 ######################################################################################
+[JugadoresBarcelona]{0}(VÃ­ctor )?ValdÃ©s| (JosÃ© Manuel )?Pinto
+[JugadoresBarcelona]{0}(Dani )?Alves| (Gerard )?PiquÃ©| (Carles )?Puyol| (Ã‰ric )?Abidal| (Gabi )?Milito
+[JugadoresBarcelona]{0}Maxwell| (Javier )?Mascherano| (Seydu )?Keita| Xavi (HernÃ¡ndez)?
+[JugadoresBarcelona]{0}(Sergio )?Busquets| (AndrÃ©s )?Iniesta| (Pedro )?Rodriguez| (David )?Villa
+[JugadoresBarcelona]{0}(Lionel )?Messi| (Bojan (Krkic)?| (Ibrahim )?Afellay| Adriano| Jeffren (SuÃ¡rez)?
 ######################################################################################
 #
-# Real Sociedad (lol)
+#Presidentes Futbol
 #
 ######################################################################################
+[PresidentesFutbol]{0}Florentino (PÃ©rez)?| (Sandro )?Rossel
+######################################################################################
+#
+#Entrenadores Futbol
+#
+######################################################################################
+[EntrenadoresFutbol]{0}(Jose )?Mourinho| (Pep )?Guardiola| (Vicente )?Del Bosque| Quique (SÃ¡nchez Flores)?
+[EntrenadoresFutbol]{0}(Unai )?Emery| (Rafael )?(Rafa )?BenÃ­tez
 ######################################################################################
 #
 # Tenistas
 #
 ######################################################################################
+[JugadoresTenis]{0}(Rafael )?(Rafa )?Nadal| (Roger )?Federer| (Novak )?Djokovic| (Andy )?Murray
+[JugadoresTenis]{0}(Robin )?Soderling| (Thomas )?Berdych| (David )?Ferrer| (Andy )?Roddick
 ######################################################################################
 #
-# Fórmula 1
+# FÃ³rmula 1
 #
 ######################################################################################
+[CorredoresFormula1]{0}(Fernando )?Alonso| (Lewis )?Hamilton| (Felipe )?Massa| (Mark )?Webber
+[CorredoresFormula1]{0}(Sebastian )?Vettel| (Jenson ?Button| (Nico )?Rosberg| (Robert )?Kuvica| (Michael )?Schumacher
+[CorredoresFormula1]{0}(Rubens )?Barrichello| (Adrian )?Sutil| (Kamui )?Kobayashi| (Pedro )?De La Rosa| (Jaime )?Algersuari
 ######################################################################################
 #
 # Baloncesto
 #
 ######################################################################################
+[JugadoresBaloncesto]{0}Pau Gasol| Marc Gasol| Jose CalderÃ³n| Kobe Bryant| Lebron James
 ######################################################################################
 #
 # Paises
 #
 ######################################################################################
+[Paises]{0}EspaÃ±a| Francia| Portugal| Italia| Suiza| Austria| Alemania
+[Paises]{0}BÃ©lgica| Holanda| Polonia| Inglaterra| Escocia| Irlanda| Islandia| Suecia| Finlandia
+[Paises]{0}Noruega| Rusia| TurquÃ­a| Ucrania| Grecia| Estados Unidos| EEUU| CanadÃ¡| Cuba| MÃ©jico
+[Paises]{0}Argentina| Brasil| Chile| Bolivia| Venezuela| PerÃº| HaitÃ­| SudÃ¡frica| Congo| Marruecos
+[Paises]{0}TÃºnez| China| India| JapÃ³n| Israel| Palestina| Australia| PakistÃ¡n| AfganistÃ¡n
+[Paises]{0}IrÃ¡n| Irak| Corea del Sur| Corea del Norte| Filipinas
 ######################################################################################
 #
 # Bancos
 #
 ######################################################################################
+[Bancos]{0}(Banco )?Santander| BBVA| Barclays| ICBC| HSBC| Goldman Sachs| Caja Madrid| Banesto
