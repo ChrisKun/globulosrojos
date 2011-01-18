@@ -18,6 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 
+import jcolibri.cbrcore.CBRCase;
+
 import recuperaciondeinformacion.utils.representation.NewsDescription;
 
 public class ListaNoticias extends JFrame {
@@ -33,7 +35,7 @@ public class ListaNoticias extends JFrame {
 	 * Constructora.
 	 * @param news Lista de noticias a mostrar.
 	 * */
-	public ListaNoticias(ArrayList<NewsDescription> news) {
+	public ListaNoticias(ArrayList<CBRCase> cbrCases) {
 		// Configuración propia del frame
 		this.setTitle("Noticias");
 		
@@ -50,14 +52,15 @@ public class ListaNoticias extends JFrame {
 		JButton boton;
 		
 		// Comprobación para evitar excepciones
-		if (news == null) return;
+		if (cbrCases == null) return;
 		
 		/* Por cada noticia de la lista de noticias creamos su label (icono)
 		 * y un botón con el título de la noticia para poder seleccionarla
 		 * Se impone un límite máximo de 9 noticias para que funcione correctamente
 		 * la numeración en los iconos
 		 */
-		for (int i=0; i < news.size() && i < 9; i++) {
+		for (int i=0; i < cbrCases.size() && i < 9; i++) {
+			NewsDescription news = (NewsDescription) cbrCases.get(i).getDescription();
 			// Icono (posición en la lista)
 			label = new JLabel("");
 			label.setPreferredSize(new Dimension(50, 50));
@@ -68,13 +71,13 @@ public class ListaNoticias extends JFrame {
 			panel.add(label, c);
 			
 			// Botón (Título de la noticia)
-			boton = new JButton(news.get(i).getTitle().toString());
+			boton = new JButton(news.getTitle().toString());
 			boton.setPreferredSize(new Dimension(300, 50));
 			boton.setBorder(BorderFactory.createCompoundBorder(
 							BorderFactory.createLineBorder(Color.BLACK, 2),
 							BorderFactory.createBevelBorder(BevelBorder.RAISED)));
-			boton.setToolTipText(news.get(i).getTitle().toString());
-			boton.addActionListener(new newsButtonActionListener(news.get(i)));
+			boton.setToolTipText(news.getTitle().toString());
+			boton.addActionListener(new newsButtonActionListener(cbrCases.get(i)));
 			c.gridx = 2;
 			c.gridy = i;
 			c.insets = new Insets(5, 0, 5, 10);
@@ -82,15 +85,6 @@ public class ListaNoticias extends JFrame {
 		}
 		
 		add(panel);
-	}
-	
-	public static void main(String[] args) {
-		ArrayList<NewsDescription> news = new ArrayList<NewsDescription>();
-		// TODO: Meter noticias para ver algo en el menú
-		ListaNoticias menu = new ListaNoticias(news);
-		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		menu.pack();
-		menu.setVisible(true);
 	}
 
 }
@@ -103,19 +97,22 @@ class newsButtonActionListener implements ActionListener {
 	/**
 	 * Noticia asociada al listener.
 	 * */
-	private NewsDescription news;
+	private CBRCase cbrCase;
 	
 	/**
 	 * Constructora.
 	 * @param news La noticia asociada a este listener.
 	 * */
-	public newsButtonActionListener(NewsDescription news) {
-		this.news = news;
+	public newsButtonActionListener(CBRCase cbrCase) {
+		this.cbrCase = cbrCase;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("Noticia " + news.getId() + " seleccionada.");
+		MenuNoticia mn = new MenuNoticia(cbrCase);
+		mn.pack();
+		mn.setVisible(true);
+		//System.out.println("Noticia " + news.getId() + " seleccionada.");
 	}
 	
 }

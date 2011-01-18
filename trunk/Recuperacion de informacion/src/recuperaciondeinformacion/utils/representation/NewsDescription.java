@@ -2,6 +2,7 @@ package recuperaciondeinformacion.utils.representation;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CaseComponent;
@@ -136,6 +137,20 @@ public class NewsDescription implements CaseComponent {
 
     public void setVerbos(Collection<String> verbos) {
         this.verbos = verbos;
+    }
+    
+    public HashMap<String, ArrayList<String>> getPropiedades() {
+    	HashMap<String, ArrayList<String>> l = new HashMap<String, ArrayList<String>>();
+    	l.put("Politicos", this.Politicos);
+    	l.put("Jugadores Real Madrid", this.JugadoresRealMadrid);
+    	l.put("Jugadores Barcelona", this.JugadoresBarcelona);
+    	l.put("Presidentes de Fútbol", this.PresidentesFutbol);
+    	l.put("Entrenadores de Fútbol", this.EntrenadoresFutbol);
+    	l.put("Jugadores de Tenis", this.JugadoresTenis);
+    	l.put("Corredores de Fórmula 1", this.CorredoresFormula1);
+    	l.put("Paises", this.Paises);
+    	l.put("Bancos", this.Bancos);
+    	return l;
     }
 
     @Override
