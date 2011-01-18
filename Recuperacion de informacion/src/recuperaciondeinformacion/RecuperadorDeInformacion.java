@@ -37,6 +37,7 @@ import jcolibri.method.retrieve.NNretrieval.similarity.local.SimList;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.textual.LuceneTextSimilaritySpanish;
 import jcolibri.method.retrieve.selection.SelectCases;
 import jcolibri.test.main.SwingProgressBar;
+import recuperaciondeinformacion.gui.ListaNoticias;
 import recuperaciondeinformacion.utils.NewsConnector;
 import recuperaciondeinformacion.utils.representation.NewsDescription;
 
@@ -51,8 +52,18 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 
     LuceneIndexSpanish luceneIndex;
     
-    public static final boolean isIE = true;
+    public boolean isIE = true;
+    public boolean acciones;
+    public boolean propiedades;
 
+    public void setAcciones(boolean acciones) {
+    	this.acciones = acciones;
+    }
+    
+    public void setPropiedades(boolean propiedades) {
+    	this.propiedades = propiedades;
+    }
+    
     /*
      * (non-Javadoc)
      *
@@ -107,7 +118,7 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		// Extraer los nombres y verbos almacenandolos en los atributos "nombres" y "verbos"
 		extractMainTokens(cases);
 		// Cargar las caracteristicas
-		FeaturesExtractor.loadRules("featuresRules.txt");
+		FeaturesExtractor.loadRules("src/featuresRules.txt");
 		// Extraemos las caracteristicas de los casos
 		FeaturesExtractor.extractFeatures(cases);
 		//Perform IE copying extracted features or phrases into other attributes of the case
@@ -154,10 +165,13 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
         textualAttribute = new Attribute("text", NewsDescription.class);
         nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-        textualAttribute = new Attribute("nombres", NewsDescription.class);
-        nnConfig.addMapping(textualAttribute, new SimList());
-        textualAttribute = new Attribute("verbos", NewsDescription.class);
-        nnConfig.addMapping(textualAttribute, new SimList());
+        if (acciones) {
+	        textualAttribute = new Attribute("nombres", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("verbos", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+        }
+        if (propiedades) {
         textualAttribute = new Attribute("Politicos", NewsDescription.class);
         nnConfig.addMapping(textualAttribute, new SimList());
 //        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
@@ -176,11 +190,12 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 //        nnConfig.addMapping(textualAttribute, new SimList());
 //        textualAttribute = new Attribute("Bancos", NewsDescription.class);
 //        nnConfig.addMapping(textualAttribute, new SimList());
+        }
 
     ///////////////////////////////////////////////
     //Visualizacion de la base de casos
-    jcolibri.extensions.visualization.CasesVisualization.visualize(_caseBase.getCases(), nnConfig);
-    ///////////////////////////////////////////////
+    //jcolibri.extensions.visualization.CasesVisualization.visualize(_caseBase.getCases(), nnConfig);
+    ///////////////////////////////////////////////  
     
 	System.out.println("RESULT: ");
 
@@ -190,14 +205,13 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	for(RetrievalResult rr: res)
 	    System.out.println(rr);
 	
-	
 	// MENU
-	/*ArrayList<NewsDescription> news = new ArrayList<NewsDescription>();
+	ArrayList<CBRCase> news = new ArrayList<CBRCase>();
 	for(RetrievalResult rr: res)
-		news.add((NewsDescription)(rr.get_case().getDescription()));
+		news.add(rr.get_case());
 	ListaNoticias menu = new ListaNoticias(news);
 	menu.pack();
-	menu.setVisible(true);*/
+	menu.setVisible(true);  
 	
 	NewsDescription qrd = (NewsDescription)query.getDescription();
 	CBRCase mostSimilar = res.iterator().next().get_case();

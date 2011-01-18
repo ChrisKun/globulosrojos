@@ -162,23 +162,23 @@
 # Real Madrid C.F.
 #
 ######################################################################################
-[JugadoresRealMadrid]{0}(Iker )?Casillas| (Jerzi )?Dudek| (Antonio )?Adán
-[JugadoresRealMadrid]{0}Sergio Ramos| (Raúl )?Albiol| Pepe| (Alvaro )?Arbeloa
-[JugadoresRealMadrid]{0}Marcelo| (Ricardo )?Carvalho| (Ezequiel )?Garay
-[JugadoresRealMadrid]{0}(Mahamadou )?Diarra | (Sami )?Khedira| Kaká
-[JugadoresRealMadrid]{0}(Cristiano )?Ronaldo| (Ángel )?Di María| (Sergio )?Canales
-[JugadoresRealMadrid]{0}(Esteban )?Granero| (Xabi )?Alonso| (Mezut )?Ozil| (Gonzalo )?Higuaín
-[JugadoresRealMadrid]{0}Lass(ana )?(Diarra)?| (Fernando )?Gago
+[JugadoresRealMadrid]{0}(Iker )?Casillas|(Jerzi )?Dudek|(Antonio )?Adán
+[JugadoresRealMadrid]{0}Sergio Ramos|(Raúl )?Albiol|Pepe|(Alvaro )?Arbeloa
+[JugadoresRealMadrid]{0}Marcelo|(Ricardo )?Carvalho|(Ezequiel )?Garay
+[JugadoresRealMadrid]{0}(Mahamadou )?Diarra|(Sami )?Khedira| Kaká
+[JugadoresRealMadrid]{0}(Cristiano )?Ronaldo|(Ángel )?Di María|(Sergio )?Canales
+[JugadoresRealMadrid]{0}(Esteban )?Granero| (Xabi )?Alonso|(Mezut )?Ozil|(Gonzalo )?Higuaín
+[JugadoresRealMadrid]{0}Lass(ana )?(Diarra)?|(Fernando )?Gago
 ######################################################################################
 #
 # Barcelona
 #
 ######################################################################################
-[JugadoresBarcelona]{0}(Víctor )?Valdés| (José Manuel )?Pinto
-[JugadoresBarcelona]{0}(Dani )?Alves| (Gerard )?Piqué| (Carles )?Puyol| (Éric )?Abidal| (Gabi )?Milito
-[JugadoresBarcelona]{0}Maxwell| (Javier )?Mascherano| (Seydu )?Keita| Xavi (Hernández)?
-[JugadoresBarcelona]{0}(Sergio )?Busquets| (Andrés )?Iniesta| (Pedro )?Rodriguez| (David )?Villa
-[JugadoresBarcelona]{0}(Lionel )?Messi| (Bojan (Krkic)?| (Ibrahim )?Afellay| Adriano| Jeffren (Suárez)?
+[JugadoresBarcelona]{0}(Víctor )?Valdés|(José Manuel )?Pinto
+[JugadoresBarcelona]{0}(Dani )?Alves|(Gerard )?Piqué|(Carles )?Puyol|(Éric )?Abidal|(Gabi )?Milito
+[JugadoresBarcelona]{0}Maxwell|(Javier )?Mascherano|(Seydu )?Keita|Xavi( Hernández)?
+[JugadoresBarcelona]{0}(Sergio )?Busquets|(Andrés )?Iniesta|(Pedro )?Rodriguez|(David )?Villa
+[JugadoresBarcelona]{0}(Lionel )?Messi|Bojan( Krkic)?|(Ibrahim )?Afellay|Adriano|Jeffren( Suárez)?
 ######################################################################################
 #
 #Presidentes Futbol
@@ -190,43 +190,44 @@
 #Entrenadores Futbol
 #
 ######################################################################################
-[EntrenadoresFutbol]{0}(Jose )?Mourinho| (Pep )?Guardiola| (Vicente )?Del Bosque| Quique (Sánchez Flores)?
-[EntrenadoresFutbol]{0}(Unai )?Emery| (Rafael )?(Rafa )?Benítez
+[EntrenadoresFutbol]{2}(Jose )?(Mourinho)
+[EntrenadoresFutbol]{0}(Pep )?Guardiola|(Vicente )?Del Bosque|Quique (Sánchez Flores)?
+[EntrenadoresFutbol]{0}(Unai )?Emery|(Rafael )?(Rafa )?Benítez
 ######################################################################################
 #
 # Tenistas
 #
 ######################################################################################
-[JugadoresTenis]{0}(Rafael )?(Rafa )?Nadal| (Roger )?Federer| (Novak )?Djokovic| (Andy )?Murray
-[JugadoresTenis]{0}(Robin )?Soderling| (Thomas )?Berdych| (David )?Ferrer| (Andy )?Roddick
+[JugadoresTenis]{0}(Rafael )?(Rafa )?Nadal|(Roger )?Federer|(Novak )?Djokovic|(Andy )?Murray
+[JugadoresTenis]{0}(Robin )?Soderling|(Thomas )?Berdych|(David )?Ferrer|(Andy )?Roddick
 ######################################################################################
 #
 # Fórmula 1
 #
 ######################################################################################
-[CorredoresFormula1]{0}(Fernando )?Alonso| (Lewis )?Hamilton| (Felipe )?Massa| (Mark )?Webber
-[CorredoresFormula1]{0}(Sebastian )?Vettel| (Jenson ?Button| (Nico )?Rosberg| (Robert )?Kuvica| (Michael )?Schumacher
-[CorredoresFormula1]{0}(Rubens )?Barrichello| (Adrian )?Sutil| (Kamui )?Kobayashi| (Pedro )?De La Rosa| (Jaime )?Algersuari
+[CorredoresFormula1]{0}(Fernando )?Alonso|(Lewis )?Hamilton|(Felipe )?Massa|(Mark )?Webber
+[CorredoresFormula1]{0}(Sebastian )?Vettel|(Jenson )?Button|(Nico )?Rosberg|(Robert )?Kuvica|(Michael )?Schumacher
+[CorredoresFormula1]{0}(Rubens )?Barrichello|(Adrian )?Sutil|(Kamui )?Kobayashi|(Pedro )?De La Rosa|(Jaime )?Algersuari
 ######################################################################################
 #
 # Baloncesto
 #
 ######################################################################################
-[JugadoresBaloncesto]{0}Pau Gasol| Marc Gasol| Jose Calderón| Kobe Bryant| Lebron James
+[JugadoresBaloncesto]{0}Pau Gasol|Marc Gasol|Jose Calderón|Kobe Bryant|Lebron James
 ######################################################################################
 #
 # Paises
 #
 ######################################################################################
-[Paises]{0}España| Francia| Portugal| Italia| Suiza| Austria| Alemania
-[Paises]{0}Bélgica| Holanda| Polonia| Inglaterra| Escocia| Irlanda| Islandia| Suecia| Finlandia
-[Paises]{0}Noruega| Rusia| Turquía| Ucrania| Grecia| Estados Unidos| EEUU| Canadá| Cuba| Méjico
-[Paises]{0}Argentina| Brasil| Chile| Bolivia| Venezuela| Perú| Haití| Sudáfrica| Congo| Marruecos
-[Paises]{0}Túnez| China| India| Japón| Israel| Palestina| Australia| Pakistán| Afganistán
-[Paises]{0}Irán| Irak| Corea del Sur| Corea del Norte| Filipinas
+[Paises]{0}España|Francia|Portugal|Italia|Suiza|Austria|Alemania
+[Paises]{0}Bélgica|Holanda|Polonia|Inglaterra|Escocia|Irlanda|Islandia|Suecia|Finlandia
+[Paises]{0}Noruega|Rusia|Turquía|Ucrania|Grecia|Estados Unidos|EEUU|Canadá|Cuba|Méjico
+[Paises]{0}Argentina|Brasil|Chile|Bolivia|Venezuela|Perú|Haití|Sudáfrica|Congo|Marruecos
+[Paises]{0}Túnez|China|India|Japón|Israel|Palestina|Australia|Pakistán|Afganistán
+[Paises]{0}Irán|Irak|Corea del Sur|Corea del Norte|Filipinas
 ######################################################################################
 #
 # Bancos
 #
 ######################################################################################
-[Bancos]{0}(Banco )?Santander| BBVA| Barclays| ICBC| HSBC| Goldman Sachs| Caja Madrid| Banesto
+[Bancos]{0}(Banco )?Santander|BBVA|Barclays|ICBC|HSBC|Goldman Sachs|Caja Madrid|Banesto
