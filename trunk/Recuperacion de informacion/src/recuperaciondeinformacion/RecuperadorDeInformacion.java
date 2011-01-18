@@ -62,6 +62,12 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     {
 	try
 	{
+		/////////////////////////////////
+		//para la visualizacion de la base de casos
+		jcolibri.util.ProgressController.clear();
+    	jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), jcolibri.extensions.visualization.CasesVisualization.class);
+		/////////////////////////////////
+    	
 	    _connector = new NewsConnector("data/noticias", 150);
 	    _caseBase = new LinealCaseBase();
 
@@ -81,6 +87,7 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
      */
     public CBRCaseBase preCycle() throws ExecutionException
     {
+    	
 	_caseBase.init(_connector);
 
 	//Here we create the Lucene index
@@ -154,8 +161,11 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     textualAttribute = new Attribute("Politicos", NewsDescription.class);
     nnConfig.addMapping(textualAttribute, new SimList());
 
-
-
+    ///////////////////////////////////////////////
+    //Visualizacion de la base de casos
+    jcolibri.extensions.visualization.CasesVisualization.visualize(_caseBase.getCases(), nnConfig);
+    ///////////////////////////////////////////////
+    
 	System.out.println("RESULT: ");
 
 	Collection<RetrievalResult> res = NNScoringMethod.evaluateSimilarity(cases, query, nnConfig);
