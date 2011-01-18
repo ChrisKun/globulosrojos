@@ -93,22 +93,22 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	//Here we create the Lucene index
 	luceneIndex = jcolibri.method.precycle.LuceneIndexCreatorSpanish.createLuceneIndex(_caseBase);
 	
-	// Si la variable isIE está a true entonces aplicamos IE (parte 2)
+	// Si la variable isIE esta a true entonces aplicamos IE (parte 2)
 	if (isIE) {
 		Collection<CBRCase> cases = _caseBase.getCases();
-		// Divide el texto en párrafos, frases y palabras 
+		// Divide el texto en parrafos, frases y palabras
 		OpennlpSplitterSpanish.split(cases); 
-		// Borra las palabras vacías 
+		// Borra las palabras vacias
 		StopWordsDetectorSpanish.detectStopWords(cases); 
-		// Extrae las raíces de cada palabra 
+		// Extrae las raices de cada palabra
 		TextStemmerSpanish.stem(cases); 
-		// Realiza el etiquetado morfológico 
+		// Realiza el etiquetado morfologico
 		OpennlpPOStaggerSpanish.tag(cases); 
-		// Extraer los nombres y verbos almacenándolos en los atributos "nombres" y "verbos" 
+		// Extraer los nombres y verbos almacenandolos en los atributos "nombres" y "verbos"
 		extractMainTokens(cases);
-		// Cargar las características
+		// Cargar las caracteristicas
 		FeaturesExtractor.loadRules("featuresRules.txt");
-		// Extraemos las características de los casos
+		// Extraemos las caracteristicas de los casos
 		FeaturesExtractor.extractFeatures(cases);
 		//Perform IE copying extracted features or phrases into other attributes of the case
 		BasicInformationExtractor.extractInformation(cases);
@@ -125,21 +125,21 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     public void cycle(CBRQuery query) throws ExecutionException
     {
     	
-    // Si la variable isIE está a true entonces aplicamos IE (parte 2)
+    // Si la variable isIE esta a true entonces aplicamos IE (parte 2)
     if (isIE) {
-		// Divide el texto en párrafos, frases y palabras 
+		// Divide el texto en parrafos, frases y palabras
 		OpennlpSplitterSpanish.split(query); 
-		// Borra las palabras vacías 
+		// Borra las palabras vacias
 		StopWordsDetectorSpanish.detectStopWords(query); 
-		// Extrae las raíces de cada palabra 
+		// Extrae las raices de cada palabra
 		TextStemmerSpanish.stem(query); 
-		// Realiza el etiquetado morfológico 
+		// Realiza el etiquetado morfolï¿½gico 
 		OpennlpPOStaggerSpanish.tag(query); 
-		// Extraer los nombres y verbos almacenándolos en los atributos "nombres" y "verbos" 
+		// Extraer los nombres y verbos almacenï¿½ndolos en los atributos "nombres" y "verbos" 
 		extractMainTokens(query);
-		// Extraemos las características de la query
+		// Extraemos las caracterï¿½sticas de la query
 		FeaturesExtractor.extractFeatures(query);
-		// Extraemos características del texto
+		// Extraemos caracterï¿½sticas del texto
 		BasicInformationExtractor.extractInformation(query);
     }
 	
@@ -152,14 +152,30 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	//We only compare the "description" attribute using Lucene
 	Attribute textualAttribute = new Attribute("title", NewsDescription.class);
 	nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-    textualAttribute = new Attribute("text", NewsDescription.class);
-    nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-    textualAttribute = new Attribute("nombres", NewsDescription.class);
-    nnConfig.addMapping(textualAttribute, new SimList());
-    textualAttribute = new Attribute("verbos", NewsDescription.class);
-    nnConfig.addMapping(textualAttribute, new SimList());
-    textualAttribute = new Attribute("Politicos", NewsDescription.class);
-    nnConfig.addMapping(textualAttribute, new SimList());
+        textualAttribute = new Attribute("text", NewsDescription.class);
+        nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+        textualAttribute = new Attribute("nombres", NewsDescription.class);
+        nnConfig.addMapping(textualAttribute, new SimList());
+        textualAttribute = new Attribute("verbos", NewsDescription.class);
+        nnConfig.addMapping(textualAttribute, new SimList());
+        textualAttribute = new Attribute("Politicos", NewsDescription.class);
+        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("PresidentesFutbol", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("EntrenadoresFutbol", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("JugadoresTenis", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("CorredoresFormula1", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("Paises", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
+//        textualAttribute = new Attribute("Bancos", NewsDescription.class);
+//        nnConfig.addMapping(textualAttribute, new SimList());
 
     ///////////////////////////////////////////////
     //Visualizacion de la base de casos
