@@ -52,7 +52,7 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 
     LuceneIndexSpanish luceneIndex;
     
-    public boolean isIE = true;
+    public boolean isIE = false;
     public boolean acciones;
     public boolean propiedades;
 
@@ -144,13 +144,13 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		StopWordsDetectorSpanish.detectStopWords(query); 
 		// Extrae las raices de cada palabra
 		TextStemmerSpanish.stem(query); 
-		// Realiza el etiquetado morfol�gico 
+		// Realiza el etiquetado morfologico 
 		OpennlpPOStaggerSpanish.tag(query); 
-		// Extraer los nombres y verbos almacen�ndolos en los atributos "nombres" y "verbos" 
+		// Extraer los nombres y verbos almacenandolos en los atributos "nombres" y "verbos" 
 		extractMainTokens(query);
-		// Extraemos las caracter�sticas de la query
+		// Extraemos las caracteristicas de la query
 		FeaturesExtractor.extractFeatures(query);
-		// Extraemos caracter�sticas del texto
+		// Extraemos caracteristicas del texto
 		BasicInformationExtractor.extractInformation(query);
     }
 	
@@ -163,17 +163,17 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	//We only compare the "description" attribute using Lucene
 	Attribute textualAttribute = new Attribute("title", NewsDescription.class);
 	nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-        textualAttribute = new Attribute("text", NewsDescription.class);
-        nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-        if (acciones) {
-	        textualAttribute = new Attribute("nombres", NewsDescription.class);
-	        nnConfig.addMapping(textualAttribute, new SimList());
-	        textualAttribute = new Attribute("verbos", NewsDescription.class);
-	        nnConfig.addMapping(textualAttribute, new SimList());
-        }
-        if (propiedades) {
-        textualAttribute = new Attribute("Politicos", NewsDescription.class);
+    textualAttribute = new Attribute("text", NewsDescription.class);
+    nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+    if (acciones) {
+        textualAttribute = new Attribute("nombres", NewsDescription.class);
         nnConfig.addMapping(textualAttribute, new SimList());
+        textualAttribute = new Attribute("verbos", NewsDescription.class);
+        nnConfig.addMapping(textualAttribute, new SimList());
+    }
+    if (propiedades) {
+	    textualAttribute = new Attribute("Politicos", NewsDescription.class);
+	    nnConfig.addMapping(textualAttribute, new SimList());
 //        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
 //        nnConfig.addMapping(textualAttribute, new SimList());
 //        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
@@ -209,7 +209,7 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	ArrayList<CBRCase> news = new ArrayList<CBRCase>();
 	for(RetrievalResult rr: res)
 		news.add(rr.get_case());
-	ListaNoticias menu = new ListaNoticias(news);
+	ListaNoticias menu = new ListaNoticias(news,isIE);
 	menu.pack();
 	menu.setVisible(true);  
 	

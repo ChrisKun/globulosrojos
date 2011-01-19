@@ -29,7 +29,7 @@ public class Consulta extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	public Consulta(RecuperadorDeInformacion rdi) {
-		// Configuración propia del frame
+		// Configuracion propia del frame
 		this.setTitle("Consulta");
 		
 		// Creamos el panel principal y le asignamos un layout
@@ -37,7 +37,7 @@ public class Consulta extends JFrame {
 		panel.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		
-		/* El frame se compondrá de los siguientes componentes:
+		/* El frame se compondra de los siguientes componentes:
 		 * 	- lConsulta
 		 * 	- consulta
 		 * 	- cbCompararAccionesObjetos
@@ -92,7 +92,7 @@ public class Consulta extends JFrame {
 		}
 		catch(Exception e) {e.printStackTrace();}
 		 
-		// Creamos el menú principal
+		// Creamos el menu principal
 		Consulta c = new Consulta(rdi);
 		c.pack();
 		c.setVisible(true);
@@ -119,8 +119,8 @@ class RecuperarActionListener implements ActionListener {
 		// Extraemos la query en forma de String
 		String queryString = consulta.getText();
 		
-		/* Si es distinta de una cadena vacía lanzamos la query al recuperador
-		 * de información con las opciones elegidas. 
+		/* Si es distinta de una cadena vacia lanzamos la query al recuperador
+		 * de informacion con las opciones elegidas. 
 		 */
 		if (!queryString.equals("")) {
 			// Extraemos la query de la consulta del usuario
@@ -131,7 +131,7 @@ class RecuperarActionListener implements ActionListener {
             query.setDescription(queryDescription);
 
             try {
-            	// Configuramos el recuperador de información
+            	// Configuramos el recuperador de informacion
             	rdi.setAcciones(accionesYObjetos.isSelected());
             	rdi.setPropiedades(propiedades.isSelected());
             	// Lanzamos la consulta

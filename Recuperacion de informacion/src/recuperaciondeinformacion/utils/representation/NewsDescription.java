@@ -16,7 +16,7 @@ public class NewsDescription implements CaseComponent {
     Text title;
     Collection<String> nombres;
     Collection<String> verbos;
-    // Caracterï¿½sticas
+    // Caracteristicas
     ArrayList<String> Politicos = new ArrayList<String>();
     ArrayList<String> JugadoresRealMadrid = new ArrayList<String>();
     ArrayList<String> JugadoresBarcelona = new ArrayList<String>();
@@ -144,10 +144,10 @@ public class NewsDescription implements CaseComponent {
     	l.put("Politicos", this.Politicos);
     	l.put("Jugadores Real Madrid", this.JugadoresRealMadrid);
     	l.put("Jugadores Barcelona", this.JugadoresBarcelona);
-    	l.put("Presidentes de Fútbol", this.PresidentesFutbol);
-    	l.put("Entrenadores de Fútbol", this.EntrenadoresFutbol);
+    	l.put("Presidentes de Fï¿½tbol", this.PresidentesFutbol);
+    	l.put("Entrenadores de Fï¿½tbol", this.EntrenadoresFutbol);
     	l.put("Jugadores de Tenis", this.JugadoresTenis);
-    	l.put("Corredores de Fórmula 1", this.CorredoresFormula1);
+    	l.put("Corredores de Fï¿½rmula 1", this.CorredoresFormula1);
     	l.put("Paises", this.Paises);
     	l.put("Bancos", this.Bancos);
     	return l;
