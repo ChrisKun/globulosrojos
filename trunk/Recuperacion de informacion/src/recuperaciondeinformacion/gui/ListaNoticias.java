@@ -27,16 +27,18 @@ public class ListaNoticias extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Ruta a la carpeta de imágenes para los números.
+	 * Ruta a la carpeta de imï¿½genes para los nï¿½meros.
 	 * */
 	private static final String IMG_PATH = "img" + File.separator;
-
+	private boolean isIE;
+	
 	/**
 	 * Constructora.
 	 * @param news Lista de noticias a mostrar.
 	 * */
-	public ListaNoticias(ArrayList<CBRCase> cbrCases) {
-		// Configuración propia del frame
+	public ListaNoticias(ArrayList<CBRCase> cbrCases, boolean isIE) {
+		this.isIE = isIE;
+		// Configuracion propia del frame
 		this.setTitle("Noticias");
 		
 		// Creamos el panel principal y le asignamos un layout
@@ -45,23 +47,23 @@ public class ListaNoticias extends JFrame {
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.BOTH;
 		
-		/* El frame se compondrá únicamente de botones para seleccionar
-		 * una noticia y labels que contendrán los iconos para los números
+		/* El frame se compondrï¿½ ï¿½nicamente de botones para seleccionar
+		 * una noticia y labels que contendrï¿½n los iconos para los nï¿½meros
 		 */
 		JLabel label;
 		JButton boton;
 		
-		// Comprobación para evitar excepciones
+		// Comprobaciï¿½n para evitar excepciones
 		if (cbrCases == null) return;
 		
 		/* Por cada noticia de la lista de noticias creamos su label (icono)
-		 * y un botón con el título de la noticia para poder seleccionarla
-		 * Se impone un límite máximo de 9 noticias para que funcione correctamente
-		 * la numeración en los iconos
+		 * y un botï¿½n con el tï¿½tulo de la noticia para poder seleccionarla
+		 * Se impone un lï¿½mite mï¿½ximo de 9 noticias para que funcione correctamente
+		 * la numeraciï¿½n en los iconos
 		 */
 		for (int i=0; i < cbrCases.size() && i < 9; i++) {
 			NewsDescription news = (NewsDescription) cbrCases.get(i).getDescription();
-			// Icono (posición en la lista)
+			// Icono (posiciï¿½n en la lista)
 			label = new JLabel("");
 			label.setPreferredSize(new Dimension(50, 50));
 			label.setIcon(new ImageIcon(IMG_PATH + (i + 1) + ".jpg"));
@@ -70,14 +72,14 @@ public class ListaNoticias extends JFrame {
 			c.insets = new Insets(5, 10, 5, 10);
 			panel.add(label, c);
 			
-			// Botón (Título de la noticia)
+			// Botï¿½n (Tï¿½tulo de la noticia)
 			boton = new JButton(news.getTitle().toString());
 			boton.setPreferredSize(new Dimension(300, 50));
 			boton.setBorder(BorderFactory.createCompoundBorder(
 							BorderFactory.createLineBorder(Color.BLACK, 2),
 							BorderFactory.createBevelBorder(BevelBorder.RAISED)));
 			boton.setToolTipText(news.getTitle().toString());
-			boton.addActionListener(new newsButtonActionListener(cbrCases.get(i)));
+			boton.addActionListener(new newsButtonActionListener(cbrCases.get(i), isIE));
 			c.gridx = 2;
 			c.gridy = i;
 			c.insets = new Insets(5, 0, 5, 10);
@@ -90,7 +92,7 @@ public class ListaNoticias extends JFrame {
 }
 
 /**
- * Implementación del listener asociado a los botones del menú de selección.
+ * Implementacion del listener asociado a los botones del menu de seleccion.
  *  */
 class newsButtonActionListener implements ActionListener {
 
@@ -98,18 +100,20 @@ class newsButtonActionListener implements ActionListener {
 	 * Noticia asociada al listener.
 	 * */
 	private CBRCase cbrCase;
+	private boolean isIE;
 	
 	/**
 	 * Constructora.
 	 * @param news La noticia asociada a este listener.
 	 * */
-	public newsButtonActionListener(CBRCase cbrCase) {
+	public newsButtonActionListener(CBRCase cbrCase, boolean isIE) {
 		this.cbrCase = cbrCase;
+		this.isIE = isIE;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		MenuNoticia mn = new MenuNoticia(cbrCase);
+		MenuNoticia mn = new MenuNoticia(cbrCase, isIE);
 		mn.pack();
 		mn.setVisible(true);
 		//System.out.println("Noticia " + news.getId() + " seleccionada.");

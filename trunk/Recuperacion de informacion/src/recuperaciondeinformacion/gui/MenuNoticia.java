@@ -25,9 +25,11 @@ import recuperaciondeinformacion.utils.representation.NewsSolution;
 public class MenuNoticia extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-
-	public MenuNoticia(CBRCase cbrCase) {
-		// Configuración propia del frame
+	private boolean isIE;
+	
+	public MenuNoticia(CBRCase cbrCase, boolean isIE) {
+		this.isIE = isIE;
+		// Configuraciï¿½n propia del frame
 		this.setTitle("Noticia");
 		
 		// Creamos el panel principal y le asignamos un layout
@@ -36,8 +38,8 @@ public class MenuNoticia extends JFrame {
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.BOTH;
 		
-		/* El frame se compondrá de jlabels para mostrar:
-		 * 	- Título
+		/* El frame se compondrï¿½ de jlabels para mostrar:
+		 * 	- Tï¿½tulo
 		 * 	- Imagen
 		 * 	- Texto
 		 * 	- Nombres
@@ -54,14 +56,14 @@ public class MenuNoticia extends JFrame {
 		JLabel lPropiedades;
 		JLabel propiedades;
 		
-		// Comprobación para evitar excepciones
+		// Comprobaciï¿½n para evitar excepciones
 		if (cbrCase == null) return;
 
-		// Extraemos la descripción y la solución del caso
+		// Extraemos la descripciï¿½n y la soluciï¿½n del caso
 		NewsDescription newsD = (NewsDescription) cbrCase.getDescription(); 
 		NewsSolution newsS = (NewsSolution) cbrCase.getSolution();
 		
-		// Título
+		// Tï¿½tulo
 		titulo = new JLabel(newsD.getTitle().toString());
 		titulo.setPreferredSize(new Dimension(500, 50));
 		titulo.setBorder(BorderFactory.createCompoundBorder(
@@ -111,15 +113,18 @@ public class MenuNoticia extends JFrame {
 		panel.add(lNombres, c);
 		
 		// Nombres
-		nombres = new JLabel(newsD.getNombres().toString());
-		nombres.setToolTipText(newsD.getNombres().toString());
-		nombres.setPreferredSize(new Dimension(440, 20));
-		nombres.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-		c.gridx = 1;
-		c.gridwidth = 1;
-		c.gridy = 3;
-		c.insets = new Insets(5, 10, 5, 10);
-		panel.add(nombres, c);
+//		if(isIE)
+//		{
+			nombres = new JLabel(newsD.getNombres().toString());
+			nombres.setToolTipText(newsD.getNombres().toString());
+			nombres.setPreferredSize(new Dimension(440, 20));
+			nombres.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+			c.gridx = 1;
+			c.gridwidth = 1;
+			c.gridy = 3;
+			c.insets = new Insets(5, 10, 5, 10);
+			panel.add(nombres, c);
+//		}
 		
 		// lVerbos
 		lVerbos = new JLabel("Verbos: ");
@@ -131,15 +136,18 @@ public class MenuNoticia extends JFrame {
 		panel.add(lVerbos, c);
 		
 		// Verbos
-		verbos = new JLabel(newsD.getVerbos().toString());
-		verbos.setPreferredSize(new Dimension(440, 20));
-		verbos.setToolTipText(newsD.getVerbos().toString());
-		verbos.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-		c.gridx = 1;
-		c.gridwidth = 1;
-		c.gridy = 4;
-		c.insets = new Insets(5, 10, 5, 10);
-		panel.add(verbos, c);
+//		if(isIE)
+//		{
+			verbos = new JLabel(newsD.getVerbos().toString());
+			verbos.setPreferredSize(new Dimension(440, 20));
+			verbos.setToolTipText(newsD.getVerbos().toString());
+			verbos.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+			c.gridx = 1;
+			c.gridwidth = 1;
+			c.gridy = 4;
+			c.insets = new Insets(5, 10, 5, 10);
+			panel.add(verbos, c);
+//		}
 		
 		HashMap<String, ArrayList<String>> listaProps = newsD.getPropiedades();
 		int fila = 5;
