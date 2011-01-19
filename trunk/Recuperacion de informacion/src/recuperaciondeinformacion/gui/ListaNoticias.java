@@ -30,14 +30,12 @@ public class ListaNoticias extends JFrame {
 	 * Ruta a la carpeta de im�genes para los n�meros.
 	 * */
 	private static final String IMG_PATH = "img" + File.separator;
-	private boolean isIE;
 	
 	/**
 	 * Constructora.
 	 * @param news Lista de noticias a mostrar.
 	 * */
-	public ListaNoticias(ArrayList<CBRCase> cbrCases, boolean isIE) {
-		this.isIE = isIE;
+	public ListaNoticias(ArrayList<CBRCase> cbrCases) {
 		// Configuracion propia del frame
 		this.setTitle("Noticias");
 		
@@ -79,7 +77,7 @@ public class ListaNoticias extends JFrame {
 							BorderFactory.createLineBorder(Color.BLACK, 2),
 							BorderFactory.createBevelBorder(BevelBorder.RAISED)));
 			boton.setToolTipText(news.getTitle().toString());
-			boton.addActionListener(new newsButtonActionListener(cbrCases.get(i), isIE));
+			boton.addActionListener(new newsButtonActionListener(cbrCases.get(i)));
 			c.gridx = 2;
 			c.gridy = i;
 			c.insets = new Insets(5, 0, 5, 10);
@@ -100,20 +98,18 @@ class newsButtonActionListener implements ActionListener {
 	 * Noticia asociada al listener.
 	 * */
 	private CBRCase cbrCase;
-	private boolean isIE;
 	
 	/**
 	 * Constructora.
 	 * @param news La noticia asociada a este listener.
 	 * */
-	public newsButtonActionListener(CBRCase cbrCase, boolean isIE) {
+	public newsButtonActionListener(CBRCase cbrCase) {
 		this.cbrCase = cbrCase;
-		this.isIE = isIE;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		MenuNoticia mn = new MenuNoticia(cbrCase, isIE);
+		MenuNoticia mn = new MenuNoticia(cbrCase);
 		mn.pack();
 		mn.setVisible(true);
 		//System.out.println("Noticia " + news.getId() + " seleccionada.");

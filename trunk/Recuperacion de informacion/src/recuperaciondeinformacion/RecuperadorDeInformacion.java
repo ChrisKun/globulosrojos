@@ -99,13 +99,11 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     public CBRCaseBase preCycle() throws ExecutionException
     {
     	
-	_caseBase.init(_connector);
-
-	//Here we create the Lucene index
-	luceneIndex = jcolibri.method.precycle.LuceneIndexCreatorSpanish.createLuceneIndex(_caseBase);
+		_caseBase.init(_connector);
 	
-	// Si la variable isIE esta a true entonces aplicamos IE (parte 2)
-	if (isIE) {
+		//Here we create the Lucene index
+		luceneIndex = jcolibri.method.precycle.LuceneIndexCreatorSpanish.createLuceneIndex(_caseBase);
+		
 		Collection<CBRCase> cases = _caseBase.getCases();
 		// Divide el texto en parrafos, frases y palabras
 		OpennlpSplitterSpanish.split(cases); 
@@ -123,9 +121,8 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		FeaturesExtractor.extractFeatures(cases);
 		//Perform IE copying extracted features or phrases into other attributes of the case
 		BasicInformationExtractor.extractInformation(cases);
-	}
-
-	return _caseBase;
+	
+		return _caseBase;
     }
 
     /*
@@ -136,8 +133,6 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     public void cycle(CBRQuery query) throws ExecutionException
     {
     	
-    // Si la variable isIE esta a true entonces aplicamos IE (parte 2)
-    if (isIE) {
 		// Divide el texto en parrafos, frases y palabras
 		OpennlpSplitterSpanish.split(query); 
 		// Borra las palabras vacias
@@ -152,73 +147,72 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		FeaturesExtractor.extractFeatures(query);
 		// Extraemos caracteristicas del texto
 		BasicInformationExtractor.extractInformation(query);
-    }
+		
+		Collection<CBRCase> cases = _caseBase.getCases();
 	
-	Collection<CBRCase> cases = _caseBase.getCases();
-
-	NNConfig nnConfig = new NNConfig();
-	nnConfig.setDescriptionSimFunction(new Average());
-
-
-	//We only compare the "description" attribute using Lucene
-	Attribute textualAttribute = new Attribute("title", NewsDescription.class);
-	nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-    textualAttribute = new Attribute("text", NewsDescription.class);
-    nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
-    if (acciones) {
-        textualAttribute = new Attribute("nombres", NewsDescription.class);
-        nnConfig.addMapping(textualAttribute, new SimList());
-        textualAttribute = new Attribute("verbos", NewsDescription.class);
-        nnConfig.addMapping(textualAttribute, new SimList());
-    }
-    if (propiedades) {
-	    textualAttribute = new Attribute("Politicos", NewsDescription.class);
-	    nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("PresidentesFutbol", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("EntrenadoresFutbol", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("JugadoresTenis", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("CorredoresFormula1", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("Paises", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-//        textualAttribute = new Attribute("Bancos", NewsDescription.class);
-//        nnConfig.addMapping(textualAttribute, new SimList());
-        }
-
-    ///////////////////////////////////////////////
-    //Visualizacion de la base de casos
-    //jcolibri.extensions.visualization.CasesVisualization.visualize(_caseBase.getCases(), nnConfig);
-    ///////////////////////////////////////////////  
-    
-	System.out.println("RESULT: ");
-
-	Collection<RetrievalResult> res = NNScoringMethod.evaluateSimilarity(cases, query, nnConfig);
-	res = SelectCases.selectTopKRR(res, 5);
-
-	for(RetrievalResult rr: res)
-	    System.out.println(rr);
+		NNConfig nnConfig = new NNConfig();
+		nnConfig.setDescriptionSimFunction(new Average());
 	
-	// MENU
-	ArrayList<CBRCase> news = new ArrayList<CBRCase>();
-	for(RetrievalResult rr: res)
-		news.add(rr.get_case());
-	ListaNoticias menu = new ListaNoticias(news,isIE);
-	menu.pack();
-	menu.setVisible(true);  
 	
-	NewsDescription qrd = (NewsDescription)query.getDescription();
-	CBRCase mostSimilar = res.iterator().next().get_case();
-	NewsDescription rrd = (NewsDescription)mostSimilar.getDescription();
-    
-    // TODO Mostrar interfaz mostrando los resultados
-	//new ResultFrame(qrd.getDescription().getRAWContent(), rrd.getName(), rrd.getAddress(), rrd.getDescription().getRAWContent());
+		//We only compare the "description" attribute using Lucene
+		Attribute textualAttribute = new Attribute("title", NewsDescription.class);
+		nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+	    textualAttribute = new Attribute("text", NewsDescription.class);
+	    nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+	    if (acciones) {
+	        textualAttribute = new Attribute("nombres", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("verbos", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	    }
+	    if (propiedades) {
+		    textualAttribute = new Attribute("Politicos", NewsDescription.class);
+		    nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("PresidentesFutbol", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("EntrenadoresFutbol", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("JugadoresTenis", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("CorredoresFormula1", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("Paises", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	//        textualAttribute = new Attribute("Bancos", NewsDescription.class);
+	//        nnConfig.addMapping(textualAttribute, new SimList());
+	        }
+	
+	    ///////////////////////////////////////////////
+	    //Visualizacion de la base de casos
+	    //jcolibri.extensions.visualization.CasesVisualization.visualize(_caseBase.getCases(), nnConfig);
+	    ///////////////////////////////////////////////  
+	    
+		System.out.println("RESULT: ");
+	
+		Collection<RetrievalResult> res = NNScoringMethod.evaluateSimilarity(cases, query, nnConfig);
+		res = SelectCases.selectTopKRR(res, 5);
+	
+		for(RetrievalResult rr: res)
+		    System.out.println(rr);
+		
+		// MENU
+		ArrayList<CBRCase> news = new ArrayList<CBRCase>();
+		for(RetrievalResult rr: res)
+			news.add(rr.get_case());
+		ListaNoticias menu = new ListaNoticias(news);
+		menu.pack();
+		menu.setVisible(true);  
+		
+		NewsDescription qrd = (NewsDescription)query.getDescription();
+		CBRCase mostSimilar = res.iterator().next().get_case();
+		NewsDescription rrd = (NewsDescription)mostSimilar.getDescription();
+	    
+	    // TODO Mostrar interfaz mostrando los resultados
+		//new ResultFrame(qrd.getDescription().getRAWContent(), rrd.getName(), rrd.getAddress(), rrd.getDescription().getRAWContent());
     }
 
     /*
