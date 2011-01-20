@@ -13,6 +13,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.BevelBorder;
 
@@ -56,13 +57,15 @@ public class Consulta extends JFrame {
 		panel.add(lConsulta);
 		
 		// Consulta
-		consulta = new JTextArea("");
-		consulta.setPreferredSize(new Dimension(200, 100));
-		consulta.setAlignmentX(Component.CENTER_ALIGNMENT);
-		consulta.setBorder(BorderFactory.createCompoundBorder(
+		consulta = new JTextArea(5, 10);
+		consulta.setAlignmentX(Component.LEFT_ALIGNMENT);
+		consulta.setLineWrap(true);
+		JScrollPane scrollPanel = new JScrollPane(consulta);
+		scrollPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollPanel.setBorder(BorderFactory.createCompoundBorder(
 				BorderFactory.createLineBorder(Color.BLACK, 2),
 				BorderFactory.createBevelBorder(BevelBorder.RAISED)));
-		panel.add(consulta);
+		panel.add(scrollPanel);
 		
 		// Comparar Acciones y Objetos
 		cbCompararAccionesObjetos = new JCheckBox("Comparar acciones y objetos");
@@ -76,7 +79,7 @@ public class Consulta extends JFrame {
 		
 		// Recuperar
 		bRecuperar = new JButton("Recuperar");
-		bRecuperar.setAlignmentX(Component.CENTER_ALIGNMENT);
+		bRecuperar.setAlignmentX(Component.LEFT_ALIGNMENT);
 		bRecuperar.addActionListener(new RecuperarActionListener(consulta, cbCompararAccionesObjetos, cbCompararPropiedades, rdi));
 		panel.add(bRecuperar);
 		

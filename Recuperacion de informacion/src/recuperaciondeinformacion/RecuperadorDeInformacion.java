@@ -168,22 +168,22 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	    if (propiedades) {
 		    textualAttribute = new Attribute("Politicos", NewsDescription.class);
 		    nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("PresidentesFutbol", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("EntrenadoresFutbol", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("JugadoresTenis", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("CorredoresFormula1", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("Paises", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
-	//        textualAttribute = new Attribute("Bancos", NewsDescription.class);
-	//        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("PresidentesFutbol", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("EntrenadoresFutbol", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("JugadoresTenis", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("CorredoresFormula1", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("Paises", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        textualAttribute = new Attribute("Bancos", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
 	        }
 	
 	    ///////////////////////////////////////////////

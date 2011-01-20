@@ -14,8 +14,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.border.BevelBorder;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 
 import jcolibri.cbrcore.CBRCase;
 
@@ -81,25 +85,32 @@ public class MenuNoticia extends JFrame {
 		imagen.setBorder(BorderFactory.createCompoundBorder(
 				BorderFactory.createLineBorder(Color.BLACK, 2),
 				BorderFactory.createBevelBorder(BevelBorder.RAISED)));
-		imagen.setPreferredSize(new Dimension(500, 100)); // Math.min(500, img.getIconWidth())
+		imagen.setSize(new Dimension(Math.min(500, img.getIconWidth()), Math.min(150, img.getIconHeight())));
+		JPanel p = new JPanel();
+		p.setSize(new Dimension(Math.min(500, img.getIconWidth()), Math.min(150, img.getIconHeight())));
+		p.add(imagen);
 		c.gridx = 0;
 		c.gridwidth = 2;
 		c.gridy = 1;
 		c.insets = new Insets(5, 10, 5, 10);
 		c.anchor = GridBagConstraints.CENTER;
-		panel.add(imagen, c);
+		panel.add(p, c);
 		
 		// Texto
-		texto = new JTextArea(newsD.getText().toString());
-		texto.setToolTipText(newsD.getText().toString());
-		texto.setPreferredSize(new Dimension(500, 350));
+		texto = new JTextArea(newsD.getText().getRAWContent(), 10, 5);
+		texto.setToolTipText(newsD.getText().getRAWContent());
 		texto.setEditable(false);
 		texto.setLineWrap(true);
+		JScrollPane scrollPanel = new JScrollPane(texto);
+		scrollPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollPanel.setBorder(BorderFactory.createCompoundBorder(
+				BorderFactory.createLineBorder(Color.BLACK, 2),
+				BorderFactory.createBevelBorder(BevelBorder.RAISED)));
 		c.gridx = 0;
 		c.gridwidth = 2;
 		c.gridy = 2;
 		c.insets = new Insets(5, 10, 5, 10);
-		panel.add(texto, c);
+		panel.add(scrollPanel, c);
 		
 		// lNombres
 		lNombres = new JLabel("Nombres: ");
@@ -169,5 +180,4 @@ public class MenuNoticia extends JFrame {
 		
 		add(panel);		
 	}
-	
 }
