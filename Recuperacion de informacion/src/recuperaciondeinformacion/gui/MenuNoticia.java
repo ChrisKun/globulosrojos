@@ -16,10 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextPane;
 import javax.swing.border.BevelBorder;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 
 import jcolibri.cbrcore.CBRCase;
 
@@ -82,13 +79,10 @@ public class MenuNoticia extends JFrame {
 		// Imagen
 		ImageIcon img = new ImageIcon("data/noticias/img/" + newsS.getImgURL());
 		imagen = new JLabel("", img, JLabel.CENTER);
-		imagen.setBorder(BorderFactory.createCompoundBorder(
-				BorderFactory.createLineBorder(Color.BLACK, 2),
-				BorderFactory.createBevelBorder(BevelBorder.RAISED)));
-		imagen.setSize(new Dimension(Math.min(500, img.getIconWidth()), Math.min(150, img.getIconHeight())));
+		imagen.setPreferredSize(new Dimension(Math.min(500, img.getIconWidth()), Math.min(150, img.getIconHeight())));
 		JPanel p = new JPanel();
-		p.setSize(new Dimension(Math.min(500, img.getIconWidth()), Math.min(150, img.getIconHeight())));
 		p.add(imagen);
+		p.setPreferredSize(new Dimension(Math.min(500, img.getIconWidth()), Math.min(150, img.getIconHeight())));
 		c.gridx = 0;
 		c.gridwidth = 2;
 		c.gridy = 1;
@@ -98,7 +92,6 @@ public class MenuNoticia extends JFrame {
 		
 		// Texto
 		texto = new JTextArea(newsD.getText().getRAWContent(), 10, 5);
-		texto.setToolTipText(newsD.getText().getRAWContent());
 		texto.setEditable(false);
 		texto.setLineWrap(true);
 		JScrollPane scrollPanel = new JScrollPane(texto);

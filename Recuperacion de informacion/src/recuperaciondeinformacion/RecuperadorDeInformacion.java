@@ -157,33 +157,49 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		//We only compare the "description" attribute using Lucene
 		Attribute textualAttribute = new Attribute("title", NewsDescription.class);
 		nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+		nnConfig.setWeight(textualAttribute, 0.3);
 	    textualAttribute = new Attribute("text", NewsDescription.class);
 	    nnConfig.addMapping(textualAttribute, new LuceneTextSimilaritySpanish(luceneIndex,query,textualAttribute, true));
+	    nnConfig.setWeight(textualAttribute, 0.3);
 	    if (acciones) {
 	        textualAttribute = new Attribute("nombres", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 0.6);
 	        textualAttribute = new Attribute("verbos", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 0.6);
 	    }
 	    if (propiedades) {
 		    textualAttribute = new Attribute("Politicos", NewsDescription.class);
 		    nnConfig.addMapping(textualAttribute, new SimList());
+		    nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("JugadoresRealMadrid", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("JugadoresBarcelona", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("PresidentesFutbol", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("EntrenadoresFutbol", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("JugadoresTenis", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("CorredoresFormula1", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("Paises", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        textualAttribute = new Attribute("Bancos", NewsDescription.class);
 	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
+	        textualAttribute = new Attribute("JugadoresBaloncesto", NewsDescription.class);
+	        nnConfig.addMapping(textualAttribute, new SimList());
+	        nnConfig.setWeight(textualAttribute, 1.0);
 	        }
 	
 	    ///////////////////////////////////////////////

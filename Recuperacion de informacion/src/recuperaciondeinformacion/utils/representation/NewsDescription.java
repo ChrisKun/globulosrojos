@@ -26,6 +26,7 @@ public class NewsDescription implements CaseComponent {
     ArrayList<String> CorredoresFormula1 = new ArrayList<String>();
     ArrayList<String> Paises = new ArrayList<String>();
     ArrayList<String> Bancos = new ArrayList<String>();
+    ArrayList<String> JugadoresBaloncesto = new ArrayList<String>();
 
     public ArrayList<String> getBancos() {
         return Bancos;
@@ -149,6 +150,7 @@ public class NewsDescription implements CaseComponent {
     	l.put("Jugadores de Tenis", this.JugadoresTenis);
     	l.put("Corredores de F�rmula 1", this.CorredoresFormula1);
     	l.put("Paises", this.Paises);
+    	l.put("JugadoresBaloncesto", this.JugadoresBaloncesto);
     	l.put("Bancos", this.Bancos);
     	return l;
     }
@@ -163,4 +165,12 @@ public class NewsDescription implements CaseComponent {
     public Attribute getIdAttribute() {
         return new Attribute("id", this.getClass());
     }
+
+	public ArrayList<String> getJugadoresBaloncesto() {
+		return JugadoresBaloncesto;
+	}
+
+	public void setJugadoresBaloncesto(ArrayList<String> jugadoresBaloncesto) {
+		JugadoresBaloncesto = jugadoresBaloncesto;
+	}
 }
