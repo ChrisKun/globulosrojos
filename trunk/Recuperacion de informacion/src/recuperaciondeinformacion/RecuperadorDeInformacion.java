@@ -10,6 +10,8 @@ import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.commons.codec.net.BCodec;
+
 import jcolibri.casebase.LinealCaseBase;
 import jcolibri.cbraplications.StandardCBRApplication;
 import jcolibri.cbrcore.Attribute;
@@ -18,6 +20,10 @@ import jcolibri.cbrcore.CBRCaseBase;
 import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.datatypes.Text;
+import jcolibri.evaluation.Evaluator;
+import jcolibri.evaluation.evaluators.HoldOutEvaluator;
+import jcolibri.evaluation.evaluators.LeaveOneOutEvaluator;
+import jcolibri.evaluation.evaluators.SameSplitEvaluator;
 import jcolibri.exception.ExecutionException;
 import jcolibri.extensions.textual.IE.common.BasicInformationExtractor;
 import jcolibri.extensions.textual.IE.common.FeaturesExtractor;
@@ -40,6 +46,7 @@ import jcolibri.test.main.SwingProgressBar;
 import recuperaciondeinformacion.gui.ListaNoticias;
 import recuperaciondeinformacion.utils.NewsConnector;
 import recuperaciondeinformacion.utils.representation.NewsDescription;
+import recuperaciondeinformacion.utils.representation.NewsSolution;
 
 /**
  *
@@ -51,6 +58,8 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     CBRCaseBase _caseBase;
 
     LuceneIndexSpanish luceneIndex;
+    Prediction prediccion;
+    private boolean isEvaluation;
     
     public boolean isIE = false;
     public boolean acciones;
@@ -64,6 +73,17 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     	this.propiedades = propiedades;
     }
     
+    public RecuperadorDeInformacion(boolean isEvaluation)
+    {
+    	super();
+    	this.isEvaluation = isEvaluation;
+    }
+    
+    public RecuperadorDeInformacion()
+    {
+    	super();
+    	isEvaluation = false;
+    }
     /*
      * (non-Javadoc)
      *
@@ -215,6 +235,28 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		for(RetrievalResult rr: res)
 		    System.out.println(rr);
 		
+		////////////////////////////////////////////
+		//votacion ponderada para usarlo en los test
+		if(isEvaluation)
+		{
+	        SimilarityWeightedVotingMethod prueba = new SimilarityWeightedVotingMethod();
+	        prediccion = prueba.getPredictedClass(res);
+		
+	        //esto es para las evaluaciones
+	        CBRCase caso = new CBRCase();
+	        caso = (CBRCase)query;
+	        		
+	        NewsSolution sol = (NewsSolution)caso.getSolution();
+	        double pre;
+	        if(sol.getCategory().equals((prediccion.Classification.toString())))
+	                pre = 1.0;
+	        else 
+	                pre = 0.0;
+	        System.out.println("sol.getRes()"+sol.getCategory().toString()+" - "+prediccion.Classification.toString());
+	        Evaluator.getEvaluationReport().addDataToSeries("Errores", pre);
+	        Evaluator.getEvaluationReport().addDataToSeries("Confianza", prediccion.getConfidence());
+		}
+        
 		// MENU
 		ArrayList<CBRCase> news = new ArrayList<CBRCase>();
 		for(RetrievalResult rr: res)
@@ -308,4 +350,53 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
             Logger.getLogger(RecuperadorDeInformacion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void HoldOutEvaluation()
+    {
+            //SwingProgressBar shows the progress
+    jcolibri.util.ProgressController.clear();
+    jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), HoldOutEvaluator.class);
+    
+    // Example of the Hold-Out evaluation
+            HoldOutEvaluator eval = new HoldOutEvaluator();
+            eval.init(new RecuperadorDeInformacion(true));
+            eval.HoldOut(15, 1);
+            
+            
+//          System.out.println(Evaluator.getEvaluationReport());
+//          jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+    }
+    
+    public void LeaveOneOutEvaluation()
+    {
+            //SwingProgressBar shows the progress
+    jcolibri.util.ProgressController.clear();
+    jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), LeaveOneOutEvaluator.class);
+    
+    //Example of the Leave-One-Out evaluation
+            
+            LeaveOneOutEvaluator eval = new LeaveOneOutEvaluator();
+            eval.init(new RecuperadorDeInformacion(true));
+            eval.LeaveOneOut();
+            
+//          System.out.println(Evaluator.getEvaluationReport());
+//          jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+    }
+    
+    public void SameSplitEvaluation()
+    {
+            //SwingProgressBar shows the progress
+    jcolibri.util.ProgressController.clear();
+    jcolibri.util.ProgressController.register(new jcolibri.test.main.SwingProgressBar(), SameSplitEvaluator.class);
+    
+    // Example of the Same-Split evaluation
+            
+            SameSplitEvaluator eval = new SameSplitEvaluator();
+            eval.init(new RecuperadorDeInformacion(true));
+            eval.generateSplit(10, "split1.txt");
+            eval.HoldOutfromFile("split1.txt");
+            
+//          System.out.println(Evaluator.getEvaluationReport());
+//          jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
+    }
+
 }
