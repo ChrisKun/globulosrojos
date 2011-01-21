@@ -4,7 +4,7 @@ import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CaseComponent;
 import jcolibri.extensions.classification.ClassificationSolution;
 
-public class NewsSolution implements ClassificationSolution {
+public class NewsSolution implements ClassificationSolution, CaseComponent  {
 
 	String id;
 	String category;
