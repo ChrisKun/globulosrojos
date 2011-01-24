@@ -129,19 +129,19 @@
 #
 ######################################################################################
 #
-# Pol�ticos
+# Políticos
 #
 ######################################################################################
-[Politicos]{0}Trinidad Jim�nez( Garc�a-Herrera)?|(Cristina )?Garmendia( Mendiz�bal)?
-[Politicos]{0}(�ngeles Gonz�lez )?Sinde|(Carme )?Chac�n( Piqueras)?
-[Politicos]{0}Elena Salgado( M�ndez)?|�ngel Gabilondo( Pujol)?
-[Politicos]{0}Jos� Blanco( L�pez)?|Miguel Sebasti�n( Gasc�n)?
-[Politicos]{0}(Alfredo P�rez )?Rubalcaba|Francisco Caama�o( Dom�nguez)?
-[Politicos]{0}Rosa Aguilar( Rivero)?|Ram�n J�uregui( Atondo)?
-[Politicos]{0}Leire Paj�n( Iraola)?|Valeriano G�mez( S�nchez)?
-[Politicos]{0}((Manuel )?Chaves( Gonz�lez)?)|((Jos� Luis Rodr�guez )?Zapatero)
-[Politicos]{0}(Pedro )?Zerolo|Eduardo Madina|Felipe Gonz�lez|Jos� Bono
-[Politicos]{0}(Manuel )?Fraga( Iribarne)?|(Jos� Mar�a )?Aznar( L�pez)?
+[Politicos]{0}Trinidad Jiménez( García-Herrera)?|(Cristina )?Garmendia( Mendizábal)?
+[Politicos]{0}(Ángeles González )?Sinde|(Carme )?Chacón( Piqueras)?
+[Politicos]{0}Elena Salgado( Méndez)?|Ángel Gabilondo( Pujol)?
+[Politicos]{0}José Blanco( López)?|Miguel Sebastián( Gascón)?
+[Politicos]{0}(Alfredo Pérez )?Rubalcaba|Francisco Caamaño( Domínguez)?
+[Politicos]{0}Rosa Aguilar( Rivero)?|Ramón Jáuregui( Atondo)?
+[Politicos]{0}Leire Pajín( Iraola)?|Valeriano Gómez( Sánchez)?
+[Politicos]{0}((Manuel )?Chaves( González)?)|((José Luis Rodríguez )?Zapatero)
+[Politicos]{0}(Pedro )?Zerolo|Eduardo Madina|Felipe González|José Bono
+[Politicos]{0}(Manuel )?Fraga( Iribarne)?|(José María )?Aznar( López)?
 [Politicos]{0}(Mariano )?Rajoy( Brey)?|(María Dolores de )?Cospedal
 [Politicos]{0}Javier Arenas|(Esteban González )?Pons
 [Politicos]{0}Cristóbal Montoro( Romero)?|(Federico )?Trillo
