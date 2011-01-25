@@ -21,8 +21,6 @@ public class SimList implements LocalSimilarityFunction {
                                 if (obj0.equals(obj1)) sim += d;
                         }
                 }
-
-
         return sim;
     }
 

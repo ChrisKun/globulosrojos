@@ -162,12 +162,20 @@
 # Real Madrid C.F.
 #
 ######################################################################################
-[JugadoresRealMadrid]{0}(Iker )?Casillas|(Jerzi )?Dudek|(Antonio )?Adán
-[JugadoresRealMadrid]{0}Sergio Ramos|(Raúl )?Albiol|Pepe|(Alvaro )?Arbeloa
-[JugadoresRealMadrid]{0}Marcelo|(Ricardo )?Carvalho|(Ezequiel )?Garay
-[JugadoresRealMadrid]{0}(Mahamadou )?Diarra|(Sami )?Khedira| Kaká
-[JugadoresRealMadrid]{0}(Cristiano )?Ronaldo|(Ángel )?Di María|(Sergio )?Canales
-[JugadoresRealMadrid]{0}(Esteban )?Granero| (Xabi )?Alonso|(Mezut )?Ozil|(Gonzalo )?Higuaín
+[JugadoresRealMadrid]{2}(Iker )?(Casillas)
+[JugadoresRealMadrid]{2}(Cristiano )?(Ronaldo)
+[JugadoresRealMadrid]{2}(Jerzi )?(Dudek)
+[JugadoresRealMadrid]{2}(Antonio )?(Adán)
+[JugadoresRealMadrid]{1}(Sergio Ramos)
+[JugadoresRealMadrid]{2}(Raúl )?(Albiol)
+[JugadoresRealMadrid]{1}(Pepe)
+[JugadoresRealMadrid]{2}(Alvaro )?(Arbeloa)
+[JugadoresRealMadrid]{1}(Marcelo)
+[JugadoresRealMadrid]{2}(Ricardo )?(Carvalho)
+[JugadoresRealMadrid]{2}(Ezequiel )?(Garay)
+[JugadoresRealMadrid]{0}(Mahamadou )?Diarra|(Sami )?Khedira|Kaká
+[JugadoresRealMadrid]{0}(Ángel )?Di María|(Sergio )?Canales
+[JugadoresRealMadrid]{0}(Esteban )?Granero|Xabi Alonso|(Mezut )?Ozil|(Gonzalo )?Higuaín
 [JugadoresRealMadrid]{0}Lass(ana )?(Diarra)?|(Fernando )?Gago
 ######################################################################################
 #
@@ -190,7 +198,7 @@
 #Entrenadores Futbol
 #
 ######################################################################################
-[EntrenadoresFutbol]{2}(Jose )?(Mourinho)
+[EntrenadoresFutbol]{2}(José )?(Mourinho)
 [EntrenadoresFutbol]{0}(Pep )?Guardiola|(Vicente )?Del Bosque|Quique (Sánchez Flores)?
 [EntrenadoresFutbol]{0}(Unai )?Emery|(Rafael )?(Rafa )?Benítez
 ######################################################################################
@@ -205,7 +213,7 @@
 # Fórmula 1
 #
 ######################################################################################
-[CorredoresFormula1]{0}(Fernando )?Alonso|(Lewis )?Hamilton|(Felipe )?Massa|(Mark )?Webber
+[CorredoresFormula1]{0}Fernando Alonso|(Lewis )?Hamilton|(Felipe )?Massa|(Mark )?Webber
 [CorredoresFormula1]{0}(Sebastian )?Vettel|(Jenson )?Button|(Nico )?Rosberg|(Robert )?Kuvica|(Michael )?Schumacher
 [CorredoresFormula1]{0}(Rubens )?Barrichello|(Adrian )?Sutil|(Kamui )?Kobayashi|(Pedro )?De La Rosa|(Jaime )?Algersuari
 ######################################################################################
