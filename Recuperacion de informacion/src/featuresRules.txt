@@ -132,30 +132,63 @@
 # Políticos
 #
 ######################################################################################
-[Politicos]{0}Trinidad Jiménez( García-Herrera)?|(Cristina )?Garmendia( Mendizábal)?
-[Politicos]{0}(Ángeles González )?Sinde|(Carme )?Chacón( Piqueras)?
-[Politicos]{0}Elena Salgado( Méndez)?|Ángel Gabilondo( Pujol)?
-[Politicos]{0}José Blanco( López)?|Miguel Sebastián( Gascón)?
-[Politicos]{0}(Alfredo Pérez )?Rubalcaba|Francisco Caamaño( Domínguez)?
-[Politicos]{0}Rosa Aguilar( Rivero)?|Ramón Jáuregui( Atondo)?
-[Politicos]{0}Leire Pajín( Iraola)?|Valeriano Gómez( Sánchez)?
-[Politicos]{0}((Manuel )?Chaves( González)?)|((José Luis Rodríguez )?Zapatero)
-[Politicos]{0}(Pedro )?Zerolo|Eduardo Madina|Felipe González|José Bono
-[Politicos]{0}(Manuel )?Fraga( Iribarne)?|(José María )?Aznar( López)?
-[Politicos]{0}(Mariano )?Rajoy( Brey)?|(María Dolores de )?Cospedal
-[Politicos]{0}Javier Arenas|(Esteban González )?Pons
-[Politicos]{0}Cristóbal Montoro( Romero)?|(Federico )?Trillo
-[Politicos]{0}Ana Pastor|Rita Barberá|(Alberto Ruiz-)?Gallardón
-[Politicos]{0}(Esperanza )?Aguirre|Jaime Mayor Oreja|Soraya Sáenz de Santamaría
-[Politicos]{0}Alicia Sánchez-Camacho|(Francisco )?Camps|Antonio Basagoiti
-[Politicos]{0}Jaume Matas|Miguel Ángel Revilla|(José )?Montilla
-[Politicos]{0}(Josep-Lluís )?Carod-Rovira|Artur Mas
-[Politicos]{0}(Juan José )?Ibarretxe|Patxi López
-[Politicos]{0}(George ([(W.)(Walker)])? )?Bush|(Barack )?Obama
-[Politicos]{0}Condoleezza Rice|Hillary (Rodham )?Clinton
-[Politicos]{0}(Angela )?Merkel|(Silvio )?Berlusconi|(Nicolas )?Sarkozy
-[Politicos]{0}(David )?Cameron|Sarah Palin|Ségolène Royal
-[Politicos]{0}Joan Herrera|(Joan )?Laporta|(Joan )?Puigcercós
+[Politicos]{2}(José Luis Rodríguez )?(Zapatero)
+[Politicos]{2}(Mariano )?(Rajoy)( Brey)?
+[Politicos]{2}(Alfredo Pérez )?(Rubalcaba)
+[Politicos]{1}(Trinidad Jiménez)( García-Herrera)?
+[Politicos]{2}(Cristina )?(Garmendia)( Mendizábal)?
+[Politicos]{2}(Ángeles González )?(Sinde)
+[Politicos]{2}(Carme )?(Chacón)( Piqueras)?
+[Politicos]{1}(Elena Salgado)( Méndez)?
+[Politicos]{1}(Ángel Gabilondo)( Pujol)?
+[Politicos]{1}(José Blanco)( López)?
+[Politicos]{1}(Miguel Sebastián)( Gascón)?
+[Politicos]{1}(Francisco Caamaño)( Domínguez)?
+[Politicos]{1}(Rosa Aguilar)( Rivero)?
+[Politicos]{1}(Ramón Jáuregui)( Atondo)?
+[Politicos]{1}(Leire Pajín)( Iraola)?
+[Politicos]{1}(Valeriano Gómez)( Sánchez)?
+[Politicos]{2}(Manuel )?(Chaves)( González)?
+[Politicos]{2}(Pedro )?(Zerolo)
+[Politicos]{0}Eduardo Madina
+[Politicos]{0}Felipe González
+[Politicos]{0}José Bono
+[Politicos]{2}(Manuel )?(Fraga)( Iribarne)?
+[Politicos]{2}(José María )?(Aznar)( López)?
+[Politicos]{2}(María Dolores de )?(Cospedal)
+[Politicos]{0}Javier Arenas
+[Politicos]{2}(Esteban González )?(Pons)
+[Politicos]{1}(Cristóbal Montoro)( Romero)?
+[Politicos]{2}(Federico )?(Trillo)
+[Politicos]{0}Ana Pastor
+[Politicos]{0}Rita Barberá
+[Politicos]{2}(Alberto Ruiz-)?(Gallardón)
+[Politicos]{2}(Esperanza )?(Aguirre)
+[Politicos]{0}Jaime Mayor Oreja
+[Politicos]{0}Soraya Sáenz de Santamaría
+[Politicos]{0}Alicia Sánchez-Camacho
+[Politicos]{2}(Francisco )?(Camps)
+[Politicos]{0}Antonio Basagoiti
+[Politicos]{0}Jaume Matas
+[Politicos]{0}Miguel Ángel Revilla
+[Politicos]{2}(José )?(Montilla)
+[Politicos]{2}(Josep-Lluís )?(Carod-Rovira)
+[Politicos]{0}Artur Mas
+[Politicos]{2}(Juan José )?(Ibarretxe)
+[Politicos]{0}Patxi López
+[Politicos]{0}Bush
+[Politicos]{2}(Barack )?(Obama)
+[Politicos]{0}Condoleezza Rice
+[Politicos]{0}Hillary Clinton
+[Politicos]{2}(Angela )?(Merkel)
+[Politicos]{2}(Silvio )?(Berlusconi)
+[Politicos]{2}(Nicolas )?(Sarkozy)
+[Politicos]{2}(David )?(Cameron)
+[Politicos]{0}Sarah Palin
+[Politicos]{0}Ségolène Royal
+[Politicos]{0}Joan Herrera
+[Politicos]{2}(Joan )?(Laporta)
+[Politicos]{2}(Joan )?(Puigcercós)
 [Politicos]{0}Albert Rivera
 ######################################################################################
 #
@@ -173,55 +206,102 @@
 [JugadoresRealMadrid]{1}(Marcelo)
 [JugadoresRealMadrid]{2}(Ricardo )?(Carvalho)
 [JugadoresRealMadrid]{2}(Ezequiel )?(Garay)
-[JugadoresRealMadrid]{0}(Mahamadou )?Diarra|(Sami )?Khedira|Kaká
-[JugadoresRealMadrid]{0}(Ángel )?Di María|(Sergio )?Canales
-[JugadoresRealMadrid]{0}(Esteban )?Granero|Xabi Alonso|(Mezut )?Ozil|(Gonzalo )?Higuaín
-[JugadoresRealMadrid]{0}Lass(ana )?(Diarra)?|(Fernando )?Gago
+[JugadoresRealMadrid]{2}(Mahamadou )?(Diarra)
+[JugadoresRealMadrid]{2}(Sami )?(Khedira)
+[JugadoresRealMadrid]{0}Kaká
+[JugadoresRealMadrid]{2}(Ángel )?(Di María)
+[JugadoresRealMadrid]{2}(Sergio )?(Canales)
+[JugadoresRealMadrid]{0}(Esteban )?Granero
+[JugadoresRealMadrid]{0}(Xabi Alonso)
+[JugadoresRealMadrid]{2}(Mezut )?(Ozil)
+[JugadoresRealMadrid]{2}(Gonzalo )?(Higuaín)
+[JugadoresRealMadrid]{1}(Lass)(ana )?(Diarra)?
+[JugadoresRealMadrid]{2}(Fernando )?(Gago)
 ######################################################################################
 #
 # Barcelona
 #
 ######################################################################################
-[JugadoresBarcelona]{0}(Víctor )?Valdés|(José Manuel )?Pinto
-[JugadoresBarcelona]{0}(Dani )?Alves|(Gerard )?Piqué|(Carles )?Puyol|(Éric )?Abidal|(Gabi )?Milito
-[JugadoresBarcelona]{0}Maxwell|(Javier )?Mascherano|(Seydu )?Keita|Xavi( Hernández)?
-[JugadoresBarcelona]{0}(Sergio )?Busquets|(Andrés )?Iniesta|(Pedro )?Rodriguez|(David )?Villa
-[JugadoresBarcelona]{0}(Lionel )?Messi|Bojan( Krkic)?|(Ibrahim )?Afellay|Adriano|Jeffren( Suárez)?
+[JugadoresBarcelona]{2}(Víctor )?(Valdés)
+[JugadoresBarcelona]{2}(José Manuel )?(Pinto)
+[JugadoresBarcelona]{2}(Dani )?(Alves)
+[JugadoresBarcelona]{2}(Gerard )?(Piqué)
+[JugadoresBarcelona]{2}(Carles )?(Puyol)
+[JugadoresBarcelona]{2}(Éric )?(Abidal)
+[JugadoresBarcelona]{2}(Gabi )?(Milito)
+[JugadoresBarcelona]{0}Maxwell
+[JugadoresBarcelona]{2}(Javier )?(Mascherano)
+[JugadoresBarcelona]{2}(Seydu )?(Keita)
+[JugadoresBarcelona]{1}(Xavi)( Hernández)?
+[JugadoresBarcelona]{2}(Sergio )?(Busquets)
+[JugadoresBarcelona]{2}(Andrés )?(Iniesta)
+[JugadoresBarcelona]{2}(Pedro )?(Rodriguez)
+[JugadoresBarcelona]{2}(David )?(Villa)
+[JugadoresBarcelona]{2}(Lionel )?(Messi)
+[JugadoresBarcelona]{1}(Bojan)( Krkic)?
+[JugadoresBarcelona]{2}(Ibrahim )?(Afellay)
+[JugadoresBarcelona]{0}Adriano
+[JugadoresBarcelona]{1}(Jeffren)( Suárez)?
 ######################################################################################
 #
 #Presidentes Futbol
 #
 ######################################################################################
-[PresidentesFutbol]{0}Florentino (Pérez)?| (Sandro )?Rossel
+[PresidentesFutbol]{1}(Florentino)( Pérez)?
+[PresidentesFutbol]{2}(Sandro )?(Rossel)
 ######################################################################################
 #
 #Entrenadores Futbol
 #
 ######################################################################################
 [EntrenadoresFutbol]{2}(José )?(Mourinho)
-[EntrenadoresFutbol]{0}(Pep )?Guardiola|(Vicente )?Del Bosque|Quique (Sánchez Flores)?
-[EntrenadoresFutbol]{0}(Unai )?Emery|(Rafael )?(Rafa )?Benítez
+[EntrenadoresFutbol]{2}(Pep )?(Guardiola)
+[EntrenadoresFutbol]{2}(Vicente )?(Del Bosque)
+[EntrenadoresFutbol]{0}Quique Sánchez Flores
+[EntrenadoresFutbol]{2}(Unai )?(Emery)
+[EntrenadoresFutbol]{0}Rafa Benítez
 ######################################################################################
 #
 # Tenistas
 #
 ######################################################################################
-[JugadoresTenis]{0}(Rafael )?(Rafa )?Nadal|(Roger )?Federer|(Novak )?Djokovic|(Andy )?Murray
-[JugadoresTenis]{0}(Robin )?Soderling|(Thomas )?Berdych|(David )?Ferrer|(Andy )?Roddick
+[JugadoresTenis]{0}Nadal
+[JugadoresTenis]{2}(Roger )?(Federer)
+[JugadoresTenis]{2}(Novak )?(Djokovic)
+[JugadoresTenis]{2}(Andy )?(Murray)
+[JugadoresTenis]{2}(Robin )?(Soderling)
+[JugadoresTenis]{2}(Thomas )?(Berdych)
+[JugadoresTenis]{2}(David )?(Ferrer)
+[JugadoresTenis]{2}(Andy )?(Roddick)
 ######################################################################################
 #
 # Fórmula 1
 #
 ######################################################################################
-[CorredoresFormula1]{0}Fernando Alonso|(Lewis )?Hamilton|(Felipe )?Massa|(Mark )?Webber
-[CorredoresFormula1]{0}(Sebastian )?Vettel|(Jenson )?Button|(Nico )?Rosberg|(Robert )?Kuvica|(Michael )?Schumacher
-[CorredoresFormula1]{0}(Rubens )?Barrichello|(Adrian )?Sutil|(Kamui )?Kobayashi|(Pedro )?De La Rosa|(Jaime )?Algersuari
+[CorredoresFormula1]{0}Fernando Alonso
+[CorredoresFormula1]{2}(Lewis )?(Hamilton)
+[CorredoresFormula1]{2}(Felipe )?(Massa)
+[CorredoresFormula1]{2}(Mark )?(Webber)
+[CorredoresFormula1]{2}(Sebastian )?(Vettel)
+[CorredoresFormula1]{2}(Jenson )?(Button)
+[CorredoresFormula1]{2}(Nico )?(Rosberg)
+[CorredoresFormula1]{2}(Robert )?(Kuvica)
+[CorredoresFormula1]{2}(Michael )?(Schumacher)
+[CorredoresFormula1]{2}(Rubens )?(Barrichello)
+[CorredoresFormula1]{2}(Adrian )?(Sutil)
+[CorredoresFormula1]{2}(Kamui )?(Kobayashi)
+[CorredoresFormula1]{2}(Pedro )?(De La Rosa)
+[CorredoresFormula1]{2}(Jaime )?(Algersuari)
 ######################################################################################
 #
 # Baloncesto
 #
 ######################################################################################
-[JugadoresBaloncesto]{0}Pau Gasol|Marc Gasol|Jose Calderón|Kobe Bryant|Lebron James
+[JugadoresBaloncesto]{0}Pau Gasol
+[JugadoresBaloncesto]{0}Marc Gasol
+[JugadoresBaloncesto]{0}Jose Calderón
+[JugadoresBaloncesto]{0}Kobe Bryant
+[JugadoresBaloncesto]{0}Lebron James
 ######################################################################################
 #
 # Paises
@@ -238,4 +318,5 @@
 # Bancos
 #
 ######################################################################################
-[Bancos]{0}(Banco )?Santander|BBVA|Barclays|ICBC|HSBC|Goldman Sachs|Caja Madrid|Banesto
+[Bancos]{2}(Banco )?(Santander)
+[Bancos]{0}BBVA|Barclays|ICBC|HSBC|Goldman Sachs|Caja Madrid|Banesto
