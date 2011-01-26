@@ -5,6 +5,7 @@
 
 package recuperaciondeinformacion;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.logging.Level;
@@ -59,6 +60,7 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
     Prediction prediccion;
     private boolean isEvaluation;
     
+    public Collection<RetrievalResult> res;
     public boolean isIE = false;
     public boolean acciones;
     public boolean propiedades;
@@ -227,8 +229,10 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	    
 		System.out.println("RESULT: ");
 	
-		Collection<RetrievalResult> res = NNScoringMethod.evaluateSimilarity(cases, query, nnConfig);
+		res = NNScoringMethod.evaluateSimilarity(cases, query, nnConfig);
 		res = SelectCases.selectTopKRR(res, 5);
+		
+		
 	
 		for(RetrievalResult rr: res)
 		    System.out.println(rr);
@@ -237,20 +241,24 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 		//votacion ponderada para usarlo en los test
 		if(isEvaluation)
 		{
+			CBRCase mostSimiliar = res.iterator().next().get_case();
 	        SimilarityWeightedVotingMethod prueba = new SimilarityWeightedVotingMethod();
 	        prediccion = prueba.getPredictedClass(res);
+	        
 		
 	        //esto es para las evaluaciones
-	        CBRCase caso = new CBRCase();
-	        caso = (CBRCase)query;
+	        CBRCase caso = (CBRCase)query;
 	        		
 	        NewsSolution sol = (NewsSolution)caso.getSolution();
+	        NewsSolution predicho = (NewsSolution) mostSimiliar.getSolution();
 	        double pre;
-	        if(sol.getCategory().equals((prediccion.Classification.toString())))
+	        
+//	        if(sol.getCategory().equals((prediccion.Classification.toString())))
+	        if(sol.getCategory().equals(predicho.getCategory()))
 	                pre = 1.0;
 	        else 
 	                pre = 0.0;
-	        System.out.println("sol.getRes()"+sol.getCategory().toString()+" - "+prediccion.Classification.toString());
+	        System.out.println("sol Categoria = "+sol.getCategory().toString()+" - predicho Categoria = "+predicho.getCategory());
 	        Evaluator.getEvaluationReport().addDataToSeries("Errores", pre);
 	        Evaluator.getEvaluationReport().addDataToSeries("Confianza", prediccion.getConfidence());
 		}
@@ -396,5 +404,10 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 //          System.out.println(Evaluator.getEvaluationReport());
 //          jcolibri.evaluation.tools.EvaluationResultGUI.show(Evaluator.getEvaluationReport(), "Quiniela - Evaluation", false);
     }
-
+//    private void jMenuItem5MouseMousePressed(MouseEvent event) {
+    
 }
+
+
+ 
+
