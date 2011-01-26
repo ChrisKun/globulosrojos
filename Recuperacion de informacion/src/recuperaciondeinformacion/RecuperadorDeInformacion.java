@@ -262,15 +262,16 @@ public class RecuperadorDeInformacion  implements StandardCBRApplication{
 	        Evaluator.getEvaluationReport().addDataToSeries("Errores", pre);
 	        Evaluator.getEvaluationReport().addDataToSeries("Confianza", prediccion.getConfidence());
 		}
-        
-		// MENU
-		ArrayList<CBRCase> news = new ArrayList<CBRCase>();
-		for(RetrievalResult rr: res)
+        if(!isEvaluation)
+        {
+        	// MENU
+        	ArrayList<CBRCase> news = new ArrayList<CBRCase>();
+			for(RetrievalResult rr: res)
 			news.add(rr.get_case());
-		ListaNoticias menu = new ListaNoticias(news);
-		menu.pack();
-		menu.setVisible(true);  
-		
+			ListaNoticias menu = new ListaNoticias(news);
+			menu.pack();
+			menu.setVisible(true);  
+        }
 		NewsDescription qrd = (NewsDescription)query.getDescription();
 		CBRCase mostSimilar = res.iterator().next().get_case();
 		NewsDescription rrd = (NewsDescription)mostSimilar.getDescription();
