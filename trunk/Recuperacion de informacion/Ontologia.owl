@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/Ontology1298036263.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1298036263.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Continente">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Banco"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Noticia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Persona"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PartidoPolitico"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Persona">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Noticia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PartidoPolitico"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Continente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Banco"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="Pais"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="OriginarioDe"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Equipo"/>
+  <owl:Class rdf:ID="Piloto">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Baloncestista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Tenista"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Deportista"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="RealizaAccion"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:ID="Formula1"/>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="Pertenece"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="NoticiaEconomia">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Banco"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="NoticiaTecnologia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="NoticiaInternacional"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Noticia"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#NoticiaTecnologia">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="EmpresaDeTecnologia"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Noticia"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaInternacional"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Deportista">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Deporte"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Persona"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Politico"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Entrenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PresidenteFutbol"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Noticia">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Banco"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Persona"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PartidoPolitico"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Continente"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PartidoPolitico">
+    <owl:disjointWith rdf:resource="#Noticia"/>
+    <owl:disjointWith rdf:resource="#Persona"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Continente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Banco"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#NoticiaInternacional">
+    <rdfs:subClassOf rdf:resource="#Noticia"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Restriction>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#Contiene"/>
+                </owl:onProperty>
+                <owl:hasValue>
+                  <Pais rdf:ID="España">
+                    <EstaEn>
+                      <Continente rdf:ID="Europa"/>
+                    </EstaEn>
+                  </Pais>
+                </owl:hasValue>
+              </owl:Restriction>
+            </owl:complementOf>
+          </owl:Class>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#Contiene"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Pais"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AparatoElectronico">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#EmpresaDeTecnologia"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="CreadoPor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Politico">
+    <owl:disjointWith rdf:resource="#Deportista"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Entrenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PresidenteFutbol"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Persona"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="Milita"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#PartidoPolitico"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Banco">
+    <owl:disjointWith rdf:resource="#Noticia"/>
+    <owl:disjointWith rdf:resource="#Persona"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PartidoPolitico"/>
+    <owl:disjointWith rdf:resource="#Continente"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Tenista">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Deportista"/>
+          <owl:Restriction>
+            <owl:hasValue>
+              <Deporte rdf:ID="Tenis"/>
+            </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Baloncestista"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Piloto"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PresidenteFutbol">
+    <owl:disjointWith rdf:resource="#Deportista"/>
+    <owl:disjointWith rdf:resource="#Politico"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Entrenador"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Persona"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="Preside"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Pais">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Continente"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="EstaEn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Baloncestista">
+    <owl:disjointWith rdf:resource="#Piloto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Tenista"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Deportista"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:ID="Baloncesto"/>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#Pertenece"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#NoticiaPolitica">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Politico"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Noticia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Entrenador">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Persona"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="Entrena"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="#Deportista"/>
+    <owl:disjointWith rdf:resource="#Politico"/>
+    <owl:disjointWith rdf:resource="#PresidenteFutbol"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Deporte">
+    <owl:disjointWith rdf:resource="#Noticia"/>
+    <owl:disjointWith rdf:resource="#Persona"/>
+    <owl:disjointWith rdf:resource="#PartidoPolitico"/>
+    <owl:disjointWith rdf:resource="#Continente"/>
+    <owl:disjointWith rdf:resource="#Banco"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Futbolista">
+    <owl:disjointWith rdf:resource="#Piloto"/>
+    <owl:disjointWith rdf:resource="#Tenista"/>
+    <owl:disjointWith rdf:resource="#Baloncestista"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:ID="Futbol"/>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Deportista"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#Pertenece"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#NoticiaDeportes">
+    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="#NoticiaPolitica"/>
+    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Deportista"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Noticia"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#Pertenece">
+    <rdfs:range rdf:resource="#Equipo"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Futbolista"/>
+          <owl:Class rdf:about="#Baloncestista"/>
+          <owl:Class rdf:about="#Piloto"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#OriginarioDe">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Pais"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Entrena">
+    <rdfs:domain rdf:resource="#Entrenador"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Equipo"/>
+          <owl:Class rdf:about="#Deportista"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#EstaEn">
+    <rdfs:domain rdf:resource="#Pais"/>
+    <rdfs:range rdf:resource="#Continente"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Milita">
+    <rdfs:range rdf:resource="#PartidoPolitico"/>
+    <rdfs:domain rdf:resource="#Politico"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Preside">
+    <rdfs:domain rdf:resource="#PresidenteFutbol"/>
+    <rdfs:range rdf:resource="#Equipo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#CreadoPor">
+    <rdfs:range rdf:resource="#EmpresaDeTecnologia"/>
+    <rdfs:domain rdf:resource="#AparatoElectronico"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#RealizaAccion">
+    <rdfs:domain rdf:resource="#Deportista"/>
+    <rdfs:range rdf:resource="#Deporte"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Contiene">
+    <rdfs:domain rdf:resource="#Noticia"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="URLFoto">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Noticia"/>
+  </owl:DatatypeProperty>
+  <Baloncestista rdf:ID="Pau_Gasol">
+    <RealizaAccion rdf:resource="#Baloncesto"/>
+    <Pertenece>
+      <Equipo rdf:ID="L.A.Lakers"/>
+    </Pertenece>
+    <OriginarioDe rdf:resource="#España"/>
+  </Baloncestista>
+  <Equipo rdf:ID="Ferrari"/>
+  <Politico rdf:ID="Zapatero">
+    <OriginarioDe rdf:resource="#España"/>
+    <Milita>
+      <PartidoPolitico rdf:ID="PSOE"/>
+    </Milita>
+  </Politico>
+  <Tenista rdf:ID="Rafa_Nadal">
+    <OriginarioDe rdf:resource="#España"/>
+    <RealizaAccion rdf:resource="#Tenis"/>
+  </Tenista>
+  <Equipo rdf:ID="Real_Madrid"/>
+  <Piloto rdf:ID="Fernando_Alonso">
+    <Pertenece rdf:resource="#Ferrari"/>
+    <OriginarioDe rdf:resource="#España"/>
+    <RealizaAccion rdf:resource="#Formula1"/>
+  </Piloto>
+  <Continente rdf:ID="Oceania"/>
+  <Futbolista rdf:ID="Iker_Casillas">
+    <Pertenece rdf:resource="#Real_Madrid"/>
+    <OriginarioDe rdf:resource="#España"/>
+    <RealizaAccion rdf:resource="#Futbol"/>
+  </Futbolista>
+  <Continente rdf:ID="Asia"/>
+  <Continente rdf:ID="America"/>
+  <Continente rdf:ID="Africa"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->
