@@ -1,15 +1,13 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * MenuPrincipal.java
  *
  * Created on Feb 26, 2011, 7:05:01 PM
  */
 
 package ontologias;
+
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +18,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /** Creates new form MenuPrincipal */
     public MenuPrincipal() {
         initComponents();
+        loadImages();
+        imageIndex = 0;
+        labelFoto.setIcon(images.get(imageIndex));
     }
 
     /** This method is called from within the constructor to
@@ -33,8 +34,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         panelListaNoticias = new javax.swing.JPanel();
         panelFoto = new javax.swing.JPanel();
+        labelFoto = new javax.swing.JLabel();
         panelInfoFoto = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
+        botonAnterior = new javax.swing.JButton();
+        botonSiguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,15 +53,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 591, Short.MAX_VALUE)
         );
 
+        labelFoto.setText(" ");
+
         javax.swing.GroupLayout panelFotoLayout = new javax.swing.GroupLayout(panelFoto);
         panelFoto.setLayout(panelFotoLayout);
         panelFotoLayout.setHorizontalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 735, Short.MAX_VALUE)
+            .addGroup(panelFotoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelFoto)
+                .addContainerGap(720, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 332, Short.MAX_VALUE)
+            .addGroup(panelFotoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelFoto)
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelInfoFotoLayout = new javax.swing.GroupLayout(panelInfoFoto);
@@ -71,15 +83,39 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
+        botonAnterior.setText("Anterior");
+        botonAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAnteriorActionPerformed(evt);
+            }
+        });
+
+        botonSiguiente.setText("Siguiente");
+        botonSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSiguienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 735, Short.MAX_VALUE)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(botonAnterior)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonSiguiente)
+                .addContainerGap(486, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 85, Short.MAX_VALUE)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAnterior)
+                    .addComponent(botonSiguiente))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,6 +150,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiguienteActionPerformed
+        if(imageIndex + 1 == images.size())
+        {
+            imageIndex = 0;
+            labelFoto.setIcon(images.get(imageIndex));
+            return;
+        }
+        labelFoto.setIcon(images.get(++imageIndex));
+    }//GEN-LAST:event_botonSiguienteActionPerformed
+
+    private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
+        if(imageIndex - 1 == -1)
+        {
+            imageIndex = images.size()-1;
+            labelFoto.setIcon(images.get(imageIndex));
+            return;
+        }
+        labelFoto.setIcon(images.get(--imageIndex));
+    }//GEN-LAST:event_botonAnteriorActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -125,11 +181,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
+    private void loadImages() {
+        if(images == null)
+            images = new ArrayList<ImageIcon>();
+        images.add(new ImageIcon("data/noticias/img/1043327_tn.jpg"));
+        images.add(new ImageIcon("data/noticias/img/1044082.jpg"));
+        images.add(new ImageIcon("data/noticias/img/1050265_tn.jpg"));
+        images.add(new ImageIcon("data/noticias/img/1050271_tn.jpg"));
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAnterior;
+    private javax.swing.JButton botonSiguiente;
+    private javax.swing.JLabel labelFoto;
     private javax.swing.JPanel panelFoto;
     private javax.swing.JPanel panelInfoFoto;
     private javax.swing.JPanel panelListaNoticias;
     private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables
-
+    ArrayList<ImageIcon> images;
+    private int imageIndex;
 }
