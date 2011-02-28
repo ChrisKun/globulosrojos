@@ -30,12 +30,12 @@ import javax.swing.tree.TreeSelectionModel;
  *
  * @author Sergio
  */
-public class PanelArbolInstancias extends JPanel implements TreeSelectionListener {
+public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionListener {
     private static final long serialVersionUID = 1L;
     private JTree ontologyTree;
     private DefaultMutableTreeNode root;
-    private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolSubclases.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
-    private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
+    private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolClasesInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
+    private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolClasesInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
     private static Set<String> datatypes = new java.util.HashSet<String>();
@@ -43,10 +43,10 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     /**
      * Constructor
      */
-    public PanelArbolInstancias(OntoBridge ob, String ancestor) {
+    public PanelArbolClasesInstancias(OntoBridge ob) {
         super();
-        createComponents(ancestor);
-        readOntology(ob, ancestor);
+        createComponents();
+        readOntology(ob);
     }
 
     public String getSelectedInstance() {
@@ -58,14 +58,14 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
         selectedConcept = ontologyTree.getLastSelectedPathComponent().toString();
     }
 
-    protected void createComponents(String ancestor) {
+    protected void createComponents() {
         JScrollPane scrPnl;
         Border lineBorder, titleBorder, emptyBorder, compoundBorder;
 
         //set border and layout
         emptyBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
         lineBorder = BorderFactory.createLineBorder(Color.BLACK);
-        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Instances of " + ancestor);
+        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Ontología completa");
         compoundBorder = BorderFactory.createCompoundBorder(titleBorder,
                 emptyBorder);
         setBorder(compoundBorder);
@@ -100,16 +100,14 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
      * Read the ontology classes.
      *
      */
-    protected void readOntology(OntoBridge ob, String ancestor) {
+    protected void readOntology(OntoBridge ob) {
         try {
             ontologyTree.getModel().getRoot();
             Iterator<String> rc = ob.listRootClasses();
             while (rc.hasNext()) {
                 String nextRC = rc.next();
-                if (ob.getShortName(nextRC).equals(ancestor) || ancestor.equals("Thing")) {
-                    DefaultMutableTreeNode node = createNode(nextRC, ob, 0);
-                    root.add(node);
-                }
+                DefaultMutableTreeNode node = createNode(nextRC, ob, 0);
+                root.add(node);
             }
             ontologyTree.expandRow(0);
 
@@ -122,6 +120,14 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
         DefaultMutableTreeNode node = new DefaultMutableTreeNode(ob.getShortName(nodeName));
         if (depth > maxdepth) {
             return node;
+        }
+
+        Iterator<String> subClasses = ob.listSubClasses(nodeName, true);
+        while (subClasses.hasNext()) {
+            String subClassName = ob.getShortName(subClasses.next());
+            if (!subClassName.equals("owl:Nothing")) {
+                node.add(createNode(subClassName, ob, depth + 1));
+            }
         }
 
         Iterator<String> instances = ob.listInstances(nodeName);
