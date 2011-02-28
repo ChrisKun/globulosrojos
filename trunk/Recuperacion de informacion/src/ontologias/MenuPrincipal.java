@@ -3,10 +3,16 @@
  *
  * Created on Feb 26, 2011, 7:05:01 PM
  */
-
 package ontologias;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
@@ -39,8 +45,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
+        botonM = new javax.swing.JButton();
+        botonR = new javax.swing.JButton();
+        botonT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Marcador Semantico de Imagenes");
+        setMinimumSize(new java.awt.Dimension(944, 715));
 
         javax.swing.GroupLayout panelListaNoticiasLayout = new javax.swing.GroupLayout(panelListaNoticias);
         panelListaNoticias.setLayout(panelListaNoticiasLayout);
@@ -97,24 +108,39 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        botonM.setText("M");
+
+        botonR.setText("R");
+
+        botonT.setText("T");
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addGap(185, 185, 185)
                 .addComponent(botonAnterior)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonM)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonR)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonSiguiente)
-                .addContainerGap(486, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAnterior)
-                    .addComponent(botonSiguiente))
+                    .addComponent(botonM)
+                    .addComponent(botonR)
+                    .addComponent(botonT)
+                    .addComponent(botonSiguiente)
+                    .addComponent(botonAnterior))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -151,8 +177,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiguienteActionPerformed
-        if(imageIndex + 1 == images.size())
-        {
+        if (imageIndex + 1 == images.size()) {
             imageIndex = 0;
             labelFoto.setIcon(images.get(imageIndex));
             return;
@@ -161,9 +186,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSiguienteActionPerformed
 
     private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
-        if(imageIndex - 1 == -1)
-        {
-            imageIndex = images.size()-1;
+        if (imageIndex - 1 == -1) {
+            imageIndex = images.size() - 1;
             labelFoto.setIcon(images.get(imageIndex));
             return;
         }
@@ -171,10 +195,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAnteriorActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new MenuPrincipal().setVisible(true);
             }
@@ -182,17 +207,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     private void loadImages() {
-        if(images == null)
+        
+        if (images == null) {
             images = new ArrayList<ImageIcon>();
-        images.add(new ImageIcon("data/noticias/img/1043327_tn.jpg"));
-        images.add(new ImageIcon("data/noticias/img/1044082.jpg"));
-        images.add(new ImageIcon("data/noticias/img/1050265_tn.jpg"));
-        images.add(new ImageIcon("data/noticias/img/1050271_tn.jpg"));
+        }
+        try {
+            images = readFileNamesFromFile("data/noticias/img/nombres.txt");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Imposible cargar imagenes. Fichero de nombres de imagenes no encontrado");
+            return;
+        }
     }
 
+    private ArrayList<ImageIcon> readFileNamesFromFile(String fileName) throws FileNotFoundException {
+        File archivo = new File(fileName);
+        FileReader fr = new FileReader(archivo);
+        BufferedReader br = new BufferedReader(fr);
+        ArrayList<ImageIcon> names = new ArrayList<ImageIcon>();
+        try {
+            String linea = br.readLine();
+            while(linea != null)
+            {
+                names.add(new ImageIcon("data/noticias/img/"+linea));
+                linea = br.readLine();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return names;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnterior;
+    private javax.swing.JButton botonM;
+    private javax.swing.JButton botonR;
     private javax.swing.JButton botonSiguiente;
+    private javax.swing.JButton botonT;
     private javax.swing.JLabel labelFoto;
     private javax.swing.JPanel panelFoto;
     private javax.swing.JPanel panelInfoFoto;
