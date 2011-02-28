@@ -30,20 +30,20 @@ import javax.swing.tree.TreeSelectionModel;
  *
  * @author Sergio
  */
-public class PanelArbolInstancias extends JPanel implements TreeSelectionListener {
+public class PanelArbolPropiedades extends JPanel implements TreeSelectionListener {
     private static final long serialVersionUID = 1L;
     private JTree ontologyTree;
     private DefaultMutableTreeNode root;
-    private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolSubclases.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
-    private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
+    private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
+    private static Icon PROPERTY = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/datatype.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
-    private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
+    private static ArrayList<String> drawnProperties = new ArrayList<String>(); //avoid cycles between instances
     private static Set<String> datatypes = new java.util.HashSet<String>();
 
     /**
      * Constructor
      */
-    public PanelArbolInstancias(OntoBridge ob, String ancestor) {
+    public PanelArbolPropiedades(OntoBridge ob, String ancestor) {
         super();
         createComponents(ancestor);
         readOntology(ob, ancestor);
@@ -65,13 +65,13 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
         //set border and layout
         emptyBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
         lineBorder = BorderFactory.createLineBorder(Color.BLACK);
-        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Instances of " + ancestor);
+        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Properties of " + ancestor);
         compoundBorder = BorderFactory.createCompoundBorder(titleBorder,
                 emptyBorder);
         setBorder(compoundBorder);
 
         //set Ontology
-        root = new DefaultMutableTreeNode("Thing");
+        root = new DefaultMutableTreeNode(ancestor);
 
         ontologyTree = new JTree(root);
         ontologyTree.setCellRenderer(new MyRenderer());
@@ -103,14 +103,16 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     protected void readOntology(OntoBridge ob, String ancestor) {
         try {
             ontologyTree.getModel().getRoot();
-            Iterator<String> rc = ob.listRootClasses();
-            while (rc.hasNext()) {
-                String nextRC = rc.next();
-                if (ob.getShortName(nextRC).equals(ancestor) || ancestor.equals("Thing")) {
-                    DefaultMutableTreeNode node = createNode(nextRC, ob, 0);
-                    root.add(node);
+
+            Iterator<String> properties = ob.listInstanceProperties(ancestor);
+            while (properties.hasNext()) {
+                String propName = ob.getShortName(properties.next());
+                if (!propName.contains("rdf") && !propName.contains("owl")) {
+                    root.add(new DefaultMutableTreeNode(propName));
+                    drawnProperties.add(propName);
                 }
             }
+
             ontologyTree.expandRow(0);
 
         } catch (Exception e) {
@@ -124,12 +126,12 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
             return node;
         }
 
-        Iterator<String> instances = ob.listInstances(nodeName);
+        Iterator<String> instances = ob.listInstanceProperties(nodeName);
         while (instances.hasNext()) {
             String instanceName = ob.getShortName(instances.next());
             if (!instanceName.equals("owl:Nothing")) {
                 node.add(new DefaultMutableTreeNode(instanceName));
-                drawnInstances.add(instanceName);
+                drawnProperties.add(instanceName);
             }
         }
 
@@ -154,8 +156,8 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
             try {
                 DefaultMutableTreeNode dmtn = (DefaultMutableTreeNode)value;
                 Object o = dmtn.getUserObject();
-                if (drawnInstances.contains(o))
-                    setIcon(INSTANCE);
+                if (drawnProperties.contains(o))
+                    setIcon(PROPERTY);
                 else
                     setIcon(CONCEPT);
             } catch (Exception e) {
