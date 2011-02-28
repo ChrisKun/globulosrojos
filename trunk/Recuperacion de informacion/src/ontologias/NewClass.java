@@ -4,6 +4,8 @@ import es.ucm.fdi.gaia.ontobridge.OntoBridge;
 import es.ucm.fdi.gaia.ontobridge.OntologyDocument;
 import es.ucm.fdi.gaia.ontobridge.test.gui.PnlConceptsTree;
 import java.util.ArrayList;
+import ontologias.interfaz.panel.PanelArbolInstancias;
+import ontologias.interfaz.panel.PanelArbolSubclases;
 
 /**
  *
@@ -21,7 +23,7 @@ public class NewClass {
         ob.loadOntology(mainOnto, subOntologies, false);
 
         javax.swing.JFrame window = new javax.swing.JFrame(mainOnto.getURL());
-        PnlConceptsTree tree = new PnlConceptsTree(ob);
+        PanelArbolInstancias tree = new PanelArbolInstancias(ob, "Equipo");
         window.getContentPane().add(tree);
         window.pack();
         window.setSize(300, 600);
