@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import ontologias.utils.CargadorImagenes;
 
 /**
  *
@@ -24,7 +25,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /** Creates new form MenuPrincipal */
     public MenuPrincipal() {
         initComponents();
-        loadImages();
+        CargadorImagenes loader = new CargadorImagenes();
+        images = loader.loadImages();
         imageIndex = 0;
         labelFoto.setIcon(images.get(imageIndex));
     }
@@ -204,39 +206,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 new MenuPrincipal().setVisible(true);
             }
         });
-    }
-
-    private void loadImages() {
-        
-        if (images == null) {
-            images = new ArrayList<ImageIcon>();
-        }
-        try {
-            images = readFileNamesFromFile("data/noticias/img/nombres.txt");
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Imposible cargar imagenes. Fichero de nombres de imagenes no encontrado");
-            return;
-        }
-    }
-
-    private ArrayList<ImageIcon> readFileNamesFromFile(String fileName) throws FileNotFoundException {
-        File archivo = new File(fileName);
-        FileReader fr = new FileReader(archivo);
-        BufferedReader br = new BufferedReader(fr);
-        ArrayList<ImageIcon> names = new ArrayList<ImageIcon>();
-        try {
-            String linea = br.readLine();
-            while(linea != null)
-            {
-                names.add(new ImageIcon("data/noticias/img/"+linea));
-                linea = br.readLine();
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-        return names;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnterior;
