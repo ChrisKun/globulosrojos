@@ -110,6 +110,20 @@ public class CargadorImagenes {
         ob.save("files/Ontologia.owl");
     }
 
+    public Iterator<String> LoadImageInfo(String image)
+    {
+        OntoBridge ob = new OntoBridge();
+        ob.initWithPelletReasoner();
+
+        OntologyDocument mainOnto = new OntologyDocument("","file:files/Ontologia.owl");
+        ArrayList<OntologyDocument> subOntologies = new ArrayList<OntologyDocument>();
+        ob.loadOntology(mainOnto, subOntologies, false);
+
+        Iterator<String> it = ob.listBelongingClasses(image);
+        return it;
+
+    }
+
     public static void main(String[] args){
         CargadorImagenes loader = new CargadorImagenes();
         loader.loadImagesInOntology(loader.loadImageNames());
