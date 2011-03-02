@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -29,6 +30,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         images = loader.loadImages();
         imageIndex = 0;
         labelFoto.setIcon(images.get(imageIndex));
+        String[] nombre = images.get(imageIndex).toString().split("/");
+        Iterator<String> it = loader.LoadImageInfo(nombre[3]);
+        System.out.println(nombre[3]);
+        System.out.println(images.get(imageIndex).getDescription());
+        System.out.println(images.get(imageIndex).toString());
+        
+        while(it.hasNext())
+        {
+            labelImageInfo.setText(it.next());
+        }
     }
 
     /** This method is called from within the constructor to
@@ -44,6 +55,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
         panelInfoFoto = new javax.swing.JPanel();
+        labelImageInfo = new javax.swing.JLabel();
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
@@ -75,7 +87,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(720, Short.MAX_VALUE))
+                .addContainerGap(792, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,16 +97,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(304, Short.MAX_VALUE))
         );
 
+        labelImageInfo.setText("labelImageInfo");
+
         javax.swing.GroupLayout panelInfoFotoLayout = new javax.swing.GroupLayout(panelInfoFoto);
         panelInfoFoto.setLayout(panelInfoFotoLayout);
         panelInfoFotoLayout.setHorizontalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 735, Short.MAX_VALUE)
+            .addGroup(panelInfoFotoLayout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(labelImageInfo)
+                .addContainerGap(512, Short.MAX_VALUE))
         );
         panelInfoFotoLayout.setVerticalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInfoFotoLayout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
+                .addComponent(labelImageInfo)
+                .addGap(64, 64, 64))
         );
+
+        labelImageInfo.getAccessibleContext().setAccessibleName("labelImageInfo");
 
         botonAnterior.setText("Anterior");
         botonAnterior.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +165,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(botonT)
                     .addComponent(botonSiguiente)
                     .addComponent(botonAnterior))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,6 +236,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonSiguiente;
     private javax.swing.JButton botonT;
     private javax.swing.JLabel labelFoto;
+    private javax.swing.JLabel labelImageInfo;
     private javax.swing.JPanel panelFoto;
     private javax.swing.JPanel panelInfoFoto;
     private javax.swing.JPanel panelListaNoticias;
