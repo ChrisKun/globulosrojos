@@ -8,6 +8,8 @@ package ontologias;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.ImageIcon;
+import ontologias.interfaz.panel.PanelArbolClasesInstancias;
+import ontologias.interfaz.panel.PanelArbolInstancias;
 import ontologias.interfaz.panel.PanelArbolSubclases;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
@@ -133,8 +135,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         botonR.setText("R");
+        botonR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRActionPerformed(evt);
+            }
+        });
 
         botonT.setText("T");
+        botonT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
@@ -224,6 +236,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         window.setSize(300, 600);
         window.setVisible(true);
     }//GEN-LAST:event_botonMActionPerformed
+
+    private void botonRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRActionPerformed
+        javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
+        PanelArbolInstancias subclases = new PanelArbolInstancias(Ontologia.getInstance(), "Persona");
+        window.getContentPane().add(subclases);
+        window.pack();
+        window.setSize(300, 600);
+        window.setVisible(true);
+    }//GEN-LAST:event_botonRActionPerformed
+
+    private void botonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTActionPerformed
+        javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
+        PanelArbolClasesInstancias subclases = new PanelArbolClasesInstancias(Ontologia.getInstance());
+        window.getContentPane().add(subclases);
+        window.pack();
+        window.setSize(300, 600);
+        window.setVisible(true);
+    }//GEN-LAST:event_botonTActionPerformed
 
     /**
      * @param args the command line arguments

@@ -199,11 +199,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="R"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonT">
           <Properties>
             <Property name="text" type="java.lang.String" value="T"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonTActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
