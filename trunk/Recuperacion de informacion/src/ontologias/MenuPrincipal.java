@@ -5,17 +5,12 @@
  */
 package ontologias;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import ontologias.interfaz.panel.PanelArbolSubclases;
 import ontologias.utils.CargadorImagenes;
+import ontologias.utils.Ontologia;
 
 /**
  *
@@ -32,9 +27,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         labelFoto.setIcon(images.get(imageIndex));
         String[] nombre = images.get(imageIndex).toString().split("/");
         Iterator<String> it = loader.LoadImageInfo(nombre[3]);
-        System.out.println(nombre[3]);
-        System.out.println(images.get(imageIndex).getDescription());
-        System.out.println(images.get(imageIndex).toString());
+//        System.out.println(nombre[3]);
+//        System.out.println(images.get(imageIndex).getDescription());
+//        System.out.println(images.get(imageIndex).toString());
         
         while(it.hasNext())
         {
@@ -75,7 +70,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         panelListaNoticiasLayout.setVerticalGroup(
             panelListaNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 591, Short.MAX_VALUE)
+            .addGap(0, 603, Short.MAX_VALUE)
         );
 
         labelFoto.setText(" ");
@@ -87,7 +82,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(792, Short.MAX_VALUE))
+                .addContainerGap(810, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,8 +111,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(64, 64, 64))
         );
 
-        labelImageInfo.getAccessibleContext().setAccessibleName("labelImageInfo");
-
         botonAnterior.setText("Anterior");
         botonAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +126,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         botonM.setText("M");
+        botonM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMActionPerformed(evt);
+            }
+        });
 
         botonR.setText("R");
 
@@ -153,7 +151,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(botonT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonSiguiente)
-                .addContainerGap(329, Short.MAX_VALUE))
+                .addContainerGap(419, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,6 +215,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         labelFoto.setIcon(images.get(--imageIndex));
     }//GEN-LAST:event_botonAnteriorActionPerformed
+
+    private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
+        javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
+        PanelArbolSubclases subclases = new PanelArbolSubclases(Ontologia.getInstance(), "Noticia");
+        window.getContentPane().add(subclases);
+        window.pack();
+        window.setSize(300, 600);
+        window.setVisible(true);
+    }//GEN-LAST:event_botonMActionPerformed
 
     /**
      * @param args the command line arguments

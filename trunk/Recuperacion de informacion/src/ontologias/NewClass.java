@@ -2,10 +2,8 @@ package ontologias;
 
 import es.ucm.fdi.gaia.ontobridge.OntoBridge;
 import es.ucm.fdi.gaia.ontobridge.OntologyDocument;
-import es.ucm.fdi.gaia.ontobridge.test.gui.PnlConceptsTree;
 import java.util.ArrayList;
 import ontologias.interfaz.panel.PanelArbolInstancias;
-import ontologias.interfaz.panel.PanelArbolSubclases;
 
 /**
  *
