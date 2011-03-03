@@ -1,7 +1,6 @@
 package ontologias.utils;
 
 import es.ucm.fdi.gaia.ontobridge.OntoBridge;
-import es.ucm.fdi.gaia.ontobridge.OntologyDocument;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -95,12 +94,7 @@ public class CargadorImagenes {
      */
     public void loadImagesInOntology(ArrayList<String> images){
 
-        OntoBridge ob = new OntoBridge();
-        ob.initWithPelletReasoner();
-
-        OntologyDocument mainOnto = new OntologyDocument("","file:files/Ontologia.owl");
-        ArrayList<OntologyDocument> subOntologies = new ArrayList<OntologyDocument>();
-        ob.loadOntology(mainOnto, subOntologies, false);
+        OntoBridge ob = Ontologia.getInstance();
 
         for(String img: images)
         {
@@ -112,20 +106,15 @@ public class CargadorImagenes {
 
     public Iterator<String> LoadImageInfo(String image)
     {
-        OntoBridge ob = new OntoBridge();
-        ob.initWithPelletReasoner();
-
-        OntologyDocument mainOnto = new OntologyDocument("","file:files/Ontologia.owl");
-        ArrayList<OntologyDocument> subOntologies = new ArrayList<OntologyDocument>();
-        ob.loadOntology(mainOnto, subOntologies, false);
+        OntoBridge ob = Ontologia.getInstance();
 
         Iterator<String> it = ob.listBelongingClasses(image);
         return it;
 
     }
 
-    public static void main(String[] args){
-        CargadorImagenes loader = new CargadorImagenes();
-        loader.loadImagesInOntology(loader.loadImageNames());
-    }
+//    public static void main(String[] args){
+//        CargadorImagenes loader = new CargadorImagenes();
+//        loader.loadImagesInOntology(loader.loadImageNames());
+//    }
 }
