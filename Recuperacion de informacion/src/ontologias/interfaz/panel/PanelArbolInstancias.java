@@ -2,6 +2,7 @@ package ontologias.interfaz.panel;
 
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
@@ -33,17 +34,29 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
-    private static Set<String> datatypes = new java.util.HashSet<String>();
+    private OntoBridge ob;
+    private String propertyName;
+    private String sourceInstance;
 
     /**
      * Constructor
      */
     public PanelArbolInstancias(OntoBridge ob, String ancestor) {
         super();
+        this.ob = ob;
         createComponents(ancestor);
         readOntology(ob, ancestor);
     }
 
+    public PanelArbolInstancias(OntoBridge ob, Iterator<String> ancestors, String sourceInstance, String propertyName) {
+    	super();
+    	this.ob = ob;
+    	this.propertyName = propertyName;
+    	this.sourceInstance = sourceInstance;
+    	createComponents("");
+    	readOntology(ob, ancestors);
+    }
+    
     public String getSelectedInstance() {
         return selectedConcept;
     }
@@ -78,8 +91,15 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1) {
+                if (selRow != -1 && e.getClickCount() == 2) {
                     selectedConcept = selPath.toString();
+                    
+                    String instanceName = ob.getShortName(selPath.getLastPathComponent().toString());
+                    // TODO: Modificar la ontología añadiendo la instancia seleccionada a la propiedad
+                    ob.modifyOntProperty(sourceInstance, propertyName, instanceName);
+                    
+                    // Cerramos el panel
+                    close();
                 }
             }
         });
@@ -90,6 +110,11 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
         setLayout(new BorderLayout());
         add(scrPnl, BorderLayout.CENTER);
     }
+    
+    public void close() {
+    	// JPanel -> JLPanel -> JRootPanel -> JFrame
+    	((JFrame)this.getParent().getParent().getParent().getParent()).dispose();
+    }
 
     /**
      * Read the ontology classes.
@@ -98,20 +123,32 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     protected void readOntology(OntoBridge ob, String ancestor) {
         try {
             ontologyTree.getModel().getRoot();
-            Iterator<String> rc = ob.listRootClasses();
-            while (rc.hasNext()) {
-                String nextRC = rc.next();
-                if (ob.getShortName(nextRC).equals(ancestor) || ancestor.equals("Thing")) {
-                    DefaultMutableTreeNode node = createNode(nextRC, ob, 0);
-                    root.add(node);
-                }
-            }
+            
+            DefaultMutableTreeNode node = createNode(ob.getURI(ancestor), ob, 0);
+            root.add(node);
+
             ontologyTree.expandRow(0);
 
         } catch (Exception e) {
             org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
         }
     }
+    
+    protected void readOntology(OntoBridge ob, Iterator<String> ancestors) {
+        try {
+        	while (ancestors.hasNext()) {
+        		String ancestor = ancestors.next();
+	            ontologyTree.getModel().getRoot();
+                DefaultMutableTreeNode node = createNode(ob.getURI(ancestor), ob, 0);
+                root.add(node);
+                for (int i = 0; i < ontologyTree.getRowCount(); i++)
+                	ontologyTree.expandRow(i);
+        	}
+
+        } catch (Exception e) {
+            org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
+        }
+    }   
 
     private DefaultMutableTreeNode createNode(String nodeName, OntoBridge ob, int depth) {
         DefaultMutableTreeNode node = new DefaultMutableTreeNode(ob.getShortName(nodeName));

@@ -2,6 +2,7 @@ package ontologias.interfaz.panel;
 
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
@@ -33,7 +34,6 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
     private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolClasesInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
-    private static Set<String> datatypes = new java.util.HashSet<String>();
 
     /**
      * Constructor
@@ -60,7 +60,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         //set border and layout
         emptyBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
         lineBorder = BorderFactory.createLineBorder(Color.BLACK);
-        titleBorder = BorderFactory.createTitledBorder(lineBorder, "OntologÃ­a completa");
+        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Ontología");
         compoundBorder = BorderFactory.createCompoundBorder(titleBorder,
                 emptyBorder);
         setBorder(compoundBorder);
@@ -76,10 +76,12 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         ontologyTree.addMouseListener(new MouseAdapter() {
 
             public void mousePressed(MouseEvent e) {
+            	
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1) {
+                if (selRow != -1 && e.getClickCount() == 2) {
                     selectedConcept = selPath.toString();
+                    System.out.println(selectedConcept);
                 }
             }
         });
@@ -87,8 +89,17 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         scrPnl = new JScrollPane(ontologyTree);
         scrPnl.setViewportView(ontologyTree);
 
+        // Botón para crear una instancia en la clase seleccionada
+        JButton botonCrear = new JButton("Crear instancia");
+        botonCrear.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+            	System.out.println("<Instancia creada>");
+            }       	
+        });
+        
         setLayout(new BorderLayout());
         add(scrPnl, BorderLayout.CENTER);
+        add(botonCrear, BorderLayout.SOUTH);
     }
 
     /**
