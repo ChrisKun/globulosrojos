@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/Ontology1298036263.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl"/>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#OriginarioDe"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Formula1"/>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pertenece"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EmpresaDeTecnologia"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Restriction>
+                <owl:hasValue>
+                  <Pais rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#España">
+                    <EstaEn>
+                      <Continente rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Europa"/>
+                    </EstaEn>
+                  </Pais>
+                </owl:hasValue>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </owl:complementOf>
+          </owl:Class>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#AparatoElectronico">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#EmpresaDeTecnologia"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#CreadoPor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Milita"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+          <owl:Restriction>
+            <owl:hasValue>
+              <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenis"/>
+            </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Preside"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EstaEn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+          <owl:Restriction>
+            <owl:hasValue>
+              <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncesto"/>
+            </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pertenece"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbol"/>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pertenece"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrena"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes">
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pertenece">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#OriginarioDe">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrena">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EstaEn">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ApareceEn">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Preside">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Milita">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#CreadoPor">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#AparatoElectronico"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#EmpresaDeTecnologia"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#URLFoto">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+  </owl:DatatypeProperty>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1158596_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_madrid_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas151110.jpg_lite08.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abcia.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291016834534moudn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mafo2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290807071259CARCELNEGRAdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290892320984MANUdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#maletindolares-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290723733241RAUL-DET.dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290979011624googledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#vivienda-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#a-la-alza-flecha255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#candidatos.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1173734_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_berdych_24112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpamas241110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#eurodinero255x208-4-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290886802534egiptodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abferran091110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290690930732corea kfadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla151110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas121110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdlondres241110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156706_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#salgado-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291187613743gasolesdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espana-19-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#vistascongruas2-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsasube255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpesquerra121110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#129113562450220101130-3505984dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291009192911partidodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1166981_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_md_26112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpsanchezcamacho191110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1160131_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291239398363cairodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdlisboa101110zp.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290855603159messicristianodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1171400_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuigcercos231110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290898380848nadaldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174919_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291207083806ministrograndedn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_guardiola_28112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Miting-a-Girona_highlighted_latest_news.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1160151_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_zenit_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jplonas261110.JPG_lite4.jpg"/>
+  <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Real_Madrid"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175437_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpciutadans281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_ferrari_25112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290749963995netanyahudn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas_polonia.JPG.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156333_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abperra181110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trinidad_hillary1_JR20111033.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#roubini255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#tratonegocios255x208-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290626481993londresdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpuigcercos241110.jpg_lite4.jpg"/>
+  <PartidoPolitico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PSOE"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1173845_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1163108_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290880810337berbatovdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppvilla291110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290951352905alonso-detalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#joseblanco-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291177176903cousodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290547796712realdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_colera_161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#824129_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Niels2.JPG_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdobama261110dos.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1163799_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#400euros-5-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290850021715colombiadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprajoy011210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#salgadopresupuestos255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#al_assange_41110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jimenezaranda2.JPG_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_bar2_25112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla_zp_felipe251110.jpg_lite8.jpg"/>
+  <Baloncestista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pau_Gasol">
+    <Pertenece>
+      <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Ferrari"/>
+    </Pertenece>
+    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncesto"/>
+  </Baloncestista>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175442_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsako-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgmasbadalona.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1171600.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#marsans255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla_pregunta091110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1088266_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jauschwitz181209ok4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla_castells171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#acslogo255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291067473293koreadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1154891_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#michele.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprajoy211110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas241110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174804_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#brokers4-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291125234906xavidetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dineroencadenado255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abdaniel011210.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174812_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290589330444browndn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_getafe_27112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#herrera_rivera.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#millonario-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290646516464palindn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291016522329goltvdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#waterdav.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290964622672assangedn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_higuain_291110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1150286_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo2-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#apple.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1150402_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#james.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abcamacho131110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291014207843federerdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#benach1_JR1901095.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291071680404haiti-det.dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290635255670valencia-detdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291086006699bush2dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bceedificioylogo255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291204828323cristianodetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291068289933barcadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1050265_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trichet255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpcamacho181110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpcamacho281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpherrera281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1155238_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abhaiti281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176061_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290620105382carteldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175343_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#subidon-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#socialistes.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmcamacho281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Invitacion_FB_20101002.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#819692_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175365_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1289519569000.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpuigcercos0710094.JPG"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291153764247martellydn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1167718_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1147556_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abrivera221110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdsarko161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmasduran251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ahorro-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zapatero_rajoy.jpg_lite04.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas221110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_mourinho2_23112010.JPG_lite4.jpg"/>
+  <Continente rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Asia"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jaimeguardiola-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#marruecos.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#controladoraereo255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nadalon.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#calendario-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_rosellfloren_291110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1173066_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291154699709mani-roma-det.dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1111432_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#paulkrugman-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156602_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174805_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmasherrera011210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1166860_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#hipotecas-3-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291076023746moudn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290721961680entrevistadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#discursos.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trichetsubidatipos--200x160-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#japon-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175495_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290624297187indiadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#848263_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1151492_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1155237_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuigcercos181110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290667853988ramosdetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290710994205pisadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasol1_JR271110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1159462_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdlisboa191110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_rubalcaba_191110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#barca12.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290615938161alonsodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1153116_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#vboutdav161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290891803657xabvi-detdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1170206_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1166205_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_kielce_27112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291155301945royal-det.dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1133339_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290887200898faveladn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#almaliki1_JR251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#hercules.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291071448862ramosdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgtresserras.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#osce1_JR011210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#compraventa-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#carmignac-2-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1166867_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290728272843wengerdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Creedence_Clearwater_Revival_1968.jpg_lite44.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1158399_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1149935_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprajoy121110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1085260_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290677386804calderondn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291010351765campdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_ferrari3_25112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#elenasalgado-6-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdalemania171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291126048449rubalcabadn.jpg"/>
+  <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#L.A.Lakers"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1159344_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsagoya255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#angelamerkel55-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_debat_21112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290663126757coreadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprajoy.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#descensos2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas091110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291163628020interpoldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291152186146garraldadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291071755889pepedn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgmessi.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#guillaume-poli-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176029_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1151273_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156137_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290728892742contadordn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trichet255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#2abcolera161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290722399097COREAdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290682821172malikidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#de_federer_25112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgmanifa.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290721420087haitidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290959399576liverpooldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lunesbuena-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1167687_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#scanner.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_sergio_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprivera161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zpcongreso-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#subidabolsa255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#usa-5-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abmontilla021210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#fotosisologasok.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176021_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#motill.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1163578_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290983774079soldadodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1154256_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpspiderman171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290975299101nadaldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#elenasalgado-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ronaldo1_JR271110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#diezferran-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdobama241110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgmas.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1153147_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_bcbn_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdletitbe0705104.JPG"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#capitalriesgo-1-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abmarkus251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#repsol-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1162449_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#santamariareyal255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgjuicio.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NADALION.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_nadal2_26112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espanyol1.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abjsesus2512085.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1167659_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291071012037mundodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156693_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpaguilarmontilla151110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1163081_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1158929_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291116062857barcelonadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espana200x160--200x160-9-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasol1_JR241110.jpg_lite4.jpg"/>
+  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Zapatero">
+    <Milita rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PSOE"/>
+    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+  </Politico>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_ferrer_23112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1151773_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291058604419clinton-detdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abmadi021210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zapaterodavos255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1170045_tn.jpg"/>
+  <Tenista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Rafa_Nadal">
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenis"/>
+    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+  </Tenista>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1135262_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#coches-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176094_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abnieve301110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdgranma261110.JPG_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdfranco201110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abrusia181110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jptura191110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290802743724papadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mercadosbajan255x208-9-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsasmundiales255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zapa-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#codere255x208-255x255x80-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsasube255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#panoramicanoche-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290786499708nadaldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1170105_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgparlamento.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mercados255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290708954371riodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#messi_pinto1_JR281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#montilla.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290551297523ferrerdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#101116-Montilla.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#cajamadrid-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1167480_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290636023571messidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#grifo-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_valdes_24112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1050271_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdbrasil251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abpuig171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1043327_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1082759.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lufthansa-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abhaiti291110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_clasico_291110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpcamacho261110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291088368474irandn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#845653_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla241110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290960003900nethanyudn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_dublin_27112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mas_montilla.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1155287_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1153431_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmsuu221110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lama4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdotan191110risas.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#126147276518320091222-2766961dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppptinell141110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#salgadocajamadrid255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290937271390corea-del-surdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas301110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abaperu231110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1169195_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas091110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_xavi_301110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdmurray251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1289519500543.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgcontador.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abpalin251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#florentino-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abdefensora241110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas281110.JPG_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#fotovisitapapa01.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsasmundiales255x208-5-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1044082.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290683155872valdebebasdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#500euros-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#irlanda-5-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#controladoraereo255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasol6_JR011110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290981190799gasdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Sinde_20101026.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nuevayorknoche-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#puyol1_JR241110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#salgado-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_cristiano1_251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_preciado_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291089055193egiptodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1170731_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trichetsubidatipos--200x160-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291209700564ramosdetdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#torrebarajas255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#hipotecas-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290632440242bomberosdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1155340_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas101110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174370_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174784_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290943126059favelas-detalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1173919_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#florentino-255x255x80-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpenemics091110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#pigs255x208-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trichetsubidatipos--200x160-2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_nadal2_27112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abotan241110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_bar_25112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_marc_24112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1160234_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1157932_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175129_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291182775436higuaindn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdmercader171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgotegi.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_roures_121110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmotan211110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasol1_JR251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1159430_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zapaterodavos255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1169897_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpfelipe221110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_benzema_29112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#walkmandavid.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1151105_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290882313209nadaldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1286278428314cousodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1103791_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdgiunta161110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#pvpuyi2911094.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#sociedad.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291064704267royaldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#892886_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#538251.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abalicia171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1151020_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#sc181010joaquinrodriguez.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291045135283carreteradn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_ceballos_150520104.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#iberia-2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291216584549detalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291010237521cerdodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290755817947coreadetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#pviceta281110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_messi2_241120103.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas181110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#elecciones.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174572_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#sanchezcamacho.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291141746390ajaxdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291182562747clasicodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsa7--200x160-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abherrera151110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1161001_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176204_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparenas221110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290854473724mohamuddn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#absatelite231110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#facebook_skype.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdgeorgia251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291020532690gasoldetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291049798653berlusdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpvictimas101110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290894719223haitianosdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#racing.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_canalates_30112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_federer_27112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpsaharaui171110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espana200x160--200x160-8-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291200931557aeropuerto_smalldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1150539_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1152576_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1173494_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsamadrid-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla121110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1161356_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpgallardon151110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290891166188piquedn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#MMGASOL291110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176038_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290548764864madrid-detdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpherrera241110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuig_cercos301110.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Yeonpyeong1_JR28111033.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290722532460detalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmbenach281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpriveramadrid121110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1169366_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abcameron221110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#europuzzle255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#guantanamodav161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#banderachina1255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291048857158holderdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsagraficoalza-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290877670868puyoldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#tabaco255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176259_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zpcongreso-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1289519591480.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprajoy191110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ibex-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#apretarsecinturon255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmkorea231110_2.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290631622535policiadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1168246_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_mou_25112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lapo291110.jpg_lite4.jpg"/>
+  <Continente rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#America"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdrebollo141110.JPG_lite6.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156079_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#banderairlanda255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmduran281110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290635389054haiti-det.dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291068298520.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abzapata101110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1153252_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290805587073SEULdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jprato_camacho231110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#anapatri-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290898969718ESPANYOLdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsagraficoalza-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuigcercos251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#juncker255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1289519663896.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#fcanon1812075.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpsupermontilla191110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1154932_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#999910_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#alosoooo.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oroyplata-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#eurosimbolo255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#LUprensa.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174672_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291150097413ladydn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abhillary291110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290779973683ecclestone-detalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290886761517incendiodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1176270_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291035407606xavidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas141110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1157461_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgmontilla.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nuevosministros-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1289519617632.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#compraventa-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291082434507_BF74AF1B-79F4-4C93-8BCF-6A59357146A5_dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmas211110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290944635035haitidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290806567460saharadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_ricky_27112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zapateroatenas255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_rubalcaba_161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1151149.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#israel.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290971056481casablancadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#starbuckstaza-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgmas.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_espanyol_26112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291233869363pancartadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gomez1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abespanyol011210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1169162_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175502_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290872686110dublindn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#portugalbanderabis255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmass161110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291017122694guardiodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290634634783londresdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nueva-imagen-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290969639246haitidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291010021124partido3dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1170325_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290637609472detalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291024788539putindn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#cracbursatil255x208-6-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1174697_tn.jpg"/>
+  <Piloto rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Fernando_Alonso">
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Formula1"/>
+    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+    <Pertenece rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Ferrari"/>
+  </Piloto>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290707259297DETALLEdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_windows_11092010.JPG_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mg-investments-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lglluch.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#brokers3-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291039073145higuaindetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abtrans171110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#banderaalemana-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuigcercos121110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#cantona-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291183078277basket1dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla161110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#napoles.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsamadrid255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmelocotones141110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdcabaret131110.JPG_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgrajoy.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ipc11--200x160-2-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#felipe1999-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#riodejaneiro2_JR251110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#brufau-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdbrasil261110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#partidos.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#carbon255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291194062337portavionesdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsaespanaaficion255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1139550_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abmontilla241110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290644239138putindn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291148383756pobreza-detdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1162655_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_nadal_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdkorea231110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abconcita171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasol1JR281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1155513_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#guardiolapresident.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abmontilla011210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#iberia-3-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmasnadal301110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1155345_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1154598_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291176913338saharadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290972334541obama-clintondn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#juguetes255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290750846973moudn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_messi_25112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jubilados-3-255x255x80-2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mourinhoclasico.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#fachadabolsa-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#FOLIOTOSHIBA.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_mafia_171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espana-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1173883_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#citigroupedificio255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmotan211110_2.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espana200x160--200x160-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#a-la-alza-flecha255x208-5-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#adalvar191110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#carfagna.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291153457225lopezdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#octaviogranado-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abcandidatos281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgcamacho.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#iberiaavion--200x160-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290633821817romadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1175545_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#brasil.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290807593326haitidn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgsanchezcamacho.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1156577_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290696252454ronaldodetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jf_airberlin_181110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas261110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#iberdrola-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1153338_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#129112482391320101130-3505469dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#tarjeta1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#2abperu231110.jpg_lite5.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nadal1_JR281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290671902199benitezgrandedn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1154234_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290759876139caruanadetalledn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas1911110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#camacho.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jditurriaga281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#129121752342620101201-3508227dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1170697_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuigcercos161110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291140588784wikileaksdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_rossi_27112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290701273030alonsodn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mallorca.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291110552758CHIHUAHUAdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#brokers3-3-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#interiorbolsa2-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontila171110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291088804670costadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290607471167GARZONdn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsadatosgafas255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_berbatov_27112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdhillary011210.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#25942677230ee5455430-203x3-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291069175872guardioladn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1162599_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#banderaespana255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abcorea281110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmontilla261110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#millonarios-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#acslogo1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290687399782eurocamaradn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291175992764seuldn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppuigcercos151110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#pvpuchiatrib281110xx.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#pvpuchi201110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lgzapatero.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpraxoy121110.jpg_lite8.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1abcaricatura.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1165630_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290632049239cairodn.jpg"/>
+  <Continente rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Oceania"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1171560_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ipc11--200x160-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1291076365284pep2dn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1068994_tn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bankofamerica-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#espanamapaybandera255x208-2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#elecc.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdbundestag201110.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsamadrid255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_rio_27112010.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpzpmontilla141110.jpg_lite8.jpg"/>
+  <Futbolista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Iker_Casillas">
+    <Pertenece rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Real_Madrid"/>
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbol"/>
+    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+  </Futbolista>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#piso--200x160-2-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#movilbcn20101029.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ipc11--200x160-1-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#otandavlisboa.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#obama-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdhaiti181110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#zp9-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_ferrari_24112010.JPG_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#fachadaws3-255x255x80.gif"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nasdaqnoche-2-255x255x80.gif"/>
+  <Continente rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Africa"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#1290740368126coreadn.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#be19674.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jppatxieguiguren101110.jpg_lite4.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasnaturalgabarrosalvador-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#desastres255x208-255x255x80.jpg"/>
+  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#borsadiner2-255x255x80.jpg"/>
+</rdf:RDF>

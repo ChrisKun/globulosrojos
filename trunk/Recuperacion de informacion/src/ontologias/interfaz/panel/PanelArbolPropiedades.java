@@ -8,12 +8,19 @@ import javax.swing.JTree;
 import javax.swing.border.Border;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.DefaultTreeModel;
 
 import java.awt.*;
 
 import es.ucm.fdi.gaia.ontobridge.OntoBridge;
+
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import java.util.*;
 import javax.swing.event.TreeSelectionEvent;
@@ -30,18 +37,25 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
     private JTree ontologyTree;
     private DefaultMutableTreeNode root;
     private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
-    private static Icon PROPERTY = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/datatype.gif"));
-    private static int maxdepth = 20; //Constant to avoid cycles;
-    private static ArrayList<String> drawnProperties = new ArrayList<String>(); //avoid cycles between instances
-    private static Set<String> datatypes = new java.util.HashSet<String>();
-
+    private static Icon PROPERTY = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/property.gif"));
+    private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
+    private static Icon DATATYPE = new javax.swing.ImageIcon(PanelArbolPropiedades.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/datatype.gif"));
+    private static ArrayList<String> drawnProperties = new ArrayList<String>();
+    private static ArrayList<String> drawnInstances = new ArrayList<String>();
+    private static ArrayList<String> drawnDataTypes = new ArrayList<String>();
+    
+    private OntoBridge ob;
+    private String ancestor;
+    
     /**
      * Constructor
      */
     public PanelArbolPropiedades(OntoBridge ob, String ancestor) {
         super();
-        createComponents(ancestor);
-        readOntology(ob, ancestor);
+        this.ob = ob;
+        this.ancestor = ancestor;
+        createComponents();
+        readOntology(ob);
     }
 
     public String getSelectedInstance() {
@@ -53,7 +67,7 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
         selectedConcept = ontologyTree.getLastSelectedPathComponent().toString();
     }
 
-    protected void createComponents(String ancestor) {
+    protected void createComponents() {
         JScrollPane scrPnl;
         Border lineBorder, titleBorder, emptyBorder, compoundBorder;
 
@@ -78,8 +92,41 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1) {
-                    selectedConcept = selPath.toString();
+                if (selRow != -1 && e.getClickCount() == 2 && ob.existsProperty(selPath.getLastPathComponent().toString())) {
+                    selectedConcept = selPath.toString();              
+                    // Obtenemos las clases pertenecientes al rango de la propiedad (puede ser más de una)
+                    Iterator<String> rangos = ob.listPropertyRange(selPath.getLastPathComponent().toString());
+                    
+                    String selectedProperty = selPath.getLastPathComponent().toString();
+                    
+                    // Creamos el panel con las instancias pertenecientes al rango
+                    PanelArbolInstancias pnlInstancias = new PanelArbolInstancias(ob, rangos, ancestor, selectedProperty);
+                    javax.swing.JFrame window = new javax.swing.JFrame();
+                    window.getContentPane().add(pnlInstancias);
+                    window.pack();
+                    window.setSize(300, 600);
+                    window.setVisible(true);  
+                    
+                    // Si la ventana se cierra se guarda la ontología y se redibuja el árbol
+                    window.addWindowListener(new WindowListener(){
+						@Override
+						public void windowActivated(WindowEvent arg0) {}
+						@Override
+						public void windowClosed(WindowEvent arg0) {
+							ob.save("files/OntologiaNana.owl");
+							readOntology(ob);
+						}
+						@Override
+						public void windowClosing(WindowEvent arg0) {}
+						@Override
+						public void windowDeactivated(WindowEvent arg0) {}
+						@Override
+						public void windowDeiconified(WindowEvent arg0) {}
+						@Override
+						public void windowIconified(WindowEvent arg0) {}
+						@Override
+						public void windowOpened(WindowEvent arg0) {}
+                    });
                 }
             }
         });
@@ -95,42 +142,39 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
      * Read the ontology classes.
      *
      */
-    protected void readOntology(OntoBridge ob, String ancestor) {
+    protected void readOntology(OntoBridge ob) {
         try {
+        	root.removeAllChildren();
             ontologyTree.getModel().getRoot();
 
             Iterator<String> properties = ob.listInstanceProperties(ancestor);
             while (properties.hasNext()) {
                 String propName = ob.getShortName(properties.next());
                 if (!propName.contains("rdf") && !propName.contains("owl")) {
-                    root.add(new DefaultMutableTreeNode(propName));
-                    drawnProperties.add(propName);
+                	DefaultMutableTreeNode propNode = new DefaultMutableTreeNode(propName);
+                	
+                	// Dibujamos los valores de las propiedades si existen
+                	Iterator <String> values = ob.listPropertyValue(ancestor, propName);
+                	while (values.hasNext()) {
+                		String valueName = ob.getShortName(values.next());
+                		propNode.add(new DefaultMutableTreeNode(valueName));
+                		if (ob.existsInstance(valueName))
+                			drawnInstances.add(valueName);
+                		else
+                			drawnDataTypes.add(valueName);
+                	}
+                	
+                    root.add(propNode);
+                    drawnProperties.add(propName);                    
                 }
             }
-
+            
+            ontologyTree.updateUI();
             ontologyTree.expandRow(0);
 
         } catch (Exception e) {
             org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
         }
-    }
-
-    private DefaultMutableTreeNode createNode(String nodeName, OntoBridge ob, int depth) {
-        DefaultMutableTreeNode node = new DefaultMutableTreeNode(ob.getShortName(nodeName));
-        if (depth > maxdepth) {
-            return node;
-        }
-
-        Iterator<String> instances = ob.listInstanceProperties(nodeName);
-        while (instances.hasNext()) {
-            String instanceName = ob.getShortName(instances.next());
-            if (!instanceName.equals("owl:Nothing")) {
-                node.add(new DefaultMutableTreeNode(instanceName));
-                drawnProperties.add(instanceName);
-            }
-        }
-
-        return node;
     }
 
     class MyRenderer extends DefaultTreeCellRenderer {
@@ -153,8 +197,12 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
                 Object o = dmtn.getUserObject();
                 if (drawnProperties.contains(o))
                     setIcon(PROPERTY);
-                else
-                    setIcon(CONCEPT);
+                else if (drawnInstances.contains(o))
+                    setIcon(INSTANCE);
+                else if (drawnDataTypes.contains(o))
+                	setIcon(DATATYPE);
+                else 
+                	setIcon(CONCEPT);
             } catch (Exception e) {
                 org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
             }
