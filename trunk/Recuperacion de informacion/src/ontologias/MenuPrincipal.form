@@ -26,14 +26,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelListaNoticias" min="-2" max="-2" attributes="0"/>
+              <Component id="panelListaNoticias" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panelMenu" max="32767" attributes="0"/>
-                  <Component id="panelInfoFoto" max="32767" attributes="0"/>
-                  <Component id="panelFoto" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="panelMenu" max="32767" attributes="1"/>
+                  <Component id="panelInfoFoto" alignment="1" max="32767" attributes="1"/>
+                  <Component id="panelFoto" alignment="1" max="32767" attributes="1"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -41,17 +41,17 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="panelListaNoticias" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="panelFoto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="panelInfoFoto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="panelMenu" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="panelListaNoticias" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -64,12 +64,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="173" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="253" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="603" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="656" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -82,7 +82,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelFoto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="810" max="32767" attributes="0"/>
+                  <EmptySpace pref="805" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -112,7 +112,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                   <Component id="labelImageInfo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="512" max="32767" attributes="0"/>
+                  <EmptySpace pref="507" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -150,7 +150,7 @@
                   <Component id="botonT" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonSiguiente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="419" max="32767" attributes="0"/>
+                  <EmptySpace pref="414" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -165,7 +165,7 @@
                       <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <EmptySpace pref="92" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

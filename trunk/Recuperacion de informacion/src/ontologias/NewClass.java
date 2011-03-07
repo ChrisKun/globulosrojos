@@ -3,7 +3,6 @@ package ontologias;
 import es.ucm.fdi.gaia.ontobridge.OntoBridge;
 import es.ucm.fdi.gaia.ontobridge.OntologyDocument;
 import java.util.ArrayList;
-import ontologias.interfaz.panel.PanelArbolInstancias;
 import ontologias.interfaz.panel.PanelArbolPropiedades;
 
 /**
