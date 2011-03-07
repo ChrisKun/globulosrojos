@@ -60,7 +60,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         //set border and layout
         emptyBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
         lineBorder = BorderFactory.createLineBorder(Color.BLACK);
-        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Ontología");
+        titleBorder = BorderFactory.createTitledBorder(lineBorder, "Ontologia");
         compoundBorder = BorderFactory.createCompoundBorder(titleBorder,
                 emptyBorder);
         setBorder(compoundBorder);
@@ -89,7 +89,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         scrPnl = new JScrollPane(ontologyTree);
         scrPnl.setViewportView(ontologyTree);
 
-        // Botón para crear una instancia en la clase seleccionada
+        // Boton para crear una instancia en la clase seleccionada
         JButton botonCrear = new JButton("Crear instancia");
         botonCrear.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {

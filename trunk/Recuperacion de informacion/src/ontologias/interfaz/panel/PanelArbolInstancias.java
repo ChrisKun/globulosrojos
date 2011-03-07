@@ -95,7 +95,7 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
                     selectedConcept = selPath.toString();
                     
                     String instanceName = ob.getShortName(selPath.getLastPathComponent().toString());
-                    // TODO: Modificar la ontología añadiendo la instancia seleccionada a la propiedad
+                    // TODO: Modificar la ontologia anadiendo la instancia seleccionada a la propiedad
                     ob.modifyOntProperty(sourceInstance, propertyName, instanceName);
                     
                     // Cerramos el panel

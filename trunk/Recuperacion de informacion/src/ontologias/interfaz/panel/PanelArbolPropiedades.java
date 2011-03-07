@@ -94,7 +94,7 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
                 if (selRow != -1 && e.getClickCount() == 2 && ob.existsProperty(selPath.getLastPathComponent().toString())) {
                     selectedConcept = selPath.toString();              
-                    // Obtenemos las clases pertenecientes al rango de la propiedad (puede ser más de una)
+                    // Obtenemos las clases pertenecientes al rango de la propiedad (puede ser mas de una)
                     Iterator<String> rangos = ob.listPropertyRange(selPath.getLastPathComponent().toString());
                     
                     String selectedProperty = selPath.getLastPathComponent().toString();
@@ -107,7 +107,7 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
                     window.setSize(300, 600);
                     window.setVisible(true);  
                     
-                    // Si la ventana se cierra se guarda la ontología y se redibuja el árbol
+                    // Si la ventana se cierra se guarda la ontologia y se redibuja el ï¿½rbol
                     window.addWindowListener(new WindowListener(){
 						@Override
 						public void windowActivated(WindowEvent arg0) {}
