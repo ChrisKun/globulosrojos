@@ -177,6 +177,13 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
         }
     }
 
+    /**
+     * @param ancestor the ancestor to set
+     */
+    public void setAncestor(String ancestor) {
+        this.ancestor = ancestor;
+    }
+
     class MyRenderer extends DefaultTreeCellRenderer {
 
         private static final long serialVersionUID = 1L;
