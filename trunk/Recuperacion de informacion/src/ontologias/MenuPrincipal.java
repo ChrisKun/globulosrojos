@@ -9,8 +9,10 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
 import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelArbolInstancias;
+import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelArbolSubclases;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
@@ -23,22 +25,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     /** Creates new form MenuPrincipal */
     public MenuPrincipal() {
-        initComponents();
         //Para iniciarlo en estado maximizado
         //this.setExtendedState(Frame.MAXIMIZED_BOTH);
         CargadorImagenes loader = new CargadorImagenes();
         images = loader.loadImages();
         imageIndex = 0;
+        nombre = images.get(imageIndex).toString().split("/");
+        initComponents();
         labelFoto.setIcon(images.get(imageIndex));
-        String[] nombre = images.get(imageIndex).toString().split("/");
-        Iterator<String> it = loader.LoadImageInfo(nombre[3]);
-        
-        while(it.hasNext())
-        {
-            labelImageInfo.setText(it.next());
-        }
     }
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -51,8 +46,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelListaNoticias = new PanelArbolClasesInstancias(Ontologia.getInstance());
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
-        panelInfoFoto = new javax.swing.JPanel();
-        labelImageInfo = new javax.swing.JLabel();
+        panelInfoFoto = new PanelArbolPropiedades(Ontologia.getInstance(), nombre[3]);
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
@@ -89,7 +83,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(805, Short.MAX_VALUE))
+                .addContainerGap(877, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,23 +93,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(304, Short.MAX_VALUE))
         );
 
-        labelImageInfo.setText("labelImageInfo");
+        this.getContentPane().add(panelInfoFoto);
+        this.pack();
 
         javax.swing.GroupLayout panelInfoFotoLayout = new javax.swing.GroupLayout(panelInfoFoto);
         panelInfoFoto.setLayout(panelInfoFotoLayout);
         panelInfoFotoLayout.setHorizontalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInfoFotoLayout.createSequentialGroup()
-                .addGap(221, 221, 221)
-                .addComponent(labelImageInfo)
-                .addContainerGap(507, Short.MAX_VALUE))
+            .addGap(0, 890, Short.MAX_VALUE)
         );
         panelInfoFotoLayout.setVerticalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInfoFotoLayout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
-                .addComponent(labelImageInfo)
-                .addGap(64, 64, 64))
+            .addGap(0, 150, Short.MAX_VALUE)
         );
 
         botonAnterior.setText("Anterior");
@@ -180,7 +169,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(botonT)
                     .addComponent(botonSiguiente)
                     .addComponent(botonAnterior))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,6 +211,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         labelFoto.setIcon(images.get(++imageIndex));
+        nombre = images.get(imageIndex).toString().split("/");
+        ((PanelArbolPropiedades)panelInfoFoto).setAncestor(nombre[3]);
+        panelInfoFoto.revalidate();
+        panelInfoFoto.repaint();
+        panelInfoFoto.updateUI();
+        SwingUtilities.updateComponentTreeUI(panelInfoFoto);
+        this.pack();
+        this.validateTree();
+        this.repaint();
+        this.validate();
     }//GEN-LAST:event_botonSiguienteActionPerformed
 
     private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
@@ -231,6 +230,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         labelFoto.setIcon(images.get(--imageIndex));
+        nombre = images.get(imageIndex).toString().split("/");
+        ((PanelArbolPropiedades)panelInfoFoto).setAncestor(nombre[3]);
+        panelInfoFoto.revalidate();
+        panelInfoFoto.repaint();
+        panelInfoFoto.updateUI();
+        this.pack();
+        this.repaint();
+        this.validate();
     }//GEN-LAST:event_botonAnteriorActionPerformed
 
     private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
@@ -278,7 +285,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonSiguiente;
     private javax.swing.JButton botonT;
     private javax.swing.JLabel labelFoto;
-    private javax.swing.JLabel labelImageInfo;
     private javax.swing.JPanel panelFoto;
     private javax.swing.JPanel panelInfoFoto;
     private javax.swing.JPanel panelListaNoticias;
@@ -286,4 +292,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     ArrayList<ImageIcon> images;
     private int imageIndex;
+    String[] nombre;
 }
