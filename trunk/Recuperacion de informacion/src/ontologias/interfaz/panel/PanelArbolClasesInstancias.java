@@ -1,5 +1,6 @@
 package ontologias.interfaz.panel;
 
+import com.hp.hpl.jena.reasoner.test.ManualExample;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -21,12 +22,15 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
+import ontologias.MenuPrincipal;
+import ontologias.utils.Ontologia;
 
 /**
  *
  * @author Sergio
  */
 public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionListener {
+
     private static final long serialVersionUID = 1L;
     private JTree ontologyTree;
     private DefaultMutableTreeNode root;
@@ -34,14 +38,16 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
     private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolClasesInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
+    private MenuPrincipal padre;
 
     /**
      * Constructor
      */
-    public PanelArbolClasesInstancias(OntoBridge ob) {
+    public PanelArbolClasesInstancias(OntoBridge ob, MenuPrincipal padre) {
         super();
         createComponents();
         readOntology(ob);
+        this.padre = padre;
     }
 
     public String getSelectedInstance() {
@@ -76,12 +82,19 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         ontologyTree.addMouseListener(new MouseAdapter() {
 
             public void mousePressed(MouseEvent e) {
-            	
+
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1 && e.getClickCount() == 2) {
-                    selectedConcept = selPath.toString();
-                    System.out.println(selectedConcept);
+                try {
+                    String nombreImagen = selPath.getLastPathComponent().toString();
+                    if (selRow != -1
+                            && e.getClickCount() == 2
+                            && Ontologia.getInstance().existsInstance(nombreImagen)
+                            && Ontologia.getInstance().isInstanceOf(nombreImagen, "Imagen")) {
+                        padre.mostrarImagen(nombreImagen);
+                    }
+                } catch(NullPointerException ex) {
+                    return;
                 }
             }
         });
@@ -92,11 +105,12 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         // Boton para crear una instancia en la clase seleccionada
         JButton botonCrear = new JButton("Crear instancia");
         botonCrear.addMouseListener(new MouseAdapter() {
+
             public void mousePressed(MouseEvent e) {
-            	System.out.println("<Instancia creada>");
-            }       	
+                System.out.println("<Instancia creada>");
+            }
         });
-        
+
         setLayout(new BorderLayout());
         add(scrPnl, BorderLayout.CENTER);
         add(botonCrear, BorderLayout.SOUTH);
@@ -164,12 +178,13 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
                     leaf, row, hasFocus);
 
             try {
-                DefaultMutableTreeNode dmtn = (DefaultMutableTreeNode)value;
+                DefaultMutableTreeNode dmtn = (DefaultMutableTreeNode) value;
                 Object o = dmtn.getUserObject();
-                if (drawnInstances.contains(o))
+                if (drawnInstances.contains(o)) {
                     setIcon(INSTANCE);
-                else
+                } else {
                     setIcon(CONCEPT);
+                }
             } catch (Exception e) {
                 org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
             }

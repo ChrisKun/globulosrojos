@@ -59,7 +59,7 @@ public class CargadorImagenes {
             String linea = br.readLine();
             while(linea != null)
             {
-                names.add(new ImageIcon("data/noticias/img/"+linea));
+                names.add(new ImageIcon("data/noticias/img/"+linea,linea));
                 linea = br.readLine();
             }
         } catch (IOException ex) {

@@ -23,6 +23,8 @@ import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
 import es.ucm.fdi.gaia.ontobridge.OntoBridge;
+import ontologias.MenuPrincipal;
+import ontologias.utils.Ontologia;
 
 public class PanelListaNoticias extends JPanel implements TreeSelectionListener {
     private static final long serialVersionUID = 1L;
@@ -32,14 +34,16 @@ public class PanelListaNoticias extends JPanel implements TreeSelectionListener 
     private static Icon INSTANCE = new javax.swing.ImageIcon(PanelArbolInstancias.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/instance.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
+    private MenuPrincipal padre;
 
     /**
      * Constructor
      */
-    public PanelListaNoticias(OntoBridge ob, String ancestor) {
+    public PanelListaNoticias(OntoBridge ob, String ancestor, MenuPrincipal padre) {
         super();
         createComponents(ancestor);
         readOntology(ob, ancestor);
+        this.padre = padre;
     }
 
     public String getSelectedInstance() {
@@ -76,8 +80,9 @@ public class PanelListaNoticias extends JPanel implements TreeSelectionListener 
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1) {
-                    selectedConcept = selPath.toString();
+                String nombreImagen = selPath.getLastPathComponent().toString();
+                if (selRow != -1 && e.getClickCount()==2 && Ontologia.getInstance().existsInstance(nombreImagen)) {
+                    padre.mostrarImagen(nombreImagen);
                 }
             }
         });
