@@ -18,6 +18,7 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
@@ -63,7 +64,7 @@ public class PanelListaNoticias extends JPanel implements TreeSelectionListener 
         setBorder(compoundBorder);
 
         //set Ontology
-        root = new DefaultMutableTreeNode("Thing");
+        root = new DefaultMutableTreeNode(ancestor);
 
         ontologyTree = new JTree(root);
         ontologyTree.setCellRenderer(new MyRenderer());
@@ -100,10 +101,14 @@ public class PanelListaNoticias extends JPanel implements TreeSelectionListener 
                 String nextRC = rc.next();
                 if (ob.getShortName(nextRC).equals(ancestor) || ancestor.equals("Thing")) {
                     DefaultMutableTreeNode node = createNode(nextRC, ob, 0);
-                    root.add(node);
+                
+                    
+                    for (int i = 0; i < node.getChildCount(); i++)
+                    	root.add((MutableTreeNode) node.getChildAt(i));
                 }
             }
             ontologyTree.expandRow(0);
+            
 
         } catch (Exception e) {
             org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
