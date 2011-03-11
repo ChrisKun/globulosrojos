@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.1" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
@@ -28,9 +28,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelListaNoticias" pref="259" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+              <Component id="panelListaNoticias" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="panelMenu" max="32767" attributes="1"/>
                   <Component id="panelInfoFoto" alignment="1" max="32767" attributes="1"/>
                   <Component id="panelFoto" alignment="1" max="32767" attributes="1"/>
@@ -44,7 +44,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="panelListaNoticias" alignment="0" pref="656" max="32767" attributes="0"/>
+                  <Component id="panelListaNoticias" alignment="0" pref="666" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="panelFoto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -69,19 +69,19 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelArbolClasesInstancias(Ontologia.getInstance())"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelArbolClasesInstancias(Ontologia.getInstance(),this)"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.getContentPane().add(panelListaNoticias);&#xa;this.pack();"/>
       </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="259" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="253" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="656" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="666" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -94,7 +94,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelFoto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="877" max="32767" attributes="0"/>
+                  <EmptySpace pref="908" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,14 +118,14 @@
     </Container>
     <Container class="javax.swing.JPanel" name="panelInfoFoto">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelArbolPropiedades(Ontologia.getInstance(), nombre[3])"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelArbolPropiedades(Ontologia.getInstance(), nombre)"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.getContentPane().add(panelInfoFoto);&#xa;this.pack();"/>
       </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="890" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="923" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -136,6 +136,11 @@
       </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="panelMenu">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="28" green="84" red="df" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -144,14 +149,12 @@
                   <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                   <Component id="botonAnterior" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonM" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonM" min="-2" pref="49" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonR" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonT" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonT" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonSiguiente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="414" max="32767" attributes="0"/>
+                  <EmptySpace pref="493" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -161,10 +164,9 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="botonM" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonR" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonT" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonT" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="104" max="32767" attributes="0"/>
               </Group>
@@ -194,14 +196,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonMActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="botonR">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="R"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonT">

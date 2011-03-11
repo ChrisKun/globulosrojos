@@ -14,6 +14,7 @@ import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelArbolInstancias;
 import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelArbolSubclases;
+import ontologias.interfaz.panel.PanelListaNoticias;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
 
@@ -25,15 +26,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     /** Creates new form MenuPrincipal */
     public MenuPrincipal() {
-        //Para iniciarlo en estado maximizado
-        //this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        //Para iniciar la interfaz en estado maximizado
+        this.setExtendedState(Frame.MAXIMIZED_BOTH);
         CargadorImagenes loader = new CargadorImagenes();
         images = loader.loadImages();
         imageIndex = 0;
-        nombre = images.get(imageIndex).toString().split("/");
+        nombre = images.get(imageIndex).getDescription();
         initComponents();
         labelFoto.setIcon(images.get(imageIndex));
     }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -43,15 +45,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelListaNoticias = new PanelArbolClasesInstancias(Ontologia.getInstance());
+        panelListaNoticias = new PanelArbolClasesInstancias(Ontologia.getInstance(),this);
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
-        panelInfoFoto = new PanelArbolPropiedades(Ontologia.getInstance(), nombre[3]);
+        panelInfoFoto = new PanelArbolPropiedades(Ontologia.getInstance(), nombre);
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
         botonM = new javax.swing.JButton();
-        botonR = new javax.swing.JButton();
         botonT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,11 +68,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelListaNoticias.setLayout(panelListaNoticiasLayout);
         panelListaNoticiasLayout.setHorizontalGroup(
             panelListaNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 259, Short.MAX_VALUE)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
         panelListaNoticiasLayout.setVerticalGroup(
             panelListaNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGap(0, 666, Short.MAX_VALUE)
         );
 
         labelFoto.setText(" ");
@@ -83,7 +84,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(877, Short.MAX_VALUE))
+                .addContainerGap(908, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,12 +101,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelInfoFoto.setLayout(panelInfoFotoLayout);
         panelInfoFotoLayout.setHorizontalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
+            .addGap(0, 923, Short.MAX_VALUE)
         );
         panelInfoFotoLayout.setVerticalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 150, Short.MAX_VALUE)
         );
+
+        panelMenu.setBackground(new java.awt.Color(223, 132, 40));
 
         botonAnterior.setText("Anterior");
         botonAnterior.addActionListener(new java.awt.event.ActionListener() {
@@ -128,13 +131,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        botonR.setText("R");
-        botonR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRActionPerformed(evt);
-            }
-        });
-
         botonT.setText("T");
         botonT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,14 +146,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(185, 185, 185)
                 .addComponent(botonAnterior)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonM)
+                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonR)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonT)
+                .addComponent(botonT, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonSiguiente)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addContainerGap(493, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,10 +159,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonM)
-                    .addComponent(botonR)
-                    .addComponent(botonT)
+                    .addComponent(botonAnterior)
                     .addComponent(botonSiguiente)
-                    .addComponent(botonAnterior))
+                    .addComponent(botonT))
                 .addContainerGap(104, Short.MAX_VALUE))
         );
 
@@ -178,9 +171,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelListaNoticias, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addComponent(panelListaNoticias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelInfoFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -191,7 +184,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelListaNoticias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+                    .addComponent(panelListaNoticias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -211,8 +204,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         labelFoto.setIcon(images.get(++imageIndex));
-        nombre = images.get(imageIndex).toString().split("/");
-        ((PanelArbolPropiedades)panelInfoFoto).setAncestor(nombre[3]);
+        nombre = images.get(imageIndex).getDescription();
+        ((PanelArbolPropiedades) panelInfoFoto).setAncestor(nombre);
         panelInfoFoto.revalidate();
         panelInfoFoto.repaint();
         panelInfoFoto.updateUI();
@@ -230,8 +223,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         labelFoto.setIcon(images.get(--imageIndex));
-        nombre = images.get(imageIndex).toString().split("/");
-        ((PanelArbolPropiedades)panelInfoFoto).setAncestor(nombre[3]);
+        nombre = images.get(imageIndex).getDescription();
+        ((PanelArbolPropiedades) panelInfoFoto).setAncestor(nombre);
         panelInfoFoto.revalidate();
         panelInfoFoto.repaint();
         panelInfoFoto.updateUI();
@@ -249,18 +242,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         window.setVisible(true);
     }//GEN-LAST:event_botonMActionPerformed
 
-    private void botonRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRActionPerformed
-        javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
-        PanelArbolInstancias subclases = new PanelArbolInstancias(Ontologia.getInstance(), "Persona");
-        window.getContentPane().add(subclases);
-        window.pack();
-        window.setSize(300, 600);
-        window.setVisible(true);
-    }//GEN-LAST:event_botonRActionPerformed
-
     private void botonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTActionPerformed
         javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
-        PanelArbolClasesInstancias subclases = new PanelArbolClasesInstancias(Ontologia.getInstance());
+        PanelArbolClasesInstancias subclases = new PanelArbolClasesInstancias(Ontologia.getInstance(), this);
         window.getContentPane().add(subclases);
         window.pack();
         window.setSize(300, 600);
@@ -278,10 +262,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
     }
+
+    public void mostrarImagen(String imagen) {
+        for (int i=0; i < images.size(); i++) {
+            ImageIcon img = images.get(i);
+            if (img.getDescription().equals(imagen)) {
+                labelFoto.setIcon(img);
+                this.imageIndex = i;
+                return;
+            }
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnterior;
     private javax.swing.JButton botonM;
-    private javax.swing.JButton botonR;
     private javax.swing.JButton botonSiguiente;
     private javax.swing.JButton botonT;
     private javax.swing.JLabel labelFoto;
@@ -292,5 +286,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     ArrayList<ImageIcon> images;
     private int imageIndex;
-    String[] nombre;
+    String nombre;
 }
