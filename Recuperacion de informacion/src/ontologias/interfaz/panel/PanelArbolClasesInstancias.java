@@ -23,7 +23,9 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import ontologias.MenuPrincipal;
+import ontologias.utils.MenuContextual;
 import ontologias.utils.Ontologia;
+import javax.swing.JPopupMenu;
 
 /**
  *
@@ -39,6 +41,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
     private static int maxdepth = 20; //Constant to avoid cycles;
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
     private MenuPrincipal padre;
+    private JPopupMenu menuContextual;
 
     /**
      * Constructor
@@ -83,17 +86,32 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
 
             public void mousePressed(MouseEvent e) {
 
+                if(menuContextual != null && menuContextual.isVisible())
+                    menuContextual.setVisible(false);
+
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
                 try {
-                    String nombreImagen = selPath.getLastPathComponent().toString();
+                    String nombreSeleccion = selPath.getLastPathComponent().toString();
                     if (selRow != -1
                             && e.getClickCount() == 2
-                            && Ontologia.getInstance().existsInstance(nombreImagen)
-                            && Ontologia.getInstance().isInstanceOf(nombreImagen, "Imagen")) {
-                        padre.mostrarImagen(nombreImagen);
+                            && Ontologia.getInstance().existsInstance(nombreSeleccion)
+                            && Ontologia.getInstance().isInstanceOf(nombreSeleccion, "Imagen")) {
+                        padre.mostrarImagen(nombreSeleccion);
                     }
-                } catch(NullPointerException ex) {
+                    else //Si se ha hecho click dereco...
+                        if (selRow != -1 && e.isPopupTrigger())
+                        {//TODO Puede que esto de error si hay una instancia que se llama igual que una clase
+                            if(Ontologia.getInstance().existsClass(nombreSeleccion))
+                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.clase);
+                            else if(Ontologia.getInstance().existsInstance(nombreSeleccion))
+                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.instancia);
+                            else if(Ontologia.getInstance().existsProperty(nombreSeleccion))
+                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.propiedad);
+                            menuContextual.setLocation(e.getX(), e.getY());
+                            menuContextual.setVisible(true);
+                    }
+                } catch (NullPointerException ex) {
                     return;
                 }
             }
