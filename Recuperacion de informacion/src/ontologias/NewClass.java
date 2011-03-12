@@ -3,6 +3,7 @@ package ontologias;
 import es.ucm.fdi.gaia.ontobridge.OntoBridge;
 import es.ucm.fdi.gaia.ontobridge.OntologyDocument;
 import java.util.ArrayList;
+import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelListaNoticias;
 
@@ -22,10 +23,10 @@ public class NewClass {
         ob.loadOntology(mainOnto, subOntologies, false);
 
         javax.swing.JFrame window = new javax.swing.JFrame(mainOnto.getURL());
-        //PanelListaNoticias tree = new PanelListaNoticias(ob, );
-//        window.getContentPane().add(tree);
-//        window.pack();
-//        window.setSize(300, 600);
-//        window.setVisible(true);
+        PanelArbolClasesInstancias tree = new PanelArbolClasesInstancias(ob, null);
+        window.getContentPane().add(tree);
+        window.pack();
+        window.setSize(300, 600);
+        window.setVisible(true);
     }
 }
