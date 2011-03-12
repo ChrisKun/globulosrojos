@@ -94,7 +94,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelFoto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="908" max="32767" attributes="0"/>
+                  <EmptySpace pref="923" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,14 +118,14 @@
     </Container>
     <Container class="javax.swing.JPanel" name="panelInfoFoto">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelArbolPropiedades(Ontologia.getInstance(), nombre)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PnlPropiedades(nombre)"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.getContentPane().add(panelInfoFoto);&#xa;this.pack();"/>
       </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="923" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="936" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -168,7 +168,7 @@
                       <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonT" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="104" max="32767" attributes="0"/>
+                  <EmptySpace pref="114" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
