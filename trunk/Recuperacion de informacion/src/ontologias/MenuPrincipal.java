@@ -15,7 +15,7 @@ import ontologias.interfaz.panel.PanelArbolInstancias;
 import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelArbolSubclases;
 import ontologias.interfaz.panel.PanelListaNoticias;
-import ontologias.interfaz.panel.PnlPropiedades;
+import ontologias.interfaz.panel.PanelPropiedades;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
 
@@ -49,7 +49,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelListaNoticias = new PanelArbolClasesInstancias(Ontologia.getInstance(),this);
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
-        panelInfoFoto = new PnlPropiedades(nombre);
+        panelInfoFoto = new PanelPropiedades(nombre);
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();

@@ -118,7 +118,7 @@
     </Container>
     <Container class="javax.swing.JPanel" name="panelInfoFoto">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PnlPropiedades(nombre)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelPropiedades(nombre)"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.getContentPane().add(panelInfoFoto);&#xa;this.pack();"/>
       </AuxValues>
 

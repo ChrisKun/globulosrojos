@@ -37,16 +37,16 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     private static ArrayList<String> drawnInstances = new ArrayList<String>(); //avoid cycles between instances
     private String propertyName;
     private String sourceInstance;
-    private PnlPropiedades padre;
+    private PanelPropiedades padre;
 
     /**
      * Constructor
      */
-    public PanelArbolInstancias(PnlPropiedades padre) {
+    public PanelArbolInstancias(PanelPropiedades padre) {
         this.padre = padre;
     }
 
-    public PanelArbolInstancias(Iterator<String> ancestors, String sourceInstance, String propertyName, PnlPropiedades padre) {
+    public PanelArbolInstancias(Iterator<String> ancestors, String sourceInstance, String propertyName, PanelPropiedades padre) {
     	super();
     	this.propertyName = propertyName;
     	this.sourceInstance = sourceInstance;
@@ -54,7 +54,7 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     	createComponents("");
     	readOntology(ancestors);
     }
-    
+
     public String getSelectedInstance() {
         return selectedConcept;
     }
@@ -91,7 +91,7 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
                 if (selRow != -1 && e.getClickCount() == 2) {
                     selectedConcept = selPath.toString();
-                    
+
                     String instanceName = Ontologia.getInstance().getShortName(selPath.getLastPathComponent().toString());
                     Ontologia.getInstance().modifyOntProperty(sourceInstance, propertyName, instanceName);
 
@@ -107,11 +107,6 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
         setLayout(new BorderLayout());
         add(scrPnl, BorderLayout.CENTER);
     }
-    
-    public void close() {
-    	// JPanel -> JLPanel -> JRootPanel -> JFrame
-    	((JFrame)this.getParent().getParent().getParent().getParent()).dispose();
-    }
 
     /**
      * Read the ontology classes.
@@ -120,7 +115,7 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     protected void readOntology(String ancestor) {
         try {
             ontologyTree.getModel().getRoot();
-            
+
             DefaultMutableTreeNode node = createNode(Ontologia.getInstance().getURI(ancestor), 0);
             root.add(node);
 
@@ -130,22 +125,25 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
             org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
         }
     }
-    
+
     protected void readOntology(Iterator<String> ancestors) {
         try {
-            while (ancestors.hasNext()) {
+        	root.removeAllChildren();
+
+            while (ancestors != null && ancestors.hasNext()) {
                 String ancestor = ancestors.next();
-                ontologyTree.getModel().getRoot();
                 DefaultMutableTreeNode node = createNode(Ontologia.getInstance().getURI(ancestor), 0);
                 root.add(node);
-                for (int i = 0; i < ontologyTree.getRowCount(); i++)
-                        ontologyTree.expandRow(i);
             }
+
+            ontologyTree.updateUI();
+            for (int i = 0; i < ontologyTree.getRowCount(); i++)
+                    ontologyTree.expandRow(i);
 
         } catch (Exception e) {
             org.apache.commons.logging.LogFactory.getLog(this.getClass()).error(e);
         }
-    }   
+    }
 
     private DefaultMutableTreeNode createNode(String nodeName, int depth) {
         DefaultMutableTreeNode node = new DefaultMutableTreeNode(Ontologia.getInstance().getShortName(nodeName));
