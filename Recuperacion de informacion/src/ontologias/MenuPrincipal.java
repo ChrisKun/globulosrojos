@@ -15,6 +15,7 @@ import ontologias.interfaz.panel.PanelArbolInstancias;
 import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelArbolSubclases;
 import ontologias.interfaz.panel.PanelListaNoticias;
+import ontologias.interfaz.panel.PnlPropiedades;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
 
@@ -48,7 +49,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelListaNoticias = new PanelArbolClasesInstancias(Ontologia.getInstance(),this);
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
-        panelInfoFoto = new PanelArbolPropiedades(Ontologia.getInstance(), nombre);
+        panelInfoFoto = new PnlPropiedades(nombre);
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
@@ -84,7 +85,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(908, Short.MAX_VALUE))
+                .addContainerGap(923, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +102,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelInfoFoto.setLayout(panelInfoFotoLayout);
         panelInfoFotoLayout.setHorizontalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 923, Short.MAX_VALUE)
+            .addGap(0, 936, Short.MAX_VALUE)
         );
         panelInfoFotoLayout.setVerticalGroup(
             panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +163,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(botonAnterior)
                     .addComponent(botonSiguiente)
                     .addComponent(botonT))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

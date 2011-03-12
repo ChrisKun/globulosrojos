@@ -27,6 +27,7 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
+import ontologias.utils.Ontologia;
 
 /**
  *
@@ -44,18 +45,18 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
     private static ArrayList<String> drawnInstances = new ArrayList<String>();
     private static ArrayList<String> drawnDataTypes = new ArrayList<String>();
     
-    private OntoBridge ob;
     private String ancestor;
+    private PnlPropiedades padre;
     
     /**
      * Constructor
      */
-    public PanelArbolPropiedades(OntoBridge ob, String ancestor) {
+    public PanelArbolPropiedades(String ancestor, PnlPropiedades padre) {
         super();
-        this.ob = ob;
         this.ancestor = ancestor;
+        this.padre = padre;
         createComponents();
-        readOntology(ob);
+        readOntology();
     }
 
     public String getSelectedInstance() {
@@ -92,41 +93,15 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1 && e.getClickCount() == 2 && ob.existsProperty(selPath.getLastPathComponent().toString())) {
+                if (selRow != -1 && e.getClickCount() == 2 && Ontologia.getInstance().existsProperty(selPath.getLastPathComponent().toString())) {
                     selectedConcept = selPath.toString();              
                     // Obtenemos las clases pertenecientes al rango de la propiedad (puede ser mas de una)
-                    Iterator<String> rangos = ob.listPropertyRange(selPath.getLastPathComponent().toString());
+                    Iterator<String> rangos = Ontologia.getInstance().listPropertyRange(selPath.getLastPathComponent().toString());
                     
                     String selectedProperty = selPath.getLastPathComponent().toString();
                     
                     // Creamos el panel con las instancias pertenecientes al rango
-                    PanelArbolInstancias pnlInstancias = new PanelArbolInstancias(ob, rangos, ancestor, selectedProperty);
-                    javax.swing.JFrame window = new javax.swing.JFrame();
-                    window.getContentPane().add(pnlInstancias);
-                    window.pack();
-                    window.setSize(300, 600);
-                    window.setVisible(true);  
-                    
-                    // Si la ventana se cierra se guarda la ontologia y se redibuja el �rbol
-                    window.addWindowListener(new WindowListener(){
-						@Override
-						public void windowActivated(WindowEvent arg0) {}
-						@Override
-						public void windowClosed(WindowEvent arg0) {
-							ob.save("files/OntologiaNana.owl");
-							readOntology(ob);
-						}
-						@Override
-						public void windowClosing(WindowEvent arg0) {}
-						@Override
-						public void windowDeactivated(WindowEvent arg0) {}
-						@Override
-						public void windowDeiconified(WindowEvent arg0) {}
-						@Override
-						public void windowIconified(WindowEvent arg0) {}
-						@Override
-						public void windowOpened(WindowEvent arg0) {}
-                    });
+                    padre.actualizarPanelInstancias(rangos, ancestor, selectedProperty); 
                 }
             }
         });
@@ -142,23 +117,22 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
      * Read the ontology classes.
      *
      */
-    protected void readOntology(OntoBridge ob) {
+    protected void readOntology() {
         try {
-        	root.removeAllChildren();
-            ontologyTree.getModel().getRoot();
+            root.removeAllChildren();
 
-            Iterator<String> properties = ob.listInstanceProperties(ancestor);
+            Iterator<String> properties = Ontologia.getInstance().listInstanceProperties(ancestor);
             while (properties.hasNext()) {
-                String propName = ob.getShortName(properties.next());
+                String propName = Ontologia.getInstance().getShortName(properties.next());
                 if (!propName.contains("rdf") && !propName.contains("owl")) {
                 	DefaultMutableTreeNode propNode = new DefaultMutableTreeNode(propName);
                 	
                 	// Dibujamos los valores de las propiedades si existen
-                	Iterator <String> values = ob.listPropertyValue(ancestor, propName);
+                	Iterator <String> values = Ontologia.getInstance().listPropertyValue(ancestor, propName);
                 	while (values.hasNext()) {
-                		String valueName = ob.getShortName(values.next());
+                		String valueName = Ontologia.getInstance().getShortName(values.next());
                 		propNode.add(new DefaultMutableTreeNode(valueName));
-                		if (ob.existsInstance(valueName))
+                		if (Ontologia.getInstance().existsInstance(valueName))
                 			drawnInstances.add(valueName);
                 		else
                 			drawnDataTypes.add(valueName);
@@ -182,6 +156,10 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
      */
     public void setAncestor(String ancestor) {
         this.ancestor = ancestor;
+    }
+
+    void actualizarPanelPropiedades() {
+        readOntology();
     }
 
     class MyRenderer extends DefaultTreeCellRenderer {
