@@ -23,7 +23,7 @@ public class NewClass {
         ob.loadOntology(mainOnto, subOntologies, false);
 
         javax.swing.JFrame window = new javax.swing.JFrame(mainOnto.getURL());
-        PanelArbolClasesInstancias tree = new PanelArbolClasesInstancias(ob, null);
+        PanelArbolClasesInstancias tree = new PanelArbolClasesInstancias(null);
         window.getContentPane().add(tree);
         window.pack();
         window.setSize(300, 600);

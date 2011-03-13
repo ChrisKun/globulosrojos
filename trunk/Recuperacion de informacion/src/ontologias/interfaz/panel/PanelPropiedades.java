@@ -24,8 +24,6 @@ import ontologias.utils.Ontologia;
 public class PanelPropiedades extends javax.swing.JPanel {
 
     public static void main(String [] args) {
-        Ontologia.getInstance();
-
         PanelPropiedades p = new PanelPropiedades("Pau_Gasol");
         javax.swing.JFrame window = new javax.swing.JFrame("");
         window.getContentPane().add(p);
