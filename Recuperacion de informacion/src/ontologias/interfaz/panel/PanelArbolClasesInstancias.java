@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import java.util.*;
+import javax.swing.JComponent;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
@@ -46,10 +47,10 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
     /**
      * Constructor
      */
-    public PanelArbolClasesInstancias(OntoBridge ob, MenuPrincipal padre) {
+    public PanelArbolClasesInstancias(MenuPrincipal padre) {
         super();
         createComponents();
-        readOntology(ob);
+        readOntology();
         this.padre = padre;
     }
 
@@ -84,7 +85,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
 
         ontologyTree.addMouseListener(new MouseAdapter() {
 
-            public void mousePressed(MouseEvent e) {
+            public void mouseReleased(MouseEvent e) {
 
                 if(menuContextual != null && menuContextual.isVisible())
                     menuContextual.setVisible(false);
@@ -102,14 +103,14 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
                     else //Si se ha hecho click dereco...
                         if (selRow != -1 && e.isPopupTrigger())
                         {//TODO Puede que esto de error si hay una instancia que se llama igual que una clase
+                            String nombreSeleccionado = selPath.getLastPathComponent().toString();
                             if(Ontologia.getInstance().existsClass(nombreSeleccion))
-                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.clase);
+                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.clase, nombreSeleccionado);
                             else if(Ontologia.getInstance().existsInstance(nombreSeleccion))
-                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.instancia);
+                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.instancia, nombreSeleccionado);
                             else if(Ontologia.getInstance().existsProperty(nombreSeleccion))
-                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.propiedad);
-                            menuContextual.setLocation(e.getX(), e.getY());
-                            menuContextual.setVisible(true);
+                                menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.propiedad, nombreSeleccionado);
+                            menuContextual.show((JComponent)e.getSource(), e.getX(), e.getY());
                     }
                 } catch (NullPointerException ex) {
                     return;
@@ -134,17 +135,21 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         add(botonCrear, BorderLayout.SOUTH);
     }
 
+    public void updatePanel() {
+        readOntology();
+    }
+
     /**
      * Read the ontology classes.
      *
      */
-    protected void readOntology(OntoBridge ob) {
+    protected void readOntology() {
         try {
-            ontologyTree.getModel().getRoot();
-            Iterator<String> rc = ob.listRootClasses();
+            root.removeAllChildren();
+            Iterator<String> rc = Ontologia.getInstance().listRootClasses();
             while (rc.hasNext()) {
                 String nextRC = rc.next();
-                DefaultMutableTreeNode node = createNode(nextRC, ob, 0);
+                DefaultMutableTreeNode node = createNode(nextRC, Ontologia.getInstance(), 0);
                 root.add(node);
             }
             ontologyTree.expandRow(0);

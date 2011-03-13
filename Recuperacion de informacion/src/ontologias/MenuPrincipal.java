@@ -46,7 +46,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelListaNoticias = new PanelArbolClasesInstancias(Ontologia.getInstance(),this);
+        panelListaNoticias = new PanelArbolClasesInstancias(this);
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
         panelInfoFoto = new PanelPropiedades(nombre);
@@ -245,7 +245,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void botonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTActionPerformed
         javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
-        PanelArbolClasesInstancias subclases = new PanelArbolClasesInstancias(Ontologia.getInstance(), this);
+        PanelArbolClasesInstancias subclases = new PanelArbolClasesInstancias(this);
         window.getContentPane().add(subclases);
         window.pack();
         window.setSize(300, 600);
