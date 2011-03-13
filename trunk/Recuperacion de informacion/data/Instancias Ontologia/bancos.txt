@@ -1,0 +1,8 @@
+Banco_Santander
+BBVA
+Barclays
+ICBC
+HSBC
+Goldman_Sachs
+Caja_Madrid
+Banesto
