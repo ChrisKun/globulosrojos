@@ -206,15 +206,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         labelFoto.setIcon(images.get(++imageIndex));
         nombre = images.get(imageIndex).getDescription();
-        ((PanelArbolPropiedades) panelInfoFoto).setAncestor(nombre);
-        panelInfoFoto.revalidate();
-        panelInfoFoto.repaint();
-        panelInfoFoto.updateUI();
-        SwingUtilities.updateComponentTreeUI(panelInfoFoto);
-        this.pack();
-        this.validateTree();
-        this.repaint();
-        this.validate();
+        //((PanelArbolPropiedades) panelInfoFoto).setAncestor(nombre);
+        //panelInfoFoto.setEnabled(false);
+        panelInfoFoto = new PanelPropiedades(nombre);
+
+//        panelInfoFoto.revalidate();
+//        panelInfoFoto.repaint();
+//        panelInfoFoto.updateUI();
+        this.getContentPane().validate();
+        this.getContentPane().repaint();
+//        this.getContentPane().add(panelInfoFoto);
+//        this.pack();
+
+        panelInfoFoto.setSize(600, 600);
+        panelInfoFoto.setVisible(true);
+
+        //((PanelArbolPropiedades)panelInfoFoto).readOntology(Ontologia.getInstance());
+//
+//        ((PanelArbolPropiedades)panelInfoFoto).getOntologyTree().updateUI();
+//        ((PanelArbolPropiedades)panelInfoFoto).getOntologyTree().revalidate();
+//        ((PanelArbolPropiedades)panelInfoFoto).getOntologyTree().repaint();
+//        panelInfoFoto.revalidate();
+//        panelInfoFoto.repaint();
+//        panelInfoFoto.updateUI();
+//        SwingUtilities.updateComponentTreeUI(panelInfoFoto);
+//        this.pack();
+//        this.validateTree();
+//        this.repaint();
+//        this.validate();
     }//GEN-LAST:event_botonSiguienteActionPerformed
 
     private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
