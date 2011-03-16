@@ -61,7 +61,8 @@ class menuContextualClase extends JPopupMenu {
         item2.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("pulsado Hola");
+                Ontologia.getInstance().delete(llamante);
+                Ontologia.getInstance().save("files/Ontologia.owl");
             }
         });
         this.add(item1);
@@ -91,7 +92,8 @@ class menuContextualInstancia extends JPopupMenu {
         item2.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("pulsado Bye");
+                Ontologia.getInstance().delete(llamante);
+                Ontologia.getInstance().save("files/Ontologia.owl");
             }
         });
         this.add(item1);
