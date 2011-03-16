@@ -82,6 +82,7 @@ public class PanelIntroducirNombre extends javax.swing.JPanel {
 
     private void jBAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAceptarActionPerformed
         Ontologia.getInstance().createInstance(className, jTFNombreInstancia.getText());
+        Ontologia.getInstance().save("files/Ontologia.owl");
         ((JFrame)this.getParent().getParent().getParent().getParent()).dispose();
     }//GEN-LAST:event_jBAceptarActionPerformed
 
