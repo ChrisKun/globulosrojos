@@ -11,6 +11,9 @@
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosing"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -30,10 +33,9 @@
               <EmptySpace min="12" pref="12" max="12" attributes="0"/>
               <Component id="panelListaNoticias" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="18" pref="18" max="18" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panelFoto" alignment="1" max="32767" attributes="1"/>
-                  <Component id="panelInfoFoto" alignment="1" max="32767" attributes="1"/>
-                  <Component id="panelMenu" max="32767" attributes="1"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="panelFoto" max="32767" attributes="1"/>
+                  <Component id="panelMenu" alignment="0" max="32767" attributes="1"/>
               </Group>
           </Group>
       </Group>
@@ -46,9 +48,7 @@
                   <Component id="panelListaNoticias" pref="688" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="panelFoto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="12" pref="12" max="12" attributes="0"/>
-                      <Component id="panelInfoFoto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="12" pref="12" max="12" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="panelMenu" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -109,7 +109,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelFoto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="304" max="32767" attributes="0"/>
+                  <EmptySpace pref="472" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -121,33 +121,6 @@
           </Properties>
         </Component>
       </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="panelInfoFoto">
-      <Properties>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[950, 150]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[950, 150]"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelPropiedades(nombre)"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.getContentPane().add(panelInfoFoto);&#xa;this.pack();"/>
-      </AuxValues>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="950" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="panelMenu">
       <Properties>

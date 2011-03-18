@@ -55,7 +55,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelListaNoticias = new PanelArbolClasesInstancias(this);
         panelFoto = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
-        panelInfoFoto = new PanelPropiedades(nombre);
         panelMenu = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
@@ -65,6 +64,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Marcador Semantico de Imagenes");
         setMinimumSize(new java.awt.Dimension(944, 715));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         this.getContentPane().add(panelListaNoticias);
         this.pack();
@@ -101,23 +105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(304, Short.MAX_VALUE))
-        );
-
-        this.getContentPane().add(panelInfoFoto);
-        this.pack();
-        panelInfoFoto.setMaximumSize(new java.awt.Dimension(950, 150));
-        panelInfoFoto.setMinimumSize(new java.awt.Dimension(950, 150));
-
-        javax.swing.GroupLayout panelInfoFotoLayout = new javax.swing.GroupLayout(panelInfoFoto);
-        panelInfoFoto.setLayout(panelInfoFotoLayout);
-        panelInfoFotoLayout.setHorizontalGroup(
-            panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
-        );
-        panelInfoFotoLayout.setVerticalGroup(
-            panelInfoFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+                .addContainerGap(472, Short.MAX_VALUE))
         );
 
         panelMenu.setBackground(new java.awt.Color(223, 132, 40));
@@ -187,23 +175,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(panelListaNoticias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelInfoFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(panelListaNoticias, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(panelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(panelInfoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelListaNoticias, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -217,34 +202,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         labelFoto.setIcon(images.get(++imageIndex));
         nombre = images.get(imageIndex).getDescription();
-        //((PanelArbolPropiedades) panelInfoFoto).setAncestor(nombre);
-        //panelInfoFoto.setEnabled(false);
-        panelInfoFoto = new PanelPropiedades(nombre);
-
-//        panelInfoFoto.revalidate();
-//        panelInfoFoto.repaint();
-//        panelInfoFoto.updateUI();
-        this.getContentPane().validate();
-        this.getContentPane().repaint();
-//        this.getContentPane().add(panelInfoFoto);
-//        this.pack();
-
-        panelInfoFoto.setSize(600, 600);
-        panelInfoFoto.setVisible(true);
-
-        //((PanelArbolPropiedades)panelInfoFoto).readOntology(Ontologia.getInstance());
-//
-//        ((PanelArbolPropiedades)panelInfoFoto).getOntologyTree().updateUI();
-//        ((PanelArbolPropiedades)panelInfoFoto).getOntologyTree().revalidate();
-//        ((PanelArbolPropiedades)panelInfoFoto).getOntologyTree().repaint();
-//        panelInfoFoto.revalidate();
-//        panelInfoFoto.repaint();
-//        panelInfoFoto.updateUI();
-//        SwingUtilities.updateComponentTreeUI(panelInfoFoto);
-//        this.pack();
-//        this.validateTree();
-//        this.repaint();
-//        this.validate();
     }//GEN-LAST:event_botonSiguienteActionPerformed
 
     private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
@@ -255,13 +212,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         labelFoto.setIcon(images.get(--imageIndex));
         nombre = images.get(imageIndex).getDescription();
-        ((PanelArbolPropiedades) panelInfoFoto).setAncestor(nombre);
-        panelInfoFoto.revalidate();
-        panelInfoFoto.repaint();
-        panelInfoFoto.updateUI();
-        this.pack();
-        this.repaint();
-        this.validate();
     }//GEN-LAST:event_botonAnteriorActionPerformed
 
     private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
@@ -281,6 +231,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         window.setSize(300, 600);
         window.setVisible(true);
     }//GEN-LAST:event_botonTActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        Ontologia.getInstance().save("files/Ontologia.owl");
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -323,7 +277,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //PnlInstancesTree tree = new PnlInstancesTree(Ontologia.getInstance(), "Paul_Gasol");
         ventanaPopUp.getContentPane().add(panelPropiedadesPopUp);
         ventanaPopUp.pack();
-        ventanaPopUp.setSize(600, 600);
+        //ventanaPopUp.setSize(600, 600);
         ventanaPopUp.setVisible(true);
     }
 
@@ -355,7 +309,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonT;
     private javax.swing.JLabel labelFoto;
     private javax.swing.JPanel panelFoto;
-    private javax.swing.JPanel panelInfoFoto;
     private javax.swing.JPanel panelListaNoticias;
     private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables
