@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelArbolInstancias;
@@ -233,7 +234,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonTActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        Ontologia.getInstance().save("files/Ontologia.owl");
+        if(JOptionPane.showConfirmDialog(this, "¿Desea guardar la ontologia?","Guardar",JOptionPane.YES_NO_OPTION) == 0)
+            Ontologia.getInstance().save("files/Ontologia.owl");
     }//GEN-LAST:event_formWindowClosing
 
     /**

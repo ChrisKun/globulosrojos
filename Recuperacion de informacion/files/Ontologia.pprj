@@ -1,4 +1,4 @@
-; Fri Mar 18 12:00:43 CET 2011
+; Fri Mar 18 15:09:22 CET 2011
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Ontologia_ProjectKB_Instance_172]
-		[Ontologia_ProjectKB_Instance_173]
-		[Ontologia_ProjectKB_Instance_174]
-		[Ontologia_ProjectKB_Instance_175]
-		[Ontologia_ProjectKB_Instance_176]))
+		[Ontologia_ProjectKB_Instance_51]
+		[Ontologia_ProjectKB_Instance_52]
+		[Ontologia_ProjectKB_Instance_53]
+		[Ontologia_ProjectKB_Instance_54]
+		[Ontologia_ProjectKB_Instance_55]))
 
 ([CLSES_TAB] of  Widget
 
@@ -940,6 +940,11 @@
 
 ([KB_484936_Instance_3] of  Property_List
 )
+
+([KB_530130_Instance_0] of  String
+
+	(name "owl_file_name")
+	(string_value "Ontologia.owl"))
 
 ([KB_564539_Instance_0] of  Widget
 
@@ -7161,11 +7166,6 @@
 ([KB_941921_Instance_7] of  Property_List
 )
 
-([KB_955642_Instance_0] of  String
-
-	(name "owl_file_name")
-	(string_value "Ontologia.owl"))
-
 ([Ontologia_ProjectKB_Instance_1] of  Widget
 
 	(is_hidden TRUE)
@@ -7207,31 +7207,6 @@
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_18])
 	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
-
-([Ontologia_ProjectKB_Instance_172] of  String
-
-	(name "owl:Thing")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Instance_173] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([Ontologia_ProjectKB_Instance_174] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([Ontologia_ProjectKB_Instance_175] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Instance_176] of  String
-
-	(name "owl:Class")
-	(string_value "%3ANAME"))
 
 ([Ontologia_ProjectKB_Instance_18] of  Property_List
 )
@@ -7397,6 +7372,31 @@
 
 ([Ontologia_ProjectKB_Instance_50] of  Property_List
 )
+
+([Ontologia_ProjectKB_Instance_51] of  String
+
+	(name "owl:Thing")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Instance_52] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([Ontologia_ProjectKB_Instance_53] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([Ontologia_ProjectKB_Instance_54] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Instance_55] of  String
+
+	(name "owl:Class")
+	(string_value "%3ANAME"))
 
 ([Ontologia_ProjectKB_Instance_6] of  Property_List
 )
@@ -7712,7 +7712,7 @@
 		[OWL_ProjectKB_Instance_3]
 		[KB_444675_Instance_0]
 		[KB_632156_Instance_0]
-		[KB_955642_Instance_0]))
+		[KB_530130_Instance_0]))
 
 ([STANDARD_CLASS_FORM_WIDGET] of  Widget
 
