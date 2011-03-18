@@ -113,7 +113,7 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
         try {
             root.removeAllChildren();
 
-            Iterator<String> properties = Ontologia.getInstance().listInstanceProperties(ancestor);
+            Iterator<String> properties = Ontologia.getInstance().listProperties(ancestor);
             while (properties.hasNext()) {
                 String propName = Ontologia.getInstance().getShortName(properties.next());
                 if (!propName.contains("rdf") && !propName.contains("owl")) {
