@@ -28,12 +28,12 @@
   <owl:Class rdf:about="#Persona">
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="Pais"/>
-        </owl:someValuesFrom>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="OriginarioDe"/>
         </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="Pais"/>
+        </owl:someValuesFrom>
       </owl:Restriction>
     </owl:equivalentClass>
     <owl:disjointWith>
@@ -52,6 +52,15 @@
   </owl:Class>
   <owl:Class rdf:ID="Equipo"/>
   <owl:Class rdf:ID="Piloto">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Tenista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Baloncestista"/>
+    </owl:disjointWith>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
@@ -65,23 +74,14 @@
             </owl:hasValue>
           </owl:Restriction>
           <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:ID="Pertenece"/>
             </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
-    <owl:disjointWith>
-      <owl:Class rdf:ID="Tenista"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:ID="Futbolista"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:ID="Baloncestista"/>
-    </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:ID="NoticiaEconomia">
     <owl:disjointWith>
@@ -96,9 +96,6 @@
     <owl:disjointWith>
       <owl:Class rdf:ID="NoticiaDeportes"/>
     </owl:disjointWith>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Noticia"/>
-    </rdfs:subClassOf>
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:someValuesFrom>
@@ -109,6 +106,9 @@
         </owl:onProperty>
       </owl:Restriction>
     </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Noticia"/>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Deportista">
     <owl:equivalentClass>
@@ -137,6 +137,19 @@
     </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="#NoticiaTecnologia">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="EmpresaDeTecnologia"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Noticia"/>
+    </rdfs:subClassOf>
     <owl:disjointWith>
       <owl:Class rdf:about="#NoticiaInternacional"/>
     </owl:disjointWith>
@@ -147,19 +160,6 @@
     <owl:disjointWith>
       <owl:Class rdf:about="#NoticiaDeportes"/>
     </owl:disjointWith>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Noticia"/>
-    </rdfs:subClassOf>
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#Contiene"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="EmpresaDeTecnologia"/>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#Noticia">
     <owl:disjointWith rdf:resource="#Continente"/>
@@ -186,14 +186,6 @@
     <owl:disjointWith rdf:resource="#Noticia"/>
   </owl:Class>
   <owl:Class rdf:about="#NoticiaInternacional">
-    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#NoticiaPolitica"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#NoticiaDeportes"/>
-    </owl:disjointWith>
     <rdfs:subClassOf rdf:resource="#Noticia"/>
     <owl:equivalentClass>
       <owl:Class>
@@ -215,24 +207,32 @@
             </owl:complementOf>
           </owl:Class>
           <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class rdf:about="#Pais"/>
-            </owl:someValuesFrom>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="#Contiene"/>
             </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Pais"/>
+            </owl:someValuesFrom>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#NoticiaDeportes"/>
+    </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:ID="AparatoElectronico">
     <owl:equivalentClass>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#EmpresaDeTecnologia"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="CreadoPor"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#EmpresaDeTecnologia"/>
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
@@ -242,10 +242,10 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="#Persona"/>
           <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#PartidoPolitico"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:ID="Milita"/>
             </owl:onProperty>
-            <owl:someValuesFrom rdf:resource="#PartidoPolitico"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
@@ -273,12 +273,12 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="#Deportista"/>
           <owl:Restriction>
-            <owl:hasValue>
-              <Deporte rdf:ID="Tenis"/>
-            </owl:hasValue>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="#RealizaAccion"/>
             </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:ID="Tenis"/>
+            </owl:hasValue>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
@@ -292,6 +292,11 @@
     </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="#PresidenteFutbol">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Entrenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Politico"/>
+    <owl:disjointWith rdf:resource="#Deportista"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
@@ -305,19 +310,14 @@
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#Entrenador"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#Politico"/>
-    <owl:disjointWith rdf:resource="#Deportista"/>
   </owl:Class>
   <owl:Class rdf:about="#Pais">
     <owl:equivalentClass>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Continente"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="EstaEn"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#Continente"/>
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
@@ -340,22 +340,23 @@
             </owl:hasValue>
           </owl:Restriction>
           <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="#Pertenece"/>
             </owl:onProperty>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#NoticiaPolitica">
+    <rdfs:subClassOf rdf:resource="#Noticia"/>
     <owl:equivalentClass>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Politico"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#Contiene"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#Politico"/>
       </owl:Restriction>
     </owl:equivalentClass>
     <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
@@ -364,7 +365,6 @@
     <owl:disjointWith>
       <owl:Class rdf:about="#NoticiaDeportes"/>
     </owl:disjointWith>
-    <rdfs:subClassOf rdf:resource="#Noticia"/>
   </owl:Class>
   <owl:Class rdf:about="#Futbolista">
     <owl:equivalentClass>
@@ -398,10 +398,10 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="#Persona"/>
           <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:ID="Entrena"/>
             </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
@@ -419,22 +419,21 @@
   </owl:Class>
   <owl:Class rdf:ID="Imagen"/>
   <owl:Class rdf:about="#NoticiaDeportes">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#Contiene"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#Deportista"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="#Noticia"/>
     <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
     <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
     <owl:disjointWith rdf:resource="#NoticiaPolitica"/>
     <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <rdfs:subClassOf rdf:resource="#Noticia"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Deportista"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
   </owl:Class>
   <owl:ObjectProperty rdf:about="#Pertenece">
-    <rdfs:range rdf:resource="#Equipo"/>
     <rdfs:domain>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -444,13 +443,13 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
+    <rdfs:range rdf:resource="#Equipo"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#OriginarioDe">
     <rdfs:range rdf:resource="#Pais"/>
     <rdfs:domain rdf:resource="#Persona"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#Entrena">
-    <rdfs:domain rdf:resource="#Entrenador"/>
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -459,18 +458,19 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:range>
+    <rdfs:domain rdf:resource="#Entrenador"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#EstaEn">
-    <rdfs:domain rdf:resource="#Pais"/>
     <rdfs:range rdf:resource="#Continente"/>
+    <rdfs:domain rdf:resource="#Pais"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="ApareceEn">
     <rdfs:range rdf:resource="#Imagen"/>
     <rdfs:domain rdf:resource="#Persona"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#Preside">
-    <rdfs:domain rdf:resource="#PresidenteFutbol"/>
     <rdfs:range rdf:resource="#Equipo"/>
+    <rdfs:domain rdf:resource="#PresidenteFutbol"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#Milita">
     <rdfs:range rdf:resource="#PartidoPolitico"/>
@@ -485,949 +485,3076 @@
     <rdfs:range rdf:resource="#EmpresaDeTecnologia"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#Contiene">
-    <rdfs:domain rdf:resource="#Imagen"/>
     <rdfs:range rdf:resource="#Persona"/>
+    <rdfs:domain rdf:resource="#Imagen"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="URLFoto">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Noticia"/>
+    <rdfs:domain rdf:resource="#Imagen"/>
   </owl:DatatypeProperty>
-  <Imagen rdf:ID="dr_madrid_01122010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="abcia.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jparturmas151110.jpg_lite08.jpg"/>
+  <Imagen rdf:ID="dr_madrid_01122010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_madrid_01122010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abcia.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abcia.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparturmas151110.jpg_lite08.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas151110.jpg_lite08.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Manuel_Chaves_González"/>
   <Futbolista rdf:ID="Víctor_Valdés"/>
   <Futbolista rdf:ID="Alvaro_Arbeloa"/>
   <Baloncestista rdf:ID="Lebron_James"/>
-  <Imagen rdf:ID="mafo2-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1151020_tn.jpg"/>
-  <Imagen rdf:ID="_1291069175872guardioladn.jpg"/>
-  <Imagen rdf:ID="maletindolares-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1175502_tn.jpg"/>
-  <Imagen rdf:ID="_1154598_tn.jpg"/>
-  <Imagen rdf:ID="_1160234_tn.jpg"/>
-  <Imagen rdf:ID="vivienda-255x255x80.jpg"/>
-  <Imagen rdf:ID="a-la-alza-flecha255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="mafo2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mafo2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1151020_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1151020_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291069175872guardioladn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291069175872guardioladn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="maletindolares-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maletindolares-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1175502_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175502_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1154598_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1154598_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1160234_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1160234_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="vivienda-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vivienda-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="a-la-alza-flecha255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >a-la-alza-flecha255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Marruecos"/>
-  <Imagen rdf:ID="_1290886802534egiptodn.jpg"/>
-  <Imagen rdf:ID="candidatos.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291200931557aeropuerto_smalldn.jpg"/>
-  <Imagen rdf:ID="rr_berdych_24112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="jpamas241110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="_1289519591480.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="eurodinero255x208-4-255x255x80.jpg"/>
-  <Imagen rdf:ID="abferran091110.jpg_lite5.jpg"/>
+  <Imagen rdf:ID="_1290886802534egiptodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290886802534egiptodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="candidatos.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >candidatos.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291200931557aeropuerto_smalldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291200931557aeropuerto_smalldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_berdych_24112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_berdych_24112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpamas241110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpamas241110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1289519591480.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1289519591480.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="eurodinero255x208-4-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eurodinero255x208-4-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abferran091110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abferran091110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Valeriano_Gómez_Sánchez"/>
-  <Imagen rdf:ID="_1291141746390ajaxdn.jpg"/>
-  <Imagen rdf:ID="jparturmas121110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="jpmontilla151110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291125234906xavidetalledn.jpg"/>
-  <Imagen rdf:ID="jdlondres241110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291088804670costadn.jpg"/>
-  <Imagen rdf:ID="salgado-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1291141746390ajaxdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291141746390ajaxdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparturmas121110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas121110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla151110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla151110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291125234906xavidetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291125234906xavidetalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdlondres241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdlondres241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291088804670costadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291088804670costadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="salgado-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salgado-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Sergio_Ramos"/>
-  <Imagen rdf:ID="espana-19-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1289519617632.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="vistascongruas2-255x255x80.gif"/>
+  <Imagen rdf:ID="espana-19-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espana-19-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1289519617632.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1289519617632.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="vistascongruas2-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vistascongruas2-255x255x80.gif</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Ramón_Jáuregui_Atondo"/>
-  <Imagen rdf:ID="_1290682821172malikidn.jpg"/>
+  <Imagen rdf:ID="_1290682821172malikidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290682821172malikidn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Francia"/>
-  <Imagen rdf:ID="_1290850021715colombiadn.jpg"/>
-  <Imagen rdf:ID="_1290589330444browndn.jpg"/>
-  <Imagen rdf:ID="_1156602_tn.jpg"/>
+  <Imagen rdf:ID="_1290850021715colombiadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290850021715colombiadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290589330444browndn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290589330444browndn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1156602_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156602_tn.jpg</URLFoto>
+  </Imagen>
   <Baloncestista rdf:ID="Jose_Calderón"/>
-  <Imagen rdf:ID="bolsasube255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1147556_tn.jpg"/>
-  <Imagen rdf:ID="jpesquerra121110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1173066_tn.jpg"/>
+  <Imagen rdf:ID="bolsasube255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsasube255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1147556_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1147556_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpesquerra121110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpesquerra121110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1173066_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1173066_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Haití"/>
   <Futbolista rdf:ID="Gabi_Milito"/>
-  <Imagen rdf:ID="_1171600.jpg"/>
-  <Imagen rdf:ID="_1289519663896.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="dr_md_26112010.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="_1171600.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1171600.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1289519663896.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1289519663896.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_md_26112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_md_26112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Ana_Pastor"/>
-  <Imagen rdf:ID="_1153116_tn.jpg"/>
-  <Imagen rdf:ID="jpsanchezcamacho191110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1174672_tn.jpg"/>
-  <Imagen rdf:ID="jdlisboa101110zp.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jppuigcercos231110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1290728892742contadordn.jpg"/>
-  <Imagen rdf:ID="rr_guardiola_28112010.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="_1153116_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1153116_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpsanchezcamacho191110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpsanchezcamacho191110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1174672_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174672_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdlisboa101110zp.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdlisboa101110zp.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppuigcercos231110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuigcercos231110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290728892742contadordn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290728892742contadordn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_guardiola_28112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_guardiola_28112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Irak"/>
-  <Imagen rdf:ID="Miting-a-Girona_highlighted_latest_news.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="dr_zenit_01122010.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="Miting-a-Girona_highlighted_latest_news.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Miting-a-Girona_highlighted_latest_news.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_zenit_01122010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_zenit_01122010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jplonas261110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jplonas261110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Alfredo_Pérez_Rubalcaba"/>
-  <Imagen rdf:ID="jplonas261110.JPG_lite4.jpg"/>
   <Baloncestista rdf:ID="Marc_Gasol"/>
   <Equipo rdf:ID="Real_Madrid"/>
-  <Imagen rdf:ID="jpciutadans281110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="jpciutadans281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpciutadans281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Albert_Rivera"/>
-  <Imagen rdf:ID="_1291182562747clasicodn.jpg"/>
-  <Imagen rdf:ID="dr_ferrari_25112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290971056481casablancadn.jpg"/>
-  <Imagen rdf:ID="jpmas_polonia.JPG.jpg"/>
+  <Imagen rdf:ID="_1291182562747clasicodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291182562747clasicodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_ferrari_25112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_ferrari_25112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290971056481casablancadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290971056481casablancadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas_polonia.JPG.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas_polonia.JPG.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Méjico"/>
-  <Imagen rdf:ID="_1290877670868puyoldn.jpg"/>
-  <Imagen rdf:ID="abperra181110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="trinidad_hillary1_JR20111033.jpg"/>
-  <Imagen rdf:ID="_400euros-5-255x255x80.jpg"/>
-  <Imagen rdf:ID="roubini255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="tratonegocios255x208-255x255x80.gif"/>
+  <Imagen rdf:ID="_1290877670868puyoldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290877670868puyoldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abperra181110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abperra181110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="trinidad_hillary1_JR20111033.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trinidad_hillary1_JR20111033.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_400euros-5-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_400euros-5-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="roubini255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >roubini255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="tratonegocios255x208-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tratonegocios255x208-255x255x80.gif</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Argentina"/>
-  <Imagen rdf:ID="jpuigcercos241110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="jpuigcercos241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpuigcercos241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <PartidoPolitico rdf:ID="PSOE"/>
-  <Imagen rdf:ID="_1290749963995netanyahudn.jpg"/>
-  <Imagen rdf:ID="_1290723733241RAUL-DET.dn.jpg"/>
-  <Imagen rdf:ID="_129112482391320101130-3505469dn.jpg"/>
-  <Imagen rdf:ID="_1088266_tn.jpg"/>
-  <Imagen rdf:ID="jppvilla291110.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="_1290749963995netanyahudn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290749963995netanyahudn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290723733241RAUL-DET.dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290723733241RAUL-DET.dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_129112482391320101130-3505469dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_129112482391320101130-3505469dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1088266_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1088266_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppvilla291110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppvilla291110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Banco rdf:ID="BBVA"/>
-  <Imagen rdf:ID="_1291154699709mani-roma-det.dn.jpg"/>
-  <Imagen rdf:ID="_1149935_tn.jpg"/>
-  <Imagen rdf:ID="oficinaempleo2-255x255x80.jpg"/>
-  <Imagen rdf:ID="joseblanco-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1154891_tn.jpg"/>
+  <Imagen rdf:ID="_1291154699709mani-roma-det.dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291154699709mani-roma-det.dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1149935_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1149935_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="oficinaempleo2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oficinaempleo2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="joseblanco-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >joseblanco-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1154891_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1154891_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Cristiano_Ronaldo"/>
-  <Imagen rdf:ID="_1290854473724mohamuddn.jpg"/>
-  <Imagen rdf:ID="_1291035407606xavidn.jpg"/>
-  <Imagen rdf:ID="_1290807593326haitidn.jpg"/>
-  <Imagen rdf:ID="jf_colera_161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_126147276518320091222-2766961dn.jpg"/>
+  <Imagen rdf:ID="_1290854473724mohamuddn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290854473724mohamuddn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291035407606xavidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291035407606xavidn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290807593326haitidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290807593326haitidn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_colera_161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_colera_161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_126147276518320091222-2766961dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_126147276518320091222-2766961dn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Bush"/>
-  <Imagen rdf:ID="Niels2.JPG_lite5.jpg"/>
+  <Imagen rdf:ID="Niels2.JPG_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Niels2.JPG_lite5.jpg</URLFoto>
+  </Imagen>
   <Equipo rdf:ID="Valencia"/>
   <Pais rdf:ID="EEUU"/>
-  <Imagen rdf:ID="jdobama261110dos.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291153457225lopezdn.jpg"/>
-  <Imagen rdf:ID="_1290891166188piquedn.jpg"/>
+  <Imagen rdf:ID="jdobama261110dos.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdobama261110dos.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291153457225lopezdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291153457225lopezdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290891166188piquedn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290891166188piquedn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Grecia"/>
   <Banco rdf:ID="Goldman_Sachs"/>
   <Politico rdf:ID="Sarah_Palin"/>
-  <Imagen rdf:ID="_1290671902199benitezgrandedn.jpg"/>
-  <Imagen rdf:ID="jprajoy011210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="salgadopresupuestos255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1290671902199benitezgrandedn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290671902199benitezgrandedn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprajoy011210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprajoy011210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="salgadopresupuestos255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salgadopresupuestos255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Joan_Laporta"/>
-  <Imagen rdf:ID="_1174805_tn.jpg"/>
+  <Imagen rdf:ID="_1174805_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174805_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Corea_del_Sur"/>
-  <Imagen rdf:ID="al_assange_41110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="jimenezaranda2.JPG_lite5.jpg"/>
-  <Imagen rdf:ID="dr_bar2_25112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1163799_tn.jpg"/>
-  <Imagen rdf:ID="_1163108_tn.jpg"/>
-  <Imagen rdf:ID="jpmontilla_zp_felipe251110.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="al_assange_41110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >al_assange_41110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jimenezaranda2.JPG_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jimenezaranda2.JPG_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_bar2_25112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_bar2_25112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1163799_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1163799_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1163108_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1163108_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla_zp_felipe251110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla_zp_felipe251110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Baloncestista rdf:ID="Pau_Gasol">
+    <OriginarioDe rdf:resource="#España"/>
+    <RealizaAccion rdf:resource="#Baloncesto"/>
     <Pertenece>
       <Equipo rdf:ID="L.A.Lakers"/>
     </Pertenece>
-    <RealizaAccion rdf:resource="#Baloncesto"/>
-    <OriginarioDe rdf:resource="#España"/>
   </Baloncestista>
-  <Imagen rdf:ID="bolsako-255x255x80.jpg"/>
-  <Imagen rdf:ID="lgmasbadalona.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="marsans255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291155301945royal-det.dn.jpg"/>
-  <Imagen rdf:ID="jpmontilla_pregunta091110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1290740368126coreadn.jpg"/>
+  <Imagen rdf:ID="bolsako-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsako-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgmasbadalona.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgmasbadalona.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="marsans255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marsans255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291155301945royal-det.dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291155301945royal-det.dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla_pregunta091110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla_pregunta091110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290740368126coreadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290740368126coreadn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Condoleezza_Rice"/>
   <Politico rdf:ID="Soraya_Sáenz_de_Santamaría"/>
-  <Imagen rdf:ID="_1291088368474irandn.jpg"/>
-  <Imagen rdf:ID="jauschwitz181209ok4.jpg"/>
+  <Imagen rdf:ID="_1291088368474irandn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291088368474irandn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jauschwitz181209ok4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jauschwitz181209ok4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Turquía"/>
-  <Imagen rdf:ID="acslogo255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="jpmontilla_castells171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1157461_tn.jpg"/>
-  <Imagen rdf:ID="_1152576_tn.jpg"/>
-  <Imagen rdf:ID="michele.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1158596_tn.jpg"/>
-  <Imagen rdf:ID="_1174812_tn.jpg"/>
-  <Imagen rdf:ID="jprajoy211110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jparturmas241110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1176204_tn.jpg"/>
-  <Imagen rdf:ID="_1291175992764seuldn.jpg"/>
-  <Imagen rdf:ID="_1291024788539putindn.jpg"/>
-  <Imagen rdf:ID="brokers4-255x255x80.gif"/>
-  <Imagen rdf:ID="dineroencadenado255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="abdaniel011210.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="dr_getafe_27112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="herrera_rivera.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="millonario-255x255x80.jpg"/>
-  <Imagen rdf:ID="waterdav.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="jf_higuain_291110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="acslogo255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >acslogo255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla_castells171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla_castells171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1157461_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1157461_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1152576_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1152576_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="michele.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >michele.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1158596_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1158596_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1174812_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174812_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprajoy211110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprajoy211110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparturmas241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1176204_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176204_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291175992764seuldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291175992764seuldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291024788539putindn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291024788539putindn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="brokers4-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >brokers4-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dineroencadenado255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dineroencadenado255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abdaniel011210.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abdaniel011210.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_getafe_27112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_getafe_27112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="herrera_rivera.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >herrera_rivera.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="millonario-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >millonario-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="waterdav.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterdav.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_higuain_291110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_higuain_291110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Thomas_Berdych"/>
   <Pais rdf:ID="Congo"/>
   <Politico rdf:ID="Esperanza_Aguirre"/>
-  <Imagen rdf:ID="oficinaempleo2-1-255x255x80.jpg"/>
+  <Imagen rdf:ID="oficinaempleo2-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oficinaempleo2-1-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Seydu_Keita"/>
-  <Imagen rdf:ID="apple.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="apple.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >apple.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Pepe"/>
   <Politico rdf:ID="Juan_José_Ibarretxe"/>
-  <Imagen rdf:ID="_1166860_tn.jpg"/>
-  <Imagen rdf:ID="james.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="abcamacho131110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1133339_tn.jpg"/>
-  <Imagen rdf:ID="_25942677230ee5455430-203x3-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290632049239cairodn.jpg"/>
-  <Imagen rdf:ID="_1290964622672assangedn.jpg"/>
-  <Imagen rdf:ID="_1290944635035haitidn.jpg"/>
-  <Imagen rdf:ID="benach1_JR1901095.jpg"/>
-  <Imagen rdf:ID="_1290892320984MANUdn.jpg"/>
+  <Imagen rdf:ID="_1166860_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1166860_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="james.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >james.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abcamacho131110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abcamacho131110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1133339_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1133339_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_25942677230ee5455430-203x3-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_25942677230ee5455430-203x3-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290632049239cairodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290632049239cairodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290964622672assangedn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290964622672assangedn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290944635035haitidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290944635035haitidn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="benach1_JR1901095.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >benach1_JR1901095.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290892320984MANUdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290892320984MANUdn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Suecia"/>
   <Futbolista rdf:ID="Ángel_Di_María"/>
-  <Imagen rdf:ID="bceedificioylogo255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290959399576liverpooldn.jpg"/>
-  <Imagen rdf:ID="_1043327_tn.jpg"/>
+  <Imagen rdf:ID="bceedificioylogo255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bceedificioylogo255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290959399576liverpooldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290959399576liverpooldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1043327_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1043327_tn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Esteban_González_Pons"/>
-  <Imagen rdf:ID="trichet255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="jpcamacho281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jpcamacho181110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="jpherrera281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291089055193egiptodn.jpg"/>
-  <Imagen rdf:ID="abhaiti281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1171560_tn.jpg"/>
-  <Imagen rdf:ID="_848263_tn.jpg"/>
+  <Imagen rdf:ID="trichet255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trichet255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpcamacho281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpcamacho281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpcamacho181110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpcamacho181110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpherrera281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpherrera281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291089055193egiptodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291089055193egiptodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abhaiti281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abhaiti281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1171560_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1171560_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_848263_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_848263_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Raúl_Albiol"/>
-  <Imagen rdf:ID="subidon-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291014207843federerdn.jpg"/>
+  <Imagen rdf:ID="subidon-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >subidon-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291014207843federerdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291014207843federerdn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Miguel_Sebastián_Gascón"/>
-  <Imagen rdf:ID="socialistes.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="mmcamacho281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="Invitacion_FB_20101002.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="socialistes.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >socialistes.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mmcamacho281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmcamacho281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="Invitacion_FB_20101002.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Invitacion_FB_20101002.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Canadá"/>
   <Pais rdf:ID="Pakistán"/>
-  <Imagen rdf:ID="jpuigcercos0710094.JPG"/>
-  <Imagen rdf:ID="_1155237_tn.jpg"/>
-  <Imagen rdf:ID="_1290894719223haitianosdn.jpg"/>
+  <Imagen rdf:ID="jpuigcercos0710094.JPG">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpuigcercos0710094.JPG</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1155237_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1155237_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290894719223haitianosdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290894719223haitianosdn.jpg</URLFoto>
+  </Imagen>
   <Banco rdf:ID="ICBC"/>
   <Pais rdf:ID="Irlanda"/>
-  <Imagen rdf:ID="abrivera221110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="jdsarko161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1162655_tn.jpg"/>
-  <Imagen rdf:ID="jpmasduran251110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="abrivera221110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abrivera221110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdsarko161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdsarko161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1162655_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1162655_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmasduran251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmasduran251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Éric_Abidal"/>
-  <Imagen rdf:ID="_1290646516464palindn.jpg"/>
-  <Imagen rdf:ID="ahorro-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1290646516464palindn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290646516464palindn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="ahorro-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ahorro-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="María_Dolores_de_Cospedal"/>
-  <Imagen rdf:ID="zapatero_rajoy.jpg_lite04.jpg"/>
-  <Imagen rdf:ID="jpmas221110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="rr_mourinho2_23112010.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="zapatero_rajoy.jpg_lite04.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zapatero_rajoy.jpg_lite04.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas221110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas221110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_mourinho2_23112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_mourinho2_23112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Continente rdf:ID="Asia"/>
-  <Imagen rdf:ID="controladoraereo255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="jaimeguardiola-255x255x80.jpg"/>
-  <Imagen rdf:ID="marruecos.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290615938161alonsodn.jpg"/>
-  <Imagen rdf:ID="nadalon.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="controladoraereo255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >controladoraereo255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jaimeguardiola-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jaimeguardiola-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="marruecos.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marruecos.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290615938161alonsodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290615938161alonsodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="nadalon.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nadalon.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Israel"/>
-  <Imagen rdf:ID="calendario-255x255x80.jpg"/>
-  <Imagen rdf:ID="jf_rosellfloren_291110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1085260_tn.jpg"/>
-  <Imagen rdf:ID="_1151105_tn.jpg"/>
-  <Imagen rdf:ID="paulkrugman-255x255x80.jpg"/>
+  <Imagen rdf:ID="calendario-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >calendario-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_rosellfloren_291110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_rosellfloren_291110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1085260_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1085260_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1151105_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1151105_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="paulkrugman-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >paulkrugman-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Joan_Puigcercós"/>
   <Piloto rdf:ID="Sebastian_Vettel"/>
-  <Imagen rdf:ID="_1175442_tn.jpg"/>
-  <Imagen rdf:ID="_1290683155872valdebebasdn.jpg"/>
-  <Imagen rdf:ID="_1156079_tn.jpg"/>
-  <Imagen rdf:ID="_1155340_tn.jpg"/>
-  <Imagen rdf:ID="jpmasherrera011210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1156577_tn.jpg"/>
+  <Imagen rdf:ID="_1175442_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175442_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290683155872valdebebasdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290683155872valdebebasdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1156079_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156079_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1155340_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1155340_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmasherrera011210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmasherrera011210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1156577_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156577_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Alemania"/>
-  <Imagen rdf:ID="hipotecas-3-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1050271_tn.jpg"/>
-  <Imagen rdf:ID="discursos.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="japon-255x255x80.jpg"/>
-  <Imagen rdf:ID="trichetsubidatipos--200x160-255x255x80.jpg"/>
+  <Imagen rdf:ID="hipotecas-3-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hipotecas-3-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1050271_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1050271_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="discursos.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >discursos.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="japon-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >japon-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="trichetsubidatipos--200x160-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trichetsubidatipos--200x160-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Jaime_Algersuari"/>
-  <Imagen rdf:ID="jppuigcercos181110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291020532690gasoldetalledn.jpg"/>
+  <Imagen rdf:ID="jppuigcercos181110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuigcercos181110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291020532690gasoldetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291020532690gasoldetalledn.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Michael_Schumacher"/>
-  <Imagen rdf:ID="_1290886761517incendiodn.jpg"/>
-  <Imagen rdf:ID="gasol1_JR271110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1290886761517incendiodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290886761517incendiodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="gasol1_JR271110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gasol1_JR271110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Lassana_Diarra"/>
   <Baloncestista rdf:ID="Kobe_Bryant"/>
-  <Imagen rdf:ID="_1290633821817romadn.jpg"/>
-  <Imagen rdf:ID="jdlisboa191110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290722532460detalledn.jpg"/>
-  <Imagen rdf:ID="jf_rubalcaba_191110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="barca12.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291140588784wikileaksdn.jpg"/>
-  <Imagen rdf:ID="_1290721961680entrevistadn.jpg"/>
-  <Imagen rdf:ID="_1290981190799gasdn.jpg"/>
-  <Imagen rdf:ID="_1291086006699bush2dn.jpg"/>
-  <Imagen rdf:ID="vboutdav161110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1290633821817romadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290633821817romadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdlisboa191110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdlisboa191110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290722532460detalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290722532460detalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_rubalcaba_191110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_rubalcaba_191110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="barca12.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >barca12.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291140588784wikileaksdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291140588784wikileaksdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290721961680entrevistadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290721961680entrevistadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290981190799gasdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290981190799gasdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291086006699bush2dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291086006699bush2dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="vboutdav161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vboutdav161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Ezequiel_Garay"/>
-  <Imagen rdf:ID="_1176038_tn.jpg"/>
-  <Imagen rdf:ID="dr_kielce_27112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1168246_tn.jpg"/>
-  <Imagen rdf:ID="almaliki1_JR251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="hercules.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1176038_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176038_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_kielce_27112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_kielce_27112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1168246_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1168246_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="almaliki1_JR251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >almaliki1_JR251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="hercules.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hercules.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Banco rdf:ID="Banesto"/>
-  <Imagen rdf:ID="_1170206_tn.jpg"/>
+  <Imagen rdf:ID="_1170206_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1170206_tn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="José_Montilla"/>
-  <Imagen rdf:ID="lgtresserras.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="osce1_JR011210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="compraventa-255x255x80.jpg"/>
+  <Imagen rdf:ID="lgtresserras.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgtresserras.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="osce1_JR011210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >osce1_JR011210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="compraventa-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >compraventa-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Rusia"/>
-  <Imagen rdf:ID="carmignac-2-255x255x80.gif"/>
-  <Imagen rdf:ID="Creedence_Clearwater_Revival_1968.jpg_lite44.jpg"/>
-  <Imagen rdf:ID="_1291163628020interpoldn.jpg"/>
-  <Imagen rdf:ID="jprajoy121110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="carmignac-2-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >carmignac-2-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="Creedence_Clearwater_Revival_1968.jpg_lite44.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creedence_Clearwater_Revival_1968.jpg_lite44.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291163628020interpoldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291163628020interpoldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprajoy121110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprajoy121110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="David_Cameron"/>
-  <Imagen rdf:ID="_1291076023746moudn.jpg"/>
+  <Imagen rdf:ID="_1291076023746moudn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291076023746moudn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Holanda"/>
-  <Imagen rdf:ID="dr_ferrari3_25112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="elenasalgado-6-255x255x80.jpg"/>
-  <Imagen rdf:ID="jdalemania171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1156706_tn.jpg"/>
-  <Imagen rdf:ID="_1291126048449rubalcabadn.jpg"/>
+  <Imagen rdf:ID="dr_ferrari3_25112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_ferrari3_25112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="elenasalgado-6-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >elenasalgado-6-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdalemania171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdalemania171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1156706_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156706_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291126048449rubalcabadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291126048449rubalcabadn.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Lewis_Hamilton"/>
   <Piloto rdf:ID="Rubens_Barrichello"/>
-  <Imagen rdf:ID="bolsagoya255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="angelamerkel55-255x255x80.jpg"/>
+  <Imagen rdf:ID="bolsagoya255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsagoya255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="angelamerkel55-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >angelamerkel55-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Alicia_Sánchez-Camacho"/>
-  <Imagen rdf:ID="dr_debat_21112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jprajoy.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="dr_debat_21112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_debat_21112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprajoy.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprajoy.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Felipe_González"/>
-  <Imagen rdf:ID="descensos2-255x255x80.jpg"/>
-  <Imagen rdf:ID="jpmas091110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="descensos2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >descensos2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas091110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas091110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Banco rdf:ID="Barclays"/>
-  <Imagen rdf:ID="_1156693_tn.jpg"/>
-  <Imagen rdf:ID="lgmessi.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1156693_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156693_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgmessi.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgmessi.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Carles_Puyol"/>
-  <Imagen rdf:ID="_1163578_tn.jpg"/>
-  <Imagen rdf:ID="guillaume-poli-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1150286_tn.jpg"/>
+  <Imagen rdf:ID="_1163578_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1163578_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="guillaume-poli-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >guillaume-poli-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1150286_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1150286_tn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Ángel_Gabilondo_Pujol"/>
-  <Imagen rdf:ID="trichet255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290690930732corea_kfadn.jpg"/>
-  <Imagen rdf:ID="_1176061_tn.jpg"/>
-  <Imagen rdf:ID="_1290728272843wengerdn.jpg"/>
-  <Imagen rdf:ID="_1050265_tn.jpg"/>
-  <Imagen rdf:ID="_1176270_tn.jpg"/>
-  <Imagen rdf:ID="_819692_tn.jpg"/>
+  <Imagen rdf:ID="trichet255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trichet255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290690930732corea_kfadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290690930732corea_kfadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1176061_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176061_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290728272843wengerdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290728272843wengerdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1050265_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1050265_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1176270_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176270_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_819692_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_819692_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Bolivia"/>
-  <Imagen rdf:ID="de_federer_25112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="lgmanifa.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290677386804calderondn.jpg"/>
-  <Imagen rdf:ID="_1291116062857barcelonadn.jpg"/>
-  <Imagen rdf:ID="_1167687_tn.jpg"/>
+  <Imagen rdf:ID="de_federer_25112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >de_federer_25112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgmanifa.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgmanifa.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290677386804calderondn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290677386804calderondn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291116062857barcelonadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291116062857barcelonadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1167687_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1167687_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Bojan_Krkic"/>
-  <Imagen rdf:ID="_999910_tn.jpg"/>
+  <Imagen rdf:ID="_999910_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_999910_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Filipinas"/>
-  <Imagen rdf:ID="lunesbuena-255x255x80-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290983774079soldadodn.jpg"/>
-  <Imagen rdf:ID="_1290750846973moudn.jpg"/>
+  <Imagen rdf:ID="lunesbuena-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lunesbuena-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290983774079soldadodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290983774079soldadodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290750846973moudn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290750846973moudn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Pedro_Rodriguez"/>
-  <Imagen rdf:ID="scanner.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="dr_sergio_01122010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jprivera161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="subidabolsa255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="zpcongreso-1-255x255x80.jpg"/>
+  <Imagen rdf:ID="scanner.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >scanner.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_sergio_01122010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_sergio_01122010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprivera161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprivera161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="subidabolsa255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >subidabolsa255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="zpcongreso-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zpcongreso-1-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Banco rdf:ID="Banco_Santander"/>
-  <Imagen rdf:ID="abmontilla021210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="usa-5-255x255x80.jpg"/>
-  <Imagen rdf:ID="fotosisologasok.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="motill.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290969639246haitidn.jpg"/>
-  <Imagen rdf:ID="_1289519500543.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="_1291204828323cristianodetalledn.jpg"/>
-  <Imagen rdf:ID="_1290943126059favelas-detalledn.jpg"/>
+  <Imagen rdf:ID="abmontilla021210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abmontilla021210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="usa-5-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >usa-5-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="fotosisologasok.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fotosisologasok.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="motill.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >motill.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290969639246haitidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290969639246haitidn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1289519500543.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1289519500543.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291204828323cristianodetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291204828323cristianodetalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290943126059favelas-detalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290943126059favelas-detalledn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Perú"/>
-  <Imagen rdf:ID="jpspiderman171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="elenasalgado-255x255x80.jpg"/>
+  <Imagen rdf:ID="jpspiderman171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpspiderman171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="elenasalgado-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >elenasalgado-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Pedro_Zerolo"/>
   <Futbolista rdf:ID="Sami_Khedira"/>
   <Tenista rdf:ID="Robin_Soderling"/>
   <Pais rdf:ID="Afganistán"/>
   <Politico rdf:ID="Leire_Pajín_Iraola"/>
-  <Imagen rdf:ID="_1153338_tn.jpg"/>
-  <Imagen rdf:ID="_1290898969718ESPANYOLdn.jpg"/>
-  <Imagen rdf:ID="ronaldo1_JR271110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1167480_tn.jpg"/>
-  <Imagen rdf:ID="diezferran-255x255x80.jpg"/>
-  <Imagen rdf:ID="jdobama241110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1153338_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1153338_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290898969718ESPANYOLdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290898969718ESPANYOLdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="ronaldo1_JR271110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ronaldo1_JR271110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1167480_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1167480_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="diezferran-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >diezferran-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdobama241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdobama241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Cristina_Garmendia_Mendizábal"/>
-  <Imagen rdf:ID="_1176029_tn.jpg"/>
-  <Imagen rdf:ID="lgmas.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jdletitbe0705104.JPG"/>
-  <Imagen rdf:ID="dr_bcbn_01122010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="capitalriesgo-1-255x255x80-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291071755889pepedn.jpg"/>
-  <Imagen rdf:ID="abmarkus251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1166867_tn.jpg"/>
+  <Imagen rdf:ID="_1176029_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176029_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgmas.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgmas.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdletitbe0705104.JPG">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdletitbe0705104.JPG</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_bcbn_01122010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_bcbn_01122010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="capitalriesgo-1-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >capitalriesgo-1-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291071755889pepedn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291071755889pepedn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abmarkus251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abmarkus251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1166867_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1166867_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Irán"/>
-  <Imagen rdf:ID="repsol-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291071012037mundodn.jpg"/>
-  <Imagen rdf:ID="santamariareyal255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="repsol-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >repsol-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291071012037mundodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291071012037mundodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="santamariareyal255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >santamariareyal255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Equipo rdf:ID="Villareal"/>
-  <Imagen rdf:ID="_1290667853988ramosdetalledn.jpg"/>
+  <Imagen rdf:ID="_1290667853988ramosdetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290667853988ramosdetalledn.jpg</URLFoto>
+  </Imagen>
   <Entrenador rdf:ID="José_Mourinho"/>
-  <Imagen rdf:ID="NADALION.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="lgjuicio.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290805587073SEULdn.jpg"/>
+  <Imagen rdf:ID="NADALION.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NADALION.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgjuicio.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgjuicio.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290805587073SEULdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290805587073SEULdn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Esteban_Granero"/>
-  <Imagen rdf:ID="_1170045_tn.jpg"/>
-  <Imagen rdf:ID="_1291239398363cairodn.jpg"/>
-  <Imagen rdf:ID="_1291039073145higuaindetalledn.jpg"/>
-  <Imagen rdf:ID="_1290663126757coreadn.jpg"/>
+  <Imagen rdf:ID="_1170045_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1170045_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291239398363cairodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291239398363cairodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291039073145higuaindetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291039073145higuaindetalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290663126757coreadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290663126757coreadn.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Nadal"/>
-  <Imagen rdf:ID="dr_nadal2_26112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="espanyol1.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="abjsesus2512085.jpg"/>
+  <Imagen rdf:ID="dr_nadal2_26112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_nadal2_26112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="espanyol1.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espanyol1.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abjsesus2512085.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abjsesus2512085.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Palestina"/>
-  <Imagen rdf:ID="_1291209700564ramosdetdn.jpg"/>
-  <Imagen rdf:ID="_1291010021124partido3dn.jpg"/>
+  <Imagen rdf:ID="_1291209700564ramosdetdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291209700564ramosdetdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291010021124partido3dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291010021124partido3dn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="China"/>
   <Equipo rdf:ID="Atletico_de_Madrid"/>
-  <Imagen rdf:ID="jpaguilarmontilla151110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="jpaguilarmontilla151110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpaguilarmontilla151110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Sudáfrica"/>
   <Futbolista rdf:ID="Ricardo_Carvalho"/>
-  <Imagen rdf:ID="espana200x160--200x160-9-255x255x80.gif"/>
-  <Imagen rdf:ID="_1175495_tn.jpg"/>
-  <Imagen rdf:ID="gasol1_JR241110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291016834534moudn.jpg"/>
-  <Imagen rdf:ID="_1111432_tn.jpg"/>
+  <Imagen rdf:ID="espana200x160--200x160-9-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espana200x160--200x160-9-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1175495_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175495_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="gasol1_JR241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gasol1_JR241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291016834534moudn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291016834534moudn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1111432_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1111432_tn.jpg</URLFoto>
+  </Imagen>
   <Entrenador rdf:ID="Rafa_Benítez"/>
   <Piloto rdf:ID="Mark_Webber"/>
-  <Imagen rdf:ID="_1291048857158holderdn.jpg"/>
+  <Imagen rdf:ID="_1291048857158holderdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291048857158holderdn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Eduardo_Madina"/>
   <Politico rdf:ID="Zapatero">
+    <OriginarioDe rdf:resource="#España"/>
     <Milita rdf:resource="#PSOE"/>
-    <OriginarioDe rdf:resource="#España"/>
   </Politico>
-  <Imagen rdf:ID="rr_ferrer_23112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1174572_tn.jpg"/>
+  <Imagen rdf:ID="rr_ferrer_23112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_ferrer_23112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1174572_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174572_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="David_Villa"/>
-  <Imagen rdf:ID="_1291071680404haiti-det.dn.jpg"/>
-  <Imagen rdf:ID="_1159430_tn.jpg"/>
-  <Imagen rdf:ID="abmadi021210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="zapaterodavos255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1291071680404haiti-det.dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291071680404haiti-det.dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1159430_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1159430_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abmadi021210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abmadi021210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="zapaterodavos255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zapaterodavos255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Rafa_Nadal">
-    <RealizaAccion rdf:resource="#Tenis"/>
     <OriginarioDe rdf:resource="#España"/>
+    <RealizaAccion rdf:resource="#Tenis"/>
   </Tenista>
-  <Imagen rdf:ID="coches-255x255x80.jpg"/>
-  <Imagen rdf:ID="jdfranco201110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="abnieve301110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jdgranma261110.JPG_lite5.jpg"/>
-  <Imagen rdf:ID="abrusia181110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="coches-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >coches-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abnieve301110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abnieve301110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdfranco201110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdfranco201110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdgranma261110.JPG_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdgranma261110.JPG_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abrusia181110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abrusia181110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Equipo rdf:ID="Renault"/>
-  <Imagen rdf:ID="jptura191110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291110552758CHIHUAHUAdn.jpg"/>
+  <Imagen rdf:ID="jptura191110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jptura191110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291110552758CHIHUAHUAdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291110552758CHIHUAHUAdn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Rita_Barberá"/>
-  <Imagen rdf:ID="mercadosbajan255x208-9-255x255x80.jpg"/>
+  <Imagen rdf:ID="mercadosbajan255x208-9-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mercadosbajan255x208-9-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Fernando_Gago"/>
-  <Imagen rdf:ID="bolsasmundiales255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="zapa-255x255x80.jpg"/>
-  <Imagen rdf:ID="codere255x208-255x255x80-255x255x80.gif"/>
-  <Imagen rdf:ID="_1170731_tn.jpg"/>
+  <Imagen rdf:ID="bolsasmundiales255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsasmundiales255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="zapa-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zapa-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="codere255x208-255x255x80-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >codere255x208-255x255x80-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1170731_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1170731_tn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Carme_Chacón_Piqueras"/>
-  <Imagen rdf:ID="_1290882313209nadaldn.jpg"/>
+  <Imagen rdf:ID="_1290882313209nadaldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290882313209nadaldn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Joan_Herrera"/>
-  <Imagen rdf:ID="_1170325_tn.jpg"/>
-  <Imagen rdf:ID="bolsasube255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="panoramicanoche-255x255x80.gif"/>
+  <Imagen rdf:ID="_1170325_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1170325_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsasube255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsasube255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="panoramicanoche-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >panoramicanoche-255x255x80.gif</URLFoto>
+  </Imagen>
   <Politico rdf:ID="José_Luis_Rodríguez_Zapatero"/>
-  <Imagen rdf:ID="_1151149.jpg"/>
+  <Imagen rdf:ID="_1151149.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1151149.jpg</URLFoto>
+  </Imagen>
   <Entrenador rdf:ID="Unai_Emery"/>
-  <Imagen rdf:ID="lgparlamento.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291182775436higuaindn.jpg"/>
-  <Imagen rdf:ID="mercados255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1103791_tn.jpg"/>
-  <Imagen rdf:ID="messi_pinto1_JR281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290806567460saharadn.jpg"/>
-  <Imagen rdf:ID="montilla.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="lgparlamento.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgparlamento.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291182775436higuaindn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291182775436higuaindn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mercados255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mercados255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1103791_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1103791_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="messi_pinto1_JR281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >messi_pinto1_JR281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290806567460saharadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290806567460saharadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="montilla.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >montilla.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Artur_Mas"/>
-  <Imagen rdf:ID="cajamadrid-255x255x80.jpg"/>
-  <Imagen rdf:ID="grifo-255x255x80-255x255x80.jpg"/>
-  <Imagen rdf:ID="jdbrasil251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="dr_valdes_24112010.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="cajamadrid-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cajamadrid-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="grifo-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >grifo-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdbrasil251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdbrasil251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_valdes_24112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_valdes_24112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Nicolas_Sarkozy"/>
-  <Imagen rdf:ID="abpuig171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1158399_tn.jpg"/>
+  <Imagen rdf:ID="abpuig171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abpuig171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1158399_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1158399_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Marcelo"/>
-  <Imagen rdf:ID="_1291071448862ramosdn.jpg"/>
-  <Imagen rdf:ID="_1154234_tn.jpg"/>
-  <Imagen rdf:ID="_1159462_tn.jpg"/>
-  <Imagen rdf:ID="lufthansa-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1291071448862ramosdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291071448862ramosdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1154234_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1154234_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1159462_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1159462_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lufthansa-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lufthansa-255x255x80.jpg</URLFoto>
+  </Imagen>
   <PresidenteFutbol rdf:ID="Sandro_Rossel"/>
-  <Imagen rdf:ID="_1171400_tn.jpg"/>
-  <Imagen rdf:ID="abhaiti291110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1153147_tn.jpg"/>
-  <Imagen rdf:ID="jf_clasico_291110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291082434507_BF74AF1B-79F4-4C93-8BCF-6A59357146A5_dn.jpg"/>
-  <Imagen rdf:ID="jpcamacho261110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1171400_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1171400_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abhaiti291110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abhaiti291110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1153147_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1153147_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_clasico_291110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_clasico_291110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291082434507_BF74AF1B-79F4-4C93-8BCF-6A59357146A5_dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291082434507_BF74AF1B-79F4-4C93-8BCF-6A59357146A5_dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpcamacho261110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpcamacho261110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="José_Bono"/>
   <Futbolista rdf:ID="Adriano"/>
-  <Imagen rdf:ID="_1290620105382carteldn.jpg"/>
-  <Imagen rdf:ID="jpmontilla241110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1159344_tn.jpg"/>
-  <Imagen rdf:ID="dr_dublin_27112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291017122694guardiodn.jpg"/>
+  <Imagen rdf:ID="_1290620105382carteldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290620105382carteldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1159344_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1159344_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_dublin_27112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_dublin_27112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291017122694guardiodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291017122694guardiodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mas_montilla.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mas_montilla.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Francisco_Camps"/>
-  <Imagen rdf:ID="mas_montilla.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="mmsuu221110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jdotan191110risas.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="lama4.jpg"/>
-  <Imagen rdf:ID="jppptinell141110.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="mmsuu221110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmsuu221110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdotan191110risas.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdotan191110risas.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lama4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lama4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppptinell141110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppptinell141110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Felipe_Massa"/>
-  <Imagen rdf:ID="_1174784_tn.jpg"/>
+  <Imagen rdf:ID="_1174784_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174784_tn.jpg</URLFoto>
+  </Imagen>
   <Equipo rdf:ID="Barcelona"/>
-  <Imagen rdf:ID="salgadocajamadrid255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="jparturmas301110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1161001_tn.jpg"/>
-  <Imagen rdf:ID="abaperu231110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290891803657xabvi-detdn.jpg"/>
-  <Imagen rdf:ID="jparturmas091110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jdmurray251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jf_xavi_301110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_129121752342620101201-3508227dn.jpg"/>
-  <Imagen rdf:ID="lgcontador.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="abpalin251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1169162_tn.jpg"/>
-  <Imagen rdf:ID="florentino-255x255x80-255x255x80.jpg"/>
-  <Imagen rdf:ID="abdefensora241110.jpg_lite5.jpg"/>
+  <Imagen rdf:ID="salgadocajamadrid255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salgadocajamadrid255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparturmas301110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas301110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1161001_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1161001_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abaperu231110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abaperu231110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290891803657xabvi-detdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290891803657xabvi-detdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparturmas091110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas091110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdmurray251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdmurray251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_xavi_301110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_xavi_301110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_129121752342620101201-3508227dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_129121752342620101201-3508227dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgcontador.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgcontador.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abpalin251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abpalin251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1169162_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1169162_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="florentino-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >florentino-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abdefensora241110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abdefensora241110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Silvio_Berlusconi"/>
-  <Imagen rdf:ID="jpmas281110.JPG_lite8.jpg"/>
+  <Imagen rdf:ID="jpmas281110.JPG_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas281110.JPG_lite8.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Maxwell"/>
-  <Imagen rdf:ID="fotovisitapapa01.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="bolsasmundiales255x208-5-255x255x80.jpg"/>
-  <Imagen rdf:ID="irlanda-5-255x255x80.jpg"/>
-  <Imagen rdf:ID="controladoraereo255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="gasol6_JR011110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="nuevayorknoche-255x255x80.gif"/>
-  <Imagen rdf:ID="_1173883_tn.jpg"/>
-  <Imagen rdf:ID="Sinde_20101026.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="puyol1_JR241110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1161356_tn.jpg"/>
-  <Imagen rdf:ID="salgado-1-255x255x80.jpg"/>
+  <Imagen rdf:ID="fotovisitapapa01.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fotovisitapapa01.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsasmundiales255x208-5-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsasmundiales255x208-5-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="irlanda-5-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >irlanda-5-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="controladoraereo255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >controladoraereo255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="gasol6_JR011110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gasol6_JR011110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="nuevayorknoche-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nuevayorknoche-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1173883_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1173883_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="Sinde_20101026.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sinde_20101026.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="puyol1_JR241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >puyol1_JR241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1161356_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1161356_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="salgado-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salgado-1-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Jaime_Mayor_Oreja"/>
-  <Imagen rdf:ID="dr_preciado_01122010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jf_cristiano1_251110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="dr_preciado_01122010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_preciado_01122010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_cristiano1_251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_cristiano1_251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Hillary_Clinton"/>
-  <Imagen rdf:ID="_1290696252454ronaldodetalledn.jpg"/>
-  <Imagen rdf:ID="trichetsubidatipos--200x160-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290635255670valencia-detdn.jpg"/>
-  <Imagen rdf:ID="torrebarajas255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="hipotecas-255x255x80.jpg"/>
-  <Imagen rdf:ID="jpmas101110.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="_1290696252454ronaldodetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290696252454ronaldodetalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="trichetsubidatipos--200x160-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trichetsubidatipos--200x160-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290635255670valencia-detdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290635255670valencia-detdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="torrebarajas255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >torrebarajas255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="hipotecas-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hipotecas-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas101110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas101110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Ángeles_González_Sinde"/>
   <Politico rdf:ID="Patxi_López"/>
-  <Imagen rdf:ID="_1291216584549detalledn.jpg"/>
-  <Imagen rdf:ID="_1174697_tn.jpg"/>
-  <Imagen rdf:ID="florentino-255x255x80-1-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1291216584549detalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291216584549detalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1174697_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174697_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="florentino-255x255x80-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >florentino-255x255x80-1-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Austria"/>
   <Pais rdf:ID="Chile"/>
-  <Imagen rdf:ID="_1290632440242bomberosdn.jpg"/>
-  <Imagen rdf:ID="jpenemics091110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1170105_tn.jpg"/>
-  <Imagen rdf:ID="pigs255x208-255x255x80-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290979011624googledn.jpg"/>
-  <Imagen rdf:ID="trichetsubidatipos--200x160-2-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290779973683ecclestone-detalledn.jpg"/>
-  <Imagen rdf:ID="_1176259_tn.jpg"/>
-  <Imagen rdf:ID="rr_nadal2_27112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1160131_tn.jpg"/>
-  <Imagen rdf:ID="abotan241110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1290708954371riodn.jpg"/>
-  <Imagen rdf:ID="_1291076365284pep2dn.jpg"/>
-  <Imagen rdf:ID="_1291207083806ministrograndedn.jpg"/>
-  <Imagen rdf:ID="dr_bar_25112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="dr_marc_24112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291153764247martellydn.jpg"/>
-  <Imagen rdf:ID="jdmercader171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1150539_tn.jpg"/>
-  <Imagen rdf:ID="lgotegi.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jf_roures_121110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="mmotan211110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1290632440242bomberosdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290632440242bomberosdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpenemics091110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpenemics091110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1170105_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1170105_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="pigs255x208-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pigs255x208-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290979011624googledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290979011624googledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="trichetsubidatipos--200x160-2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trichetsubidatipos--200x160-2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290779973683ecclestone-detalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290779973683ecclestone-detalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1176259_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176259_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_nadal2_27112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_nadal2_27112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1160131_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1160131_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abotan241110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abotan241110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290708954371riodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290708954371riodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291076365284pep2dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291076365284pep2dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291207083806ministrograndedn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291207083806ministrograndedn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_bar_25112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_bar_25112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_marc_24112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_marc_24112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291153764247martellydn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291153764247martellydn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdmercader171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdmercader171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1150539_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1150539_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgotegi.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgotegi.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_roures_121110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_roures_121110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mmotan211110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmotan211110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Rosa_Aguilar_Rivero"/>
-  <Imagen rdf:ID="_1082759.jpg"/>
+  <Imagen rdf:ID="_1082759.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1082759.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Alberto_Ruiz-Gallardón"/>
-  <Imagen rdf:ID="gasol1_JR251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="zapaterodavos255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="gasol1_JR251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gasol1_JR251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="zapaterodavos255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zapaterodavos255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Entrenador rdf:ID="Pep_Guardiola"/>
-  <Imagen rdf:ID="_1169195_tn.jpg"/>
-  <Imagen rdf:ID="jpfelipe221110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="dr_benzema_29112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="walkmandavid.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1175545_tn.jpg"/>
-  <Imagen rdf:ID="_1289519569000.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1169366_tn.jpg"/>
-  <Imagen rdf:ID="jdgiunta161110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="pvpuyi2911094.jpg"/>
-  <Imagen rdf:ID="sociedad.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290636023571messidn.jpg"/>
-  <Imagen rdf:ID="abalicia171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="sc181010joaquinrodriguez.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="dr_ceballos_150520104.jpg"/>
-  <Imagen rdf:ID="iberia-2-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1169195_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1169195_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpfelipe221110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpfelipe221110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_benzema_29112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_benzema_29112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="walkmandavid.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >walkmandavid.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1175545_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175545_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1289519569000.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1289519569000.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1169366_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1169366_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdgiunta161110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdgiunta161110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="pvpuyi2911094.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pvpuyi2911094.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="sociedad.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sociedad.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290636023571messidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290636023571messidn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abalicia171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abalicia171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="sc181010joaquinrodriguez.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sc181010joaquinrodriguez.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_ceballos_150520104.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_ceballos_150520104.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="iberia-2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iberia-2-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Javier_Arenas"/>
-  <Imagen rdf:ID="_1154932_tn.jpg"/>
-  <Imagen rdf:ID="_500euros-255x255x80-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1154932_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1154932_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_500euros-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_500euros-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Nico_Rosberg"/>
-  <Imagen rdf:ID="_129113562450220101130-3505984dn.jpg"/>
-  <Imagen rdf:ID="pviceta281110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1162449_tn.jpg"/>
-  <Imagen rdf:ID="dr_messi2_241120103.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1160151_tn.jpg"/>
+  <Imagen rdf:ID="_129113562450220101130-3505984dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_129113562450220101130-3505984dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="pviceta281110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pviceta281110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1162449_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1162449_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_messi2_241120103.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_messi2_241120103.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1160151_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1160151_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Noruega"/>
-  <Imagen rdf:ID="_1290887200898faveladn.jpg"/>
-  <Imagen rdf:ID="jpmas181110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="elecciones.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="_1290887200898faveladn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290887200898faveladn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas181110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas181110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="elecciones.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >elecciones.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Kaká"/>
   <Politico rdf:ID="Josep-Lluís_Carod-Rovira"/>
-  <Imagen rdf:ID="sanchezcamacho.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="bolsa7--200x160-255x255x80.jpg"/>
-  <Imagen rdf:ID="abherrera151110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1290786499708nadaldn.jpg"/>
-  <Imagen rdf:ID="jparenas221110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="absatelite231110.jpg_lite5.jpg"/>
+  <Imagen rdf:ID="sanchezcamacho.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sanchezcamacho.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsa7--200x160-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsa7--200x160-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abherrera151110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abherrera151110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290786499708nadaldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290786499708nadaldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparenas221110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparenas221110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="absatelite231110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >absatelite231110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Cuba"/>
-  <Imagen rdf:ID="_1153252_tn.jpg"/>
-  <Imagen rdf:ID="facebook_skype.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1153252_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1153252_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="facebook_skype.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >facebook_skype.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Gonzalo_Higuaín"/>
-  <Imagen rdf:ID="jdgeorgia251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jpvictimas101110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="racing.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290898380848nadaldn.jpg"/>
-  <Imagen rdf:ID="_1166981_tn.jpg"/>
-  <Imagen rdf:ID="_1286278428314cousodn.jpg"/>
-  <Imagen rdf:ID="dr_canalates_30112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="dr_federer_27112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290721420087haitidn.jpg"/>
-  <Imagen rdf:ID="_1135262_tn.jpg"/>
-  <Imagen rdf:ID="jpsaharaui171110.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="jdgeorgia251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdgeorgia251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpvictimas101110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpvictimas101110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="racing.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >racing.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290898380848nadaldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290898380848nadaldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1166981_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1166981_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1286278428314cousodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1286278428314cousodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_canalates_30112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_canalates_30112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_federer_27112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_federer_27112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290721420087haitidn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290721420087haitidn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1135262_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1135262_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpsaharaui171110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpsaharaui171110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Brasil"/>
   <Pais rdf:ID="Portugal"/>
-  <Imagen rdf:ID="espana200x160--200x160-8-255x255x80.gif"/>
-  <Imagen rdf:ID="_1176021_tn.jpg"/>
-  <Imagen rdf:ID="_1291068298520.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="espana200x160--200x160-8-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espana200x160--200x160-8-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1176021_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176021_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291068298520.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291068298520.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Francisco_Caamaño_Domínguez"/>
-  <Imagen rdf:ID="bolsamadrid-255x255x80.gif"/>
-  <Imagen rdf:ID="_1153431_tn.jpg"/>
+  <Imagen rdf:ID="bolsamadrid-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsamadrid-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1153431_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1153431_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Inglaterra"/>
-  <Imagen rdf:ID="jpmontilla121110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_101116-Montilla.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jpgallardon151110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290802743724papadn.jpg"/>
-  <Imagen rdf:ID="MMGASOL291110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_538251.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="jpmontilla121110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla121110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_101116-Montilla.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_101116-Montilla.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpgallardon151110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpgallardon151110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290802743724papadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290802743724papadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="MMGASOL291110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MMGASOL291110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_538251.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_538251.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Novak_Djokovic"/>
-  <Imagen rdf:ID="jpherrera241110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291058604419clinton-detdn.jpg"/>
-  <Imagen rdf:ID="_1291183078277basket1dn.jpg"/>
-  <Imagen rdf:ID="jppuig_cercos301110.jpg"/>
-  <Imagen rdf:ID="Yeonpyeong1_JR28111033.jpg"/>
-  <Imagen rdf:ID="_1290872686110dublindn.jpg"/>
-  <Imagen rdf:ID="_1155238_tn.jpg"/>
-  <Imagen rdf:ID="_1290631622535policiadn.jpg"/>
-  <Imagen rdf:ID="mmbenach281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1170697_tn.jpg"/>
-  <Imagen rdf:ID="jpriveramadrid121110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="abcameron221110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="europuzzle255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="guantanamodav161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1158929_tn.jpg"/>
-  <Imagen rdf:ID="banderachina1255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1155345_tn.jpg"/>
+  <Imagen rdf:ID="jpherrera241110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpherrera241110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291058604419clinton-detdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291058604419clinton-detdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291183078277basket1dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291183078277basket1dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppuig_cercos301110.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuig_cercos301110.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="Yeonpyeong1_JR28111033.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Yeonpyeong1_JR28111033.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290872686110dublindn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290872686110dublindn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1155238_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1155238_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290631622535policiadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290631622535policiadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mmbenach281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmbenach281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1170697_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1170697_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpriveramadrid121110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpriveramadrid121110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abcameron221110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abcameron221110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="europuzzle255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >europuzzle255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="guantanamodav161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >guantanamodav161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1158929_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1158929_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="banderachina1255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >banderachina1255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1155345_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1155345_tn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Mariano_Rajoy_Brey"/>
-  <Imagen rdf:ID="bolsagraficoalza-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1174370_tn.jpg"/>
+  <Imagen rdf:ID="bolsagraficoalza-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsagraficoalza-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1174370_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174370_tn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Barack_Obama"/>
-  <Imagen rdf:ID="_1290972334541obama-clintondn.jpg"/>
+  <Imagen rdf:ID="_1290972334541obama-clintondn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290972334541obama-clintondn.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Roger_Federer"/>
   <Politico rdf:ID="Elena_Salgado_Méndez"/>
-  <Imagen rdf:ID="tabaco255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1155287_tn.jpg"/>
+  <Imagen rdf:ID="tabaco255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tabaco255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1155287_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1155287_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Xabi_Alonso"/>
-  <Imagen rdf:ID="zpcongreso-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1156333_tn.jpg"/>
-  <Imagen rdf:ID="_1290624297187indiadn.jpg"/>
-  <Imagen rdf:ID="_1173919_tn.jpg"/>
-  <Imagen rdf:ID="jprajoy191110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1290937271390corea-del-surdn.jpg"/>
-  <Imagen rdf:ID="ibex-255x255x80.gif"/>
-  <Imagen rdf:ID="apretarsecinturon255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290807071259CARCELNEGRAdn.jpg"/>
-  <Imagen rdf:ID="mmkorea231110_2.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="zpcongreso-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zpcongreso-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1156333_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156333_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290624297187indiadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290624297187indiadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1173919_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1173919_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprajoy191110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprajoy191110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290937271390corea-del-surdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290937271390corea-del-surdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="ibex-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ibex-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="apretarsecinturon255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >apretarsecinturon255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290807071259CARCELNEGRAdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290807071259CARCELNEGRAdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mmkorea231110_2.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmkorea231110_2.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Adrian_Sutil"/>
-  <Imagen rdf:ID="_1290951352905alonso-detalledn.jpg"/>
-  <Imagen rdf:ID="_1291068289933barcadn.jpg"/>
+  <Imagen rdf:ID="_1290951352905alonso-detalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290951352905alonso-detalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291068289933barcadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291068289933barcadn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Andrés_Iniesta"/>
-  <Imagen rdf:ID="_1291177176903cousodn.jpg"/>
-  <Imagen rdf:ID="_1291150097413ladydn.jpg"/>
-  <Imagen rdf:ID="dr_mou_25112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="lapo291110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290634634783londresdn.jpg"/>
+  <Imagen rdf:ID="_1291177176903cousodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291177176903cousodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291150097413ladydn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291150097413ladydn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_mou_25112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_mou_25112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lapo291110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lapo291110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290634634783londresdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290634634783londresdn.jpg</URLFoto>
+  </Imagen>
   <Continente rdf:ID="America"/>
-  <Imagen rdf:ID="jdrebollo141110.JPG_lite6.jpg"/>
+  <Imagen rdf:ID="jdrebollo141110.JPG_lite6.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdrebollo141110.JPG_lite6.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Corea_del_Norte"/>
-  <Imagen rdf:ID="_1291152186146garraldadn.jpg"/>
-  <Imagen rdf:ID="_1291045135283carreteradn.jpg"/>
-  <Imagen rdf:ID="_1290722399097COREAdn.jpg"/>
-  <Imagen rdf:ID="banderairlanda255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1291152186146garraldadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291152186146garraldadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291045135283carreteradn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291045135283carreteradn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290722399097COREAdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290722399097COREAdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="banderairlanda255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >banderairlanda255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Dani_Alves"/>
-  <Imagen rdf:ID="mmduran281110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_845653_tn.jpg"/>
-  <Imagen rdf:ID="abzapata101110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1154256_tn.jpg"/>
-  <Imagen rdf:ID="_1174804_tn.jpg"/>
-  <Imagen rdf:ID="_1290707259297DETALLEdn.jpg"/>
-  <Imagen rdf:ID="jprato_camacho231110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1155513_tn.jpg"/>
-  <Imagen rdf:ID="anapatri-255x255x80.jpg"/>
-  <Imagen rdf:ID="bolsagraficoalza-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291067473293koreadn.jpg"/>
-  <Imagen rdf:ID="jppuigcercos251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="juncker255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="mmduran281110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmduran281110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_845653_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_845653_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abzapata101110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abzapata101110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1154256_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1154256_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1174804_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174804_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290707259297DETALLEdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290707259297DETALLEdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jprato_camacho231110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jprato_camacho231110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1155513_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1155513_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="anapatri-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >anapatri-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsagraficoalza-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsagraficoalza-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291067473293koreadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291067473293koreadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppuigcercos251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuigcercos251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="juncker255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >juncker255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Equipo rdf:ID="Red_Bull"/>
   <Pais rdf:ID="India"/>
-  <Imagen rdf:ID="_1174919_tn.jpg"/>
-  <Imagen rdf:ID="fcanon1812075.jpg"/>
-  <Imagen rdf:ID="jpsupermontilla191110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1174919_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1174919_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="fcanon1812075.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fcanon1812075.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpsupermontilla191110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpsupermontilla191110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Suiza"/>
-  <Imagen rdf:ID="alosoooo.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1173845_tn.jpg"/>
+  <Imagen rdf:ID="alosoooo.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >alosoooo.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1173845_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1173845_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Mahamadou_Diarra"/>
-  <Imagen rdf:ID="eurosimbolo255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="oroyplata-255x255x80.jpg"/>
-  <Imagen rdf:ID="LUprensa.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="eurosimbolo255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eurosimbolo255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="oroyplata-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oroyplata-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="LUprensa.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LUprensa.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Equipo rdf:ID="Ferrari"/>
-  <Imagen rdf:ID="_1169897_tn.jpg"/>
+  <Imagen rdf:ID="_1169897_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1169897_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Gerard_Piqué"/>
   <Futbolista rdf:ID="Ibrahim_Afellay"/>
-  <Imagen rdf:ID="_1290637609472detalledn.jpg"/>
-  <Imagen rdf:ID="_1290960003900nethanyudn.jpg"/>
-  <Imagen rdf:ID="_1291233869363pancartadn.jpg"/>
+  <Imagen rdf:ID="_1290637609472detalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290637609472detalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290960003900nethanyudn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290960003900nethanyudn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291233869363pancartadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291233869363pancartadn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Federico_Trillo"/>
-  <Imagen rdf:ID="abhillary291110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1173734_tn.jpg"/>
-  <Imagen rdf:ID="jpmas141110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="abhillary291110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abhillary291110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1173734_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1173734_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas141110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas141110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="David_Ferrer"/>
   <Pais rdf:ID="Túnez"/>
-  <Imagen rdf:ID="lgmontilla.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="nuevosministros-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="compraventa-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1175365_tn.jpg"/>
+  <Imagen rdf:ID="lgmontilla.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgmontilla.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="nuevosministros-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nuevosministros-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="compraventa-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >compraventa-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1175365_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175365_tn.jpg</URLFoto>
+  </Imagen>
   <Entrenador rdf:ID="Vicente_Del_Bosque"/>
   <Politico rdf:ID="Manuel_Fraga_Iribarne"/>
-  <Imagen rdf:ID="_1290551297523ferrerdn.jpg"/>
-  <Imagen rdf:ID="jpmas211110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="rr_ricky_27112010.JPG_lite4.jpg"/>
+  <Imagen rdf:ID="_1290551297523ferrerdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290551297523ferrerdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmas211110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmas211110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_ricky_27112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_ricky_27112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
   <Entrenador rdf:ID="Quique_Sánchez_Flores"/>
-  <Imagen rdf:ID="zapateroatenas255x208-1-255x255x80.jpg"/>
+  <Imagen rdf:ID="zapateroatenas255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zapateroatenas255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Japón"/>
   <Banco rdf:ID="HSBC"/>
-  <Imagen rdf:ID="jf_rubalcaba_161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290710994205pisadn.jpg"/>
-  <Imagen rdf:ID="israel.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="lgmas.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="starbuckstaza-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290701273030alonsodn.jpg"/>
-  <Imagen rdf:ID="dr_espanyol_26112010.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="jf_rubalcaba_161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_rubalcaba_161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290710994205pisadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290710994205pisadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="israel.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >israel.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgmas.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgmas.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="starbuckstaza-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >starbuckstaza-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290701273030alonsodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290701273030alonsodn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Angela_Merkel"/>
-  <Imagen rdf:ID="_1139550_tn.jpg"/>
+  <Imagen rdf:ID="dr_espanyol_26112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_espanyol_26112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1139550_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1139550_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Antonio_Adán"/>
-  <Imagen rdf:ID="_1167718_tn.jpg"/>
-  <Imagen rdf:ID="gomez1-255x255x80.jpg"/>
-  <Imagen rdf:ID="abespanyol011210.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1167718_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1167718_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="gomez1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gomez1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abespanyol011210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abespanyol011210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Escocia"/>
-  <Imagen rdf:ID="portugalbanderabis255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="jpmass161110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="nueva-imagen-255x255x80.jpg"/>
+  <Imagen rdf:ID="portugalbanderabis255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >portugalbanderabis255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmass161110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmass161110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="nueva-imagen-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nueva-imagen-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Lionel_Messi"/>
   <Pais rdf:ID="Venezuela"/>
-  <Imagen rdf:ID="_824129_tn.jpg"/>
-  <Imagen rdf:ID="cracbursatil255x208-6-255x255x80.jpg"/>
+  <Imagen rdf:ID="_824129_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_824129_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="cracbursatil255x208-6-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cracbursatil255x208-6-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Fernando_Alonso">
+    <OriginarioDe rdf:resource="#España"/>
     <RealizaAccion rdf:resource="#Formula1"/>
     <Pertenece rdf:resource="#Ferrari"/>
-    <OriginarioDe rdf:resource="#España"/>
   </Piloto>
-  <Imagen rdf:ID="rr_windows_11092010.JPG_lite5.jpg"/>
-  <Imagen rdf:ID="_1291064704267royaldn.jpg"/>
-  <Imagen rdf:ID="mg-investments-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290607471167GARZONdn.jpg"/>
+  <Imagen rdf:ID="rr_windows_11092010.JPG_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_windows_11092010.JPG_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291064704267royaldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291064704267royaldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mg-investments-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mg-investments-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290607471167GARZONdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290607471167GARZONdn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Mezut_Ozil"/>
-  <Imagen rdf:ID="lglluch.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="brokers3-255x255x80.gif"/>
+  <Imagen rdf:ID="lglluch.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lglluch.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="brokers3-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >brokers3-255x255x80.gif</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Jenson_Button"/>
-  <Imagen rdf:ID="jppuigcercos121110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="banderaalemana-255x255x80.jpg"/>
-  <Imagen rdf:ID="abtrans171110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="cantona-255x255x80.jpg"/>
-  <Imagen rdf:ID="oficinaempleo-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290755817947coreadetalledn.jpg"/>
-  <Imagen rdf:ID="jpmontilla161110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="napoles.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="bolsamadrid255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1165630_tn.jpg"/>
-  <Imagen rdf:ID="_1290547796712realdn.jpg"/>
-  <Imagen rdf:ID="jpmelocotones141110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jdcabaret131110.JPG_lite5.jpg"/>
+  <Imagen rdf:ID="jppuigcercos121110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuigcercos121110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="banderaalemana-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >banderaalemana-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abtrans171110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abtrans171110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="cantona-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cantona-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="oficinaempleo-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oficinaempleo-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290755817947coreadetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290755817947coreadetalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla161110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla161110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="napoles.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >napoles.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsamadrid255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsamadrid255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1165630_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1165630_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290547796712realdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290547796712realdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmelocotones141110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmelocotones141110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdcabaret131110.JPG_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdcabaret131110.JPG_lite5.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Antonio_Basagoiti"/>
-  <Imagen rdf:ID="lgrajoy.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="riodejaneiro2_JR251110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="ipc11--200x160-2-255x255x80.gif"/>
-  <Imagen rdf:ID="felipe1999-255x255x80.jpg"/>
-  <Imagen rdf:ID="jdbrasil261110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="brufau-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1151492_tn.jpg"/>
-  <Imagen rdf:ID="partidos.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="carbon255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290855603159messicristianodn.jpg"/>
-  <Imagen rdf:ID="bolsaespanaaficion255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="lgrajoy.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgrajoy.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="riodejaneiro2_JR251110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >riodejaneiro2_JR251110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="ipc11--200x160-2-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ipc11--200x160-2-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="felipe1999-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >felipe1999-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdbrasil261110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdbrasil261110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="brufau-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >brufau-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1151492_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1151492_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="partidos.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >partidos.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="carbon255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >carbon255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290855603159messicristianodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290855603159messicristianodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsaespanaaficion255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsaespanaaficion255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Ségolène_Royal"/>
   <Pais rdf:ID="Polonia"/>
   <Futbolista rdf:ID="Sergio_Busquets"/>
-  <Imagen rdf:ID="_1291176913338saharadn.jpg"/>
-  <Imagen rdf:ID="abmontilla241110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1156137_tn.jpg"/>
-  <Imagen rdf:ID="_1291016522329goltvdn.jpg"/>
-  <Imagen rdf:ID="_1167659_tn.jpg"/>
-  <Imagen rdf:ID="dr_nadal_01122010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1290644239138putindn.jpg"/>
-  <Imagen rdf:ID="jdkorea231110.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="abconcita171110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1291176913338saharadn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291176913338saharadn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abmontilla241110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abmontilla241110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1156137_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1156137_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291016522329goltvdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291016522329goltvdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1167659_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1167659_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_nadal_01122010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_nadal_01122010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290644239138putindn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290644239138putindn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdkorea231110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdkorea231110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abconcita171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abconcita171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Banco rdf:ID="Caja_Madrid"/>
-  <Imagen rdf:ID="gasol1JR281110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="gasol1JR281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gasol1JR281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Trinidad_Jiménez_García-Herrera"/>
-  <Imagen rdf:ID="guardiolapresident.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="abmontilla011210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="iberia-3-255x255x80-255x255x80.jpg"/>
-  <Imagen rdf:ID="jpmasnadal301110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="guardiolapresident.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >guardiolapresident.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abmontilla011210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abmontilla011210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="iberia-3-255x255x80-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iberia-3-255x255x80-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmasnadal301110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmasnadal301110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Islandia"/>
-  <Imagen rdf:ID="_1175437_tn.jpg"/>
+  <Imagen rdf:ID="_1175437_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175437_tn.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Estados_Unidos"/>
-  <Imagen rdf:ID="juguetes255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="juguetes255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >juguetes255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Andy_Roddick"/>
-  <Imagen rdf:ID="dr_messi_25112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="jubilados-3-255x255x80-2-255x255x80.jpg"/>
-  <Imagen rdf:ID="mourinhoclasico.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="fachadabolsa-255x255x80.jpg"/>
-  <Imagen rdf:ID="jf_mafia_171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="FOLIOTOSHIBA.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_1175343_tn.jpg"/>
-  <Imagen rdf:ID="_1157932_tn.jpg"/>
-  <Imagen rdf:ID="espana-255x255x80.jpg"/>
-  <Imagen rdf:ID="citigroupedificio255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291187613743gasolesdn.jpg"/>
+  <Imagen rdf:ID="dr_messi_25112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_messi_25112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jubilados-3-255x255x80-2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jubilados-3-255x255x80-2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mourinhoclasico.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mourinhoclasico.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="fachadabolsa-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fachadabolsa-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_mafia_171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_mafia_171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="FOLIOTOSHIBA.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FOLIOTOSHIBA.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1175343_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175343_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1157932_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1157932_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="espana-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espana-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="citigroupedificio255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >citigroupedificio255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291187613743gasolesdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291187613743gasolesdn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Jeffren_Suárez"/>
-  <Imagen rdf:ID="mmotan211110_2.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="_1173494_tn.jpg"/>
-  <Imagen rdf:ID="espana200x160--200x160-255x255x80.gif"/>
-  <Imagen rdf:ID="a-la-alza-flecha255x208-5-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1068994_tn.jpg"/>
-  <Imagen rdf:ID="adalvar191110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="carfagna.jpg_lite5.jpg"/>
-  <Imagen rdf:ID="_1150402_tn.jpg"/>
-  <Imagen rdf:ID="octaviogranado-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291194062337portavionesdn.jpg"/>
-  <Imagen rdf:ID="_1162599_tn.jpg"/>
-  <Imagen rdf:ID="_2abcolera161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="abcandidatos281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="lgcamacho.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1abcaricatura.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="mmotan211110_2.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mmotan211110_2.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1173494_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1173494_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="espana200x160--200x160-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espana200x160--200x160-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="a-la-alza-flecha255x208-5-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >a-la-alza-flecha255x208-5-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1068994_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1068994_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="adalvar191110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >adalvar191110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="carfagna.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >carfagna.jpg_lite5.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1150402_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1150402_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="octaviogranado-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >octaviogranado-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291194062337portavionesdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291194062337portavionesdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1162599_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1162599_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_2abcolera161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_2abcolera161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abcandidatos281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abcandidatos281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgcamacho.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgcamacho.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1abcaricatura.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1abcaricatura.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Jerzi_Dudek"/>
-  <Imagen rdf:ID="_1176094_tn.jpg"/>
-  <Imagen rdf:ID="iberiaavion--200x160-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290548764864madrid-detdn.jpg"/>
+  <Imagen rdf:ID="_1176094_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1176094_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="iberiaavion--200x160-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iberiaavion--200x160-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290548764864madrid-detdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290548764864madrid-detdn.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Jaume_Matas"/>
   <Pais rdf:ID="Italia"/>
-  <Imagen rdf:ID="_1291010237521cerdodn.jpg"/>
-  <Imagen rdf:ID="_1290975299101nadaldn.jpg"/>
-  <Imagen rdf:ID="brasil.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1151273_tn.jpg"/>
-  <Imagen rdf:ID="lgsanchezcamacho.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="jf_airberlin_181110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jparturmas261110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="iberdrola-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290880810337berbatovdn.jpg"/>
-  <Imagen rdf:ID="tarjeta1-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1166205_tn.jpg"/>
-  <Imagen rdf:ID="nadal1_JR281110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1291010237521cerdodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291010237521cerdodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290975299101nadaldn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290975299101nadaldn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="brasil.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >brasil.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1151273_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1151273_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="lgsanchezcamacho.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgsanchezcamacho.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jf_airberlin_181110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jf_airberlin_181110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jparturmas261110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas261110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="iberdrola-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iberdrola-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290880810337berbatovdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290880810337berbatovdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="tarjeta1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tarjeta1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1166205_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1166205_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="nadal1_JR281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nadal1_JR281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Australia"/>
-  <Imagen rdf:ID="jparturmas1911110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="camacho.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jditurriaga281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jppuigcercos161110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291010351765campdn.jpg"/>
-  <Imagen rdf:ID="rr_rossi_27112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="mallorca.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="jparturmas1911110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jparturmas1911110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="camacho.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >camacho.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jditurriaga281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jditurriaga281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppuigcercos161110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuigcercos161110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291010351765campdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291010351765campdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_rossi_27112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_rossi_27112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="mallorca.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mallorca.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Ucrania"/>
   <Politico rdf:ID="José_María_Aznar_López"/>
-  <Imagen rdf:ID="brokers3-3-255x255x80.gif"/>
+  <Imagen rdf:ID="brokers3-3-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >brokers3-3-255x255x80.gif</URLFoto>
+  </Imagen>
   <Tenista rdf:ID="Andy_Murray"/>
-  <Imagen rdf:ID="interiorbolsa2-255x255x80.gif"/>
-  <Imagen rdf:ID="jpmontila171110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="rr_berbatov_27112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="bolsadatosgafas255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="interiorbolsa2-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >interiorbolsa2-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontila171110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontila171110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_berbatov_27112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_berbatov_27112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsadatosgafas255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsadatosgafas255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Miguel_Ángel_Revilla"/>
-  <Imagen rdf:ID="jdhillary011210.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_2abperu231110.jpg_lite5.jpg"/>
+  <Imagen rdf:ID="jdhillary011210.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdhillary011210.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_2abperu231110.jpg_lite5.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_2abperu231110.jpg_lite5.jpg</URLFoto>
+  </Imagen>
   <PresidenteFutbol rdf:ID="Florentino_Pérez"/>
   <Futbolista rdf:ID="Javier_Mascherano"/>
-  <Imagen rdf:ID="banderaespana255x208-255x255x80.jpg"/>
-  <Imagen rdf:ID="abcorea281110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jpmontilla261110.jpg_lite8.jpg"/>
-  <Imagen rdf:ID="millonarios-255x255x80.jpg"/>
-  <Imagen rdf:ID="acslogo1-255x255x80.jpg"/>
-  <Imagen rdf:ID="jppuigcercos151110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="pvpuchi201110.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="pvpuchiatrib281110xx.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="banderaespana255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >banderaespana255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abcorea281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abcorea281110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpmontilla261110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpmontilla261110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="millonarios-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >millonarios-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="acslogo1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >acslogo1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppuigcercos151110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppuigcercos151110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="pvpuchi201110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pvpuchi201110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="pvpuchiatrib281110xx.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pvpuchiatrib281110xx.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Finlandia"/>
-  <Imagen rdf:ID="lgzapatero.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="jpraxoy121110.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="lgzapatero.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lgzapatero.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jpraxoy121110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpraxoy121110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Continente rdf:ID="Oceania"/>
   <Politico rdf:ID="José_Blanco_López"/>
-  <Imagen rdf:ID="ipc11--200x160-255x255x80.gif"/>
-  <Imagen rdf:ID="bankofamerica-255x255x80.gif"/>
-  <Imagen rdf:ID="espanamapaybandera255x208-2-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291049798653berlusdn.jpg"/>
-  <Imagen rdf:ID="elecc.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1291009192911partidodn.jpg"/>
-  <Imagen rdf:ID="jdbundestag201110.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="_892886_tn.jpg"/>
-  <Imagen rdf:ID="bolsamadrid255x208-1-255x255x80.jpg"/>
-  <Imagen rdf:ID="dr_rio_27112010.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="_1151773_tn.jpg"/>
-  <Imagen rdf:ID="_1163081_tn.jpg"/>
+  <Imagen rdf:ID="ipc11--200x160-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ipc11--200x160-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bankofamerica-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bankofamerica-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="espanamapaybandera255x208-2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >espanamapaybandera255x208-2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291049798653berlusdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291049798653berlusdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="elecc.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >elecc.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291009192911partidodn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291009192911partidodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdbundestag201110.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdbundestag201110.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_892886_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_892886_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="bolsamadrid255x208-1-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bolsamadrid255x208-1-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="dr_rio_27112010.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dr_rio_27112010.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1151773_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1151773_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1163081_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1163081_tn.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="Xavi_Hernández"/>
-  <Imagen rdf:ID="jpzpmontilla141110.jpg_lite8.jpg"/>
+  <Imagen rdf:ID="jpzpmontilla141110.jpg_lite8.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jpzpmontilla141110.jpg_lite8.jpg</URLFoto>
+  </Imagen>
   <Futbolista rdf:ID="José_Manuel_Pinto"/>
   <Futbolista rdf:ID="Iker_Casillas">
     <OriginarioDe rdf:resource="#España"/>
     <RealizaAccion rdf:resource="#Futbol"/>
     <Pertenece rdf:resource="#Real_Madrid"/>
   </Futbolista>
-  <Imagen rdf:ID="piso--200x160-2-255x255x80.jpg"/>
-  <Imagen rdf:ID="movilbcn20101029.jpg_lite4.jpg"/>
-  <Imagen rdf:ID="ipc11--200x160-1-255x255x80.gif"/>
-  <Imagen rdf:ID="otandavlisboa.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="piso--200x160-2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >piso--200x160-2-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="movilbcn20101029.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >movilbcn20101029.jpg_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="ipc11--200x160-1-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ipc11--200x160-1-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="otandavlisboa.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >otandavlisboa.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Pais rdf:ID="Bélgica"/>
-  <Imagen rdf:ID="obama-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1291148383756pobreza-detdn.jpg"/>
-  <Imagen rdf:ID="_1175129_tn.jpg"/>
-  <Imagen rdf:ID="zp9-255x255x80.jpg"/>
-  <Imagen rdf:ID="jdhaiti181110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="obama-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >obama-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1291148383756pobreza-detdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1291148383756pobreza-detdn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1175129_tn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1175129_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="zp9-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >zp9-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jdhaiti181110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jdhaiti181110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Robert_Kuvica"/>
-  <Imagen rdf:ID="fachadaws3-255x255x80.gif"/>
-  <Imagen rdf:ID="rr_ferrari_24112010.JPG_lite4.jpg"/>
-  <Imagen rdf:ID="nasdaqnoche-2-255x255x80.gif"/>
+  <Imagen rdf:ID="fachadaws3-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fachadaws3-255x255x80.gif</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="rr_ferrari_24112010.JPG_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rr_ferrari_24112010.JPG_lite4.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="nasdaqnoche-2-255x255x80.gif">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nasdaqnoche-2-255x255x80.gif</URLFoto>
+  </Imagen>
   <Continente rdf:ID="Africa"/>
   <Futbolista rdf:ID="Sergio_Canales"/>
-  <Imagen rdf:ID="_1290759876139caruanadetalledn.jpg"/>
-  <Imagen rdf:ID="_1044082.jpg"/>
-  <Imagen rdf:ID="be19674.jpg"/>
-  <Imagen rdf:ID="_1290687399782eurocamaradn.jpg"/>
-  <Imagen rdf:ID="jppatxieguiguren101110.jpg_lite4.jpg"/>
+  <Imagen rdf:ID="_1290759876139caruanadetalledn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290759876139caruanadetalledn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1044082.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1044082.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="be19674.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >be19674.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290687399782eurocamaradn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290687399782eurocamaradn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="jppatxieguiguren101110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jppatxieguiguren101110.jpg_lite4.jpg</URLFoto>
+  </Imagen>
   <Politico rdf:ID="Cristóbal_Montoro_Romero"/>
-  <Imagen rdf:ID="gasnaturalgabarrosalvador-255x255x80.jpg"/>
-  <Imagen rdf:ID="_1290626481993londresdn.jpg"/>
+  <Imagen rdf:ID="gasnaturalgabarrosalvador-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gasnaturalgabarrosalvador-255x255x80.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="_1290626481993londresdn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290626481993londresdn.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Kamui_Kobayashi"/>
-  <Imagen rdf:ID="desastres255x208-255x255x80.jpg"/>
+  <Imagen rdf:ID="desastres255x208-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >desastres255x208-255x255x80.jpg</URLFoto>
+  </Imagen>
   <Piloto rdf:ID="Pedro_De_La_Rosa"/>
-  <Imagen rdf:ID="_1290635389054haiti-det.dn.jpg"/>
-  <Imagen rdf:ID="borsadiner2-255x255x80.jpg"/>
+  <Imagen rdf:ID="_1290635389054haiti-det.dn.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >_1290635389054haiti-det.dn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="borsadiner2-255x255x80.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >borsadiner2-255x255x80.jpg</URLFoto>
+  </Imagen>
 </rdf:RDF>
 
 <!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->
