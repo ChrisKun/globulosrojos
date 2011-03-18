@@ -95,7 +95,6 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
                     String instanceName = Ontologia.getInstance().getShortName(selPath.getLastPathComponent().toString());
                     Ontologia.getInstance().modifyOntProperty(sourceInstance, propertyName, instanceName);
 
-                    Ontologia.getInstance().save("files/OntologiaNana.owl");
                     padre.actualizarPanelPropiedades();
                 }
             }
