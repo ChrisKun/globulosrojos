@@ -5,7 +5,10 @@
  */
 package ontologias;
 
+import es.ucm.fdi.gaia.ontobridge.test.gui.PnlInstancesTree;
 import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.ImageIcon;
@@ -35,6 +38,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         nombre = images.get(imageIndex).getDescription();
         initComponents();
         labelFoto.setIcon(images.get(imageIndex));
+
+        crearPanelPropiedades();
+
     }
 
     /** This method is called from within the constructor to
@@ -289,7 +295,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     public void mostrarImagen(String imagen) {
-        for (int i=0; i < images.size(); i++) {
+        for (int i = 0; i < images.size(); i++) {
             ImageIcon img = images.get(i);
             if (img.getDescription().equals(imagen)) {
                 labelFoto.setIcon(img);
@@ -297,6 +303,50 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 return;
             }
         }
+    }
+
+    public void crearPanelPropiedades() {
+        //genera una ventana con las propidades de la foto
+        ventanaPopUp = new javax.swing.JFrame(Ontologia.getMainOnto().getURL() + nombre);
+        javax.swing.JButton botonUpdate = new javax.swing.JButton();
+        botonUpdate.setText("Actualizar"); // NOI18N
+        botonUpdate.setName("botonActualizar");
+        //botonUpdate.setLocation(200, 200);
+        panelPropiedadesPopUp = new PanelPropiedades(nombre);
+        panelPropiedadesPopUp.add(botonUpdate);
+        botonUpdate.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                botonActualizar(e);
+            }
+        });
+        //PnlInstancesTree tree = new PnlInstancesTree(Ontologia.getInstance(), "Paul_Gasol");
+        ventanaPopUp.getContentPane().add(panelPropiedadesPopUp);
+        ventanaPopUp.pack();
+        ventanaPopUp.setSize(600, 600);
+        ventanaPopUp.setVisible(true);
+    }
+
+
+    public void botonActualizar(java.awt.event.ActionEvent evt) {
+        ventanaPopUp.remove(panelPropiedadesPopUp);
+        javax.swing.JButton botonUpdate = new javax.swing.JButton();
+        botonUpdate.setText("Actualizar"); // NOI18N
+        botonUpdate.setName("botonActualizar");
+        //botonUpdate.setLocation(200, 200);
+        panelPropiedadesPopUp = new PanelPropiedades(nombre);
+        panelPropiedadesPopUp.add(botonUpdate);
+        botonUpdate.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                botonActualizar(e);
+            }
+        });
+        //PnlInstancesTree tree = new PnlInstancesTree(Ontologia.getInstance(), "Paul_Gasol");
+        ventanaPopUp.getContentPane().add(panelPropiedadesPopUp);
+        ventanaPopUp.pack();
+        ventanaPopUp.setVisible(true);
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnterior;
@@ -312,4 +362,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     ArrayList<ImageIcon> images;
     private int imageIndex;
     String nombre;
+    javax.swing.JFrame ventanaPopUp;
+    PanelPropiedades panelPropiedadesPopUp;
 }
