@@ -77,6 +77,7 @@ public class PanelListaNoticias extends JPanel implements TreeSelectionListener 
 
         ontologyTree.addMouseListener(new MouseAdapter() {
 
+            @Override
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());

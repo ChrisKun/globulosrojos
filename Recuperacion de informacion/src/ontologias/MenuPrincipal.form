@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.1" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
@@ -26,34 +26,32 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="12" pref="12" max="12" attributes="0"/>
               <Component id="panelListaNoticias" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="panelMenu" max="32767" attributes="1"/>
-                  <Component id="panelInfoFoto" alignment="1" max="32767" attributes="1"/>
+              <EmptySpace min="18" pref="18" max="18" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="panelFoto" alignment="1" max="32767" attributes="1"/>
+                  <Component id="panelInfoFoto" alignment="1" max="32767" attributes="1"/>
+                  <Component id="panelMenu" max="32767" attributes="1"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="panelListaNoticias" alignment="0" pref="666" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="panelListaNoticias" pref="688" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="panelFoto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="12" attributes="0"/>
                       <Component id="panelInfoFoto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="12" attributes="0"/>
                       <Component id="panelMenu" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -81,12 +79,20 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="666" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="688" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="panelFoto">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[950, 332]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[950, 332]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -94,7 +100,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelFoto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="923" max="32767" attributes="0"/>
+                  <EmptySpace pref="935" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -117,6 +123,14 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="panelInfoFoto">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[950, 150]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[950, 150]"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new PanelPropiedades(nombre)"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.getContentPane().add(panelInfoFoto);&#xa;this.pack();"/>
@@ -125,7 +139,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="936" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="950" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -140,6 +154,12 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="28" green="84" red="df" type="rgb"/>
         </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[950, 182]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[950, 182]"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -151,10 +171,10 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonM" min="-2" pref="49" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonT" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="botonT" min="-2" pref="134" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonSiguiente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="493" max="32767" attributes="0"/>
+                  <EmptySpace pref="429" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -165,10 +185,10 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="botonM" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonT" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="114" max="32767" attributes="0"/>
+                  <EmptySpace pref="126" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -200,7 +220,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="botonT">
           <Properties>
-            <Property name="text" type="java.lang.String" value="T"/>
+            <Property name="text" type="java.lang.String" value="Modificar Ontologia"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonTActionPerformed"/>

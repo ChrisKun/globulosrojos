@@ -1,4 +1,4 @@
-; Sun Mar 13 18:32:12 CET 2011
+; Fri Mar 18 01:38:14 CET 2011
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Ontologia_ProjectKB_Instance_411]
-		[Ontologia_ProjectKB_Instance_412]
-		[Ontologia_ProjectKB_Instance_413]
-		[Ontologia_ProjectKB_Instance_414]
-		[Ontologia_ProjectKB_Instance_415]))
+		[Ontologia_ProjectKB_Instance_337]
+		[Ontologia_ProjectKB_Instance_338]
+		[Ontologia_ProjectKB_Instance_339]
+		[Ontologia_ProjectKB_Instance_340]
+		[Ontologia_ProjectKB_Instance_341]))
 
 ([CLSES_TAB] of  Widget
 
@@ -3246,17 +3246,17 @@
 ([KB_713803_Instance_981] of  Property_List
 )
 
-([KB_734459_Instance_0] of  String
-
-	(name "owl_file_name")
-	(string_value "Ontologia.owl"))
-
 ([KB_764103_Instance_545] of  Widget
 
 	(is_hidden FALSE)
 	(name "owl:Ontology")
 	(property_list [XY_Instance_195])
 	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
+([KB_858931_Instance_0] of  String
+
+	(name "owl_file_name")
+	(string_value "Ontologia.owl"))
 
 ([KB_865583_Instance_0] of  Widget
 
@@ -7289,8 +7289,33 @@
 	(property_list [Ontologia_ProjectKB_Instance_34])
 	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
 
+([Ontologia_ProjectKB_Instance_337] of  String
+
+	(name "owl:Thing")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Instance_338] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([Ontologia_ProjectKB_Instance_339] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
 ([Ontologia_ProjectKB_Instance_34] of  Property_List
 )
+
+([Ontologia_ProjectKB_Instance_340] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Instance_341] of  String
+
+	(name "owl:Class")
+	(string_value "%3ANAME"))
 
 ([Ontologia_ProjectKB_Instance_35] of  Widget
 
@@ -7327,31 +7352,6 @@
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_42])
 	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
-
-([Ontologia_ProjectKB_Instance_411] of  String
-
-	(name "owl:Thing")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Instance_412] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([Ontologia_ProjectKB_Instance_413] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([Ontologia_ProjectKB_Instance_414] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Instance_415] of  String
-
-	(name "owl:Class")
-	(string_value "%3ANAME"))
 
 ([Ontologia_ProjectKB_Instance_42] of  Property_List
 )
@@ -7712,7 +7712,7 @@
 		[OWL_ProjectKB_Instance_3]
 		[KB_444675_Instance_0]
 		[KB_632156_Instance_0]
-		[KB_734459_Instance_0]))
+		[KB_858931_Instance_0]))
 
 ([STANDARD_CLASS_FORM_WIDGET] of  Widget
 

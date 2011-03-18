@@ -85,7 +85,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
 
         ontologyTree.addMouseListener(new MouseAdapter() {
 
-            public void mouseReleased(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
 
                 if(menuContextual != null && menuContextual.isVisible())
                     menuContextual.setVisible(false);
