@@ -8,35 +8,17 @@
   <owl:Ontology rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl"/>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente">
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
     </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona">
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
     </owl:disjointWith>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
     </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -55,12 +37,12 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
           <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
-            </owl:onProperty>
             <owl:hasValue>
               <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Formula1"/>
             </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
           </owl:Restriction>
           <owl:Restriction>
             <owl:onProperty>
@@ -72,40 +54,40 @@
       </owl:Class>
     </owl:equivalentClass>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
     </owl:disjointWith>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
     </owl:disjointWith>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
     </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia">
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
     </owl:disjointWith>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
     </owl:disjointWith>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
     </owl:disjointWith>
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
-        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
         </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+        </owl:onProperty>
       </owl:Restriction>
     </owl:equivalentClass>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista">
@@ -125,74 +107,50 @@
       </owl:Class>
     </owl:equivalentClass>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
     </owl:disjointWith>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
     </owl:disjointWith>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
     </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
-    </rdfs:subClassOf>
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
-        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EmpresaDeTecnologia"/>
         </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
+        </owl:onProperty>
       </owl:Restriction>
     </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    </owl:disjointWith>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
     </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
-    </owl:disjointWith>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
-    </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico">
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
-    </owl:disjointWith>
     <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
     </owl:disjointWith>
-    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
@@ -223,25 +181,19 @@
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#AparatoElectronico">
     <owl:equivalentClass>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#EmpresaDeTecnologia"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#CreadoPor"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#EmpresaDeTecnologia"/>
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico">
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
@@ -255,39 +207,37 @@
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
     <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
     </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
+    </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
-    </owl:disjointWith>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
           <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
-            </owl:onProperty>
             <owl:hasValue>
               <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenis"/>
             </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol">
     <owl:equivalentClass>
@@ -295,19 +245,19 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
           <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Preside"/>
             </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
     </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais">
     <owl:equivalentClass>
@@ -320,22 +270,17 @@
     </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
           <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
-            </owl:onProperty>
             <owl:hasValue>
               <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncesto"/>
             </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
+            </owl:onProperty>
           </owl:Restriction>
           <owl:Restriction>
             <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
@@ -346,38 +291,40 @@
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica">
-    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
         </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
       </owl:Restriction>
     </owl:equivalentClass>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes"/>
     </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbolista">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Restriction>
-            <owl:hasValue>
-              <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbol"/>
-            </owl:hasValue>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion"/>
             </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbol"/>
+            </owl:hasValue>
           </owl:Restriction>
           <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
           <owl:Restriction>
@@ -389,11 +336,11 @@
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Piloto"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenista"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncestista"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
@@ -407,32 +354,29 @@
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte">
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Banco"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
     <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
   </owl:Class>
-  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
   <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaDeportes">
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene"/>
         </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deportista"/>
       </owl:Restriction>
     </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Noticia"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
-    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
     <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaPolitica"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#NoticiaInternacional"/>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
   </owl:Class>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pertenece">
-    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
     <rdfs:domain>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -442,6 +386,7 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#OriginarioDe">
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
@@ -459,20 +404,24 @@
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Entrenador"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EstaEn">
-    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Continente"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ApareceEn">
     <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Preside">
-    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
     <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Equipo"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PresidenteFutbol"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Milita">
-    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Politico"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#PartidoPolitico"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#TomadaEn">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Pais"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#RealizaAccion">
     <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Deporte"/>
@@ -483,8 +432,8 @@
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#AparatoElectronico"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Contiene">
-    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Persona"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#URLFoto">
     <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Imagen"/>
@@ -704,11 +653,11 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >dr_zenit_01122010.jpg_lite4.jpg</URLFoto>
   </Imagen>
-  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Alfredo_Pérez_Rubalcaba"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jplonas261110.JPG_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jplonas261110.JPG_lite4.jpg</URLFoto>
   </Imagen>
+  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Alfredo_Pérez_Rubalcaba"/>
   <Baloncestista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Marc_Gasol"/>
   <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Real_Madrid"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpciutadans281110.jpg_lite4.jpg">
@@ -742,6 +691,12 @@
     >abperra181110.jpg_lite4.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#trinidad_hillary1_JR20111033.jpg">
+    <TomadaEn>
+      <Pais rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EEUU"/>
+    </TomadaEn>
+    <Contiene>
+      <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Trinidad_Jiménez_García-Herrera"/>
+    </Contiene>
     <Contiene>
       <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Hillary_Clinton"/>
     </Contiene>
@@ -834,7 +789,6 @@
     >Niels2.JPG_lite5.jpg</URLFoto>
   </Imagen>
   <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Valencia"/>
-  <Pais rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#EEUU"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdobama261110dos.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jdobama261110dos.jpg_lite4.jpg</URLFoto>
@@ -894,10 +848,10 @@
   </Imagen>
   <Baloncestista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Pau_Gasol">
     <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
-    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncesto"/>
     <Pertenece>
       <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#L.A.Lakers"/>
     </Pertenece>
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Baloncesto"/>
   </Baloncestista>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#bolsako-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1801,8 +1755,8 @@
     >zapaterodavos255x208-1-255x255x80.jpg</URLFoto>
   </Imagen>
   <Tenista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Rafa_Nadal">
-    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenis"/>
     <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Tenis"/>
   </Tenista>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#coches-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -2263,6 +2217,7 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jf_roures_121110.jpg_lite4.jpg</URLFoto>
   </Imagen>
+  <PartidoPolitico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#PP"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmotan211110.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >mmotan211110.jpg_lite4.jpg</URLFoto>
@@ -2929,8 +2884,8 @@
     >cracbursatil255x208-6-255x255x80.jpg</URLFoto>
   </Imagen>
   <Piloto rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Fernando_Alonso">
-    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Formula1"/>
     <Pertenece rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Ferrari"/>
+    <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Formula1"/>
     <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
   </Piloto>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_windows_11092010.JPG_lite5.jpg">
@@ -3100,7 +3055,6 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >gasol1JR281110.jpg_lite4.jpg</URLFoto>
   </Imagen>
-  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Trinidad_Jiménez_García-Herrera"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#guardiolapresident.jpg_lite5.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >guardiolapresident.jpg_lite5.jpg</URLFoto>
@@ -3457,9 +3411,9 @@
   </Imagen>
   <Futbolista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#José_Manuel_Pinto"/>
   <Futbolista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Iker_Casillas">
-    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
     <RealizaAccion rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Futbol"/>
     <Pertenece rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Real_Madrid"/>
+    <OriginarioDe rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
   </Futbolista>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#piso--200x160-2-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
