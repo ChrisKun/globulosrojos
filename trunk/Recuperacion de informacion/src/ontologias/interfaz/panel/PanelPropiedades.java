@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * PnlPropiedades.java
  *
  * Created on 12-mar-2011, 3:23:28
@@ -24,7 +19,7 @@ import ontologias.utils.Ontologia;
 public class PanelPropiedades extends javax.swing.JPanel {
 
     public static void main(String [] args) {
-        PanelPropiedades p = new PanelPropiedades("Pau_Gasol");
+        PanelPropiedades p = new PanelPropiedades("Persona");
         javax.swing.JFrame window = new javax.swing.JFrame("");
         window.getContentPane().add(p);
         window.pack();

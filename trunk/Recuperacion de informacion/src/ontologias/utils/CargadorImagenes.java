@@ -41,7 +41,8 @@ public class CargadorImagenes {
         ArrayList<String> img = new ArrayList<String>();
 
         try {
-            img = readImageNames("data/noticias/img/nombres.txt");
+            //data/noticias/img/nombres.txt
+            img = readImageNames("data/tenistas.txt");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(CargadorImagenes.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Imposible cargar imagenes. Fichero de nombres de imagenes no encontrado");
@@ -98,14 +99,14 @@ public class CargadorImagenes {
 
         for(String img: images)
         {
-            ob.createInstance("Imagen", img);
+            ob.createInstance("Tenista", img);
         }
 
         ob.save("files/Ontologia.owl");
     }
 
-//    public static void main(String[] args){
-//        CargadorImagenes loader = new CargadorImagenes();
-//        loader.loadImagesInOntology(loader.loadImageNames());
-//    }
+    public static void main(String[] args){
+        CargadorImagenes loader = new CargadorImagenes();
+        loader.loadImagesInOntology(loader.loadImageNames());
+    }
 }
