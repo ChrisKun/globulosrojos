@@ -1,5 +1,6 @@
 package ontologias.interfaz.panel;
 
+import java.awt.event.KeyEvent;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JPanel;
@@ -10,6 +11,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -57,7 +59,7 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
     private String selectedConcept = null;
 
     public void valueChanged(TreeSelectionEvent tse) {
-        selectedConcept = ontologyTree.getLastSelectedPathComponent().toString();
+        selectedConcept = tse.getPath().toString();
     }
 
     protected void createComponents() {
@@ -85,17 +87,44 @@ public class PanelArbolPropiedades extends JPanel implements TreeSelectionListen
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1 && Ontologia.getInstance().existsProperty(Ontologia.getInstance().getURI(selPath.getLastPathComponent().toString()))) {
-                    selectedConcept = selPath.toString();
-                    // Obtenemos las clases pertenecientes al rango de la propiedad (puede ser mas de una)
-                    Iterator<String> rangos = Ontologia.getInstance().listPropertyRange(selPath.getLastPathComponent().toString());
+                if (selRow != -1) {
+                    //selectedConcept = selPath.toString();
+                    if (Ontologia.getInstance().existsProperty(Ontologia.getInstance().getURI(selPath.getLastPathComponent().toString()))) {
+                        // Obtenemos las clases pertenecientes al rango de la propiedad (puede ser mas de una)
+                        Iterator<String> rangos = Ontologia.getInstance().listPropertyRange(selPath.getLastPathComponent().toString());
 
-                    String selectedProperty = selPath.getLastPathComponent().toString();
+                        String selectedProperty = selPath.getLastPathComponent().toString();
 
-                    // Creamos el panel con las instancias pertenecientes al rango
-                    padre.actualizarPanelInstancias(rangos, ancestor, selectedProperty);
+                        // Creamos el panel con las instancias pertenecientes al rango
+                        padre.actualizarPanelInstancias(rangos, ancestor, selectedProperty);
+                    }
                 }
             }
+        });
+
+        ontologyTree.addKeyListener(new KeyListener() {
+
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_DELETE) {
+                    String[] splittedSelectedConcept = selectedConcept.substring(1, selectedConcept.length() - 1).split(", ");
+                    String propertyName = splittedSelectedConcept[1];
+                    String destInstance = splittedSelectedConcept[2];
+                    if (Ontologia.getInstance().existsInstance(destInstance)) {
+                        Ontologia.getInstance().deleteOntProperty(ancestor, propertyName, destInstance);
+
+                        readOntology();
+                    }
+                }
+            }
+
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            public void keyReleased(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet.");
+            }
+
         });
 
         scrPnl = new JScrollPane(ontologyTree);
