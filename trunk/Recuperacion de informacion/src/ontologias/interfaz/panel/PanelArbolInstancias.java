@@ -42,6 +42,8 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
     /**
      * Constructor
      */
+    public PanelArbolInstancias() {}
+
     public PanelArbolInstancias(PanelPropiedades padre) {
         this.padre = padre;
     }
@@ -167,6 +169,11 @@ public class PanelArbolInstancias extends JPanel implements TreeSelectionListene
         this.sourceInstance = sourceInstance;
         createComponents("");
         readOntology(ancestors);
+    }
+
+    void actualizarPanelInstancias(String ancestor) {
+        createComponents(ancestor);
+        readOntology(ancestor);
     }
 
     class MyRenderer extends DefaultTreeCellRenderer {

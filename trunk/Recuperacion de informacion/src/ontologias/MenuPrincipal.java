@@ -18,6 +18,7 @@ import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelArbolInstancias;
 import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelArbolSubclases;
+import ontologias.interfaz.panel.PanelConsulta;
 import ontologias.interfaz.panel.PanelListaNoticias;
 import ontologias.interfaz.panel.PanelPropiedades;
 import ontologias.utils.CargadorImagenes;
@@ -40,6 +41,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         labelFoto.setIcon(images.get(imageIndex));
 
+
         crearPanelPropiedades();
 
     }
@@ -61,6 +63,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonSiguiente = new javax.swing.JButton();
         botonM = new javax.swing.JButton();
         botonT = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Marcador Semantico de Imagenes");
@@ -99,7 +102,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(panelFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelFoto)
-                .addContainerGap(935, Short.MAX_VALUE))
+                .addContainerGap(950, Short.MAX_VALUE))
         );
         panelFotoLayout.setVerticalGroup(
             panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,6 +144,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Preguntas");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
@@ -153,8 +163,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonT, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonSiguiente)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,8 +176,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(botonM)
                     .addComponent(botonAnterior)
                     .addComponent(botonT)
-                    .addComponent(botonSiguiente))
-                .addContainerGap(126, Short.MAX_VALUE))
+                    .addComponent(botonSiguiente)
+                    .addComponent(jButton1))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -238,6 +251,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             Ontologia.getInstance().save("files/Ontologia.owl");
     }//GEN-LAST:event_formWindowClosing
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        PanelConsulta p = new PanelConsulta();
+        p.pack();
+        p.setSize(800, 600);
+        p.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -281,6 +302,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ventanaPopUp.pack();
         //ventanaPopUp.setSize(600, 600);
         ventanaPopUp.setVisible(true);
+
+
     }
 
 
@@ -309,6 +332,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonM;
     private javax.swing.JButton botonSiguiente;
     private javax.swing.JButton botonT;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labelFoto;
     private javax.swing.JPanel panelFoto;
     private javax.swing.JPanel panelListaNoticias;
