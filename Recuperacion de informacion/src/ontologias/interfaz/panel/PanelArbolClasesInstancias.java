@@ -128,6 +128,9 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
 
             public void mousePressed(MouseEvent e) {
                 updatePanel();
+                ontologyTree.updateUI();
+                ontologyTree.repaint();
+                
             }
         });
 
