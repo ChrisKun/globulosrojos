@@ -73,7 +73,7 @@ public class PanelConsulta extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Banco");
+        jButton5.setText("NoticiaEconomia");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -155,27 +155,27 @@ public class PanelConsulta extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
+        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
+        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
+        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());        
+        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
+        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        System.exit(0);
+        //System.exit(0);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     public void actualizaPanelInstancias(String consulta) {
