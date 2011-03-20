@@ -91,7 +91,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="labelFoto" pref="449" max="32767" attributes="0"/>
+                  <Component id="labelFoto" pref="466" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -128,7 +128,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonAnterior" min="-2" pref="79" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonM" min="-2" pref="135" max="-2" attributes="1"/>
+                  <Component id="botonM" min="-2" pref="69" max="-2" attributes="1"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="botonPreguntas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonModificarOnt" min="-2" max="-2" attributes="1"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -146,6 +148,7 @@
                       <Component id="botonModificarOnt" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonPreguntas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
@@ -183,6 +186,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModificarOntActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="botonPreguntas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Preguntas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPreguntasActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
