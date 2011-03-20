@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelArbolSubclases;
+import ontologias.interfaz.panel.PanelConsulta;
 import ontologias.interfaz.panel.PanelPropiedades;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
@@ -58,6 +59,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonSiguiente = new javax.swing.JButton();
         botonM = new javax.swing.JButton();
         botonModificarOnt = new javax.swing.JButton();
+        botonPreguntas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Marcador Semántico de Imágenes");
@@ -90,7 +92,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                .addComponent(labelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -131,6 +133,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        botonPreguntas.setText("Preguntas");
+        botonPreguntas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPreguntasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -139,7 +148,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonPreguntas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonModificarOnt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -154,7 +165,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(botonM)
                     .addComponent(botonModificarOnt)
                     .addComponent(botonSiguiente)
-                    .addComponent(botonAnterior))
+                    .addComponent(botonAnterior)
+                    .addComponent(botonPreguntas))
                 .addContainerGap())
         );
 
@@ -236,6 +248,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             Ontologia.getInstance().save("files/Ontologia.owl");
     }//GEN-LAST:event_formWindowClosing
 
+    private void botonPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPreguntasActionPerformed
+        PanelConsulta p = new PanelConsulta();
+        p.pack();
+        p.setSize(800, 600);
+        p.setVisible(true);
+    }//GEN-LAST:event_botonPreguntasActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -262,6 +281,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonAnterior;
     private javax.swing.JButton botonM;
     private javax.swing.JButton botonModificarOnt;
+    private javax.swing.JButton botonPreguntas;
     private javax.swing.JButton botonSiguiente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
