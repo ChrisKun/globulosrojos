@@ -122,7 +122,7 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
         scrPnl.setViewportView(ontologyTree);
 
         // Boton para crear una instancia en la clase seleccionada
-        JButton botonCrear = new JButton("Actualizar                                                                                                                                                                                                               .");
+        JButton botonCrear = new JButton("Actualizar");
         //botonCrear.setBounds(new Rectangle(50,50,0,100));
         botonCrear.addMouseListener(new MouseAdapter() {
 
