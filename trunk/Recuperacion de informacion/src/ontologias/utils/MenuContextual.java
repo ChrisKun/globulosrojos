@@ -77,6 +77,7 @@ class menuContextualInstancia extends JPopupMenu {
 
     public menuContextualInstancia(String nombreLlamante) {
         this.llamante = nombreLlamante;
+        this.setLightWeightPopupEnabled(true);
         JMenuItem item1 = new JMenuItem("Editar propiedades");
         JMenuItem item2 = new JMenuItem("Eliminar instancia");
         item1.addActionListener(new ActionListener() {

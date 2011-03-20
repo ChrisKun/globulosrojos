@@ -1,36 +1,35 @@
 /*
- * MenuPrincipal.java
- *
- * Created on Feb 26, 2011, 7:05:01 PM
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
+
+/*
+ * FramePrincipal.java
+ *
+ * Created on 20-mar-2011, 19:18:39
+ */
+
 package ontologias;
 
-import es.ucm.fdi.gaia.ontobridge.test.gui.PnlInstancesTree;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Frame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Iterator;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import ontologias.interfaz.panel.PanelArbolClasesInstancias;
-import ontologias.interfaz.panel.PanelArbolInstancias;
-import ontologias.interfaz.panel.PanelArbolPropiedades;
 import ontologias.interfaz.panel.PanelArbolSubclases;
-import ontologias.interfaz.panel.PanelConsulta;
-import ontologias.interfaz.panel.PanelListaNoticias;
 import ontologias.interfaz.panel.PanelPropiedades;
 import ontologias.utils.CargadorImagenes;
 import ontologias.utils.Ontologia;
 
 /**
  *
- * @author markel
+ * @author sergio
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    /** Creates new form MenuPrincipal */
+    /** Creates new form FramePrincipal */
     public MenuPrincipal() {
         //Para iniciar la interfaz en estado maximizado
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
@@ -40,10 +39,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         nombre = images.get(imageIndex).getDescription();
         initComponents();
         labelFoto.setIcon(images.get(imageIndex));
-
-
-        crearPanelPropiedades();
-
     }
 
     /** This method is called from within the constructor to
@@ -55,75 +50,67 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelListaNoticias = new PanelArbolClasesInstancias(this);
-        panelFoto = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
-        panelMenu = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
         botonM = new javax.swing.JButton();
-        botonT = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        botonModificarOnt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Marcador Semantico de Imagenes");
-        setMinimumSize(new java.awt.Dimension(944, 715));
+        setTitle("Marcador Semántico de Imágenes");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
 
-        this.getContentPane().add(panelListaNoticias);
-        this.pack();
-        panelListaNoticias.setMinimumSize(new java.awt.Dimension(253, 600));
-        panelListaNoticias.setPreferredSize(new java.awt.Dimension(253, 600));
+        jPanel1.setBackground(new java.awt.Color(210, 143, 76));
 
-        javax.swing.GroupLayout panelListaNoticiasLayout = new javax.swing.GroupLayout(panelListaNoticias);
-        panelListaNoticias.setLayout(panelListaNoticiasLayout);
-        panelListaNoticiasLayout.setHorizontalGroup(
-            panelListaNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 282, Short.MAX_VALUE)
         );
-        panelListaNoticiasLayout.setVerticalGroup(
-            panelListaNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 688, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
         );
 
-        panelFoto.setMaximumSize(new java.awt.Dimension(950, 332));
-        panelFoto.setMinimumSize(new java.awt.Dimension(950, 332));
+        jPanel2.setBackground(new java.awt.Color(138, 206, 158));
 
-        labelFoto.setText(" ");
+        labelFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout panelFotoLayout = new javax.swing.GroupLayout(panelFoto);
-        panelFoto.setLayout(panelFotoLayout);
-        panelFotoLayout.setHorizontalGroup(
-            panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelFotoLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFoto)
-                .addContainerGap(950, Short.MAX_VALUE))
+                .addComponent(labelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        panelFotoLayout.setVerticalGroup(
-            panelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelFotoLayout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFoto)
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addComponent(labelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        panelMenu.setBackground(new java.awt.Color(223, 132, 40));
-        panelMenu.setMaximumSize(new java.awt.Dimension(950, 182));
-        panelMenu.setMinimumSize(new java.awt.Dimension(950, 182));
+        jPanel3.setBackground(new java.awt.Color(191, 125, 189));
 
-        botonAnterior.setText("Anterior");
+        botonAnterior.setText("<");
         botonAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAnteriorActionPerformed(evt);
             }
         });
 
-        botonSiguiente.setText("Siguiente");
+        botonSiguiente.setText(">");
         botonSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSiguienteActionPerformed(evt);
@@ -137,48 +124,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        botonT.setText("Modificar Ontologia");
-        botonT.addActionListener(new java.awt.event.ActionListener() {
+        botonModificarOnt.setText("Modificar Ontología");
+        botonModificarOnt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonTActionPerformed(evt);
+                botonModificarOntActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Preguntas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
-        panelMenu.setLayout(panelMenuLayout);
-        panelMenuLayout.setHorizontalGroup(
-            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(botonAnterior)
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonT, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonModificarOnt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonSiguiente)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addComponent(botonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelMenuLayout.setVerticalGroup(
-            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonM)
-                    .addComponent(botonAnterior)
-                    .addComponent(botonT)
+                    .addComponent(botonModificarOnt)
                     .addComponent(botonSiguiente)
-                    .addComponent(jButton1))
-                .addContainerGap(134, Short.MAX_VALUE))
+                    .addComponent(botonAnterior))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,37 +163,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(panelListaNoticias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelListaNoticias, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(panelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        FlowLayout experimentLayout = new FlowLayout(FlowLayout.LEFT, 10, 10);
+        jPanel1.setLayout(experimentLayout);
+        PanelArbolClasesInstancias paci = new PanelArbolClasesInstancias(this);
+        paci.setPreferredSize(new Dimension(290, 420));
+        jPanel1.add(paci);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiguienteActionPerformed
-        if (imageIndex + 1 == images.size()) {
-            imageIndex = 0;
-            labelFoto.setIcon(images.get(imageIndex));
-            return;
-        }
-        labelFoto.setIcon(images.get(++imageIndex));
-        nombre = images.get(imageIndex).getDescription();
-    }//GEN-LAST:event_botonSiguienteActionPerformed
 
     private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
         if (imageIndex - 1 == -1) {
@@ -228,6 +203,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         nombre = images.get(imageIndex).getDescription();
     }//GEN-LAST:event_botonAnteriorActionPerformed
 
+    private void botonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiguienteActionPerformed
+        if (imageIndex + 1 == images.size()) {
+            imageIndex = 0;
+            labelFoto.setIcon(images.get(imageIndex));
+            return;
+        }
+        labelFoto.setIcon(images.get(++imageIndex));
+        nombre = images.get(imageIndex).getDescription();
+    }//GEN-LAST:event_botonSiguienteActionPerformed
+
     private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
         javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
         PanelArbolSubclases subclases = new PanelArbolSubclases(Ontologia.getInstance(), "Noticia");
@@ -237,34 +222,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
         window.setVisible(true);
     }//GEN-LAST:event_botonMActionPerformed
 
-    private void botonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTActionPerformed
+    private void botonModificarOntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarOntActionPerformed
         javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
         PanelArbolClasesInstancias subclases = new PanelArbolClasesInstancias(this);
         window.getContentPane().add(subclases);
         window.pack();
         window.setSize(300, 600);
         window.setVisible(true);
-    }//GEN-LAST:event_botonTActionPerformed
+    }//GEN-LAST:event_botonModificarOntActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if(JOptionPane.showConfirmDialog(this, "¿Desea guardar la ontologia?","Guardar",JOptionPane.YES_NO_OPTION) == 0)
             Ontologia.getInstance().save("files/Ontologia.owl");
     }//GEN-LAST:event_formWindowClosing
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        PanelConsulta p = new PanelConsulta();
-        p.pack();
-        p.setSize(800, 600);
-        p.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
-     * @param args the command line arguments
-     */
+    * @param args the command line arguments
+    */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 new MenuPrincipal().setVisible(true);
             }
@@ -282,65 +258,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
     }
 
-    public void crearPanelPropiedades() {
-        //genera una ventana con las propidades de la foto
-        ventanaPopUp = new javax.swing.JFrame(Ontologia.getMainOnto().getURL() + nombre);
-        javax.swing.JButton botonUpdate = new javax.swing.JButton();
-        botonUpdate.setText("Actualizar"); // NOI18N
-        botonUpdate.setName("botonActualizar");
-        //botonUpdate.setLocation(200, 200);
-        panelPropiedadesPopUp = new PanelPropiedades(nombre);
-        panelPropiedadesPopUp.add(botonUpdate);
-        botonUpdate.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                botonActualizar(e);
-            }
-        });
-        //PnlInstancesTree tree = new PnlInstancesTree(Ontologia.getInstance(), "Paul_Gasol");
-        ventanaPopUp.getContentPane().add(panelPropiedadesPopUp);
-        ventanaPopUp.pack();
-        //ventanaPopUp.setSize(600, 600);
-        ventanaPopUp.setVisible(true);
-
-
-    }
-
-
-    public void botonActualizar(java.awt.event.ActionEvent evt) {
-        ventanaPopUp.remove(panelPropiedadesPopUp);
-        javax.swing.JButton botonUpdate = new javax.swing.JButton();
-        botonUpdate.setText("Actualizar"); // NOI18N
-        botonUpdate.setName("botonActualizar");
-        //botonUpdate.setLocation(200, 200);
-        panelPropiedadesPopUp = new PanelPropiedades(nombre);
-        panelPropiedadesPopUp.add(botonUpdate);
-        botonUpdate.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                botonActualizar(e);
-            }
-        });
-        //PnlInstancesTree tree = new PnlInstancesTree(Ontologia.getInstance(), "Paul_Gasol");
-        ventanaPopUp.getContentPane().add(panelPropiedadesPopUp);
-        ventanaPopUp.pack();
-        ventanaPopUp.setVisible(true);
-
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnterior;
     private javax.swing.JButton botonM;
+    private javax.swing.JButton botonModificarOnt;
     private javax.swing.JButton botonSiguiente;
-    private javax.swing.JButton botonT;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelFoto;
-    private javax.swing.JPanel panelFoto;
-    private javax.swing.JPanel panelListaNoticias;
-    private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables
     ArrayList<ImageIcon> images;
     private int imageIndex;
     String nombre;
     javax.swing.JFrame ventanaPopUp;
     PanelPropiedades panelPropiedadesPopUp;
+    
 }
