@@ -1,16 +1,10 @@
 package ontologias.utils;
 
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowStateListener;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
-import ontologias.interfaz.panel.PanelArbolClasesInstancias;
 import ontologias.interfaz.panel.PanelIntroducirNombre;
-import ontologias.interfaz.panel.PanelPropiedades;
 
 /**
  *
@@ -30,7 +24,7 @@ public class MenuContextual {
         }
         else if(llamante == caller.instancia)
         {
-            return new menuContextualInstancia(nombreLlamante);
+            return new MenuContextualInstancia(nombreLlamante);
         }
         else if(llamante == caller.propiedad)
         {
@@ -71,36 +65,7 @@ class menuContextualClase extends JPopupMenu {
     }
 }
 
-class menuContextualInstancia extends JPopupMenu {
 
-    private String llamante;
-
-    public menuContextualInstancia(String nombreLlamante) {
-        this.llamante = nombreLlamante;
-        this.setLightWeightPopupEnabled(true);
-        JMenuItem item1 = new JMenuItem("Editar propiedades");
-        JMenuItem item2 = new JMenuItem("Eliminar instancia");
-        item1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                PanelPropiedades p = new PanelPropiedades(llamante);
-                javax.swing.JFrame window = new javax.swing.JFrame("");
-                window.getContentPane().add(p);
-                window.pack();
-                window.setVisible(true);
-            }
-        });
-        item2.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent ae) {
-                Ontologia.getInstance().delete(llamante);
-            }
-        });
-        this.add(item1);
-        this.addSeparator();
-        this.add(item2);
-        this.pack();
-    }
-}
 
 class menuContextualPropiedad extends JPopupMenu{
 
