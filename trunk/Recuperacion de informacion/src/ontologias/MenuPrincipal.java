@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * FramePrincipal.java
  *
  * Created on 20-mar-2011, 19:18:39
@@ -32,8 +27,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     /** Creates new form FramePrincipal */
     public MenuPrincipal() {
-        //Para iniciar la interfaz en estado maximizado
-        this.setExtendedState(Frame.MAXIMIZED_BOTH);
         CargadorImagenes loader = new CargadorImagenes();
         images = loader.loadImages();
         imageIndex = 0;
