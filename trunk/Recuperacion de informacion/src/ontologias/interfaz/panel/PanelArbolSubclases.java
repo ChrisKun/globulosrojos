@@ -7,6 +7,8 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JPanel;
@@ -19,6 +21,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
+import ontologias.utils.MenuContextualInstancia;
+import ontologias.utils.Ontologia;
 
 /**
  *
@@ -31,27 +35,35 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
     private DefaultMutableTreeNode root;
     private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolSubclases.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
+    MenuContextualInstancia padre;
 
     /**
      * Constructor
      */
     public PanelArbolSubclases(OntoBridge ob, String ancestor) {
-            super();
-            createComponents();
-            readOntology(ob, ancestor);
+        super();
+        createComponents();
+        readOntology(ob, ancestor);
     }
 
+    /**
+     * Constructor
+     */
+    public PanelArbolSubclases(OntoBridge ob, String ancestor, MenuContextualInstancia padre) {
+        super();
+        this.padre = padre;
+        createComponents();
+        readOntology(ob, ancestor);
+    }
 
-    public String getSelectedConcept(){
+    public String getSelectedConcept() {
         return selectedConcept;
     }
-
     private String selectedConcept = null;
 
     public void valueChanged(TreeSelectionEvent tse) {
         selectedConcept = ontologyTree.getLastSelectedPathComponent().toString();
     }
-
 
     protected void createComponents() {
         JScrollPane scrPnl;
@@ -75,11 +87,16 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
 
         ontologyTree.addMouseListener(new MouseAdapter() {
 
+            @Override
             public void mousePressed(MouseEvent e) {
                 int selRow = ontologyTree.getRowForLocation(e.getX(), e.getY());
                 TreePath selPath = ontologyTree.getPathForLocation(e.getX(), e.getY());
-                if (selRow != -1) {
-                    selectedConcept = selPath.toString();
+                String nombreSeleccion = selPath.getLastPathComponent().toString();
+                if (selRow != -1 && e.getClickCount() == 2 && Ontologia.getInstance().existsInstance(nombreSeleccion)) {
+                    //selectedConcept = selPath.toString();
+                    nombreSeleccion = Ontologia.getInstance().getShortName(selPath.getLastPathComponent().toString());
+                    padre.cambiarClaseAInstancia(nombreSeleccion);
+                    disposePanel();
                 }
             }
         });
@@ -153,5 +170,11 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
 
             return this;
         }
+    }
+
+    //TODO Hay que destruirlo en vez de volverlo invisible
+    private void disposePanel() {
+        //this.dispose();
+        this.setVisible(false);
     }
 }
