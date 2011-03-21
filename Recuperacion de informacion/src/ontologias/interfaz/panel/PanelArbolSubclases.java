@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
@@ -36,6 +37,7 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
     private static Icon CONCEPT = new javax.swing.ImageIcon(PanelArbolSubclases.class.getResource("/es/ucm/fdi/gaia/ontobridge/test/gui/class-orange.gif"));
     private static int maxdepth = 20; //Constant to avoid cycles;
     MenuContextualInstancia padre;
+    JFrame ventana;
 
     /**
      * Constructor
@@ -49,9 +51,10 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
     /**
      * Constructor
      */
-    public PanelArbolSubclases(OntoBridge ob, String ancestor, MenuContextualInstancia padre) {
+    public PanelArbolSubclases(OntoBridge ob, String ancestor, MenuContextualInstancia padre, JFrame ventana) {
         super();
         this.padre = padre;
+        this.ventana = ventana;
         createComponents();
         readOntology(ob, ancestor);
     }
@@ -96,7 +99,7 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
                     //selectedConcept = selPath.toString();
                     nombreSeleccion = Ontologia.getInstance().getShortName(selPath.getLastPathComponent().toString());
                     padre.cambiarClaseAInstancia(nombreSeleccion);
-                    disposePanel();
+                    ventana.dispose();
                 }
             }
         });
@@ -170,11 +173,5 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
 
             return this;
         }
-    }
-
-    //TODO Hay que destruirlo en vez de volverlo invisible
-    private void disposePanel() {
-        //this.dispose();
-        this.setVisible(false);
     }
 }

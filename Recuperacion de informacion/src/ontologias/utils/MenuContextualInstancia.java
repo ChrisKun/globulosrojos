@@ -27,9 +27,14 @@ public class MenuContextualInstancia extends JPopupMenu {
         Ontologia.getInstance().createInstance(nombreSeleccion, llamante);
         //Se le asignan los valores que tenian sus propiedades antes del cambio
         for (int i = 0; i < properties.size(); i++) {
-            Ontologia.getInstance().createOntProperty(llamante, Ontologia.getInstance().getShortName(properties.get(i)), values.get(i));
+            if (!Ontologia.getInstance().getShortName(properties.get(i)).contains("rdf") && !Ontologia.getInstance().getShortName(properties.get(i)).contains("owl")) {
+                if(Ontologia.getInstance().getShortName(properties.get(i)).equals("URLFoto"))
+                    Ontologia.getInstance().createDataTypeProperty(llamante, Ontologia.getInstance().getShortName(properties.get(i)), Ontologia.getInstance().getShortName(values.get(i)));
+                else
+                    Ontologia.getInstance().createOntProperty(llamante, Ontologia.getInstance().getShortName(properties.get(i)), Ontologia.getInstance().getShortName(values.get(i)));
+            }
         }
-        
+
     }
 
     public MenuContextualInstancia(String nombreLlamante) {
@@ -58,9 +63,9 @@ public class MenuContextualInstancia extends JPopupMenu {
 
             public void actionPerformed(ActionEvent ae) {
                 //Abrir panel para la elecion de clase destino
-                PanelArbolSubclases panel = new PanelArbolSubclases(Ontologia.getInstance(), "Imagen", getPadre());
-                panel.setSize(600, 600);
                 javax.swing.JFrame window = new javax.swing.JFrame("");
+                PanelArbolSubclases panel = new PanelArbolSubclases(Ontologia.getInstance(), "Imagen", getPadre(), window);
+                panel.setSize(600, 600);
                 window.getContentPane().add(panel);
                 window.pack();
                 window.setVisible(true);
