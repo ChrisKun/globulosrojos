@@ -102,7 +102,8 @@ public class PanelArbolClasesInstancias extends JPanel implements TreeSelectionL
                     }
                     else //Si se ha hecho click dereco...
                         if (selRow != -1 && e.isPopupTrigger())
-                        {//TODO Puede que esto de error si hay una instancia que se llama igual que una clase
+                        {
+                            Ontologia.setGuardado(false);
                             String nombreSeleccionado = selPath.getLastPathComponent().toString();
                             if(Ontologia.getInstance().existsClass(nombreSeleccion))
                                 menuContextual = MenuContextual.getPopupMenu(MenuContextual.caller.clase, nombreSeleccionado);

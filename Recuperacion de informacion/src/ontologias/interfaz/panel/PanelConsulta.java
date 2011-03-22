@@ -154,7 +154,6 @@ public class PanelConsulta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 

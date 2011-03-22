@@ -72,7 +72,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(138, 206, 158));
@@ -112,7 +112,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        botonM.setText("M");
+        botonM.setIcon(new javax.swing.ImageIcon("/home/markel/NetBeansProjects/Recuperacion de informacion/img/save.png")); // NOI18N
         botonM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMActionPerformed(evt);
@@ -140,26 +140,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(54, 54, 54)
                 .addComponent(botonPreguntas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonModificarOnt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(33, 33, 33)
                 .addComponent(botonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(409, Short.MAX_VALUE)
+                .addComponent(botonM, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonM)
-                    .addComponent(botonModificarOnt)
                     .addComponent(botonSiguiente)
                     .addComponent(botonAnterior)
+                    .addComponent(botonModificarOnt)
                     .addComponent(botonPreguntas))
+                .addGap(70, 70, 70)
+                .addComponent(botonM)
                 .addContainerGap())
         );
 
@@ -219,12 +222,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSiguienteActionPerformed
 
     private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
-        javax.swing.JFrame window = new javax.swing.JFrame(Ontologia.getMainOnto().getURL());
-        PanelArbolSubclases subclases = new PanelArbolSubclases(Ontologia.getInstance(), "Noticia");
-        window.getContentPane().add(subclases);
-        window.pack();
-        window.setSize(300, 600);
-        window.setVisible(true);
+        if(!Ontologia.getGuardado())
+            if(JOptionPane.showConfirmDialog(this, "¿Desea guardar la ontologia?","Guardar",JOptionPane.YES_NO_OPTION) == 0)
+            {
+                Ontologia.getInstance().save("files/Ontologia.owl");
+                Ontologia.setGuardado(true);
+            }
     }//GEN-LAST:event_botonMActionPerformed
 
     private void botonModificarOntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarOntActionPerformed
