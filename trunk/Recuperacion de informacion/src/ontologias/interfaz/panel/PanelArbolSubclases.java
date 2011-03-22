@@ -4,6 +4,7 @@ import es.ucm.fdi.gaia.ontobridge.OntoBridge;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
@@ -107,6 +108,7 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
 
         scrPnl = new JScrollPane(ontologyTree);
         scrPnl.setViewportView(ontologyTree);
+        scrPnl.setPreferredSize(new Dimension(300, 500));
 
         setLayout(new BorderLayout());
         add(scrPnl, BorderLayout.CENTER);
