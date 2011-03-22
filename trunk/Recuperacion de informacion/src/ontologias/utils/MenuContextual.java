@@ -26,10 +26,6 @@ public class MenuContextual {
         {
             return new MenuContextualInstancia(nombreLlamante);
         }
-        else if(llamante == caller.propiedad)
-        {
-            return new menuContextualPropiedad();
-        }
         return null;
     }
 }
@@ -56,35 +52,11 @@ class menuContextualClase extends JPopupMenu {
 
             public void actionPerformed(ActionEvent ae) {
                 Ontologia.getInstance().delete(llamante);
+                Ontologia.setGuardado(false);
             }
         });
         this.add(item1);
         this.addSeparator();
-        this.add(item2);
-        this.pack();
-    }
-}
-
-
-
-class menuContextualPropiedad extends JPopupMenu{
-
-    public menuContextualPropiedad() {
-        JMenuItem item1 = new JMenuItem("Kaixo");
-        JMenuItem item2 = new JMenuItem("Agur");
-        item1.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent ae) {
-                System.out.println("pulsado Kaixo");
-            }
-        });
-        item1.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent ae) {
-                System.out.println("pulsado Agur");
-            }
-        });
-        this.add(item1);
         this.add(item2);
         this.pack();
     }

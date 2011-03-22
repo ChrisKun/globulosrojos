@@ -13,12 +13,14 @@ public class Ontologia {
     private static OntoBridge ob;
     private static OntologyDocument mainOnto;
     private static ArrayList<OntologyDocument> subOntologies;
+    private static boolean guardado;
 
     public static OntoBridge getInstance(){
         if(ob == null)
         {
             ob = new OntoBridge();
             initializeOntology();
+            guardado = true;
         }
         return ob;
     }
@@ -32,6 +34,14 @@ public class Ontologia {
 
     public static OntologyDocument getMainOnto() {
         return mainOnto;
+    }
+
+    public static void setGuardado(boolean b) {
+        guardado = b;
+    }
+
+    public static boolean getGuardado() {
+        return guardado;
     }
 
 }

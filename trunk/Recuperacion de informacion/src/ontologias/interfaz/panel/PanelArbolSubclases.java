@@ -99,6 +99,7 @@ public class PanelArbolSubclases extends JPanel implements TreeSelectionListener
                     //selectedConcept = selPath.toString();
                     nombreSeleccion = Ontologia.getInstance().getShortName(selPath.getLastPathComponent().toString());
                     padre.cambiarClaseAInstancia(nombreSeleccion);
+                    Ontologia.setGuardado(false);
                     ventana.dispose();
                 }
             }

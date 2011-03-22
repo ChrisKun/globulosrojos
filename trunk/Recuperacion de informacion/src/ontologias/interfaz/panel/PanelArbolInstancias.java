@@ -2,7 +2,6 @@ package ontologias.interfaz.panel;
 
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
@@ -12,7 +11,6 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 
 import java.awt.*;
 
-import es.ucm.fdi.gaia.ontobridge.OntoBridge;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 

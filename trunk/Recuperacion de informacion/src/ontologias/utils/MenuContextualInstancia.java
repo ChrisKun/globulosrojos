@@ -57,6 +57,7 @@ public class MenuContextualInstancia extends JPopupMenu {
 
             public void actionPerformed(ActionEvent ae) {
                 Ontologia.getInstance().delete(llamante);
+                Ontologia.setGuardado(false);
             }
         });
         item3.addActionListener(new ActionListener() {
