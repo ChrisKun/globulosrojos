@@ -246,6 +246,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void botonPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPreguntasActionPerformed
         PanelConsulta p = new PanelConsulta();
+        p.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         p.pack();
         p.setSize(800, 600);
         p.setVisible(true);

@@ -170,11 +170,12 @@ public class PanelConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
+//        ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias(((JButton)evt.getSource()).getText());
+          ((PanelConsulta)((Component)evt.getSource()).getParent().getParent().getParent().getParent().getParent()).actualizaPanelInstancias("Banco");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        //System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     public void actualizaPanelInstancias(String consulta) {
