@@ -653,11 +653,11 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >dr_zenit_01122010.jpg_lite4.jpg</URLFoto>
   </Imagen>
-  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Alfredo_Pérez_Rubalcaba"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jplonas261110.JPG_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jplonas261110.JPG_lite4.jpg</URLFoto>
   </Imagen>
+  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Alfredo_Pérez_Rubalcaba"/>
   <Baloncestista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Marc_Gasol"/>
   <Equipo rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Real_Madrid"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpciutadans281110.jpg_lite4.jpg">
@@ -750,10 +750,11 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1149935_tn.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo2-255x255x80.jpg">
+  <NoticiaEconomia rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo2-255x255x80.jpg">
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oficinaempleo2-255x255x80.jpg</URLFoto>
-  </Imagen>
+    >oficinaempleo2-255x255x80.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaEconomia>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#joseblanco-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >joseblanco-255x255x80.jpg</URLFoto>
@@ -971,10 +972,11 @@
   <Tenista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Thomas_Berdych"/>
   <Pais rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Congo"/>
   <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Esperanza_Aguirre"/>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo2-1-255x255x80.jpg">
+  <NoticiaEconomia rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#oficinaempleo2-1-255x255x80.jpg">
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oficinaempleo2-1-255x255x80.jpg</URLFoto>
-  </Imagen>
+    >oficinaempleo2-1-255x255x80.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaEconomia>
   <Futbolista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Seydu_Keita"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#apple.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1208,6 +1210,9 @@
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jpmasherrera011210.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jpmasherrera011210.jpg_lite4.jpg</URLFoto>
+    <Contiene>
+      <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Artur_Mas"/>
+    </Contiene>
   </Imagen>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#_1156577_tn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1501,6 +1506,7 @@
     >scanner.jpg_lite4.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#dr_sergio_01122010.jpg_lite4.jpg">
+    <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Sergio_Ramos"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >dr_sergio_01122010.jpg_lite4.jpg</URLFoto>
   </Imagen>
@@ -1624,6 +1630,7 @@
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#repsol-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >repsol-255x255x80.jpg</URLFoto>
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
   </Imagen>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#_1291071012037mundodn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1824,6 +1831,7 @@
     >bolsasube255x208-1-255x255x80.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#panoramicanoche-255x255x80.gif">
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#EEUU"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >panoramicanoche-255x255x80.gif</URLFoto>
   </Imagen>
@@ -1861,7 +1869,6 @@
     <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
     <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#José_Montilla"/>
   </NoticiaPolitica>
-  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Artur_Mas"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#cajamadrid-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >cajamadrid-255x255x80.jpg</URLFoto>
@@ -1951,11 +1958,11 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1291017122694guardiodn.jpg</URLFoto>
   </Imagen>
-  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Francisco_Camps"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mas_montilla.jpg_lite8.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >mas_montilla.jpg_lite8.jpg</URLFoto>
   </Imagen>
+  <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Francisco_Camps"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#mmsuu221110.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >mmsuu221110.jpg_lite4.jpg</URLFoto>
@@ -2023,10 +2030,10 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1169162_tn.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#florentino-255x255x80-255x255x80.jpg">
+  <NoticiaEconomia rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#florentino-255x255x80-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >florentino-255x255x80-255x255x80.jpg</URLFoto>
-  </Imagen>
+    >florentino-255x255x80-255x255x80.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaEconomia>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#abdefensora241110.jpg_lite5.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >abdefensora241110.jpg_lite5.jpg</URLFoto>
@@ -2163,6 +2170,7 @@
     >_1176259_tn.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#rr_nadal2_27112010.JPG_lite4.jpg">
+    <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Rafa_Nadal"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >rr_nadal2_27112010.JPG_lite4.jpg</URLFoto>
   </Imagen>
@@ -2198,10 +2206,11 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1291153764247martellydn.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdmercader171110.jpg_lite4.jpg">
+  <NoticiaInternacional rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jdmercader171110.jpg_lite4.jpg">
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#EEUU"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >jdmercader171110.jpg_lite4.jpg</URLFoto>
-  </Imagen>
+    >jdmercader171110.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaInternacional>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#_1150539_tn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1150539_tn.jpg</URLFoto>
@@ -2482,10 +2491,10 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jppuig_cercos301110.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Yeonpyeong1_JR28111033.jpg">
+  <NoticiaInternacional rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Yeonpyeong1_JR28111033.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Yeonpyeong1_JR28111033.jpg</URLFoto>
-  </Imagen>
+    >Yeonpyeong1_JR28111033.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaInternacional>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#_1290872686110dublindn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1290872686110dublindn.jpg</URLFoto>
@@ -2583,14 +2592,15 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1290937271390corea-del-surdn.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ibex-255x255x80.gif">
+  <NoticiaEconomia rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#ibex-255x255x80.gif">
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ibex-255x255x80.gif</URLFoto>
-  </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#apretarsecinturon255x208-255x255x80.jpg">
+    >ibex-255x255x80.gif^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaEconomia>
+  <NoticiaEconomia rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#apretarsecinturon255x208-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >apretarsecinturon255x208-255x255x80.jpg</URLFoto>
-  </Imagen>
+    >apretarsecinturon255x208-255x255x80.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaEconomia>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#_1290807071259CARCELNEGRAdn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1290807071259CARCELNEGRAdn.jpg</URLFoto>
@@ -2899,10 +2909,13 @@
     >_1290607471167GARZONdn.jpg</URLFoto>
   </Imagen>
   <Futbolista rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Mezut_Ozil"/>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lglluch.jpg_lite4.jpg">
+  <NoticiaPolitica rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#lglluch.jpg_lite4.jpg">
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
+    <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Alfredo_Pérez_Rubalcaba"/>
+    <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#José_Montilla"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >lglluch.jpg_lite4.jpg</URLFoto>
-  </Imagen>
+    >lglluch.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaPolitica>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#brokers3-255x255x80.gif">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >brokers3-255x255x80.gif</URLFoto>
@@ -3240,10 +3253,11 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1166205_tn.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nadal1_JR281110.jpg_lite4.jpg">
+  <NoticiaDeportes rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#nadal1_JR281110.jpg_lite4.jpg">
+    <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Rafa_Nadal"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >nadal1_JR281110.jpg_lite4.jpg</URLFoto>
-  </Imagen>
+    >nadal1_JR281110.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+  </NoticiaDeportes>
   <Pais rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Australia"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#jparturmas1911110.jpg_lite8.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3481,6 +3495,7 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jppatxieguiguren101110.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
     <Contiene rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#Patxi_López"/>
+    <TomadaEn rdf:resource="http://www.owl-ontologies.com/Ontology1298036263.owl#España"/>
   </NoticiaPolitica>
   <Politico rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#Cristóbal_Montoro_Romero"/>
   <Imagen rdf:about="http://www.owl-ontologies.com/Ontology1298036263.owl#gasnaturalgabarrosalvador-255x255x80.jpg">
