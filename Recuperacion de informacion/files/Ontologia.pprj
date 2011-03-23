@@ -1,4 +1,4 @@
-; Fri Mar 18 15:09:22 CET 2011
+; Wed Mar 23 01:50:00 CET 2011
 ; 
 ;+ (version "3.3.1")
 ;+ (build "Build 430")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Ontologia_ProjectKB_Instance_51]
-		[Ontologia_ProjectKB_Instance_52]
-		[Ontologia_ProjectKB_Instance_53]
-		[Ontologia_ProjectKB_Instance_54]
-		[Ontologia_ProjectKB_Instance_55]))
+		[Ontologia_ProjectKB_Instance_877]
+		[Ontologia_ProjectKB_Instance_878]
+		[Ontologia_ProjectKB_Instance_879]
+		[Ontologia_ProjectKB_Instance_880]
+		[Ontologia_ProjectKB_Instance_881]))
 
 ([CLSES_TAB] of  Widget
 
@@ -940,11 +940,6 @@
 
 ([KB_484936_Instance_3] of  Property_List
 )
-
-([KB_530130_Instance_0] of  String
-
-	(name "owl_file_name")
-	(string_value "Ontologia.owl"))
 
 ([KB_564539_Instance_0] of  Widget
 
@@ -3257,6 +3252,11 @@
 	(name "owl:Ontology")
 	(property_list [XY_Instance_195])
 	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
+([KB_768578_Instance_0] of  String
+
+	(name "owl_file_name")
+	(string_value "Ontologia.owl"))
 
 ([KB_865583_Instance_0] of  Widget
 
@@ -7179,7 +7179,7 @@
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_12])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
 
 ([Ontologia_ProjectKB_Instance_12] of  Property_List
 )
@@ -7188,7 +7188,7 @@
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_14])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
 
 ([Ontologia_ProjectKB_Instance_14] of  Property_List
 )
@@ -7263,7 +7263,7 @@
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_30])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
 
 ([Ontologia_ProjectKB_Instance_3] of  Widget
 
@@ -7278,7 +7278,7 @@
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_32])
-	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
 
 ([Ontologia_ProjectKB_Instance_32] of  Property_List
 )
@@ -7368,35 +7368,10 @@
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_6])
-	(widget_class_name "ezpal.EZPalTab"))
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
 
 ([Ontologia_ProjectKB_Instance_50] of  Property_List
 )
-
-([Ontologia_ProjectKB_Instance_51] of  String
-
-	(name "owl:Thing")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Instance_52] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([Ontologia_ProjectKB_Instance_53] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([Ontologia_ProjectKB_Instance_54] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Instance_55] of  String
-
-	(name "owl:Class")
-	(string_value "%3ANAME"))
 
 ([Ontologia_ProjectKB_Instance_6] of  Property_List
 )
@@ -7405,16 +7380,41 @@
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_8])
-	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
 
 ([Ontologia_ProjectKB_Instance_8] of  Property_List
 )
+
+([Ontologia_ProjectKB_Instance_877] of  String
+
+	(name "owl:Thing")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Instance_878] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([Ontologia_ProjectKB_Instance_879] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([Ontologia_ProjectKB_Instance_880] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Instance_881] of  String
+
+	(name "owl:Class")
+	(string_value "%3ANAME"))
 
 ([Ontologia_ProjectKB_Instance_9] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Instance_10])
-	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+	(widget_class_name "ezpal.EZPalTab"))
 
 ([OWL_ProjectKB_Instance_3] of  Integer
 
@@ -7712,7 +7712,7 @@
 		[OWL_ProjectKB_Instance_3]
 		[KB_444675_Instance_0]
 		[KB_632156_Instance_0]
-		[KB_530130_Instance_0]))
+		[KB_768578_Instance_0]))
 
 ([STANDARD_CLASS_FORM_WIDGET] of  Widget
 
