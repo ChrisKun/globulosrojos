@@ -11,12 +11,12 @@
   <owl:Class rdf:ID="Persona">
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="Pais"/>
-        </owl:someValuesFrom>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="OriginarioDe"/>
         </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="Pais"/>
+        </owl:someValuesFrom>
       </owl:Restriction>
     </owl:equivalentClass>
     <owl:disjointWith>
@@ -53,10 +53,10 @@
             </owl:hasValue>
           </owl:Restriction>
           <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:ID="Pertenece"/>
             </owl:onProperty>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
@@ -83,16 +83,27 @@
     </rdfs:subClassOf>
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="Contiene"/>
-        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class rdf:ID="Banco"/>
         </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Contiene"/>
+        </owl:onProperty>
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#NoticiaTecnologia">
+    <rdfs:subClassOf rdf:resource="#Imagen"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="EmpresaDeTecnologia"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
     <owl:disjointWith>
       <owl:Class rdf:about="#NoticiaOcio"/>
     </owl:disjointWith>
@@ -106,17 +117,6 @@
     <owl:disjointWith>
       <owl:Class rdf:about="#NoticiaInternacional"/>
     </owl:disjointWith>
-    <rdfs:subClassOf rdf:resource="#Imagen"/>
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="EmpresaDeTecnologia"/>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#Contiene"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#NoticiaInternacional">
     <owl:disjointWith>
@@ -136,9 +136,6 @@
           <owl:Class>
             <owl:complementOf>
               <owl:Restriction>
-                <owl:onProperty>
-                  <owl:ObjectProperty rdf:ID="TomadaEn"/>
-                </owl:onProperty>
                 <owl:hasValue>
                   <Pais rdf:ID="España">
                     <EstaEn>
@@ -146,16 +143,19 @@
                     </EstaEn>
                   </Pais>
                 </owl:hasValue>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:ID="TomadaEn"/>
+                </owl:onProperty>
               </owl:Restriction>
             </owl:complementOf>
           </owl:Class>
           <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class rdf:about="#Pais"/>
-            </owl:someValuesFrom>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="#TomadaEn"/>
             </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Pais"/>
+            </owl:someValuesFrom>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
@@ -177,6 +177,19 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Politico">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Persona"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="Milita"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#PartidoPolitico"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
     <owl:disjointWith>
       <owl:Class rdf:about="#Deportista"/>
     </owl:disjointWith>
@@ -186,19 +199,6 @@
     <owl:disjointWith>
       <owl:Class rdf:ID="PresidenteFutbol"/>
     </owl:disjointWith>
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Persona"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="#PartidoPolitico"/>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:ID="Milita"/>
-            </owl:onProperty>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#Pais">
     <owl:equivalentClass>
@@ -250,10 +250,10 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="#Persona"/>
           <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:ID="Entrena"/>
             </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
@@ -274,40 +274,55 @@
   <owl:Class rdf:ID="ArtistaMusical">
     <owl:equivalentClass>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#GrupoMusical"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="TocaEn"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#GrupoMusical"/>
       </owl:Restriction>
     </owl:equivalentClass>
     <rdfs:subClassOf rdf:resource="#Persona"/>
   </owl:Class>
   <owl:Class rdf:about="#Deportista">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class rdf:about="#Deporte"/>
-            </owl:someValuesFrom>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
-            </owl:onProperty>
-          </owl:Restriction>
-          <owl:Class rdf:about="#Persona"/>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
     <owl:disjointWith rdf:resource="#Politico"/>
     <owl:disjointWith rdf:resource="#Entrenador"/>
     <owl:disjointWith>
       <owl:Class rdf:about="#PresidenteFutbol"/>
     </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Deporte"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Persona"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:ID="Pelicula">
     <rdfs:subClassOf rdf:resource="#ProductoEntretenimiento"/>
   </owl:Class>
   <owl:Class rdf:about="#Tenista">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Deportista"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <Deporte rdf:ID="Tenis"/>
+            </owl:hasValue>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
     <owl:disjointWith>
       <owl:Class rdf:about="#Futbolista"/>
     </owl:disjointWith>
@@ -315,29 +330,14 @@
       <owl:Class rdf:about="#Baloncestista"/>
     </owl:disjointWith>
     <owl:disjointWith rdf:resource="#Piloto"/>
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Deportista"/>
-          <owl:Restriction>
-            <owl:hasValue>
-              <Deporte rdf:ID="Tenis"/>
-            </owl:hasValue>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
-            </owl:onProperty>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#ProductoElectronico">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#EmpresaDeTecnologia"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="CreadoPor"/>
         </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#EmpresaDeTecnologia"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -351,82 +351,73 @@
         <owl:intersectionOf rdf:parseType="Collection">
           <owl:Class rdf:about="#Persona"/>
           <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:ID="Preside"/>
             </owl:onProperty>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
   </owl:Class>
   <owl:Class rdf:about="#Baloncestista">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Deportista"/>
-          <owl:Restriction>
-            <owl:hasValue>
-              <Deporte rdf:ID="Baloncesto"/>
-            </owl:hasValue>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
-            </owl:onProperty>
-          </owl:Restriction>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="#Pertenece"/>
-            </owl:onProperty>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
     <owl:disjointWith rdf:resource="#Piloto"/>
     <owl:disjointWith>
       <owl:Class rdf:about="#Futbolista"/>
     </owl:disjointWith>
     <owl:disjointWith rdf:resource="#Tenista"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Deporte">
-    <owl:disjointWith rdf:resource="#Persona"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Futbolista">
-    <owl:disjointWith rdf:resource="#Piloto"/>
-    <owl:disjointWith rdf:resource="#Tenista"/>
-    <owl:disjointWith rdf:resource="#Baloncestista"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Deportista"/>
           <owl:Restriction>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="#RealizaAccion"/>
             </owl:onProperty>
             <owl:hasValue>
-              <Deporte rdf:ID="Futbol"/>
+              <Deporte rdf:ID="Baloncesto"/>
             </owl:hasValue>
           </owl:Restriction>
-          <owl:Class rdf:about="#Deportista"/>
           <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="#Equipo"/>
             <owl:onProperty>
               <owl:ObjectProperty rdf:about="#Pertenece"/>
             </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
   </owl:Class>
-  <owl:Class rdf:about="#NoticiaOcio">
-    <rdfs:subClassOf rdf:resource="#Imagen"/>
+  <owl:Class rdf:about="#Deporte">
+    <owl:disjointWith rdf:resource="#Persona"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Futbolista">
     <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#ProductoEntretenimiento"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#Contiene"/>
-        </owl:onProperty>
-      </owl:Restriction>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:hasValue>
+              <Deporte rdf:ID="Futbol"/>
+            </owl:hasValue>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#RealizaAccion"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Deportista"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#Pertenece"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Equipo"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
     </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="#Piloto"/>
+    <owl:disjointWith rdf:resource="#Tenista"/>
+    <owl:disjointWith rdf:resource="#Baloncestista"/>
+  </owl:Class>
+  <owl:Class rdf:about="#NoticiaOcio">
     <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
     <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
     <owl:disjointWith rdf:resource="#NoticiaPolitica"/>
@@ -434,8 +425,22 @@
     <owl:disjointWith>
       <owl:Class rdf:about="#NoticiaDeportes"/>
     </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Contiene"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#ProductoEntretenimiento"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Imagen"/>
   </owl:Class>
   <owl:Class rdf:about="#NoticiaDeportes">
+    <owl:disjointWith rdf:resource="#NoticiaOcio"/>
+    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
+    <owl:disjointWith rdf:resource="#NoticiaPolitica"/>
+    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
+    <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -445,19 +450,13 @@
       </owl:Restriction>
     </owl:equivalentClass>
     <rdfs:subClassOf rdf:resource="#Imagen"/>
-    <owl:disjointWith rdf:resource="#NoticiaOcio"/>
-    <owl:disjointWith rdf:resource="#NoticiaEconomia"/>
-    <owl:disjointWith rdf:resource="#NoticiaPolitica"/>
-    <owl:disjointWith rdf:resource="#NoticiaTecnologia"/>
-    <owl:disjointWith rdf:resource="#NoticiaInternacional"/>
   </owl:Class>
   <owl:Class rdf:about="#Movil">
-    <rdfs:subClassOf rdf:resource="#ProductoElectronico"/>
     <owl:disjointWith rdf:resource="#Software"/>
     <owl:disjointWith rdf:resource="#Ordenador"/>
+    <rdfs:subClassOf rdf:resource="#ProductoElectronico"/>
   </owl:Class>
   <owl:ObjectProperty rdf:about="#Pertenece">
-    <rdfs:range rdf:resource="#Equipo"/>
     <rdfs:domain>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -467,6 +466,7 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
+    <rdfs:range rdf:resource="#Equipo"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#OriginarioDe">
     <rdfs:range rdf:resource="#Pais"/>
@@ -484,16 +484,16 @@
     </rdfs:range>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#EstaEn">
-    <rdfs:domain rdf:resource="#Pais"/>
     <rdfs:range rdf:resource="#Continente"/>
+    <rdfs:domain rdf:resource="#Pais"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#TocaEn">
     <rdfs:range rdf:resource="#GrupoMusical"/>
     <rdfs:domain rdf:resource="#Persona"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="ApareceEn">
-    <rdfs:domain rdf:resource="#Persona"/>
     <rdfs:range rdf:resource="#Imagen"/>
+    <rdfs:domain rdf:resource="#Persona"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#Preside">
     <rdfs:range rdf:resource="#Equipo"/>
@@ -516,21 +516,12 @@
     <rdfs:range rdf:resource="#EmpresaDeTecnologia"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#Contiene">
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Persona"/>
-          <owl:Class rdf:about="#ProductoElectronico"/>
-          <owl:Class rdf:about="#EmpresaDeTecnologia"/>
-          <owl:Class rdf:about="#ProductoEntretenimiento"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
+    <rdfs:range rdf:resource="#Persona"/>
     <rdfs:domain rdf:resource="#Imagen"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="URLFoto">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Imagen"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <Imagen rdf:ID="dr_madrid_01122010.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -723,12 +714,12 @@
     >_1174672_tn.jpg</URLFoto>
   </Imagen>
   <ArtistaMusical rdf:ID="George_Harrison">
-    <OriginarioDe>
-      <Pais rdf:ID="Inglaterra"/>
-    </OriginarioDe>
     <TocaEn>
       <GrupoMusical rdf:ID="The_Beatles"/>
     </TocaEn>
+    <OriginarioDe>
+      <Pais rdf:ID="Inglaterra"/>
+    </OriginarioDe>
   </ArtistaMusical>
   <Imagen rdf:ID="jdlisboa101110zp.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -793,8 +784,6 @@
     >abperra181110.jpg_lite4.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:ID="trinidad_hillary1_JR20111033.jpg">
-    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >trinidad_hillary1_JR20111033.jpg</URLFoto>
     <TomadaEn>
       <Pais rdf:ID="EEUU"/>
     </TomadaEn>
@@ -804,6 +793,8 @@
     <Contiene>
       <Politico rdf:ID="Hillary_Clinton"/>
     </Contiene>
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trinidad_hillary1_JR20111033.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:ID="_400euros-5-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -951,11 +942,11 @@
     >jpmontilla_zp_felipe251110.jpg_lite8.jpg</URLFoto>
   </Imagen>
   <Baloncestista rdf:ID="Pau_Gasol">
-    <OriginarioDe rdf:resource="#España"/>
-    <RealizaAccion rdf:resource="#Baloncesto"/>
     <Pertenece>
       <Equipo rdf:ID="L.A.Lakers"/>
     </Pertenece>
+    <RealizaAccion rdf:resource="#Baloncesto"/>
+    <OriginarioDe rdf:resource="#España"/>
   </Baloncestista>
   <Imagen rdf:ID="bolsako-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1086,9 +1077,9 @@
   <Pais rdf:ID="Congo"/>
   <Politico rdf:ID="Esperanza_Aguirre"/>
   <NoticiaEconomia rdf:ID="oficinaempleo2-1-255x255x80.jpg">
+    <TomadaEn rdf:resource="#España"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >oficinaempleo2-1-255x255x80.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
-    <TomadaEn rdf:resource="#España"/>
   </NoticiaEconomia>
   <Futbolista rdf:ID="Seydu_Keita"/>
   <Imagen rdf:ID="apple.jpg_lite4.jpg">
@@ -1168,13 +1159,13 @@
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jpherrera281110.jpg_lite4.jpg</URLFoto>
   </Imagen>
-  <Imagen rdf:ID="abhaiti281110.jpg_lite4.jpg">
-    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >abhaiti281110.jpg_lite4.jpg</URLFoto>
-  </Imagen>
   <Imagen rdf:ID="_1291089055193egiptodn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1291089055193egiptodn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="abhaiti281110.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abhaiti281110.jpg_lite4.jpg</URLFoto>
   </Imagen>
   <Imagen rdf:ID="_1171560_tn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1754,9 +1745,9 @@
   </Imagen>
   <Pais rdf:ID="Irán"/>
   <Imagen rdf:ID="repsol-255x255x80.jpg">
+    <TomadaEn rdf:resource="#España"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >repsol-255x255x80.jpg</URLFoto>
-    <TomadaEn rdf:resource="#España"/>
   </Imagen>
   <Imagen rdf:ID="_1291071012037mundodn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1859,8 +1850,8 @@
   </Imagen>
   <Politico rdf:ID="Eduardo_Madina"/>
   <Politico rdf:ID="Zapatero">
-    <Milita rdf:resource="#PSOE"/>
     <OriginarioDe rdf:resource="#España"/>
+    <Milita rdf:resource="#PSOE"/>
   </Politico>
   <Imagen rdf:ID="rr_ferrer_23112010.JPG_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -2376,6 +2367,7 @@
     >zapaterodavos255x208-255x255x80.jpg</URLFoto>
   </Imagen>
   <Entrenador rdf:ID="Pep_Guardiola"/>
+  <owl:AllDifferent/>
   <Imagen rdf:ID="_1169195_tn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1169195_tn.jpg</URLFoto>
@@ -2506,13 +2498,13 @@
     >absatelite231110.jpg_lite5.jpg</URLFoto>
   </Imagen>
   <Pais rdf:ID="Cuba"/>
-  <Imagen rdf:ID="facebook_skype.jpg_lite4.jpg">
-    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >facebook_skype.jpg_lite4.jpg</URLFoto>
-  </Imagen>
   <Imagen rdf:ID="_1153252_tn.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >_1153252_tn.jpg</URLFoto>
+  </Imagen>
+  <Imagen rdf:ID="facebook_skype.jpg_lite4.jpg">
+    <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >facebook_skype.jpg_lite4.jpg</URLFoto>
   </Imagen>
   <Futbolista rdf:ID="Gonzalo_Higuaín"/>
   <Imagen rdf:ID="jdgeorgia251110.jpg_lite4.jpg">
@@ -3012,7 +3004,6 @@
     >jpmass161110.jpg_lite8.jpg</URLFoto>
   </Imagen>
   <NoticiaTecnologia rdf:ID="nueva-imagen-255x255x80.jpg"/>
-  <owl:AllDifferent/>
   <Futbolista rdf:ID="Lionel_Messi"/>
   <Pais rdf:ID="Venezuela"/>
   <Imagen rdf:ID="_824129_tn.jpg">
@@ -3024,8 +3015,8 @@
     >cracbursatil255x208-6-255x255x80.jpg</URLFoto>
   </Imagen>
   <Piloto rdf:ID="Fernando_Alonso">
-    <RealizaAccion rdf:resource="#Formula1"/>
     <Pertenece rdf:resource="#Ferrari"/>
+    <RealizaAccion rdf:resource="#Formula1"/>
     <OriginarioDe rdf:resource="#España"/>
   </Piloto>
   <Imagen rdf:ID="rr_windows_11092010.JPG_lite5.jpg">
@@ -3046,11 +3037,11 @@
   </Imagen>
   <Futbolista rdf:ID="Mezut_Ozil"/>
   <NoticiaPolitica rdf:ID="lglluch.jpg_lite4.jpg">
-    <Contiene rdf:resource="#José_Montilla"/>
-    <Contiene rdf:resource="#Alfredo_Pérez_Rubalcaba"/>
     <TomadaEn rdf:resource="#España"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >lglluch.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
+    <Contiene rdf:resource="#José_Montilla"/>
+    <Contiene rdf:resource="#Alfredo_Pérez_Rubalcaba"/>
   </NoticiaPolitica>
   <Imagen rdf:ID="brokers3-255x255x80.gif">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3382,8 +3373,8 @@
     >jf_airberlin_181110.jpg_lite4.jpg</URLFoto>
   </Imagen>
   <ArtistaMusical rdf:ID="Paul_McCartney">
-    <OriginarioDe rdf:resource="#Inglaterra"/>
     <TocaEn rdf:resource="#The_Beatles"/>
+    <OriginarioDe rdf:resource="#Inglaterra"/>
   </ArtistaMusical>
   <Imagen rdf:ID="jparturmas261110.jpg_lite4.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3406,9 +3397,9 @@
     >_1166205_tn.jpg</URLFoto>
   </Imagen>
   <NoticiaDeportes rdf:ID="nadal1_JR281110.jpg_lite4.jpg">
+    <Contiene rdf:resource="#Rafa_Nadal"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >nadal1_JR281110.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
-    <Contiene rdf:resource="#Rafa_Nadal"/>
   </NoticiaDeportes>
   <Pais rdf:ID="Australia"/>
   <Imagen rdf:ID="jparturmas1911110.jpg_lite8.jpg">
@@ -3572,9 +3563,9 @@
   </Imagen>
   <Futbolista rdf:ID="José_Manuel_Pinto"/>
   <Futbolista rdf:ID="Iker_Casillas">
-    <RealizaAccion rdf:resource="#Futbol"/>
-    <Pertenece rdf:resource="#Real_Madrid"/>
     <OriginarioDe rdf:resource="#España"/>
+    <Pertenece rdf:resource="#Real_Madrid"/>
+    <RealizaAccion rdf:resource="#Futbol"/>
   </Futbolista>
   <Imagen rdf:ID="piso--200x160-2-255x255x80.jpg">
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3647,9 +3638,9 @@
   </Imagen>
   <NoticiaPolitica rdf:ID="jppatxieguiguren101110.jpg_lite4.jpg">
     <TomadaEn rdf:resource="#España"/>
+    <Contiene rdf:resource="#Patxi_López"/>
     <URLFoto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >jppatxieguiguren101110.jpg_lite4.jpg^^http://www.w3.org/2001/XMLSchema#string</URLFoto>
-    <Contiene rdf:resource="#Patxi_López"/>
   </NoticiaPolitica>
   <Politico rdf:ID="Cristóbal_Montoro_Romero"/>
   <Imagen rdf:ID="gasnaturalgabarrosalvador-255x255x80.jpg">
