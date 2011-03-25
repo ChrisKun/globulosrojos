@@ -1,2 +1,0 @@
-teamsSoccerbots.GoToBall
-teamsSoccerbots.BasicTeam
