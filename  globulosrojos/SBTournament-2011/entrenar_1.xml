@@ -1,0 +1,450 @@
+<caso id='1_0' papel='defensa' octanteJ='1' octanteP='3' campo='1' accion='ir(-0.18702340129328276,0.2720594567623539)'>
+<compis>
+<compi o='3'/>
+<compi o='5'/>
+<compi o='5'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_1' papel='defensa' octanteJ='1' octanteP='3' campo='1' accion='ir(-0.1690004167453769,0.2618442949016876)'>
+<compis>
+<compi o='3'/>
+<compi o='5'/>
+<compi o='5'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_2' papel='defensa' octanteJ='1' octanteP='5' campo='1' accion='ir(-0.38442898938024606,-0.21241847510187517)'>
+<compis>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_3' papel='defensa' octanteJ='1' octanteP='5' campo='1' accion='ir(-0.3966011266994012,-0.22567890771486449)'>
+<compis>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_4' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(0.03016689011303264,0.005856998588121984)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_5' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(7.168226211636819E-4,-0.0022548676394864853)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_6' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(0.0279032810202412,0.15941746973004925)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_7' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(7.168226211639039E-4,0.1473051502263823)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_8' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(-0.15175843197715966,0.08993049505354489)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_9' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(-0.17241047301193224,0.06690187207146533)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_10' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(-0.12297110599428662,0.17946194123209755)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='1'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_11' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(-0.1487139247197906,0.17173191718160047)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='1'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_12' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(-0.6968658542949767,0.21262933942260628)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='7'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_13' papel='defensa' octanteJ='1' octanteP='4' campo='1' accion='ir(-0.7112562016793256,0.186306005626186)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='7'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_14' papel='defensa' octanteJ='1' octanteP='3' campo='1' accion='ir(-0.06295433549150509,-0.6599590055911007)'>
+<compis>
+<compi o='5'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='4'/>
+</compis>
+<contrarios>
+<contrario o='5'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_15' papel='defensa' octanteJ='1' octanteP='3' campo='1' accion='ir(-0.06295433549150509,-0.6599590055911007)'>
+<compis>
+<compi o='5'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='4'/>
+</compis>
+<contrarios>
+<contrario o='5'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_16' papel='defensa' octanteJ='1' octanteP='4' campo='1' accion='ir(-0.06295433549150509,-0.6601302655875315)'>
+<compis>
+<compi o='5'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='4'/>
+</compis>
+<contrarios>
+<contrario o='5'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_17' papel='defensa' octanteJ='1' octanteP='4' campo='1' accion='ir(-0.06295433549150509,-0.6601302655875315)'>
+<compis>
+<compi o='5'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='4'/>
+</compis>
+<contrarios>
+<contrario o='5'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_18' papel='defensa' octanteJ='0' octanteP='5' campo='1' accion='ir(-0.5484889258011573,-0.539564855772503)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='3'/>
+<compi o='1'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_19' papel='defensa' octanteJ='0' octanteP='5' campo='1' accion='ir(-0.525317465242126,-0.5176242304956431)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='3'/>
+<compi o='1'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_20' papel='defensa' octanteJ='7' octanteP='4' campo='1' accion='ir(-0.8170622157259059,0.0851843297607171)'>
+<compis>
+<compi o='3'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='1'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_21' papel='defensa' octanteJ='7' octanteP='4' campo='1' accion='ir(-0.8125651477517485,0.05552330517228099)'>
+<compis>
+<compi o='3'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='1'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_22' papel='defensa' octanteJ='7' octanteP='4' campo='1' accion='ir(-0.8192793121679123,0.0731946810389027)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_23' papel='defensa' octanteJ='0' octanteP='4' campo='1' accion='ir(-0.846195188936584,0.05994569701092245)'>
+<compis>
+<compi o='4'/>
+<compi o='4'/>
+<compi o='3'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='3'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_24' papel='defensa' octanteJ='0' octanteP='3' campo='1' accion='ir(-0.6964023816961926,0.3417953634540001)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_25' papel='defensa' octanteJ='0' octanteP='3' campo='1' accion='ir(-0.7052146994526375,0.3227602552173466)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_26' papel='defensa' octanteJ='1' octanteP='3' campo='1' accion='ir(0.31500218723490003,-0.006392018864176258)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_27' papel='defensa' octanteJ='1' octanteP='3' campo='1' accion='ir(0.3398290690155077,0.022238017280395844)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_28' papel='defensa' octanteJ='1' octanteP='4' campo='1' accion='ir(0.3150989045695092,-0.20292470899945736)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
+<caso id='1_29' papel='defensa' octanteJ='1' octanteP='4' campo='1' accion='ir(0.34317250632886764,-0.1850084919027269)'>
+<compis>
+<compi o='4'/>
+<compi o='5'/>
+<compi o='4'/>
+<compi o='0'/>
+</compis>
+<contrarios>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='4'/>
+<contrario o='5'/>
+<contrario o='4'/>
+</contrarios>
+</caso>
