@@ -5,7 +5,7 @@ import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
 public class Goalkeeper extends Role {
-	private final double KEEPER_DEFENSE_LINE = -110;
+	private final double KEEPER_DEFENSE_LINE = 0;
 
 	@Override
 	public int configure() {
@@ -23,7 +23,7 @@ public class Goalkeeper extends Role {
 	public int takeStep() {
 		double keeperPosY = calculateIntersection();
 		Vec2 destPos = toEgocentricCoordinates(new Vec2(KEEPER_DEFENSE_LINE, keeperPosY));
-		worldAPI.setSteerHeading(destPos.r);
+		worldAPI.setSteerHeading(destPos.t);
 		worldAPI.setSpeed(1);
 		System.out.println(keeperPosY);
 		return WorldAPI.ROBOT_OK;
