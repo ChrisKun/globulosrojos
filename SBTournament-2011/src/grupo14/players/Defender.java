@@ -1,9 +1,10 @@
 package grupo14.players;
+import grupo14.manager.*;
 
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
-public class Defender  extends Role {
+public class Defender  extends Role{
 
 	@Override
 	public int configure() {
@@ -19,7 +20,8 @@ public class Defender  extends Role {
 
 	@Override
 	public int takeStep() {
-		// TODO Auto-generated method stub
+		MatchState state = Mourinho.matchState;
+		state.accionARealizar();
 		return WorldAPI.ROBOT_OK;
 	}
 }
