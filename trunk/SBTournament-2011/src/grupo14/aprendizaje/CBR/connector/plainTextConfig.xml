@@ -1,0 +1,16 @@
+<TextFileConfiguration>
+	<FilePath>../caseBase/cases.txt</FilePath>
+	<Delimiters>,</Delimiters>
+	<DescriptionClassName>grupo14.aprendizaje.CBR.DescripcionCaso</DescriptionClassName>
+	<DescriptionMappings>
+		<Map>numPlayersEachOctant</Map>
+		<Map>ballPosition</Map>
+		<Map>time</Map>
+		<Map>ourGoals</Map>
+		<Map>theirGoals</Map>	
+	</DescriptionMappings>
+	<SolutionClassName>grupo14.aprendizaje.CBR.SolucionCaso</SolutionClassName>
+	<SolutionMappings>
+		<Map></Map>
+	</SolutionMappings>
+</TextFileConfiguration>
