@@ -5,9 +5,8 @@ import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
 public class Goalkeeper extends Role {
-
 	private final double KEEPER_DEFENSE_LINE = -110;
-	
+
 	@Override
 	public int configure() {
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
@@ -18,7 +17,6 @@ public class Goalkeeper extends Role {
 	@Override
 	public void gameOver() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
