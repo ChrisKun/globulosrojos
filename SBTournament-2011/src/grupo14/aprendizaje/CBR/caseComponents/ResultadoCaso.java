@@ -1,4 +1,4 @@
-package grupo14.aprendizaje.CBR;
+package grupo14.aprendizaje.CBR.caseComponents;
 
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CaseComponent;
