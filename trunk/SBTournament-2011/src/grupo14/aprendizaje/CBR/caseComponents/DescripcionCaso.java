@@ -1,4 +1,6 @@
-package grupo14.aprendizaje.CBR;
+package grupo14.aprendizaje.CBR.caseComponents;
+
+import grupo14.aprendizaje.CBR.OctantsState;
 
 import java.util.ArrayList;
 

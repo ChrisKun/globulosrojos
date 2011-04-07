@@ -1,6 +1,11 @@
 package grupo14.aprendizaje.CBR;
 
+import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
+
 import java.util.Collection;
+
+import grupo14.aprendizaje.CBR.voting.Prediction;
+import grupo14.aprendizaje.CBR.voting.SimilarityWeightedVotingMethod;
 
 import jcolibri.casebase.LinealCaseBase;
 import jcolibri.cbraplications.StandardCBRApplication;
@@ -11,9 +16,12 @@ import jcolibri.cbrcore.CBRQuery;
 import jcolibri.cbrcore.Connector;
 import jcolibri.connector.PlainTextConnector;
 import jcolibri.exception.ExecutionException;
+import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNConfig;
+import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
 import jcolibri.method.retrieve.NNretrieval.similarity.local.Equal;
+import jcolibri.method.retrieve.selection.SelectCases;
 
 public class AprendizajeCBR implements StandardCBRApplication {
 
@@ -64,7 +72,16 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		simConfig.addMapping(theirGoals, new Equal());
 		simConfig.setWeight(theirGoals, 0.7);
 		
-		//TODO Falta ejecutar la consulta
+		//Se recogen los N casos más similares
+		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(caseBase.getCases(), query, simConfig);
+		eval = SelectCases.selectTopKRR(eval, 5);
+
+		//Votacion ponderada
+		SimilarityWeightedVotingMethod votacion = new SimilarityWeightedVotingMethod();
+		Prediction prediccion = votacion.getPredictedClass(eval);
+		
+		//Se supone que aqui tenemos las acciones a realizar
+		prediccion.getClassification();
 	}
 
 	@Override
