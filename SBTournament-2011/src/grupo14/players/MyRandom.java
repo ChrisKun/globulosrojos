@@ -17,8 +17,8 @@ public class MyRandom {
 		return myRandom.nextDouble();
 	}
 	
-	public static double nextDouble(Double max) {
+	public static double nextDouble(double min, double max) {
 		initRandom();
-		return myRandom.nextDouble() * max;
+		return min + myRandom.nextDouble() * (max - min);
 	}
 }

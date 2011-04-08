@@ -26,7 +26,7 @@ public class Goalkeeper extends Role {
 		worldAPI.setSteerHeading(destPos.t);
 		worldAPI.setSpeed(1);
 		System.out.println(keeperPosY);*/
-		Acciones.correrADefensa(worldAPI);
+		Acciones.correrAlAtaque(worldAPI);
 		return WorldAPI.ROBOT_OK;
 	}
 
