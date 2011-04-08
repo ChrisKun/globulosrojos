@@ -21,11 +21,12 @@ public class Goalkeeper extends Role {
 
 	@Override
 	public int takeStep() {
-		double keeperPosY = calculateIntersection();
+		/*double keeperPosY = calculateIntersection();
 		Vec2 destPos = toEgocentricCoordinates(new Vec2(KEEPER_DEFENSE_LINE, keeperPosY));
 		worldAPI.setSteerHeading(destPos.t);
 		worldAPI.setSpeed(1);
-		System.out.println(keeperPosY);
+		System.out.println(keeperPosY);*/
+		Acciones.correrADefensa(worldAPI);
 		return WorldAPI.ROBOT_OK;
 	}
 
