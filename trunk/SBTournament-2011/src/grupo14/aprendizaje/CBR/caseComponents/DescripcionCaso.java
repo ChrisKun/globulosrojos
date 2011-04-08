@@ -32,7 +32,11 @@ public class DescripcionCaso implements CaseComponent{
 	 */
 	private int theirGoals;
 
-
+	
+	public DescripcionCaso()
+	{
+		this.numPlayersEachOctant = new OctantsState();
+	}
 
 	public ArrayList<Integer> getNumPlayersEachOctant() {
 		return numPlayersEachOctant.octants;

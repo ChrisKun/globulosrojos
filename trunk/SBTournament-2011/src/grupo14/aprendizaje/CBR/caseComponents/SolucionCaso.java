@@ -2,6 +2,7 @@ package grupo14.aprendizaje.CBR.caseComponents;
 
 import java.util.ArrayList;
 
+import grupo14.aprendizaje.CBR.TeamActions;
 import grupo14.players.PlayerActions;
 import jcolibri.cbrcore.Attribute;
 import jcolibri.cbrcore.CaseComponent;
@@ -17,7 +18,12 @@ public class SolucionCaso implements ClassificationSolution{
 	/**
 	 * ArrayList que almacena la acción a tomar por los cinco jugadores (por lo tengo el ArrayList tendra 5 posiciones)
 	 */
-	private ArrayList<PlayerActions> playerActions;
+	private TeamActions playerActions;
+	
+	public SolucionCaso()
+	{
+		this.playerActions = new TeamActions();
+	}
 	
 	@Override
 	public Attribute getIdAttribute() {
@@ -30,11 +36,11 @@ public class SolucionCaso implements ClassificationSolution{
 	}
 
 	public ArrayList<PlayerActions> getPlayerActions() {
-		return playerActions;
+		return playerActions.getPlayerActions();
 	}
 
 	public void setPlayerActions(ArrayList<PlayerActions> playerActions) {
-		this.playerActions = playerActions;
+		this.playerActions.setPlayerActions(playerActions);
 	}
 	
 	
