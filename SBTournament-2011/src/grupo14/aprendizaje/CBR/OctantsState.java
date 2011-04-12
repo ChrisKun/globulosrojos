@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import jcolibri.connector.TypeAdaptor;
 
+/**
+ * Describes the state of the match giving the amount of players located in each octant of the
+ * field. Each octant is 0,38125 * 1.37
+ * @author markel
+ *
+ */
 public class OctantsState implements TypeAdaptor {
 
 	public ArrayList<Integer> octants;
@@ -26,7 +32,7 @@ public class OctantsState implements TypeAdaptor {
 		}
 		content = content.replace("[", "");
 		content = content.replace("]", "");
-		String[] numbers = content.split(",");
+		String[] numbers = content.split("-");
 		if (numbers.length != 8) {
 			String message = "Invalid String format. "
 					+ "Must be [integer,integer,integer,integer,integer,integer,integer,integer]. "
@@ -47,7 +53,7 @@ public class OctantsState implements TypeAdaptor {
 	public String toString() {
 		String stringObject = "[";
 		for (int i = 0; i < this.octants.size() - 1; i++)
-			stringObject += this.octants.get(i) + ",";
+			stringObject += this.octants.get(i) + "-";
 		stringObject += this.octants.size() - 1 + "]";
 		return stringObject;
 	}

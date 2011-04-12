@@ -13,4 +13,8 @@
 	<SolutionMappings>
 		<Map>playerActions</Map>
 	</SolutionMappings>
+	<ResultClassName>grupo14.aprendizaje.CBR.caseComponents.ResultadoCaso</ResultClassName>
+	<ResultMappings>
+		<Map>valoracionCaso</Map>
+	</ResultMappings>
 </TextFileConfiguration>

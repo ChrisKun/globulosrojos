@@ -19,17 +19,16 @@ public class TeamActions implements TypeAdaptor{
 	public void fromString(String content) throws Exception {
 		if (!content.startsWith("[") || !content.endsWith("]")) {
 			String message = "Invalid String format. "
-					+ "Must be [integer,integer,integer,integer,integer,integer,integer,integer]. "
-					+ "There must be 8 integer values mandatory";
+					+ "The string has to start and end with '[' and ']'. ";
 			throw new Exception(message);
 		}
 		content = content.replace("[", "");
 		content = content.replace("]", "");
-		String[] numbers = content.split(",");
-		if (numbers.length != 8) {
+		String[] numbers = content.split("-");
+		if (numbers.length != 5) {
 			String message = "Invalid String format. "
-					+ "Must be [integer,integer,integer,integer,integer,integer,integer,integer]. "
-					+ "There must be 8 integer values mandatory";
+					+ "Must be [integer,integer,integer,integer,integer]. "
+					+ "There must be 5 integer values mandatory";
 			throw new Exception(message);
 		}
 		if (this.playerActions.size() > 0)
@@ -42,7 +41,7 @@ public class TeamActions implements TypeAdaptor{
 	public String toString() {
 		String stringObject = "[";
 		for (int i = 0; i < this.playerActions.size() - 1; i++)
-			stringObject += this.playerActions.get(i) + ",";
+			stringObject += this.playerActions.get(i) + "-";
 		stringObject += this.playerActions.size() - 1 + "]";
 		return stringObject;
 	}

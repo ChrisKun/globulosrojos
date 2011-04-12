@@ -1,6 +1,5 @@
 package grupo14.aprendizaje.CBR;
 
-import grupo14.aprendizaje.CBR.caseComponents.Caso;
 import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
 import grupo14.aprendizaje.CBR.caseComponents.ResultadoCaso;
 import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
@@ -31,7 +30,10 @@ import jcolibri.method.retrieve.selection.SelectCases;
 public class AprendizajeCBR implements StandardCBRApplication {
 
 	private Connector connector;
-	private CBRCaseBase caseBase;
+	//Base de casos donde se guardaran los casos que tengan mas jugadores en el lado este
+	private CBRCaseBase caseBaseEast;
+	//Base de casos donde se guardaran los casos que tengan mas jugadores en el lado oeste
+	private CBRCaseBase caseBaseWest;
 
 	@Override
 	public void configure() throws ExecutionException {
@@ -39,7 +41,7 @@ public class AprendizajeCBR implements StandardCBRApplication {
 			this.connector = new PlainTextConnector();
 			this.connector.initFromXMLfile(jcolibri.util.FileIO
 					.findFile("grupo14/aprendizaje/CBR/connector/plainTextConfig.xml"));
-			this.caseBase = new LinealCaseBase();
+			this.caseBaseEast = new LinealCaseBase();
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
@@ -47,11 +49,11 @@ public class AprendizajeCBR implements StandardCBRApplication {
 
 	@Override
 	public CBRCaseBase preCycle() throws ExecutionException {
-		this.caseBase.init(this.connector);
-		Collection<CBRCase> cases = this.caseBase.getCases();
+		this.caseBaseEast.init(this.connector);
+		Collection<CBRCase> cases = this.caseBaseEast.getCases();
 		for(CBRCase c: cases)
 			System.out.println(c);
-		return this.caseBase;
+		return this.caseBaseEast;
 	}
 
 	@Override
@@ -60,12 +62,12 @@ public class AprendizajeCBR implements StandardCBRApplication {
 	}
 	
 	/**
-	 * Método equivalente al cycle de jColibri, con la diferencia de que devuelve un caso en vez de void
-	 * @param query: Caso que se utilizará como consulta
-	 * @return Objeto Caso que contiene la solución a aplicar
+	 * Mï¿½todo equivalente al cycle de jColibri, con la diferencia de que devuelve un caso en vez de void
+	 * @param query: Caso que se utilizarï¿½ como consulta
+	 * @return Objeto Caso que contiene la soluciï¿½n a aplicar
 	 * @throws ExecutionException
 	 */
-	public Caso recuperarCaso(CBRQuery query) throws ExecutionException {
+	public CBRCase recuperarCaso(CBRQuery query) throws ExecutionException {
 		NNConfig simConfig = new NNConfig();
 		simConfig.setDescriptionSimFunction(new Average());
 		
@@ -88,7 +90,7 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		simConfig.setWeight(theirGoals, 0.7);
 		
 		//Se recogen los N casos mÃ¡s similares
-		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(caseBase.getCases(), query, simConfig);
+		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(caseBaseEast.getCases(), query, simConfig);
 		eval = SelectCases.selectTopKRR(eval, 5);
 
 		//Votacion ponderada
@@ -96,7 +98,7 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		Prediction prediccion = votacion.getPredictedClass(eval);
 		
 		//Se supone que aqui tenemos las acciones a realizar
-		return (Caso)prediccion.getClassification();
+		return (CBRCase)prediccion.getClassification();
 	}
 
 	@Override
@@ -105,51 +107,101 @@ public class AprendizajeCBR implements StandardCBRApplication {
 	}
 	
 	/**
-	 * Añade un caso nuevo a la base de casos
+	 * Aï¿½ade un caso nuevo a la base de casos
 	 * @param caso: El caso que se quiere guardar
 	 */
-	public void guardarCaso(Caso caso)
+	public void guardarCaso(CBRCase caso)
 	{
+		//Se guarda el nuevo caso en la base de casos
 		Collection<CBRCase> aprendido = new ArrayList<CBRCase>();
 		aprendido.add(caso);
-		this.caseBase.learnCases(aprendido);
+		this.caseBaseEast.learnCases(aprendido);
 	}
 	
-	public static void main(String[] args)
+	/**
+	 * Aï¿½ade un caso nuevo a la base de casos
+	 * @param caso: El caso que se quiere guardar
+	 */
+	public void guardarCaso(ArrayList<Integer> situation)
 	{
-		Caso caso = new Caso();
-		DescripcionCaso desc = new DescripcionCaso();
-		desc.setBallPosition(2);
-		ArrayList<Integer> octants = new ArrayList<Integer>();
-		octants.add(new Integer(2));
-		octants.add(new Integer(5));
-		octants.add(new Integer(4));
-		octants.add(new Integer(1));
-		desc.setNumPlayersEachOctant(octants);
-		desc.setOurGoals(2);
-		desc.setTheirGoals(1);
-		desc.setTime(36);
-		caso.setDescripcion(desc);
-		ResultadoCaso resultado = new ResultadoCaso();
-		resultado.setValoracionCaso(0.7f);
-		caso.setResultado(resultado);
-		SolucionCaso solucion = new SolucionCaso();
-		ArrayList<PlayerActions> playerActions = new ArrayList<PlayerActions>();
-		playerActions.add(PlayerActions.BloquearContrario);
-		playerActions.add(PlayerActions.CorrerHaciaBalon);
-		solucion.setPlayerActions(playerActions);
-		caso.setSolution(solucion);
-		
-		AprendizajeCBR cbr = new AprendizajeCBR();
-		try {
-			cbr.configure();
-			cbr.preCycle();
-			cbr.guardarCaso(caso);
-			cbr.postCycle();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		//Se crea la descripcion del caso en la que se guardara la situacion del juego
+		DescripcionCaso descripcion = new DescripcionCaso();
+		OctantsState state = new OctantsState();
+		state.octants = situation;
+		descripcion.setNumPlayersEachOctant(state);
+		//Se crea un caso nuevo y se le asigna la descripcion recien creada
+		CBRCase caso = new CBRCase();
+		caso.setDescription(descripcion);
+		//Se guarda el nuevo caso en la base de casos
+		Collection<CBRCase> aprendido = new ArrayList<CBRCase>();
+		aprendido.add(caso);
+		this.caseBaseEast.learnCases(aprendido);
+	}
+	
+	/**
+	 * Busca un caso en la base de casos utilizando el caseId y lo evalua
+	 * @param caseId: identificador del caso que se quiere evaluar
+	 * @param evaluacion: valor entre 0 y 1 para evaluar el caso (1=mejor evaluacion, 0=peor evaluacion)
+	 */
+	public void evaluarCaso(String caseId, float evaluacion){
+		//Se recogen todos los casos de la base
+		Collection<CBRCase> casos = caseBaseEast.getCases();
+		//Iteramos para encontrar el caso con el id que hemos recibido
+		for(CBRCase caso: casos){
+			//Si se encuentra el caso con el id que buscamos...
+			if(caso.getID().equals(caseId))
+				//Aplicarle como resultado la evaluacion recibida
+				caso.setResult(new ResultadoCaso(evaluacion));
 		}
 	}
+	
+//	public static void main(String[] args)
+//	{
+//		CBRCase caso = new CBRCase();
+//		DescripcionCaso desc = new DescripcionCaso();
+//		desc.setCaseId("Case 2");
+//		ArrayList<Integer> octants = new ArrayList<Integer>();
+//		octants.add(new Integer(2));
+//		octants.add(new Integer(5));
+//		octants.add(new Integer(4));
+//		octants.add(new Integer(1));
+//		octants.add(new Integer(2));
+//		octants.add(new Integer(5));
+//		octants.add(new Integer(4));
+//		octants.add(new Integer(1));
+//		OctantsState state = new OctantsState();
+//		state.octants = octants;
+//		desc.setNumPlayersEachOctant(state);
+//		desc.setBallPosition(2);
+//		desc.setTime(36);
+//		desc.setOurGoals(2);
+//		desc.setTheirGoals(1);
+//		caso.setDescription(desc);
+//		ResultadoCaso resultado = new ResultadoCaso();
+//		resultado.setValoracionCaso(0.7f);
+//		caso.setResult(resultado);
+//		SolucionCaso solucion = new SolucionCaso();
+//		ArrayList<PlayerActions> playerActions = new ArrayList<PlayerActions>();
+//		playerActions.add(PlayerActions.BloquearContrario);
+//		playerActions.add(PlayerActions.CorrerHaciaBalon);
+//		playerActions.add(PlayerActions.BloquearContrario);
+//		playerActions.add(PlayerActions.CorrerHaciaBalon);
+//		playerActions.add(PlayerActions.BloquearContrario);
+//		TeamActions teamActions = new TeamActions();
+//		teamActions.setPlayerActions(playerActions);
+//		solucion.setPlayerActions(teamActions);
+//		caso.setSolution(solucion);
+//		
+//		AprendizajeCBR cbr = new AprendizajeCBR();
+//		try {
+//			cbr.configure();
+//			cbr.preCycle();
+//			cbr.guardarCaso(caso);
+//			cbr.postCycle();
+//		} catch (ExecutionException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 
 }
