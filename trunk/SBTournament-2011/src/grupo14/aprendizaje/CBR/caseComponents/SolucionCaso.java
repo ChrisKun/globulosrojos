@@ -35,13 +35,11 @@ public class SolucionCaso implements ClassificationSolution{
 		return this.playerActions;
 	}
 
-	public ArrayList<PlayerActions> getPlayerActions() {
-		return playerActions.getPlayerActions();
+	public TeamActions getPlayerActions() {
+		return playerActions;
 	}
 
-	public void setPlayerActions(ArrayList<PlayerActions> playerActions) {
-		this.playerActions.setPlayerActions(playerActions);
+	public void setPlayerActions(TeamActions playerActions) {
+		this.playerActions = playerActions;
 	}
-	
-	
 }

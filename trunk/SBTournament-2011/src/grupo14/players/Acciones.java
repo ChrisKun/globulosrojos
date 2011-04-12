@@ -17,7 +17,7 @@ public class Acciones {
 			worldAPI.setDisplayString("CorrerAlAtaque (subiendo)");
 		}
 		
-		// Si ha llegado a los límites del campo (en X) se queda rondando por la zona
+		// Si ha llegado a los lï¿½mites del campo (en X) se queda rondando por la zona
 		if (miPosicion.x > porteriaContraria.x - 0.1 * 1.37 * worldAPI.getFieldSide()) {
 			giroAleatorio(worldAPI);
 			worldAPI.setSpeed(1.0);
@@ -41,7 +41,7 @@ public class Acciones {
 			worldAPI.setDisplayString("CorrerADefensa (bajando)");
 		}
 		
-		// Si ha llegado a los límites del campo (en X) se queda rondando por la zona
+		// Si ha llegado a los lï¿½mites del campo (en X) se queda rondando por la zona
 		if (miPosicion.x < miPorteria.x + 0.05 * 1.37 * worldAPI.getFieldSide()) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(1.0);
@@ -52,7 +52,6 @@ public class Acciones {
 			
 		evitarBloqueos(worldAPI);
 	}
-	
 	
 	private static void giroAleatorio(WorldAPI worldAPI) {
 		

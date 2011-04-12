@@ -18,19 +18,19 @@ public class DescripcionCaso implements CaseComponent{
 	/**
 	 * Specifies the octant where the ball is located private in
 	 */
-	private int ballPosition;
+	private Integer ballPosition;
 	/**
 	 * Specifies the time of the match in seconds
 	 */
-	private int time;
+	private Integer time;
 	/**
 	 * Specifies the number of goals scored by our team
 	 */
-	private int ourGoals;
+	private Integer ourGoals;
 	/**
 	 * Specifies the number of goals scored by the other team
 	 */
-	private int theirGoals;
+	private Integer theirGoals;
 
 	
 	public DescripcionCaso()
@@ -38,14 +38,12 @@ public class DescripcionCaso implements CaseComponent{
 		this.numPlayersEachOctant = new OctantsState();
 	}
 
-	public ArrayList<Integer> getNumPlayersEachOctant() {
-		return numPlayersEachOctant.octants;
+	public OctantsState getNumPlayersEachOctant() {
+		return this.numPlayersEachOctant;
 	}
 
-
-
-	public void setNumPlayersEachOctant(ArrayList<Integer> numPlayersEachOctant) {
-		this.numPlayersEachOctant.octants = numPlayersEachOctant;
+	public void setNumPlayersEachOctant(OctantsState numPlayersEachOctant) {
+		this.numPlayersEachOctant = numPlayersEachOctant;
 	}
 
 
@@ -103,8 +101,18 @@ public class DescripcionCaso implements CaseComponent{
 		return new Attribute ("caseId", DescripcionCaso.class);
 	}
 	
+	
+	
+	public String getCaseId() {
+		return caseId;
+	}
+
+	public void setCaseId(String caseId) {
+		this.caseId = caseId;
+	}
+
 	public String toString()
 	{
-		return "Not yet implemented";
+		return this.caseId + this.ballPosition + this.ourGoals + this.theirGoals + this.time;
 	}
 }

@@ -1,16 +1,21 @@
 package grupo14.players;
 
+import grupo14.aprendizaje.CBR.AprendizajeCBR;
+import grupo14.aprendizaje.CBR.OctantsState;
 import EDU.gatech.cc.is.util.Vec2;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
 public class Goalkeeper extends Role {
 	private final double KEEPER_DEFENSE_LINE = 0;
+	AprendizajeCBR cbr;
 
 	@Override
 	public int configure() {
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
 		worldAPI.setDisplayString("Portero");
+		//Para poder manipular el CBR
+		AprendizajeCBR cbr = new AprendizajeCBR();
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -21,13 +26,46 @@ public class Goalkeeper extends Role {
 
 	@Override
 	public int takeStep() {
-		/*double keeperPosY = calculateIntersection();
-		Vec2 destPos = toEgocentricCoordinates(new Vec2(KEEPER_DEFENSE_LINE, keeperPosY));
-		worldAPI.setSteerHeading(destPos.t);
-		worldAPI.setSpeed(1);
-		System.out.println(keeperPosY);*/
+		if(worldAPI.getBall().x - worldAPI.getPosition().x == 0)
+			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar para saber que hacer)
+			crearCaso();
 		Acciones.correrAlAtaque(worldAPI);
 		return WorldAPI.ROBOT_OK;
+	}
+
+	private void crearCaso() {
+		//Get the position of all the players
+		Vec2[] opponents = worldAPI.getOpponents();
+		Vec2[] teammates = worldAPI.getTeammates();
+		//Return the number of players in each octant
+		OctantsState state = setOctantsState(teammates, opponents);
+	}
+
+	/**
+	 * Fills the octants with the number of players located in each one.
+	 * @param teammates: Array with the position of each team mate (egocentric respect goal keeper)
+	 * @param opponents: Array with the position of each opponent (egocentric respect goal keeper)
+	 * @return OctantsState object with the filled octants
+	 */
+	private OctantsState setOctantsState(Vec2[] teammates, Vec2[] opponents) {
+		OctantsState state = new OctantsState();
+		for(int i = 0; i < teammates.length; i++)
+			//Adds 1 to the octant where the player is located
+			state.octants.set(getPlayersOctant(teammates[i]),state.octants.get(getPlayersOctant(teammates[i])+1));
+		for(int i = 0; i < opponents.length; i++)
+			//Adds 1 to the octant where the player is located
+			state.octants.set(getPlayersOctant(opponents[i]),state.octants.get(getPlayersOctant(opponents[i])+1));
+		return new OctantsState();
+	}
+
+	/**
+	 * Returns the octant number of the player
+	 * @param vec2
+	 * @return Integer value representing the octant number of the player
+	 */
+	private int getPlayersOctant(Vec2 vec2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	private Vec2 calculatePosition(){
