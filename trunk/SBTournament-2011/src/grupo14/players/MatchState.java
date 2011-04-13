@@ -1,5 +1,7 @@
 package grupo14.players;
 
+import teams.rolebased.WorldAPI;
+
 public interface MatchState {
-	int accionARealizar();
+	int accionARealizar(WorldAPI worldAPI);
 }

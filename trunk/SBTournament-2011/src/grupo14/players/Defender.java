@@ -20,8 +20,6 @@ public class Defender  extends Role{
 
 	@Override
 	public int takeStep() {
-		/*MatchState state = Mourinho.matchState;
-		state.accionARealizar();*/
 		return WorldAPI.ROBOT_OK;
 	}
 }

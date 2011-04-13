@@ -3,11 +3,15 @@ package grupo14.players;
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.aprendizaje.CBR.OctantsState;
 import EDU.gatech.cc.is.util.Vec2;
+import states.PosesionContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
-public class Goalkeeper extends Role {
+public class Goalkeeper extends Role{
 	private final double KEEPER_DEFENSE_LINE = 0;
+	
+	public MatchState matchState;
+	
 	AprendizajeCBR cbr;
 
 	@Override
@@ -26,6 +30,15 @@ public class Goalkeeper extends Role {
 
 	@Override
 	public int takeStep() {
+		getMatchState();
+		matchState.accionARealizar(worldAPI);
+		
+		double keeperPosY = calculateIntersection();
+		/*double keeperPosY = calculateIntersection();
+		Vec2 destPos = toEgocentricCoordinates(new Vec2(KEEPER_DEFENSE_LINE, keeperPosY));
+		worldAPI.setSteerHeading(destPos.t);
+		worldAPI.setSpeed(1);
+		System.out.println(keeperPosY);*/
 		if(worldAPI.getBall().x - worldAPI.getPosition().x == 0)
 			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar para saber que hacer)
 			crearCaso();
@@ -109,5 +122,30 @@ public class Goalkeeper extends Role {
 		double deltaY = (goalPosition.y - ballPosition.y);
 		double deltaX = (goalPosition.x - ballPosition.x);
 		return deltaY * (ballPosition.y/deltaY - ballPosition.x/deltaX + KEEPER_DEFENSE_LINE / deltaX);
+	}
+	public MatchState getState()
+	{
+		return this.matchState;
+	}
+	
+	public void getMatchState()
+	{
+		int lado = worldAPI.getFieldSide(); //-1 en la derecha, 1 en la izquierda
+		//si el balon lo tiene el contrario, estado=2, estado=3... 
+		if(worldAPI.getFieldSide()<1) 
+			System.out.print("El equipo juega en la derecha");
+		else
+			System.out.print("El equipo juega en la izquierda");
+		if(getRelativePosition(worldAPI.getBall()).x*lado<0)
+			System.out.print("el balon esta en tu campo");
+		else
+			System.out.print("El balon esta en el campo contrario");
+		MatchState state = new PosesionContrario();
+		matchState = state;
+	}
+	//devuelve la posicion de un item desde el centro del campo
+	public Vec2 getRelativePosition(Vec2 position)
+	{
+		return new Vec2(worldAPI.getPosition().x+position.x,worldAPI.getPosition().y+position.y);
 	}
 }
