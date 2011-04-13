@@ -6,7 +6,7 @@ import grupo14.players.*;
 public class PosesionContrario implements MatchState{
 
 	@Override
-	public int accionARealizar(WorldAPI worldAPI) {
+	public int accionARealizar(WorldAPI worldAPI, Object role) {
 		if(this.getClass().equals(Defender.class))
 		{
 			
