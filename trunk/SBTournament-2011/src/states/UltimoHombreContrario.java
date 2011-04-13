@@ -10,12 +10,13 @@ import grupo14.players.Striker;
 public class UltimoHombreContrario implements MatchState{
 
 	@Override
-	public int accionARealizar(WorldAPI worldAPI) {
+	public int accionARealizar(WorldAPI worldAPI, Object role) {
+		System.out.println(role.getClass().toString());
 		if(this.getClass().equals(Defender.class))
 		{
 			
 		}
-		if(this.getClass().equals(Goalkeeper.class))
+		if(role.getClass().equals(Goalkeeper.class))
 		{
 			Vec2 vector = worldAPI.getBall();
 			worldAPI.setSteerHeading(vector.t);
