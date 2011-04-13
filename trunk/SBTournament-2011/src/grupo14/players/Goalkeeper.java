@@ -22,7 +22,7 @@ public class Goalkeeper extends Role{
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
 		worldAPI.setDisplayString("Portero");
 		//Para poder manipular el CBR
-		AprendizajeCBR cbr = new AprendizajeCBR();
+		this.cbr = new AprendizajeCBR();
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -44,9 +44,11 @@ public class Goalkeeper extends Role{
 		worldAPI.setSteerHeading(destPos.t);
 		worldAPI.setSpeed(1);
 		System.out.println(keeperPosY);*/
-		//if(worldAPI.getBall().x - worldAPI.getPosition().x == 0)
+		double ball = worldAPI.getBall().x;
+		double pos = worldAPI.getPosition().x;
+		if( Math.abs(ball) - Math.abs(pos) == 0)
 			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar para saber que hacer)
-		//	crearCaso();
+			crearCaso();
 		//Acciones.correrAlAtaque(worldAPI);
 		return WorldAPI.ROBOT_OK;
 	}
@@ -79,11 +81,30 @@ public class Goalkeeper extends Role{
 	/**
 	 * Returns the octant number of the player
 	 * @param vec2
-	 * @return Integer value representing the octant number of the player
+	 * @return Integer value representing the octant number of the player or -1 if an error occurs
 	 */
-	private int getPlayersOctant(Vec2 vec2) {
-		// TODO Auto-generated method stub
-		return 0;
+	private int getPlayersOctant(Vec2 playersPosition) {
+		
+		Vec2 globalPos = toGlobalCoordinates(playersPosition);
+		if(globalPos.y > 0)
+			if(globalPos.x < -0.685)
+				return 1;
+			else if(globalPos.x >= -0.685 && globalPos.x < 0)
+				return 2;
+			else if(globalPos.x >= 0 && globalPos.x < 0.685)
+				return 3;
+			else if(globalPos.x >= 0.685)
+				return 4;
+		else
+			if(globalPos.x < -0.685)
+				return 5;
+			else if(globalPos.x >= -0.685 && globalPos.x < 0)
+				return 6;
+			else if(globalPos.x >= 0 && globalPos.x < 0.685)
+				return 7;
+			else if(globalPos.x >= 0.685)
+				return 8;
+		return -1;
 	}
 
 	private Vec2 calculatePosition(){
@@ -109,7 +130,8 @@ public class Goalkeeper extends Role{
 	 * @param sourceCoord: Vector con coordenadas egocentricas que se quiere convertir
 	 * @return Objeto Vec2 con las coordenadas globales del vector recibido
 	 */
-	private Vec2 toGlobalCoordinates(Vec2 sourceCoord){
+	private Vec2 toGlobalCoordinates(Vec2 sourceCoord)
+	{
 		
 		return null;
 	}
