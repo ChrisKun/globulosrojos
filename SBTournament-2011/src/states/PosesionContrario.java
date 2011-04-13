@@ -1,11 +1,12 @@
 package states;
 
+import teams.rolebased.WorldAPI;
 import grupo14.players.*;
 
 public class PosesionContrario implements MatchState{
 
 	@Override
-	public int accionARealizar() {
+	public int accionARealizar(WorldAPI worldAPI) {
 		if(this.getClass().equals(Defender.class))
 		{
 			
@@ -20,5 +21,4 @@ public class PosesionContrario implements MatchState{
 		}
 		return 0;
 	}
-
 }
