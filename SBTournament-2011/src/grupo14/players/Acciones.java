@@ -53,6 +53,69 @@ public class Acciones {
 		evitarBloqueos(worldAPI);
 	}
 	
+	public static void correrHaciaBalon(WorldAPI worldAPI) {
+		Vec2 porteriaContraria = worldAPI.getOpponentsGoal();
+		worldAPI.setBehindBall(porteriaContraria);
+		worldAPI.setDisplayString("CorrerHaciaBalon");
+		
+		evitarBloqueos(worldAPI);
+	}
+	
+	public static void chutarAPuerta(WorldAPI worldAPI) {
+		if (worldAPI.canKick() && worldAPI.alignedToBallandGoal()) {
+			worldAPI.kick();
+			worldAPI.setDisplayString("ChutarAPorteria (chutando)");
+		}		
+		else
+			correrHaciaBalon(worldAPI);
+		
+		worldAPI.setDisplayString("ChutarAPorteria (intentando)");
+	}
+	
+	// TODO : Bloquear al más cercano al jugador? al más cercano a nuestra portería?, al portero?
+	public static void bloquearContrario(WorldAPI worldAPI) {
+		worldAPI.blockClosest();
+		worldAPI.setDisplayString("BloquearContrario (bloqueando)");
+	}
+	
+	public static void desbloquearse(WorldAPI worldAPI) {
+		evitarBandas(worldAPI);
+		evitarBloqueos(worldAPI);
+	}
+	
+	public static void irAPosicionDeEspera(WorldAPI worldAPI, Vec2 puntoEspera) {
+		// Calculamos el vector que va desde el jugador hasta la pelota
+		Vec2 vectorDireccion = (Vec2)puntoEspera.clone();
+		vectorDireccion.sub(worldAPI.getPosition());
+		
+		worldAPI.setSteerHeading(vectorDireccion.t);
+		worldAPI.setSpeed(1);
+		
+		if (isCloseToPoint(worldAPI, puntoEspera)) {
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("IrAPosicionEspera (esperando)");
+		}
+		else {
+			worldAPI.setDisplayString("IrAPosicionEspera (yendo)");
+			evitarBandas(worldAPI);
+			evitarBloqueos(worldAPI);
+		}
+	}
+	
+	// TODO: What? cómo se hace esto?
+	public static void desmarcarse(WorldAPI worldAPI) {
+		
+	}
+	
+	// TODO: Con qué método? a una distancia porcentual de la porteriá (punto medio entre balón y portería, o 1/3, o...)?
+	public static void taparPorteria(WorldAPI worldAPI) {
+		Vec2 dif = (Vec2) worldAPI.getOurGoal().clone();
+		dif.sub(worldAPI.getBall());
+		dif.normalize(dif.r / 2);
+		
+		irAPosicionDeEspera(worldAPI, dif);
+	}
+	
 	private static void giroAleatorio(WorldAPI worldAPI) {
 		
 		worldAPI.setSteerHeading(worldAPI.getSteerHeading() + MyRandom.nextDouble(-0.1, 0.1));
@@ -91,5 +154,13 @@ public class Acciones {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setDisplayString("Evitando la linea de fondo");			
 		}
+	}
+	
+	private static boolean isCloseToPoint(WorldAPI worldAPI, Vec2 punto) {
+		float delta = 0.01f;
+		Vec2 vectorDiferencia = (Vec2)punto.clone();
+		vectorDiferencia.sub(worldAPI.getPosition());
+		
+		return vectorDiferencia.r <= delta;
 	}
 }
