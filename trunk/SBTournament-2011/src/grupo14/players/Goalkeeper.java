@@ -1,9 +1,13 @@
 package grupo14.players;
 
+import jcolibri.cbrcore.CBRCase;
+import jcolibri.exception.ExecutionException;
+
 import com.hp.hpl.jena.query.function.library.abs;
 
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.aprendizaje.CBR.OctantsState;
+import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
 import EDU.gatech.cc.is.util.Vec2;
 import states.PosesionContrario;
 import states.UltimoHombreContrario;
@@ -23,6 +27,13 @@ public class Goalkeeper extends Role{
 		worldAPI.setDisplayString("Portero");
 		//Para poder manipular el CBR
 		this.cbr = new AprendizajeCBR();
+		try {
+			this.cbr.configure();
+			this.cbr.preCycle();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -59,6 +70,19 @@ public class Goalkeeper extends Role{
 		Vec2[] teammates = worldAPI.getTeammates();
 		//Return the number of players in each octant
 		OctantsState state = setOctantsState(teammates, opponents);
+		int ballPos = getPlayersOctant(toGlobalCoordinates(worldAPI.getBall()));
+		int ourGoals = worldAPI.getMyScore();
+		int theirGoals = worldAPI.getOpponentScore();
+		int time = (int)worldAPI.getMatchTotalTime();
+		DescripcionCaso descripcion = new DescripcionCaso();
+		descripcion.setBallPosition(ballPos);
+		descripcion.setNumPlayersEachOctant(state);
+		descripcion.setOurGoals(ourGoals);
+		descripcion.setTheirGoals(theirGoals);
+		descripcion.setTime(time);
+		CBRCase caso = new CBRCase();
+		caso.setDescription(descripcion);
+		this.cbr.guardarCaso(caso);
 	}
 
 	/**
@@ -69,13 +93,23 @@ public class Goalkeeper extends Role{
 	 */
 	private OctantsState setOctantsState(Vec2[] teammates, Vec2[] opponents) {
 		OctantsState state = new OctantsState();
+		for(int i = 0; i < 8; i++)
+			state.octants.add(new Integer(0));
 		for(int i = 0; i < teammates.length; i++)
+		{
 			//Adds 1 to the octant where the player is located
-			state.octants.set(getPlayersOctant(teammates[i]),state.octants.get(getPlayersOctant(teammates[i])+1));
+			int octant = getPlayersOctant(teammates[i])-1;
+			int playersInOctant = state.octants.get(octant).intValue();
+			state.octants.set(octant, playersInOctant+1);
+		}
 		for(int i = 0; i < opponents.length; i++)
+		{
 			//Adds 1 to the octant where the player is located
-			state.octants.set(getPlayersOctant(opponents[i]),state.octants.get(getPlayersOctant(opponents[i])+1));
-		return new OctantsState();
+			int octant = getPlayersOctant(opponents[i])-1;
+			int playersInOctant = state.octants.get(octant).intValue()+1;
+			state.octants.set(octant, playersInOctant);
+		}
+		return state;
 	}
 
 	/**
@@ -86,7 +120,8 @@ public class Goalkeeper extends Role{
 	private int getPlayersOctant(Vec2 playersPosition) {
 		
 		Vec2 globalPos = toGlobalCoordinates(playersPosition);
-		if(globalPos.y > 0)
+		if(globalPos.y >= 0)
+		{
 			if(globalPos.x < -0.685)
 				return 1;
 			else if(globalPos.x >= -0.685 && globalPos.x < 0)
@@ -95,7 +130,9 @@ public class Goalkeeper extends Role{
 				return 3;
 			else if(globalPos.x >= 0.685)
 				return 4;
+		}
 		else
+		{
 			if(globalPos.x < -0.685)
 				return 5;
 			else if(globalPos.x >= -0.685 && globalPos.x < 0)
@@ -104,6 +141,7 @@ public class Goalkeeper extends Role{
 				return 7;
 			else if(globalPos.x >= 0.685)
 				return 8;
+		}
 		return -1;
 	}
 
@@ -132,8 +170,9 @@ public class Goalkeeper extends Role{
 	 */
 	private Vec2 toGlobalCoordinates(Vec2 sourceCoord)
 	{
-		
-		return null;
+		Vec2 coordinates = (Vec2)sourceCoord.clone(); 
+		coordinates.add(worldAPI.getPosition());
+		return coordinates;
 	}
 	
 	/**
