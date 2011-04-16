@@ -112,6 +112,8 @@ public class AprendizajeCBR implements StandardCBRApplication {
 	 */
 	public void guardarCaso(CBRCase caso)
 	{
+		int caseId = this.caseBaseEast.getCases().size();
+		((DescripcionCaso)caso.getDescription()).setCaseId("Case "+caseId);
 		//Se guarda el nuevo caso en la base de casos
 		Collection<CBRCase> aprendido = new ArrayList<CBRCase>();
 		aprendido.add(caso);
@@ -129,6 +131,8 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		OctantsState state = new OctantsState();
 		state.octants = situation;
 		descripcion.setNumPlayersEachOctant(state);
+		int caseId = this.caseBaseEast.getCases().size();
+		descripcion.setCaseId("Case "+caseId);
 		//Se crea un caso nuevo y se le asigna la descripcion recien creada
 		CBRCase caso = new CBRCase();
 		caso.setDescription(descripcion);
