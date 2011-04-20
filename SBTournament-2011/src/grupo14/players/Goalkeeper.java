@@ -49,19 +49,24 @@ public class Goalkeeper extends Role{
 		getMatchState();
 		matchState.accionARealizar(worldAPI,Goalkeeper.class);
 		
-		//double keeperPosY = calculateIntersection();
-		/*double keeperPosY = calculateIntersection();
-		Vec2 destPos = toEgocentricCoordinates(new Vec2(KEEPER_DEFENSE_LINE, keeperPosY));
-		worldAPI.setSteerHeading(destPos.t);
-		worldAPI.setSpeed(1);
-		System.out.println(keeperPosY);*/
+		if(ballIsInTheMiddle())
+			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar los casos para saber que hacer)
+			crearCaso();
+		
+		return WorldAPI.ROBOT_OK;
+	}
+	
+	/**
+	 * Devuelve si el balon esta en el centro del campo o no
+	 * @return true si el balon esta en el centro del campo, false en caso contrario
+	 */
+	private boolean ballIsInTheMiddle(){
 		double ball = worldAPI.getBall().x;
 		double pos = worldAPI.getPosition().x;
 		if( Math.abs(ball) - Math.abs(pos) == 0)
-			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar para saber que hacer)
-			crearCaso();
-		//Acciones.correrAlAtaque(worldAPI);
-		return WorldAPI.ROBOT_OK;
+			return true;
+		else
+			return false;
 	}
 
 	private void crearCaso() {
