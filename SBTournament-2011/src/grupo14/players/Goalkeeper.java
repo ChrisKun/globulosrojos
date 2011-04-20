@@ -70,10 +70,10 @@ public class Goalkeeper extends Role{
 		Vec2[] teammates = worldAPI.getTeammates();
 		//Return the number of players in each octant
 		OctantsState state = setOctantsState(teammates, opponents);
-		int ballPos = getPlayersOctant(toGlobalCoordinates(worldAPI.getBall()));
+		int ballPos = getPlayersOctant(worldAPI.getBall());
 		int ourGoals = worldAPI.getMyScore();
 		int theirGoals = worldAPI.getOpponentScore();
-		int time = (int)worldAPI.getMatchTotalTime();
+		long time = worldAPI.getMatchTotalTime();
 		DescripcionCaso descripcion = new DescripcionCaso();
 		descripcion.setBallPosition(ballPos);
 		descripcion.setNumPlayersEachOctant(state);

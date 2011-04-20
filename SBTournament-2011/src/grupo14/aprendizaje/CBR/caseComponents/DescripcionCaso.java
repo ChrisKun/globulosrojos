@@ -22,7 +22,7 @@ public class DescripcionCaso implements CaseComponent{
 	/**
 	 * Specifies the time of the match in seconds
 	 */
-	private Integer time;
+	private Long time;
 	/**
 	 * Specifies the number of goals scored by our team
 	 */
@@ -60,13 +60,13 @@ public class DescripcionCaso implements CaseComponent{
 
 
 
-	public int getTime() {
+	public Long getTime() {
 		return time;
 	}
 
 
 
-	public void setTime(int time) {
+	public void setTime(Long time) {
 		this.time = time;
 	}
 

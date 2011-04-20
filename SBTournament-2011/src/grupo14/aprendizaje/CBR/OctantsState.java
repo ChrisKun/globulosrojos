@@ -53,8 +53,8 @@ public class OctantsState implements TypeAdaptor {
 	public String toString() {
 		String stringObject = "[";
 		for (int i = 0; i < this.octants.size() - 1; i++)
-			stringObject += this.octants.get(i) + "-";
-		stringObject += this.octants.size() - 1 + "]";
+			stringObject += this.octants.get(i).toString() + "-";
+		stringObject += this.octants.get(this.octants.size() - 1) + "]";
 		return stringObject;
 	}
 
