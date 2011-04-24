@@ -20,6 +20,7 @@ public class Goalkeeper extends Role{
 	public MatchState matchState;
 	
 	AprendizajeCBR cbr;
+	long lastCase;
 
 	@Override
 	public int configure() {
@@ -34,6 +35,8 @@ public class Goalkeeper extends Role{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.lastCase = 0;
+		
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -49,10 +52,14 @@ public class Goalkeeper extends Role{
 		getMatchState();
 		matchState.accionARealizar(worldAPI,Goalkeeper.class);
 		
-		if(ballIsInTheMiddle())
+		//Si el balon pasa por el centro y han pasado mas de 15 segundos desde la ultima lectura
+		if(ballIsInTheMiddle() && (worldAPI.getMatchTotalTime() - this.lastCase > 15 ) )
+		{
 			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar los casos para saber que hacer)
 			crearCaso();
-		
+			//Se guarda el momento en que se ha leido el caso, para asegurar que no se cogen dos casos muy juntos
+			this.lastCase = worldAPI.getMatchTotalTime();
+		}
 		return WorldAPI.ROBOT_OK;
 	}
 	
