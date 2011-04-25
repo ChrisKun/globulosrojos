@@ -55,9 +55,11 @@ public class Goalkeeper extends Role{
 		//Si el balon pasa por el centro y han pasado mas de 15 segundos desde la ultima lectura
 		if(ballIsInTheMiddle() && (worldAPI.getMatchTotalTime() - this.lastCase > 15 ) )
 		{
-			//El balon esta en el centro ---> Hay que crear un nuevo caso (en el futuro consultar los casos para saber que hacer)
+			//Hay que crear un nuevo caso (en el futuro en vez de crear un caso,
+			//también se consultara la base de casos para saber que hacer)
 			crearCaso();
-			//Se guarda el momento en que se ha leido el caso, para asegurar que no se cogen dos casos muy juntos
+			//Se guarda el momento en que se ha leido el caso, para asegurar que no 
+			//se cogen dos casos muy juntos
 			this.lastCase = worldAPI.getMatchTotalTime();
 		}
 		return WorldAPI.ROBOT_OK;
