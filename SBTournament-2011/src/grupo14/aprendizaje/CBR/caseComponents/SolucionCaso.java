@@ -1,11 +1,6 @@
 package grupo14.aprendizaje.CBR.caseComponents;
 
-import java.util.ArrayList;
-
-import grupo14.aprendizaje.CBR.TeamActions;
-import grupo14.players.PlayerActions;
 import jcolibri.cbrcore.Attribute;
-import jcolibri.cbrcore.CaseComponent;
 import jcolibri.extensions.classification.ClassificationSolution;
 
 /**
@@ -16,30 +11,29 @@ import jcolibri.extensions.classification.ClassificationSolution;
 public class SolucionCaso implements ClassificationSolution{
 	
 	/**
-	 * ArrayList que almacena la acción a tomar por los cinco jugadores (por lo tengo el ArrayList tendra 5 posiciones)
+	 * String que almacena el estado al que paso el equipo en caso actual
 	 */
-	private TeamActions playerActions;
+	private String newState;
 	
 	public SolucionCaso()
-	{
-		this.playerActions = new TeamActions();
-	}
+	{}
 	
 	@Override
 	public Attribute getIdAttribute() {
-		return new Attribute("playerActions", this.getClass());
+		return new Attribute("newState", this.getClass());
 	}
 
 	@Override
 	public Object getClassification() {
-		return this.playerActions;
+		return this.newState;
 	}
 
-	public TeamActions getPlayerActions() {
-		return playerActions;
+	public String getNewState() {
+		return newState;
 	}
 
-	public void setPlayerActions(TeamActions playerActions) {
-		this.playerActions = playerActions;
+	public void setNewState(String newState) {
+		this.newState = newState;
 	}
+
 }

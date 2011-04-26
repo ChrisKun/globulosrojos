@@ -36,4 +36,9 @@ public class PosesionContrarioSinPeligro implements MatchState{
 		}
 		return 0;
 	}
+
+	@Override
+	public String getStateName() {
+		return "PosesionContrarioSinPeligro";
+	}
 }

@@ -40,5 +40,10 @@ public class UltimoHombreContrario implements MatchState{
 		}
 		return 0;
 	}
+	
+	@Override
+	public String getStateName(){
+		return "UltimoHombreContrario";
+	}
 
 }

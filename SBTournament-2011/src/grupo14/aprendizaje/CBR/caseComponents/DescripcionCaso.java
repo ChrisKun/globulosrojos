@@ -115,4 +115,17 @@ public class DescripcionCaso implements CaseComponent{
 	{
 		return this.caseId + this.ballPosition + this.ourGoals + this.theirGoals + this.time;
 	}
+
+	/**
+	 * Devuelve si hay mas jugadores en el lado este del campo
+	 * @return true si hay mas jugadores en el este, false en caso contrario
+	 */
+	public boolean masJugadoresEnElEste() {
+		ArrayList<Integer> matchState = this.numPlayersEachOctant.octants;
+		int jugadoresEnElEste = matchState.get(0) + matchState.get(1) + matchState.get(4) + matchState.get(5);
+		if(jugadoresEnElEste >= 5)
+			return true;
+		else
+			return false;
+	}
 }

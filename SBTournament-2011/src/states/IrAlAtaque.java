@@ -31,4 +31,9 @@ public class IrAlAtaque implements MatchState{
 		return 0;
 	}
 
+	@Override
+	public String getStateName() {
+		return "IrAlAtaque";
+	}
+
 }

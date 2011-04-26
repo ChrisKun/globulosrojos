@@ -1,0 +1,5 @@
+
+Case 0,[0-4-2-1-0-1-2-0],3,-1,0,0,PosesionContrarioSinPeligro
+Case 1,[0-4-2-1-0-1-2-0],7,-1,0,0,PosesionContrarioSinPeligro
+Case 2,[0-1-0-0-5-3-1-0],3,-1,0,0,PosesionContrarioSinPeligro
+Case 3,[1-4-2-1-0-0-1-1],7,-1,0,0,PosesionContrarioSinPeligro
