@@ -29,7 +29,8 @@ import jcolibri.method.retrieve.selection.SelectCases;
 
 public class AprendizajeCBR implements StandardCBRApplication {
 
-	private Connector connector;
+	private Connector connectorEste;
+	private Connector connectorOeste;
 	//Base de casos donde se guardaran los casos que tengan mas jugadores en el lado este
 	private CBRCaseBase caseBaseEast;
 	//Base de casos donde se guardaran los casos que tengan mas jugadores en el lado oeste
@@ -38,10 +39,14 @@ public class AprendizajeCBR implements StandardCBRApplication {
 	@Override
 	public void configure() throws ExecutionException {
 		try {
-			this.connector = new PlainTextConnector();
-			this.connector.initFromXMLfile(jcolibri.util.FileIO
+			this.connectorEste = new PlainTextConnector();
+			this.connectorOeste = new PlainTextConnector();
+			this.connectorEste.initFromXMLfile(jcolibri.util.FileIO
 					.findFile("grupo14/aprendizaje/CBR/connector/plainTextConfig.xml"));
+			this.connectorOeste.initFromXMLfile(jcolibri.util.FileIO
+					.findFile("grupo14/aprendizaje/CBR/connector/plainTextConfigWest.xml"));
 			this.caseBaseEast = new LinealCaseBase();
+			this.caseBaseWest = new LinealCaseBase();
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
@@ -49,10 +54,9 @@ public class AprendizajeCBR implements StandardCBRApplication {
 
 	@Override
 	public CBRCaseBase preCycle() throws ExecutionException {
-		this.caseBaseEast.init(this.connector);
-		Collection<CBRCase> cases = this.caseBaseEast.getCases();
-		for(CBRCase c: cases)
-			System.out.println(c);
+		this.caseBaseEast.init(this.connectorEste);
+		this.caseBaseWest.init(this.connectorOeste);
+
 		return this.caseBaseEast;
 	}
 
@@ -89,8 +93,16 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		simConfig.addMapping(theirGoals, new Equal());
 		simConfig.setWeight(theirGoals, 0.7);
 		
-		//Se recogen los N casos más similares
-		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(caseBaseEast.getCases(), query, simConfig);
+		Collection<RetrievalResult> eval;
+		if( ((DescripcionCaso)query.getDescription()).masJugadoresEnElEste() ){
+			//Se recogen los N casos más similares
+			eval = NNScoringMethod.evaluateSimilarity(caseBaseEast.getCases(), query, simConfig);
+		}
+		else{
+			//Se recogen los N casos más similares
+			eval = NNScoringMethod.evaluateSimilarity(caseBaseWest.getCases(), query, simConfig);
+		}
+		
 		eval = SelectCases.selectTopKRR(eval, 5);
 
 		//Votacion ponderada
@@ -103,7 +115,8 @@ public class AprendizajeCBR implements StandardCBRApplication {
 
 	@Override
 	public void postCycle() throws ExecutionException {
-		this.connector.close();
+		this.connectorEste.close();
+		this.connectorOeste.close();
 	}
 	
 	/**
@@ -117,7 +130,10 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		//Se guarda el nuevo caso en la base de casos
 		Collection<CBRCase> aprendido = new ArrayList<CBRCase>();
 		aprendido.add(caso);
-		this.caseBaseEast.learnCases(aprendido);
+		if(((DescripcionCaso)caso.getDescription()).masJugadoresEnElEste())
+			this.caseBaseEast.learnCases(aprendido);
+		else
+			this.caseBaseWest.learnCases(aprendido);
 	}
 	
 	/**

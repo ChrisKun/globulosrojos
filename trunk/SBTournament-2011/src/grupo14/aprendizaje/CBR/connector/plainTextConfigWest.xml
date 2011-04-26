@@ -1,5 +1,5 @@
 <TextFileConfiguration>
-	<FilePath>grupo14/aprendizaje/CBR/caseBase/casesEste.txt</FilePath>
+	<FilePath>grupo14/aprendizaje/CBR/caseBase/casesOeste.txt</FilePath>
 	<Delimiters>,</Delimiters>
 	<DescriptionClassName>grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso</DescriptionClassName>
 	<DescriptionMappings>

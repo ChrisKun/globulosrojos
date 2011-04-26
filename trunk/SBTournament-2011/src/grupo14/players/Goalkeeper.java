@@ -8,6 +8,7 @@ import com.hp.hpl.jena.query.function.library.abs;
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.aprendizaje.CBR.OctantsState;
 import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
+import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
 import EDU.gatech.cc.is.util.Vec2;
 import states.PosesionContrarioConPeligro;
 import states.PosesionContrarioSinPeligro;
@@ -55,14 +56,14 @@ public class Goalkeeper extends Role{
 		matchState.accionARealizar(worldAPI,role);
 		
 		//Si el balon pasa por el centro y han pasado mas de 15 segundos desde la ultima lectura
-		if(ballIsInTheMiddle() && (worldAPI.getMatchTotalTime() - this.lastCase > 15 ) )
+		if(ballIsInTheMiddle()/* && (worldAPI.getMatchTotalTime() - this.lastCase > 15 )*/ )
 		{
 			//Hay que crear un nuevo caso (en el futuro en vez de crear un caso,
 			//también se consultara la base de casos para saber que hacer)
 			crearCaso();
 			//Se guarda el momento en que se ha leido el caso, para asegurar que no 
 			//se cogen dos casos muy juntos
-			this.lastCase = worldAPI.getMatchTotalTime();
+			//this.lastCase = worldAPI.getMatchTotalTime();
 		}
 		return WorldAPI.ROBOT_OK;
 	}
@@ -98,6 +99,9 @@ public class Goalkeeper extends Role{
 		descripcion.setTime(time);
 		CBRCase caso = new CBRCase();
 		caso.setDescription(descripcion);
+		SolucionCaso solucion = new SolucionCaso();
+		solucion.setNewState(matchState.getStateName());
+		caso.setSolution(solucion);
 		this.cbr.guardarCaso(caso);
 	}
 
@@ -125,6 +129,13 @@ public class Goalkeeper extends Role{
 			int playersInOctant = state.octants.get(octant).intValue()+1;
 			state.octants.set(octant, playersInOctant);
 		}
+		
+		//Falta por meter la posicion del portero, porque en teammates no viene su posicion
+		Vec2 pos = this.worldAPI.getPosition();
+		int octant = getPlayersOctant(pos);
+		int playersInOctant = state.octants.get(octant).intValue();
+		state.octants.set(octant, playersInOctant+1);
+		
 		return state;
 	}
 
