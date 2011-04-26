@@ -9,7 +9,8 @@ import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.aprendizaje.CBR.OctantsState;
 import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
 import EDU.gatech.cc.is.util.Vec2;
-import states.PosesionContrario;
+import states.PosesionContrarioConPeligro;
+import states.PosesionContrarioSinPeligro;
 import states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
@@ -21,6 +22,7 @@ public class Goalkeeper extends Role{
 	
 	AprendizajeCBR cbr;
 	long lastCase;
+	String role="portero";
 
 	@Override
 	public int configure() {
@@ -47,10 +49,10 @@ public class Goalkeeper extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new PosesionContrario();
+		MatchState state = new PosesionContrarioSinPeligro();
 		matchState = state;
 		getMatchState();
-		matchState.accionARealizar(worldAPI,Goalkeeper.class);
+		matchState.accionARealizar(worldAPI,role);
 		
 		//Si el balon pasa por el centro y han pasado mas de 15 segundos desde la ultima lectura
 		if(ballIsInTheMiddle() && (worldAPI.getMatchTotalTime() - this.lastCase > 15 ) )
@@ -225,12 +227,17 @@ public class Goalkeeper extends Role{
 					MatchState state = new UltimoHombreContrario();
 					matchState = state;
 				}
+				else{
+					System.out.println("Hay peligro, adelantarse un poquitin");
+					MatchState state = new PosesionContrarioConPeligro();
+					matchState = state;
+				}
 			}
 		}
 		else
 		{
 			System.out.println("El balon esta en el campo contrario");
-			MatchState state = new PosesionContrario();
+			MatchState state = new PosesionContrarioSinPeligro();
 			matchState = state;
 		}
 	}
