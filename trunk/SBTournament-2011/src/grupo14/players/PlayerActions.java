@@ -16,5 +16,5 @@ public enum PlayerActions {
 	Desbloquearse,		//Por si el otro equipo esta lleno de anormales
 	IrAPosicionDeEspera,//Una posición por ejemplo para cuando se pierde el balón tener el equipo bien ordenado atras (estilo Clemente?)
 	Desmarcarse,		//Más o menos alejarse lo más posible de los contrarios (a ser porsible sin terminar perdido en un corner)
-	TaparPortería		//Ponerse entre el balón y la portería para imperdir un gol
+	TaparPorteria		//Ponerse entre el balón y la portería para imperdir un gol
 }

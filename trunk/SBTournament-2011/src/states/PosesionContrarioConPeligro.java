@@ -21,21 +21,22 @@ public class PosesionContrarioConPeligro implements MatchState{
 		}
 		if(role.equals("defensa"))
 		{
-			{
-				if(worldAPI.isBlocking(worldAPI.getPosition()))
-				{
-					worldAPI.avoidCollisions();
-				}
-				else{
-				Vec2 vector = worldAPI.getBall();
-				worldAPI.setSteerHeading(vector.t);
-				worldAPI.setSpeed(1.0);
-				}
-			}
+			Acciones.taparPorteria(worldAPI);
+//			{
+//				if(worldAPI.isBlocking(worldAPI.getPosition()))
+//				{
+//					worldAPI.avoidCollisions();
+//				}
+//				else{
+//				Vec2 vector = worldAPI.getBall();
+//				worldAPI.setSteerHeading(vector.t);
+//				worldAPI.setSpeed(1.0);
+//				}
+//			}
 		}
 		if(role.equals("delantero"))
 		{
-			
+			Acciones.correrADefensa(worldAPI);
 		}
 		return 0;
 	}

@@ -3,3 +3,7 @@ Case 0,[0-4-2-1-0-1-2-0],3,-1,0,0,PosesionContrarioSinPeligro
 Case 1,[0-4-2-1-0-1-2-0],7,-1,0,0,PosesionContrarioSinPeligro
 Case 2,[0-1-0-0-5-3-1-0],3,-1,0,0,PosesionContrarioSinPeligro
 Case 3,[1-4-2-1-0-0-1-1],7,-1,0,0,PosesionContrarioSinPeligro
+Case 4,[0-4-2-1-0-1-2-0],3,-1,0,0,,PosesionContrarioSinPeligro
+Case 5,[0-6-3-1-0-0-0-0],3,-1,0,0,,PosesionContrarioSinPeligro
+Case 6,[1-2-3-0-1-2-1-0],7,-1,1,1,,PosesionContrarioSinPeligro
+Case 7,[0-4-2-1-0-1-2-0],3,-1,0,0,,PosesionContrarioSinPeligro
