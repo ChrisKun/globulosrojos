@@ -1,6 +1,9 @@
 
-Case 0,[0-1-2-2-0-0-0-0],3,-1,0,0,PosesionContrarioSinPeligro,0.3
-Case 1,[0-1-2-1-0-1-2-0],3,-1,0,0,PosesionContrarioSinPeligro,0.3
-Case 2,[0-1-2-1-0-1-2-0],3,-1,0,0,PosesionContrarioSinPeligro,0.3
-Case 3,[0-1-2-1-0-1-2-0],3,30000,0,0,PosesionContrarioSinPeligro,0.3
-Case 4,[0-1-1-0-2-0-1-2],7,30000,0,0,PosesionContrarioSinPeligro,-0.2
+Case 0,[0-1-2-1-0-1-2-0],3,11293,0,1,PosesionContrarioSinPeligro,-0.2
+Case 1,[0-1-2-1-0-1-2-0],3,14283,0,2,PosesionContrarioSinPeligro,-0.2
+Case 2,[0-1-2-1-0-1-2-0],3,11293,0,1,PosesionContrarioSinPeligro,-0.2
+Case 3,[0-1-2-1-0-1-2-0],3,14283,0,2,PosesionContrarioSinPeligro,-0.2
+Case 4,[0-1-2-1-0-1-2-0],7,27002,0,4,PosesionContrarioSinPeligro,-0.2
+Case 5,[0-1-2-1-0-1-2-0],7,33626,0,5,PosesionContrarioSinPeligro,0.3
+Case 6,[0-1-2-1-0-1-2-0],3,0,0,4,PosesionContrarioSinPeligro,-0.2
+Case 7,[0-1-2-1-0-1-2-0],7,3129,0,5,PosesionContrarioSinPeligro,-0.2

@@ -216,7 +216,7 @@ public class Goalkeeper extends Role{
 	/**
 	 * Returns the octant number of the received location
 	 * @param vec2
-	 * @return Integer value representing the octant number of the player or -1 if an error occurs
+	 * @return Integer value representing the octant number of the player (from 1 to 8) or -1 if an error occurs
 	 */
 	private int getLocationsOctant(Vec2 playersPosition) {
 		
@@ -244,13 +244,6 @@ public class Goalkeeper extends Role{
 				return 8;
 		}
 		return -1;
-	}
-
-	private Vec2 calculatePosition(){
-		//Recoger posicion del balon
-		Vec2 ballPosition = worldAPI.getBall();
-		
-		return null;
 	}
 	
 	/**
