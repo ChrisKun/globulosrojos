@@ -159,10 +159,10 @@ public class Goalkeeper extends Role{
 		case 7:
 		case 8:{
 			switch (getLocationsOctant(worldAPI.getBall())) {
-			case 3:
-			case 4:
-			case 7:
-			case 8:
+			case 1:
+			case 2:
+			case 5:
+			case 6:
 				//Nos han metido el balon en nuestro campo
 				resultado -= 0.2;
 				break;
@@ -206,8 +206,8 @@ public class Goalkeeper extends Role{
 		
 		//Falta por meter la posicion del portero, porque en teammates no viene su posicion
 		Vec2 pos = this.worldAPI.getPosition();
-		int octant = getLocationsOctant(pos);
-		int playersInOctant = state.octants.get(octant-1).intValue();
+		int octant = getLocationsOctant(pos)-1;
+		int playersInOctant = state.octants.get(octant).intValue();
 		state.octants.set(octant, playersInOctant+1);
 		
 		return state;
