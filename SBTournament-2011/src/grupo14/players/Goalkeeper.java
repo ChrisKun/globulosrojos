@@ -1,5 +1,7 @@
 package grupo14.players;
 
+import java.util.ArrayList;
+
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.exception.ExecutionException;
 
@@ -8,6 +10,7 @@ import com.hp.hpl.jena.query.function.library.abs;
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.aprendizaje.CBR.OctantsState;
 import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
+import grupo14.aprendizaje.CBR.caseComponents.ResultadoCaso;
 import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
 import EDU.gatech.cc.is.util.Vec2;
 import states.PosesionContrarioConPeligro;
@@ -22,13 +25,14 @@ public class Goalkeeper extends Role{
 	public MatchState matchState;
 	
 	AprendizajeCBR cbr;
+	CBRCase casoAnterior;
 	long lastCase;
 	String role="portero";
 
 	@Override
 	public int configure() {
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
-		worldAPI.setDisplayString("Portero");
+		worldAPI.setDisplayString(role);
 		//Para poder manipular el CBR
 		this.cbr = new AprendizajeCBR();
 		try {
@@ -87,10 +91,10 @@ public class Goalkeeper extends Role{
 		Vec2[] teammates = worldAPI.getTeammates();
 		//Return the number of players in each octant
 		OctantsState state = setOctantsState(teammates, opponents);
-		int ballPos = getPlayersOctant(worldAPI.getBall());
+		int ballPos = getLocationsOctant(worldAPI.getBall());
 		int ourGoals = worldAPI.getMyScore();
 		int theirGoals = worldAPI.getOpponentScore();
-		long time = worldAPI.getMatchTotalTime();
+		long time = worldAPI.getMatchTotalTime() - worldAPI.getMatchRemainingTime();
 		DescripcionCaso descripcion = new DescripcionCaso();
 		descripcion.setBallPosition(ballPos);
 		descripcion.setNumPlayersEachOctant(state);
@@ -102,7 +106,77 @@ public class Goalkeeper extends Role{
 		SolucionCaso solucion = new SolucionCaso();
 		solucion.setNewState(matchState.getStateName());
 		caso.setSolution(solucion);
-		this.cbr.guardarCaso(caso);
+		//Si existe un caso anterior, se evalua
+		if(casoAnterior != null){
+			ResultadoCaso resultado = new ResultadoCaso(evaluarCaso(casoAnterior));
+			casoAnterior.setResult(resultado);
+			//Se guarda el caso con su resultado (el caso estaba guardado de antemano, asi que hay que actualizar)
+			this.cbr.guardarCaso(casoAnterior);
+		}
+		//Se guarda como caso anterior para que luego podamos tener acceso a el para
+		//evaluar si el caso a sido bueno o malo y darle un resultado
+		this.casoAnterior = caso;
+	}
+
+	/**
+	 * Da un resultado al caso dependiendo si sus acciones llevaron a un buen resultado o no
+	 * El resultado es un valor numerico entre 0 y 1
+	 * @param caso
+	 * @return Un valor numerico entre 0 y uno donde 1 es el mejor valor posible y 0 el peor
+	 */
+	private float evaluarCaso(CBRCase casoAnterior) {
+		DescripcionCaso desc = (DescripcionCaso)casoAnterior.getDescription();
+		float resultado = (float)0.5;
+		if(desc.getOurGoals() < worldAPI.getMyScore())
+		{//Hemos metido gol
+			resultado += 0.5;
+		}
+		if(desc.getTheirGoals() < worldAPI.getOpponentScore())
+		{//Nos han metido gol
+			resultado -= 0.5;
+		}
+		switch (desc.getBallPosition()) {
+		case 1:
+		case 2:
+		case 5:
+		case 6:{
+			switch (getLocationsOctant(worldAPI.getBall())) {
+			case 3:
+			case 4:
+			case 7:
+			case 8:
+				//Hemos llevado el balon de nuestro campo al otro
+				resultado += 0.2;
+				break;
+
+			default:
+				break;
+			}
+			break;
+		}
+		case 3:
+		case 4:
+		case 7:
+		case 8:{
+			switch (getLocationsOctant(worldAPI.getBall())) {
+			case 3:
+			case 4:
+			case 7:
+			case 8:
+				//Nos han metido el balon en nuestro campo
+				resultado -= 0.2;
+				break;
+
+			default:
+				break;
+			}
+			break;
+		}
+
+		default:
+			break;
+		}
+		return resultado;
 	}
 
 	/**
@@ -118,33 +192,33 @@ public class Goalkeeper extends Role{
 		for(int i = 0; i < teammates.length; i++)
 		{
 			//Adds 1 to the octant where the player is located
-			int octant = getPlayersOctant(teammates[i])-1;
+			int octant = getLocationsOctant(teammates[i])-1;
 			int playersInOctant = state.octants.get(octant).intValue();
 			state.octants.set(octant, playersInOctant+1);
 		}
 		for(int i = 0; i < opponents.length; i++)
 		{
 			//Adds 1 to the octant where the player is located
-			int octant = getPlayersOctant(opponents[i])-1;
+			int octant = getLocationsOctant(opponents[i])-1;
 			int playersInOctant = state.octants.get(octant).intValue()+1;
 			state.octants.set(octant, playersInOctant);
 		}
 		
 		//Falta por meter la posicion del portero, porque en teammates no viene su posicion
 		Vec2 pos = this.worldAPI.getPosition();
-		int octant = getPlayersOctant(pos);
-		int playersInOctant = state.octants.get(octant).intValue();
+		int octant = getLocationsOctant(pos);
+		int playersInOctant = state.octants.get(octant-1).intValue();
 		state.octants.set(octant, playersInOctant+1);
 		
 		return state;
 	}
 
 	/**
-	 * Returns the octant number of the player
+	 * Returns the octant number of the received location
 	 * @param vec2
 	 * @return Integer value representing the octant number of the player or -1 if an error occurs
 	 */
-	private int getPlayersOctant(Vec2 playersPosition) {
+	private int getLocationsOctant(Vec2 playersPosition) {
 		
 		Vec2 globalPos = toGlobalCoordinates(playersPosition);
 		if(globalPos.y >= 0)

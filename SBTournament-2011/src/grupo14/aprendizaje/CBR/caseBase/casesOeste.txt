@@ -1,3 +1,6 @@
 
-Case 3,[0-4-0-0-0-0-5-1],7,-1,0,0,PosesionContrarioSinPeligro
-Case 3,[0-3-0-0-0-0-6-1],3,-1,0,0,PosesionContrarioSinPeligro
+Case 0,[0-1-2-2-0-0-0-0],3,-1,0,0,PosesionContrarioSinPeligro,0.3
+Case 1,[0-1-2-1-0-1-2-0],3,-1,0,0,PosesionContrarioSinPeligro,0.3
+Case 2,[0-1-2-1-0-1-2-0],3,-1,0,0,PosesionContrarioSinPeligro,0.3
+Case 3,[0-1-2-1-0-1-2-0],3,30000,0,0,PosesionContrarioSinPeligro,0.3
+Case 4,[0-1-1-0-2-0-1-2],7,30000,0,0,PosesionContrarioSinPeligro,-0.2
