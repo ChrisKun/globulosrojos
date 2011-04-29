@@ -18,21 +18,23 @@ public class PosesionContrarioSinPeligro implements MatchState{
 		}
 		if(role.equals("defensa"))
 		{
-			if(worldAPI.isBlocking(worldAPI.getPosition()))
-			{
-				worldAPI.avoidCollisions();
-			}
-			else{
-			Vec2 vector = worldAPI.getBall();
-			worldAPI.setSteerHeading(vector.t);
-			worldAPI.setSpeed(1.0);
-			}
+//			if(worldAPI.blocked())
+//			{
+//				worldAPI.avoidCollisions();
+//			}
+//			else{
+//			Vec2 vector = worldAPI.getBall();
+//			worldAPI.setSteerHeading(vector.t);
+//			worldAPI.setSpeed(1.0);
+//			}
+			Acciones.bloquearContrario(worldAPI);
 		}
 		if(role.equals("delantero"))
 		{
-			Vec2 vector = worldAPI.getBall();
-			worldAPI.setSteerHeading(vector.t);
-			worldAPI.setSpeed(1.0);
+//			Vec2 vector = worldAPI.getBall();
+//			worldAPI.setSteerHeading(vector.t);
+//			worldAPI.setSpeed(1.0);
+			Acciones.desmarcarse(worldAPI);
 		}
 		return 0;
 	}
