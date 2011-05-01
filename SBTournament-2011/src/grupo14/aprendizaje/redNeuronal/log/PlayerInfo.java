@@ -38,5 +38,15 @@ public class PlayerInfo {
 	public float getSpeed() {return speed;}
 	public void setSpeed(float speed) {this.speed = speed;}
 	
-	
+	public String toString() {
+		String str = "Robot ID: " + robotId + "\n";
+		str += "Control System: " + controlSystem + "\n";
+		str += "Player ID: " + playerId + "\n";
+		str += "Position X: " + positionX + "\n";
+		str += "Position Y: " + positionY + "\n";
+		str += "Heading X: " + headingX + "\n";
+		str += "Heading Y: " + headingY + "\n";
+		str += "Speed: " + speed;
+		return str;
+	}
 }
