@@ -2,12 +2,12 @@ package grupo14.aprendizaje.redNeuronal.log;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.Document;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -18,7 +18,7 @@ public class LogParser {
 	
 	public static void main(String args[]) {
 		LogParser lp = new LogParser("log.xml");
-		for (int i = 0; i < 5; i++)
+		//for (int i = 0; i < 5; i++)
 			lp.getNextLogEntry();
 		
 	}
@@ -41,8 +41,29 @@ public class LogParser {
 		
 		NodeList nl = actualNode.getChildNodes();
 		// Estado de la bola
+		BallInfo ballInfo = getBallInfo(nl.item(1));
+		logEntry.setBallInfo(ballInfo);
+		
+		// Estado de los jugadores del westTeam
+		ArrayList<PlayerInfo> westTeamInfo = getTeamInfo(nl.item(3));
+		logEntry.setWestTeamInfo(westTeamInfo);
+		
+		// Estado de los jugadores del eastTeam
+		ArrayList<PlayerInfo> eastTeamInfo = getTeamInfo(nl.item(5));
+		logEntry.setEastTeamInfo(eastTeamInfo);
+		
+		// Un salto de más debido a los saltos de linea del documento
+		actualNode = actualNode.getNextSibling().getNextSibling();
+		
+		return logEntry;
+	}
+	
+	/** Obtiene la información de la bola a partir de su nodo XML. 
+	 * @param ballNode Nodo XML que tiene la información de la bola.
+	 * @return Información de la bola en un objeto de la clase BallInfo. */
+	private BallInfo getBallInfo(Node ballNode) {
 		BallInfo ballInfo = new BallInfo();
-		Node ballNode = nl.item(1);
+		
 		NodeList ballNL = ballNode.getChildNodes();
 		ballInfo.setPositionX(Float.parseFloat(ballNL.item(1).getAttributes().item(0).getNodeValue()));
 		ballInfo.setPositionY(Float.parseFloat(ballNL.item(1).getAttributes().item(1).getNodeValue()));
@@ -51,12 +72,35 @@ public class LogParser {
 		ballInfo.setVelocityY(Float.parseFloat(ballNL.item(5).getAttributes().item(1).getNodeValue()));
 		ballInfo.setWestScore(Integer.parseInt(ballNL.item(7).getAttributes().item(0).getNodeValue()));
 		ballInfo.setEastScore(Integer.parseInt(ballNL.item(7).getAttributes().item(1).getNodeValue()));
-		// Estado de los jugadores del westTeam
 		
-		// Un salto de más debido a los saltos de linea del documento
-		actualNode = actualNode.getNextSibling().getNextSibling();
+		return ballInfo;
+	}
+	
+	/** Obtiene la información del equipo a partir de su nodo XML.
+	 * @param teamNode Nodo del equipo.
+	 * @return Una lista de objetos de la clase PlayerInfo. */
+	private ArrayList<PlayerInfo> getTeamInfo(Node teamNode) {
+		// Estado de los jugadores del eastTeam
+		ArrayList<PlayerInfo> teamInfo = new ArrayList<PlayerInfo>();
+		for (int iPlayer = 0; iPlayer < 5; iPlayer++) {
+			PlayerInfo playerInfo = new PlayerInfo();
+			Node playerNode = teamNode.getChildNodes().item(iPlayer * 2 + 1);
+			NodeList playerNL = playerNode.getChildNodes();
+			NodeList robotNL = playerNL.item(1).getChildNodes();
+			
+			playerInfo.setRobotId(Integer.parseInt(playerNode.getAttributes().item(1).getNodeValue()));
+			playerInfo.setControlSystem(playerNode.getAttributes().item(0).getNodeValue());
+			playerInfo.setPlayerId(Integer.parseInt(playerNL.item(1).getAttributes().item(1).getNodeValue()));
+			playerInfo.setPositionX(Float.parseFloat(robotNL.item(1).getAttributes().item(0).getNodeValue()));
+			playerInfo.setPositionY(Float.parseFloat(robotNL.item(1).getAttributes().item(1).getNodeValue()));
+			playerInfo.setHeadingX(Float.parseFloat(robotNL.item(3).getAttributes().item(0).getNodeValue()));
+			playerInfo.setHeadingY(Float.parseFloat(robotNL.item(3).getAttributes().item(1).getNodeValue()));
+			playerInfo.setSpeed(Float.parseFloat(robotNL.item(5).getAttributes().item(0).getNodeValue()));
+			
+			teamInfo.add(playerInfo);
+		}
 		
-		return logEntry;
+		return teamInfo;
 	}
 	
 	/** Parsea un fichero XML dada la ruta al fichero. 
