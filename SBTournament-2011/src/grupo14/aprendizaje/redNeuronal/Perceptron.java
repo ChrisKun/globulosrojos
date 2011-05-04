@@ -1,6 +1,16 @@
 package grupo14.aprendizaje.redNeuronal;
 
-public class Perceptron {
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Perceptron implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	/** Número de entradas incluyendo el bias. */
 	private int nInputs;
@@ -112,11 +122,37 @@ public class Perceptron {
 		}
 	}
 	
-	/** @return La salida del perceptron. */
+	/** Devuelve la salida del perceptrón. 
+	 * @return La salida del perceptron. */
 	public double getOutput() {return output;}
 	
+	/** Guarda el perceptron en un fichero.
+	 * @param path Ruta al fichero donde se va a guardar el perceptrón. */
+	public void writeToFile(String path) {
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path));
+			oos.writeObject(this);
+			oos.close();
+		} catch (FileNotFoundException e) {e.printStackTrace();}
+		catch (IOException e) {e.printStackTrace();}
+	}
+	
+	/** Lee un perceptron desde un fichero.
+	 * @param path Ruta al fichero donde está almacenado el peceptrón.
+	 * @return Perceptron leído. */
+	public static Perceptron readFromFile(String path) {
+		Perceptron p = null;
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path));
+			p = (Perceptron) ois.readObject();
+		} catch (FileNotFoundException e) {e.printStackTrace();}
+		catch (IOException e) {e.printStackTrace();}
+		catch (ClassNotFoundException e) {e.printStackTrace();}
+		return p;
+	}
+	
 	public static void main(String args[]) {
-		Perceptron mlp = new Perceptron(3, 4);
+		Perceptron mlp = readFromFile("perceptron.mlp");
 		
 		double[] input = new double[3];
 		for (int i = 0; i < 500; i++) {
@@ -142,5 +178,7 @@ public class Perceptron {
 		input[0] = 1.0; input[1] = 1.0; input[2] = 1.0;
 		mlp.train(input, 0.0);
 		System.out.println(mlp.getOutput());
+		
+		mlp.writeToFile("perceptron.mlp");
 	}
 }
