@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.exception.ExecutionException;
 
+import com.hp.hpl.jena.query.core.RecursiveVisitor;
 import com.hp.hpl.jena.query.function.library.abs;
 
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
@@ -13,8 +14,16 @@ import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
 import grupo14.aprendizaje.CBR.caseComponents.ResultadoCaso;
 import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
 import EDU.gatech.cc.is.util.Vec2;
+import states.Catenaccio;
+import states.Heroica;
+import states.IrAlAtaque;
+import states.JuegoBrusco;
 import states.PosesionContrarioConPeligro;
+import states.PosesionContrarioEnSuCampo;
+import states.PosesionContrarioNuestroCampo;
 import states.PosesionContrarioSinPeligro;
+import states.PosesionNuestraEnNuestroCampo;
+import states.PosesionNuestraEnSuCampo;
 import states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
@@ -39,7 +48,6 @@ public class Goalkeeper extends Role{
 			this.cbr.configure();
 			this.cbr.preCycle();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.lastCase = 0;
@@ -60,18 +68,53 @@ public class Goalkeeper extends Role{
 		matchState.accionARealizar(worldAPI,role);
 		
 		//Si el balon pasa por el centro y han pasado mas de 15 segundos desde la ultima lectura
-		if(ballIsInTheMiddle()/* && (worldAPI.getMatchTotalTime() - this.lastCase > 15 )*/ )
+		if(ballIsInTheMiddle() && (worldAPI.getMatchTotalTime() - this.lastCase > 15 ) )
 		{
 			//Hay que crear un nuevo caso (en el futuro en vez de crear un caso,
 			//también se consultara la base de casos para saber que hacer)
-			crearCaso();
+			CBRCase caso = crearCaso();
 			//Se guarda el momento en que se ha leido el caso, para asegurar que no 
 			//se cogen dos casos muy juntos
-			//this.lastCase = worldAPI.getMatchTotalTime();
+			this.lastCase = worldAPI.getMatchTotalTime();
+			//Se hace la consulta a la base de casos para que esta nos devuelva el caso mejor
+			//y tomar una decision
+			
+			/**************************************************************/
+//			try {
+//				CBRCase recuperado = cbr.recuperarCaso(caso);
+//				SolucionCaso solucion = (SolucionCaso)recuperado.getSolution();
+//				String recoveredState = solucion.getNewState();
+//				this.matchState = setMatchStateUsingName(recoveredState);
+//			} catch (ExecutionException e) {
+//				e.printStackTrace();
+//			}
+			/**************************************************************/
 		}
 		return WorldAPI.ROBOT_OK;
 	}
 	
+	private MatchState setMatchStateUsingName(String state) {
+		if(state.equals("Catenaccio"))
+			return new Catenaccio();
+		if(state.equals("Heroica"))
+			return new Heroica();
+		if(state.equals("IrAlAtaque"))
+			return new IrAlAtaque();
+		if(state.equals("IrAlAtaque"))
+			return new JuegoBrusco();
+		if(state.equals("PosesionContrarioEnSuCampo"))
+			return new PosesionContrarioEnSuCampo();
+		if(state.equals("PosesionContrarioNuestroCampo"))
+			return new PosesionContrarioNuestroCampo();
+		if(state.equals("PosesionNuestraEnNuestroCampo"))
+			return new PosesionNuestraEnNuestroCampo();
+		if(state.equals("PosesionNuestraEnSuCampo"))
+			return new PosesionNuestraEnSuCampo();
+		if(state.equals("UltimoHombreContrario"))
+			return new UltimoHombreContrario();
+		return null;
+	}
+
 	/**
 	 * Devuelve si el balon esta en el centro del campo o no
 	 * @return true si el balon esta en el centro del campo, false en caso contrario
@@ -85,37 +128,48 @@ public class Goalkeeper extends Role{
 			return false;
 	}
 
-	private void crearCaso() {
+	/**
+	 * Creates a case with the current match state
+	 */
+	private CBRCase crearCaso() {
 		//Get the position of all the players
 		Vec2[] opponents = worldAPI.getOpponents();
 		Vec2[] teammates = worldAPI.getTeammates();
 		//Return the number of players in each octant
 		OctantsState state = setOctantsState(teammates, opponents);
+		//Get the position of the ball
 		int ballPos = getLocationsOctant(worldAPI.getBall());
+		//Get our sore
 		int ourGoals = worldAPI.getMyScore();
+		//Get their score
 		int theirGoals = worldAPI.getOpponentScore();
+		//Get elapsed time
 		long time = worldAPI.getMatchTotalTime() - worldAPI.getMatchRemainingTime();
+		//Create the description object for the case
 		DescripcionCaso descripcion = new DescripcionCaso();
 		descripcion.setBallPosition(ballPos);
 		descripcion.setNumPlayersEachOctant(state);
 		descripcion.setOurGoals(ourGoals);
 		descripcion.setTheirGoals(theirGoals);
 		descripcion.setTime(time);
+		//Create the case and set the description just created
 		CBRCase caso = new CBRCase();
 		caso.setDescription(descripcion);
+		//Set the solution of the case, i.e. the decision taken in this situation
+		//Later the evaluation of the case will say if decission was correct or not
 		SolucionCaso solucion = new SolucionCaso();
 		solucion.setNewState(matchState.getStateName());
 		caso.setSolution(solucion);
-		//Si existe un caso anterior, se evalua
+		//If a previous case exists, evaluate it
 		if(casoAnterior != null){
 			ResultadoCaso resultado = new ResultadoCaso(evaluarCaso(casoAnterior));
 			casoAnterior.setResult(resultado);
-			//Se guarda el caso con su resultado (el caso estaba guardado de antemano, asi que hay que actualizar)
+			//Save the case with its rasult (case was already saved, so just update it in the case base)
 			this.cbr.guardarCaso(casoAnterior);
 		}
-		//Se guarda como caso anterior para que luego podamos tener acceso a el para
-		//evaluar si el caso a sido bueno o malo y darle un resultado
+		//The new case is saved in order to evaluate it later
 		this.casoAnterior = caso;
+		return caso;
 	}
 
 	/**

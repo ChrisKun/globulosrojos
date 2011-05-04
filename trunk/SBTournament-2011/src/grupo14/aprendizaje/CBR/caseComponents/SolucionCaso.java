@@ -11,7 +11,7 @@ import jcolibri.extensions.classification.ClassificationSolution;
 public class SolucionCaso implements ClassificationSolution{
 	
 	/**
-	 * String que almacena el estado al que paso el equipo en caso actual
+	 * String que almacena el estado al que paso el equipo en el caso actual
 	 */
 	private String newState;
 	
