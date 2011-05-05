@@ -67,15 +67,15 @@ public class Goalkeeper extends Role{
 		getMatchState();
 		matchState.accionARealizar(worldAPI,role);
 		
-		//Si el balon pasa por el centro y han pasado mas de 15 segundos desde la ultima lectura
-		if(ballIsInTheMiddle() && (worldAPI.getMatchTotalTime() - this.lastCase > 15 ) )
+		//Si el sistema considera que debe leerse un nuevo caso
+		if(needToCreateCase())
 		{
 			//Hay que crear un nuevo caso (en el futuro en vez de crear un caso,
 			//también se consultara la base de casos para saber que hacer)
 			CBRCase caso = crearCaso();
 			//Se guarda el momento en que se ha leido el caso, para asegurar que no 
 			//se cogen dos casos muy juntos
-			this.lastCase = worldAPI.getMatchTotalTime();
+			this.lastCase = worldAPI.getMatchTotalTime() - worldAPI.getMatchRemainingTime();
 			//Se hace la consulta a la base de casos para que esta nos devuelva el caso mejor
 			//y tomar una decision
 			
@@ -116,13 +116,18 @@ public class Goalkeeper extends Role{
 	}
 
 	/**
-	 * Devuelve si el balon esta en el centro del campo o no
-	 * @return true si el balon esta en el centro del campo, false en caso contrario
+	 * Devuelve si se cumplen los requisitos para la lectura de un nuevo caso
+	 * @return true si las condiciones para leer un caso se cumplen, false an caso contrario
 	 */
-	private boolean ballIsInTheMiddle(){
+	private boolean needToCreateCase(){
 		double ball = worldAPI.getBall().x;
 		double pos = worldAPI.getPosition().x;
-		if( Math.abs(ball) - Math.abs(pos) == 0)
+		long tiempoTranscurrido = worldAPI.getMatchTotalTime() - worldAPI.getMatchRemainingTime();
+		//Si han pasado 25 segundos desde el anterior caso leido
+		if(tiempoTranscurrido - this.lastCase > 25000 )
+			return true;
+		//Si el balon esta en medio y an pasado 15 segundos desde el anterior caso leido
+		if( Math.abs(ball) - Math.abs(pos) == 0 && (tiempoTranscurrido - this.lastCase > 15000 ))
 			return true;
 		else
 			return false;
