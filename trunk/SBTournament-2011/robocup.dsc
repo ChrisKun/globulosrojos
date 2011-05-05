@@ -86,7 +86,7 @@ object EDU.gatech.cc.is.simulation.ObstacleInvisibleSim -2.047 -1.4396 0 1.0
 // from getting jumpy on slow machines, or when/if your process gets 
 // swapped out. 
 
-maxtimestep 16 
+maxtimestep 24 
 
 //====== 
 // TIMEOUT 
@@ -99,7 +99,7 @@ maxtimestep 16
 // is reached. If no timeout statement is given, the default is no 
 // termination. 
 // 
-timeout 120000 // ten seconds 
+timeout 30000 // ten seconds 
 
 //====== 
 // TIME 
@@ -115,7 +115,7 @@ timeout 120000 // ten seconds
 // lose fidelity. In fact, for slow computers, values less than 1.0 
 // may be necessary. 
 
-time 3.0 
+time 1.0 
 
 //====== 
 // LOGTIME 
