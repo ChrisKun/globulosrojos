@@ -4,6 +4,7 @@ import jcolibri.exception.ExecutionException;
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.manager.*;
 
+import states.JuegoBrusco;
 import states.PosesionContrarioConPeligro;
 import states.PosesionContrarioSinPeligro;
 import states.UltimoHombreContrario;
@@ -30,7 +31,7 @@ public class MegaDefender  extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new PosesionContrarioSinPeligro();
+		MatchState state = new JuegoBrusco();
 		matchState = state;
 		getMatchState();
 		matchState.accionARealizar(worldAPI,role);

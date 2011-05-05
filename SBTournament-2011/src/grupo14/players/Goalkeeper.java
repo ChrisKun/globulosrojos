@@ -62,7 +62,7 @@ public class Goalkeeper extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new PosesionContrarioSinPeligro();
+		MatchState state = setMatchStateUsingName("JuegoBrusco");
 		matchState = state;
 		getMatchState();
 		matchState.accionARealizar(worldAPI,role);
@@ -100,7 +100,7 @@ public class Goalkeeper extends Role{
 			return new Heroica();
 		if(state.equals("IrAlAtaque"))
 			return new IrAlAtaque();
-		if(state.equals("IrAlAtaque"))
+		if(state.equals("JuegoBrusco"))
 			return new JuegoBrusco();
 		if(state.equals("PosesionContrarioEnSuCampo"))
 			return new PosesionContrarioEnSuCampo();

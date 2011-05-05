@@ -1,10 +1,12 @@
 package states;
 
 import teams.rolebased.WorldAPI;
+import grupo14.players.Acciones;
 import grupo14.players.MatchState;
 
 /**
  * Todos los jugadores bloquean a todos los contrarios todo el rato
+ * El delantero Tocapelotas va a por el balon
  * @author markel
  *
  */
@@ -12,14 +14,14 @@ public class JuegoBrusco implements MatchState {
 
 	@Override
 	public int accionARealizar(WorldAPI worldAPI, String role) {
-		// TODO Auto-generated method stub
+		System.out.println(role.getClass().toString());
+		Acciones.bloquearContrario(worldAPI);
 		return 0;
 	}
 
 	@Override
 	public String getStateName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "JuegoBrusco";
 	}
 
 }

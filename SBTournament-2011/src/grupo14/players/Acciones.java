@@ -72,7 +72,7 @@ public class Acciones {
 		worldAPI.setDisplayString("ChutarAPorteria (intentando)");
 	}
 	
-	// TODO : Bloquear al más cercano al jugador? al más cercano a nuestra portería?, al portero?
+	// TODO : Bloquear al mas cercano al jugador? al mas cercano a nuestra porteraa?, al portero?
 	public static void bloquearContrario(WorldAPI worldAPI) {
 		worldAPI.blockClosest();
 		worldAPI.setDisplayString("BloquearContrario (bloqueando)");
@@ -102,12 +102,12 @@ public class Acciones {
 		}
 	}
 	
-	// TODO: What? cómo se hace esto?
+	// TODO: What? cï¿½mo se hace esto?
 	public static void desmarcarse(WorldAPI worldAPI) {
 		
 	}
 	
-	// TODO: Con qué método? a una distancia porcentual de la porteriá (punto medio entre balón y portería, o 1/3, o...)?
+	// TODO: Con quï¿½ mï¿½todo? a una distancia porcentual de la porteriï¿½ (punto medio entre balï¿½n y porterï¿½a, o 1/3, o...)?
 	public static void taparPorteria(WorldAPI worldAPI) {
 		Vec2 dif = (Vec2) worldAPI.getOurGoal().clone();
 		dif.sub(worldAPI.getBall());

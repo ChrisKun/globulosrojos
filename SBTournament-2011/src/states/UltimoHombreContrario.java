@@ -11,7 +11,7 @@ import grupo14.players.Striker;
 /**
  * El delantero contrario esta delante de la porteria.
  * Nuestro portero debe ir a por el balon
- * Nuestro mega defensa va a por el balontambien
+ * Nuestro mega defensa va a por el balon tambien
  * El defensa bloquea al contrario
  * Un delantero baja a bloquear a otro delantero contrario
  * El otro delantero se queda en medio campo
