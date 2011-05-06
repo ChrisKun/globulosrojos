@@ -1,21 +1,21 @@
 package grupo14.players;
+
+import EDU.gatech.cc.is.util.Vec2;
 import grupo14.states.Heroica;
+import grupo14.states.IrAlAtaque;
 import grupo14.states.JuegoBrusco;
 import grupo14.states.PosesionContrarioConPeligro;
 import grupo14.states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
-import EDU.gatech.cc.is.util.Vec2;
 
-public class MegaDefender  extends Role{
+public class FuckingStriker extends Role {
 
+	String role="delanteroTocapelotas";
 	public MatchState matchState;
-	String role="megaDefensor";
-	
 	@Override
 	public int configure() {
-		//Para cuando se quiera ver el nombre de los jugadores en el simulador
-		worldAPI.setDisplayString(role);		
+		worldAPI.setDisplayString("Delantero");	
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -35,7 +35,6 @@ public class MegaDefender  extends Role{
 		
 		return WorldAPI.ROBOT_OK;
 	}
-
 	private void getMatchState() {
 		int lado = worldAPI.getFieldSide(); //-1 en la derecha, 1 en la izquierda
 		//si el balon lo tiene el contrario, estado=2, estado=3... 
@@ -56,6 +55,10 @@ public class MegaDefender  extends Role{
 					matchState = state;
 				}
 			}
+			else{
+				MatchState state = new IrAlAtaque();
+				matchState = state;
+			}
 		}
 		else
 		{
@@ -63,9 +66,11 @@ public class MegaDefender  extends Role{
 			matchState = state;
 		}
 	}
+	
 	//devuelve la posicion de un item desde el centro del campo
 	public Vec2 getRelativePosition(Vec2 position)
 	{
 		return new Vec2(worldAPI.getPosition().x+position.x,worldAPI.getPosition().y+position.y);
 	}
+
 }

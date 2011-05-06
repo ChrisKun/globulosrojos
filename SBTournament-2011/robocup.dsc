@@ -99,7 +99,7 @@ maxtimestep 19
 // is reached. If no timeout statement is given, the default is no 
 // termination. 
 // 
-timeout 60000 // ten seconds 
+timeout 30000 // ten seconds 
 
 //====== 
 // TIME 
@@ -175,14 +175,14 @@ robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team
 
 //======EAST TEAM====== 
 eastname EastTeam 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070806.Capello 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 1.2 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070806.Capello 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 .5 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070806.Capello 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 .15 .5 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070806.Capello 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 .15 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070806.Capello 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 .15 -.5 0 xFF0000 x0000FF 2 
 

@@ -1,6 +1,7 @@
 package grupo14.players;
 
 import EDU.gatech.cc.is.util.Vec2;
+import grupo14.states.Heroica;
 import grupo14.states.IrAlAtaque;
 import grupo14.states.JuegoBrusco;
 import grupo14.states.PosesionContrarioConPeligro;
@@ -26,9 +27,9 @@ public class Striker extends Role {
 
 	@Override
 	public int takeStep() {
-		MatchState state = new JuegoBrusco();
+		MatchState state = new Heroica();
 		matchState = state;
-		getMatchState();
+		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);
 		
 		
