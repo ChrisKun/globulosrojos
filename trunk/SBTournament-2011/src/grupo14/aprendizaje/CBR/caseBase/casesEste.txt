@@ -7,3 +7,5 @@ Case 4,[6-0-1-1-0-1-1-0],1,25056,0,2,UltimoHombreContrario,0.0
 Case 5,[0-0-1-0-3-5-0-1],5,50112,0,3,JuegoBrusco,0.5
 Case 6,[0-5-0-1-2-1-1-0],6,75168,0,3,UltimoHombreContrario,0.0
 Case 7,[0-0-2-0-6-0-1-1],5,100224,0,6,JuegoBrusco,0.2
+Case 8,[0-3-2-1-1-1-1-1],3,18107,0,2,PosesionContrarioSinPeligro,0.0
+Case 9,[1-3-2-1-0-1-2-0],3,37012,0,4,PosesionContrarioSinPeligro,0.5
