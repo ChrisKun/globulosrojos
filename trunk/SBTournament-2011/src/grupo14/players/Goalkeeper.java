@@ -16,6 +16,7 @@ import grupo14.states.PosesionContrarioSinPeligro;
 import grupo14.states.PosesionNuestraEnNuestroCampo;
 import grupo14.states.PosesionNuestraEnSuCampo;
 import grupo14.states.UltimoHombreContrario;
+import grupo14.utils.fieldUtils;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.exception.ExecutionException;
 import teams.rolebased.Role;
@@ -56,9 +57,9 @@ public class Goalkeeper extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = setMatchStateUsingName("JuegoBrusco");
+		MatchState state = new Heroica();
 		matchState = state;
-		getMatchState();
+		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);
 		
 		//Si el sistema considera que debe leerse un nuevo caso
@@ -135,9 +136,9 @@ public class Goalkeeper extends Role{
 		Vec2[] opponents = worldAPI.getOpponents();
 		Vec2[] teammates = worldAPI.getTeammates();
 		//Return the number of players in each octant
-		OctantsState state = setOctantsState(teammates, opponents);
+		OctantsState state = fieldUtils.setOctantsState(teammates, opponents, worldAPI);
 		//Get the position of the ball
-		int ballPos = getLocationsOctant(worldAPI.getBall());
+		int ballPos = fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI);
 		//Get our sore
 		int ourGoals = worldAPI.getMyScore();
 		//Get their score
@@ -193,7 +194,7 @@ public class Goalkeeper extends Role{
 		case 2:
 		case 5:
 		case 6:{
-			switch (getLocationsOctant(worldAPI.getBall())) {
+			switch (fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI)) {
 			case 3:
 			case 4:
 			case 7:
@@ -211,7 +212,7 @@ public class Goalkeeper extends Role{
 		case 4:
 		case 7:
 		case 8:{
-			switch (getLocationsOctant(worldAPI.getBall())) {
+			switch (fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI)) {
 			case 1:
 			case 2:
 			case 5:
@@ -231,111 +232,7 @@ public class Goalkeeper extends Role{
 		}
 		return resultado;
 	}
-
-	/**
-	 * Fills the octants with the number of players located in each one.
-	 * @param teammates: Array with the position of each team mate (egocentric respect goal keeper)
-	 * @param opponents: Array with the position of each opponent (egocentric respect goal keeper)
-	 * @return OctantsState object with the filled octants
-	 */
-	private OctantsState setOctantsState(Vec2[] teammates, Vec2[] opponents) {
-		OctantsState state = new OctantsState();
-		for(int i = 0; i < 8; i++)
-			state.octants.add(new Integer(0));
-		for(int i = 0; i < teammates.length; i++)
-		{
-			//Adds 1 to the octant where the player is located
-			int octant = getLocationsOctant(teammates[i])-1;
-			int playersInOctant = state.octants.get(octant).intValue();
-			state.octants.set(octant, playersInOctant+1);
-		}
-		for(int i = 0; i < opponents.length; i++)
-		{
-			//Adds 1 to the octant where the player is located
-			int octant = getLocationsOctant(opponents[i])-1;
-			int playersInOctant = state.octants.get(octant).intValue()+1;
-			state.octants.set(octant, playersInOctant);
-		}
-		
-		//Falta por meter la posicion del portero, porque en teammates no viene su posicion
-		Vec2 pos = this.worldAPI.getPosition();
-		int octant = getLocationsOctant(pos)-1;
-		int playersInOctant = state.octants.get(octant).intValue();
-		state.octants.set(octant, playersInOctant+1);
-		
-		return state;
-	}
-
-	/**
-	 * Returns the octant number of the received location
-	 * @param vec2
-	 * @return Integer value representing the octant number of the player (from 1 to 8) or -1 if an error occurs
-	 */
-	private int getLocationsOctant(Vec2 playersPosition) {
-		
-		Vec2 globalPos = toGlobalCoordinates(playersPosition);
-		if(globalPos.y >= 0)
-		{
-			if(globalPos.x < -0.685)
-				return 1;
-			else if(globalPos.x >= -0.685 && globalPos.x < 0)
-				return 2;
-			else if(globalPos.x >= 0 && globalPos.x < 0.685)
-				return 3;
-			else if(globalPos.x >= 0.685)
-				return 4;
-		}
-		else
-		{
-			if(globalPos.x < -0.685)
-				return 5;
-			else if(globalPos.x >= -0.685 && globalPos.x < 0)
-				return 6;
-			else if(globalPos.x >= 0 && globalPos.x < 0.685)
-				return 7;
-			else if(globalPos.x >= 0.685)
-				return 8;
-		}
-		return -1;
-	}
 	
-	/**
-	 * Convierte un vector con coordenadas globales a uno con coordenadas egocentricas
-	 * @param sourceCoord: Vector con coordenadas globales que se quiere convertir
-	 * @return Objeto Vec2 con las coordenadas egocentricas del vector recibido
-	 */
-	private Vec2 toEgocentricCoordinates(Vec2 sourceCoord){
-		Vec2 coordinates = (Vec2)sourceCoord.clone(); 
-		coordinates.sub(worldAPI.getPosition());
-		return coordinates;
-	}
-	
-	/**
-	 * Convierte un vector con coordenadas egocentricas a uno con coordenadas globales
-	 * @param sourceCoord: Vector con coordenadas egocentricas que se quiere convertir
-	 * @return Objeto Vec2 con las coordenadas globales del vector recibido
-	 */
-	private Vec2 toGlobalCoordinates(Vec2 sourceCoord)
-	{
-		Vec2 coordinates = (Vec2)sourceCoord.clone(); 
-		coordinates.add(worldAPI.getPosition());
-		return coordinates;
-	}
-	
-	/**
-	 * Devuelve la coordenada Y del punto en el que se cruzan las rectas A y B, siendo A
-	 * la recta que pasa desde la posicion del balon y el centro de la
-	 * porteria y B, la recta x = keeperPosition
-	 * @param ballPosition: Posicion del balon para poder calcular la recta que une el balon con la porteria
-	 * @return Coordenada Y del punto de interseccion
-	 */
-	private double calculateIntersection(){
-		Vec2 goalPosition = worldAPI.getOurGoal();
-		Vec2 ballPosition = worldAPI.getBall();
-		double deltaY = (goalPosition.y - ballPosition.y);
-		double deltaX = (goalPosition.x - ballPosition.x);
-		return deltaY * (ballPosition.y/deltaY - ballPosition.x/deltaX + KEEPER_DEFENSE_LINE / deltaX);
-	}
 	public MatchState getState()
 	{
 		return this.matchState;

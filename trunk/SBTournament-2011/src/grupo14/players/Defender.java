@@ -1,4 +1,5 @@
 package grupo14.players;
+import grupo14.states.Heroica;
 import grupo14.states.JuegoBrusco;
 import grupo14.states.PosesionContrarioConPeligro;
 import grupo14.states.UltimoHombreContrario;
@@ -26,9 +27,9 @@ public class Defender  extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new JuegoBrusco();
+		MatchState state = new Heroica();
 		matchState = state;
-		getMatchState();
+		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);
 		
 		

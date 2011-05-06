@@ -5,6 +5,12 @@ import teams.rolebased.WorldAPI;
 
 public class Acciones {
 	
+	public enum Lado{
+		derecha,
+		centro,
+		izquierda
+	}
+	
 	public static void correrAlAtaque(WorldAPI worldAPI) {
 		Vec2 miPosicion = worldAPI.getPosition();
 		Vec2 porteriaContraria = worldAPI.getOpponentsGoal();
@@ -17,7 +23,7 @@ public class Acciones {
 			worldAPI.setDisplayString("CorrerAlAtaque (subiendo)");
 		}
 		
-		// Si ha llegado a los l�mites del campo (en X) se queda rondando por la zona
+		// Si ha llegado a los limites del campo (en X) se queda rondando por la zona
 		if (miPosicion.x > porteriaContraria.x - 0.1 * 1.37 * worldAPI.getFieldSide()) {
 			giroAleatorio(worldAPI);
 			worldAPI.setSpeed(1.0);
@@ -26,6 +32,114 @@ public class Acciones {
 		
 		evitarBandas(worldAPI);
 			
+		evitarBloqueos(worldAPI);
+	}
+	
+	public static void irAlCentroDelCampo(WorldAPI worldAPI) {
+		Vec2 miPosicion = worldAPI.getPosition();
+		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		
+		worldAPI.setSpeed(1.0);
+		
+		// Si ha llegado al centro del campo se queda parado a la espera
+		if ( (miPosicion.x > -0.05 * ladoDelCampo || miPosicion.x <= 0) && 
+				(miPosicion.y > -0.05 || miPosicion.y <= 0) ) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("A la espera en el centro del campo");
+		}
+
+		irAPosicionDeEspera(worldAPI, new Vec2(0,0));
+		
+		evitarBandas(worldAPI);
+			
+		evitarBloqueos(worldAPI);
+	}
+	
+	/**
+	 * Lleva al jugador a la linea del centro del campo pero especificando un lado
+	 * @param worldAPI
+	 */
+	public static void irALaMedular(WorldAPI worldAPI, Lado lado) {
+		Vec2 miPosicion = worldAPI.getPosition();
+		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		
+		Vec2 posicionDeEspera;
+		if(lado == Lado.derecha)
+			posicionDeEspera = new Vec2(0, 0.5 * ladoDelCampo);
+		else
+			posicionDeEspera = new Vec2(0,-0.5 * ladoDelCampo);
+		
+		worldAPI.setSpeed(1.0);
+		
+		// Si ha llegado al centro del campo se queda parado a la espera
+		if (miPosicion.x ==  posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("A la espera en el centro del campo");
+		}
+
+		irAPosicionDeEspera(worldAPI, posicionDeEspera);
+		evitarBandas(worldAPI);	
+		evitarBloqueos(worldAPI);
+	}
+	
+	/**
+	 * Lleva al jugador a la linea del centro del campo pero especificando un lado
+	 * @param worldAPI
+	 */
+	public static void irALaFrontalContraria(WorldAPI worldAPI, Lado lado) {
+		Vec2 miPosicion = worldAPI.getPosition();
+		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		
+		worldAPI.setSpeed(1.0);
+		
+		Vec2 posicionDeEspera;
+		if(lado == Lado.derecha)
+			posicionDeEspera = new Vec2(1.0305, 0.5 * ladoDelCampo);
+		else if(lado == Lado.izquierda)
+			posicionDeEspera = new Vec2(1.0305,-0.5 * ladoDelCampo);
+		else
+			posicionDeEspera = new Vec2(1.0305, 0);
+		
+		// Si ha llegado a la frontal del area contraria se para
+		if ( miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("Posicion de espera");
+		}
+		else
+			irAPosicionDeEspera(worldAPI, posicionDeEspera);
+		evitarBandas(worldAPI);
+		evitarBloqueos(worldAPI);
+	}
+	
+	/**
+	 * Lleva al jugador a la posicion por delante del centro del campo
+	 * @param worldAPI
+	 */
+	public static void irAMedioCentroOfensivo(WorldAPI worldAPI, Lado lado) {
+		
+		Vec2 miPosicion = worldAPI.getPosition();
+		int ladoDelCampo = (-1) * worldAPI.getFieldSide();	
+		Vec2 posicionDeEspera;
+		
+		if(lado == Lado.derecha)
+			posicionDeEspera = new Vec2(0.3425, 0.3 * ladoDelCampo);
+		else
+			posicionDeEspera = new Vec2(0.3425,-0.3 * ladoDelCampo);
+		
+		worldAPI.setSpeed(1.0);
+		
+		// Si ha llegado al centro del campo se queda parado a la espera
+		if (miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y ) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("A la espera en el centro del campo");
+		}
+		
+		irAPosicionDeEspera(worldAPI, posicionDeEspera);
+		evitarBandas(worldAPI);
 		evitarBloqueos(worldAPI);
 	}
 	
@@ -121,9 +235,10 @@ public class Acciones {
 		worldAPI.setSteerHeading(worldAPI.getSteerHeading() + MyRandom.nextDouble(-0.1, 0.1));
 	}
 	
-	private static void evitarBloqueos(WorldAPI worldAPI) {
+	public static void evitarBloqueos(WorldAPI worldAPI) {
 		if (worldAPI.blocked()) {
 			worldAPI.avoidCollisions();
+			//TODO Poner alguna direccion aleatoria porque si estamos contra la pared OWNED!
 			worldAPI.setSpeed(1.0);
 			worldAPI.setDisplayString("Evitando bloqueo");
 		}
