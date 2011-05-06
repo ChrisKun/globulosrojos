@@ -1,10 +1,10 @@
 package grupo14.players;
 
 import EDU.gatech.cc.is.util.Vec2;
-import states.IrAlAtaque;
-import states.JuegoBrusco;
-import states.PosesionContrarioConPeligro;
-import states.UltimoHombreContrario;
+import grupo14.states.IrAlAtaque;
+import grupo14.states.JuegoBrusco;
+import grupo14.states.PosesionContrarioConPeligro;
+import grupo14.states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 

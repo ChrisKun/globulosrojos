@@ -1,8 +1,5 @@
 package grupo14.manager;
 
-import grupo14.players.MatchState;
-import grupo14.players.PlayerActions;
-import states.PosesionContrarioConPeligro;
 import teams.rolebased.TeamManager;
 import teams.rolebased.WorldAPI;
 
