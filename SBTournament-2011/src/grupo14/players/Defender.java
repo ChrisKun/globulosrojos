@@ -1,15 +1,10 @@
 package grupo14.players;
-import EDU.gatech.cc.is.util.Vec2;
-import jcolibri.exception.ExecutionException;
-import grupo14.aprendizaje.CBR.AprendizajeCBR;
-import grupo14.manager.*;
-
-import states.JuegoBrusco;
-import states.PosesionContrarioConPeligro;
-import states.PosesionContrarioSinPeligro;
-import states.UltimoHombreContrario;
+import grupo14.states.JuegoBrusco;
+import grupo14.states.PosesionContrarioConPeligro;
+import grupo14.states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
+import EDU.gatech.cc.is.util.Vec2;
 
 public class Defender  extends Role{
 

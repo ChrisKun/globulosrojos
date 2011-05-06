@@ -1,32 +1,26 @@
 package grupo14.players;
 
-import java.util.ArrayList;
-
-import jcolibri.cbrcore.CBRCase;
-import jcolibri.exception.ExecutionException;
-
-import com.hp.hpl.jena.query.core.RecursiveVisitor;
-import com.hp.hpl.jena.query.function.library.abs;
-
 import grupo14.aprendizaje.CBR.AprendizajeCBR;
 import grupo14.aprendizaje.CBR.OctantsState;
 import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
 import grupo14.aprendizaje.CBR.caseComponents.ResultadoCaso;
 import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
-import EDU.gatech.cc.is.util.Vec2;
-import states.Catenaccio;
-import states.Heroica;
-import states.IrAlAtaque;
-import states.JuegoBrusco;
-import states.PosesionContrarioConPeligro;
-import states.PosesionContrarioEnSuCampo;
-import states.PosesionContrarioNuestroCampo;
-import states.PosesionContrarioSinPeligro;
-import states.PosesionNuestraEnNuestroCampo;
-import states.PosesionNuestraEnSuCampo;
-import states.UltimoHombreContrario;
+import grupo14.states.Catenaccio;
+import grupo14.states.Heroica;
+import grupo14.states.IrAlAtaque;
+import grupo14.states.JuegoBrusco;
+import grupo14.states.PosesionContrarioConPeligro;
+import grupo14.states.PosesionContrarioEnSuCampo;
+import grupo14.states.PosesionContrarioNuestroCampo;
+import grupo14.states.PosesionContrarioSinPeligro;
+import grupo14.states.PosesionNuestraEnNuestroCampo;
+import grupo14.states.PosesionNuestraEnSuCampo;
+import grupo14.states.UltimoHombreContrario;
+import jcolibri.cbrcore.CBRCase;
+import jcolibri.exception.ExecutionException;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
+import EDU.gatech.cc.is.util.Vec2;
 
 public class Goalkeeper extends Role{
 	private final double KEEPER_DEFENSE_LINE = 0;
