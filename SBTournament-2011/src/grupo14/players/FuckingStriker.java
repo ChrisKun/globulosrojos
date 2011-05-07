@@ -1,6 +1,7 @@
 package grupo14.players;
 
 import EDU.gatech.cc.is.util.Vec2;
+import grupo14.states.Catenaccio;
 import grupo14.states.Heroica;
 import grupo14.states.IrAlAtaque;
 import grupo14.states.JuegoBrusco;
@@ -27,7 +28,7 @@ public class FuckingStriker extends Role {
 
 	@Override
 	public int takeStep() {
-		MatchState state = new Heroica();
+		MatchState state = new Catenaccio();
 		matchState = state;
 		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);
