@@ -1,5 +1,6 @@
 package grupo14.players;
 
+import grupo14.players.Acciones.Lado;
 import EDU.gatech.cc.is.util.Vec2;
 import teams.rolebased.WorldAPI;
 
@@ -115,6 +116,36 @@ public class Acciones {
 	}
 	
 	/**
+	 * Lleva al jugador a la linea defensiva por el lado especificado
+	 * @param worldAPI
+	 */
+	public static void irALaFrontalPropia(WorldAPI worldAPI, Lado lado) {
+		Vec2 miPosicion = worldAPI.getPosition();
+		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		
+		worldAPI.setSpeed(1.0);
+		
+		Vec2 posicionDeEspera;
+		if(lado == Lado.derecha)
+			posicionDeEspera = new Vec2(-1.0305, 0.3 * ladoDelCampo);
+		else if(lado == Lado.izquierda)
+			posicionDeEspera = new Vec2(-1.0305,-0.3 * ladoDelCampo);
+		else
+			posicionDeEspera = new Vec2(-1.0305, 0);
+		
+		// Si ha llegado a la frontal del area contraria se para
+		if ( miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("Posicion de espera");
+		}
+		else
+			irAPosicionDeEspera(worldAPI, posicionDeEspera);
+		evitarBandas(worldAPI);
+		evitarBloqueos(worldAPI);
+	}
+	
+	/**
 	 * Lleva al jugador a la posicion por delante del centro del campo
 	 * @param worldAPI
 	 */
@@ -141,6 +172,33 @@ public class Acciones {
 		irAPosicionDeEspera(worldAPI, posicionDeEspera);
 		evitarBandas(worldAPI);
 		evitarBloqueos(worldAPI);
+	}
+	
+	public static void irAMedioCentroDefensivo(WorldAPI worldAPI, Lado lado) {
+
+		Vec2 miPosicion = worldAPI.getPosition();
+		int ladoDelCampo = (-1) * worldAPI.getFieldSide();	
+		Vec2 posicionDeEspera;
+		
+		if(lado == Lado.derecha)
+			posicionDeEspera = new Vec2(-0.3425, 0.3 * ladoDelCampo);
+		else if(lado == Lado.izquierda)
+			posicionDeEspera = new Vec2(-0.3425,-0.3 * ladoDelCampo);
+		else
+			posicionDeEspera = new Vec2(-0.3425, 0);
+		
+		worldAPI.setSpeed(1.0);
+		
+		// Si ha llegado al centro del campo se queda parado a la espera
+		if (miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y ) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("A la espera en el centro del campo");
+		}
+		
+		irAPosicionDeEspera(worldAPI, posicionDeEspera);
+		evitarBandas(worldAPI);
+		evitarBloqueos(worldAPI);		
 	}
 	
 	public static void correrADefensa(WorldAPI worldAPI) {
