@@ -15,7 +15,14 @@ public class JuegoBrusco implements MatchState {
 	@Override
 	public int accionARealizar(WorldAPI worldAPI, String role) {
 		System.out.println(role.getClass().toString());
-		Acciones.bloquearContrario(worldAPI);
+		if(role.equals("delanteroTocapelotas"))
+		{
+			Acciones.correrHaciaBalon(worldAPI);
+		}
+		else
+		{
+			Acciones.bloquearContrario(worldAPI);
+		}
 		return 0;
 	}
 

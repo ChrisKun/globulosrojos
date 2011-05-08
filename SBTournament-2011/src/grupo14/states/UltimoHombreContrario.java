@@ -7,6 +7,8 @@ import grupo14.players.Defender;
 import grupo14.players.Goalkeeper;
 import grupo14.players.MatchState;
 import grupo14.players.Striker;
+import grupo14.players.Acciones.Lado;
+import grupo14.utils.fieldUtils;
 
 /**
  * El delantero contrario esta delante de la porteria.
@@ -22,34 +24,72 @@ public class UltimoHombreContrario implements MatchState{
 
 	@Override
 	public int accionARealizar(WorldAPI worldAPI, String role) {
-		System.out.println(role.getClass().toString());
 		if(role.equals("defensor"))
 		{
-//			{
-//				if(worldAPI.isBlocking(worldAPI.getPosition()))
-//				{
-//					worldAPI.avoidCollisions();
-//				}
-//				else{
-//				Vec2 vector = worldAPI.getBall();
-//				worldAPI.setSteerHeading(vector.t);
-//				worldAPI.setSpeed(0.2);
-//				}
-//			}
-			Acciones.taparPorteria(worldAPI);
+			//Ver si tengo el balon
+			if(worldAPI.canKick())
+			{
+				//Posicionarme correctamente y chutar hacia delante
+				Acciones.chutarAPuerta(worldAPI);
+			}
+			else
+			Acciones.bloquearContrario(worldAPI);
 		}
 		if(role.equals("portero"))
 		{
-			Vec2 vector = worldAPI.getBall();
-			worldAPI.setSteerHeading(vector.t);
-			worldAPI.setSpeed(1.0);
+			//Ver si tengo el balon
+			if(worldAPI.canKick())
+			{
+				//Posicionarme correctamente y chutar hacia delante
+				Acciones.chutarAPuerta(worldAPI);
+			}
+			else
+			Acciones.correrHaciaBalon(worldAPI);
 		}
 		if(role.equals("delantero"))
 		{
-//			Vec2 vector = new Vec2(0,0);
-//			worldAPI.setSteerHeading(vector.t);
-//			worldAPI.setSpeed(1.0);
-			Acciones.correrADefensa(worldAPI);
+			//Ver si tengo el balon
+			if(worldAPI.canKick())
+			{
+				//Posicionarme correctamente y chutar hacia delante
+				Acciones.chutarAPuerta(worldAPI);
+			}
+			else
+			{
+				if(fieldUtils.getLocationsOctant(worldAPI.getPosition(), worldAPI) == 1 || 
+						fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == 2 ||
+						fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == 5 || 
+						fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == 6)
+				{
+					Acciones.bloquearContrario(worldAPI);
+				}
+				else
+				{
+					Acciones.irALaFrontalPropia(worldAPI, Lado.centro);
+				}
+			}
+		}
+		if(role.equals("megaDefensor"))
+		{
+			//Ver si tengo el balon
+			if(worldAPI.canKick())
+			{
+				//Posicionarme correctamente y chutar hacia delante
+				Acciones.chutarAPuerta(worldAPI);
+			}
+			else
+				Acciones.correrHaciaBalon(worldAPI);
+		}
+		if(role.equals("delanteroTocapelotas"))
+		{
+			//Ver si tengo el balon
+			if(worldAPI.canKick())
+			{
+				//Posicionarme correctamente y chutar hacia delante
+				Acciones.chutarAPuerta(worldAPI);
+			}
+			else
+			Acciones.irALaMedular(worldAPI, Acciones.Lado.centro);
 		}
 		return 0;
 	}

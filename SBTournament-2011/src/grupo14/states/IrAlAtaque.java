@@ -35,6 +35,14 @@ public class IrAlAtaque implements MatchState{
 //			worldAPI.setSpeed(1.0);
 			Acciones.chutarAPuerta(worldAPI);
 		}
+		if(role.equals("megaDefensor"))
+		{
+			
+		}
+		if(role.equals("delanteroTocapelotas"))
+		{
+			
+		}
 		return 0;
 	}
 
