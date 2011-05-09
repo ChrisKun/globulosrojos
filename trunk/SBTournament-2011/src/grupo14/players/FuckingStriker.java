@@ -5,7 +5,6 @@ import grupo14.states.Catenaccio;
 import grupo14.states.Heroica;
 import grupo14.states.IrAlAtaque;
 import grupo14.states.JuegoBrusco;
-import grupo14.states.PosesionContrarioConPeligro;
 import grupo14.states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
@@ -39,6 +38,12 @@ public class FuckingStriker extends Role {
 	private void getMatchState() {
 		int lado = worldAPI.getFieldSide(); //-1 en la derecha, 1 en la izquierda
 		//si el balon lo tiene el contrario, estado=2, estado=3... 
+		if(worldAPI.getMyScore()>worldAPI.getOpponentScore())
+			matchState = new Catenaccio();
+		else if (worldAPI.getMyScore()<worldAPI.getOpponentScore())
+			matchState = new Heroica();
+		else 
+		{
 		if(getRelativePosition(worldAPI.getBall()).x*lado<0)
 		{
 			//el balon esta en tu campo
@@ -52,8 +57,7 @@ public class FuckingStriker extends Role {
 					matchState = state;
 				}
 				else{
-					MatchState state = new PosesionContrarioConPeligro();
-					matchState = state;
+
 				}
 			}
 			else{
@@ -63,8 +67,8 @@ public class FuckingStriker extends Role {
 		}
 		else
 		{
-			MatchState state = new PosesionContrarioConPeligro();
-			matchState = state;
+
+		}
 		}
 	}
 	
@@ -72,6 +76,35 @@ public class FuckingStriker extends Role {
 	public Vec2 getRelativePosition(Vec2 position)
 	{
 		return new Vec2(worldAPI.getPosition().x+position.x,worldAPI.getPosition().y+position.y);
+	}
+	public boolean whoHasTheBall()
+	{
+		// si el balon esta en tierra de nadie, tambien lo toma como si fuera posesion contraria
+		//0.06 = cankick
+		double unidadDeCercania = 0.1;
+		boolean nosotros = true;
+		Vec2[] oponentes = worldAPI.getOpponents();
+		Vec2[] companeros = worldAPI.getTeammates();
+		Vec2 oponenteMasCercano = oponentes[0];
+		Vec2 companeroMasCercano = companeros[0];
+		Vec2 balon = getRelativePosition(worldAPI.getBall());
+		int index = oponentes.length;
+		for(int i=1; i<index;i++)
+		{
+			if((Math.abs(getRelativePosition(oponentes[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(oponentes[i]).y - balon.y) <= unidadDeCercania))
+			{
+				oponenteMasCercano = oponentes[i];
+			}
+			if((Math.abs(getRelativePosition(companeros[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(companeros[i]).y - balon.y) <= unidadDeCercania))
+			{
+				companeroMasCercano = companeros[i];
+			}
+		}
+		if(oponenteMasCercano.x > companeroMasCercano.x && oponenteMasCercano.y > companeroMasCercano.y  )
+			nosotros = true;
+		else
+			nosotros = false;
+		return nosotros;
 	}
 
 }
