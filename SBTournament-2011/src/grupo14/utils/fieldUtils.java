@@ -116,4 +116,5 @@ public class fieldUtils {
 		double deltaX = (goalPosition.x - ballPosition.x);
 		return deltaY * (ballPosition.y/deltaY - ballPosition.x/deltaX + defenseLine / deltaX);
 	}
+	
 }
