@@ -5,6 +5,10 @@ import grupo14.states.Catenaccio;
 import grupo14.states.Heroica;
 import grupo14.states.IrAlAtaque;
 import grupo14.states.JuegoBrusco;
+import grupo14.states.PosesionContrarioEnSuCampo;
+import grupo14.states.PosesionContrarioNuestroCampo;
+import grupo14.states.PosesionNuestraEnNuestroCampo;
+import grupo14.states.PosesionNuestraEnSuCampo;
 import grupo14.states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
@@ -44,32 +48,20 @@ public class Striker extends Role {
 			matchState = new Heroica();
 		else 
 		{
-		if(getRelativePosition(worldAPI.getBall()).x*lado<0)
+			if (getRelativePosition(worldAPI.getBall()).x * lado < 0) {
+			// el balon esta en tu campo
+			if(whoHasTheBall())
+				matchState = new PosesionNuestraEnNuestroCampo();
+			else
+				matchState = new PosesionContrarioNuestroCampo();
+		} else 
 		{
-			//el balon esta en tu campo
-			if(getRelativePosition(worldAPI.getClosestMate()).x > getRelativePosition(worldAPI.getClosestOpponent()).x)
-			{
-				//fuera de juego
-				if(Math.abs((getRelativePosition(worldAPI.getBall()).x)-(getRelativePosition(worldAPI.getClosestMate()).x))>Math.abs((getRelativePosition(worldAPI.getBall()).x)-(getRelativePosition(worldAPI.getClosestOpponent()).x)))
-				{
-					//el balon esta mas cerca del oponente ke de ti (en termino de X, no de distancia
-					MatchState state = new UltimoHombreContrario();
-					matchState = state;
-				}
-				else{
-
-				}
-			}
-			else{
-				MatchState state = new IrAlAtaque();
-				matchState = state;
-			}
+			if(whoHasTheBall())
+				matchState = new PosesionNuestraEnSuCampo();
+			else
+				matchState = new PosesionContrarioEnSuCampo();
 		}
-		else
-		{
-
-		}
-		}
+	}
 	}
 	
 	//devuelve la posicion de un item desde el centro del campo

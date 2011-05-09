@@ -2,6 +2,10 @@ package grupo14.players;
 import grupo14.states.Catenaccio;
 import grupo14.states.Heroica;
 import grupo14.states.JuegoBrusco;
+import grupo14.states.PosesionContrarioEnSuCampo;
+import grupo14.states.PosesionContrarioNuestroCampo;
+import grupo14.states.PosesionNuestraEnNuestroCampo;
+import grupo14.states.PosesionNuestraEnSuCampo;
 import grupo14.states.UltimoHombreContrario;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
@@ -44,29 +48,19 @@ public class MegaDefender  extends Role{
 		else if (worldAPI.getMyScore()<worldAPI.getOpponentScore())
 			matchState = new Heroica();
 		else 
-		{
-		if(getRelativePosition(worldAPI.getBall()).x*lado<0)
-		{
-			//el balon esta en tu campo
-			if(getRelativePosition(worldAPI.getClosestMate()).x > getRelativePosition(worldAPI.getClosestOpponent()).x)
+			if (getRelativePosition(worldAPI.getBall()).x * lado < 0) {
+				// el balon esta en tu campo
+				if(whoHasTheBall())
+					matchState = new PosesionNuestraEnNuestroCampo();
+				else
+					matchState = new PosesionContrarioNuestroCampo();
+			} else 
 			{
-				//fuera de juego
-				if(Math.abs((getRelativePosition(worldAPI.getBall()).x)-(getRelativePosition(worldAPI.getClosestMate()).x))>Math.abs((getRelativePosition(worldAPI.getBall()).x)-(getRelativePosition(worldAPI.getClosestOpponent()).x)))
-				{
-					//el balon esta mas cerca del oponente ke de ti (en termino de X, no de distancia
-					MatchState state = new UltimoHombreContrario();
-					matchState = state;
-				}
-				else{
-
-				}
+				if(whoHasTheBall())
+					matchState = new PosesionNuestraEnSuCampo();
+				else
+					matchState = new PosesionContrarioEnSuCampo();
 			}
-		}
-		else
-		{
-
-		}
-		}
 	}
 	//devuelve la posicion de un item desde el centro del campo
 	public Vec2 getRelativePosition(Vec2 position)
