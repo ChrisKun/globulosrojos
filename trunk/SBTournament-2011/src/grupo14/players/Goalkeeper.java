@@ -55,7 +55,7 @@ public class Goalkeeper extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new Heroica();
+		MatchState state = new PosesionContrarioEnSuCampo();
 		matchState = state;
 		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);

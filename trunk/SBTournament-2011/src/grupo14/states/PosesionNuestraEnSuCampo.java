@@ -50,8 +50,8 @@ public class PosesionNuestraEnSuCampo implements MatchState {
 			}
 			else
 			{
-				//vemos con 0.3 si bloquea al portero
-				if((Math.abs(worldAPI.getPosition().x - worldAPI.getGoalkeeper().x)<0.3) && (Math.abs(worldAPI.getPosition().y - worldAPI.getGoalkeeper().y)<0.3))
+				//vemos con 0.1 si bloquea al portero
+				if((Math.abs(worldAPI.getPosition().x - worldAPI.getGoalkeeper().x)<=0.1) && (Math.abs(worldAPI.getPosition().y - worldAPI.getGoalkeeper().y)<=0.1))
 				{
 					Acciones.bloquearContrario(worldAPI);
 				}

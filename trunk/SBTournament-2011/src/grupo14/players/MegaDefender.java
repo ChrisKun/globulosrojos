@@ -31,7 +31,7 @@ public class MegaDefender  extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new Catenaccio();
+		MatchState state = new PosesionContrarioEnSuCampo();
 		matchState = state;
 		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);
