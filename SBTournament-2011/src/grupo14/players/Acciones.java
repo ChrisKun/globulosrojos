@@ -38,7 +38,7 @@ public class Acciones {
 	
 	public static void irAlCentroDelCampo(WorldAPI worldAPI) {
 		Vec2 miPosicion = worldAPI.getPosition();
-		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		int ladoDelCampo = worldAPI.getFieldSide();
 		
 		worldAPI.setSpeed(1.0);
 		
@@ -63,7 +63,7 @@ public class Acciones {
 	 */
 	public static void irALaMedular(WorldAPI worldAPI, Lado lado) {
 		Vec2 miPosicion = worldAPI.getPosition();
-		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		int ladoDelCampo = worldAPI.getFieldSide();
 		
 		Vec2 posicionDeEspera;
 		if(lado == Lado.derecha)
@@ -91,17 +91,17 @@ public class Acciones {
 	 */
 	public static void irALaFrontalContraria(WorldAPI worldAPI, Lado lado) {
 		Vec2 miPosicion = worldAPI.getPosition();
-		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		int ladoDelCampo = worldAPI.getFieldSide();
 		
 		worldAPI.setSpeed(1.0);
 		
 		Vec2 posicionDeEspera;
 		if(lado == Lado.derecha)
-			posicionDeEspera = new Vec2(1.0305, 0.5 * ladoDelCampo);
+			posicionDeEspera = new Vec2(1.0305 * ladoDelCampo, -0.5 * ladoDelCampo);
 		else if(lado == Lado.izquierda)
-			posicionDeEspera = new Vec2(1.0305,-0.5 * ladoDelCampo);
+			posicionDeEspera = new Vec2(1.0305 * ladoDelCampo, 0.5 * ladoDelCampo);
 		else
-			posicionDeEspera = new Vec2(1.0305, 0);
+			posicionDeEspera = new Vec2(1.0305 * ladoDelCampo, 0);
 		
 		// Si ha llegado a la frontal del area contraria se para
 		if ( miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
@@ -121,17 +121,17 @@ public class Acciones {
 	 */
 	public static void irALaFrontalPropia(WorldAPI worldAPI, Lado lado) {
 		Vec2 miPosicion = worldAPI.getPosition();
-		int ladoDelCampo = (-1) * worldAPI.getFieldSide();
+		int ladoDelCampo = worldAPI.getFieldSide();
 		
 		worldAPI.setSpeed(1.0);
 		
 		Vec2 posicionDeEspera;
 		if(lado == Lado.derecha)
-			posicionDeEspera = new Vec2(-1.0305, 0.3 * ladoDelCampo);
+			posicionDeEspera = new Vec2(-1.0305 * ladoDelCampo, -0.3 * ladoDelCampo);
 		else if(lado == Lado.izquierda)
-			posicionDeEspera = new Vec2(-1.0305,-0.3 * ladoDelCampo);
+			posicionDeEspera = new Vec2(-1.0305 * ladoDelCampo, 0.3 * ladoDelCampo);
 		else
-			posicionDeEspera = new Vec2(-1.0305, 0);
+			posicionDeEspera = new Vec2(-1.0305 * ladoDelCampo, 0);
 		
 		// Si ha llegado a la frontal del area contraria se para
 		if ( miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
@@ -152,13 +152,13 @@ public class Acciones {
 	public static void irAMedioCentroOfensivo(WorldAPI worldAPI, Lado lado) {
 		
 		Vec2 miPosicion = worldAPI.getPosition();
-		int ladoDelCampo = (-1) * worldAPI.getFieldSide();	
+		int ladoDelCampo = worldAPI.getFieldSide();	
 		Vec2 posicionDeEspera;
 		
 		if(lado == Lado.derecha)
-			posicionDeEspera = new Vec2(0.3425, 0.3 * ladoDelCampo);
+			posicionDeEspera = new Vec2(0.3425 * ladoDelCampo, -0.3 * ladoDelCampo);
 		else
-			posicionDeEspera = new Vec2(0.3425,-0.3 * ladoDelCampo);
+			posicionDeEspera = new Vec2(0.3425 * ladoDelCampo, 0.3 * ladoDelCampo);
 		
 		worldAPI.setSpeed(1.0);
 		
@@ -177,15 +177,15 @@ public class Acciones {
 	public static void irAMedioCentroDefensivo(WorldAPI worldAPI, Lado lado) {
 
 		Vec2 miPosicion = worldAPI.getPosition();
-		int ladoDelCampo = (-1) * worldAPI.getFieldSide();	
+		int ladoDelCampo = worldAPI.getFieldSide();	
 		Vec2 posicionDeEspera;
 		
 		if(lado == Lado.derecha)
-			posicionDeEspera = new Vec2(-0.3425, 0.3 * ladoDelCampo);
+			posicionDeEspera = new Vec2(-0.3425 * ladoDelCampo, -0.3 * ladoDelCampo);
 		else if(lado == Lado.izquierda)
-			posicionDeEspera = new Vec2(-0.3425,-0.3 * ladoDelCampo);
+			posicionDeEspera = new Vec2(-0.3425 * ladoDelCampo, 0.3 * ladoDelCampo);
 		else
-			posicionDeEspera = new Vec2(-0.3425, 0);
+			posicionDeEspera = new Vec2(-0.3425 * ladoDelCampo, 0);
 		
 		worldAPI.setSpeed(1.0);
 		
@@ -199,6 +199,26 @@ public class Acciones {
 		irAPosicionDeEspera(worldAPI, posicionDeEspera);
 		evitarBandas(worldAPI);
 		evitarBloqueos(worldAPI);		
+	}
+	
+	public static void irANuestraPorteria(WorldAPI worldAPI){
+		
+		int ladoDelCampo = worldAPI.getFieldSide();
+		Vec2 miPosicion = worldAPI.getPosition();
+		Vec2 posicionDeEspera = new Vec2(-1.37 * ladoDelCampo, 0);
+		
+		worldAPI.setSpeed(1.0);
+		
+		// Ir hacia atras manteniendo la posicion Y
+		if (miPosicion.x > posicionDeEspera.x ) {
+			worldAPI.setSteerHeading(0.0);
+			worldAPI.setSpeed(0);
+			worldAPI.setDisplayString("A la espera en nuestra porteria");
+		}
+		
+		irAPosicionDeEspera(worldAPI, posicionDeEspera);
+		evitarBandas(worldAPI);
+		evitarBloqueos(worldAPI);
 	}
 	
 	public static void correrADefensa(WorldAPI worldAPI) {
