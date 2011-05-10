@@ -14,9 +14,24 @@ import EDU.gatech.cc.is.util.Vec2;
 
 public abstract class PlayerMLP {
 
+	public static void main(String args[]) {
+		// Se inicializan todos los perceptrones
+		UltraDefenderMLP ud = new UltraDefenderMLP();
+		ud.writeToFile("training/MLP/UltraStriker/");
+		
+		
+	}
+	
 	/** Lista de perceptrones de un solo jugador, uno por cada 
 	 * estado posible de un jugador. */
 	private HashMap<String, Perceptron> mlps;
+	
+	/** Constructora por defecto. */
+	public PlayerMLP() {
+		mlps = new HashMap<String, Perceptron>();
+		for (int iAction = 0; iAction < Actions.ACTIONS.length; iAction++)
+			mlps.put(Actions.ACTIONS[iAction], new Perceptron(24, 2));
+	}
 	
 	/** Lee todos los perceptrones de un directorio dado y los almacena
 	 * en la lista de perceptrones del jugador.
@@ -25,30 +40,25 @@ public abstract class PlayerMLP {
 		File folder = new File(directory);
 		File[] listOfFiles = folder.listFiles();
 		for (int iFile = 0; iFile < listOfFiles.length; iFile++) {
-			if (listOfFiles[iFile].getName().contains(Actions.CHUTAR_A_PUERTA))
-				mlps.put(Actions.CHUTAR_A_PUERTA, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.CORRER_A_DEFENSA))
-				mlps.put(Actions.CORRER_A_DEFENSA, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.CORRER_AL_ATAQUE))
-				mlps.put(Actions.CORRER_AL_ATAQUE, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.CORRER_HACIA_EL_BALON))
-				mlps.put(Actions.CORRER_HACIA_EL_BALON, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_A_LA_FRONTAL_CONTRARIA_AB))
-				mlps.put(Actions.IR_A_LA_FRONTAL_CONTRARIA_AB, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR))
-				mlps.put(Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_A_LA_FRONTAL_PROPIA_AB))
-				mlps.put(Actions.IR_A_LA_FRONTAL_PROPIA_AB, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_A_LA_FRONTAL_PROPIA_ARR))
-				mlps.put(Actions.IR_A_LA_FRONTAL_PROPIA_ARR, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_A_LA_MEDULAR_AB))
-				mlps.put(Actions.IR_A_LA_MEDULAR_AB, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_A_LA_MEDULAR_ARR))
-				mlps.put(Actions.IR_A_LA_MEDULAR_ARR, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.IR_AL_CENTRO_DEL_CAMPO))
-				mlps.put(Actions.IR_AL_CENTRO_DEL_CAMPO, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-			else if (listOfFiles[iFile].getName().contains(Actions.TAPAR_PORTERIA))
-				mlps.put(Actions.TAPAR_PORTERIA, Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
+			boolean read = false;
+			for (int iAction = 0; iAction < Actions.ACTIONS.length && !read; iAction++)
+				if (listOfFiles[iFile].getName().contains(Actions.ACTIONS[iAction])) {
+					mlps.put(Actions.ACTIONS[iAction], Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
+					read = true;
+				}
+		}
+	}
+	
+	/** Guarda todos los perceptrones en un directorio dado. 
+	 * @param directory Directorio donde almacenar los perceptrones. */
+	public void writeToFile(String directory) {
+		for (Entry<String, Perceptron> perceptron : mlps.entrySet()) {
+			boolean written = false;
+			for (int iAction = 0; iAction < Actions.ACTIONS.length && !written; iAction++)
+				if (perceptron.getKey().equals(Actions.ACTIONS[iAction])) {
+					perceptron.getValue().writeToFile(directory + Actions.ACTIONS[iAction] + ".SpongeBob");
+					written = true;
+				}
 		}
 	}
 	
@@ -100,7 +110,7 @@ public abstract class PlayerMLP {
 		 *   new: el balón ha avanzado delta en el eje X */
 		if (oldPlayerBallDistance < 0.3 && 
 			newBallPosition.x - oldBallPosition.x > 0.3 * -fieldSide)
-			return Actions.CHUTAR_A_PUERTA;
+			return Actions.ACTIONS[Actions.CHUTAR_A_PUERTA];
 		
 		/* Correr hacia el balón: 
 		 *   old: 
@@ -108,7 +118,7 @@ public abstract class PlayerMLP {
 		 *        el balón no se ha movido mucho */
 		if (newPlayerBallDistance < oldPlayerBallDistance - 0.1 &&
 			oldBallPosition.distance(newBallPosition) < 0.3)
-			return Actions.CORRER_HACIA_EL_BALON;
+			return Actions.ACTIONS[Actions.CORRER_HACIA_EL_BALON];
 		
 		/* Tapar la portería:
 		 *   old: 
@@ -116,7 +126,7 @@ public abstract class PlayerMLP {
 		Vec2 newMidBallGoalPoint = new Vec2((newBallPosition.x + fieldSide * 1.37) / 2.0,
 											newBallPosition.y / 2.0);
 		if (newMidBallGoalPoint.distance(newPlayerPosition) < 0.3)
-			return Actions.TAPAR_PORTERIA;
+			return Actions.ACTIONS[Actions.TAPAR_PORTERIA];
 		
 		/* Correr al ataque:
 		 *   old: el jugador está en su propio campo 
@@ -125,7 +135,7 @@ public abstract class PlayerMLP {
 		if (oldPlayerPosition.x * fieldSide > 0 &&
 			newPlayerPosition.x * fieldSide < 0 && 
 			newPlayerPosition.distance(oldPlayerPosition) > 0.2)
-			return Actions.CORRER_AL_ATAQUE;
+			return Actions.ACTIONS[Actions.CORRER_AL_ATAQUE];
 		
 		/* Correr a defensa:
 		 *   old: el jugador está en el campo contrario
@@ -134,49 +144,49 @@ public abstract class PlayerMLP {
 		if (oldPlayerPosition.x * fieldSide < 0 &&
 			newPlayerPosition.x * fieldSide > 0 && 
 			newPlayerPosition.distance(oldPlayerPosition) > 0.2)
-			return Actions.CORRER_A_DEFENSA;
+			return Actions.ACTIONS[Actions.CORRER_A_DEFENSA];
 		
 		/* Ir al centro del campo:
 		 *   old: 
 		 *   new: el jugador está a una distancia cercana del centro del campo */
 		if (newPlayerPosition.distance(new Vec2(0, 0)) < 0.15)
-			return Actions.IR_AL_CENTRO_DEL_CAMPO;
+			return Actions.ACTIONS[Actions.IR_AL_CENTRO_DEL_CAMPO];
 		
 		/* Ir a la medular (Arr):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la medular por arriba (Arr) */
 		if (newPlayerPosition.distance(new Vec2(0, 0.3)) < 0.15)
-			return Actions.IR_A_LA_MEDULAR_ARR;
+			return Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_ARR];
 		
 		/* Ir a la medular (Ab):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la medular por abajo (Ab) */
 		if (newPlayerPosition.distance(new Vec2(0, -0.3)) < 0.15)
-			return Actions.IR_A_LA_MEDULAR_AB;
+			return Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_AB];
 		
 		/* Ir a la frontal contraria (Arr):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal contraria por arriba (Arr) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * -fieldSide, 0.3)) < 0.2)
-			return Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR;
+			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR];
 		
 		/* Ir a la frontal contraria (Ab):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal contraria por abajo (Ab) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * -fieldSide, -0.3)) < 0.2)
-			return Actions.IR_A_LA_FRONTAL_CONTRARIA_AB;
+			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_AB];
 		
 		/* Ir a la frontal propia (Arr):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal propia por arriba (Arr) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * fieldSide, 0.3)) < 0.2)
-			return Actions.IR_A_LA_FRONTAL_PROPIA_ARR;
+			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_ARR];
 		
 		/* Ir a la frontal propia (Ab):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal propia por abajo (Ab) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * fieldSide, -0.3)) < 0.2)
-			return Actions.IR_A_LA_FRONTAL_PROPIA_AB;
+			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_AB];
 		
 		return null;
 	}
