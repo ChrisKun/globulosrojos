@@ -8,11 +8,7 @@ import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
 
 public class UltraDefenderMLP extends PlayerMLP {
 	
-	/** Determina si la jugada es buena para ser aprendida 
-	 * @param oldState Estado del juego en el pasado.
-	 * @param newState Estado del juego en el presente. 
-	 * @param fieldSide Lado del campo del jugador.
-	 * @return true si ha habido una mejora en el cambio de estado, false en otro caso. */
+	@Override
 	protected boolean isGoodMove(LogEntry oldState, LogEntry newState, int fieldSide) {
 		/* Es una buena jugada si:
 		 *   · La pelota pasa de nuestro campo al campo contrario.
@@ -26,9 +22,7 @@ public class UltraDefenderMLP extends PlayerMLP {
 		else return false;	
 	}
 	
-	/** Determina el jugador que se quiere tomar como referencia para aprender la jugada. 
-	 * @param oldState Estado del juego.
-	 * @return id del jugador que se toma como referencia. */
+	@Override
 	protected int getReferencePlayer(LogEntry state, int fieldSide) {
 		/* El jugador de referencia es el que esté más retrasado en su campo
 		 * (sin contar al portero, es decir, el segundo más retrasado) */

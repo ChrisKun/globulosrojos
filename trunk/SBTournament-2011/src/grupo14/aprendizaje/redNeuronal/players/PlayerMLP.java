@@ -62,7 +62,7 @@ public abstract class PlayerMLP {
 				String action = recognizeAction(oldState, newState, playerId, fieldSide);
 				learnMove(oldState, action, fieldSide);
 			}
-	}
+	}	
 	
 	/** Determina si la jugada es buena para ser aprendida 
 	 * @param oldState Estado del juego en el pasado.
