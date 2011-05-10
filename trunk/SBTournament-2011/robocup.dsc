@@ -86,7 +86,7 @@ object EDU.gatech.cc.is.simulation.ObstacleInvisibleSim -2.047 -1.4396 0 1.0
 // from getting jumpy on slow machines, or when/if your process gets 
 // swapped out. 
 
-maxtimestep 15 
+maxtimestep 25 
 
 //====== 
 // TIMEOUT 
@@ -115,7 +115,7 @@ timeout 30000 // ten seconds
 // lose fidelity. In fact, for slow computers, values less than 1.0 
 // may be necessary. 
 
-time 4.0 
+time 1.0 
 
 //====== 
 // LOGTIME 
@@ -123,7 +123,7 @@ time 4.0
 // 
 // logtime number (milliseconds) 
 // 
-logtime 500 
+logtime 0 
 
 //====== 
 // LOGFILENAME 
@@ -131,7 +131,7 @@ logtime 500
 // 
 // logfilename filename (saved in logfiles directory) 
 // 
-logfilename "logfiles;2011_5_10_14_10_7_WestTeam_EastTeam.xml" 
+logfilename "logfiles:log.xml" 
 
 //====== 
 // The ball 
@@ -157,32 +157,32 @@ xF0B000 x000000 3
 // numbers according to the order in which they are listed here. 
 //======WEST TEAM====== 
 westname WestTeam 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091019.RoboCops 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 //------------your control system name goes here ^^^^^^^^ 
 -1.2 0 0 xEAEA00 xFFFFFF 1 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091019.RoboCops 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 //------------your control system name goes here ^^^^^^^^ 
 -.5 0 0 xEAEA00 xFFFFFF 1 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091019.RoboCops 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 //------------your control system name goes here ^^^^^^^^ 
 -.15 .5 0 xEAEA00 xFFFFFF 1 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091019.RoboCops 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 //------------your control system name goes here ^^^^^^^^ 
 -.15 0 0 xEAEA00 xFFFFFF 1 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091019.RoboCops 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim NullRobot 
 //------------your control system name goes here ^^^^^^^^ 
 -.15 -.5 0 xEAEA00 xFFFFFF 1 
 
 //======EAST TEAM====== 
 eastname EastTeam 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070810.VamosEquipo 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
 1.2 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070810.VamosEquipo 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
 .5 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070810.VamosEquipo 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
 .15 .5 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070810.VamosEquipo 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
 .15 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070810.VamosEquipo 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
 .15 -.5 0 xFF0000 x0000FF 2 
 

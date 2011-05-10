@@ -31,7 +31,7 @@ public class MegaDefender  extends Role{
 
 	@Override
 	public int takeStep() {
-		MatchState state = new PosesionContrarioEnSuCampo();
+		MatchState state = new Heroica();
 		matchState = state;
 		//getMatchState();
 		matchState.accionARealizar(worldAPI,role);
@@ -85,6 +85,9 @@ public class MegaDefender  extends Role{
 			{
 				oponenteMasCercano = oponentes[i];
 			}
+		}
+		for(int i = 1; i<index-1; i++)
+		{
 			if((Math.abs(getRelativePosition(companeros[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(companeros[i]).y - balon.y) <= unidadDeCercania))
 			{
 				companeroMasCercano = companeros[i];
