@@ -18,9 +18,10 @@ public class LogParser {
 	
 	public static void main(String args[]) {
 		LogParser lp = new LogParser("log.xml");
-		//for (int i = 0; i < 5; i++)
-			lp.getNextLogEntry();
-		
+		LogEntry le;
+		while ((le = lp.getNextLogEntry()) != null) {
+			System.out.println(le.getTime());
+		}
 	}
 	
 	/** Constructora dada la ruta al log. 
@@ -34,7 +35,15 @@ public class LogParser {
 	/** Recupera el siguiente nodo del log en un formato de clases. 
 	 * @return El siguiente nodo del fichero XML con formato de clase. */
 	public LogEntry getNextLogEntry() {
-		LogEntry logEntry = new LogEntry();
+		LogEntry logEntry = new LogEntry();				
+		
+		// Si se ha acabado de leer el documento se devuelve null
+		if (actualNode == null) 
+			return null;
+		
+		/* Si es una entrada de gol se salta a la siguiente */
+		if (actualNode.getNodeName().equals("goal"))
+			actualNode = getNextNode();
 		
 		// Tiempo del log
 		logEntry.setTime(Integer.parseInt(actualNode.getAttributes().item(0).getNodeValue()));
@@ -52,10 +61,16 @@ public class LogParser {
 		ArrayList<PlayerInfo> eastTeamInfo = getTeamInfo(nl.item(5));
 		logEntry.setEastTeamInfo(eastTeamInfo);
 		
-		// Un salto de más debido a los saltos de linea del documento
-		actualNode = actualNode.getNextSibling().getNextSibling();
+		actualNode = getNextNode();
 		
 		return logEntry;
+	}
+	
+	/** Devuelve el siguiente nodo al actual.
+	 * @return Siguiente nodo, null si no existe. */
+	private Node getNextNode() {
+		// Un salto de más debido a los saltos de linea del documento
+		return actualNode.getNextSibling().getNextSibling();
 	}
 	
 	/** Obtiene la información de la bola a partir de su nodo XML. 
