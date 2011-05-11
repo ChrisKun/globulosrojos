@@ -43,6 +43,30 @@ public class Perceptron implements Serializable {
 		initWeights();
 	}
 	
+	/** Ejecuta la red neuronal para averiguar la salida que devuelve para un
+	 * caso concreto.
+	 * @param inputValues Entrada del perceptrón.
+	 * @return Valor de la salida tras la ejecución. */
+	public double compute(double[] inputValues) {
+		// Se calculan las salidas de las capas ocultas mediante forward propagation
+		for (int i = 0; i < nHiddenLayers; i++) {
+			hiddenVal[i] = 0.0;
+
+			for (int j = 0; j < nInputs; j++)
+				hiddenVal[i] = hiddenVal[i]	+ (inputValues[j] * weightsIH[j][i]);
+
+			hiddenVal[i] = tanh(hiddenVal[i]);
+		}
+
+		// Se calcula la salida del perceptrón
+		output = 0.0;
+
+		for (int i = 0; i < nHiddenLayers; i++)
+			output = output + hiddenVal[i] * weightsHO[i];
+		
+		return output;
+	}
+	
 	/** Entrena el perceptrón dada la entrada y la salida esperada.
 	 * @param inputValues Entrada del perceptrón.
 	 * @param expectedValue Valor esperado de la salida. */
@@ -70,7 +94,7 @@ public class Perceptron implements Serializable {
 
 	/** Aplica backpropagation en la capa de salida. 
 	 * @param error El error para la capa de salida. */
-	public void weightChangesHO(double error) {
+	private void weightChangesHO(double error) {
 		for (int k = 0; k < nHiddenLayers; k++) {
 			double weightChange = LR_HO * error * hiddenVal[k];
 			weightsHO[k] = weightsHO[k] - weightChange;
@@ -86,7 +110,7 @@ public class Perceptron implements Serializable {
 	/** Aplica backpropagation para las capas ocultas. 
 	 * @param error Error para las capas ocultas.
 	 * @param inputValues Valores de entrada del perceptrón. */
-	public void weightChangesIH(double error, double []inputValues) {
+	private void weightChangesIH(double error, double []inputValues) {
 		for (int i = 0; i < nHiddenLayers; i++) {
 			for (int k = 0; k < nInputs; k++) {
 				double x = 1 - (hiddenVal[i] * hiddenVal[i]);
@@ -110,7 +134,7 @@ public class Perceptron implements Serializable {
 	/** Función de activación tanh. 
 	 * @param x Valor de entrada. 
 	 * @return Valor de la función. */
-	public static double tanh(double x) {
+	private static double tanh(double x) {
 		if (x > 20)
 			return 1;
 		else if (x < -20)

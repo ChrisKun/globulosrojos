@@ -30,9 +30,9 @@ public class StrikerMLP extends PlayerMLP {
 		int id = -1;
 		int idEx1 = -1;
 		int idEx2 = -1;
-		double distance = Double.MAX_VALUE;
-		double xPos1 = Double.MAX_VALUE;
-		double xPos2 = Double.MAX_VALUE;
+		double distance = Double.POSITIVE_INFINITY;
+		double xPos1 = Double.POSITIVE_INFINITY;
+		double xPos2 = Double.POSITIVE_INFINITY;
 		Vec2 ballPosition = new Vec2(state.getBallInfo().getPositionX(), state.getBallInfo().getPositionY());
 		
 		ArrayList<PlayerInfo> team;

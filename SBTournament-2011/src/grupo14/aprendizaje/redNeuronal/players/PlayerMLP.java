@@ -2,6 +2,7 @@ package grupo14.aprendizaje.redNeuronal.players;
 
 import grupo14.aprendizaje.redNeuronal.Perceptron;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
+import grupo14.aprendizaje.redNeuronal.log.LogParser;
 import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
 
 import java.io.File;
@@ -10,16 +11,50 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
+import teams.rolebased.WorldAPI;
+
 import EDU.gatech.cc.is.util.Vec2;
 
 public abstract class PlayerMLP {
 
 	public static void main(String args[]) {
 		// Se inicializan todos los perceptrones
-		UltraDefenderMLP ud = new UltraDefenderMLP();
-		ud.writeToFile("training/MLP/UltraStriker/");
+		UltraDefenderMLP ultraDef = new UltraDefenderMLP();
+		ultraDef.readFromFile("training/MLP/UltraDefender");
+		DefenderMLP normalDef = new DefenderMLP();
+		normalDef.readFromFile("training/MLP/Defender");
+		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
+		ultraStriker.readFromFile("training/MLP/UltraStriker");
+		StrikerMLP normalStriker = new StrikerMLP();
+		normalStriker.readFromFile("training/MLP/Striker");
 		
+		// Por cada fichero de log de la carpeta logfiles se entrenan los perceptrones
+		int casos = 0;
+		LogEntry oldEntry, newEntry;
+		File folder = new File("logfiles");
+		File[] listOfFiles = folder.listFiles();
+		for (int iFile = 0; iFile < listOfFiles.length; iFile++) {
+			if (listOfFiles[iFile].getName().endsWith(".xml")) {
+				LogParser parser = new LogParser(listOfFiles[iFile].getAbsolutePath());
+				// Al menos hay una entrada...
+				oldEntry = parser.getNextLogEntry();
+				while((newEntry = parser.getNextLogEntry()) != null) {
+					ultraDef.train(oldEntry, newEntry);
+					normalDef.train(oldEntry, newEntry);
+					ultraStriker.train(oldEntry, newEntry);
+					normalStriker.train(oldEntry, newEntry);
+					casos++;
+					oldEntry = newEntry;
+				}
+			}
+		}
 		
+		ultraDef.writeToFile("training/MLP/UltraDefender/");
+		normalDef.writeToFile("training/MLP/Defender/");
+		ultraStriker.writeToFile("training/MLP/UltraStriker/");
+		normalStriker.writeToFile("training/MLP/Striker/");
+		
+		System.out.println("Casos: " + casos);
 	}
 	
 	/** Lista de perceptrones de un solo jugador, uno por cada 
@@ -70,9 +105,30 @@ public abstract class PlayerMLP {
 			if (isGoodMove(oldState, newState, fieldSide)) {
 				int playerId = getReferencePlayer(oldState, fieldSide);
 				String action = recognizeAction(oldState, newState, playerId, fieldSide);
-				learnMove(oldState, action, fieldSide);
+				// Se aprende el caso sólo si se ha podido reconocer un movimiento claro del jugador
+				if (action != null)
+					learnMove(oldState, action, fieldSide);
 			}
 	}	
+	
+	/** Mediante los perceptrones almacenados y dado el estado del juego actual
+	 * devuelve la acción que debe ejecutarse a continuación.
+	 * @param worldAPI Estado del juego actual.
+	 * @return Siguiente acción a realizar. */
+	public String getNextMove(WorldAPI worldAPI) {
+		String nextMove = null;
+		double betterMLPOutput = Double.NEGATIVE_INFINITY;
+		
+		for (Entry<String, Perceptron> p : mlps.entrySet()) {
+			double output = p.getValue().compute(getMLPInputValues(worldAPI));
+			if (output > betterMLPOutput) {
+				nextMove = p.getKey();
+				betterMLPOutput = output;
+			}
+		}
+		
+		return nextMove + " : " + betterMLPOutput;
+	}
 	
 	/** Determina si la jugada es buena para ser aprendida 
 	 * @param oldState Estado del juego en el pasado.
@@ -208,21 +264,33 @@ public abstract class PlayerMLP {
 		}
 	}
 	
+	// TODO Ordenar los jugadores en ambos métodos por su posición en X (p.e.)
+	
 	/** Devuelve las entradas para el perceptrón en el formato adecuado. 
 	 * @param state Estado del que sacar la información.
 	 * @param fieldSide Lado del campo del jugador.
 	 * @return Entradas para el perceptrón. */
 	protected double[] getMLPInputValues(LogEntry state, int fieldSide) {
-		// tiempo (1) + marcador (2) + (numJugadores (10) + pelota (1)) * 2 (x, y) = 19 entradas
-		double[] inputValues = new double[24];
-		// Tiempo TODO : Convertir a double dividiendo por el máx de tiempo
-		inputValues[0] = state.getTime();
+		// tiempo (1) + marcador (2) + (numJugadores (10) + pelota (1)) * 2 (x, y) = 25 entradas
+		double[] inputValues = new double[25];
+		
+		// Tiempo
+		inputValues[0] = state.getTime() / 30000.0;
+		
 		// Marcador
-		inputValues[1] = state.getBallInfo().getWestScore();
-		inputValues[2] = state.getBallInfo().getEastScore();
+		if (fieldSide == -1) {
+			inputValues[1] = state.getBallInfo().getWestScore();
+			inputValues[2] = state.getBallInfo().getEastScore();
+		}
+		else {
+			inputValues[1] = state.getBallInfo().getEastScore();
+			inputValues[2] = state.getBallInfo().getWestScore();
+		}
+		
 		// Pelota
 		inputValues[3] = state.getBallInfo().getPositionX();
 		inputValues[4] = state.getBallInfo().getPositionY();
+		
 		// Jugadores
 		ArrayList<PlayerInfo> myTeam;
 		ArrayList<PlayerInfo> enemyTeam;
@@ -244,7 +312,52 @@ public abstract class PlayerMLP {
 			inputValues[15 + 2 * iPlayer + 1] = enemyTeam.get(iPlayer).getPositionY();
 		}
 
-		return null;
+		return inputValues;
+	}
+	
+	/** Devuelve las entradas para el perceptrón en el formato adecuado. 
+	 * @param worldAPI Estado del que sacar la información.
+	 * @return Entradas para el perceptrón. */
+	protected double[] getMLPInputValues(WorldAPI worldAPI) {
+		double[] inputValues = new double[25];
+		
+		Vec2 myPosition = worldAPI.getPosition();
+
+		// Tiempo
+		inputValues[0] = worldAPI.getTimeStamp() / 30000.0;
+		
+		// Marcador
+		inputValues[1] = worldAPI.getMyScore();
+		inputValues[2] = worldAPI.getOpponentScore();
+		
+		// Pelota
+		Vec2 ballPosition = getGlobalPosition(myPosition, worldAPI.getBall());
+		inputValues[3] = ballPosition.x;
+		inputValues[4] = ballPosition.y;
+		
+		// Jugadores
+		Vec2 []teammates = worldAPI.getTeammates();
+		for (int iPlayer = 0; iPlayer < teammates.length; iPlayer++) {
+			Vec2 playerPosition = getGlobalPosition(myPosition, teammates[iPlayer]);
+			inputValues[5 + 2 * iPlayer] = playerPosition.x;
+			inputValues[5 + 2 * iPlayer + 1] = playerPosition.y;
+		}
+		Vec2 []oponents = worldAPI.getOpponents();
+		for (int iPlayer = 0; iPlayer < oponents.length; iPlayer++) {
+			Vec2 playerPosition = getGlobalPosition(myPosition, oponents[iPlayer]);
+			inputValues[15 + 2 * iPlayer] = playerPosition.x;
+			inputValues[15 + 2 * iPlayer + 1] = playerPosition.y;
+		}
+		
+		return inputValues;
+	}
+	
+	/** Transforma un punto expresado en coordenadas del jugador en coordenadas de campo.
+	 * @param  */
+	private static Vec2 getGlobalPosition(Vec2 refPoint, Vec2 point) {
+		Vec2 globalPoint = refPoint;
+		globalPoint.add(point);
+		return globalPoint;
 	}
 	
 	/** Devuelve la información del log correspondiente con el jugador del id dado.

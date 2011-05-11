@@ -28,8 +28,8 @@ public class UltraDefenderMLP extends PlayerMLP {
 		 * (sin contar al portero, es decir, el segundo más retrasado) */
 		int id1 = -1; // Id del jugador más retrasado (lolazo)
 		int id2 = -1; // Id del segundo jugador más retrasado (lolapong)
-		double xPos1 = Double.MIN_VALUE; // Posición del jugador más retrasado (facepalm)
-		double xPos2 = Double.MIN_VALUE; // Posición del segundo jugador más retrasado (u serious?1)
+		double xPos1 = Double.NEGATIVE_INFINITY; // Posición del jugador más retrasado (facepalm)
+		double xPos2 = Double.NEGATIVE_INFINITY; // Posición del segundo jugador más retrasado (u serious?1)
 		
 		ArrayList<PlayerInfo> team;
 		if (fieldSide == -1)
