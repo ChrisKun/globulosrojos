@@ -117,4 +117,48 @@ public class fieldUtils {
 		return deltaY * (ballPosition.y/deltaY - ballPosition.x/deltaX + defenseLine / deltaX);
 	}
 	
+	/**
+	 * Devuelve la posicion de un item desde el centro del campo
+	 * @param worldAPI
+	 * @param position
+	 * @return
+	 */
+    public static Vec2 getRelativePosition(WorldAPI worldAPI,Vec2 position)
+    {
+            return new Vec2(worldAPI.getPosition().x+position.x,worldAPI.getPosition().y+position.y);
+    }
+    
+    public static boolean whoHasTheBall(WorldAPI worldAPI)
+    {
+            // si el balon esta en tierra de nadie, tambien lo toma como si fuera posesion contraria
+            //0.06 = cankick
+            double unidadDeCercania = 0.1;
+            boolean nosotros = true;
+            Vec2[] oponentes = worldAPI.getOpponents();
+            Vec2[] companeros = worldAPI.getTeammates();
+            Vec2 oponenteMasCercano = oponentes[0];
+            Vec2 companeroMasCercano = companeros[0];
+            Vec2 balon = getRelativePosition(worldAPI,worldAPI.getBall());
+            int index = oponentes.length;
+            for(int i=1; i<index;i++)
+            {
+                    if((Math.abs(getRelativePosition(worldAPI,oponentes[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(worldAPI,oponentes[i]).y - balon.y) <= unidadDeCercania))
+                    {
+                            oponenteMasCercano = oponentes[i];
+                    }
+            }
+            for(int i = 1; i<index-1; i++)
+            {
+                    if((Math.abs(getRelativePosition(worldAPI,companeros[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(worldAPI,companeros[i]).y - balon.y) <= unidadDeCercania))
+                    {
+                            companeroMasCercano = companeros[i];
+                    }
+            }
+            if(oponenteMasCercano.x > companeroMasCercano.x && oponenteMasCercano.y > companeroMasCercano.y  )
+                    nosotros = true;
+            else
+                    nosotros = false;
+            return nosotros;
+    }
+
 }
