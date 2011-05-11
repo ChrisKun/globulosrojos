@@ -79,7 +79,7 @@ public class AprendizajeCBR implements StandardCBRApplication {
 	 * @return Objeto Caso que contiene la soluci�n a aplicar
 	 * @throws ExecutionException
 	 */
-	public CBRCase recuperarCaso(CBRQuery query) throws ExecutionException {
+	public String recuperarCaso(CBRQuery query) throws ExecutionException {
 		NNConfig simConfig = new NNConfig();
 		simConfig.setDescriptionSimFunction(new Average());
 
@@ -122,7 +122,7 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		Prediction prediccion = votacion.getPredictedClass(eval);
 
 		// Se supone que aqui tenemos las acciones a realizar
-		return (CBRCase) prediccion.getClassification();
+		return (String)prediccion.getClassification();
 	}
 
 	@Override

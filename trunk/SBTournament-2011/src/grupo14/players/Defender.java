@@ -8,19 +8,23 @@ import grupo14.states.PosesionContrarioNuestroCampo;
 import grupo14.states.PosesionNuestraEnNuestroCampo;
 import grupo14.states.PosesionNuestraEnSuCampo;
 import grupo14.states.UltimoHombreContrario;
+import grupo14.utils.CBRUtils;
+import grupo14.utils.MatchStateUtils;
+import grupo14.utils.fieldUtils;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 import EDU.gatech.cc.is.util.Vec2;
 
 public class Defender extends Role {
 
-	public MatchState matchState;
+	public MatchStateUtils matchStateUtils;
 	String role = "defensor";
 
 	@Override
 	public int configure() {
 		// Para cuando se quiera ver el nombre de los jugadores en el simulador
 		worldAPI.setDisplayString("Defensor");
+		this.matchStateUtils = new MatchStateUtils();
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -32,74 +36,10 @@ public class Defender extends Role {
 
 	@Override
 	public int takeStep() {
-		MatchState state = new Heroica();
-		matchState = state;
-		//getMatchState();
-		matchState.accionARealizar(worldAPI, role);
+		matchStateUtils.setMatchState(new Heroica());
+		matchStateUtils.getMatchState(this.worldAPI);
+		matchStateUtils.matchState.accionARealizar(worldAPI, role);
 
 		return WorldAPI.ROBOT_OK;
-	}
-
-	private void getMatchState() {
-		int lado = worldAPI.getFieldSide(); // -1 en la derecha, 1 en la
-											// izquierda
-		if (worldAPI.getMyScore() > worldAPI.getOpponentScore())
-			matchState = new Catenaccio();
-		else if (worldAPI.getMyScore() < worldAPI.getOpponentScore())
-			matchState = new Heroica();
-		else {
-			if (getRelativePosition(worldAPI.getBall()).x * lado < 0) {
-				// el balon esta en tu campo
-				if(whoHasTheBall())
-					matchState = new PosesionNuestraEnNuestroCampo();
-				else
-					matchState = new PosesionContrarioNuestroCampo();
-			} else 
-			{
-				if(whoHasTheBall())
-					matchState = new PosesionNuestraEnSuCampo();
-				else
-					matchState = new PosesionContrarioEnSuCampo();
-			}
-		}
-	}
-
-	// devuelve la posicion de un item desde el centro del campo
-	public Vec2 getRelativePosition(Vec2 position) {
-		return new Vec2(worldAPI.getPosition().x + position.x, worldAPI
-				.getPosition().y
-				+ position.y);
-	}
-	public boolean whoHasTheBall()
-	{
-		// si el balon esta en tierra de nadie, tambien lo toma como si fuera posesion contraria
-		//0.06 = cankick
-		double unidadDeCercania = 0.1;
-		boolean nosotros = true;
-		Vec2[] oponentes = worldAPI.getOpponents();
-		Vec2[] companeros = worldAPI.getTeammates();
-		Vec2 oponenteMasCercano = oponentes[0];
-		Vec2 companeroMasCercano = companeros[0];
-		Vec2 balon = getRelativePosition(worldAPI.getBall());
-		int index = oponentes.length;
-		for(int i=1; i<index;i++)
-		{
-			if((Math.abs(getRelativePosition(oponentes[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(oponentes[i]).y - balon.y) <= unidadDeCercania))
-			{
-				oponenteMasCercano = oponentes[i];
-			}
-		}
-		for(int i = 1; i<index-1; i++)
-		{
-			if((Math.abs(getRelativePosition(companeros[i]).x - balon.x) <= unidadDeCercania) && (Math.abs(getRelativePosition(companeros[i]).y - balon.y) <= unidadDeCercania))
-			{
-				companeroMasCercano = companeros[i];
-			}
-		}
-		if(oponenteMasCercano.x > companeroMasCercano.x && oponenteMasCercano.y > companeroMasCercano.y  )
-			nosotros = true;
-		else
-			nosotros = false;
-		return nosotros;
 	}
 }
