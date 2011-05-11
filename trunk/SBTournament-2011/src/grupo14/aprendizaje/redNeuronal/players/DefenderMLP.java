@@ -28,9 +28,9 @@ public class DefenderMLP extends PlayerMLP {
 		int id = -1;
 		int idEx1 = -1; 
 		int idEx2 = -1;
-		double distance = Double.MAX_VALUE;
-		double xPos1 = Double.MIN_VALUE;
-		double xPos2 = Double.MIN_VALUE;
+		double distance = Double.POSITIVE_INFINITY;
+		double xPos1 = Double.NEGATIVE_INFINITY;
+		double xPos2 = Double.NEGATIVE_INFINITY;
 		Vec2 ballPosition = new Vec2(state.getBallInfo().getPositionX(), state.getBallInfo().getPositionY());
 		
 		ArrayList<PlayerInfo> team;

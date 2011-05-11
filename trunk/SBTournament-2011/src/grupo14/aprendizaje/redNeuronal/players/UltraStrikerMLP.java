@@ -37,7 +37,7 @@ public class UltraStrikerMLP extends PlayerMLP {
 	protected int getReferencePlayer(LogEntry state, int fieldSide) {
 		/* El jugador de referencia es el más adelantado del equipo */
 		int id = -1;
-		double xPos = Double.MAX_VALUE;
+		double xPos = Double.POSITIVE_INFINITY;
 		
 		ArrayList<PlayerInfo> team;
 		if (fieldSide == -1)
