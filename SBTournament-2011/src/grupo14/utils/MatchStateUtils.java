@@ -58,19 +58,26 @@ public class MatchStateUtils {
 		else if (worldAPI.getMyScore() < worldAPI.getOpponentScore())
 			matchState = new Heroica();
 		else 
-		{
-			if (fieldUtils.getRelativePosition(worldAPI, worldAPI.getBall()).x * lado < 0) {
-			// el balon esta en tu campo
-			if(fieldUtils.whoHasTheBall(worldAPI))
-				matchState = new PosesionNuestraEnNuestroCampo();
-			else
-				matchState = new PosesionContrarioNuestroCampo();
-		} else 
-		{
-			if(fieldUtils.whoHasTheBall(worldAPI))
-				matchState = new PosesionNuestraEnSuCampo();
-			else
-				matchState = new PosesionContrarioEnSuCampo();
+			//tienen ellos el balon y estan cerca de la porteria
+			if(!fieldUtils.whoHasTheBall(worldAPI) && fieldUtils.getLocationsOctant(worldAPI.getPosition(), worldAPI) == 1 && fieldUtils.getLocationsOctant(worldAPI.getPosition(), worldAPI) == 5)
+			{
+				setMatchStateUsingName("UltimoHombreContrario");
+			}
+			else{
+				{
+					if (fieldUtils.getRelativePosition(worldAPI, worldAPI.getBall()).x * lado < 0) {
+						// el balon esta en tu campo
+						if(fieldUtils.whoHasTheBall(worldAPI))
+							matchState = new PosesionNuestraEnNuestroCampo();
+						else
+							matchState = new PosesionContrarioNuestroCampo();
+				} else 
+				{
+					if(fieldUtils.whoHasTheBall(worldAPI))
+						matchState = new PosesionNuestraEnSuCampo();
+					else
+						matchState = new PosesionContrarioEnSuCampo();
+		}
 		}
 	}
 	}
