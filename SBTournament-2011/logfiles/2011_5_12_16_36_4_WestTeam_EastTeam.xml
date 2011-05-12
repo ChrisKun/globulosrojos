@@ -1,0 +1,5706 @@
+<SoccerBotsLOG>
+<initlog>
+<westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.5" y = "0.0" />
+<heading x = "1.87" y = "0.0" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.15" y = "0.5" />
+<heading x = "1.5199999999999998" y = "-0.5000000000000002" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.15" y = "0.0" />
+<heading x = "1.52" y = "0.0" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "-0.15" y = "-0.5" />
+<heading x = "1.52" y = "0.5000000000000001" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.2" y = "0.0" />
+<heading x = "2.5700000000000003" y = "0.0" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+</westTeam>
+
+<eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.5" y = "0.25" />
+<heading x = "-1.87" y = "-0.2499999999999998" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.15" y = "0.5" />
+<heading x = "-1.5200000000000002" y = "-0.4999999999999997" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.5" y = "-0.25" />
+<heading x = "-1.8699999999999999" y = "0.2500000000000003" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.15" y = "-0.5" />
+<heading x = "-1.52" y = "0.5000000000000001" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.2" y = "0.0" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+</eastTeam>
+
+</initlog>
+
+
+
+<log time = "92" >
+
+<ball>
+  <position x = "0.035838623657127346" y = "-0.723775698236112" />
+  <timeout value = "59.908" />
+  <velocity x = "0.3626712893998444" y = "0.08456533477172758" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.4448" y = "0.0" />
+<heading x = "1.87" y = "0.0" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.11550802664152196" y = "0.4569030885812215" />
+<heading x = "0.99984544749692" y = "-1.2492834270571604" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.10376845218967376" y = "-0.030160967939731644" />
+<heading x = "1.2730426208640557" y = "-0.8305194070360887" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "-0.0948" y = "-0.5" />
+<heading x = "1.600124995117569" y = "0.0" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.1537684521896738" y = "0.030160967939731657" />
+<heading x = "2.152447062908305" y = "1.4042334711070719" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.4545128857841949" y = "0.218727608976634" />
+<heading x = "-1.5546681650591156" y = "-1.068834363478141" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.11550802664152196" y = "0.45690308858122153" />
+<heading x = "-0.9998454474969205" y = "-1.24928342705716" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.4501794858108536" y = "-0.2737688107807072" />
+<heading x = "-1.7027760215623724" y = "-0.8123754183825476" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.09665889421014234" y = "-0.5142044511726154" />
+<heading x = "-1.5462397942311898" y = "-0.41175538701501807" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1537684521896738" y = "-0.030160967939731637" />
+<heading x = "-2.152447062908305" y = "-1.4042334711070714" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "736" >
+
+<ball>
+  <position x = "0.3365006112679079" y = "-0.7178813169774819" />
+  <timeout value = "59.26400000000001" />
+  <velocity x = "0.5141366423812485" y = "-0.05620812184138787" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.12256845218967366" y = "0.030160967939731657" />
+<heading x = "0.7534350347845493" y = "1.7115009928011158" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.05722317946531779" y = "0.1318742036942453" />
+<heading x = "0.5113149869832333" y = "-1.51623117765278" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.022034598404988823" y = "-0.39180118408206865" />
+<heading x = "0.7889977056404245" y = "-1.2991853680264978" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "0.2564024789909406" y = "-0.36732148561981254" />
+<heading x = "1.5597529184103445" y = "0.3571705944089088" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "0.08267372077299773" />
+<heading x = "-1.4350564932295928" y = "-2.1320208397760996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.0782158954221971" y = "0.07805694427078334" />
+<heading x = "-0.33565011521378035" y = "-1.564525167632971" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.39549106599574374" y = "-0.6492403033720157" />
+<heading x = "0.24735218208606963" y = "-1.8703520786251073" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.2787990641845485" y = "-0.68985717795614" />
+<heading x = "1.5301199114130712" y = "-0.4681164990654085" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.080529999971979" y = "-0.17860305909009316" />
+<heading x = "2.5500015444688726" y = "0.31998769227325935" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "1380" >
+
+<ball>
+  <position x = "0.6706858817545855" y = "-0.7191020102172322" />
+  <timeout value = "58.62000000000002" />
+  <velocity x = "0.5082180443098708" y = "-0.14224452441781446" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.24128644875634508" y = "-0.12091960992798027" />
+<heading x = "0.8802163531491711" y = "-1.6498845934333632" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.14590185809243938" y = "-0.10113492165419907" />
+<heading x = "0.8648390796965145" y = "-1.3462738823247244" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.26523167373371503" y = "-0.6115873872950965" />
+<heading x = "1.3591031651402703" y = "-0.6806163284154292" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "0.6355307724824681" y = "-0.2940016009861058" />
+<heading x = "1.5911864444847594" y = "0.16889552654806822" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "1.2500911212124716E-4" />
+<heading x = "-2.5699794646795993" y = "-0.010273807724622013" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.12511258081497953" y = "-0.3018925691336019" />
+<heading x = "0.5360091032360349" y = "-1.5076784276655621" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.6144015512238978" y = "-0.6983156171507982" />
+<heading x = "1.6594517436136573" y = "-0.8975633184447726" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.4426736066070246" y = "-0.68985717795614" />
+<heading x = "1.2028921974490001" y = "-1.0552015737840406" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1292881223931832" y = "-0.24159202454130863" />
+<heading x = "1.168443764578803" y = "-2.289025812221635" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "2024" >
+
+<ball>
+  <position x = "1.0095396107543244" y = "-0.7242608264583175" />
+  <timeout value = "57.97600000000003" />
+  <velocity x = "0.46588511204048627" y = "-0.07908027490769658" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.18331300399589204" y = "0.04333880170036408" />
+<heading x = "-1.8411353055696138" y = "0.3272931202837684" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.3361640012151519" y = "-0.2988264262780436" />
+<heading x = "1.2575992816163473" y = "-0.9893654768982223" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.5283135703963436" y = "-0.6922039351046793" />
+<heading x = "1.4957819336794085" y = "-0.2702524872749367" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0198227452445394" y = "-0.2669665030753242" />
+<heading x = "1.588672193341764" y = "-0.19110379928894244" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "1.011127303834323E-7" />
+<heading x = "-2.5699999999865653" y = "-8.31007984701978E-6" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.49852986672154453" y = "-0.3682735170292898" />
+<heading x = "1.5945223546477427" y = "-0.13378512820421304" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.95427195499042" y = "-0.6983156171507982" />
+<heading x = "1.6594517436136573" y = "-0.8975633184447726" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.7440572288097106" y = "-0.68985717795614" />
+<heading x = "1.283465137417729" y = "-0.9555716828335225" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.205754766632086" y = "-0.2893325492902397" />
+<heading x = "2.1276647900304995" y = "-1.4415070382292523" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "2668" >
+
+<ball>
+  <position x = "1.350572893932277" y = "-0.7187017570459644" />
+  <timeout value = "57.332000000000036" />
+  <velocity x = "0.5007252741294526" y = "-0.16671318225318787" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.08997796520059717" y = "-0.10373368594141333" />
+<heading x = "1.3949099419432236" y = "1.2454421921020473" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.6674805129682895" y = "-0.4962060475659315" />
+<heading x = "1.4332487705609287" y = "-0.7114759037982851" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.8544217607949209" y = "-0.7021498014735587" />
+<heading x = "1.4892608975808819" y = "-0.30414137984921785" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5445258035103657" y = "-0.4181387835284587" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "8.178417236697535E-11" />
+<heading x = "-2.5700000000000003" y = "-6.721535191225992E-9" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.8831133516701953" y = "-0.4052031867921095" />
+<heading x = "1.588675808646317" y = "-0.19107374236658053" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.6594517436136573" y = "-0.8975633184447726" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.048966892465066" y = "-0.68985717795614" />
+<heading x = "1.2244183706832166" y = "-1.0301454526101919" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31742302622897484" />
+<heading x = "2.568556988353823" y = "-0.08611038020320408" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "3312" >
+
+<ball>
+  <position x = "1.3203434066662594" y = "-0.7548459240033496" />
+  <timeout value = "56.688000000000045" />
+  <velocity x = "0.2473637030340793" y = "-0.5400215010894441" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.26328731187671467" y = "-0.08625179694859454" />
+<heading x = "0.11741827151981168" y = "-1.8663099821608682" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.5002626450505727" y = "-0.5564278891876815" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4989942869195096" y = "-0.25182559000758986" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5329556207484476" y = "-0.45874509786562495" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "6.620301746663659E-14" />
+<heading x = "-2.5700000000000003" y = "-5.436882624787665E-12" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2118681037156522" y = "-0.5496880244094094" />
+<heading x = "1.5850503749029912" y = "-0.21912395811477894" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.8677073850645134" y = "-0.2665879287880042" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.3151819288473288" y = "-0.9114255285175088" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31963360886514847" />
+<heading x = "2.5699573273382246" y = "-0.014809985164441014" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "3956" >
+
+<ball>
+  <position x = "1.3381200731199532" y = "-0.7449805153854367" />
+  <timeout value = "56.044000000000054" />
+  <velocity x = "0.4195009312948404" y = "0.38327644616052114" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.14246065890752008" y = "0.03921798435480033" />
+<heading x = "-1.5400059575651557" y = "1.06079293486704" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.4517429369602466" y = "-0.6729356915679517" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4653769939826502" y = "-0.4038195952481405" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5315861449999015" y = "-0.4632967520330143" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "9.120990018281556E-17" />
+<heading x = "-2.5700000000000003" y = "-5.391812119192436E-15" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.4223632738618912" y = "-0.732995714290938" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.7383396650307104" y = "-0.7331952052359029" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.1857048316116032" y = "-1.0744785024805752" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31972135792766815" />
+<heading x = "2.569999847646409" y = "8.849279262610034E-4" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "4600" >
+
+<ball>
+  <position x = "1.3406029333404237" y = "-0.7397871931737161" />
+  <timeout value = "55.40000000000006" />
+  <velocity x = "0.24308687221335568" y = "-0.4123266565898927" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.11845913034049595" y = "-0.13330932569930762" />
+<heading x = "1.7855966986762248" y = "0.5554677575490471" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.4592844974849326" y = "-0.6564211722668213" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4711673409158978" y = "-0.38218667562128117" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.531575103170635" y = "-0.46333325301326966" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.43870800443928" y = "-0.7003708146134767" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.7644390900244749" y = "-0.6679481249270806" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.2056349135885034" y = "-1.0520667541256314" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3197459886115944" />
+<heading x = "2.569999997936478" y = "-1.0298788189706488E-4" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "5244" >
+
+<ball>
+  <position x = "1.3284328995812378" y = "-0.7513646150682204" />
+  <timeout value = "54.75600000000007" />
+  <velocity x = "0.3807076754396105" y = "0.42176301463275623" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.2689449336176867" y = "-0.04558379292760791" />
+<heading x = "-0.6664902131937861" y = "-1.747195122393862" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.4379056850284881" y = "-0.7020165531971125" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.455438117460905" y = "-0.438292010241867" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.531596514037944" y = "-0.4632624722409727" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.3823939292171863" y = "-0.8058455338732535" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.6869502507512146" y = "-0.844747803483628" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.1540830389910306" y = "-1.1083737362068928" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31960132837957195" />
+<heading x = "2.569992219031608" y = "0.006324090210597334" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "5888" >
+
+<ball>
+  <position x = "1.3535364707382442" y = "-0.7050982527033467" />
+  <timeout value = "54.11200000000008" />
+  <velocity x = "0.5234796341014414" y = "-0.04421713375892703" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.10698826180784397" y = "0.018539389653568113" />
+<heading x = "-0.962001928171408" y = "1.6035748470821354" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.4294899217553656" y = "-0.7189983057002556" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4494129949062364" y = "-0.4578230773966453" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5317646045363844" y = "-0.4627063823738482" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.3550192573444897" y = "-0.851071567040979" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.6518885329573765" y = "-0.9114078530953786" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.1358047311220667" y = "-1.1270969846294194" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31947374767945785" />
+<heading x = "2.5699811447883723" y = "0.00984456358854553" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "6532" >
+
+<ball>
+  <position x = "1.3513575868363628" y = "-0.7096394541805303" />
+  <timeout value = "53.46800000000009" />
+  <velocity x = "0.5052685124306077" y = "-0.06315434290498426" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.1566354316943086" y = "-0.1484243926775843" />
+<heading x = "1.855254491458072" y = "-0.23437314676526128" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.4186065308187323" y = "-0.7402401709705039" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.441778041842879" y = "-0.481327412537156" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5317244411985138" y = "-0.46283932010482925" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.3147754240710257" y = "-0.9120118333984788" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.6011264315944058" y = "-0.9978948592160223" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.1135672566409458" y = "-1.1490726543335534" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.319277608779778" />
+<heading x = "2.5699256046779" y = "0.019554703294366742" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "7176" >
+
+<ball>
+  <position x = "1.3256531629940773" y = "-0.7527230730760308" />
+  <timeout value = "52.8240000000001" />
+  <velocity x = "0.49853195115372007" y = "0.2078195515788351" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.25724214114998883" y = "-0.006227219356310917" />
+<heading x = "-1.3305717163813728" y = "-1.313955443523839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.434355462225876" y = "-0.7092421363559791" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4528909573747717" y = "-0.4466630340408963" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5322169489335198" y = "-0.46120626773804324" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.371164743095907" y = "-0.8248074001188007" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.6725476293286503" y = "-0.8729171940265076" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.1462787960783636" y = "-1.1164429773441802" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3194847605515036" />
+<heading x = "2.5699984647534" y = "0.002809121778536832" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "7820" >
+
+<ball>
+  <position x = "1.322453070946976" y = "-0.7540687912235904" />
+  <timeout value = "52.180000000000106" />
+  <velocity x = "0.2320567861357491" y = "-0.5473146366162897" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.0832733261063674" y = "-0.014979218006801083" />
+<heading x = "-0.21104143971339592" y = "1.8580531506724174" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.5014026573847847" y = "-0.5533444319751547" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4996086074895756" y = "-0.24814113795011125" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5326563519532397" y = "-0.4597439578911146" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.525814856516577" y = "-0.48196371609624056" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.8692727341505748" y = "-0.25538098081343896" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.317923795298818" y = "-0.9074562632905011" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31967908200060674" />
+<heading x = "2.569969157417189" y = "-0.012590866705063245" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "8464" >
+
+<ball>
+  <position x = "1.327134976786861" y = "-0.7520173873574167" />
+  <timeout value = "51.536000000000115" />
+  <velocity x = "0.344014703769959" y = "-0.3801385640840539" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.197643226155959" y = "-0.14636137832815654" />
+<heading x = "1.5913596809560655" y = "-0.9820765580276365" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.8678230100411272" y = "-0.5884522719545509" />
+<heading x = "1.4362329662806907" y = "-0.7054323968805004" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.9619344568731805" y = "-0.7021498014735587" />
+<heading x = "1.4542381186237507" y = "-0.44225727166622586" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5322900973832743" y = "-0.46096318449650137" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.377150886221004" y = "-0.8147732424304958" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2455894439331532" y = "-0.6983156171507982" />
+<heading x = "1.6802322697953773" y = "-0.8580323534332928" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.0936973741643758" y = "-0.68985717795614" />
+<heading x = "1.1503930219929535" y = "-1.112203171614755" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31949759934470917" />
+<heading x = "2.5699997404810806" y = "0.0011549576529953905" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "9108" >
+
+<ball>
+  <position x = "1.2343877537355548" y = "-0.7348837543641448" />
+  <timeout value = "50.892000000000124" />
+  <velocity x = "0.22934313091251546" y = "-0.22452151583337043" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.2302829568119385" y = "0.02474208180858357" />
+<heading x = "-1.7554323138127501" y = "-0.6444822663363317" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.9152223464895071" y = "-0.6167426043006596" />
+<heading x = "1.5988481132295875" y = "0.06391174244368283" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.0136711780638294" y = "-0.7021498014735587" />
+<heading x = "1.148157356443852" y = "-0.9960595789629579" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5449372202498894" y = "-0.41661611285036093" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7602147646607463" y = "-1.4080033776919023" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2878038640859788" y = "-0.6983156171507982" />
+<heading x = "-0.12985500544877132" y = "-1.8821630316101472" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.8559305383963599" y = "-1.3519552187260189" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3122859689155561" />
+<heading x = "2.5658152256215874" y = "0.14660227818299676" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "9752" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "50.24800000000013" />
+  <velocity x = "0.07182798076025165" y = "-0.33259793893490835" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.0755795140533943" y = "-0.055311593227068724" />
+<heading x = "0.5778617794811692" y = "1.7784756854719317" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5527114399331492" y = "-0.3866357255876989" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31280930353063957" />
+<heading x = "2.5699970309083544" y = "-0.003906548635723446" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "10396" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "49.60400000000014" />
+  <velocity x = "0.08478540623869958" y = "-0.3295331283691866" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.23410980197048842" y = "-0.127491187995834" />
+<heading x = "1.0413574028328956" y = "-1.5532143314961804" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5525346221662983" y = "-0.3873451264375857" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3127890143067259" />
+<heading x = "2.5699999999996677" y = "1.3069659339758892E-6" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "11040" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "48.96000000000015" />
+  <velocity x = "0.07729679529924606" y = "-0.33136966252255284" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.19291432001792216" y = "0.04175620003351104" />
+<heading x = "-1.8646871434873467" y = "0.14086112633725464" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.5525346813694338" y = "-0.3873448891428803" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31278902109466666" />
+<heading x = "2.5700000000000003" y = "-4.3725903672828774E-10" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "11684" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "48.31600000000016" />
+  <velocity x = "0.07106908139609656" y = "-0.3327609254004429" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.08529008118139289" y = "-0.09520645656644572" />
+<heading x = "1.2628723511863325" y = "1.37914952945977" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.552534681349627" y = "-0.3873448892222693" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.31278902109239565" />
+<heading x = "2.5700000000000003" y = "1.4608758647227661E-13" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "12328" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "47.67200000000017" />
+  <velocity x = "0.08636019440894736" y = "-0.32912393505409615" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.25947890426731857" y = "-0.09520645656644362" />
+<heading x = "0.30413149891441" y = "-1.845102715668717" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.552534681349634" y = "-0.3873448892222417" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3127890210923964" />
+<heading x = "2.5700000000000003" y = "-6.294684547617396E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "12972" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "47.028000000000176" />
+  <velocity x = "0.09584199677606331" y = "-0.3264888351197039" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.151854665430786" y = "0.041756200033510334" />
+<heading x = "-1.638693491682013" y = "0.9008793705702293" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.552534681349634" y = "-0.3873448892222417" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3127890210923964" />
+<heading x = "2.5700000000000003" y = "-6.294684547617396E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "13616" >
+
+<ball>
+  <position x = "1.2083134474988064" y = "-0.748684464739831" />
+  <timeout value = "46.384000000000185" />
+  <velocity x = "0.09209963949005257" y = "-0.32756419860791636" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.11065918347822373" y = "-0.12749118799583584" />
+<heading x = "1.7208335545741882" y = "0.7318687569855439" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1279623628325306" y = "-0.527491900677321" />
+<heading x = "0.3575711385870325" y = "-1.5596611429568839" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "1.2621743013455073" y = "-0.846945118070221" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.552534681349634" y = "-0.3873448892222417" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.27256442892097454" y = "0.09363804488317007" />
+<heading x = "-1.7842801602134268" y = "-0.6129798608998085" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "0.7410166235800247" y = "-1.4182011012469493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "-0.13052818689378898" y = "-1.8821164662225929" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1652043423941592" y = "-0.68985717795614" />
+<heading x = "0.9074456987686838" y = "-1.3179310694365678" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.260593059176502" y = "-0.3127890210923964" />
+<heading x = "2.5700000000000003" y = "-6.294684547617396E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "14260" >
+
+<ball>
+  <position x = "-0.02695178176633797" y = "0.2486076804657409" />
+  <timeout value = "59.908" />
+  <velocity x = "-0.27274031330935505" y = "0.25356356500079985" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.269189471395316" y = "-0.05531159322706671" />
+<heading x = "-0.48777361676213254" y = "-1.8052636646182154" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "1.1088952133076606" y = "-0.5792942539925542" />
+<heading x = "-0.552714176456315" y = "-1.5016347888698562" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "1.036548371129516" y = "-0.7021498014735587" />
+<heading x = "0.594340344289705" y = "-1.3989851876090738" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1294425562375887" y = "-0.28006802771133177" />
+<heading x = "1.552534681349634" y = "-0.3873448892222417" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.2190416327022855" y = "0.10714175862912476" />
+<heading x = "-1.8293133961272439" y = "0.461532771046011" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.2615398821230153" y = "-0.5737661146544814" />
+<heading x = "1.395519264639272" y = "-0.7828958947527224" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.2871685561448838" y = "-0.6983156171507982" />
+<heading x = "0.9190567805000944" y = "-1.6476451784946908" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "1.1665808239081454" y = "-0.68985717795614" />
+<heading x = "0.03990113180881805" y = "-1.5996274252713896" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.3068246069868281" y = "-0.2826280531526648" />
+<heading x = "2.1524470629083052" y = "1.4042334711070708" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "14904" >
+
+<ball>
+  <position x = "-0.16354341175813883" y = "0.3755953642068933" />
+  <timeout value = "59.26400000000001" />
+  <velocity x = "-0.13124345903608056" y = "0.1220155500755728" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.1144860286367699" y = "0.024742081808581666" />
+<heading x = "-1.118082318317537" y = "1.4989302617085567" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.7990249077114638" y = "-0.4765822837558749" />
+<heading x = "-1.4742058306915797" y = "0.6221874064580136" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.7367272344319151" y = "-0.606836682392753" />
+<heading x = "-1.344887191463668" y = "0.7082926247229792" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1824933557479003" y = "-0.17312320359933714" />
+<heading x = "-0.37865686939968635" y = "1.5546764857218458" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.07520590496132054" y = "0.3574127069244528" />
+<heading x = "-1.3951522189110093" y = "1.2700197975101362" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "1.0599096666849936" y = "-0.5220728324455199" />
+<heading x = "-1.3866161837574897" y = "0.7985584255029905" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "1.1981232818793872" y = "-0.6931277574978867" />
+<heading x = "-1.7751811280962464" y = "-0.6388520661709861" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.8809773942854692" y = "-0.5985410964168391" />
+<heading x = "-1.0458528362679747" y = "1.211029250212493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.107285509281873" y = "0.021964750498236783" />
+<heading x = "-1.7481285227093808" y = "1.8838648221382337" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "15548" >
+
+<ball>
+  <position x = "-0.34702804437935325" y = "0.195145525213337" />
+  <timeout value = "58.62000000000002" />
+  <velocity x = "-0.28865029617828836" y = "-0.36072843874053867" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.2879234552712105" y = "-0.1634564827706298" />
+<heading x = "-0.1467142939904485" y = "-1.8642357458054721" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.4400729547812302" y = "-0.3338702766084145" />
+<heading x = "-1.5104938870141995" y = "0.5280229325443493" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.4410414323268635" y = "-0.45785269079297763" />
+<heading x = "-1.3883177775456983" y = "0.6188487283258912" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1380416106686273" y = "-0.0722006031909917" />
+<heading x = "-0.7129856590646589" y = "1.4324983245952276" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.2801933457955087" y = "0.2837623941637392" />
+<heading x = "0.6001827863191265" y = "-1.788625344505162" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.7140180773733505" y = "-0.3525783802924775" />
+<heading x = "-1.5183483221249474" y = "0.5049934382745553" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.900675302881286" y = "-0.45655227018384836" />
+<heading x = "-1.465817892082648" y = "1.1877617215798728" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.6275108504066549" y = "-0.4686288814665346" />
+<heading x = "-0.19057409708752668" y = "1.5887358224447745" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.0340516805534758" y = "0.021897886835843504" />
+<heading x = "-1.7030533674246484" y = "-1.924710167194938" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "16192" >
+
+<ball>
+  <position x = "-0.5837603270445345" y = "0.04783493864370341" />
+  <timeout value = "57.97600000000003" />
+  <velocity x = "-0.5447668902157001" y = "-0.006006273779581524" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.5290572185524703" y = "-0.023427421010475867" />
+<heading x = "-1.207269468335664" y = "1.4280757790903549" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.06868328780004218" y = "-0.2277304878624024" />
+<heading x = "-1.5533731413237566" y = "0.3839685974320874" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "0.13070769329812443" y = "-0.34238133157556006" />
+<heading x = "-1.439515607892849" y = "0.48805206139599616" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1380416106686273" y = "-0.0722006031909917" />
+<heading x = "-1.186479757207036" y = "1.0736227390186617" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.4159061143144228" y = "0.04908615498301327" />
+<heading x = "-1.885142905944287" y = "0.07507479049541128" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.33301735646584996" y = "-0.29510950790499096" />
+<heading x = "-1.5972203546372468" y = "0.09636980197379032" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.5783340497896019" y = "-0.24431508584944442" />
+<heading x = "-1.6472404138799925" y = "0.919782049662022" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.29923426305790923" y = "-0.43587474507726126" />
+<heading x = "-1.598603686033835" y = "0.06975854785641762" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.0340516805534758" y = "0.021897886835843504" />
+<heading x = "1.951759502187882" y = "-1.6719853006588645" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "16836" >
+
+<ball>
+  <position x = "-0.9280932512826713" y = "0.15623522843332918" />
+  <timeout value = "57.332000000000036" />
+  <velocity x = "-0.409709818462848" y = "0.43833533356910676" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.8889194131252975" y = "0.11078844192405118" />
+<heading x = "-1.6990553201134788" y = "0.7810960371132893" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.3072563952906569" y = "-0.13846385625790014" />
+<heading x = "-1.5525373928925588" y = "0.3873340208016546" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.1845419501830904" y = "-0.2408498862552192" />
+<heading x = "-1.445262759422863" y = "0.47076061456478197" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1380416106686273" y = "-0.0722006031909917" />
+<heading x = "-1.186479757207036" y = "1.0736227390186617" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.7216784813255819" y = "0.12981933937547827" />
+<heading x = "-1.1741874736826472" y = "1.4767138438596568" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.03989024608571671" y = "-0.23363352699370568" />
+<heading x = "-1.5800372908917424" y = "0.2527492025536048" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.2297592034601807" y = "-0.0778506463894321" />
+<heading x = "-1.7287505673876575" y = "0.7555272832643782" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.08603785997415658" y = "-0.4087123586718236" />
+<heading x = "-1.5878522940501298" y = "0.19780063771317832" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.0340516805534758" y = "0.021897886835843504" />
+<heading x = "2.521925756173855" y = "-0.49476305475139337" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "17480" >
+
+<ball>
+  <position x = "-1.1039017934462767" y = "0.45264237165979965" />
+  <timeout value = "56.688000000000045" />
+  <velocity x = "-0.02419511879248803" y = "0.5442624699780589" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.151892865845308" y = "0.379793296657808" />
+<heading x = "-0.5346607002684997" y = "1.7919369228821638" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.6753610924671914" y = "-0.021968320781875838" />
+<heading x = "-1.4876686868080204" y = "0.5892723294800969" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.5458834544628576" y = "-0.10446445870714977" />
+<heading x = "-1.3905898720138066" y = "0.6137261668306357" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.1218143022165357" y = "-0.019439685264929445" />
+<heading x = "-0.47039351191439066" y = "1.529421440920993" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.9967380715715672" y = "0.37204813535833675" />
+<heading x = "-0.6180074256281807" y = "1.7825450406282666" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.3737083247934352" y = "-0.05571694113018133" />
+<heading x = "-1.2768464989019326" y = "0.9643977489821703" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.125447216830874" y = "0.07421403436624419" />
+<heading x = "-1.719873948192203" y = "0.7755215034605835" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.45903388219015573" y = "-0.311746970802378" />
+<heading x = "-1.4889241862437426" y = "0.5860927977875255" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.057205596984555" y = "0.16773439105264287" />
+<heading x = "-1.0493544135878516" y = "2.3460083790736337" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "18124" >
+
+<ball>
+  <position x = "-1.1171153127269142" y = "0.6801728556949443" />
+  <timeout value = "56.044000000000054" />
+  <velocity x = "-0.015614911467398664" y = "-0.35125309185808645" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.1730026431689153" y = "0.6550149296684985" />
+<heading x = "-0.019648399805971755" y = "1.869896772654861" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.0064724035204415" y = "0.17476324676101232" />
+<heading x = "-1.2657776385473576" y = "0.9788804675513116" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.8772868138886817" y = "0.0928644368378746" />
+<heading x = "-1.2311466850334876" y = "0.8914470483046397" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0276048602196732" y = "0.10608358520389365" />
+<heading x = "-1.2524627618521476" y = "-0.9958599450593896" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-1.0364087070944699" y = "0.7014737111157594" />
+<heading x = "-0.49097924463818843" y = "1.8216309673845892" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.599366196178075" y = "0.2545776351008155" />
+<heading x = "-0.7299117510085369" y = "1.4239483262182133" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.46088915447075685" y = "0.2652005883761339" />
+<heading x = "-1.573363147232756" y = "1.0411188245968068" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.7819802937281369" y = "-0.10253516717151606" />
+<heading x = "-1.2180517528431505" y = "1.0376656144422096" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "0.9447232048687246" y = "-0.030339968197438776" />
+<heading x = "1.5994750826416433" y = "-2.0116111602415883" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "18768" >
+
+<ball>
+  <position x = "-1.1598101735692712" y = "0.5921439475873831" />
+  <timeout value = "55.40000000000006" />
+  <velocity x = "-0.16787236439161066" y = "-0.5472299601388528" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.202241014251634" y = "0.6550149296684985" />
+<heading x = "-0.018637126408550017" y = "1.869907125372603" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.1838940388065358" y = "0.4826721999810618" />
+<heading x = "-0.17204641011577612" y = "1.590848840325904" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.1833594723101752" y = "0.31818063109803635" />
+<heading x = "-0.7200584410374694" y = "1.3386246081298108" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0276048602196732" y = "0.10608358520389365" />
+<heading x = "1.5306017337519384" y = "-0.4665386721758015" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-1.0701841037588355" y = "0.7014737111157594" />
+<heading x = "-1.8771070146694864" y = "-0.18939180414846069" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.815771055201386" y = "0.5734460176787309" />
+<heading x = "-1.048407527691255" y = "1.2088182890245789" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.7294716739741092" y = "0.4263557955324493" />
+<heading x = "-1.6510415951071389" y = "0.9129412090743166" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.8944034718419992" y = "0.22918020073875928" />
+<heading x = "-1.3452974314755695" y = "0.8663572132009032" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1595039156317954" y = "0.06587978246654039" />
+<heading x = "-2.018999954357566" y = "1.5901381022741858" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "19412" >
+
+<ball>
+  <position x = "-1.2140315553438186" y = "0.5371604851394657" />
+  <timeout value = "54.75600000000007" />
+  <velocity x = "0.06796722581814035" y = "0.5961379506578874" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.2836017054371585" y = "0.6914236407161509" />
+<heading x = "0.41415527039435174" y = "-1.823561189542205" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2151272289567774" y = "0.588561990957524" />
+<heading x = "0.8866933492090555" y = "-1.3319815706189138" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.1971360295146494" y = "0.4277176863423318" />
+<heading x = "-0.6536999854397343" y = "1.3722522833051112" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "0.08869239690170072" y = "-1.5976650646276995" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-1.1131543800261303" y = "0.6668241027844614" />
+<heading x = "0.9931977693866016" y = "-1.6040443232297164" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-1.0626640986613343" y = "0.5287062091839221" />
+<heading x = "-1.5385621811847057" y = "0.43957526616969794" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.9342365762795588" y = "0.4884333552349669" />
+<heading x = "-0.9972822128390123" y = "1.6015080979985468" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-1.046917063911662" y = "0.40344397556476086" />
+<heading x = "0.8108899636034155" y = "1.3794409979869569" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.0022615654636537" y = "-0.13769857813436787" />
+<heading x = "-2.4602211609851525" y = "-0.7431095740473745" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "20056" >
+
+<ball>
+  <position x = "-1.2075913522442794" y = "0.6528904395060802" />
+  <timeout value = "54.11200000000008" />
+  <velocity x = "0.511754994573039" y = "0.31322009119714683" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.2836017054371585" y = "0.6914236407161509" />
+<heading x = "-1.6043626454832802" y = "-0.9606875151566667" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2151272289567774" y = "0.588561990957524" />
+<heading x = "-1.2728355278041465" y = "0.9696853712207582" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2341876150707352" y = "0.46863491997047496" />
+<heading x = "-0.6031870075156466" y = "1.3951936904832674" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "-0.9600384969922294" y = "1.2801273703397256" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.9010398167905493" y = "0.7016006899710747" />
+<heading x = "1.8866294660222733" y = "-0.005409060594204283" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-1.1163041886527652" y = "0.5156762151044451" />
+<heading x = "-1.5549066799935536" y = "-0.3777104929855996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.0066255761999636" y = "0.6046808607916099" />
+<heading x = "-1.7103067880835057" y = "0.7963985752344627" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-1.1016859860810018" y = "0.39655883472315" />
+<heading x = "-1.5882101160726847" y = "-0.19490671410802898" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.0091540465279747" y = "0.14305928312503532" />
+<heading x = "2.0560439664473646" y = "1.5419413763290066" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "20700" >
+
+<ball>
+  <position x = "-1.2039502460727085" y = "0.740442324909575" />
+  <timeout value = "53.46800000000009" />
+  <velocity x = "-0.07675057545250956" y = "0.06455846591950805" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.2836017054371585" y = "0.6914236407161509" />
+<heading x = "0.8815321988745302" y = "1.649181913054905" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.184538698044701" y = "0.5426122164570878" />
+<heading x = "1.4704177430218697" y = "-0.6310876809180086" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.19509933404843788" y = "1.5074270296945906" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.1443041829238372" y = "1.1184667795437686" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.5728219303738487" y = "0.4976938999022937" />
+<heading x = "1.6025571449096958" y = "-0.9955955992765761" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9372758156179369" y = "0.6110820703403601" />
+<heading x = "1.4121236474866108" y = "0.752533590086921" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1538074133938865" y = "0.6846982772285221" />
+<heading x = "0.09986838412607517" y = "1.8839921193710039" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-1.0405267055207954" y = "0.4884616717377388" />
+<heading x = "0.8713120757859703" y = "1.3420936131989987" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1496659881942857" y = "0.09766342365044056" />
+<heading x = "-2.5651945555471274" y = "0.15708880352010532" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "21344" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "52.8240000000001" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.2783070842573994" y = "0.6914236407161509" />
+<heading x = "-2.3015606379571486E-4" y = "1.8699999858364136" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.184538698044701" y = "0.5426122164570878" />
+<heading x = "-0.6790281306135552" y = "1.4489033086563992" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "-1.0212436592935674" y = "1.2318528273916018" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.24460404395714813" y = "0.29378710983351286" />
+<heading x = "1.6025571449096947" y = "-0.9955955992765776" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-1.000375453474766" y = "0.6778375793432968" />
+<heading x = "-0.9936127035928428" y = "1.254246305658869" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1344809049085414" y = "0.6846982772285221" />
+<heading x = "0.08976327918776635" y = "1.884500611225547" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.846846137000554" y = "0.6658440410983077" />
+<heading x = "0.6881593232389678" y = "1.444588780878242" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "0.959841590141152" y = "0.10554413798368345" />
+<heading x = "2.0319883776315866" y = "-1.5735066676598972" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "21988" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "52.180000000000106" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.2783066005076604" y = "0.6914236407161509" />
+<heading x = "3.5810012027491094E-12" y = "1.87" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "-0.6790281306135539" y = "1.4489033086563996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.4591786425947109" y = "0.6566564467021222" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.08361384245955233" y = "0.08988031976473196" />
+<heading x = "1.6025571449096958" y = "-0.9955955992765761" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9879866137861615" y = "0.6778375793432968" />
+<heading x = "0.08055050532246887" y = "1.5980962474432805" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1268794395862551" y = "0.6846982772285221" />
+<heading x = "-0.3974030327885223" y = "1.8443076829885203" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.8427765881702598" y = "0.6658440410983077" />
+<heading x = "0.13337528165036844" y = "1.5945566889404355" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.177534223834177" y = "0.05680595390828977" />
+<heading x = "-0.6333945189549953" y = "-2.4907250718129794" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "22632" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "51.536000000000115" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.278306600507668" y = "0.6914236407161509" />
+<heading x = "1.3601747093497032E-15" y = "1.87" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "-0.6790281306135539" y = "1.4489033086563996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.4591786425947109" y = "0.6566564467021222" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.08361384245955233" y = "0.08988031976473196" />
+<heading x = "-1.2850310039756478" y = "-1.3813382347641503" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9997445292568004" y = "0.6778375793432968" />
+<heading x = "0.08833463624455679" y = "1.5976848850882772" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1268794395862551" y = "0.6846982772285221" />
+<heading x = "-0.3974030327885223" y = "1.8443076829885203" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.873145496583213" y = "0.6658440410983077" />
+<heading x = "0.12851540609897646" y = "1.5949557330519286" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.177534223834177" y = "0.05680595390828977" />
+<heading x = "-2.4897333333855562" y = "0.6372816713423096" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "23276" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "50.892000000000124" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.278306600507668" y = "0.6914236407161509" />
+<heading x = "1.3601747093497032E-15" y = "1.87" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "-0.6790281306135539" y = "1.4489033086563996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.4591786425947109" y = "0.6566564467021222" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.08361384245955233" y = "0.08988031976473196" />
+<heading x = "-1.2850310039756478" y = "-1.3813382347641503" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9828321948188383" y = "0.6778375793432968" />
+<heading x = "0.07756206088170882" y = "1.5982440760759233" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1268794395862551" y = "0.6846982772285221" />
+<heading x = "-0.3974030327885223" y = "1.8443076829885203" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.839004981558038" y = "0.6658440410983077" />
+<heading x = "0.1348086914721944" y = "1.5944361438149708" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.177534223834177" y = "0.05680595390828977" />
+<heading x = "-2.4897333333855562" y = "0.6372816713423096" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "23920" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "50.24800000000013" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.278306600507668" y = "0.6914236407161509" />
+<heading x = "1.3601747093497032E-15" y = "1.87" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "-0.6790281306135539" y = "1.4489033086563996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.4591786425947109" y = "0.6566564467021222" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.08361384245955233" y = "0.08988031976473196" />
+<heading x = "-1.2850310039756478" y = "-1.3813382347641503" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9969832543417994" y = "0.6778375793432968" />
+<heading x = "0.0863714392466607" y = "1.5977922188077085" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1268794395862551" y = "0.6846982772285221" />
+<heading x = "-0.3974030327885223" y = "1.8443076829885203" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.8681714164866284" y = "0.6658440410983077" />
+<heading x = "0.15093132825033842" y = "1.5929908142084777" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.177534223834177" y = "0.05680595390828977" />
+<heading x = "-2.4897333333855562" y = "0.6372816713423096" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "24564" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "49.60400000000014" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.278306600507668" y = "0.6914236407161509" />
+<heading x = "1.3601747093497032E-15" y = "1.87" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "-0.6790281306135539" y = "1.4489033086563996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.4591786425947109" y = "0.6566564467021222" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.08361384245955233" y = "0.08988031976473196" />
+<heading x = "-1.2850310039756478" y = "-1.3813382347641503" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9803947887125801" y = "0.6778375793432968" />
+<heading x = "0.0762261059613335" y = "1.598308349715402" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1268794395862551" y = "0.6846982772285221" />
+<heading x = "-0.3974030327885223" y = "1.8443076829885203" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.8345506657767187" y = "0.6658440410983077" />
+<heading x = "0.13291426176614016" y = "1.5945951834303156" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.177534223834177" y = "0.05680595390828977" />
+<heading x = "-2.4897333333855562" y = "0.6372816713423096" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "25208" >
+
+<ball>
+  <position x = "-1.2205353760700322" y = "0.7264918034523727" />
+  <timeout value = "48.96000000000015" />
+  <velocity x = "-0.0" y = "-0.0" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.278306600507668" y = "0.6914236407161509" />
+<heading x = "1.3601747093497032E-15" y = "1.87" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "-0.6790281306135539" y = "1.4489033086563996" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "0.05708807231094319" y = "1.5189275664098734" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.4591786425947109" y = "0.6566564467021222" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.08361384245955233" y = "0.08988031976473196" />
+<heading x = "-1.2850310039756478" y = "-1.3813382347641503" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9971539452609859" y = "0.6778375793432968" />
+<heading x = "-0.8005831532154225" y = "1.3854481638760978" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1268794395862551" y = "0.6846982772285221" />
+<heading x = "-0.3974030327885223" y = "1.8443076829885203" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.8631974428798409" y = "0.6658440410983077" />
+<heading x = "0.14831206506199557" y = "1.5932368095663139" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.177534223834177" y = "0.05680595390828977" />
+<heading x = "-2.4897333333855562" y = "0.6372816713423096" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "25852" >
+
+<ball>
+  <position x = "-0.06104326072950331" y = "0.7261220174260601" />
+  <timeout value = "59.816" />
+  <velocity x = "-0.2961930670571223" y = "-0.17651262568806528" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.278306600507668" y = "0.6914236407161509" />
+<heading x = "1.7115009928011164" y = "0.753435034784548" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-1.2079633385723083" y = "0.592595475816121" />
+<heading x = "1.052511159374192" y = "1.2052469702898214" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.2893864034517304" y = "0.4690006538492746" />
+<heading x = "1.4131861987437753" y = "0.5597363376448944" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "1.0892937874604984" y = "1.1721088023728694" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "-0.02209706909033623" y = "0.09470173631504686" />
+<heading x = "-1.782004887365027" y = "0.6195632182490804" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.9322154398583016" y = "0.6990469293692488" />
+<heading x = "1.4772970101583154" y = "0.6148117954116544" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-1.1215656254520605" y = "0.6846982772285221" />
+<heading x = "0.09164581320714064" y = "1.8844099991566596" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.7531212676624847" y = "0.683751440868645" />
+<heading x = "1.5135850627145173" y = "0.5190956153999862" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1010419026513882" y = "0.13636925791415336" />
+<heading x = "-1.8243128960203572" y = "1.8101885143304328" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "26496" >
+
+<ball>
+  <position x = "-0.20598544117734008" y = "0.6397455026142972" />
+  <timeout value = "59.17200000000001" />
+  <velocity x = "-0.13022873830005718" y = "-0.07760821941505418" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-1.1853710330794416" y = "0.6318321958033655" />
+<heading x = "1.5741803540831856" y = "-1.009384075968378" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.9908176139356955" y = "0.5954266016074524" />
+<heading x = "1.593045101292844" y = "0.15035725871028943" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-1.0762421553637944" y = "0.4822330791166584" />
+<heading x = "1.40730671099639" y = "-0.574358617228403" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "-0.5459577701826062" y = "1.5041044222982778" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.0016311238311447346" y = "0.4358358610347148" />
+<heading x = "1.6276077095363528" y = "0.9540928381755244" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.5799558522834165" y = "0.6971435447199068" />
+<heading x = "1.5991734529635908" y = "-0.055174879578538304" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.7874635241897273" y = "0.6587400141986791" />
+<heading x = "1.8812468543523129" y = "0.14251411505365968" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.37917871849382545" y = "0.634517778923455" />
+<heading x = "1.5777104363597356" y = "0.26688907621252006" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "0.9567138728460274" y = "0.10516333506645012" />
+<heading x = "-1.8070733338536413" y = "-1.8273986883203917" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "27140" >
+
+<ball>
+  <position x = "0.016584154181631453" y = "0.5182703139659178" />
+  <timeout value = "58.52800000000002" />
+  <velocity x = "0.2610117093719672" y = "-0.5402526145894379" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.9530321145088754" y = "0.4828535835214018" />
+<heading x = "1.5741803540831856" y = "-1.009384075968378" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.6051359650078855" y = "0.5989891175387242" />
+<heading x = "1.5945937176344738" y = "-0.13293184599887062" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.7489554891903628" y = "0.5284270211800866" />
+<heading x = "1.5187259939968298" y = "0.06222021502969256" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "0.08497587521514298" y = "1.5978670472324723" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.16121993295157105" y = "0.13216900019254785" />
+<heading x = "0.34107568172001534" y = "-1.8555504248980212" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.2429782145809727" y = "0.5082131296406324" />
+<heading x = "1.3827495603575706" y = "-0.8052351540580832" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.4421496046470451" y = "0.6856101906914682" />
+<heading x = "1.7639722160028672" y = "0.6691801111583744" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "-0.006743957913842809" y = "0.5735495974820868" />
+<heading x = "1.4720530539239967" y = "-0.6272637455114352" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1098460038790476" y = "0.13657039293386167" />
+<heading x = "2.4834442996182813" y = "-0.6613655650950281" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "27784" >
+
+<ball>
+  <position x = "0.15830168763994984" y = "0.21501099583787633" />
+  <timeout value = "57.88400000000003" />
+  <velocity x = "-0.4046164110357847" y = "-0.44304126209702066" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.6277576285100822" y = "0.2742835263266523" />
+<heading x = "1.5741803540831856" y = "-1.009384075968378" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.23721804329978202" y = "0.5065642831693467" />
+<heading x = "1.449047301487677" y = "-0.6787207953579155" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.37410142941079977" y = "0.4503773229064742" />
+<heading x = "1.4015099331493985" y = "-0.5883620545918719" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0484176579410025" y = "-0.001298806465003105" />
+<heading x = "0.6084764875067056" y = "1.4799176883027994" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.16121993295157105" y = "0.13216900019254785" />
+<heading x = "-1.4590148698259986" y = "-1.1961085275285954" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "0.025161153581328685" y = "0.3183720087202974" />
+<heading x = "1.5674428839036216" y = "-0.3217496009319953" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "-0.06697649808606305" y = "0.6367931143138473" />
+<heading x = "1.7305990123754598" y = "-0.751283607145187" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.199591863066324" y = "0.2585439880766284" />
+<heading x = "0.6838411757614027" y = "-1.4466379112733296" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.0497456807929826" y = "0.14709191379041242" />
+<heading x = "-2.376932096269605" y = "0.9772890103359301" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "28428" >
+
+<ball>
+  <position x = "-0.09120757924262515" y = "0.24214695713413137" />
+  <timeout value = "57.24000000000004" />
+  <velocity x = "0.20787399985607907" y = "0.3814338214996604" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.29375264009918267" y = "0.09594417288441556" />
+<heading x = "1.869941939420851" y = "0.014735779415658247" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.021004179003086723" y = "0.3772931471214972" />
+<heading x = "1.3491755595274828" y = "-0.8603053583313912" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.14828584618093357" y = "0.1767218252049594" />
+<heading x = "0.7401682361852584" y = "-1.3276110055819828" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0172183048065364" y = "0.10353909238885889" />
+<heading x = "-1.523143401449137" y = "-0.490340880023227" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.16121993295157105" y = "0.13216900019254785" />
+<heading x = "-1.4590148698259986" y = "-1.1961085275285954" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.033564990156810366" y = "0.22520928914177354" />
+<heading x = "-1.590177275896019" y = "-0.17814665650501527" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.11192550959808928" y = "0.3919739635225916" />
+<heading x = "-1.190943121064222" y = "-1.4632342541062282" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.14449377057600876" y = "0.25519134674050725" />
+<heading x = "-1.3907770964006327" y = "0.7912894970410165" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "0.8968984360534846" y = "0.006815008550807911" />
+<heading x = "0.7875485137128941" y = "-2.4463579743260415" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "29072" >
+
+<ball>
+  <position x = "-0.12742775983582857" y = "0.26178385786957575" />
+  <timeout value = "56.596000000000046" />
+  <velocity x = "0.5992829432682619" y = "-0.029324970720005443" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.26152173853080446" y = "0.14075721768266058" />
+<heading x = "0.7961491407311209" y = "1.6920539429087649" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "-0.05785686661279422" y = "0.33619668235941197" />
+<heading x = "-1.4680141566062141" y = "-0.6366588065861851" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.13857164156868398" y = "-0.1182390206666382" />
+<heading x = "-1.430313982283883" y = "-0.5143947045637428" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0172183048065364" y = "0.10353909238885889" />
+<heading x = "1.5318847931861976" y = "-0.4623083174731774" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "3.289592414262514E-17" />
+<heading x = "-2.5700000000000003" y = "3.147342273808698E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.16121993295157105" y = "0.13216900019254785" />
+<heading x = "-1.4590148698259986" y = "-1.1961085275285954" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.18702590795043345" y = "0.26871644334035205" />
+<heading x = "-1.429156383204697" y = "0.7196610537921788" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.058226692465100705" y = "0.3791881495665757" />
+<heading x = "0.6552234412163296" y = "-1.7692038441289435" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.14449377057600876" y = "0.25519134674050725" />
+<heading x = "-1.0786103210549716" y = "1.1819474503181988" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.152747053681283" y = "0.06263779998082525" />
+<heading x = "-0.9497112348918756" y = "2.3880847075261276" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+<log time = "29716" >
+
+<ball>
+  <position x = "0.025302375449493434" y = "0.4365078531759653" />
+  <timeout value = "55.952000000000055" />
+  <velocity x = "-0.13917221917044956" y = "0.5267239632019531" />
+  <score west = "0" east = "0" />
+</ball>
+
+    <westTeam name = "WestTeam" >
+<player robotid = "6" ControlSystem = "t070813.Laudrup">
+<robot id="6" playerid="1">
+<position x = "-0.2063430276454981" y = "0.14229014463322773" />
+<heading x = "0.08327838629744506" y = "-1.868144724151663" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "7" ControlSystem = "t070813.Laudrup">
+<robot id="7" playerid="2">
+<position x = "0.0027355632452773088" y = "0.15385672195154998" />
+<heading x = "1.4161962711371994" y = "0.7448410042533181" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "8" ControlSystem = "t070813.Laudrup">
+<robot id="8" playerid="3">
+<position x = "-0.24029188314289388" y = "-0.011199858383115414" />
+<heading x = "0.7145174561240947" y = "1.341590401312544" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "9" ControlSystem = "t070813.Laudrup">
+<robot id="9" playerid="4">
+<position x = "1.0172183048065364" y = "0.10353909238885889" />
+<heading x = "1.5318847931861976" y = "-0.4623083174731774" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "10" ControlSystem = "t070813.Laudrup">
+<robot id="10" playerid="0">
+<position x = "-1.283529576395328" y = "2.6135873811331752E-17" />
+<heading x = "-2.5700000000000003" y = "-8.265750419337913E-16" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </westTeam>
+
+    <eastTeam name = "EastTeam" >
+<player robotid = "11" ControlSystem = "t070819.ISBCUnited">
+<robot id="11" playerid="1">
+<position x = "0.16121993295157105" y = "0.13216900019254785" />
+<heading x = "-1.4590148698259986" y = "-1.1961085275285954" />
+<speed value = "0.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "12" ControlSystem = "t070819.ISBCUnited">
+<robot id="12" playerid="2">
+<position x = "-0.19190031174974118" y = "0.28599728096758875" />
+<heading x = "1.4488791716284761" y = "0.679079631575842" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "13" ControlSystem = "t070819.ISBCUnited">
+<robot id="13" playerid="3">
+<position x = "0.04632078547878701" y = "0.3252874132187924" />
+<heading x = "1.8838838882658497" y = "-0.10188962426244948" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "14" ControlSystem = "t070819.ISBCUnited">
+<robot id="14" playerid="4">
+<position x = "0.14449377057600876" y = "0.25519134674050725" />
+<heading x = "-0.05157577810204859" y = "1.599293575024038" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+<player robotid = "15" ControlSystem = "t070819.ISBCUnited">
+<robot id="15" playerid="0">
+<position x = "1.1263026507841363" y = "0.014184383636738872" />
+<heading x = "-1.2311977435809252" y = "-2.255892753701124" />
+<speed value = "1.0" />
+</robot>
+<customCSSInfo>
+
+</customCSSInfo>
+</player>
+    </eastTeam>
+
+</log>
+
+
+
+</SoccerBotsLOG>
