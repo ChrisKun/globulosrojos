@@ -50,33 +50,52 @@ public class MatchStateUtils {
 		this.matchState = state;
 	}
 	
-	public void getMatchState(WorldAPI worldAPI) {
+	public String getMatchState(WorldAPI worldAPI) {
 		int lado = worldAPI.getFieldSide(); //-1 en la derecha, 1 en la izquierda
 		//si el balon lo tiene el contrario, estado=2, estado=3... 
 		if(worldAPI.getMyScore() > worldAPI.getOpponentScore())
+		{
+			
 			matchState = new Catenaccio();
+			return "catenaccio";
+		}
 		else if (worldAPI.getMyScore() < worldAPI.getOpponentScore())
+		{
 			matchState = new Heroica();
+			return "heroica";
+		}
 		else 
 			//tienen ellos el balon y estan cerca de la porteria
 			if(!fieldUtils.whoHasTheBall(worldAPI) && fieldUtils.getLocationsOctant(worldAPI.getPosition(), worldAPI) == 1 && fieldUtils.getLocationsOctant(worldAPI.getPosition(), worldAPI) == 5)
 			{
 				setMatchStateUsingName("UltimoHombreContrario");
+				return "UltimoHombreContrario";
 			}
 			else{
 				{
 					if (fieldUtils.getRelativePosition(worldAPI, worldAPI.getBall()).x * lado < 0) {
 						// el balon esta en tu campo
-						if(fieldUtils.whoHasTheBall(worldAPI))
+						if(fieldUtils.whoHasTheBall(worldAPI)){
 							matchState = new PosesionNuestraEnNuestroCampo();
+							return "PosesionNuestraEnNuestroCampo";
+						}
 						else
+						{
 							matchState = new PosesionContrarioNuestroCampo();
+							return "PosesionContrarioNuestroCampo";
+						}
 				} else 
 				{
 					if(fieldUtils.whoHasTheBall(worldAPI))
+					{
 						matchState = new PosesionNuestraEnSuCampo();
+						return "PosesionNuestraEnSuCampo";
+					}
 					else
+					{
 						matchState = new PosesionContrarioEnSuCampo();
+						return "PosesionContrarioEnSuCampo";
+					}
 		}
 		}
 	}

@@ -3,6 +3,7 @@ package grupo14.players;
 import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
 import grupo14.states.Catenaccio;
 import grupo14.states.Heroica;
+import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.states.UltimoHombreContrario;
 import grupo14.utils.CBRUtils;
 import grupo14.utils.MatchStateUtils;
@@ -34,8 +35,9 @@ public class Goalkeeper extends Role{
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new Heroica());
-		matchStateUtils.getMatchState(this.worldAPI);
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
+		String estado = matchStateUtils.getMatchState(this.worldAPI);
+		System.out.println("Portero en estado= "+estado);
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
 		
 		//Si el sistema considera que debe leerse un nuevo caso

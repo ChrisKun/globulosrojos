@@ -36,7 +36,7 @@ public class Defender extends Role {
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new Heroica());
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		matchStateUtils.getMatchState(this.worldAPI);
 		matchStateUtils.matchState.accionARealizar(worldAPI, role);
 

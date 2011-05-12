@@ -132,7 +132,7 @@ public class fieldUtils {
     {
             // si el balon esta en tierra de nadie, tambien lo toma como si fuera posesion contraria
             //0.06 = cankick
-            double unidadDeCercania = 0.1;
+            double unidadDeCercania = 0.2;
             boolean nosotros = true;
             Vec2[] oponentes = worldAPI.getOpponents();
             Vec2[] companeros = worldAPI.getTeammates();
@@ -154,7 +154,7 @@ public class fieldUtils {
                             companeroMasCercano = companeros[i];
                     }
             }
-            if(oponenteMasCercano.x > companeroMasCercano.x && oponenteMasCercano.y > companeroMasCercano.y  )
+            if(getRelativePosition(worldAPI,oponenteMasCercano).x > getRelativePosition(worldAPI,companeroMasCercano).x && getRelativePosition(worldAPI,oponenteMasCercano).y > getRelativePosition(worldAPI,companeroMasCercano).y  )
                     nosotros = true;
             else
                     nosotros = false;

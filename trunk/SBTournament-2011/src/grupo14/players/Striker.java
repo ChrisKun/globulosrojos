@@ -1,6 +1,7 @@
 package grupo14.players;
 
 import grupo14.states.Heroica;
+import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.utils.CBRUtils;
 import grupo14.utils.MatchStateUtils;
 import teams.rolebased.Role;
@@ -27,7 +28,7 @@ public class Striker extends Role {
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new Heroica());
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		matchStateUtils.getMatchState(this.worldAPI);
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
 		
