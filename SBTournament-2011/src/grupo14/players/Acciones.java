@@ -1,6 +1,5 @@
 package grupo14.players;
 
-import grupo14.players.Acciones.Lado;
 import EDU.gatech.cc.is.util.Vec2;
 import teams.rolebased.WorldAPI;
 
@@ -320,6 +319,81 @@ public class Acciones {
 			worldAPI.setSpeed(1.0);
 			worldAPI.setDisplayString("Evitando bloqueo");
 		}
+	}
+	
+	public static void controlarLaPelota(WorldAPI worldAPI) {
+		Vec2 ballPosition = worldAPI.getBall();
+		Vec2 porteriaContraria = worldAPI.getOpponentsGoal();
+		double radioRobot = worldAPI.getPlayerRadius();
+
+		if(detrasDePunto(ballPosition, porteriaContraria) && ballPosition.t < radioRobot * 4) {
+			worldAPI.setSteerHeading(porteriaContraria.t);
+			worldAPI.setSpeed(1.0);
+
+			if( (Math.abs(worldAPI.getSteerHeading() - porteriaContraria.t) < Math.PI/8) &&
+			    (porteriaContraria.r < radioRobot * 15))
+				chutarAPuerta(worldAPI);
+		}
+		else {
+			ponerseDetras(ballPosition, porteriaContraria, worldAPI);
+			
+			evitarBandas(worldAPI);
+			evitarBloqueos(worldAPI);
+		}
+	}
+	
+	private static void ponerseDetras(Vec2 point, Vec2 orient, WorldAPI worldAPI) {
+		Vec2 movimiento = new Vec2();
+		Vec2 behind_point = new Vec2(0,0);
+		double behind = 0;
+		double point_side = 0;
+
+		// find a vector from the point, away from the orientation
+		// you want to be
+		behind_point.sett(orient.t);
+		behind_point.setr(orient.r);
+
+		behind_point.sub(point);
+		behind_point.setr(-worldAPI.getPlayerRadius() * 1.8);
+
+		// determine if you are behind the object with respect
+		// to the orientation
+		behind = Math.cos(Math.abs(point.t - behind_point.t));
+
+		// determine if you are on the left or right hand side
+		// with respect to the orientation
+		point_side = Math.sin(Math.abs(point.t - behind_point.t));
+
+		// if you are in FRONT
+		if( behind > 0) {
+			// make the behind point more of a beside point
+			// by rotating it depending on the side of the
+			// orientation you are on
+			if( point_side > 0)
+				behind_point.sett(behind_point.t + Math.PI/2);
+			else
+				behind_point.sett(behind_point.t - Math.PI/2);
+		}
+
+		// move toward the behind point
+		movimiento.sett(point.t);
+		movimiento.setr(point.r);
+		movimiento.add(behind_point);
+
+		movimiento.setr(1.0);
+		
+		worldAPI.setSteerHeading(movimiento.t);
+		worldAPI.setSpeed(movimiento.r);
+	}
+	
+	private static boolean detrasDePunto(Vec2 point, Vec2 orient) {
+		// you are behind an object relative to the orientation
+		// if your position relative to the point and the orientation
+		// are approximately the same
+		if(Math.abs(point.t - orient.t) < Math.PI/10) 
+			return true;
+		else
+			return false;
 	}
 	
 	private static void evitarBandas(WorldAPI worldAPI) {
