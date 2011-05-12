@@ -53,7 +53,7 @@ public class Heroica implements MatchState {
 			octanteOcho = 5;
 		}
 		
-		System.out.println(role.getClass().toString());
+		
 		if(role.equals("portero"))
 		{
 			//Ver si tengo el balon

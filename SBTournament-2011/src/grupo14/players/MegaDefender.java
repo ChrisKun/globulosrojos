@@ -35,7 +35,7 @@ public class MegaDefender  extends Role{
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new Heroica());
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		//getMatchState();
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
 		
