@@ -86,7 +86,7 @@ object EDU.gatech.cc.is.simulation.ObstacleInvisibleSim -2.047 -1.4396 0 1.0
 // from getting jumpy on slow machines, or when/if your process gets 
 // swapped out. 
 
-maxtimestep 22 
+maxtimestep 23 
 
 //====== 
 // TIMEOUT 
@@ -175,14 +175,14 @@ robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team
 
 //======EAST TEAM====== 
 eastname EastTeam 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070804.ColibriTeam 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim teamsSoccerbots.DoogHeteroG 
 1.2 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070804.ColibriTeam 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim teamsSoccerbots.DoogHeteroG 
 .5 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070804.ColibriTeam 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim teamsSoccerbots.DoogHeteroG 
 .15 .5 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070804.ColibriTeam 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim teamsSoccerbots.DoogHeteroG 
 .15 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070804.ColibriTeam 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim teamsSoccerbots.DoogHeteroG 
 .15 -.5 0 xFF0000 x0000FF 2 
 

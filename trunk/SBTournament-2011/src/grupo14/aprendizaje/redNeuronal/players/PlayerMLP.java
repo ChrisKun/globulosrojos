@@ -7,6 +7,8 @@ import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -16,7 +18,7 @@ import teams.rolebased.WorldAPI;
 import EDU.gatech.cc.is.util.Vec2;
 
 public abstract class PlayerMLP {
-
+	
 	public static void main(String args[]) {
 		// Se inicializan todos los perceptrones
 		UltraDefenderMLP ultraDef = new UltraDefenderMLP();
@@ -264,8 +266,6 @@ public abstract class PlayerMLP {
 		}
 	}
 	
-	// TODO Ordenar los jugadores en ambos métodos por su posición en X (p.e.)
-	
 	/** Devuelve las entradas para el perceptrón en el formato adecuado. 
 	 * @param state Estado del que sacar la información.
 	 * @param fieldSide Lado del campo del jugador.
@@ -303,13 +303,20 @@ public abstract class PlayerMLP {
 			enemyTeam = state.getWestTeamInfo();
 		}
 		
+		// Se ordenan los jugadores por su posición en el eje X
+		PlayerInfo[] myTeamArray = (PlayerInfo[]) myTeam.toArray(new PlayerInfo[myTeam.size()]);
+		PlayerInfo[] enemyTeamArray = (PlayerInfo[]) enemyTeam.toArray(new PlayerInfo[myTeam.size()]);
+		
+		Arrays.sort(myTeamArray, new PlayerInfoComparator());
+		Arrays.sort(enemyTeamArray, new PlayerInfoComparator());
+		
 		for (int iPlayer = 0; iPlayer < myTeam.size(); iPlayer++) {
-			inputValues[5 + 2 * iPlayer] = myTeam.get(iPlayer).getPositionX();
-			inputValues[5 + 2 * iPlayer + 1] = myTeam.get(iPlayer).getPositionY();
+			inputValues[5 + 2 * iPlayer] = myTeamArray[iPlayer].getPositionX() * fieldSide;
+			inputValues[5 + 2 * iPlayer + 1] = myTeamArray[iPlayer].getPositionY();
 		}
 		for (int iPlayer = 0; iPlayer < enemyTeam.size(); iPlayer++) {
-			inputValues[15 + 2 * iPlayer] = enemyTeam.get(iPlayer).getPositionX();
-			inputValues[15 + 2 * iPlayer + 1] = enemyTeam.get(iPlayer).getPositionY();
+			inputValues[15 + 2 * iPlayer] = enemyTeamArray[iPlayer].getPositionX() * -fieldSide;
+			inputValues[15 + 2 * iPlayer + 1] = enemyTeamArray[iPlayer].getPositionY();
 		}
 
 		return inputValues;
@@ -335,17 +342,19 @@ public abstract class PlayerMLP {
 		inputValues[3] = ballPosition.x;
 		inputValues[4] = ballPosition.y;
 		
-		// Jugadores
+		// Jugadores		
 		Vec2 []teammates = worldAPI.getTeammates();
+		Arrays.sort(teammates, new Vec2Comparator());
 		for (int iPlayer = 0; iPlayer < teammates.length; iPlayer++) {
 			Vec2 playerPosition = getGlobalPosition(myPosition, teammates[iPlayer]);
-			inputValues[5 + 2 * iPlayer] = playerPosition.x;
+			inputValues[5 + 2 * iPlayer] = playerPosition.x * worldAPI.getFieldSide();
 			inputValues[5 + 2 * iPlayer + 1] = playerPosition.y;
 		}
 		Vec2 []oponents = worldAPI.getOpponents();
+		Arrays.sort(oponents, new Vec2Comparator());
 		for (int iPlayer = 0; iPlayer < oponents.length; iPlayer++) {
 			Vec2 playerPosition = getGlobalPosition(myPosition, oponents[iPlayer]);
-			inputValues[15 + 2 * iPlayer] = playerPosition.x;
+			inputValues[15 + 2 * iPlayer] = playerPosition.x * -worldAPI.getFieldSide();
 			inputValues[15 + 2 * iPlayer + 1] = playerPosition.y;
 		}
 		
@@ -384,6 +393,28 @@ public abstract class PlayerMLP {
 			}
 		
 		return player;
+	}
+
+}
+
+
+class PlayerInfoComparator implements Comparator<PlayerInfo> {
+
+	@Override
+	public int compare(PlayerInfo p1, PlayerInfo p2) {
+		if (p1.getPositionX() - p2.getPositionX() < 0)
+			return -1;
+		else return 1;
+	}
+}
+
+class Vec2Comparator implements Comparator<Vec2> {
+
+	@Override
+	public int compare(Vec2 v1, Vec2 v2) {
+		if (v1.x - v2.x < 0)
+			return -1;
+		else return 1;
 	}
 
 }
