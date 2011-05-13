@@ -44,6 +44,8 @@ public class MatchStateUtils {
 			this.matchState = new PosesionNuestraEnSuCampo();
 		else if(recoveredState.equals("UltimoHombreContrario"))
 			this.matchState = new UltimoHombreContrario();
+		else if(recoveredState.equals("null"))
+			this.matchState = null;
 	}
 
 	public void setMatchState(MatchState state) {
