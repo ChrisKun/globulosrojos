@@ -63,6 +63,10 @@ public abstract class PlayerMLP {
 	 * estado posible de un jugador. */
 	private HashMap<String, Perceptron> mlps;
 	
+	/** Tabla de pesos para las diferentes acciones del perceptron.
+	 * Con esta lista se ponderan las acciones de salida. */
+	protected HashMap<String, Double> actionWeights;
+	
 	/** Constructora por defecto. */
 	public PlayerMLP() {
 		mlps = new HashMap<String, Perceptron>();
@@ -122,7 +126,7 @@ public abstract class PlayerMLP {
 		double betterMLPOutput = Double.NEGATIVE_INFINITY;
 		
 		for (Entry<String, Perceptron> p : mlps.entrySet()) {
-			double output = p.getValue().compute(getMLPInputValues(worldAPI));
+			double output = p.getValue().compute(getMLPInputValues(worldAPI)) * actionWeights.get(p.getKey());
 			if (output > betterMLPOutput) {
 				nextMove = p.getKey();
 				betterMLPOutput = output;

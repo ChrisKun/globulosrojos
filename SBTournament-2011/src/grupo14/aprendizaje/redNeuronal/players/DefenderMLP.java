@@ -1,6 +1,7 @@
 package grupo14.aprendizaje.redNeuronal.players;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import EDU.gatech.cc.is.util.Vec2;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
@@ -8,6 +9,22 @@ import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
 
 public class DefenderMLP extends PlayerMLP {
 
+	public DefenderMLP() {
+		actionWeights = new HashMap<String, Double>();
+		actionWeights.put(Actions.ACTIONS[Actions.CHUTAR_A_PUERTA], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.CORRER_A_DEFENSA], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.CORRER_AL_ATAQUE], 0.6);
+		actionWeights.put(Actions.ACTIONS[Actions.CORRER_HACIA_EL_BALON], 1.1);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_AB], 0.6);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR], 0.6);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_AB], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_ARR], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_AB], 0.9);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_ARR], 0.9);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_AL_CENTRO_DEL_CAMPO], 0.9);
+		actionWeights.put(Actions.ACTIONS[Actions.TAPAR_PORTERIA], 0.9);
+	}
+	
 	@Override
 	protected boolean isGoodMove(LogEntry oldState, LogEntry newState, int fieldSide) {
 		/* Es una buena jugada si:
