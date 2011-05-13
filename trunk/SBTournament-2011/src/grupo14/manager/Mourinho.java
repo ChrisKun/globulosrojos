@@ -2,11 +2,11 @@ package grupo14.manager;
 
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.exception.ExecutionException;
+import grupo14.aprendizaje.CBR.voting.Prediction;
 import grupo14.players.Goalkeeper;
 import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.utils.CBRUtils;
 import grupo14.utils.MatchStateUtils;
-import teams.rolebased.Role;
 import teams.rolebased.TeamManager;
 import teams.rolebased.WorldAPI;
 
@@ -43,8 +43,10 @@ public class Mourinho extends TeamManager {
 			//Se hace la consulta a la base de casos para que esta nos devuelva el caso mejor
 			//y tomar una decision
 			try {
-				String recoveredState = this.CBR.cbr.recuperarCaso(caso);
-				matchStateUtils.setMatchStateUsingName(recoveredState);
+				//Recuperar un caso para aplicar. Obtendremos el estado al que pasar y una confianza
+				Prediction prediccion = this.CBR.cbr.recuperarCaso(caso);
+				//Se pasa al estado que dice el caso recuperado
+				matchStateUtils.setMatchStateUsingName((String)prediccion.getClassification());
 			} catch (ExecutionException e) {
 				e.printStackTrace();
 			}

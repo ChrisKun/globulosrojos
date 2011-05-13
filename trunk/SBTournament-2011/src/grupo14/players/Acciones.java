@@ -398,8 +398,8 @@ public class Acciones {
 	
 	private static void evitarBandas(WorldAPI worldAPI) {
 		Vec2 miPosicion = worldAPI.getPosition();
-		Vec2 miPorteria = worldAPI.getOurGoal();
-		Vec2 porteriaEnemiga = worldAPI.getOpponentsGoal();
+//		Vec2 miPorteria = worldAPI.getOurGoal();
+//		Vec2 porteriaEnemiga = worldAPI.getOpponentsGoal();
 		
 		// Si estamos posicionados en la zona izquierda del campo vamos hacia la derecha
 		if (miPosicion.y > 0.7625 * 0.9) {

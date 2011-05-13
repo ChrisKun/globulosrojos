@@ -2,15 +2,11 @@ package grupo14.aprendizaje.CBR;
 
 import grupo14.aprendizaje.CBR.caseComponents.DescripcionCaso;
 import grupo14.aprendizaje.CBR.caseComponents.ResultadoCaso;
-import grupo14.aprendizaje.CBR.caseComponents.SolucionCaso;
+import grupo14.aprendizaje.CBR.voting.Prediction;
+import grupo14.aprendizaje.CBR.voting.SimilarityWeightedVotingMethod;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-
-import grupo14.aprendizaje.CBR.voting.Prediction;
-import grupo14.aprendizaje.CBR.voting.SimilarityWeightedVotingMethod;
-import grupo14.players.PlayerActions;
 
 import jcolibri.casebase.LinealCaseBase;
 import jcolibri.cbraplications.StandardCBRApplication;
@@ -71,15 +67,14 @@ public class AprendizajeCBR implements StandardCBRApplication {
 	}
 
 	/**
-	 * M�todo equivalente al cycle de jColibri, con la diferencia de que
-	 * devuelve un caso en vez de void
+	 * Metodo equivalente al cycle de jColibri, con la diferencia de que
+	 * devuelve una prediccion en vez de void
 	 * 
-	 * @param query
-	 *            : Caso que se utilizar� como consulta
-	 * @return Objeto Caso que contiene la soluci�n a aplicar
+	 * @param query: Caso que se utilizara como consulta
+	 * @return Objeto Prediction que contiene la solucion a aplicar
 	 * @throws ExecutionException
 	 */
-	public String recuperarCaso(CBRQuery query) throws ExecutionException {
+	public Prediction recuperarCaso(CBRQuery query) throws ExecutionException {
 		NNConfig simConfig = new NNConfig();
 		simConfig.setDescriptionSimFunction(new Average());
 
@@ -122,7 +117,7 @@ public class AprendizajeCBR implements StandardCBRApplication {
 		Prediction prediccion = votacion.getPredictedClass(eval);
 
 		// Se supone que aqui tenemos las acciones a realizar
-		return (String)prediccion.getClassification();
+		return prediccion;
 	}
 
 	@Override

@@ -25,11 +25,15 @@ public class Catenaccio implements MatchState {
 		
 		int octanteUno = 1;
 		int octanteDos = 2;
+		@SuppressWarnings("unused")
 		int octanteTres = 3;
+		@SuppressWarnings("unused")
 		int octanteCuatro = 4;
 		int octanteCinco = 5;
 		int octanteSeis = 6;
+		@SuppressWarnings("unused")
 		int octanteSiete = 7;
+		@SuppressWarnings("unused")
 		int octanteOcho = 8;
 		
 		if(worldAPI.getFieldSide() == -1)

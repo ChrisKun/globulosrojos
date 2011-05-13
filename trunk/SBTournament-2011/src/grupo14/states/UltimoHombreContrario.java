@@ -1,14 +1,10 @@
 package grupo14.states;
 
-import EDU.gatech.cc.is.util.Vec2;
-import teams.rolebased.WorldAPI;
 import grupo14.players.Acciones;
-import grupo14.players.Defender;
-import grupo14.players.Goalkeeper;
-import grupo14.players.MatchState;
-import grupo14.players.Striker;
 import grupo14.players.Acciones.Lado;
+import grupo14.players.MatchState;
 import grupo14.utils.fieldUtils;
+import teams.rolebased.WorldAPI;
 
 /**
  * El delantero contrario esta delante de la porteria.

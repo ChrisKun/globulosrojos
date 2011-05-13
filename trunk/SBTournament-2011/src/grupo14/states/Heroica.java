@@ -1,6 +1,5 @@
 package grupo14.states;
 
-import EDU.gatech.cc.is.util.Vec2;
 import teams.rolebased.WorldAPI;
 import grupo14.players.Acciones;
 import grupo14.players.Acciones.Lado;
