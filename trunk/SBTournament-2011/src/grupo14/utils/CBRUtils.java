@@ -21,6 +21,8 @@ public class CBRUtils {
 	public AprendizajeCBR cbr;
 	private CBRCase casoAnterior;
 	public long lastCase;
+	private int ourGoals;
+	private int theirGoals;
 	
 	/**
 	 * Initiates the CBR tools
@@ -36,10 +38,16 @@ public class CBRUtils {
 			e.printStackTrace();
 		}
 		this.lastCase = 0;
+		this.ourGoals = 0;
+		this.theirGoals = 0;
 	}
 	
 	/**
 	 * Devuelve si se cumplen los requisitos para la lectura de un nuevo caso
+	 * Las condiciones son:
+	 * - Que hayan transcurrido 25 segundo sin crear un caso
+	 * - Que el balon este en el centro del campo y que llevemos más de 15 segundos sin crear un caso
+	 * - Que se haya marcado un gol en cualquiera de las porterías
 	 * @return true si las condiciones para leer un caso se cumplen, false an caso contrario
 	 */
 	public boolean needToCreateCase(WorldAPI worldAPI, long lastCase){
@@ -49,10 +57,16 @@ public class CBRUtils {
 		//Si han pasado 25 segundos desde el anterior caso leido
 		if(tiempoTranscurrido - lastCase > 25000 )
 			return true;
-		//Si el balon esta en medio y an pasado 15 segundos desde el anterior caso leido
-		if( Math.abs(ball) - Math.abs(pos) == 0 && (tiempoTranscurrido - lastCase > 15000 ))
+		//Si el balon esta en medio y han pasado 15 segundos desde el anterior caso leido
+		else if( Math.abs(ball) - Math.abs(pos) == 0 && (tiempoTranscurrido - lastCase > 15000 ))
 			return true;
-		else
+		//Si ha habido algun gol
+		else if(worldAPI.getMyScore() != this.ourGoals || worldAPI.getOpponentScore() != this.theirGoals)
+		{
+			this.ourGoals = worldAPI.getMyScore();
+			this.theirGoals = worldAPI.getOpponentScore();
+			return true;		
+		}else
 			return false;
 	}
 	
@@ -92,7 +106,7 @@ public class CBRUtils {
 		if(casoAnterior != null){
 			ResultadoCaso resultado = new ResultadoCaso(evaluarCaso(worldAPI, casoAnterior));
 			casoAnterior.setResult(resultado);
-			//Save the case with its rasult (case was already saved, so just update it in the case base)
+			//Save the case with its result (case was already saved, so just update it in the case base)
 			this.cbr.guardarCaso(casoAnterior);
 		}
 		//The new case is saved in order to evaluate it later

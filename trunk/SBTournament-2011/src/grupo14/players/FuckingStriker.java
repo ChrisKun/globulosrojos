@@ -15,6 +15,7 @@ public class FuckingStriker extends Role {
 	public int configure() {
 		worldAPI.setDisplayString("Delantero");	
 		this.matchStateUtils = new MatchStateUtils();
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -26,10 +27,8 @@ public class FuckingStriker extends Role {
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		matchStateUtils.getMatchState(this.worldAPI);
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
-		
 		
 		return WorldAPI.ROBOT_OK;
 	}

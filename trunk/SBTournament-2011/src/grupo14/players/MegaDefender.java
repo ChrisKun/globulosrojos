@@ -26,8 +26,9 @@ public class MegaDefender  extends Role{
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
 		worldAPI.setDisplayString(role);
 		this.matchStateUtils = new MatchStateUtils();
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		
-		// Inicialización de la red neuronal para el ultra defensor
+		// Inicializaciï¿½n de la red neuronal para el ultra defensor
 		mlp = new UltraDefenderMLP();
 		mlp.readFromFile("training/MLP/UltraDefender");
 		
@@ -42,8 +43,7 @@ public class MegaDefender  extends Role{
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
-		//getMatchState();
+		matchStateUtils.getMatchState(this.worldAPI);
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
 		
 		// El ultradefender muestra el movimiento que le aconseja la red neuronal + confianza (testing)

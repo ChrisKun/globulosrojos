@@ -25,6 +25,7 @@ public class Defender extends Role {
 		// Para cuando se quiera ver el nombre de los jugadores en el simulador
 		worldAPI.setDisplayString("Defensor");
 		this.matchStateUtils = new MatchStateUtils();
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -36,7 +37,6 @@ public class Defender extends Role {
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		matchStateUtils.getMatchState(this.worldAPI);
 		matchStateUtils.matchState.accionARealizar(worldAPI, role);
 

@@ -17,14 +17,13 @@ public class Goalkeeper extends Role{
 	private final double KEEPER_DEFENSE_LINE = 0;
 	
 	public MatchStateUtils matchStateUtils;
-	CBRUtils CBR;
 	String role="portero";
 
 	@Override
 	public int configure() {
 		
-		this.CBR = new CBRUtils();
 		this.matchStateUtils = new MatchStateUtils();
+		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -35,28 +34,15 @@ public class Goalkeeper extends Role{
 
 	@Override
 	public int takeStep() {
-		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
-		String estado = matchStateUtils.getMatchState(this.worldAPI);
-		System.out.println("Portero en estado= "+estado);
+		//System.out.println("Portero en estado= "+estado);
+		matchStateUtils.getMatchState(worldAPI);
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
 		
-		//Si el sistema considera que debe leerse un nuevo caso
-		if(this.CBR.needToCreateCase(this.worldAPI, this.CBR.lastCase))
-		{
-			//Hay que crear un nuevo caso
-			CBRCase caso = this.CBR.crearCaso(this.worldAPI, this.matchStateUtils.matchState);
-			//Se guarda el momento en que se ha leido el caso, para asegurar que no 
-			//se cogen dos casos muy juntos
-			this.CBR.lastCase = worldAPI.getMatchTotalTime() - worldAPI.getMatchRemainingTime();
-			//Se hace la consulta a la base de casos para que esta nos devuelva el caso mejor
-			//y tomar una decision
-			try {
-				String recoveredState = this.CBR.cbr.recuperarCaso(caso);
-				matchStateUtils.setMatchStateUsingName(recoveredState);
-			} catch (ExecutionException e) {
-				e.printStackTrace();
-			}
-		}
 		return WorldAPI.ROBOT_OK;
+	}
+	
+	public WorldAPI getWorldApi()
+	{
+		return this.worldAPI;
 	}
 }

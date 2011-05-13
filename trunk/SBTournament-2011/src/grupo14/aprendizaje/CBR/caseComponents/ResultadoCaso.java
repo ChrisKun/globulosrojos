@@ -16,7 +16,7 @@ public class ResultadoCaso implements CaseComponent{
          * El valor mínimo del caso es 0 y el máximo 1. Por ejemplo, un caso en el que el equipo se
          * encontraba defendiendo y terminó marcando gol, debería estar muy cerca del 1.
          */
-        private float valoracionCaso;
+        private Float valoracionCaso;
         
         public ResultadoCaso(){
         }
