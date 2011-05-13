@@ -1,6 +1,7 @@
 package grupo14.team;
 
 import grupo14.players.MatchState;
+import grupo14.utils.MatchStateUtils;
 
 /**
  * Clase utilizada por el entrenador para ordenar cosas a los jugadores. Las opciones pueden ser:
@@ -15,15 +16,15 @@ public class Ordenes {
 	/**
 	 * Estado al que deberá pasar el equipo
 	 */
-	private MatchState estado;
+	private MatchStateUtils stateUtils;
 	
 	/**
 	 * Metodo que utilizara el entrenador para ordenar al equipo pasar a un estado
 	 * @param nuevoEstado: Estado al que deberá pasar el equipo
 	 */
-	public void establecerEstado(MatchState nuevoEstado)
+	public void establecerEstado(String nuevoEstado)
 	{
-		this.estado = nuevoEstado;
+		this.stateUtils.setMatchStateUsingName(nuevoEstado);
 	}
 	
 	/**
@@ -32,6 +33,6 @@ public class Ordenes {
 	 */
 	public MatchState pasarAEstado()
 	{
-		return this.estado;
+		return this.stateUtils.matchState;
 	}
 }
