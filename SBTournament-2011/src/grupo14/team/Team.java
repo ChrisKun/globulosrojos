@@ -14,7 +14,7 @@ public class Team extends RoleBasedTeam{
 
 	@Override
 	protected Role[] getRoles() {
-		return new Role[] {new Goalkeeper(),
+		return new Role[] { new Goalkeeper(),
 							new MegaDefender(),
 							new Defender(),
 							new Striker(),
