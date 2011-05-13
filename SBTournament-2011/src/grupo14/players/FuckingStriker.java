@@ -5,10 +5,9 @@ import grupo14.utils.MatchStateUtils;
 import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
-public class FuckingStriker extends Role {
+public class FuckingStriker extends X {
 
 	String role="delanteroTocapelotas";
-	public MatchStateUtils matchStateUtils;
 	@Override
 	public int configure() {
 		worldAPI.setDisplayString("Delantero");	
@@ -29,21 +28,5 @@ public class FuckingStriker extends Role {
 		matchStateUtils.matchState.accionARealizar(worldAPI,role);
 		
 		return WorldAPI.ROBOT_OK;
-	}
-	
-	/**
-	 * Pone al jugador en el estado que se le pasa como parametro
-	 * @param estado: Estado al que debe pasar el jugador
-	 */
-	public void pasaAEstado(MatchState estado){
-		matchStateUtils.setMatchState(estado);
-	}
-	
-	/**
-	 * Ordena al jugador que realice la accion recibida como parámetro
-	 * @param accion: Accion que debe realizar el jugador
-	 */
-	public void realizaAccion(String accion){
-		
 	}
 }
