@@ -1,12 +1,55 @@
 package grupo14.aprendizaje.redNeuronal.players;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import EDU.gatech.cc.is.util.Vec2;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
+import grupo14.aprendizaje.redNeuronal.log.LogParser;
 import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
 
 public class UltraDefenderMLP extends PlayerMLP {
+	
+	public static void main(String args[]) {
+		UltraDefenderMLP ultraDefender = new UltraDefenderMLP();
+		
+		// Por cada fichero de log de la carpeta logfiles se entrenan los perceptrones
+		int casos = 0;
+		LogEntry oldEntry, newEntry;
+		File folder = new File("logfiles");
+		File[] listOfFiles = folder.listFiles();
+		for (int iFile = 0; iFile < listOfFiles.length; iFile++) {
+			if (listOfFiles[iFile].getName().endsWith(".xml")) {
+				LogParser parser = new LogParser(listOfFiles[iFile].getAbsolutePath());
+				// Al menos hay una entrada...
+				oldEntry = parser.getNextLogEntry();
+				while((newEntry = parser.getNextLogEntry()) != null) {
+					ultraDefender.train(oldEntry, newEntry);
+					casos++;
+					oldEntry = newEntry;
+				}
+			}
+		}
+		
+		ultraDefender.writeToFile("training/MLP/UltraDefender/");
+	} 
+	
+	public UltraDefenderMLP() {
+		actionWeights = new HashMap<String, Double>();
+		actionWeights.put(Actions.ACTIONS[Actions.CHUTAR_A_PUERTA], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.CORRER_A_DEFENSA], 1.1);
+		actionWeights.put(Actions.ACTIONS[Actions.CORRER_AL_ATAQUE], 0.5);
+		actionWeights.put(Actions.ACTIONS[Actions.CORRER_HACIA_EL_BALON], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_AB], 0.5);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR], 0.5);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_AB], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_ARR], 1.0);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_AB], 0.8);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_ARR], 0.8);
+		actionWeights.put(Actions.ACTIONS[Actions.IR_AL_CENTRO_DEL_CAMPO], 0.8);
+		actionWeights.put(Actions.ACTIONS[Actions.TAPAR_PORTERIA], 1.0);
+	}
 	
 	@Override
 	protected boolean isGoodMove(LogEntry oldState, LogEntry newState, int fieldSide) {
