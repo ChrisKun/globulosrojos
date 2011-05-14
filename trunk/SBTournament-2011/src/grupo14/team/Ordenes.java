@@ -18,6 +18,18 @@ public class Ordenes {
 	 */
 	private MatchStateUtils stateUtils;
 	
+	private static Ordenes instance;
+	
+	/**
+	 * Singleton para obtener una instancia de Ordenes, que todo el equipo compartirá
+	 * @return
+	 */
+	public Ordenes getInstance(){
+		if(instance == null)
+			instance = new Ordenes();
+		return instance;
+	}
+	
 	/**
 	 * Metodo que utilizara el entrenador para ordenar al equipo pasar a un estado
 	 * @param nuevoEstado: Estado al que deberá pasar el equipo
@@ -34,5 +46,18 @@ public class Ordenes {
 	public MatchState pasarAEstado()
 	{
 		return this.stateUtils.matchState;
+	}
+	
+	/**
+	 * Especifica si el entrenador a ordenado pasar a un nuevo estado. Lo que se mira realmente es si el estado 
+	 * es null o no. En caso afirmativo es que no hay nueva orden y en caso de que no se null, hay una nueva orden
+	 * @return true si hay nuevo estado y false en otro caso
+	 */
+	public boolean hayNuevoEstado()
+	{
+		if(this.stateUtils.matchState == null)
+			return false;
+		else
+			return true;
 	}
 }
