@@ -1,5 +1,7 @@
 package grupo14.players;
 
+import grupo14.aprendizaje.redNeuronal.players.StrikerMLP;
+import grupo14.aprendizaje.redNeuronal.players.UltraDefenderMLP;
 import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.team.Ordenes;
 import grupo14.utils.MatchStateUtils;
@@ -10,13 +12,16 @@ public class Striker extends X {
 
 	String role="delantero";
 	Ordenes ordenesDeEquipo;
+	StrikerMLP mlp = null;
 	
 	@Override
 	public int configure() {
 		worldAPI.setDisplayString("Delantero");
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
-		ordenesDeEquipo.getInstance();
+		ordenesDeEquipo = Ordenes.getInstance();
+		mlp = new StrikerMLP();
+		mlp.readFromFile("training/MLP/Striker");
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -28,11 +33,15 @@ public class Striker extends X {
 
 	@Override
 	public int takeStep() {
+		if (mlp != null)
+			mlp.getNextMove(worldAPI);
+		
 		//Ver si hay nueva orden de la red neuronal
-		//if( HAY NUEVA ORDEN DE RED NEURONAL  )
+		if(this.ordenesDeEquipo.usarRN()) 
 			//Codigo Para Sergio
+			Acciones.realizaAccion(mlp.getLastMove().getAction(), worldAPI);
 		//Ver si el entrenador ha ordenado un nuevo estado
-		/*else*/if(this.ordenesDeEquipo.hayNuevoEstado())
+		else if(this.ordenesDeEquipo.hayNuevoEstado())
 			//Pasar al estado ordenado
 			matchStateUtils.matchState = ordenesDeEquipo.pasarAEstado();
 		else
@@ -43,5 +52,9 @@ public class Striker extends X {
 		
 		
 		return WorldAPI.ROBOT_OK;
+	}
+	
+	public void setMLP(StrikerMLP mlp) {
+		this.mlp = mlp;
 	}
 }

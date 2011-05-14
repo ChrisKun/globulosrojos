@@ -1,5 +1,8 @@
 package grupo14.team;
 
+import java.util.ArrayList;
+
+import grupo14.aprendizaje.redNeuronal.players.MLPResult;
 import grupo14.players.MatchState;
 import grupo14.utils.MatchStateUtils;
 
@@ -20,11 +23,14 @@ public class Ordenes {
 	
 	private static Ordenes instance;
 	
+	private boolean usarRN;
+	private ArrayList<MLPResult> accionesRN;
+	
 	/**
 	 * Singleton para obtener una instancia de Ordenes, que todo el equipo compartirá
 	 * @return
 	 */
-	public Ordenes getInstance(){
+	public static Ordenes getInstance(){
 		if(instance == null)
 			instance = new Ordenes();
 		return instance;
@@ -36,6 +42,7 @@ public class Ordenes {
 	 */
 	public void establecerEstado(String nuevoEstado)
 	{
+		this.usarRN = false;
 		this.stateUtils.setMatchStateUsingName(nuevoEstado);
 	}
 	
@@ -59,5 +66,14 @@ public class Ordenes {
 			return false;
 		else
 			return true;
+	}
+	
+	public void setAccionesMLP(ArrayList<MLPResult> acciones) {
+		usarRN = true;
+		accionesRN = acciones;
+	}
+	
+	public boolean usarRN() {
+		return usarRN;
 	}
 }

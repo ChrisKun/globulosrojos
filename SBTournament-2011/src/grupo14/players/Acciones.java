@@ -5,10 +5,102 @@ import teams.rolebased.WorldAPI;
 
 public class Acciones {
 	
+	public enum Accion {
+		correrAlAtaque,
+		irAlCentroDelCampo,
+		irALaMedularArr,
+		irALaMedularAb,
+		irALaFrontalContrariaArr,
+		irALaFrontalContrariaAb,
+		irALaFrontalPropiaArr,
+		irALaFrontalPropiaAb,
+		correrADefensa,
+		correrHaciaBalon,
+		chutarAPuerta,
+		taparPorteria,
+		controlarLaPelota		
+	}
+	
 	public enum Lado{
 		derecha,
 		centro,
 		izquierda
+	}
+	
+	public static void realizaAccion(Accion accion, WorldAPI worldAPI) {
+		switch (accion) {
+		case correrAlAtaque:
+			correrAlAtaque(worldAPI);
+			break;
+		case irAlCentroDelCampo:
+			irAlCentroDelCampo(worldAPI);
+			break;
+		case irALaMedularArr:
+			irALaMedular(worldAPI, Lado.izquierda);
+			break;
+		case irALaMedularAb:
+			irALaMedular(worldAPI, Lado.derecha);
+			break;
+		case irALaFrontalContrariaArr:
+			irALaFrontalContraria(worldAPI, Lado.izquierda);
+			break;
+		case irALaFrontalContrariaAb:
+			irALaFrontalContraria(worldAPI, Lado.derecha);
+			break;
+		case irALaFrontalPropiaArr:
+			irALaFrontalPropia(worldAPI, Lado.izquierda);
+			break;
+		case irALaFrontalPropiaAb:
+			irALaFrontalPropia(worldAPI, Lado.derecha);
+			break;
+		case correrADefensa:
+			correrADefensa(worldAPI);
+			break;
+		case correrHaciaBalon:
+			correrHaciaBalon(worldAPI);
+			break;
+		case chutarAPuerta:
+			chutarAPuerta(worldAPI);
+			break;
+		case taparPorteria:
+			taparPorteria(worldAPI);
+			break;
+		case controlarLaPelota:
+			controlarLaPelota(worldAPI);
+			break;
+		}
+	}
+	
+	public static Accion getAccionPorNombre(String nombreAccion) {
+		String minusNombreAccion = nombreAccion.toLowerCase();
+		if (minusNombreAccion.contains("correralataque"))
+			return Accion.correrAlAtaque;
+		else if (minusNombreAccion.contains("iralcentrodelcampo"))
+			return Accion.irAlCentroDelCampo;
+		else if (minusNombreAccion.contains("iralamedulararr"))
+			return Accion.irALaMedularArr;
+		else if (minusNombreAccion.contains("iralamedularab"))
+			return Accion.irALaMedularAb;
+		else if (minusNombreAccion.contains("iralafrontalcontrariaarr"))
+			return Accion.irALaFrontalContrariaArr;
+		else if (minusNombreAccion.contains("iralafrontalcontrariaab"))
+			return Accion.irALaFrontalContrariaAb;
+		else if (minusNombreAccion.contains("iralafrontalpropiaarr"))
+			return Accion.irALaFrontalPropiaArr;
+		else if (minusNombreAccion.contains("iralafrontalpropiaab"))
+			return Accion.irALaFrontalPropiaAb;
+		else if (minusNombreAccion.contains("correradefensa"))
+			return Accion.correrADefensa;
+		else if (minusNombreAccion.contains("correrhaciabalon"))
+			return Accion.correrHaciaBalon;
+		else if (minusNombreAccion.contains("chutarapuerta"))
+			return Accion.chutarAPuerta;
+		else if (minusNombreAccion.contains("taparporteria"))
+			return Accion.taparPorteria;
+		else if (minusNombreAccion.contains("controlarlapelota"))
+			return Accion.controlarLaPelota;
+		
+		return Accion.chutarAPuerta;
 	}
 	
 	public static void correrAlAtaque(WorldAPI worldAPI) {

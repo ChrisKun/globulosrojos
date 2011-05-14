@@ -4,6 +4,8 @@ import grupo14.aprendizaje.redNeuronal.Perceptron;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
 import grupo14.aprendizaje.redNeuronal.log.LogParser;
 import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
+import grupo14.players.Acciones;
+import grupo14.players.Acciones.Accion;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -61,17 +63,20 @@ public abstract class PlayerMLP {
 	
 	/** Lista de perceptrones de un solo jugador, uno por cada 
 	 * estado posible de un jugador. */
-	private HashMap<String, Perceptron> mlps;
+	private HashMap<Accion, Perceptron> mlps;
+	
+	/** Último movimiento aconsejado por el perceptron. */
+	private MLPResult lastMove;
 	
 	/** Tabla de pesos para las diferentes acciones del perceptron.
 	 * Con esta lista se ponderan las acciones de salida. */
-	protected HashMap<String, Double> actionWeights;
+	protected HashMap<Accion, Double> actionWeights;
 	
 	/** Constructora por defecto. */
 	public PlayerMLP() {
-		mlps = new HashMap<String, Perceptron>();
-		for (int iAction = 0; iAction < Actions.ACTIONS.length; iAction++)
-			mlps.put(Actions.ACTIONS[iAction], new Perceptron(24, 2));
+		mlps = new HashMap<Accion, Perceptron>();
+		for (int iAction = 0; iAction < Accion.values().length; iAction++)
+			mlps.put(Accion.values()[iAction], new Perceptron(24, 2));
 	}
 	
 	/** Lee todos los perceptrones de un directorio dado y los almacena
@@ -81,25 +86,16 @@ public abstract class PlayerMLP {
 		File folder = new File(directory);
 		File[] listOfFiles = folder.listFiles();
 		for (int iFile = 0; iFile < listOfFiles.length; iFile++) {
-			boolean read = false;
-			for (int iAction = 0; iAction < Actions.ACTIONS.length && !read; iAction++)
-				if (listOfFiles[iFile].getName().contains(Actions.ACTIONS[iAction])) {
-					mlps.put(Actions.ACTIONS[iAction], Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
-					read = true;
-				}
+			if (listOfFiles[iFile].isFile())
+				mlps.put(Acciones.getAccionPorNombre(listOfFiles[iFile].getName()), Perceptron.readFromFile(listOfFiles[iFile].getAbsolutePath()));
 		}
 	}
 	
 	/** Guarda todos los perceptrones en un directorio dado. 
 	 * @param directory Directorio donde almacenar los perceptrones. */
 	public void writeToFile(String directory) {
-		for (Entry<String, Perceptron> perceptron : mlps.entrySet()) {
-			boolean written = false;
-			for (int iAction = 0; iAction < Actions.ACTIONS.length && !written; iAction++)
-				if (perceptron.getKey().equals(Actions.ACTIONS[iAction])) {
-					perceptron.getValue().writeToFile(directory + Actions.ACTIONS[iAction] + ".SpongeBob");
-					written = true;
-				}
+		for (Entry<Accion, Perceptron> perceptron : mlps.entrySet()) {
+			perceptron.getValue().writeToFile(directory + perceptron.getKey().toString() + ".SpongeBob");
 		}
 	}
 	
@@ -110,7 +106,7 @@ public abstract class PlayerMLP {
 		for (int fieldSide = -1; fieldSide < 2; fieldSide += 2)
 			if (isGoodMove(oldState, newState, fieldSide)) {
 				int playerId = getReferencePlayer(oldState, fieldSide);
-				String action = recognizeAction(oldState, newState, playerId, fieldSide);
+				Accion action = recognizeAction(oldState, newState, playerId, fieldSide);
 				// Se aprende el caso sólo si se ha podido reconocer un movimiento claro del jugador
 				if (action != null)
 					learnMove(oldState, action, fieldSide);
@@ -121,11 +117,11 @@ public abstract class PlayerMLP {
 	 * devuelve la acción que debe ejecutarse a continuación.
 	 * @param worldAPI Estado del juego actual.
 	 * @return Siguiente acción a realizar. */
-	public String getNextMove(WorldAPI worldAPI) {
-		String nextMove = null;
+	public MLPResult getNextMove(WorldAPI worldAPI) {
+		Accion nextMove = null;
 		double betterMLPOutput = Double.NEGATIVE_INFINITY;
 		
-		for (Entry<String, Perceptron> p : mlps.entrySet()) {
+		for (Entry<Accion, Perceptron> p : mlps.entrySet()) {
 			double output = p.getValue().compute(getMLPInputValues(worldAPI)) * actionWeights.get(p.getKey());
 			if (output > betterMLPOutput) {
 				nextMove = p.getKey();
@@ -133,7 +129,9 @@ public abstract class PlayerMLP {
 			}
 		}
 		
-		return nextMove + " : " + betterMLPOutput;
+		MLPResult result = new MLPResult(nextMove, betterMLPOutput);
+		lastMove = result;
+		return result;
 	}
 	
 	/** Determina si la jugada es buena para ser aprendida 
@@ -155,7 +153,7 @@ public abstract class PlayerMLP {
 	 * @param playerId Id del jugador que se quiere evaluar.
 	 * @param fieldSide Lado del campo del jugador.
 	 * @return Movimiento realizado por el jugador analizado. */
-	protected String recognizeAction(LogEntry oldState, LogEntry newState, int playerId, int fieldSide) {
+	protected Accion recognizeAction(LogEntry oldState, LogEntry newState, int playerId, int fieldSide) {
 		// Se extraen ciertos datos importantes para las comprobaciones posteriores
 		PlayerInfo oldPlayerInfo = getPlayerInfo(oldState, playerId);
 		PlayerInfo newPlayerInfo = getPlayerInfo(newState, playerId);
@@ -172,7 +170,7 @@ public abstract class PlayerMLP {
 		 *   new: el balón ha avanzado delta en el eje X */
 		if (oldPlayerBallDistance < 0.3 && 
 			newBallPosition.x - oldBallPosition.x > 0.3 * -fieldSide)
-			return Actions.ACTIONS[Actions.CHUTAR_A_PUERTA];
+			return Accion.chutarAPuerta;
 		
 		/* Correr hacia el balón: 
 		 *   old: 
@@ -180,7 +178,7 @@ public abstract class PlayerMLP {
 		 *        el balón no se ha movido mucho */
 		if (newPlayerBallDistance < oldPlayerBallDistance - 0.1 &&
 			oldBallPosition.distance(newBallPosition) < 0.3)
-			return Actions.ACTIONS[Actions.CORRER_HACIA_EL_BALON];
+			return Accion.correrHaciaBalon;
 		
 		/* Tapar la portería:
 		 *   old: 
@@ -188,7 +186,7 @@ public abstract class PlayerMLP {
 		Vec2 newMidBallGoalPoint = new Vec2((newBallPosition.x + fieldSide * 1.37) / 2.0,
 											newBallPosition.y / 2.0);
 		if (newMidBallGoalPoint.distance(newPlayerPosition) < 0.3)
-			return Actions.ACTIONS[Actions.TAPAR_PORTERIA];
+			return Accion.taparPorteria;
 		
 		/* Correr al ataque:
 		 *   old: el jugador está en su propio campo 
@@ -197,7 +195,7 @@ public abstract class PlayerMLP {
 		if (oldPlayerPosition.x * fieldSide > 0 &&
 			newPlayerPosition.x * fieldSide < 0 && 
 			newPlayerPosition.distance(oldPlayerPosition) > 0.2)
-			return Actions.ACTIONS[Actions.CORRER_AL_ATAQUE];
+			return Accion.correrAlAtaque;
 		
 		/* Correr a defensa:
 		 *   old: el jugador está en el campo contrario
@@ -206,49 +204,49 @@ public abstract class PlayerMLP {
 		if (oldPlayerPosition.x * fieldSide < 0 &&
 			newPlayerPosition.x * fieldSide > 0 && 
 			newPlayerPosition.distance(oldPlayerPosition) > 0.2)
-			return Actions.ACTIONS[Actions.CORRER_A_DEFENSA];
+			return Accion.correrADefensa;
 		
 		/* Ir al centro del campo:
 		 *   old: 
 		 *   new: el jugador está a una distancia cercana del centro del campo */
 		if (newPlayerPosition.distance(new Vec2(0, 0)) < 0.15)
-			return Actions.ACTIONS[Actions.IR_AL_CENTRO_DEL_CAMPO];
+			return Accion.irAlCentroDelCampo;
 		
 		/* Ir a la medular (Arr):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la medular por arriba (Arr) */
 		if (newPlayerPosition.distance(new Vec2(0, 0.3)) < 0.15)
-			return Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_ARR];
+			return Accion.irALaMedularArr;
 		
 		/* Ir a la medular (Ab):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la medular por abajo (Ab) */
 		if (newPlayerPosition.distance(new Vec2(0, -0.3)) < 0.15)
-			return Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_AB];
+			return Accion.irALaMedularAb;
 		
 		/* Ir a la frontal contraria (Arr):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal contraria por arriba (Arr) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * -fieldSide, 0.3)) < 0.2)
-			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR];
+			return Accion.irALaFrontalContrariaArr;
 		
 		/* Ir a la frontal contraria (Ab):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal contraria por abajo (Ab) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * -fieldSide, -0.3)) < 0.2)
-			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_AB];
+			return Accion.irALaFrontalContrariaAb;
 		
 		/* Ir a la frontal propia (Arr):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal propia por arriba (Arr) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * fieldSide, 0.3)) < 0.2)
-			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_ARR];
+			return Accion.irALaFrontalPropiaArr;
 		
 		/* Ir a la frontal propia (Ab):
 		 *   old:
 		 *   new: el jugador está a una distancia cercana de la frontal propia por abajo (Ab) */
 		if (newPlayerPosition.distance(new Vec2(1.0 * fieldSide, -0.3)) < 0.2)
-			return Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_AB];
+			return Accion.irALaFrontalPropiaAb;
 		
 		return null;
 	}
@@ -257,12 +255,12 @@ public abstract class PlayerMLP {
 	 * @param state Estado del juego.
 	 * @param action Acción que se va a aprender.
 	 * @param fieldSide Campo del jugador. */
-	protected void learnMove(LogEntry state, String action, int fieldSide) {
+	protected void learnMove(LogEntry state, Accion action, int fieldSide) {
 		double[] inputValues = getMLPInputValues(state, fieldSide);
 		
-		Iterator<Entry<String, Perceptron>> itMLPS = mlps.entrySet().iterator();
+		Iterator<Entry<Accion, Perceptron>> itMLPS = mlps.entrySet().iterator();
 		while (itMLPS.hasNext()) {
-			Entry<String, Perceptron> entry = itMLPS.next();
+			Entry<Accion, Perceptron> entry = itMLPS.next();
 			if(entry.getKey().equals(action))
 				entry.getValue().train(inputValues, 1);
 			else
@@ -397,6 +395,10 @@ public abstract class PlayerMLP {
 			}
 		
 		return player;
+	}
+	
+	public MLPResult getLastMove() {
+		return lastMove;
 	}
 
 }
