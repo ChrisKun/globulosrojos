@@ -8,6 +8,7 @@ import EDU.gatech.cc.is.util.Vec2;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
 import grupo14.aprendizaje.redNeuronal.log.LogParser;
 import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
+import grupo14.players.Acciones.Accion;
 
 public class UltraDefenderMLP extends PlayerMLP {
 	
@@ -36,19 +37,20 @@ public class UltraDefenderMLP extends PlayerMLP {
 	} 
 	
 	public UltraDefenderMLP() {
-		actionWeights = new HashMap<String, Double>();
-		actionWeights.put(Actions.ACTIONS[Actions.CHUTAR_A_PUERTA], 1.0);
-		actionWeights.put(Actions.ACTIONS[Actions.CORRER_A_DEFENSA], 1.1);
-		actionWeights.put(Actions.ACTIONS[Actions.CORRER_AL_ATAQUE], 0.5);
-		actionWeights.put(Actions.ACTIONS[Actions.CORRER_HACIA_EL_BALON], 1.0);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_AB], 0.5);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR], 0.5);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_AB], 1.0);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_ARR], 1.0);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_AB], 0.8);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_ARR], 0.8);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_AL_CENTRO_DEL_CAMPO], 0.8);
-		actionWeights.put(Actions.ACTIONS[Actions.TAPAR_PORTERIA], 1.0);
+		actionWeights = new HashMap<Accion, Double>();
+		actionWeights.put(Accion.chutarAPuerta, 1.0);
+		actionWeights.put(Accion.controlarLaPelota, 0.8);
+		actionWeights.put(Accion.correrADefensa, 1.1);
+		actionWeights.put(Accion.correrAlAtaque, 0.5);
+		actionWeights.put(Accion.correrHaciaBalon, 1.0);
+		actionWeights.put(Accion.irALaFrontalContrariaArr, 0.5);
+		actionWeights.put(Accion.irALaFrontalContrariaAb, 0.5);
+		actionWeights.put(Accion.irALaFrontalPropiaArr, 1.0);
+		actionWeights.put(Accion.irALaFrontalPropiaAb, 1.0);
+		actionWeights.put(Accion.irALaMedularArr, 0.8);
+		actionWeights.put(Accion.irALaMedularAb, 0.8);
+		actionWeights.put(Accion.irAlCentroDelCampo, 0.8);
+		actionWeights.put(Accion.taparPorteria, 1.0);
 	}
 	
 	@Override

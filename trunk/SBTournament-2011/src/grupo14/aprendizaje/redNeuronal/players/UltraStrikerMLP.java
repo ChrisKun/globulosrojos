@@ -6,23 +6,25 @@ import java.util.HashMap;
 import EDU.gatech.cc.is.util.Vec2;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
 import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
+import grupo14.players.Acciones.Accion;
 
 public class UltraStrikerMLP extends PlayerMLP {
 
 	public UltraStrikerMLP() {
-		actionWeights = new HashMap<String, Double>();
-		actionWeights.put(Actions.ACTIONS[Actions.CHUTAR_A_PUERTA], 1.3);
-		actionWeights.put(Actions.ACTIONS[Actions.CORRER_A_DEFENSA], 0.5);
-		actionWeights.put(Actions.ACTIONS[Actions.CORRER_AL_ATAQUE], 1.3);
-		actionWeights.put(Actions.ACTIONS[Actions.CORRER_HACIA_EL_BALON], 1.0);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_AB], 1.2);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_CONTRARIA_ARR], 1.2);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_AB], 0.5);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_FRONTAL_PROPIA_ARR], 0.5);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_AB], 0.8);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_A_LA_MEDULAR_ARR], 0.8);
-		actionWeights.put(Actions.ACTIONS[Actions.IR_AL_CENTRO_DEL_CAMPO], 0.8);
-		actionWeights.put(Actions.ACTIONS[Actions.TAPAR_PORTERIA], 0.5);
+		actionWeights = new HashMap<Accion, Double>();
+		actionWeights.put(Accion.chutarAPuerta, 1.3);
+		actionWeights.put(Accion.controlarLaPelota, 1.3);
+		actionWeights.put(Accion.correrADefensa, 0.5);
+		actionWeights.put(Accion.correrAlAtaque, 1.3);
+		actionWeights.put(Accion.correrHaciaBalon, 1.0);
+		actionWeights.put(Accion.irALaFrontalContrariaArr, 1.2);
+		actionWeights.put(Accion.irALaFrontalContrariaAb, 1.2);
+		actionWeights.put(Accion.irALaFrontalPropiaArr, 0.5);
+		actionWeights.put(Accion.irALaFrontalPropiaAb, 0.5);
+		actionWeights.put(Accion.irALaMedularArr, 0.8);
+		actionWeights.put(Accion.irALaMedularAb, 0.8);
+		actionWeights.put(Accion.irAlCentroDelCampo, 0.8);
+		actionWeights.put(Accion.taparPorteria, 0.5);
 	}
 	
 	@Override

@@ -3,7 +3,8 @@ package grupo14.manager;
 import jcolibri.cbrcore.CBRCase;
 import jcolibri.exception.ExecutionException;
 import grupo14.aprendizaje.CBR.voting.Prediction;
-import grupo14.players.Goalkeeper;
+import grupo14.aprendizaje.redNeuronal.TeamMLP;
+import grupo14.players.*;
 import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.team.Ordenes;
 import grupo14.utils.CBRUtils;
@@ -16,13 +17,21 @@ public class Mourinho extends TeamManager {
 	Ordenes ordenesDeEquipo;
 	WorldAPI goalkeepersWorldAPI;
 	CBRUtils CBR;
+	TeamMLP teamMLP;
 	public MatchStateUtils matchStateUtils;
+	
 
 	@Override
 	public int configure() {
-		ordenesDeEquipo = new Ordenes();
+		ordenesDeEquipo = Ordenes.getInstance();
 		// Start the CBR system
 		this.CBR = new CBRUtils();
+		// Start the Perceptron system
+		this.teamMLP = new TeamMLP();
+		((MegaDefender)super.robots[1]).setMLP(teamMLP.getUltraDefender());
+		((Defender)super.robots[2]).setMLP(teamMLP.getDefender());
+		((Striker)super.robots[3]).setMLP(teamMLP.getStriker());
+		((FuckingStriker)super.robots[4]).setMLP(teamMLP.getUltraStriker());
 		// Start the match state utils class
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
@@ -31,6 +40,7 @@ public class Mourinho extends TeamManager {
 
 	@Override
 	public int takeStep() {
+		System.out.println("Mou mola");
 		// Esto se hace aqui porque en configure el portero todavia tiene su
 		// worldAPI a null
 		if (this.goalkeepersWorldAPI == null)
@@ -40,16 +50,16 @@ public class Mourinho extends TeamManager {
 		// Se consulta al CBR
 		Prediction prediccion = utilizarCBR();
 		// Se consulta la red neuronal
-
+		double confianzaRN = teamMLP.getAverageConfidence();
 		// IMPLEMENTA AQUI SERGIO
 
-		switch (decideEntreCBRoRN(prediccion.getConfidence(), 0.5)) {
+		switch (decideEntreCBRoRN(prediccion.getConfidence(), confianzaRN)) {
 		case 0://No utilizar nada
 			//Se pone el estado a null para que cuando los jugadores consulten no tengan un estado al que pasar
-			ordenesDeEquipo.establecerEstado("null");
+			ordenesDeEquipo.establecerEstado(null);
 			break;
 		case 1://RN
-			
+			ordenesDeEquipo.setAccionesMLP(teamMLP.getMLPResults());
 			break;
 		case 2://CBR
 			ordenesDeEquipo.establecerEstado((String)prediccion.getClassification());

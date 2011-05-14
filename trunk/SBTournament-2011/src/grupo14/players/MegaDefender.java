@@ -8,7 +8,7 @@ import teams.rolebased.WorldAPI;
 public class MegaDefender extends X{
 
 	String role="megaDefensor";
-	UltraDefenderMLP mlp;
+	UltraDefenderMLP mlp = null;
 	Ordenes ordenesDeEquipo;
 	
 	@Override
@@ -17,11 +17,7 @@ public class MegaDefender extends X{
 		worldAPI.setDisplayString(role);
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
-		ordenesDeEquipo.getInstance();
-		//Inicializacion de la red neuronal para el ultra defensor
-		mlp = new UltraDefenderMLP();
-		mlp.readFromFile("training/MLP/UltraDefender");
-		
+		ordenesDeEquipo = Ordenes.getInstance();		
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -33,11 +29,16 @@ public class MegaDefender extends X{
 
 	@Override
 	public int takeStep() {
+		System.out.println("Jugador mola");
+		if (mlp != null)
+			mlp.getNextMove(worldAPI);
+		
 		//Ver si hay nueva orden de la red neuronal
-		//if( HAY NUEVA ORDEN DE RED NEURONAL  )
+		if(this.ordenesDeEquipo.usarRN()) 
 			//Codigo Para Sergio
+			Acciones.realizaAccion(mlp.getLastMove().getAction(), worldAPI);
 		//Ver si el entrenador ha ordenado un nuevo estado
-		/*else*/if(this.ordenesDeEquipo.hayNuevoEstado())
+		else if(this.ordenesDeEquipo.hayNuevoEstado())
 			//Pasar al estado ordenado
 			matchStateUtils.matchState = ordenesDeEquipo.pasarAEstado();
 		else
@@ -46,7 +47,12 @@ public class MegaDefender extends X{
 			matchStateUtils.matchState.accionARealizar(worldAPI, role);
 		}
 		
+		worldAPI.setDisplayString(mlp.getNextMove(worldAPI).toString());
 		return WorldAPI.ROBOT_OK;
+	}
+	
+	public void setMLP(UltraDefenderMLP mlp) {
+		this.mlp = mlp;
 	}
 
 }
