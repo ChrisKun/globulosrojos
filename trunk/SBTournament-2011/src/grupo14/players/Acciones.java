@@ -414,12 +414,31 @@ public class Acciones {
 	}
 	
 	public static void controlarLaPelota(WorldAPI worldAPI) {
+		int obstaculo = 0;
+		Vec2[] obstaculos = worldAPI.getObstacles();
 		Vec2 ballPosition = worldAPI.getBall();
 		Vec2 porteriaContraria = worldAPI.getOpponentsGoal();
 		double radioRobot = worldAPI.getPlayerRadius();
+		for(int i=0; i<obstaculos.length; i++){
+			if(obstaculos[i].t == porteriaContraria.t)
+				obstaculo++;
+		}
 
 		if(detrasDePunto(ballPosition, porteriaContraria) && ballPosition.t < radioRobot * 4) {
-			worldAPI.setSteerHeading(porteriaContraria.t);
+			
+			//si hay obstaculos se desvia 0.5 el camino pabajo o parriba, segun el random
+			if(obstaculo>0)	
+			{
+				double desvio;
+				int x = ((int) Math.random() * 2); 
+				if(x == 1)
+					desvio = 0.5;
+				else
+					desvio = -0.5;
+				worldAPI.setSteerHeading(porteriaContraria.t + desvio);
+			}
+			else
+				worldAPI.setSteerHeading(porteriaContraria.t);
 			worldAPI.setSpeed(1.0);
 
 			if( (Math.abs(worldAPI.getSteerHeading() - porteriaContraria.t) < Math.PI/8) &&
