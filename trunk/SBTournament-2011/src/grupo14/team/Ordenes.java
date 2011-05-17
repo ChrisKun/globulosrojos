@@ -26,6 +26,12 @@ public class Ordenes {
 	private boolean usarRN;
 	private ArrayList<MLPResult> accionesRN;
 	
+	
+	private Ordenes() {
+		stateUtils = new MatchStateUtils();
+		accionesRN = new ArrayList<MLPResult>();
+	}
+	
 	/**
 	 * Singleton para obtener una instancia de Ordenes, que todo el equipo compartirá
 	 * @return

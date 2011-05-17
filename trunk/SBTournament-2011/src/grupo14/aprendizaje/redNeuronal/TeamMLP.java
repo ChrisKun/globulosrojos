@@ -42,10 +42,19 @@ public class TeamMLP {
 	}
 	
 	public double getAverageConfidence() {
-		double totalConfidence = players.get(0).getLastMove().getConfidence() +
-								 players.get(1).getLastMove().getConfidence() +
-								 players.get(2).getLastMove().getConfidence() +
-								 players.get(3).getLastMove().getConfidence();
+		double totalConfidence;
+		if (players.get(0).getLastMove() == null ||
+			players.get(1).getLastMove() == null ||
+			players.get(2).getLastMove() == null ||
+			players.get(3).getLastMove() == null)
+			totalConfidence = 0.0;
+		else {
+			totalConfidence = players.get(0).getLastMove().getConfidence() +
+							  players.get(1).getLastMove().getConfidence() +
+							  players.get(2).getLastMove().getConfidence() +
+							  players.get(3).getLastMove().getConfidence();
+		}
+		
 		return totalConfidence / 4.0;
 		
 	}
