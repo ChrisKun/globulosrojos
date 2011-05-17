@@ -40,7 +40,6 @@ public class Mourinho extends TeamManager {
 
 	@Override
 	public int takeStep() {
-		System.out.println("Mou mola");
 		// Esto se hace aqui porque en configure el portero todavia tiene su
 		// worldAPI a null
 		if (this.goalkeepersWorldAPI == null)
@@ -49,14 +48,15 @@ public class Mourinho extends TeamManager {
 		matchStateUtils.getMatchState(this.goalkeepersWorldAPI);
 		// Se consulta al CBR
 		Prediction prediccion = utilizarCBR();
+		double confianzaCBR = (prediccion == null)? 0.0 : prediccion.getConfidence();
 		// Se consulta la red neuronal
 		double confianzaRN = teamMLP.getAverageConfidence();
 		// IMPLEMENTA AQUI SERGIO
 
-		switch (decideEntreCBRoRN(prediccion.getConfidence(), confianzaRN)) {
+		switch (decideEntreCBRoRN(confianzaCBR, confianzaRN)) {
 		case 0://No utilizar nada
 			//Se pone el estado a null para que cuando los jugadores consulten no tengan un estado al que pasar
-			ordenesDeEquipo.establecerEstado(null);
+			ordenesDeEquipo.establecerEstado("null");
 			break;
 		case 1://RN
 			ordenesDeEquipo.setAccionesMLP(teamMLP.getMLPResults());

@@ -35,14 +35,14 @@ public class Goalkeeper extends X{
 		//if( HAY NUEVA ORDEN DE RED NEURONAL  )
 			//Codigo Para Sergio
 		//Ver si el entrenador ha ordenado un nuevo estado
-		/*else*/if(this.ordenesDeEquipo.hayNuevoEstado())
+		/*else*//*if(this.ordenesDeEquipo.hayNuevoEstado())
 			//Pasar al estado ordenado
 			matchStateUtils.matchState = ordenesDeEquipo.pasarAEstado();
 		else
 		{
 			matchStateUtils.getMatchState(this.worldAPI);
 			matchStateUtils.matchState.accionARealizar(worldAPI, role);
-		}
+		}*/
 		
 		return WorldAPI.ROBOT_OK;
 	}

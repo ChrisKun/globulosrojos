@@ -29,7 +29,6 @@ public class MegaDefender extends X{
 
 	@Override
 	public int takeStep() {
-		System.out.println("Jugador mola");
 		if (mlp != null)
 			mlp.getNextMove(worldAPI);
 		
