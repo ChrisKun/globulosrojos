@@ -24,11 +24,9 @@ public class Ordenes {
 	private static Ordenes instance;
 	
 	private boolean usarRN;
-	private ArrayList<MLPResult> accionesRN;
 	
 	private Ordenes() {
 		stateUtils = new MatchStateUtils();
-		accionesRN = new ArrayList<MLPResult>();
 	}
 	
 	/**
@@ -73,9 +71,8 @@ public class Ordenes {
 			return true;
 	}
 	
-	public void setAccionesMLP(ArrayList<MLPResult> acciones) {
+	public void setAccionesMLP() {
 		usarRN = true;
-		accionesRN = acciones;
 	}
 	
 	public boolean usarRN() {

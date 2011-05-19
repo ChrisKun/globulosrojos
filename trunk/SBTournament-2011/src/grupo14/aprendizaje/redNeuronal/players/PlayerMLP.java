@@ -24,13 +24,13 @@ public abstract class PlayerMLP {
 	public static void main(String args[]) {
 		// Se inicializan todos los perceptrones
 		UltraDefenderMLP ultraDef = new UltraDefenderMLP();
-		ultraDef.readFromFile("training/MLP/UltraDefender");
+		ultraDef.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraDefender");
 		DefenderMLP normalDef = new DefenderMLP();
-		normalDef.readFromFile("training/MLP/Defender");
+		normalDef.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Defender");
 		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
-		ultraStriker.readFromFile("training/MLP/UltraStriker");
+		ultraStriker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraStriker");
 		StrikerMLP normalStriker = new StrikerMLP();
-		normalStriker.readFromFile("training/MLP/Striker");
+		normalStriker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Striker");
 		
 		// Por cada fichero de log de la carpeta logfiles se entrenan los perceptrones
 		int casos = 0;
@@ -53,10 +53,10 @@ public abstract class PlayerMLP {
 			}
 		}
 		
-		ultraDef.writeToFile("training/MLP/UltraDefender/");
-		normalDef.writeToFile("training/MLP/Defender/");
-		ultraStriker.writeToFile("training/MLP/UltraStriker/");
-		normalStriker.writeToFile("training/MLP/Striker/");
+		ultraDef.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraDefender/");
+		normalDef.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Defender/");
+		ultraStriker.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraStriker/");
+		normalStriker.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Striker/");
 		
 		System.out.println("Casos: " + casos);
 	}
