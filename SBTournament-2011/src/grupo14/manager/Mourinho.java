@@ -74,7 +74,7 @@ public class Mourinho extends TeamManager {
 			case 1://RN
 				modoActual = "RN";
 				System.out.println("Usando RN!");
-				ordenesDeEquipo.setAccionesMLP(teamMLP.getMLPResults());
+				ordenesDeEquipo.setAccionesMLP();
 				break;
 			case 2://CBR
 				modoActual = "CBR";

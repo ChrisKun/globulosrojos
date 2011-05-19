@@ -1,7 +1,6 @@
 package grupo14.aprendizaje.redNeuronal;
 
 import grupo14.aprendizaje.redNeuronal.players.DefenderMLP;
-import grupo14.aprendizaje.redNeuronal.players.MLPResult;
 import grupo14.aprendizaje.redNeuronal.players.PlayerMLP;
 import grupo14.aprendizaje.redNeuronal.players.StrikerMLP;
 import grupo14.aprendizaje.redNeuronal.players.UltraDefenderMLP;
@@ -16,29 +15,19 @@ public class TeamMLP {
 	
 	public TeamMLP() {
 		UltraDefenderMLP ultraDefender = new UltraDefenderMLP();
-		ultraDefender.readFromFile("training/MLP/UltraDefender");
+		ultraDefender.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraDefender");
 		DefenderMLP defender = new DefenderMLP();
-		defender.readFromFile("training/MLP/Defender");
+		defender.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Defender");
 		StrikerMLP striker = new StrikerMLP();
-		striker.readFromFile("training/MLP/Striker");
+		striker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Striker");
 		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
-		ultraStriker.readFromFile("training/MLP/UltraStriker");
+		ultraStriker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraStriker");
 		
 		players = new ArrayList<PlayerMLP>();
 		players.add(ultraDefender);
 		players.add(defender);
 		players.add(striker);
 		players.add(ultraStriker);
-	}
-	
-	public ArrayList<MLPResult> getMLPResults() {
-		ArrayList<MLPResult> prediction = new ArrayList<MLPResult>();
-		prediction.add(players.get(0).getLastMove());
-		prediction.add(players.get(1).getLastMove());
-		prediction.add(players.get(2).getLastMove());
-		prediction.add(players.get(3).getLastMove());
-		
-		return prediction;
 	}
 	
 	public double getAverageConfidence() {
