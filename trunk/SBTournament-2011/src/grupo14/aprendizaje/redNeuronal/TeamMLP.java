@@ -16,13 +16,13 @@ public class TeamMLP {
 	
 	public TeamMLP() {
 		UltraDefenderMLP ultraDefender = new UltraDefenderMLP();
-		ultraDefender.readFromFile(getFolderPath("UltraDefender"));
+		ultraDefender.readFromFile(getFolderPath("mlpTSUltraDefender"));
 		DefenderMLP defender = new DefenderMLP();
-		defender.readFromFile(getFolderPath("Defender"));
+		defender.readFromFile(getFolderPath("mlpTSDefender"));
 		StrikerMLP striker = new StrikerMLP();
-		striker.readFromFile(getFolderPath("Striker"));
+		striker.readFromFile(getFolderPath("mlpTSStriker"));
 		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
-		ultraStriker.readFromFile(getFolderPath("UltraStriker"));
+		ultraStriker.readFromFile(getFolderPath("mlpTSUltraStriker"));
 		
 		players = new ArrayList<PlayerMLP>();
 		players.add(ultraDefender);

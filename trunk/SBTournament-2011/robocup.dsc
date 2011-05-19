@@ -86,7 +86,7 @@ object EDU.gatech.cc.is.simulation.ObstacleInvisibleSim -2.047 -1.4396 0 1.0
 // from getting jumpy on slow machines, or when/if your process gets 
 // swapped out. 
 
-maxtimestep 19 
+maxtimestep 23 
 
 //====== 
 // TIMEOUT 
@@ -99,7 +99,7 @@ maxtimestep 19
 // is reached. If no timeout statement is given, the default is no 
 // termination. 
 // 
-timeout 60000 // ten seconds 
+timeout 30000 // ten seconds 
 
 //====== 
 // TIME 
@@ -115,7 +115,7 @@ timeout 60000 // ten seconds
 // lose fidelity. In fact, for slow computers, values less than 1.0 
 // may be necessary. 
 
-time 2.0 
+time 1.0 
 
 //====== 
 // LOGTIME 
@@ -175,14 +175,14 @@ robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team
 
 //======EAST TEAM====== 
 eastname EastTeam 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
 1.2 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
 .5 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
 .15 .5 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
 .15 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
 .15 -.5 0 xFF0000 x0000FF 2 
 
