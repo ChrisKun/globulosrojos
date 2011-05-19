@@ -112,26 +112,23 @@ public class Mourinho extends TeamManager {
 	 */
 	private Prediction utilizarCBR() {
 		// Si el sistema considera que debe crearse/leerse un nuevo caso
-		if (this.CBR.needToCreateCase(this.goalkeepersWorldAPI,
-				this.CBR.lastCase)) {
+		if (this.CBR.needToCreateCase(this.goalkeepersWorldAPI,this.CBR.lastCase)) {
 			// Hay que crear un nuevo caso
-			CBRCase caso = this.CBR.crearCaso(this.goalkeepersWorldAPI,
-					this.matchStateUtils.matchState);
+			CBRCase caso = this.CBR.crearCaso(this.goalkeepersWorldAPI,	this.matchStateUtils.matchState);
 			// Se guarda el momento en que se ha leido el caso, para asegurar
 			// que no
 			// se cogen dos casos muy juntos
-			this.CBR.lastCase = goalkeepersWorldAPI.getMatchTotalTime()
-					- goalkeepersWorldAPI.getMatchRemainingTime();
+			this.CBR.lastCase = goalkeepersWorldAPI.getMatchTotalTime() - goalkeepersWorldAPI.getMatchRemainingTime();
 			// Se hace la consulta a la base de casos para que esta nos devuelva
 			// el caso mejor
 			// y tomar una decision
-			try {
-				// Recuperar un caso para aplicar. Obtendremos el estado al que
-				// pasar y una confianza
-				return this.CBR.cbr.recuperarCaso(caso);
-			} catch (ExecutionException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				// Recuperar un caso para aplicar. Obtendremos el estado al que
+//				// pasar y una confianza
+//				return this.CBR.cbr.recuperarCaso(caso);
+//			} catch (ExecutionException e) {
+//				e.printStackTrace();
+//			}
 		}
 		return null;
 	}
