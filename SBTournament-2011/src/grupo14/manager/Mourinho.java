@@ -51,7 +51,6 @@ public class Mourinho extends TeamManager {
 		double confianzaCBR = (prediccion == null)? 0.0 : prediccion.getConfidence();
 		// Se consulta la red neuronal
 		double confianzaRN = teamMLP.getAverageConfidence();
-		// IMPLEMENTA AQUI SERGIO
 
 		switch (decideEntreCBRoRN(confianzaCBR, confianzaRN)) {
 		case 0://No utilizar nada

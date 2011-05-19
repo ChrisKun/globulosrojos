@@ -84,7 +84,7 @@ public class Catenaccio implements MatchState {
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteUno ||
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCinco)
 			{
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			else
 			{
@@ -106,7 +106,7 @@ public class Catenaccio implements MatchState {
 			//Si el balon entra en mi zona...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteUno)
 			{
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			//Si el balon entra en la zona del defensa del otro lado ...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCinco)
@@ -132,7 +132,7 @@ public class Catenaccio implements MatchState {
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCinco)
 			{
 				//Ir a por el balon
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			//Si el balon entra en la zona del defensa del otro lado ...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteUno)
@@ -159,7 +159,7 @@ public class Catenaccio implements MatchState {
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCinco ||
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteSeis)
 			{//Voy hacia el balon
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 //			//Si el balon entra en la zona del portero (todo nuestro campo)...
 //			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == 1 || 

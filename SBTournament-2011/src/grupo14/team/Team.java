@@ -14,8 +14,13 @@ public class Team extends RoleBasedTeam{
 
 	@Override
 	protected Role[] getRoles() {
-		return new Role[] { new Goalkeeper(),
-							new MegaDefender(),
+		Goalkeeper goalkeeper = new Goalkeeper();
+		MegaDefender megaDefender = new MegaDefender();
+		goalkeeper.setDefender(megaDefender);
+		megaDefender.setGoalkeeper(goalkeeper);
+		
+		return new Role[] { goalkeeper,
+							megaDefender,
 							new Defender(),
 							new Striker(),
 							new FuckingStriker()};

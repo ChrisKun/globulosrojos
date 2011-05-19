@@ -11,7 +11,7 @@ import grupo14.players.MatchState;
  * El defensa si tiene el balon chuta hacia delante y si no que se ponga a la par del mega defensa
  * El delantero si tiene el balon chuta hacia delante y si no que se coloque en el centro del campo
  * El delantero tocapelotas si tiene el balon chuta hacia delante y sino que suba al ataque
- * @author markel
+ * @author batxes
  *
  */
 public class PosesionNuestraEnNuestroCampo implements MatchState {
@@ -62,7 +62,7 @@ public class PosesionNuestraEnNuestroCampo implements MatchState {
 			}
 			else
 				//el defensa se pondra en la derecha, y el megadefensa en la izquierda
-			Acciones.irALaFrontalPropia(worldAPI, Acciones.Lado.izquierda);
+				Acciones.irALaFrontalPropia(worldAPI, Acciones.Lado.izquierda);
 		}
 		if(role.equals("delanteroTocapelotas"))
 		{
@@ -73,7 +73,7 @@ public class PosesionNuestraEnNuestroCampo implements MatchState {
 				Acciones.chutarAPuerta(worldAPI);
 			}
 			else
-			Acciones.correrAlAtaque(worldAPI);
+				Acciones.correrAlAtaque(worldAPI);
 		}
 		return 0;
 	}

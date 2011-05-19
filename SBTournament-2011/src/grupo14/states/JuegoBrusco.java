@@ -17,7 +17,7 @@ public class JuegoBrusco implements MatchState {
 		System.out.println(role.getClass().toString());
 		if(role.equals("delanteroTocapelotas"))
 		{
-			Acciones.correrHaciaBalon(worldAPI);
+			Acciones.controlarLaPelota(worldAPI);
 		}
 		else
 		{
