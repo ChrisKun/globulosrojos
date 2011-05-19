@@ -62,9 +62,6 @@ public class Mourinho extends TeamManager {
 			// Se consulta la red neuronal
 			double confianzaRN = teamMLP.getAverageConfidence();
 			
-			System.out.println("Confianza CBR: " + confianzaCBR);
-			System.out.println("Confianza RN: " + confianzaRN);
-	
 			switch (decideEntreCBRoRN(confianzaCBR, confianzaRN)) {
 			case 0://No utilizar nada
 				//Se pone el estado a null para que cuando los jugadores consulten no tengan un estado al que pasar
@@ -73,12 +70,10 @@ public class Mourinho extends TeamManager {
 				break;
 			case 1://RN
 				modoActual = "RN";
-				System.out.println("Usando RN!");
 				ordenesDeEquipo.setAccionesMLP();
 				break;
 			case 2://CBR
 				modoActual = "CBR";
-				System.out.println("Usando CBR!");
 				ordenesDeEquipo.establecerEstado((String)prediccion.getClassification());
 				break;
 	

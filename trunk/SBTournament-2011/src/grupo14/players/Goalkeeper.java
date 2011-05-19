@@ -16,7 +16,6 @@ public class Goalkeeper extends X{
 
 	@Override
 	public int configure() {
-		
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		soyPortero = true;
@@ -41,7 +40,7 @@ public class Goalkeeper extends X{
 		}
 
 		
-		worldAPI.setDisplayString("Portero");
+		//worldAPI.setDisplayString("Portero");
 		return WorldAPI.ROBOT_OK;
 	}
 	

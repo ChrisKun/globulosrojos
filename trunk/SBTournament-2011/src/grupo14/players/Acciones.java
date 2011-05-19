@@ -112,14 +112,14 @@ public class Acciones {
 		// Avanza hacia adelante manteniendo la posicion Y
 		if (miPosicion.x < porteriaContraria.x - 0.05 * 1.37 * worldAPI.getFieldSide()) {
 			worldAPI.setSteerHeading(0.0);
-			worldAPI.setDisplayString("CorrerAlAtaque (subiendo)");
+			//worldAPI.setDisplayString("CorrerAlAtaque (subiendo)");
 		}
 		
 		// Si ha llegado a los limites del campo (en X) se queda rondando por la zona
 		if (miPosicion.x > porteriaContraria.x - 0.1 * 1.37 * worldAPI.getFieldSide()) {
 			giroAleatorio(worldAPI);
 			worldAPI.setSpeed(1.0);
-			worldAPI.setDisplayString("CorrerAlAtaque (arriba)");
+			//worldAPI.setDisplayString("CorrerAlAtaque (arriba)");
 		}
 		
 		evitarBandas(worldAPI);
@@ -138,7 +138,7 @@ public class Acciones {
 				(miPosicion.y > -0.05 || miPosicion.y <= 0) ) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("A la espera en el centro del campo");
+			//worldAPI.setDisplayString("A la espera en el centro del campo");
 		}
 
 		irAPosicionDeEspera(worldAPI, new Vec2(0,0));
@@ -168,7 +168,7 @@ public class Acciones {
 		if (miPosicion.x ==  posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("A la espera en el centro del campo");
+			//worldAPI.setDisplayString("A la espera en el centro del campo");
 		}
 
 		irAPosicionDeEspera(worldAPI, posicionDeEspera);
@@ -198,7 +198,7 @@ public class Acciones {
 		if ( miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("Posicion de espera");
+			//worldAPI.setDisplayString("Posicion de espera");
 		}
 		else
 			irAPosicionDeEspera(worldAPI, posicionDeEspera);
@@ -228,7 +228,7 @@ public class Acciones {
 		if ( miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("Posicion de espera");
+			//worldAPI.setDisplayString("Posicion de espera");
 		}
 		else
 			irAPosicionDeEspera(worldAPI, posicionDeEspera);
@@ -257,7 +257,7 @@ public class Acciones {
 		if (miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y ) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("A la espera en el centro del campo");
+			//worldAPI.setDisplayString("A la espera en el centro del campo");
 		}
 		
 		irAPosicionDeEspera(worldAPI, posicionDeEspera);
@@ -284,7 +284,7 @@ public class Acciones {
 		if (miPosicion.x == posicionDeEspera.x && miPosicion.y == posicionDeEspera.y ) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("A la espera en el centro del campo");
+			//worldAPI.setDisplayString("A la espera en el centro del campo");
 		}
 		
 		irAPosicionDeEspera(worldAPI, posicionDeEspera);
@@ -304,7 +304,7 @@ public class Acciones {
 		if (miPosicion.x > posicionDeEspera.x ) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("A la espera en nuestra porteria");
+			//worldAPI.setDisplayString("A la espera en nuestra porteria");
 		}
 		
 		irAPosicionDeEspera(worldAPI, posicionDeEspera);
@@ -321,14 +321,14 @@ public class Acciones {
 		// Ir hacia atras manteniendo la posicion Y
 		if (miPosicion.x > miPorteria.x + 0.1 * 1.37 * worldAPI.getFieldSide()) {
 			worldAPI.setSteerHeading(Vec2.PI);
-			worldAPI.setDisplayString("CorrerADefensa (bajando)");
+			//worldAPI.setDisplayString("CorrerADefensa (bajando)");
 		}
 		
 		// Si ha llegado a los l�mites del campo (en X) se queda rondando por la zona
 		if (miPosicion.x < miPorteria.x + 0.05 * 1.37 * worldAPI.getFieldSide()) {
 			worldAPI.setSteerHeading(0.0);
 			worldAPI.setSpeed(1.0);
-			worldAPI.setDisplayString("CorrerADefensa (abajo)");
+			//worldAPI.setDisplayString("CorrerADefensa (abajo)");
 		}
 		
 		evitarBandas(worldAPI);
@@ -339,7 +339,7 @@ public class Acciones {
 	public static void correrHaciaBalon(WorldAPI worldAPI) {
 		Vec2 porteriaContraria = worldAPI.getOpponentsGoal();
 		worldAPI.setBehindBall(porteriaContraria);
-		worldAPI.setDisplayString("CorrerHaciaBalon");
+		//worldAPI.setDisplayString("CorrerHaciaBalon");
 		
 		evitarBloqueos(worldAPI);
 	}
@@ -347,18 +347,18 @@ public class Acciones {
 	public static void chutarAPuerta(WorldAPI worldAPI) {
 		if (worldAPI.canKick() && worldAPI.alignedToBallandGoal()) {
 			worldAPI.kick();
-			worldAPI.setDisplayString("ChutarAPorteria (chutando)");
+			//worldAPI.setDisplayString("ChutarAPorteria (chutando)");
 		}		
 		else
 			correrHaciaBalon(worldAPI);
 		
-		worldAPI.setDisplayString("ChutarAPorteria (intentando)");
+		//worldAPI.setDisplayString("ChutarAPorteria (intentando)");
 	}
 	
 	// TODO : Bloquear al mas cercano al jugador? al mas cercano a nuestra porteraa?, al portero?
 	public static void bloquearContrario(WorldAPI worldAPI) {
 		worldAPI.blockClosest();
-		worldAPI.setDisplayString("BloquearContrario (bloqueando)");
+		//worldAPI.setDisplayString("BloquearContrario (bloqueando)");
 	}
 	
 	public static void desbloquearse(WorldAPI worldAPI) {
@@ -376,10 +376,10 @@ public class Acciones {
 		
 		if (isCloseToPoint(worldAPI, puntoEspera)) {
 			worldAPI.setSpeed(0);
-			worldAPI.setDisplayString("IrAPosicionEspera (esperando)");
+			//worldAPI.setDisplayString("IrAPosicionEspera (esperando)");
 		}
 		else {
-			worldAPI.setDisplayString("IrAPosicionEspera (yendo)");
+			//worldAPI.setDisplayString("IrAPosicionEspera (yendo)");
 			evitarBandas(worldAPI);
 			evitarBloqueos(worldAPI);
 		}
@@ -409,7 +409,7 @@ public class Acciones {
 			worldAPI.avoidCollisions();
 			//TODO Poner alguna direccion aleatoria porque si estamos contra la pared OWNED!
 			worldAPI.setSpeed(1.0);
-			worldAPI.setDisplayString("Evitando bloqueo");
+			//worldAPI.setDisplayString("Evitando bloqueo");
 		}
 	}
 	
@@ -448,8 +448,8 @@ public class Acciones {
 		else {
 			ponerseDetras(ballPosition, porteriaContraria, worldAPI);
 			
-			evitarBandas(worldAPI);
-			evitarBloqueos(worldAPI);
+			//evitarBandas(worldAPI);
+			//evitarBloqueos(worldAPI);
 		}
 	}
 	
@@ -515,22 +515,22 @@ public class Acciones {
 		// Si estamos posicionados en la zona izquierda del campo vamos hacia la derecha
 		if (miPosicion.y > 0.7625 * 0.9) {
 			worldAPI.setSteerHeading(-Vec2.PI / 2);
-			worldAPI.setDisplayString("Evitando la banda");
+			//worldAPI.setDisplayString("Evitando la banda");
 		}
 		// Si estamos posicionados en la zona derecha del campo vamos hacia la izquierda
 		else if (miPosicion.y < -0.7625 * 0.9) {
 			worldAPI.setSteerHeading(Vec2.PI / 2);
-			worldAPI.setDisplayString("Evitando la banda");
+			//worldAPI.setDisplayString("Evitando la banda");
 		}
 		// Si estamos cerca de la porteria rival vamos hacia atras
 		else if (miPosicion.x > 1.37 * 0.95) {
 			worldAPI.setSteerHeading(Vec2.PI);
-			worldAPI.setDisplayString("Evitando la linea de fondo");			
+			//worldAPI.setDisplayString("Evitando la linea de fondo");			
 		}
 		// Si estamos cerca de nuestra porteria vamos hacia adelante
 		else if (miPosicion.x < -1.37 * 0.95) {
 			worldAPI.setSteerHeading(0.0);
-			worldAPI.setDisplayString("Evitando la linea de fondo");			
+			//worldAPI.setDisplayString("Evitando la linea de fondo");			
 		}
 	}
 	

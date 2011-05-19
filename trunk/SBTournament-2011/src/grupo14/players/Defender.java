@@ -15,7 +15,7 @@ public class Defender extends X {
 	@Override
 	public int configure() {
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
-		worldAPI.setDisplayString("Defensor");
+		//worldAPI.setDisplayString("Defensor");
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		ordenesDeEquipo = Ordenes.getInstance();

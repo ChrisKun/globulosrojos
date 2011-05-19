@@ -18,7 +18,7 @@ public class MegaDefender extends X{
 	@Override
 	public int configure() {
 		//Para cuando se quiera ver el nombre de los jugadores en el simulador
-		worldAPI.setDisplayString(role);
+		//worldAPI.setDisplayString(role);
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		ordenesDeEquipo = Ordenes.getInstance();
@@ -60,7 +60,7 @@ public class MegaDefender extends X{
 				matchStateUtils.matchState.accionARealizar(worldAPI, role);
 			}
 		}
-		worldAPI.setDisplayString(mlp.getLastMove().toString());
+		//worldAPI.setDisplayString(mlp.getLastMove().toString());
 		
 		return WorldAPI.ROBOT_OK;
 	}
