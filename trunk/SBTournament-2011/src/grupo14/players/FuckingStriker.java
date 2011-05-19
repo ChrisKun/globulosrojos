@@ -17,10 +17,7 @@ public class FuckingStriker extends X {
 		worldAPI.setDisplayString("Delantero");	
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
-		ordenesDeEquipo = Ordenes.getInstance();
-		mlp = new UltraStrikerMLP();
-		mlp.readFromFile("training/MLP/UltraStriker");
-		
+		ordenesDeEquipo = Ordenes.getInstance();		
 		return WorldAPI.ROBOT_OK;
 	}
 
