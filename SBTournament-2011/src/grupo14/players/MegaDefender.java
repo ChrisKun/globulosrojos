@@ -60,7 +60,7 @@ public class MegaDefender extends X{
 				matchStateUtils.matchState.accionARealizar(worldAPI, role);
 			}
 		}
-		worldAPI.setDisplayString(mlp.getNextMove(worldAPI).toString());
+		worldAPI.setDisplayString(mlp.getLastMove().toString());
 		
 		return WorldAPI.ROBOT_OK;
 	}

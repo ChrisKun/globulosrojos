@@ -20,6 +20,11 @@ public class Mourinho extends TeamManager {
 	TeamMLP teamMLP;
 	public MatchStateUtils matchStateUtils;
 	
+	private String modoActual;
+	private long ticks;
+	private static final long MAX_TICKS_CBR = 150;
+	private static final long MAX_TICKS_RN = 150;
+	
 
 	@Override
 	public int configure() {
@@ -35,6 +40,9 @@ public class Mourinho extends TeamManager {
 		// Start the match state utils class
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
+		
+		modoActual = "ME";
+		ticks = 0;
 		return WorldAPI.ROBOT_OK;
 	}
 
@@ -46,29 +54,52 @@ public class Mourinho extends TeamManager {
 			this.goalkeepersWorldAPI = ((Goalkeeper) super.robots[0])
 					.getWorldApi();
 		matchStateUtils.getMatchState(this.goalkeepersWorldAPI);
-		// Se consulta al CBR
-		Prediction prediccion = utilizarCBR();
-		double confianzaCBR = (prediccion == null)? 0.0 : prediccion.getConfidence();
-		// Se consulta la red neuronal
-		double confianzaRN = teamMLP.getAverageConfidence();
-
-		switch (decideEntreCBRoRN(confianzaCBR, confianzaRN)) {
-		case 0://No utilizar nada
-			//Se pone el estado a null para que cuando los jugadores consulten no tengan un estado al que pasar
-			ordenesDeEquipo.establecerEstado("null");
-			break;
-		case 1://RN
-			ordenesDeEquipo.setAccionesMLP(teamMLP.getMLPResults());
-			break;
-		case 2://CBR
-			ordenesDeEquipo.establecerEstado((String)prediccion.getClassification());
-			break;
-
-		default:
-			break;
+		
+		if (puedeCambiarDeModo()) {
+			// Se consulta al CBR
+			Prediction prediccion = utilizarCBR();
+			double confianzaCBR = (prediccion == null)? 0.0 : prediccion.getConfidence();
+			// Se consulta la red neuronal
+			double confianzaRN = teamMLP.getAverageConfidence();
+			
+			System.out.println("Confianza CBR: " + confianzaCBR);
+			System.out.println("Confianza RN: " + confianzaRN);
+	
+			switch (decideEntreCBRoRN(confianzaCBR, confianzaRN)) {
+			case 0://No utilizar nada
+				//Se pone el estado a null para que cuando los jugadores consulten no tengan un estado al que pasar
+				modoActual = "ME";
+				ordenesDeEquipo.establecerEstado("null");
+				break;
+			case 1://RN
+				modoActual = "RN";
+				System.out.println("Usando RN!");
+				ordenesDeEquipo.setAccionesMLP(teamMLP.getMLPResults());
+				break;
+			case 2://CBR
+				modoActual = "CBR";
+				System.out.println("Usando CBR!");
+				ordenesDeEquipo.establecerEstado((String)prediccion.getClassification());
+				break;
+	
+			default:
+				break;
+			}
+			
+			ticks = 0;
 		}
-
+		
+		ticks++;
 		return WorldAPI.ROBOT_OK;
+	}
+
+	private boolean puedeCambiarDeModo() {
+		if (modoActual.equals("CBR"))
+			return ticks > MAX_TICKS_CBR;
+		else if (modoActual.equals("RN"))
+			return ticks > MAX_TICKS_RN;
+		else
+			return true;
 	}
 
 	/**

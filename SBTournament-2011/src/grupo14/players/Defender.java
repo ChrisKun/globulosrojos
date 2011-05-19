@@ -1,11 +1,9 @@
 package grupo14.players;
 
 import grupo14.aprendizaje.redNeuronal.players.DefenderMLP;
-import grupo14.aprendizaje.redNeuronal.players.UltraDefenderMLP;
 import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.team.Ordenes;
 import grupo14.utils.MatchStateUtils;
-import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
 public class Defender extends X {
@@ -21,8 +19,6 @@ public class Defender extends X {
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		ordenesDeEquipo = Ordenes.getInstance();
-		mlp = new DefenderMLP();
-		mlp.readFromFile("training/MLP/Defender");
 		return WorldAPI.ROBOT_OK;
 	}
 

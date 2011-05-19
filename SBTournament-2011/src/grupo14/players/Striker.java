@@ -1,11 +1,9 @@
 package grupo14.players;
 
 import grupo14.aprendizaje.redNeuronal.players.StrikerMLP;
-import grupo14.aprendizaje.redNeuronal.players.UltraDefenderMLP;
 import grupo14.states.PosesionContrarioEnSuCampo;
 import grupo14.team.Ordenes;
 import grupo14.utils.MatchStateUtils;
-import teams.rolebased.Role;
 import teams.rolebased.WorldAPI;
 
 public class Striker extends X {
@@ -20,8 +18,6 @@ public class Striker extends X {
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		ordenesDeEquipo = Ordenes.getInstance();
-		mlp = new StrikerMLP();
-		mlp.readFromFile("training/MLP/Striker");
 		return WorldAPI.ROBOT_OK;
 	}
 
