@@ -6,6 +6,7 @@ import grupo14.aprendizaje.redNeuronal.players.StrikerMLP;
 import grupo14.aprendizaje.redNeuronal.players.UltraDefenderMLP;
 import grupo14.aprendizaje.redNeuronal.players.UltraStrikerMLP;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class TeamMLP {
@@ -15,13 +16,13 @@ public class TeamMLP {
 	
 	public TeamMLP() {
 		UltraDefenderMLP ultraDefender = new UltraDefenderMLP();
-		ultraDefender.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraDefender");
+		ultraDefender.readFromFile(getFolderPath("UltraDefender"));
 		DefenderMLP defender = new DefenderMLP();
-		defender.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Defender");
+		defender.readFromFile(getFolderPath("Defender"));
 		StrikerMLP striker = new StrikerMLP();
-		striker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Striker");
+		striker.readFromFile(getFolderPath("Striker"));
 		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
-		ultraStriker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraStriker");
+		ultraStriker.readFromFile(getFolderPath("UltraStriker"));
 		
 		players = new ArrayList<PlayerMLP>();
 		players.add(ultraDefender);
@@ -46,6 +47,31 @@ public class TeamMLP {
 		
 		return totalConfidence / 4.0;
 		
+	}
+	
+	public static String getFolderPath(String folderName) {
+		String folderPath = "";
+		boolean found = false;
+		
+		ArrayList<File> files = new ArrayList<File>();
+		files.add(new File("."));
+		while (!found && files.size() > 0) {
+			File actualFile = files.get(0);
+			if (actualFile.isDirectory()) {
+				if (actualFile.getAbsolutePath().endsWith(File.separator + folderName)) {
+					folderPath = actualFile.getAbsolutePath();
+					found = true;
+				}
+				File[] listOfFiles = actualFile.listFiles();
+				for (File f : listOfFiles)
+					files.add(f);
+			}
+			else if (actualFile.isFile()) {
+			}
+			files.remove(0);
+		}
+		
+		return folderPath + File.separator;
 	}
 	
 	public UltraDefenderMLP getUltraDefender() {

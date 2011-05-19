@@ -1,6 +1,7 @@
 package grupo14.aprendizaje.redNeuronal.players;
 
 import grupo14.aprendizaje.redNeuronal.Perceptron;
+import grupo14.aprendizaje.redNeuronal.TeamMLP;
 import grupo14.aprendizaje.redNeuronal.log.LogEntry;
 import grupo14.aprendizaje.redNeuronal.log.LogParser;
 import grupo14.aprendizaje.redNeuronal.log.PlayerInfo;
@@ -24,13 +25,13 @@ public abstract class PlayerMLP {
 	public static void main(String args[]) {
 		// Se inicializan todos los perceptrones
 		UltraDefenderMLP ultraDef = new UltraDefenderMLP();
-		ultraDef.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraDefender");
+		ultraDef.readFromFile(TeamMLP.getFolderPath("UltraDefender"));
 		DefenderMLP normalDef = new DefenderMLP();
-		normalDef.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Defender");
+		normalDef.readFromFile(TeamMLP.getFolderPath("Defender"));
 		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
-		ultraStriker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraStriker");
+		ultraStriker.readFromFile(TeamMLP.getFolderPath("UltraStriker"));
 		StrikerMLP normalStriker = new StrikerMLP();
-		normalStriker.readFromFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Striker");
+		normalStriker.readFromFile(TeamMLP.getFolderPath("Striker"));
 		
 		// Por cada fichero de log de la carpeta logfiles se entrenan los perceptrones
 		int casos = 0;
@@ -53,10 +54,10 @@ public abstract class PlayerMLP {
 			}
 		}
 		
-		ultraDef.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraDefender/");
-		normalDef.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Defender/");
-		ultraStriker.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/UltraStriker/");
-		normalStriker.writeToFile("robots/grupo14/aprendizaje/trainingfiles/MLP/Striker/");
+		ultraDef.writeToFile(TeamMLP.getFolderPath("UltraDefender"));
+		normalDef.writeToFile(TeamMLP.getFolderPath("Defender"));
+		ultraStriker.writeToFile(TeamMLP.getFolderPath("UltraStriker"));
+		normalStriker.writeToFile(TeamMLP.getFolderPath("Striker"));
 		
 		System.out.println("Casos: " + casos);
 	}

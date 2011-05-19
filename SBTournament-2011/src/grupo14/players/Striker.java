@@ -14,7 +14,7 @@ public class Striker extends X {
 	
 	@Override
 	public int configure() {
-		worldAPI.setDisplayString("Delantero");
+		//worldAPI.setDisplayString("Delantero");
 		this.matchStateUtils = new MatchStateUtils();
 		matchStateUtils.setMatchState(new PosesionContrarioEnSuCampo());
 		ordenesDeEquipo = Ordenes.getInstance();
