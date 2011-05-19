@@ -277,7 +277,7 @@ public abstract class PlayerMLP {
 		double[] inputValues = new double[25];
 		
 		// Tiempo
-		inputValues[0] = state.getTime() / 30000.0;
+		inputValues[0] = state.getTime() / 120000.0;
 		
 		// Marcador
 		if (fieldSide == -1) {
@@ -333,7 +333,7 @@ public abstract class PlayerMLP {
 		Vec2 myPosition = worldAPI.getPosition();
 
 		// Tiempo
-		inputValues[0] = worldAPI.getTimeStamp() / 30000.0;
+		inputValues[0] = worldAPI.getTimeStamp() / 120000.0;
 		
 		// Marcador
 		inputValues[1] = worldAPI.getMyScore();

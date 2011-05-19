@@ -26,7 +26,6 @@ public class Ordenes {
 	private boolean usarRN;
 	private ArrayList<MLPResult> accionesRN;
 	
-	
 	private Ordenes() {
 		stateUtils = new MatchStateUtils();
 		accionesRN = new ArrayList<MLPResult>();

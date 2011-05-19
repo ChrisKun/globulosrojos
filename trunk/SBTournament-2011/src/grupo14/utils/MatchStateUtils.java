@@ -61,7 +61,7 @@ public class MatchStateUtils {
 			matchState = new Catenaccio();
 			return "catenaccio";
 		}
-		else if (worldAPI.getMyScore() < worldAPI.getOpponentScore())
+		else if (worldAPI.getMyScore() < worldAPI.getOpponentScore() && worldAPI.getMatchRemainingTime() < 15000)
 		{
 			matchState = new Heroica();
 			return "heroica";

@@ -67,7 +67,7 @@ public class Heroica implements MatchState {
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCinco || 
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteSeis)
 			{
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			else
 			{
@@ -87,7 +87,7 @@ public class Heroica implements MatchState {
 			//Si el balon entra en mi zona...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteTres)
 			{
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			//Si el balon entra en la zona del portero (todo nuestro campo)...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteUno || 
@@ -117,7 +117,7 @@ public class Heroica implements MatchState {
 			//Si el balon entra en mi zona...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteSiete)
 			{
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			//Si el balon entra en la zona de los delanteros...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCuatro ||
@@ -144,7 +144,7 @@ public class Heroica implements MatchState {
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteOcho)
 			{
 				//Ir a por el balon
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			//Si el balon entra en la zona del portero (todo nuestro campo)...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteUno || 
@@ -171,7 +171,7 @@ public class Heroica implements MatchState {
 			//Si el balon entra en mi zona...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCuatro)
 			{
-				Acciones.correrHaciaBalon(worldAPI);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			//Si el balon entra en la zona del portero (todo nuestro campo)...
 			else if(fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteUno || 
@@ -179,7 +179,7 @@ public class Heroica implements MatchState {
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteCinco || 
 					fieldUtils.getLocationsOctant(worldAPI.getBall(), worldAPI) == octanteSeis)
 			{//Coger la posicion de delantero centro
-				Acciones.irALaFrontalContraria(worldAPI, Lado.centro);
+				Acciones.controlarLaPelota(worldAPI);
 			}
 			else {
 				//Ir al ataque por la derecha
