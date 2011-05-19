@@ -25,13 +25,13 @@ public abstract class PlayerMLP {
 	public static void main(String args[]) {
 		// Se inicializan todos los perceptrones
 		UltraDefenderMLP ultraDef = new UltraDefenderMLP();
-		ultraDef.readFromFile(TeamMLP.getFolderPath("UltraDefender"));
+		ultraDef.readFromFile(TeamMLP.getFolderPath("mlpTSUltraDefender"));
 		DefenderMLP normalDef = new DefenderMLP();
-		normalDef.readFromFile(TeamMLP.getFolderPath("Defender"));
+		normalDef.readFromFile(TeamMLP.getFolderPath("mlpTSDefender"));
 		UltraStrikerMLP ultraStriker = new UltraStrikerMLP();
-		ultraStriker.readFromFile(TeamMLP.getFolderPath("UltraStriker"));
+		ultraStriker.readFromFile(TeamMLP.getFolderPath("mlpTSUltraStriker"));
 		StrikerMLP normalStriker = new StrikerMLP();
-		normalStriker.readFromFile(TeamMLP.getFolderPath("Striker"));
+		normalStriker.readFromFile(TeamMLP.getFolderPath("mlpTSStriker"));
 		
 		// Por cada fichero de log de la carpeta logfiles se entrenan los perceptrones
 		int casos = 0;
@@ -54,10 +54,10 @@ public abstract class PlayerMLP {
 			}
 		}
 		
-		ultraDef.writeToFile(TeamMLP.getFolderPath("UltraDefender"));
-		normalDef.writeToFile(TeamMLP.getFolderPath("Defender"));
-		ultraStriker.writeToFile(TeamMLP.getFolderPath("UltraStriker"));
-		normalStriker.writeToFile(TeamMLP.getFolderPath("Striker"));
+		ultraDef.writeToFile(TeamMLP.getFolderPath("mlpTSUltraDefender"));
+		normalDef.writeToFile(TeamMLP.getFolderPath("mlpTSDefender"));
+		ultraStriker.writeToFile(TeamMLP.getFolderPath("mlpTSUltraStriker"));
+		normalStriker.writeToFile(TeamMLP.getFolderPath("mlpTSStriker"));
 		
 		System.out.println("Casos: " + casos);
 	}
