@@ -175,14 +175,14 @@ robot EDU.gatech.cc.is.abstractrobot.SocSmallSim grupo14.team.Team
 
 //======EAST TEAM====== 
 eastname EastTeam 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091002.WetTunaTeam 
 1.2 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091002.WetTunaTeam 
 .5 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091002.WetTunaTeam 
 .15 .5 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091002.WetTunaTeam 
 .15 0 0 xFF0000 x0000FF 2 
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t070801.TupiTeam2 
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim t091002.WetTunaTeam 
 .15 -.5 0 xFF0000 x0000FF 2 
 
