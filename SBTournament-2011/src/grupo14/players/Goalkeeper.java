@@ -32,7 +32,7 @@ public class Goalkeeper extends X{
 		//accion normal, ni neuronal ni cbr
 		if (worldAPI.blocked()) {
 			defender.setSoyPortero(true);
-			//Acciones.evitarBloqueos(worldAPI);
+			Acciones.evitarBloqueos(worldAPI);
 		}
 		else {
 			defender.setSoyPortero(false);
